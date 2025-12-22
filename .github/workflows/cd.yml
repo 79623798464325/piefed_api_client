@@ -3,7 +3,7 @@ name: piefed_api_client CD
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write

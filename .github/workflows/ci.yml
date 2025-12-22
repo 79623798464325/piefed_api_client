@@ -2,9 +2,9 @@ name: piefed_api_client CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
   # Also run on feature branches for early feedback
   workflow_dispatch:
 
