@@ -1,0 +1,58 @@
+name: piefed_api_client CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  # Also run on feature branches for early feedback
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Cache pub dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            .dart_tool
+          key: ${{ runner.os }}-pub-${{ hashFiles('pubspec.yaml', 'pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Get dependencies
+        run: dart pub get
+
+      - name: Check formatting
+        run: find lib test -name "*.dart" ! -name "*.freezed.dart" ! -name "*.g.dart" | xargs dart format --set-exit-if-changed --output none
+
+      - name: Run lints
+        run: dart analyze --fatal-warnings
+
+
+
+      - name: Run tests
+        run: dart test
+
+      - name: Run tests with coverage
+        run: |
+          dart pub global activate coverage
+          dart test --coverage=coverage
+          dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.dart_tool/package_config.json --report-on=lib
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage/lcov.info
+          fail_ci_if_error: false
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

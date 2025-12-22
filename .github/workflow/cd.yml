@@ -1,0 +1,76 @@
+name: piefed_api_client CD
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+
+      - name: Extract version from pubspec.yaml
+        id: version
+        run: |
+          VERSION=$(grep '^version:' pubspec.yaml | awk '{print $2}')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check if tag already exists
+        id: check_tag
+        run: |
+          if git rev-parse "v${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Tag v${{ steps.version.outputs.version }} already exists, skipping publish"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - uses: dart-lang/setup-dart@v1
+        if: steps.check_tag.outputs.exists == 'false'
+        with:
+          sdk: stable
+
+      - name: Cache pub dependencies
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            .dart_tool
+          key: ${{ runner.os }}-pub-${{ hashFiles('pubspec.yaml', 'pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      - name: Get dependencies
+        if: steps.check_tag.outputs.exists == 'false'
+        run: dart pub get
+
+      - name: Inject pub.dev credentials
+        if: steps.check_tag.outputs.exists == 'false'
+        env:
+          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+        run: |
+          mkdir -p ~/.config/dart/
+          echo $PUB_CREDENTIALS > ~/.config/dart/pub-credentials.json
+
+      - name: Publish to pub.dev
+        if: steps.check_tag.outputs.exists == 'false'
+        run: dart pub publish -f
+
+      - name: Create and push git tag
+        if: steps.check_tag.outputs.exists == 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "v${{ steps.version.outputs.version }}" -m "Release v${{ steps.version.outputs.version }}"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git "v${{ steps.version.outputs.version }}"

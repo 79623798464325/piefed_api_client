@@ -1,0 +1,8 @@
+include: package:lints/recommended.yaml
+
+formatter:
+  page_width: 200
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
