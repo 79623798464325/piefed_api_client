@@ -10,23 +10,30 @@ void main() {
     late String password;
 
     setUpAll(() {
-      // Parse .env manually since we don't want to add a dotenv dependency just for this
-      final envFile = File('.env');
-      if (!envFile.existsSync()) {
-        throw Exception('.env file not found. Please create one with PIEFED_USERNAME and PIEFED_PASSWORD');
-      }
-
-      final lines = envFile.readAsLinesSync();
-      final env = <String, String>{};
-      for (final line in lines) {
-        final parts = line.split('=');
-        if (parts.length == 2) {
-          env[parts[0].trim()] = parts[1].trim();
+      final env = Platform.environment;
+      if (env.containsKey('PIEFED_USERNAME') && env.containsKey('PIEFED_PASSWORD')) {
+        username = env['PIEFED_USERNAME']!;
+        password = env['PIEFED_PASSWORD']!;
+      } else {
+        // Parse .env manually since we don't want to add a dotenv dependency just for this
+        final envFile = File('.env');
+        if (!envFile.existsSync()) {
+          throw Exception('.env file not found and PIEFED_USERNAME/PIEFED_PASSWORD env vars not set.');
         }
+
+        final lines = envFile.readAsLinesSync();
+        final fileEnv = <String, String>{};
+        for (final line in lines) {
+          final parts = line.split('=');
+          if (parts.length == 2) {
+            fileEnv[parts[0].trim()] = parts[1].trim();
+          }
+        }
+
+        username = fileEnv['PIEFED_USERNAME']!;
+        password = fileEnv['PIEFED_PASSWORD']!;
       }
 
-      username = env['PIEFED_USERNAME']!;
-      password = env['PIEFED_PASSWORD']!;
       client = PieFedApiV1('piefed.social');
     });
 
