@@ -1,9 +1,11 @@
 name: piefed_api_client CD
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["piefed_api_client CI"]
+    branches: [main]
+    types: 
+      - completed
 
 permissions:
   contents: write
@@ -12,9 +14,11 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.workflow_run.head_sha }}
           fetch-tags: true
 
       - name: Extract version from pubspec.yaml

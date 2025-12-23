@@ -42,6 +42,10 @@ void main() {
     });
 
     test('Login success', () async {
+      if (username.isEmpty || password.isEmpty) {
+        print('Skipping Login success test due to missing credentials');
+        return;
+      }
       final response = await client.run(Login(username: username, password: password));
 
       expect(response.jwt, isNotEmpty);
