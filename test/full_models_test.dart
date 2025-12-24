@@ -41,7 +41,7 @@ void main() {
         'id': 5,
         'name': 'testcomm',
         'title': 'Test Community',
-        'ap_id': 'https://example.com/c/testcomm',
+        'actor_id': 'https://example.com/c/testcomm',
         'local': true,
         'nsfw': false,
         'deleted': false,
