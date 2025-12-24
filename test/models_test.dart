@@ -15,7 +15,7 @@ void main() {
         id: 1,
         name: 'testcomm',
         title: 'Test Community',
-        actorId: 'https://example.com/c/testcomm',
+        apId: 'https://example.com/c/testcomm',
         local: true,
         nsfw: false,
         deleted: false,
@@ -33,12 +33,12 @@ void main() {
       final post = Post(
         id: 1,
         title: 'Test Post',
-        actorId: 'https://example.com/post/1',
+        apId: 'https://example.com/post/1',
         local: true,
         nsfw: false,
         deleted: false,
         removed: false,
-        creatorId: 1,
+        userId: 1,
         communityId: 1,
         published: DateTime.now().toUtc(),
       );
@@ -80,7 +80,7 @@ void main() {
     });
 
     test('PrivateMessage serialization', () {
-      final pm = PrivateMessage(id: 1, creatorId: 1, recipientId: 2, content: 'Secret', deleted: false, read: false, published: DateTime.now().toUtc());
+      final pm = PrivateMessage(id: 1, userId: 1, recipientId: 2, content: 'Secret', deleted: false, read: false, published: DateTime.now().toUtc());
       final json = pm.toJson();
       expect(json['content'], 'Secret');
       expect(PrivateMessage.fromJson(json), pm);

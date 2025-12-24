@@ -29,7 +29,7 @@ class Community with _$Community {
     required int id,
     required String name,
     required String title,
-    @JsonKey(name: 'actor_id') required String actorId,
+    @JsonKey(name: 'ap_id') required String apId,
     required bool local,
     required bool nsfw,
     required bool deleted,
@@ -50,12 +50,12 @@ class Post with _$Post {
   const factory Post({
     required int id,
     required String title,
-    @JsonKey(name: 'actor_id') required String actorId,
+    @JsonKey(name: 'ap_id') required String apId,
     required bool local,
     required bool nsfw,
     required bool deleted,
     required bool removed,
-    @JsonKey(name: 'creator_id') required int creatorId,
+    @JsonKey(name: 'user_id') required int userId,
     @JsonKey(name: 'community_id') required int communityId,
     String? body,
     String? url,
@@ -94,7 +94,7 @@ class Comment with _$Comment {
   const factory Comment({
     required int id,
     @JsonKey(name: 'ap_id') required String apId,
-    @JsonKey(name: 'creator_id') int? creatorId,
+    @JsonKey(name: 'user_id') int? userId,
     @JsonKey(name: 'post_id') required int postId,
     required String body,
     required bool local,
@@ -114,7 +114,7 @@ class Comment with _$Comment {
 class PrivateMessage with _$PrivateMessage {
   const factory PrivateMessage({
     required int id,
-    @JsonKey(name: 'creator_id') required int creatorId,
+    @JsonKey(name: 'user_id') required int userId,
     @JsonKey(name: 'recipient_id') required int recipientId,
     required String content,
     required bool deleted,

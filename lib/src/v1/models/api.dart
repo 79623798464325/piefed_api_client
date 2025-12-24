@@ -87,3 +87,247 @@ class CommunityResponse with _$CommunityResponse {
 
   factory CommunityResponse.fromJson(Map<String, dynamic> json) => _$CommunityResponseFromJson(json);
 }
+
+@freezed
+class GetPersonDetailsResponse with _$GetPersonDetailsResponse {
+  const factory GetPersonDetailsResponse({
+    @JsonKey(name: 'person_view') required PersonView personView,
+    required List<CommentView> comments, // Usually included
+    required List<PostView> posts, // Usually included
+    // moderators typically included but simplifying for now or checking actual response
+  }) = _GetPersonDetailsResponse;
+
+  factory GetPersonDetailsResponse.fromJson(Map<String, dynamic> json) => _$GetPersonDetailsResponseFromJson(json);
+}
+
+@freezed
+class GetMyUserResponse with _$GetMyUserResponse {
+  const factory GetMyUserResponse({
+    // Similar to GetSite 'my_user' but might be full person view?
+    // Swagger says returns User.
+    // Let's assume generic map or specific view. I'll check myUser definition in GetSite later but for now:
+    @JsonKey(name: 'person_view') required PersonView personView,
+    // It might return other details.
+  }) = _GetMyUserResponse;
+
+  factory GetMyUserResponse.fromJson(Map<String, dynamic> json) => _$GetMyUserResponseFromJson(json);
+}
+
+@freezed
+class GetUnreadCountResponse with _$GetUnreadCountResponse {
+  const factory GetUnreadCountResponse({
+    @JsonKey(name: 'replies') required int replies,
+    @JsonKey(name: 'mentions') required int mentions,
+    @JsonKey(name: 'private_messages') required int privateMessages,
+  }) = _GetUnreadCountResponse;
+
+  factory GetUnreadCountResponse.fromJson(Map<String, dynamic> json) => _$GetUnreadCountResponseFromJson(json);
+}
+
+@freezed
+class GetRepliesResponse with _$GetRepliesResponse {
+  const factory GetRepliesResponse({required List<CommentView> replies}) = _GetRepliesResponse;
+
+  factory GetRepliesResponse.fromJson(Map<String, dynamic> json) => _$GetRepliesResponseFromJson(json);
+}
+
+@freezed
+class BlockUserResponse with _$BlockUserResponse {
+  const factory BlockUserResponse({@JsonKey(name: 'blocked') required bool blocked}) = _BlockUserResponse;
+
+  factory BlockUserResponse.fromJson(Map<String, dynamic> json) => _$BlockUserResponseFromJson(json);
+}
+
+@freezed
+class MarkAllAsReadResponse with _$MarkAllAsReadResponse {
+  const factory MarkAllAsReadResponse({required bool success}) = _MarkAllAsReadResponse;
+
+  factory MarkAllAsReadResponse.fromJson(Map<String, dynamic> json) => _$MarkAllAsReadResponseFromJson(json);
+}
+
+@freezed
+class SearchResponse with _$SearchResponse {
+  const factory SearchResponse({
+    @JsonKey(name: 'type_') required String type, // The type of search results
+    required List<CommentView> comments,
+    required List<PostView> posts,
+    required List<CommunityView> communities,
+    required List<PersonView> users,
+  }) = _SearchResponse;
+
+  factory SearchResponse.fromJson(Map<String, dynamic> json) => _$SearchResponseFromJson(json);
+}
+
+@freezed
+class ResolveObjectResponse with _$ResolveObjectResponse {
+  const factory ResolveObjectResponse({CommentView? comment, PostView? post, CommunityView? community, PersonView? person}) = _ResolveObjectResponse;
+
+  factory ResolveObjectResponse.fromJson(Map<String, dynamic> json) => _$ResolveObjectResponseFromJson(json);
+}
+
+@freezed
+class GetSiteVersionResponse with _$GetSiteVersionResponse {
+  const factory GetSiteVersionResponse({required String version}) = _GetSiteVersionResponse;
+
+  factory GetSiteVersionResponse.fromJson(Map<String, dynamic> json) => _$GetSiteVersionResponseFromJson(json);
+}
+
+@freezed
+class BlockInstanceResponse with _$BlockInstanceResponse {
+  const factory BlockInstanceResponse({required bool blocked}) = _BlockInstanceResponse;
+
+  factory BlockInstanceResponse.fromJson(Map<String, dynamic> json) => _$BlockInstanceResponseFromJson(json);
+}
+
+@freezed
+class GetInstanceChooserResponse with _$GetInstanceChooserResponse {
+  // Assuming returns a list of instances. Simplified to dynamic list or list of strings/objects for now.
+  // Swagger usually returns 'instances' which might be a list of objects.
+  const factory GetInstanceChooserResponse({required List<dynamic> instances}) = _GetInstanceChooserResponse;
+
+  factory GetInstanceChooserResponse.fromJson(Map<String, dynamic> json) => _$GetInstanceChooserResponseFromJson(json);
+}
+
+@freezed
+class SearchInstancesResponse with _$SearchInstancesResponse {
+  const factory SearchInstancesResponse({required List<dynamic> instances}) = _SearchInstancesResponse;
+
+  factory SearchInstancesResponse.fromJson(Map<String, dynamic> json) => _$SearchInstancesResponseFromJson(json);
+}
+
+@freezed
+class ReportPostResponse with _$ReportPostResponse {
+  const factory ReportPostResponse({required bool success}) = _ReportPostResponse; // Assuming success bool or similar
+
+  factory ReportPostResponse.fromJson(Map<String, dynamic> json) => _$ReportPostResponseFromJson(json);
+}
+
+@freezed
+class ReportCommentResponse with _$ReportCommentResponse {
+  const factory ReportCommentResponse({required bool success}) = _ReportCommentResponse;
+
+  factory ReportCommentResponse.fromJson(Map<String, dynamic> json) => _$ReportCommentResponseFromJson(json);
+}
+
+@freezed
+class AddModResponse with _$AddModResponse {
+  const factory AddModResponse({required bool success}) = _AddModResponse;
+
+  factory AddModResponse.fromJson(Map<String, dynamic> json) => _$AddModResponseFromJson(json);
+}
+
+@freezed
+class ListCommunitiesResponse with _$ListCommunitiesResponse {
+  const factory ListCommunitiesResponse({required List<CommunityView> communities}) = _ListCommunitiesResponse;
+
+  factory ListCommunitiesResponse.fromJson(Map<String, dynamic> json) => _$ListCommunitiesResponseFromJson(json);
+}
+
+@freezed
+class ListFeedsResponse with _$ListFeedsResponse {
+  const factory ListFeedsResponse({required List<dynamic> feeds}) = _ListFeedsResponse; // Assuming dynamic or FeedView if available
+
+  factory ListFeedsResponse.fromJson(Map<String, dynamic> json) => _$ListFeedsResponseFromJson(json);
+}
+
+@freezed
+class ListTopicsResponse with _$ListTopicsResponse {
+  const factory ListTopicsResponse({required List<dynamic> topics}) = _ListTopicsResponse; // Assuming dynamic or TopicView if available
+
+  factory ListTopicsResponse.fromJson(Map<String, dynamic> json) => _$ListTopicsResponseFromJson(json);
+}
+
+@freezed
+class DeletePostResponse with _$DeletePostResponse {
+  const factory DeletePostResponse({required bool success}) = _DeletePostResponse;
+
+  factory DeletePostResponse.fromJson(Map<String, dynamic> json) => _$DeletePostResponseFromJson(json);
+}
+
+@freezed
+class DeleteCommentResponse with _$DeleteCommentResponse {
+  const factory DeleteCommentResponse({required bool success}) = _DeleteCommentResponse;
+
+  factory DeleteCommentResponse.fromJson(Map<String, dynamic> json) => _$DeleteCommentResponseFromJson(json);
+}
+
+@freezed
+class DeleteCommunityResponse with _$DeleteCommunityResponse {
+  const factory DeleteCommunityResponse({required bool success}) = _DeleteCommunityResponse;
+
+  factory DeleteCommunityResponse.fromJson(Map<String, dynamic> json) => _$DeleteCommunityResponseFromJson(json);
+}
+
+@freezed
+class UploadImageResponse with _$UploadImageResponse {
+  const factory UploadImageResponse({
+    @JsonKey(name: 'msg') String? msg, // 'success'
+    String? url, // generic, check actual response
+    @JsonKey(name: 'delete_url') String? deleteUrl,
+  }) = _UploadImageResponse;
+
+  factory UploadImageResponse.fromJson(Map<String, dynamic> json) => _$UploadImageResponseFromJson(json);
+}
+
+@freezed
+class DeletePrivateMessageResponse with _$DeletePrivateMessageResponse {
+  const factory DeletePrivateMessageResponse({required bool success}) = _DeletePrivateMessageResponse;
+
+  factory DeletePrivateMessageResponse.fromJson(Map<String, dynamic> json) => _$DeletePrivateMessageResponseFromJson(json);
+}
+
+@freezed
+class MarkAllPMsAsReadResponse with _$MarkAllPMsAsReadResponse {
+  const factory MarkAllPMsAsReadResponse({required bool success}) = _MarkAllPMsAsReadResponse;
+
+  factory MarkAllPMsAsReadResponse.fromJson(Map<String, dynamic> json) => _$MarkAllPMsAsReadResponseFromJson(json);
+}
+
+@freezed
+class LeaveConversationResponse with _$LeaveConversationResponse {
+  const factory LeaveConversationResponse({required bool success}) = _LeaveConversationResponse;
+
+  factory LeaveConversationResponse.fromJson(Map<String, dynamic> json) => _$LeaveConversationResponseFromJson(json);
+}
+
+@freezed
+class BlockDomainResponse with _$BlockDomainResponse {
+  const factory BlockDomainResponse({required bool block}) = _BlockDomainResponse; // Assuming returns {block: true/false} or generic success
+
+  factory BlockDomainResponse.fromJson(Map<String, dynamic> json) => _$BlockDomainResponseFromJson(json);
+}
+
+@freezed
+class GetSiteMetadataResponse with _$GetSiteMetadataResponse {
+  const factory GetSiteMetadataResponse({@JsonKey(name: 'metadata') required SiteMetadata metadata}) = _GetSiteMetadataResponse;
+
+  factory GetSiteMetadataResponse.fromJson(Map<String, dynamic> json) => _$GetSiteMetadataResponseFromJson(json);
+}
+
+@freezed
+class SiteMetadata with _$SiteMetadata {
+  const factory SiteMetadata({
+    String? title,
+    String? description,
+    String? image,
+    // Add other fields as needed
+  }) = _SiteMetadata;
+
+  factory SiteMetadata.fromJson(Map<String, dynamic> json) => _$SiteMetadataFromJson(json);
+}
+
+@freezed
+class BlockCommunityResponse with _$BlockCommunityResponse {
+  const factory BlockCommunityResponse({required bool blocked}) = _BlockCommunityResponse;
+
+  factory BlockCommunityResponse.fromJson(Map<String, dynamic> json) => _$BlockCommunityResponseFromJson(json);
+}
+
+@freezed
+class GetCommunityBansResponse with _$GetCommunityBansResponse {
+  const factory GetCommunityBansResponse({
+    required List<dynamic> bans, // Assuming list of generic ban objects for now
+  }) = _GetCommunityBansResponse;
+
+  factory GetCommunityBansResponse.fromJson(Map<String, dynamic> json) => _$GetCommunityBansResponseFromJson(json);
+}

@@ -454,8 +454,8 @@ mixin _$Community {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  @JsonKey(name: 'actor_id')
-  String get actorId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ap_id')
+  String get apId => throw _privateConstructorUsedError;
   bool get local => throw _privateConstructorUsedError;
   bool get nsfw => throw _privateConstructorUsedError;
   bool get deleted => throw _privateConstructorUsedError;
@@ -488,7 +488,7 @@ abstract class $CommunityCopyWith<$Res> {
     int id,
     String name,
     String title,
-    @JsonKey(name: 'actor_id') String actorId,
+    @JsonKey(name: 'ap_id') String apId,
     bool local,
     bool nsfw,
     bool deleted,
@@ -520,7 +520,7 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community>
     Object? id = null,
     Object? name = null,
     Object? title = null,
-    Object? actorId = null,
+    Object? apId = null,
     Object? local = null,
     Object? nsfw = null,
     Object? deleted = null,
@@ -549,10 +549,10 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community>
                     ? _value.title
                     : title // ignore: cast_nullable_to_non_nullable
                         as String,
-            actorId:
-                null == actorId
-                    ? _value.actorId
-                    : actorId // ignore: cast_nullable_to_non_nullable
+            apId:
+                null == apId
+                    ? _value.apId
+                    : apId // ignore: cast_nullable_to_non_nullable
                         as String,
             local:
                 null == local
@@ -623,7 +623,7 @@ abstract class _$$CommunityImplCopyWith<$Res>
     int id,
     String name,
     String title,
-    @JsonKey(name: 'actor_id') String actorId,
+    @JsonKey(name: 'ap_id') String apId,
     bool local,
     bool nsfw,
     bool deleted,
@@ -654,7 +654,7 @@ class __$$CommunityImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? title = null,
-    Object? actorId = null,
+    Object? apId = null,
     Object? local = null,
     Object? nsfw = null,
     Object? deleted = null,
@@ -683,10 +683,10 @@ class __$$CommunityImplCopyWithImpl<$Res>
                 ? _value.title
                 : title // ignore: cast_nullable_to_non_nullable
                     as String,
-        actorId:
-            null == actorId
-                ? _value.actorId
-                : actorId // ignore: cast_nullable_to_non_nullable
+        apId:
+            null == apId
+                ? _value.apId
+                : apId // ignore: cast_nullable_to_non_nullable
                     as String,
         local:
             null == local
@@ -750,7 +750,7 @@ class _$CommunityImpl implements _Community {
     required this.id,
     required this.name,
     required this.title,
-    @JsonKey(name: 'actor_id') required this.actorId,
+    @JsonKey(name: 'ap_id') required this.apId,
     required this.local,
     required this.nsfw,
     required this.deleted,
@@ -774,8 +774,8 @@ class _$CommunityImpl implements _Community {
   @override
   final String title;
   @override
-  @JsonKey(name: 'actor_id')
-  final String actorId;
+  @JsonKey(name: 'ap_id')
+  final String apId;
   @override
   final bool local;
   @override
@@ -801,7 +801,7 @@ class _$CommunityImpl implements _Community {
 
   @override
   String toString() {
-    return 'Community(id: $id, name: $name, title: $title, actorId: $actorId, local: $local, nsfw: $nsfw, deleted: $deleted, hidden: $hidden, removed: $removed, instanceId: $instanceId, aiGenerated: $aiGenerated, description: $description, icon: $icon, banner: $banner)';
+    return 'Community(id: $id, name: $name, title: $title, apId: $apId, local: $local, nsfw: $nsfw, deleted: $deleted, hidden: $hidden, removed: $removed, instanceId: $instanceId, aiGenerated: $aiGenerated, description: $description, icon: $icon, banner: $banner)';
   }
 
   @override
@@ -812,7 +812,7 @@ class _$CommunityImpl implements _Community {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.actorId, actorId) || other.actorId == actorId) &&
+            (identical(other.apId, apId) || other.apId == apId) &&
             (identical(other.local, local) || other.local == local) &&
             (identical(other.nsfw, nsfw) || other.nsfw == nsfw) &&
             (identical(other.deleted, deleted) || other.deleted == deleted) &&
@@ -835,7 +835,7 @@ class _$CommunityImpl implements _Community {
     id,
     name,
     title,
-    actorId,
+    apId,
     local,
     nsfw,
     deleted,
@@ -867,7 +867,7 @@ abstract class _Community implements Community {
     required final int id,
     required final String name,
     required final String title,
-    @JsonKey(name: 'actor_id') required final String actorId,
+    @JsonKey(name: 'ap_id') required final String apId,
     required final bool local,
     required final bool nsfw,
     required final bool deleted,
@@ -891,8 +891,8 @@ abstract class _Community implements Community {
   @override
   String get title;
   @override
-  @JsonKey(name: 'actor_id')
-  String get actorId;
+  @JsonKey(name: 'ap_id')
+  String get apId;
   @override
   bool get local;
   @override
@@ -932,14 +932,14 @@ Post _$PostFromJson(Map<String, dynamic> json) {
 mixin _$Post {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  @JsonKey(name: 'actor_id')
-  String get actorId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ap_id')
+  String get apId => throw _privateConstructorUsedError;
   bool get local => throw _privateConstructorUsedError;
   bool get nsfw => throw _privateConstructorUsedError;
   bool get deleted => throw _privateConstructorUsedError;
   bool get removed => throw _privateConstructorUsedError;
-  @JsonKey(name: 'creator_id')
-  int get creatorId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  int get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'community_id')
   int get communityId => throw _privateConstructorUsedError;
   String? get body => throw _privateConstructorUsedError;
@@ -967,12 +967,12 @@ abstract class $PostCopyWith<$Res> {
   $Res call({
     int id,
     String title,
-    @JsonKey(name: 'actor_id') String actorId,
+    @JsonKey(name: 'ap_id') String apId,
     bool local,
     bool nsfw,
     bool deleted,
     bool removed,
-    @JsonKey(name: 'creator_id') int creatorId,
+    @JsonKey(name: 'user_id') int userId,
     @JsonKey(name: 'community_id') int communityId,
     String? body,
     String? url,
@@ -999,12 +999,12 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? actorId = null,
+    Object? apId = null,
     Object? local = null,
     Object? nsfw = null,
     Object? deleted = null,
     Object? removed = null,
-    Object? creatorId = null,
+    Object? userId = null,
     Object? communityId = null,
     Object? body = freezed,
     Object? url = freezed,
@@ -1024,10 +1024,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
                     ? _value.title
                     : title // ignore: cast_nullable_to_non_nullable
                         as String,
-            actorId:
-                null == actorId
-                    ? _value.actorId
-                    : actorId // ignore: cast_nullable_to_non_nullable
+            apId:
+                null == apId
+                    ? _value.apId
+                    : apId // ignore: cast_nullable_to_non_nullable
                         as String,
             local:
                 null == local
@@ -1049,10 +1049,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
                     ? _value.removed
                     : removed // ignore: cast_nullable_to_non_nullable
                         as bool,
-            creatorId:
-                null == creatorId
-                    ? _value.creatorId
-                    : creatorId // ignore: cast_nullable_to_non_nullable
+            userId:
+                null == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
                         as int,
             communityId:
                 null == communityId
@@ -1101,12 +1101,12 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
   $Res call({
     int id,
     String title,
-    @JsonKey(name: 'actor_id') String actorId,
+    @JsonKey(name: 'ap_id') String apId,
     bool local,
     bool nsfw,
     bool deleted,
     bool removed,
-    @JsonKey(name: 'creator_id') int creatorId,
+    @JsonKey(name: 'user_id') int userId,
     @JsonKey(name: 'community_id') int communityId,
     String? body,
     String? url,
@@ -1130,12 +1130,12 @@ class __$$PostImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? actorId = null,
+    Object? apId = null,
     Object? local = null,
     Object? nsfw = null,
     Object? deleted = null,
     Object? removed = null,
-    Object? creatorId = null,
+    Object? userId = null,
     Object? communityId = null,
     Object? body = freezed,
     Object? url = freezed,
@@ -1155,10 +1155,10 @@ class __$$PostImplCopyWithImpl<$Res>
                 ? _value.title
                 : title // ignore: cast_nullable_to_non_nullable
                     as String,
-        actorId:
-            null == actorId
-                ? _value.actorId
-                : actorId // ignore: cast_nullable_to_non_nullable
+        apId:
+            null == apId
+                ? _value.apId
+                : apId // ignore: cast_nullable_to_non_nullable
                     as String,
         local:
             null == local
@@ -1180,10 +1180,10 @@ class __$$PostImplCopyWithImpl<$Res>
                 ? _value.removed
                 : removed // ignore: cast_nullable_to_non_nullable
                     as bool,
-        creatorId:
-            null == creatorId
-                ? _value.creatorId
-                : creatorId // ignore: cast_nullable_to_non_nullable
+        userId:
+            null == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
                     as int,
         communityId:
             null == communityId
@@ -1226,12 +1226,12 @@ class _$PostImpl implements _Post {
   const _$PostImpl({
     required this.id,
     required this.title,
-    @JsonKey(name: 'actor_id') required this.actorId,
+    @JsonKey(name: 'ap_id') required this.apId,
     required this.local,
     required this.nsfw,
     required this.deleted,
     required this.removed,
-    @JsonKey(name: 'creator_id') required this.creatorId,
+    @JsonKey(name: 'user_id') required this.userId,
     @JsonKey(name: 'community_id') required this.communityId,
     this.body,
     this.url,
@@ -1248,8 +1248,8 @@ class _$PostImpl implements _Post {
   @override
   final String title;
   @override
-  @JsonKey(name: 'actor_id')
-  final String actorId;
+  @JsonKey(name: 'ap_id')
+  final String apId;
   @override
   final bool local;
   @override
@@ -1259,8 +1259,8 @@ class _$PostImpl implements _Post {
   @override
   final bool removed;
   @override
-  @JsonKey(name: 'creator_id')
-  final int creatorId;
+  @JsonKey(name: 'user_id')
+  final int userId;
   @override
   @JsonKey(name: 'community_id')
   final int communityId;
@@ -1279,7 +1279,7 @@ class _$PostImpl implements _Post {
 
   @override
   String toString() {
-    return 'Post(id: $id, title: $title, actorId: $actorId, local: $local, nsfw: $nsfw, deleted: $deleted, removed: $removed, creatorId: $creatorId, communityId: $communityId, body: $body, url: $url, thumbnailUrl: $thumbnailUrl, published: $published, updated: $updated)';
+    return 'Post(id: $id, title: $title, apId: $apId, local: $local, nsfw: $nsfw, deleted: $deleted, removed: $removed, userId: $userId, communityId: $communityId, body: $body, url: $url, thumbnailUrl: $thumbnailUrl, published: $published, updated: $updated)';
   }
 
   @override
@@ -1289,13 +1289,12 @@ class _$PostImpl implements _Post {
             other is _$PostImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.actorId, actorId) || other.actorId == actorId) &&
+            (identical(other.apId, apId) || other.apId == apId) &&
             (identical(other.local, local) || other.local == local) &&
             (identical(other.nsfw, nsfw) || other.nsfw == nsfw) &&
             (identical(other.deleted, deleted) || other.deleted == deleted) &&
             (identical(other.removed, removed) || other.removed == removed) &&
-            (identical(other.creatorId, creatorId) ||
-                other.creatorId == creatorId) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.communityId, communityId) ||
                 other.communityId == communityId) &&
             (identical(other.body, body) || other.body == body) &&
@@ -1313,12 +1312,12 @@ class _$PostImpl implements _Post {
     runtimeType,
     id,
     title,
-    actorId,
+    apId,
     local,
     nsfw,
     deleted,
     removed,
-    creatorId,
+    userId,
     communityId,
     body,
     url,
@@ -1345,12 +1344,12 @@ abstract class _Post implements Post {
   const factory _Post({
     required final int id,
     required final String title,
-    @JsonKey(name: 'actor_id') required final String actorId,
+    @JsonKey(name: 'ap_id') required final String apId,
     required final bool local,
     required final bool nsfw,
     required final bool deleted,
     required final bool removed,
-    @JsonKey(name: 'creator_id') required final int creatorId,
+    @JsonKey(name: 'user_id') required final int userId,
     @JsonKey(name: 'community_id') required final int communityId,
     final String? body,
     final String? url,
@@ -1366,8 +1365,8 @@ abstract class _Post implements Post {
   @override
   String get title;
   @override
-  @JsonKey(name: 'actor_id')
-  String get actorId;
+  @JsonKey(name: 'ap_id')
+  String get apId;
   @override
   bool get local;
   @override
@@ -1377,8 +1376,8 @@ abstract class _Post implements Post {
   @override
   bool get removed;
   @override
-  @JsonKey(name: 'creator_id')
-  int get creatorId;
+  @JsonKey(name: 'user_id')
+  int get userId;
   @override
   @JsonKey(name: 'community_id')
   int get communityId;
@@ -1977,8 +1976,8 @@ mixin _$Comment {
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'ap_id')
   String get apId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'creator_id')
-  int? get creatorId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  int? get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'post_id')
   int get postId => throw _privateConstructorUsedError;
   String get body => throw _privateConstructorUsedError;
@@ -2009,7 +2008,7 @@ abstract class $CommentCopyWith<$Res> {
   $Res call({
     int id,
     @JsonKey(name: 'ap_id') String apId,
-    @JsonKey(name: 'creator_id') int? creatorId,
+    @JsonKey(name: 'user_id') int? userId,
     @JsonKey(name: 'post_id') int postId,
     String body,
     bool local,
@@ -2040,7 +2039,7 @@ class _$CommentCopyWithImpl<$Res, $Val extends Comment>
   $Res call({
     Object? id = null,
     Object? apId = null,
-    Object? creatorId = freezed,
+    Object? userId = freezed,
     Object? postId = null,
     Object? body = null,
     Object? local = null,
@@ -2064,10 +2063,10 @@ class _$CommentCopyWithImpl<$Res, $Val extends Comment>
                     ? _value.apId
                     : apId // ignore: cast_nullable_to_non_nullable
                         as String,
-            creatorId:
-                freezed == creatorId
-                    ? _value.creatorId
-                    : creatorId // ignore: cast_nullable_to_non_nullable
+            userId:
+                freezed == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
                         as int?,
             postId:
                 null == postId
@@ -2136,7 +2135,7 @@ abstract class _$$CommentImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
   $Res call({
     int id,
     @JsonKey(name: 'ap_id') String apId,
-    @JsonKey(name: 'creator_id') int? creatorId,
+    @JsonKey(name: 'user_id') int? userId,
     @JsonKey(name: 'post_id') int postId,
     String body,
     bool local,
@@ -2166,7 +2165,7 @@ class __$$CommentImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? apId = null,
-    Object? creatorId = freezed,
+    Object? userId = freezed,
     Object? postId = null,
     Object? body = null,
     Object? local = null,
@@ -2190,10 +2189,10 @@ class __$$CommentImplCopyWithImpl<$Res>
                 ? _value.apId
                 : apId // ignore: cast_nullable_to_non_nullable
                     as String,
-        creatorId:
-            freezed == creatorId
-                ? _value.creatorId
-                : creatorId // ignore: cast_nullable_to_non_nullable
+        userId:
+            freezed == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
                     as int?,
         postId:
             null == postId
@@ -2256,7 +2255,7 @@ class _$CommentImpl implements _Comment {
   const _$CommentImpl({
     required this.id,
     @JsonKey(name: 'ap_id') required this.apId,
-    @JsonKey(name: 'creator_id') this.creatorId,
+    @JsonKey(name: 'user_id') this.userId,
     @JsonKey(name: 'post_id') required this.postId,
     required this.body,
     required this.local,
@@ -2278,8 +2277,8 @@ class _$CommentImpl implements _Comment {
   @JsonKey(name: 'ap_id')
   final String apId;
   @override
-  @JsonKey(name: 'creator_id')
-  final int? creatorId;
+  @JsonKey(name: 'user_id')
+  final int? userId;
   @override
   @JsonKey(name: 'post_id')
   final int postId;
@@ -2305,7 +2304,7 @@ class _$CommentImpl implements _Comment {
 
   @override
   String toString() {
-    return 'Comment(id: $id, apId: $apId, creatorId: $creatorId, postId: $postId, body: $body, local: $local, deleted: $deleted, removed: $removed, path: $path, distinguished: $distinguished, languageId: $languageId, published: $published, updated: $updated)';
+    return 'Comment(id: $id, apId: $apId, userId: $userId, postId: $postId, body: $body, local: $local, deleted: $deleted, removed: $removed, path: $path, distinguished: $distinguished, languageId: $languageId, published: $published, updated: $updated)';
   }
 
   @override
@@ -2315,8 +2314,7 @@ class _$CommentImpl implements _Comment {
             other is _$CommentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.apId, apId) || other.apId == apId) &&
-            (identical(other.creatorId, creatorId) ||
-                other.creatorId == creatorId) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.postId, postId) || other.postId == postId) &&
             (identical(other.body, body) || other.body == body) &&
             (identical(other.local, local) || other.local == local) &&
@@ -2338,7 +2336,7 @@ class _$CommentImpl implements _Comment {
     runtimeType,
     id,
     apId,
-    creatorId,
+    userId,
     postId,
     body,
     local,
@@ -2369,7 +2367,7 @@ abstract class _Comment implements Comment {
   const factory _Comment({
     required final int id,
     @JsonKey(name: 'ap_id') required final String apId,
-    @JsonKey(name: 'creator_id') final int? creatorId,
+    @JsonKey(name: 'user_id') final int? userId,
     @JsonKey(name: 'post_id') required final int postId,
     required final String body,
     required final bool local,
@@ -2390,8 +2388,8 @@ abstract class _Comment implements Comment {
   @JsonKey(name: 'ap_id')
   String get apId;
   @override
-  @JsonKey(name: 'creator_id')
-  int? get creatorId;
+  @JsonKey(name: 'user_id')
+  int? get userId;
   @override
   @JsonKey(name: 'post_id')
   int get postId;
@@ -2430,8 +2428,8 @@ PrivateMessage _$PrivateMessageFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PrivateMessage {
   int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'creator_id')
-  int get creatorId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  int get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'recipient_id')
   int get recipientId => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
@@ -2459,7 +2457,7 @@ abstract class $PrivateMessageCopyWith<$Res> {
   @useResult
   $Res call({
     int id,
-    @JsonKey(name: 'creator_id') int creatorId,
+    @JsonKey(name: 'user_id') int userId,
     @JsonKey(name: 'recipient_id') int recipientId,
     String content,
     bool deleted,
@@ -2485,7 +2483,7 @@ class _$PrivateMessageCopyWithImpl<$Res, $Val extends PrivateMessage>
   @override
   $Res call({
     Object? id = null,
-    Object? creatorId = null,
+    Object? userId = null,
     Object? recipientId = null,
     Object? content = null,
     Object? deleted = null,
@@ -2500,10 +2498,10 @@ class _$PrivateMessageCopyWithImpl<$Res, $Val extends PrivateMessage>
                     ? _value.id
                     : id // ignore: cast_nullable_to_non_nullable
                         as int,
-            creatorId:
-                null == creatorId
-                    ? _value.creatorId
-                    : creatorId // ignore: cast_nullable_to_non_nullable
+            userId:
+                null == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
                         as int,
             recipientId:
                 null == recipientId
@@ -2552,7 +2550,7 @@ abstract class _$$PrivateMessageImplCopyWith<$Res>
   @useResult
   $Res call({
     int id,
-    @JsonKey(name: 'creator_id') int creatorId,
+    @JsonKey(name: 'user_id') int userId,
     @JsonKey(name: 'recipient_id') int recipientId,
     String content,
     bool deleted,
@@ -2577,7 +2575,7 @@ class __$$PrivateMessageImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? creatorId = null,
+    Object? userId = null,
     Object? recipientId = null,
     Object? content = null,
     Object? deleted = null,
@@ -2592,10 +2590,10 @@ class __$$PrivateMessageImplCopyWithImpl<$Res>
                 ? _value.id
                 : id // ignore: cast_nullable_to_non_nullable
                     as int,
-        creatorId:
-            null == creatorId
-                ? _value.creatorId
-                : creatorId // ignore: cast_nullable_to_non_nullable
+        userId:
+            null == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
                     as int,
         recipientId:
             null == recipientId
@@ -2637,7 +2635,7 @@ class __$$PrivateMessageImplCopyWithImpl<$Res>
 class _$PrivateMessageImpl implements _PrivateMessage {
   const _$PrivateMessageImpl({
     required this.id,
-    @JsonKey(name: 'creator_id') required this.creatorId,
+    @JsonKey(name: 'user_id') required this.userId,
     @JsonKey(name: 'recipient_id') required this.recipientId,
     required this.content,
     required this.deleted,
@@ -2652,8 +2650,8 @@ class _$PrivateMessageImpl implements _PrivateMessage {
   @override
   final int id;
   @override
-  @JsonKey(name: 'creator_id')
-  final int creatorId;
+  @JsonKey(name: 'user_id')
+  final int userId;
   @override
   @JsonKey(name: 'recipient_id')
   final int recipientId;
@@ -2670,7 +2668,7 @@ class _$PrivateMessageImpl implements _PrivateMessage {
 
   @override
   String toString() {
-    return 'PrivateMessage(id: $id, creatorId: $creatorId, recipientId: $recipientId, content: $content, deleted: $deleted, read: $read, published: $published, updated: $updated)';
+    return 'PrivateMessage(id: $id, userId: $userId, recipientId: $recipientId, content: $content, deleted: $deleted, read: $read, published: $published, updated: $updated)';
   }
 
   @override
@@ -2679,8 +2677,7 @@ class _$PrivateMessageImpl implements _PrivateMessage {
         (other.runtimeType == runtimeType &&
             other is _$PrivateMessageImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.creatorId, creatorId) ||
-                other.creatorId == creatorId) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.recipientId, recipientId) ||
                 other.recipientId == recipientId) &&
             (identical(other.content, content) || other.content == content) &&
@@ -2696,7 +2693,7 @@ class _$PrivateMessageImpl implements _PrivateMessage {
   int get hashCode => Object.hash(
     runtimeType,
     id,
-    creatorId,
+    userId,
     recipientId,
     content,
     deleted,
@@ -2725,7 +2722,7 @@ class _$PrivateMessageImpl implements _PrivateMessage {
 abstract class _PrivateMessage implements PrivateMessage {
   const factory _PrivateMessage({
     required final int id,
-    @JsonKey(name: 'creator_id') required final int creatorId,
+    @JsonKey(name: 'user_id') required final int userId,
     @JsonKey(name: 'recipient_id') required final int recipientId,
     required final String content,
     required final bool deleted,
@@ -2740,8 +2737,8 @@ abstract class _PrivateMessage implements PrivateMessage {
   @override
   int get id;
   @override
-  @JsonKey(name: 'creator_id')
-  int get creatorId;
+  @JsonKey(name: 'user_id')
+  int get userId;
   @override
   @JsonKey(name: 'recipient_id')
   int get recipientId;
