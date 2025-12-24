@@ -29,7 +29,7 @@ class Community with _$Community {
     required int id,
     required String name,
     required String title,
-    @JsonKey(name: 'ap_id') required String apId,
+    @JsonKey(name: 'actor_id') required String apId,
     required bool local,
     required bool nsfw,
     required bool deleted,
@@ -84,7 +84,7 @@ class Site with _$Site {
 
 @freezed
 class Instance with _$Instance {
-  const factory Instance({required int id, required String domain, required DateTime published, String? software, required String version}) = _Instance;
+  const factory Instance({required int id, required String domain, required DateTime published, String? software, String? version}) = _Instance;
 
   factory Instance.fromJson(Map<String, dynamic> json) => _$InstanceFromJson(json);
 }

@@ -262,6 +262,7 @@ CommunityView _$CommunityViewFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CommunityView {
   Community get community => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _subscribedFromJson)
   bool get subscribed => throw _privateConstructorUsedError;
   bool get blocked => throw _privateConstructorUsedError;
   CommunityAggregates get counts => throw _privateConstructorUsedError;
@@ -285,7 +286,7 @@ abstract class $CommunityViewCopyWith<$Res> {
   @useResult
   $Res call({
     Community community,
-    bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) bool subscribed,
     bool blocked,
     CommunityAggregates counts,
   });
@@ -373,7 +374,7 @@ abstract class _$$CommunityViewImplCopyWith<$Res>
   @useResult
   $Res call({
     Community community,
-    bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) bool subscribed,
     bool blocked,
     CommunityAggregates counts,
   });
@@ -435,7 +436,7 @@ class __$$CommunityViewImplCopyWithImpl<$Res>
 class _$CommunityViewImpl implements _CommunityView {
   const _$CommunityViewImpl({
     required this.community,
-    required this.subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) required this.subscribed,
     required this.blocked,
     required this.counts,
   });
@@ -446,6 +447,7 @@ class _$CommunityViewImpl implements _CommunityView {
   @override
   final Community community;
   @override
+  @JsonKey(fromJson: _subscribedFromJson)
   final bool subscribed;
   @override
   final bool blocked;
@@ -492,7 +494,7 @@ class _$CommunityViewImpl implements _CommunityView {
 abstract class _CommunityView implements CommunityView {
   const factory _CommunityView({
     required final Community community,
-    required final bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) required final bool subscribed,
     required final bool blocked,
     required final CommunityAggregates counts,
   }) = _$CommunityViewImpl;
@@ -503,6 +505,7 @@ abstract class _CommunityView implements CommunityView {
   @override
   Community get community;
   @override
+  @JsonKey(fromJson: _subscribedFromJson)
   bool get subscribed;
   @override
   bool get blocked;
@@ -967,6 +970,7 @@ mixin _$PostView {
   Community get community => throw _privateConstructorUsedError;
   bool get creatorBannedFromCommunity => throw _privateConstructorUsedError;
   PostAggregates get counts => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _subscribedFromJson)
   bool get subscribed => throw _privateConstructorUsedError;
   bool get saved => throw _privateConstructorUsedError;
   bool get read => throw _privateConstructorUsedError;
@@ -994,7 +998,7 @@ abstract class $PostViewCopyWith<$Res> {
     Community community,
     bool creatorBannedFromCommunity,
     PostAggregates counts,
-    bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) bool subscribed,
     bool saved,
     bool read,
     bool creatorBlocked,
@@ -1146,7 +1150,7 @@ abstract class _$$PostViewImplCopyWith<$Res>
     Community community,
     bool creatorBannedFromCommunity,
     PostAggregates counts,
-    bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) bool subscribed,
     bool saved,
     bool read,
     bool creatorBlocked,
@@ -1254,7 +1258,7 @@ class _$PostViewImpl implements _PostView {
     required this.community,
     required this.creatorBannedFromCommunity,
     required this.counts,
-    required this.subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) required this.subscribed,
     required this.saved,
     required this.read,
     required this.creatorBlocked,
@@ -1275,6 +1279,7 @@ class _$PostViewImpl implements _PostView {
   @override
   final PostAggregates counts;
   @override
+  @JsonKey(fromJson: _subscribedFromJson)
   final bool subscribed;
   @override
   final bool saved;
@@ -1352,7 +1357,7 @@ abstract class _PostView implements PostView {
     required final Community community,
     required final bool creatorBannedFromCommunity,
     required final PostAggregates counts,
-    required final bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) required final bool subscribed,
     required final bool saved,
     required final bool read,
     required final bool creatorBlocked,
@@ -1373,6 +1378,7 @@ abstract class _PostView implements PostView {
   @override
   PostAggregates get counts;
   @override
+  @JsonKey(fromJson: _subscribedFromJson)
   bool get subscribed;
   @override
   bool get saved;

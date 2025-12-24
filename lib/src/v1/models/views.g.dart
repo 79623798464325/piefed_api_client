@@ -23,7 +23,7 @@ Map<String, dynamic> _$$PersonViewImplToJson(_$PersonViewImpl instance) =>
 _$CommunityViewImpl _$$CommunityViewImplFromJson(Map<String, dynamic> json) =>
     _$CommunityViewImpl(
       community: Community.fromJson(json['community'] as Map<String, dynamic>),
-      subscribed: json['subscribed'] as bool,
+      subscribed: _subscribedFromJson(json['subscribed']),
       blocked: json['blocked'] as bool,
       counts: CommunityAggregates.fromJson(
         json['counts'] as Map<String, dynamic>,
@@ -73,7 +73,7 @@ _$PostViewImpl _$$PostViewImplFromJson(Map<String, dynamic> json) =>
       community: Community.fromJson(json['community'] as Map<String, dynamic>),
       creatorBannedFromCommunity: json['creatorBannedFromCommunity'] as bool,
       counts: PostAggregates.fromJson(json['counts'] as Map<String, dynamic>),
-      subscribed: json['subscribed'] as bool,
+      subscribed: _subscribedFromJson(json['subscribed']),
       saved: json['saved'] as bool,
       read: json['read'] as bool,
       creatorBlocked: json['creatorBlocked'] as bool,

@@ -13,9 +13,18 @@ class PersonView with _$PersonView {
   factory PersonView.fromJson(Map<String, dynamic> json) => _$PersonViewFromJson(json);
 }
 
+bool _subscribedFromJson(dynamic input) {
+  if (input is bool) return input;
+  if (input is String) {
+    return input == 'Subscribed';
+  }
+  return false;
+}
+
 @freezed
 class CommunityView with _$CommunityView {
-  const factory CommunityView({required Community community, required bool subscribed, required bool blocked, required CommunityAggregates counts}) = _CommunityView;
+  const factory CommunityView({required Community community, @JsonKey(fromJson: _subscribedFromJson) required bool subscribed, required bool blocked, required CommunityAggregates counts}) =
+      _CommunityView;
 
   factory CommunityView.fromJson(Map<String, dynamic> json) => _$CommunityViewFromJson(json);
 }
@@ -45,7 +54,7 @@ class PostView with _$PostView {
     required Community community,
     required bool creatorBannedFromCommunity,
     required PostAggregates counts,
-    required bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) required bool subscribed,
     required bool saved,
     required bool read,
     required bool creatorBlocked,

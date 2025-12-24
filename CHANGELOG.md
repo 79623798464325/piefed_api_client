@@ -1,4 +1,14 @@
 # Changelog
+## 0.6.1
+
+*   Fixes:
+    *   `Instance.version`: Now nullable to handle missing field in API responses.
+    *   `Community.apId`: Mapped from `actor_id` instead of `ap_id` to match live API.
+    *   `CommunityView` & `PostView`: Correctly parse `subscribed` field when returned as a String ("Subscribed"/"NotSubscribed").
+*   Tests:
+    *   Added comprehensive full-model serialization tests (`test/full_models_test.dart`).
+    *   Added API response parsing tests with mocks (`test/response_parsing_test.dart`).
+    *   Added live integration tests against `crust.piefed.social` (`test/live_api_test.dart`).
 
 ## 0.6.0
 

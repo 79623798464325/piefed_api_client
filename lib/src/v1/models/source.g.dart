@@ -42,7 +42,7 @@ _$CommunityImpl _$$CommunityImplFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       title: json['title'] as String,
-      apId: json['ap_id'] as String,
+      apId: json['actor_id'] as String,
       local: json['local'] as bool,
       nsfw: json['nsfw'] as bool,
       deleted: json['deleted'] as bool,
@@ -60,7 +60,7 @@ Map<String, dynamic> _$$CommunityImplToJson(_$CommunityImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'title': instance.title,
-      'ap_id': instance.apId,
+      'actor_id': instance.apId,
       'local': instance.local,
       'nsfw': instance.nsfw,
       'deleted': instance.deleted,
@@ -138,7 +138,7 @@ _$InstanceImpl _$$InstanceImplFromJson(Map<String, dynamic> json) =>
       domain: json['domain'] as String,
       published: DateTime.parse(json['published'] as String),
       software: json['software'] as String?,
-      version: json['version'] as String,
+      version: json['version'] as String?,
     );
 
 Map<String, dynamic> _$$InstanceImplToJson(_$InstanceImpl instance) =>

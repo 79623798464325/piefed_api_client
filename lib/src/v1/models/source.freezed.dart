@@ -454,7 +454,7 @@ mixin _$Community {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ap_id')
+  @JsonKey(name: 'actor_id')
   String get apId => throw _privateConstructorUsedError;
   bool get local => throw _privateConstructorUsedError;
   bool get nsfw => throw _privateConstructorUsedError;
@@ -488,7 +488,7 @@ abstract class $CommunityCopyWith<$Res> {
     int id,
     String name,
     String title,
-    @JsonKey(name: 'ap_id') String apId,
+    @JsonKey(name: 'actor_id') String apId,
     bool local,
     bool nsfw,
     bool deleted,
@@ -623,7 +623,7 @@ abstract class _$$CommunityImplCopyWith<$Res>
     int id,
     String name,
     String title,
-    @JsonKey(name: 'ap_id') String apId,
+    @JsonKey(name: 'actor_id') String apId,
     bool local,
     bool nsfw,
     bool deleted,
@@ -750,7 +750,7 @@ class _$CommunityImpl implements _Community {
     required this.id,
     required this.name,
     required this.title,
-    @JsonKey(name: 'ap_id') required this.apId,
+    @JsonKey(name: 'actor_id') required this.apId,
     required this.local,
     required this.nsfw,
     required this.deleted,
@@ -774,7 +774,7 @@ class _$CommunityImpl implements _Community {
   @override
   final String title;
   @override
-  @JsonKey(name: 'ap_id')
+  @JsonKey(name: 'actor_id')
   final String apId;
   @override
   final bool local;
@@ -867,7 +867,7 @@ abstract class _Community implements Community {
     required final int id,
     required final String name,
     required final String title,
-    @JsonKey(name: 'ap_id') required final String apId,
+    @JsonKey(name: 'actor_id') required final String apId,
     required final bool local,
     required final bool nsfw,
     required final bool deleted,
@@ -891,7 +891,7 @@ abstract class _Community implements Community {
   @override
   String get title;
   @override
-  @JsonKey(name: 'ap_id')
+  @JsonKey(name: 'actor_id')
   String get apId;
   @override
   bool get local;
@@ -1723,7 +1723,7 @@ mixin _$Instance {
   String get domain => throw _privateConstructorUsedError;
   DateTime get published => throw _privateConstructorUsedError;
   String? get software => throw _privateConstructorUsedError;
-  String get version => throw _privateConstructorUsedError;
+  String? get version => throw _privateConstructorUsedError;
 
   /// Serializes this Instance to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1745,7 +1745,7 @@ abstract class $InstanceCopyWith<$Res> {
     String domain,
     DateTime published,
     String? software,
-    String version,
+    String? version,
   });
 }
 
@@ -1768,7 +1768,7 @@ class _$InstanceCopyWithImpl<$Res, $Val extends Instance>
     Object? domain = null,
     Object? published = null,
     Object? software = freezed,
-    Object? version = null,
+    Object? version = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -1793,10 +1793,10 @@ class _$InstanceCopyWithImpl<$Res, $Val extends Instance>
                     : software // ignore: cast_nullable_to_non_nullable
                         as String?,
             version:
-                null == version
+                freezed == version
                     ? _value.version
                     : version // ignore: cast_nullable_to_non_nullable
-                        as String,
+                        as String?,
           )
           as $Val,
     );
@@ -1817,7 +1817,7 @@ abstract class _$$InstanceImplCopyWith<$Res>
     String domain,
     DateTime published,
     String? software,
-    String version,
+    String? version,
   });
 }
 
@@ -1839,7 +1839,7 @@ class __$$InstanceImplCopyWithImpl<$Res>
     Object? domain = null,
     Object? published = null,
     Object? software = freezed,
-    Object? version = null,
+    Object? version = freezed,
   }) {
     return _then(
       _$InstanceImpl(
@@ -1864,10 +1864,10 @@ class __$$InstanceImplCopyWithImpl<$Res>
                 : software // ignore: cast_nullable_to_non_nullable
                     as String?,
         version:
-            null == version
+            freezed == version
                 ? _value.version
                 : version // ignore: cast_nullable_to_non_nullable
-                    as String,
+                    as String?,
       ),
     );
   }
@@ -1881,7 +1881,7 @@ class _$InstanceImpl implements _Instance {
     required this.domain,
     required this.published,
     this.software,
-    required this.version,
+    this.version,
   });
 
   factory _$InstanceImpl.fromJson(Map<String, dynamic> json) =>
@@ -1896,7 +1896,7 @@ class _$InstanceImpl implements _Instance {
   @override
   final String? software;
   @override
-  final String version;
+  final String? version;
 
   @override
   String toString() {
@@ -1942,7 +1942,7 @@ abstract class _Instance implements Instance {
     required final String domain,
     required final DateTime published,
     final String? software,
-    required final String version,
+    final String? version,
   }) = _$InstanceImpl;
 
   factory _Instance.fromJson(Map<String, dynamic> json) =
@@ -1957,7 +1957,7 @@ abstract class _Instance implements Instance {
   @override
   String? get software;
   @override
-  String get version;
+  String? get version;
 
   /// Create a copy of Instance
   /// with the given fields replaced by the non-null parameter values.
