@@ -52,13 +52,13 @@ class PostView with _$PostView {
     required Post post,
     required Person creator,
     required Community community,
-    required bool creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false) required bool creatorBannedFromCommunity,
     required PostAggregates counts,
     @JsonKey(fromJson: _subscribedFromJson) required bool subscribed,
     required bool saved,
     required bool read,
-    required bool creatorBlocked,
-    int? myVote,
+    @JsonKey(name: 'creator_blocked', defaultValue: false) required bool creatorBlocked,
+    @JsonKey(name: 'my_vote') int? myVote,
   }) = _PostView;
 
   factory PostView.fromJson(Map<String, dynamic> json) => _$PostViewFromJson(json);

@@ -71,13 +71,14 @@ _$PostViewImpl _$$PostViewImplFromJson(Map<String, dynamic> json) =>
       post: Post.fromJson(json['post'] as Map<String, dynamic>),
       creator: Person.fromJson(json['creator'] as Map<String, dynamic>),
       community: Community.fromJson(json['community'] as Map<String, dynamic>),
-      creatorBannedFromCommunity: json['creatorBannedFromCommunity'] as bool,
+      creatorBannedFromCommunity:
+          json['creator_banned_from_community'] as bool? ?? false,
       counts: PostAggregates.fromJson(json['counts'] as Map<String, dynamic>),
       subscribed: _subscribedFromJson(json['subscribed']),
       saved: json['saved'] as bool,
       read: json['read'] as bool,
-      creatorBlocked: json['creatorBlocked'] as bool,
-      myVote: (json['myVote'] as num?)?.toInt(),
+      creatorBlocked: json['creator_blocked'] as bool? ?? false,
+      myVote: (json['my_vote'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
@@ -85,13 +86,13 @@ Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
       'post': instance.post,
       'creator': instance.creator,
       'community': instance.community,
-      'creatorBannedFromCommunity': instance.creatorBannedFromCommunity,
+      'creator_banned_from_community': instance.creatorBannedFromCommunity,
       'counts': instance.counts,
       'subscribed': instance.subscribed,
       'saved': instance.saved,
       'read': instance.read,
-      'creatorBlocked': instance.creatorBlocked,
-      'myVote': instance.myVote,
+      'creator_blocked': instance.creatorBlocked,
+      'my_vote': instance.myVote,
     };
 
 _$PrivateMessageViewImpl _$$PrivateMessageViewImplFromJson(

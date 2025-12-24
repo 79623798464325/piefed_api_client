@@ -1,4 +1,10 @@
 # Changelog
+## 0.6.2
+
+*   Fixes:
+    *   `PostView`: Now correctly handles missing/null `creator_blocked` and `creator_banned_from_community` fields (defaults to false), resolving deserialization crashes on `piefed.social`.
+    *   `PieFedApiV1`: Added `apiPrefix` configuration to constructor (defaulting to `/api/alpha`) to support instances using different API paths.
+
 ## 0.6.1
 
 *   Fixes:

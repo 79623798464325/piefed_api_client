@@ -16,16 +16,16 @@ class PieFedApiV1 implements PieFedApi {
   final http.Client _client;
   final Duration timeout;
 
-  static const extraPath = '/api/alpha';
+  final String apiPrefix;
 
-  PieFedApiV1(this.host, {http.Client? client, this.timeout = const Duration(seconds: 30)}) : _client = client ?? http.Client();
+  PieFedApiV1(this.host, {this.apiPrefix = '/api/alpha', http.Client? client, this.timeout = const Duration(seconds: 30)}) : _client = client ?? http.Client();
 
   /// Whether this instance is targeting a localhost server.
   bool get _isLocalhost => host.contains('localhost');
 
   /// Builds a URI for the given path and optional query parameters.
   Uri _buildUri(String path, [Map<String, String>? queryParams]) {
-    return _isLocalhost ? Uri.http(host, '$extraPath$path', queryParams) : Uri.https(host, '$extraPath$path', queryParams);
+    return _isLocalhost ? Uri.http(host, '$apiPrefix$path', queryParams) : Uri.https(host, '$apiPrefix$path', queryParams);
   }
 
   /// Builds headers for the request, including authorization if present.

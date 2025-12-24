@@ -968,13 +968,16 @@ mixin _$PostView {
   Post get post => throw _privateConstructorUsedError;
   Person get creator => throw _privateConstructorUsedError;
   Community get community => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
   bool get creatorBannedFromCommunity => throw _privateConstructorUsedError;
   PostAggregates get counts => throw _privateConstructorUsedError;
   @JsonKey(fromJson: _subscribedFromJson)
   bool get subscribed => throw _privateConstructorUsedError;
   bool get saved => throw _privateConstructorUsedError;
   bool get read => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_blocked', defaultValue: false)
   bool get creatorBlocked => throw _privateConstructorUsedError;
+  @JsonKey(name: 'my_vote')
   int? get myVote => throw _privateConstructorUsedError;
 
   /// Serializes this PostView to a JSON map.
@@ -996,13 +999,14 @@ abstract class $PostViewCopyWith<$Res> {
     Post post,
     Person creator,
     Community community,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
     bool creatorBannedFromCommunity,
     PostAggregates counts,
     @JsonKey(fromJson: _subscribedFromJson) bool subscribed,
     bool saved,
     bool read,
-    bool creatorBlocked,
-    int? myVote,
+    @JsonKey(name: 'creator_blocked', defaultValue: false) bool creatorBlocked,
+    @JsonKey(name: 'my_vote') int? myVote,
   });
 
   $PostCopyWith<$Res> get post;
@@ -1148,13 +1152,14 @@ abstract class _$$PostViewImplCopyWith<$Res>
     Post post,
     Person creator,
     Community community,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
     bool creatorBannedFromCommunity,
     PostAggregates counts,
     @JsonKey(fromJson: _subscribedFromJson) bool subscribed,
     bool saved,
     bool read,
-    bool creatorBlocked,
-    int? myVote,
+    @JsonKey(name: 'creator_blocked', defaultValue: false) bool creatorBlocked,
+    @JsonKey(name: 'my_vote') int? myVote,
   });
 
   @override
@@ -1256,13 +1261,15 @@ class _$PostViewImpl implements _PostView {
     required this.post,
     required this.creator,
     required this.community,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
     required this.creatorBannedFromCommunity,
     required this.counts,
     @JsonKey(fromJson: _subscribedFromJson) required this.subscribed,
     required this.saved,
     required this.read,
+    @JsonKey(name: 'creator_blocked', defaultValue: false)
     required this.creatorBlocked,
-    this.myVote,
+    @JsonKey(name: 'my_vote') this.myVote,
   });
 
   factory _$PostViewImpl.fromJson(Map<String, dynamic> json) =>
@@ -1275,6 +1282,7 @@ class _$PostViewImpl implements _PostView {
   @override
   final Community community;
   @override
+  @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
   final bool creatorBannedFromCommunity;
   @override
   final PostAggregates counts;
@@ -1286,8 +1294,10 @@ class _$PostViewImpl implements _PostView {
   @override
   final bool read;
   @override
+  @JsonKey(name: 'creator_blocked', defaultValue: false)
   final bool creatorBlocked;
   @override
+  @JsonKey(name: 'my_vote')
   final int? myVote;
 
   @override
@@ -1355,13 +1365,15 @@ abstract class _PostView implements PostView {
     required final Post post,
     required final Person creator,
     required final Community community,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
     required final bool creatorBannedFromCommunity,
     required final PostAggregates counts,
     @JsonKey(fromJson: _subscribedFromJson) required final bool subscribed,
     required final bool saved,
     required final bool read,
+    @JsonKey(name: 'creator_blocked', defaultValue: false)
     required final bool creatorBlocked,
-    final int? myVote,
+    @JsonKey(name: 'my_vote') final int? myVote,
   }) = _$PostViewImpl;
 
   factory _PostView.fromJson(Map<String, dynamic> json) =
@@ -1374,6 +1386,7 @@ abstract class _PostView implements PostView {
   @override
   Community get community;
   @override
+  @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
   bool get creatorBannedFromCommunity;
   @override
   PostAggregates get counts;
@@ -1385,8 +1398,10 @@ abstract class _PostView implements PostView {
   @override
   bool get read;
   @override
+  @JsonKey(name: 'creator_blocked', defaultValue: false)
   bool get creatorBlocked;
   @override
+  @JsonKey(name: 'my_vote')
   int? get myVote;
 
   /// Create a copy of PostView
