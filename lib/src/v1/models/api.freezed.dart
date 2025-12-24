@@ -1638,3 +1638,597 @@ abstract class _GetFederatedInstancesResponse
   >
   get copyWith => throw _privateConstructorUsedError;
 }
+
+ListPostsResponse _$ListPostsResponseFromJson(Map<String, dynamic> json) {
+  return _ListPostsResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ListPostsResponse {
+  List<PostView> get posts => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_page')
+  String? get nextPage => throw _privateConstructorUsedError;
+
+  /// Serializes this ListPostsResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ListPostsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ListPostsResponseCopyWith<ListPostsResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListPostsResponseCopyWith<$Res> {
+  factory $ListPostsResponseCopyWith(
+    ListPostsResponse value,
+    $Res Function(ListPostsResponse) then,
+  ) = _$ListPostsResponseCopyWithImpl<$Res, ListPostsResponse>;
+  @useResult
+  $Res call({
+    List<PostView> posts,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+}
+
+/// @nodoc
+class _$ListPostsResponseCopyWithImpl<$Res, $Val extends ListPostsResponse>
+    implements $ListPostsResponseCopyWith<$Res> {
+  _$ListPostsResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ListPostsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? posts = null, Object? nextPage = freezed}) {
+    return _then(
+      _value.copyWith(
+            posts:
+                null == posts
+                    ? _value.posts
+                    : posts // ignore: cast_nullable_to_non_nullable
+                        as List<PostView>,
+            nextPage:
+                freezed == nextPage
+                    ? _value.nextPage
+                    : nextPage // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$ListPostsResponseImplCopyWith<$Res>
+    implements $ListPostsResponseCopyWith<$Res> {
+  factory _$$ListPostsResponseImplCopyWith(
+    _$ListPostsResponseImpl value,
+    $Res Function(_$ListPostsResponseImpl) then,
+  ) = __$$ListPostsResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    List<PostView> posts,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+}
+
+/// @nodoc
+class __$$ListPostsResponseImplCopyWithImpl<$Res>
+    extends _$ListPostsResponseCopyWithImpl<$Res, _$ListPostsResponseImpl>
+    implements _$$ListPostsResponseImplCopyWith<$Res> {
+  __$$ListPostsResponseImplCopyWithImpl(
+    _$ListPostsResponseImpl _value,
+    $Res Function(_$ListPostsResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ListPostsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? posts = null, Object? nextPage = freezed}) {
+    return _then(
+      _$ListPostsResponseImpl(
+        posts:
+            null == posts
+                ? _value._posts
+                : posts // ignore: cast_nullable_to_non_nullable
+                    as List<PostView>,
+        nextPage:
+            freezed == nextPage
+                ? _value.nextPage
+                : nextPage // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ListPostsResponseImpl implements _ListPostsResponse {
+  const _$ListPostsResponseImpl({
+    required final List<PostView> posts,
+    @JsonKey(name: 'next_page') this.nextPage,
+  }) : _posts = posts;
+
+  factory _$ListPostsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ListPostsResponseImplFromJson(json);
+
+  final List<PostView> _posts;
+  @override
+  List<PostView> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_posts);
+  }
+
+  @override
+  @JsonKey(name: 'next_page')
+  final String? nextPage;
+
+  @override
+  String toString() {
+    return 'ListPostsResponse(posts: $posts, nextPage: $nextPage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListPostsResponseImpl &&
+            const DeepCollectionEquality().equals(other._posts, _posts) &&
+            (identical(other.nextPage, nextPage) ||
+                other.nextPage == nextPage));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_posts),
+    nextPage,
+  );
+
+  /// Create a copy of ListPostsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListPostsResponseImplCopyWith<_$ListPostsResponseImpl> get copyWith =>
+      __$$ListPostsResponseImplCopyWithImpl<_$ListPostsResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ListPostsResponseImplToJson(this);
+  }
+}
+
+abstract class _ListPostsResponse implements ListPostsResponse {
+  const factory _ListPostsResponse({
+    required final List<PostView> posts,
+    @JsonKey(name: 'next_page') final String? nextPage,
+  }) = _$ListPostsResponseImpl;
+
+  factory _ListPostsResponse.fromJson(Map<String, dynamic> json) =
+      _$ListPostsResponseImpl.fromJson;
+
+  @override
+  List<PostView> get posts;
+  @override
+  @JsonKey(name: 'next_page')
+  String? get nextPage;
+
+  /// Create a copy of ListPostsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ListPostsResponseImplCopyWith<_$ListPostsResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ListCommentsResponse _$ListCommentsResponseFromJson(Map<String, dynamic> json) {
+  return _ListCommentsResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ListCommentsResponse {
+  List<CommentView> get comments => throw _privateConstructorUsedError;
+
+  /// Serializes this ListCommentsResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ListCommentsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ListCommentsResponseCopyWith<ListCommentsResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListCommentsResponseCopyWith<$Res> {
+  factory $ListCommentsResponseCopyWith(
+    ListCommentsResponse value,
+    $Res Function(ListCommentsResponse) then,
+  ) = _$ListCommentsResponseCopyWithImpl<$Res, ListCommentsResponse>;
+  @useResult
+  $Res call({List<CommentView> comments});
+}
+
+/// @nodoc
+class _$ListCommentsResponseCopyWithImpl<
+  $Res,
+  $Val extends ListCommentsResponse
+>
+    implements $ListCommentsResponseCopyWith<$Res> {
+  _$ListCommentsResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ListCommentsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? comments = null}) {
+    return _then(
+      _value.copyWith(
+            comments:
+                null == comments
+                    ? _value.comments
+                    : comments // ignore: cast_nullable_to_non_nullable
+                        as List<CommentView>,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$ListCommentsResponseImplCopyWith<$Res>
+    implements $ListCommentsResponseCopyWith<$Res> {
+  factory _$$ListCommentsResponseImplCopyWith(
+    _$ListCommentsResponseImpl value,
+    $Res Function(_$ListCommentsResponseImpl) then,
+  ) = __$$ListCommentsResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<CommentView> comments});
+}
+
+/// @nodoc
+class __$$ListCommentsResponseImplCopyWithImpl<$Res>
+    extends _$ListCommentsResponseCopyWithImpl<$Res, _$ListCommentsResponseImpl>
+    implements _$$ListCommentsResponseImplCopyWith<$Res> {
+  __$$ListCommentsResponseImplCopyWithImpl(
+    _$ListCommentsResponseImpl _value,
+    $Res Function(_$ListCommentsResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ListCommentsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? comments = null}) {
+    return _then(
+      _$ListCommentsResponseImpl(
+        comments:
+            null == comments
+                ? _value._comments
+                : comments // ignore: cast_nullable_to_non_nullable
+                    as List<CommentView>,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ListCommentsResponseImpl implements _ListCommentsResponse {
+  const _$ListCommentsResponseImpl({required final List<CommentView> comments})
+    : _comments = comments;
+
+  factory _$ListCommentsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ListCommentsResponseImplFromJson(json);
+
+  final List<CommentView> _comments;
+  @override
+  List<CommentView> get comments {
+    if (_comments is EqualUnmodifiableListView) return _comments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_comments);
+  }
+
+  @override
+  String toString() {
+    return 'ListCommentsResponse(comments: $comments)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListCommentsResponseImpl &&
+            const DeepCollectionEquality().equals(other._comments, _comments));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_comments));
+
+  /// Create a copy of ListCommentsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListCommentsResponseImplCopyWith<_$ListCommentsResponseImpl>
+  get copyWith =>
+      __$$ListCommentsResponseImplCopyWithImpl<_$ListCommentsResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ListCommentsResponseImplToJson(this);
+  }
+}
+
+abstract class _ListCommentsResponse implements ListCommentsResponse {
+  const factory _ListCommentsResponse({
+    required final List<CommentView> comments,
+  }) = _$ListCommentsResponseImpl;
+
+  factory _ListCommentsResponse.fromJson(Map<String, dynamic> json) =
+      _$ListCommentsResponseImpl.fromJson;
+
+  @override
+  List<CommentView> get comments;
+
+  /// Create a copy of ListCommentsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ListCommentsResponseImplCopyWith<_$ListCommentsResponseImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+CommunityResponse _$CommunityResponseFromJson(Map<String, dynamic> json) {
+  return _CommunityResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CommunityResponse {
+  @JsonKey(name: 'community_view')
+  CommunityView get communityView => throw _privateConstructorUsedError;
+  @JsonKey(name: 'discussion_languages')
+  List<int>? get discussionLanguages => throw _privateConstructorUsedError;
+
+  /// Serializes this CommunityResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of CommunityResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CommunityResponseCopyWith<CommunityResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommunityResponseCopyWith<$Res> {
+  factory $CommunityResponseCopyWith(
+    CommunityResponse value,
+    $Res Function(CommunityResponse) then,
+  ) = _$CommunityResponseCopyWithImpl<$Res, CommunityResponse>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'community_view') CommunityView communityView,
+    @JsonKey(name: 'discussion_languages') List<int>? discussionLanguages,
+  });
+
+  $CommunityViewCopyWith<$Res> get communityView;
+}
+
+/// @nodoc
+class _$CommunityResponseCopyWithImpl<$Res, $Val extends CommunityResponse>
+    implements $CommunityResponseCopyWith<$Res> {
+  _$CommunityResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of CommunityResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityView = null,
+    Object? discussionLanguages = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            communityView:
+                null == communityView
+                    ? _value.communityView
+                    : communityView // ignore: cast_nullable_to_non_nullable
+                        as CommunityView,
+            discussionLanguages:
+                freezed == discussionLanguages
+                    ? _value.discussionLanguages
+                    : discussionLanguages // ignore: cast_nullable_to_non_nullable
+                        as List<int>?,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of CommunityResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CommunityViewCopyWith<$Res> get communityView {
+    return $CommunityViewCopyWith<$Res>(_value.communityView, (value) {
+      return _then(_value.copyWith(communityView: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$CommunityResponseImplCopyWith<$Res>
+    implements $CommunityResponseCopyWith<$Res> {
+  factory _$$CommunityResponseImplCopyWith(
+    _$CommunityResponseImpl value,
+    $Res Function(_$CommunityResponseImpl) then,
+  ) = __$$CommunityResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'community_view') CommunityView communityView,
+    @JsonKey(name: 'discussion_languages') List<int>? discussionLanguages,
+  });
+
+  @override
+  $CommunityViewCopyWith<$Res> get communityView;
+}
+
+/// @nodoc
+class __$$CommunityResponseImplCopyWithImpl<$Res>
+    extends _$CommunityResponseCopyWithImpl<$Res, _$CommunityResponseImpl>
+    implements _$$CommunityResponseImplCopyWith<$Res> {
+  __$$CommunityResponseImplCopyWithImpl(
+    _$CommunityResponseImpl _value,
+    $Res Function(_$CommunityResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of CommunityResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityView = null,
+    Object? discussionLanguages = freezed,
+  }) {
+    return _then(
+      _$CommunityResponseImpl(
+        communityView:
+            null == communityView
+                ? _value.communityView
+                : communityView // ignore: cast_nullable_to_non_nullable
+                    as CommunityView,
+        discussionLanguages:
+            freezed == discussionLanguages
+                ? _value._discussionLanguages
+                : discussionLanguages // ignore: cast_nullable_to_non_nullable
+                    as List<int>?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CommunityResponseImpl implements _CommunityResponse {
+  const _$CommunityResponseImpl({
+    @JsonKey(name: 'community_view') required this.communityView,
+    @JsonKey(name: 'discussion_languages') final List<int>? discussionLanguages,
+  }) : _discussionLanguages = discussionLanguages;
+
+  factory _$CommunityResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommunityResponseImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'community_view')
+  final CommunityView communityView;
+  final List<int>? _discussionLanguages;
+  @override
+  @JsonKey(name: 'discussion_languages')
+  List<int>? get discussionLanguages {
+    final value = _discussionLanguages;
+    if (value == null) return null;
+    if (_discussionLanguages is EqualUnmodifiableListView)
+      return _discussionLanguages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'CommunityResponse(communityView: $communityView, discussionLanguages: $discussionLanguages)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CommunityResponseImpl &&
+            (identical(other.communityView, communityView) ||
+                other.communityView == communityView) &&
+            const DeepCollectionEquality().equals(
+              other._discussionLanguages,
+              _discussionLanguages,
+            ));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    communityView,
+    const DeepCollectionEquality().hash(_discussionLanguages),
+  );
+
+  /// Create a copy of CommunityResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CommunityResponseImplCopyWith<_$CommunityResponseImpl> get copyWith =>
+      __$$CommunityResponseImplCopyWithImpl<_$CommunityResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CommunityResponseImplToJson(this);
+  }
+}
+
+abstract class _CommunityResponse implements CommunityResponse {
+  const factory _CommunityResponse({
+    @JsonKey(name: 'community_view') required final CommunityView communityView,
+    @JsonKey(name: 'discussion_languages') final List<int>? discussionLanguages,
+  }) = _$CommunityResponseImpl;
+
+  factory _CommunityResponse.fromJson(Map<String, dynamic> json) =
+      _$CommunityResponseImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'community_view')
+  CommunityView get communityView;
+  @override
+  @JsonKey(name: 'discussion_languages')
+  List<int>? get discussionLanguages;
+
+  /// Create a copy of CommunityResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CommunityResponseImplCopyWith<_$CommunityResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

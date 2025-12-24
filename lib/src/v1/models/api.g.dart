@@ -109,3 +109,49 @@ _$$GetFederatedInstancesResponseImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$GetFederatedInstancesResponseImplToJson(
   _$GetFederatedInstancesResponseImpl instance,
 ) => <String, dynamic>{'federated_instances': instance.federatedInstances};
+
+_$ListPostsResponseImpl _$$ListPostsResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$ListPostsResponseImpl(
+  posts:
+      (json['posts'] as List<dynamic>)
+          .map((e) => PostView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  nextPage: json['next_page'] as String?,
+);
+
+Map<String, dynamic> _$$ListPostsResponseImplToJson(
+  _$ListPostsResponseImpl instance,
+) => <String, dynamic>{'posts': instance.posts, 'next_page': instance.nextPage};
+
+_$ListCommentsResponseImpl _$$ListCommentsResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$ListCommentsResponseImpl(
+  comments:
+      (json['comments'] as List<dynamic>)
+          .map((e) => CommentView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
+
+Map<String, dynamic> _$$ListCommentsResponseImplToJson(
+  _$ListCommentsResponseImpl instance,
+) => <String, dynamic>{'comments': instance.comments};
+
+_$CommunityResponseImpl _$$CommunityResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityResponseImpl(
+  communityView: CommunityView.fromJson(
+    json['community_view'] as Map<String, dynamic>,
+  ),
+  discussionLanguages:
+      (json['discussion_languages'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+);
+
+Map<String, dynamic> _$$CommunityResponseImplToJson(
+  _$CommunityResponseImpl instance,
+) => <String, dynamic>{
+  'community_view': instance.communityView,
+  'discussion_languages': instance.discussionLanguages,
+};

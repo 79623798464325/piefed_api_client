@@ -66,3 +66,24 @@ class GetFederatedInstancesResponse with _$GetFederatedInstancesResponse {
 
   factory GetFederatedInstancesResponse.fromJson(Map<String, dynamic> json) => _$GetFederatedInstancesResponseFromJson(json);
 }
+
+@freezed
+class ListPostsResponse with _$ListPostsResponse {
+  const factory ListPostsResponse({required List<PostView> posts, @JsonKey(name: 'next_page') String? nextPage}) = _ListPostsResponse;
+
+  factory ListPostsResponse.fromJson(Map<String, dynamic> json) => _$ListPostsResponseFromJson(json);
+}
+
+@freezed
+class ListCommentsResponse with _$ListCommentsResponse {
+  const factory ListCommentsResponse({required List<CommentView> comments}) = _ListCommentsResponse;
+
+  factory ListCommentsResponse.fromJson(Map<String, dynamic> json) => _$ListCommentsResponseFromJson(json);
+}
+
+@freezed
+class CommunityResponse with _$CommunityResponse {
+  const factory CommunityResponse({@JsonKey(name: 'community_view') required CommunityView communityView, @JsonKey(name: 'discussion_languages') List<int>? discussionLanguages}) = _CommunityResponse;
+
+  factory CommunityResponse.fromJson(Map<String, dynamic> json) => _$CommunityResponseFromJson(json);
+}
