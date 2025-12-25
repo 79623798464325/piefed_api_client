@@ -20,7 +20,12 @@ class GetPost with _$GetPost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.get;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -45,7 +50,12 @@ class CreatePost with _$CreatePost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -77,7 +87,12 @@ class MarkPostAsRead with _$MarkPostAsRead implements PieFedApiQuery<GetPostResp
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -116,7 +131,12 @@ class EditPost with _$EditPost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.put;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -151,7 +171,12 @@ class FeaturePost with _$FeaturePost implements PieFedApiQuery<GetPostResponse> 
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -166,7 +191,12 @@ class RemovePost with _$RemovePost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -181,7 +211,12 @@ class PollVote with _$PollVote implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
 }
 
 @freezed

@@ -10,31 +10,33 @@ void main() {
       final mockClient = MockClient((request) async {
         return http.Response(
           jsonEncode({
-            'post': {
-              'id': 1,
-              'title': 'Test Post',
-              'ap_id': 'http://example.com/post/1',
-              'local': true,
-              'nsfw': false,
-              'deleted': false,
-              'removed': false,
-              'user_id': 1,
-              'community_id': 1,
-              'published': DateTime.now().toIso8601String(),
-            },
-            'creator': {'id': 1, 'user_name': 'user', 'actor_id': 'http://example.com/user/1', 'local': true, 'banned': false, 'bot': false, 'deleted': false, 'instance_id': 1},
-            'community': {
-              'id': 1,
-              'name': 'comm',
-              'title': 'Community',
-              'actor_id': 'http://example.com/c/comm',
-              'local': true,
-              'nsfw': false,
-              'deleted': false,
-              'hidden': false,
-              'removed': false,
-              'instance_id': 1,
-              'ai_generated': false,
+            'post_view': {
+              'post': {
+                'id': 1,
+                'title': 'Test Post',
+                'ap_id': 'http://example.com/post/1',
+                'local': true,
+                'nsfw': false,
+                'deleted': false,
+                'removed': false,
+                'user_id': 1,
+                'community_id': 1,
+                'published': DateTime.now().toIso8601String(),
+              },
+              'creator': {'id': 1, 'user_name': 'user', 'actor_id': 'http://example.com/user/1', 'local': true, 'banned': false, 'bot': false, 'deleted': false, 'instance_id': 1},
+              'community': {
+                'id': 1,
+                'name': 'comm',
+                'title': 'Community',
+                'actor_id': 'http://example.com/c/comm',
+                'local': true,
+                'nsfw': false,
+                'deleted': false,
+                'hidden': false,
+                'removed': false,
+                'instance_id': 1,
+                'ai_generated': false,
+              },
             },
           }),
           200,
@@ -47,6 +49,37 @@ void main() {
       expect(response.post.title, 'Test Post');
       expect(response.creator.name, 'user');
       expect(response.community.name, 'comm');
+    });
+
+    test('GetCommunity Response Parsing', () async {
+      final mockClient = MockClient((request) async {
+        return http.Response(
+          jsonEncode({
+            'community_view': {
+              'community': {
+                'id': 1,
+                'name': 'test_community',
+                'title': 'Test Community',
+                'actor_id': 'http://example.com/c/test_community',
+                'local': true,
+                'nsfw': false,
+                'deleted': false,
+                'hidden': false,
+                'removed': false,
+                'instance_id': 1,
+                'ai_generated': false,
+              },
+            },
+          }),
+          200,
+        );
+      });
+
+      final api = PieFedApiV1('example.com', client: mockClient);
+      final response = await api.run(const GetCommunity(id: 1));
+
+      expect(response.community.name, 'test_community');
+      expect(response.community.title, 'Test Community');
     });
 
     test('UserLogin Response Parsing', () async {

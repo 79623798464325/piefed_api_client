@@ -1,4 +1,9 @@
 # Changelog
+## 0.6.3
+
+*   Fixes:
+    *   `GetPost` & `GetCommunity` (and related): Fixed response parsing schema mismatch. The API returns nested `post_view` / `community_view` objects, but the library expected flattened fields. The client now correctly unwraps these nested objects.
+
 ## 0.6.2
 
 *   Fixes:

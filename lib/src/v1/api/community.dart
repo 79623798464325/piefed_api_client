@@ -20,7 +20,12 @@ class GetCommunity with _$GetCommunity implements PieFedApiQuery<GetCommunityRes
   @override
   HttpMethod get httpMethod => HttpMethod.get;
   @override
-  GetCommunityResponse responseFactory(Map<String, dynamic> json) => GetCommunityResponse.fromJson(json);
+  GetCommunityResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('community_view')) {
+      return GetCommunityResponse.fromJson(json['community_view'] as Map<String, dynamic>);
+    }
+    return GetCommunityResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -59,7 +64,12 @@ class EditCommunity with _$EditCommunity implements PieFedApiQuery<GetCommunityR
   @override
   HttpMethod get httpMethod => HttpMethod.put;
   @override
-  GetCommunityResponse responseFactory(Map<String, dynamic> json) => GetCommunityResponse.fromJson(json);
+  GetCommunityResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('community_view')) {
+      return GetCommunityResponse.fromJson(json['community_view'] as Map<String, dynamic>);
+    }
+    return GetCommunityResponse.fromJson(json);
+  }
 }
 
 @freezed
@@ -99,7 +109,12 @@ class CreateCommunity with _$CreateCommunity implements PieFedApiQuery<GetCommun
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetCommunityResponse responseFactory(Map<String, dynamic> json) => GetCommunityResponse.fromJson(json);
+  GetCommunityResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('community_view')) {
+      return GetCommunityResponse.fromJson(json['community_view'] as Map<String, dynamic>);
+    }
+    return GetCommunityResponse.fromJson(json);
+  }
 }
 
 @freezed
