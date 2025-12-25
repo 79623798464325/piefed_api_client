@@ -22,7 +22,7 @@ PersonView _$PersonViewFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PersonView {
   Person get person => throw _privateConstructorUsedError;
-  PersonAggregates get counts => throw _privateConstructorUsedError;
+  PersonAggregates? get counts => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_admin')
   bool get isAdmin => throw _privateConstructorUsedError;
 
@@ -45,12 +45,12 @@ abstract class $PersonViewCopyWith<$Res> {
   @useResult
   $Res call({
     Person person,
-    PersonAggregates counts,
+    PersonAggregates? counts,
     @JsonKey(name: 'is_admin') bool isAdmin,
   });
 
   $PersonCopyWith<$Res> get person;
-  $PersonAggregatesCopyWith<$Res> get counts;
+  $PersonAggregatesCopyWith<$Res>? get counts;
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$PersonViewCopyWithImpl<$Res, $Val extends PersonView>
   @override
   $Res call({
     Object? person = null,
-    Object? counts = null,
+    Object? counts = freezed,
     Object? isAdmin = null,
   }) {
     return _then(
@@ -80,10 +80,10 @@ class _$PersonViewCopyWithImpl<$Res, $Val extends PersonView>
                     : person // ignore: cast_nullable_to_non_nullable
                         as Person,
             counts:
-                null == counts
+                freezed == counts
                     ? _value.counts
                     : counts // ignore: cast_nullable_to_non_nullable
-                        as PersonAggregates,
+                        as PersonAggregates?,
             isAdmin:
                 null == isAdmin
                     ? _value.isAdmin
@@ -108,8 +108,12 @@ class _$PersonViewCopyWithImpl<$Res, $Val extends PersonView>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $PersonAggregatesCopyWith<$Res> get counts {
-    return $PersonAggregatesCopyWith<$Res>(_value.counts, (value) {
+  $PersonAggregatesCopyWith<$Res>? get counts {
+    if (_value.counts == null) {
+      return null;
+    }
+
+    return $PersonAggregatesCopyWith<$Res>(_value.counts!, (value) {
       return _then(_value.copyWith(counts: value) as $Val);
     });
   }
@@ -126,14 +130,14 @@ abstract class _$$PersonViewImplCopyWith<$Res>
   @useResult
   $Res call({
     Person person,
-    PersonAggregates counts,
+    PersonAggregates? counts,
     @JsonKey(name: 'is_admin') bool isAdmin,
   });
 
   @override
   $PersonCopyWith<$Res> get person;
   @override
-  $PersonAggregatesCopyWith<$Res> get counts;
+  $PersonAggregatesCopyWith<$Res>? get counts;
 }
 
 /// @nodoc
@@ -151,7 +155,7 @@ class __$$PersonViewImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? person = null,
-    Object? counts = null,
+    Object? counts = freezed,
     Object? isAdmin = null,
   }) {
     return _then(
@@ -162,10 +166,10 @@ class __$$PersonViewImplCopyWithImpl<$Res>
                 : person // ignore: cast_nullable_to_non_nullable
                     as Person,
         counts:
-            null == counts
+            freezed == counts
                 ? _value.counts
                 : counts // ignore: cast_nullable_to_non_nullable
-                    as PersonAggregates,
+                    as PersonAggregates?,
         isAdmin:
             null == isAdmin
                 ? _value.isAdmin
@@ -181,7 +185,7 @@ class __$$PersonViewImplCopyWithImpl<$Res>
 class _$PersonViewImpl implements _PersonView {
   const _$PersonViewImpl({
     required this.person,
-    required this.counts,
+    this.counts,
     @JsonKey(name: 'is_admin') required this.isAdmin,
   });
 
@@ -191,7 +195,7 @@ class _$PersonViewImpl implements _PersonView {
   @override
   final Person person;
   @override
-  final PersonAggregates counts;
+  final PersonAggregates? counts;
   @override
   @JsonKey(name: 'is_admin')
   final bool isAdmin;
@@ -232,7 +236,7 @@ class _$PersonViewImpl implements _PersonView {
 abstract class _PersonView implements PersonView {
   const factory _PersonView({
     required final Person person,
-    required final PersonAggregates counts,
+    final PersonAggregates? counts,
     @JsonKey(name: 'is_admin') required final bool isAdmin,
   }) = _$PersonViewImpl;
 
@@ -242,7 +246,7 @@ abstract class _PersonView implements PersonView {
   @override
   Person get person;
   @override
-  PersonAggregates get counts;
+  PersonAggregates? get counts;
   @override
   @JsonKey(name: 'is_admin')
   bool get isAdmin;

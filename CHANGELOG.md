@@ -1,4 +1,9 @@
 # Changelog
+## 0.6.4
+
+*   Fixes:
+    *   `PersonView.counts`: Now nullable to handle `/user/me` endpoint returning `null` for counts.
+
 ## 0.6.3
 
 *   Fixes:

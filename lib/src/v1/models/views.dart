@@ -8,7 +8,7 @@ part 'views.g.dart';
 
 @freezed
 class PersonView with _$PersonView {
-  const factory PersonView({required Person person, required PersonAggregates counts, @JsonKey(name: 'is_admin') required bool isAdmin}) = _PersonView;
+  const factory PersonView({required Person person, PersonAggregates? counts, @JsonKey(name: 'is_admin') required bool isAdmin}) = _PersonView;
 
   factory PersonView.fromJson(Map<String, dynamic> json) => _$PersonViewFromJson(json);
 }

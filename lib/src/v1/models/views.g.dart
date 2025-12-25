@@ -9,7 +9,12 @@ part of 'views.dart';
 _$PersonViewImpl _$$PersonViewImplFromJson(Map<String, dynamic> json) =>
     _$PersonViewImpl(
       person: Person.fromJson(json['person'] as Map<String, dynamic>),
-      counts: PersonAggregates.fromJson(json['counts'] as Map<String, dynamic>),
+      counts:
+          json['counts'] == null
+              ? null
+              : PersonAggregates.fromJson(
+                json['counts'] as Map<String, dynamic>,
+              ),
       isAdmin: json['is_admin'] as bool,
     );
 
