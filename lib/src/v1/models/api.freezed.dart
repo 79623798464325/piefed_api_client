@@ -2825,9 +2825,9 @@ class __$$GetUnreadCountResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GetUnreadCountResponseImpl implements _GetUnreadCountResponse {
   const _$GetUnreadCountResponseImpl({
-    @JsonKey(name: 'replies') required this.replies,
-    @JsonKey(name: 'mentions') required this.mentions,
-    @JsonKey(name: 'private_messages') required this.privateMessages,
+    @JsonKey(name: 'replies') this.replies = 0,
+    @JsonKey(name: 'mentions') this.mentions = 0,
+    @JsonKey(name: 'private_messages') this.privateMessages = 0,
   });
 
   factory _$GetUnreadCountResponseImpl.fromJson(Map<String, dynamic> json) =>
@@ -2885,9 +2885,9 @@ class _$GetUnreadCountResponseImpl implements _GetUnreadCountResponse {
 
 abstract class _GetUnreadCountResponse implements GetUnreadCountResponse {
   const factory _GetUnreadCountResponse({
-    @JsonKey(name: 'replies') required final int replies,
-    @JsonKey(name: 'mentions') required final int mentions,
-    @JsonKey(name: 'private_messages') required final int privateMessages,
+    @JsonKey(name: 'replies') final int replies,
+    @JsonKey(name: 'mentions') final int mentions,
+    @JsonKey(name: 'private_messages') final int privateMessages,
   }) = _$GetUnreadCountResponseImpl;
 
   factory _GetUnreadCountResponse.fromJson(Map<String, dynamic> json) =

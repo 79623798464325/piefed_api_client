@@ -49,9 +49,12 @@ _$CommentViewImpl _$$CommentViewImplFromJson(Map<String, dynamic> json) =>
       creator: Person.fromJson(json['creator'] as Map<String, dynamic>),
       post: Post.fromJson(json['post'] as Map<String, dynamic>),
       community: Community.fromJson(json['community'] as Map<String, dynamic>),
-      counts: CommentAggregates.fromJson(
-        json['counts'] as Map<String, dynamic>,
-      ),
+      counts:
+          json['counts'] == null
+              ? null
+              : CommentAggregates.fromJson(
+                json['counts'] as Map<String, dynamic>,
+              ),
       creatorBannedFromCommunity: json['creator_banned_from_community'] as bool,
       creatorBlocked: json['creator_blocked'] as bool,
       saved: json['saved'] as bool,

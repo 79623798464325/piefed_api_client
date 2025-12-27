@@ -10,8 +10,8 @@ _$PersonAggregatesImpl _$$PersonAggregatesImplFromJson(
   Map<String, dynamic> json,
 ) => _$PersonAggregatesImpl(
   personId: (json['person_id'] as num).toInt(),
-  postCount: (json['post_count'] as num).toInt(),
-  commentCount: (json['comment_count'] as num).toInt(),
+  postCount: (json['post_count'] as num?)?.toInt() ?? 0,
+  commentCount: (json['comment_count'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$$PersonAggregatesImplToJson(
@@ -26,9 +26,9 @@ _$CommunityAggregatesImpl _$$CommunityAggregatesImplFromJson(
   Map<String, dynamic> json,
 ) => _$CommunityAggregatesImpl(
   id: (json['id'] as num).toInt(),
-  postCount: (json['post_count'] as num).toInt(),
-  postReplyCount: (json['post_reply_count'] as num).toInt(),
-  subscriptionsCount: (json['subscriptions_count'] as num).toInt(),
+  postCount: (json['post_count'] as num?)?.toInt() ?? 0,
+  postReplyCount: (json['post_reply_count'] as num?)?.toInt() ?? 0,
+  subscriptionsCount: (json['subscriptions_count'] as num?)?.toInt() ?? 0,
   totalSubscriptionsCount: (json['total_subscriptions_count'] as num?)?.toInt(),
 );
 
@@ -45,10 +45,10 @@ Map<String, dynamic> _$$CommunityAggregatesImplToJson(
 _$PostAggregatesImpl _$$PostAggregatesImplFromJson(Map<String, dynamic> json) =>
     _$PostAggregatesImpl(
       postId: (json['post_id'] as num).toInt(),
-      comments: (json['comments'] as num).toInt(),
-      score: (json['score'] as num).toInt(),
-      upvotes: (json['upvotes'] as num).toInt(),
-      downvotes: (json['downvotes'] as num).toInt(),
+      comments: (json['comments'] as num?)?.toInt() ?? 0,
+      score: (json['score'] as num?)?.toInt() ?? 0,
+      upvotes: (json['upvotes'] as num?)?.toInt() ?? 0,
+      downvotes: (json['downvotes'] as num?)?.toInt() ?? 0,
       newestCommentTime:
           json['newest_comment_time'] == null
               ? null
@@ -76,10 +76,10 @@ _$CommentAggregatesImpl _$$CommentAggregatesImplFromJson(
   Map<String, dynamic> json,
 ) => _$CommentAggregatesImpl(
   commentId: (json['comment_id'] as num).toInt(),
-  score: (json['score'] as num).toInt(),
-  upvotes: (json['upvotes'] as num).toInt(),
-  downvotes: (json['downvotes'] as num).toInt(),
-  childCount: (json['child_count'] as num).toInt(),
+  score: (json['score'] as num?)?.toInt() ?? 0,
+  upvotes: (json['upvotes'] as num?)?.toInt() ?? 0,
+  downvotes: (json['downvotes'] as num?)?.toInt() ?? 0,
+  childCount: (json['child_count'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$$CommentAggregatesImplToJson(

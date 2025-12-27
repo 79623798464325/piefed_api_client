@@ -1,4 +1,17 @@
 # Changelog
+## 0.6.5
+
+*   Fixes:
+    *   **CommentAggregates**: `score`, `upvotes`, `downvotes`, `childCount` now default to `0` when null in API response.
+    *   **PostAggregates**: `comments`, `score`, `upvotes`, `downvotes` now default to `0` when null in API response.
+    *   **PersonAggregates**: `postCount`, `commentCount` now default to `0` when null in API response.
+    *   **CommunityAggregates**: `postCount`, `postReplyCount`, `subscriptionsCount` now default to `0` when null in API response.
+    *   **GetUnreadCountResponse**: `replies`, `mentions`, `privateMessages` now default to `0` when null in API response.
+    *   **CommentView.counts**: Now nullable to handle cases where the entire counts object is null.
+
+*   Tests:
+    *   Added comprehensive null value handling tests (`test/null_values_test.dart`).
+
 ## 0.6.4
 
 *   Fixes:

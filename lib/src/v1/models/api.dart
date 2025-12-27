@@ -116,9 +116,9 @@ class GetMyUserResponse with _$GetMyUserResponse {
 @freezed
 class GetUnreadCountResponse with _$GetUnreadCountResponse {
   const factory GetUnreadCountResponse({
-    @JsonKey(name: 'replies') required int replies,
-    @JsonKey(name: 'mentions') required int mentions,
-    @JsonKey(name: 'private_messages') required int privateMessages,
+    @JsonKey(name: 'replies') @Default(0) int replies,
+    @JsonKey(name: 'mentions') @Default(0) int mentions,
+    @JsonKey(name: 'private_messages') @Default(0) int privateMessages,
   }) = _GetUnreadCountResponse;
 
   factory GetUnreadCountResponse.fromJson(Map<String, dynamic> json) => _$GetUnreadCountResponseFromJson(json);

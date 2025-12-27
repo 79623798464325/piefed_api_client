@@ -534,7 +534,7 @@ mixin _$CommentView {
   Person get creator => throw _privateConstructorUsedError;
   Post get post => throw _privateConstructorUsedError;
   Community get community => throw _privateConstructorUsedError;
-  CommentAggregates get counts => throw _privateConstructorUsedError;
+  CommentAggregates? get counts => throw _privateConstructorUsedError;
   @JsonKey(name: 'creator_banned_from_community')
   bool get creatorBannedFromCommunity => throw _privateConstructorUsedError;
   @JsonKey(name: 'creator_blocked')
@@ -565,7 +565,7 @@ abstract class $CommentViewCopyWith<$Res> {
     Person creator,
     Post post,
     Community community,
-    CommentAggregates counts,
+    CommentAggregates? counts,
     @JsonKey(name: 'creator_banned_from_community')
     bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
@@ -577,7 +577,7 @@ abstract class $CommentViewCopyWith<$Res> {
   $PersonCopyWith<$Res> get creator;
   $PostCopyWith<$Res> get post;
   $CommunityCopyWith<$Res> get community;
-  $CommentAggregatesCopyWith<$Res> get counts;
+  $CommentAggregatesCopyWith<$Res>? get counts;
 }
 
 /// @nodoc
@@ -599,7 +599,7 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView>
     Object? creator = null,
     Object? post = null,
     Object? community = null,
-    Object? counts = null,
+    Object? counts = freezed,
     Object? creatorBannedFromCommunity = null,
     Object? creatorBlocked = null,
     Object? saved = null,
@@ -628,10 +628,10 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView>
                     : community // ignore: cast_nullable_to_non_nullable
                         as Community,
             counts:
-                null == counts
+                freezed == counts
                     ? _value.counts
                     : counts // ignore: cast_nullable_to_non_nullable
-                        as CommentAggregates,
+                        as CommentAggregates?,
             creatorBannedFromCommunity:
                 null == creatorBannedFromCommunity
                     ? _value.creatorBannedFromCommunity
@@ -701,8 +701,12 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CommentAggregatesCopyWith<$Res> get counts {
-    return $CommentAggregatesCopyWith<$Res>(_value.counts, (value) {
+  $CommentAggregatesCopyWith<$Res>? get counts {
+    if (_value.counts == null) {
+      return null;
+    }
+
+    return $CommentAggregatesCopyWith<$Res>(_value.counts!, (value) {
       return _then(_value.copyWith(counts: value) as $Val);
     });
   }
@@ -722,7 +726,7 @@ abstract class _$$CommentViewImplCopyWith<$Res>
     Person creator,
     Post post,
     Community community,
-    CommentAggregates counts,
+    CommentAggregates? counts,
     @JsonKey(name: 'creator_banned_from_community')
     bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
@@ -739,7 +743,7 @@ abstract class _$$CommentViewImplCopyWith<$Res>
   @override
   $CommunityCopyWith<$Res> get community;
   @override
-  $CommentAggregatesCopyWith<$Res> get counts;
+  $CommentAggregatesCopyWith<$Res>? get counts;
 }
 
 /// @nodoc
@@ -760,7 +764,7 @@ class __$$CommentViewImplCopyWithImpl<$Res>
     Object? creator = null,
     Object? post = null,
     Object? community = null,
-    Object? counts = null,
+    Object? counts = freezed,
     Object? creatorBannedFromCommunity = null,
     Object? creatorBlocked = null,
     Object? saved = null,
@@ -789,10 +793,10 @@ class __$$CommentViewImplCopyWithImpl<$Res>
                 : community // ignore: cast_nullable_to_non_nullable
                     as Community,
         counts:
-            null == counts
+            freezed == counts
                 ? _value.counts
                 : counts // ignore: cast_nullable_to_non_nullable
-                    as CommentAggregates,
+                    as CommentAggregates?,
         creatorBannedFromCommunity:
             null == creatorBannedFromCommunity
                 ? _value.creatorBannedFromCommunity
@@ -826,7 +830,7 @@ class _$CommentViewImpl implements _CommentView {
     required this.creator,
     required this.post,
     required this.community,
-    required this.counts,
+    this.counts,
     @JsonKey(name: 'creator_banned_from_community')
     required this.creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') required this.creatorBlocked,
@@ -846,7 +850,7 @@ class _$CommentViewImpl implements _CommentView {
   @override
   final Community community;
   @override
-  final CommentAggregates counts;
+  final CommentAggregates? counts;
   @override
   @JsonKey(name: 'creator_banned_from_community')
   final bool creatorBannedFromCommunity;
@@ -922,7 +926,7 @@ abstract class _CommentView implements CommentView {
     required final Person creator,
     required final Post post,
     required final Community community,
-    required final CommentAggregates counts,
+    final CommentAggregates? counts,
     @JsonKey(name: 'creator_banned_from_community')
     required final bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') required final bool creatorBlocked,
@@ -942,7 +946,7 @@ abstract class _CommentView implements CommentView {
   @override
   Community get community;
   @override
-  CommentAggregates get counts;
+  CommentAggregates? get counts;
   @override
   @JsonKey(name: 'creator_banned_from_community')
   bool get creatorBannedFromCommunity;

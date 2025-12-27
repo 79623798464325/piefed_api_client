@@ -191,9 +191,9 @@ Map<String, dynamic> _$$GetMyUserResponseImplToJson(
 _$GetUnreadCountResponseImpl _$$GetUnreadCountResponseImplFromJson(
   Map<String, dynamic> json,
 ) => _$GetUnreadCountResponseImpl(
-  replies: (json['replies'] as num).toInt(),
-  mentions: (json['mentions'] as num).toInt(),
-  privateMessages: (json['private_messages'] as num).toInt(),
+  replies: (json['replies'] as num?)?.toInt() ?? 0,
+  mentions: (json['mentions'] as num?)?.toInt() ?? 0,
+  privateMessages: (json['private_messages'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$$GetUnreadCountResponseImplToJson(

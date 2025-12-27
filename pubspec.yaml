@@ -1,6 +1,6 @@
 name: piefed_api_client
 description: A Future-based http client for the PieFed API.
-version: 0.6.4
+version: 0.6.5
 repository: https://github.com/79623798464325/piefed_api_client
 
 

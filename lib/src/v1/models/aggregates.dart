@@ -5,8 +5,11 @@ part 'aggregates.g.dart';
 
 @freezed
 class PersonAggregates with _$PersonAggregates {
-  const factory PersonAggregates({@JsonKey(name: 'person_id') required int personId, @JsonKey(name: 'post_count') required int postCount, @JsonKey(name: 'comment_count') required int commentCount}) =
-      _PersonAggregates;
+  const factory PersonAggregates({
+    @JsonKey(name: 'person_id') required int personId,
+    @JsonKey(name: 'post_count') @Default(0) int postCount,
+    @JsonKey(name: 'comment_count') @Default(0) int commentCount,
+  }) = _PersonAggregates;
 
   factory PersonAggregates.fromJson(Map<String, dynamic> json) => _$PersonAggregatesFromJson(json);
 }
@@ -15,9 +18,9 @@ class PersonAggregates with _$PersonAggregates {
 class CommunityAggregates with _$CommunityAggregates {
   const factory CommunityAggregates({
     @JsonKey(name: 'id') required int id,
-    @JsonKey(name: 'post_count') required int postCount,
-    @JsonKey(name: 'post_reply_count') required int postReplyCount,
-    @JsonKey(name: 'subscriptions_count') required int subscriptionsCount,
+    @JsonKey(name: 'post_count') @Default(0) int postCount,
+    @JsonKey(name: 'post_reply_count') @Default(0) int postReplyCount,
+    @JsonKey(name: 'subscriptions_count') @Default(0) int subscriptionsCount,
     @JsonKey(name: 'total_subscriptions_count') int? totalSubscriptionsCount,
   }) = _CommunityAggregates;
 
@@ -28,10 +31,10 @@ class CommunityAggregates with _$CommunityAggregates {
 class PostAggregates with _$PostAggregates {
   const factory PostAggregates({
     @JsonKey(name: 'post_id') required int postId,
-    required int comments,
-    required int score,
-    required int upvotes,
-    required int downvotes,
+    @Default(0) int comments,
+    @Default(0) int score,
+    @Default(0) int upvotes,
+    @Default(0) int downvotes,
     @JsonKey(name: 'newest_comment_time') DateTime? newestCommentTime,
     @JsonKey(name: 'newest_comment_time_necro') DateTime? newestCommentTimeNecro,
   }) = _PostAggregates;
@@ -43,10 +46,10 @@ class PostAggregates with _$PostAggregates {
 class CommentAggregates with _$CommentAggregates {
   const factory CommentAggregates({
     @JsonKey(name: 'comment_id') required int commentId,
-    required int score,
-    required int upvotes,
-    required int downvotes,
-    @JsonKey(name: 'child_count') required int childCount,
+    @Default(0) int score,
+    @Default(0) int upvotes,
+    @Default(0) int downvotes,
+    @JsonKey(name: 'child_count') @Default(0) int childCount,
   }) = _CommentAggregates;
 
   factory CommentAggregates.fromJson(Map<String, dynamic> json) => _$CommentAggregatesFromJson(json);

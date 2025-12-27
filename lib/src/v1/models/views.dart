@@ -36,7 +36,7 @@ class CommentView with _$CommentView {
     required Person creator,
     required Post post,
     required Community community,
-    required CommentAggregates counts,
+    CommentAggregates? counts,
     @JsonKey(name: 'creator_banned_from_community') required bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') required bool creatorBlocked,
     required bool saved,

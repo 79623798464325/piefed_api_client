@@ -155,8 +155,8 @@ class __$$PersonAggregatesImplCopyWithImpl<$Res>
 class _$PersonAggregatesImpl implements _PersonAggregates {
   const _$PersonAggregatesImpl({
     @JsonKey(name: 'person_id') required this.personId,
-    @JsonKey(name: 'post_count') required this.postCount,
-    @JsonKey(name: 'comment_count') required this.commentCount,
+    @JsonKey(name: 'post_count') this.postCount = 0,
+    @JsonKey(name: 'comment_count') this.commentCount = 0,
   });
 
   factory _$PersonAggregatesImpl.fromJson(Map<String, dynamic> json) =>
@@ -215,8 +215,8 @@ class _$PersonAggregatesImpl implements _PersonAggregates {
 abstract class _PersonAggregates implements PersonAggregates {
   const factory _PersonAggregates({
     @JsonKey(name: 'person_id') required final int personId,
-    @JsonKey(name: 'post_count') required final int postCount,
-    @JsonKey(name: 'comment_count') required final int commentCount,
+    @JsonKey(name: 'post_count') final int postCount,
+    @JsonKey(name: 'comment_count') final int commentCount,
   }) = _$PersonAggregatesImpl;
 
   factory _PersonAggregates.fromJson(Map<String, dynamic> json) =
@@ -412,9 +412,9 @@ class __$$CommunityAggregatesImplCopyWithImpl<$Res>
 class _$CommunityAggregatesImpl implements _CommunityAggregates {
   const _$CommunityAggregatesImpl({
     @JsonKey(name: 'id') required this.id,
-    @JsonKey(name: 'post_count') required this.postCount,
-    @JsonKey(name: 'post_reply_count') required this.postReplyCount,
-    @JsonKey(name: 'subscriptions_count') required this.subscriptionsCount,
+    @JsonKey(name: 'post_count') this.postCount = 0,
+    @JsonKey(name: 'post_reply_count') this.postReplyCount = 0,
+    @JsonKey(name: 'subscriptions_count') this.subscriptionsCount = 0,
     @JsonKey(name: 'total_subscriptions_count') this.totalSubscriptionsCount,
   });
 
@@ -492,9 +492,9 @@ class _$CommunityAggregatesImpl implements _CommunityAggregates {
 abstract class _CommunityAggregates implements CommunityAggregates {
   const factory _CommunityAggregates({
     @JsonKey(name: 'id') required final int id,
-    @JsonKey(name: 'post_count') required final int postCount,
-    @JsonKey(name: 'post_reply_count') required final int postReplyCount,
-    @JsonKey(name: 'subscriptions_count') required final int subscriptionsCount,
+    @JsonKey(name: 'post_count') final int postCount,
+    @JsonKey(name: 'post_reply_count') final int postReplyCount,
+    @JsonKey(name: 'subscriptions_count') final int subscriptionsCount,
     @JsonKey(name: 'total_subscriptions_count')
     final int? totalSubscriptionsCount,
   }) = _$CommunityAggregatesImpl;
@@ -728,10 +728,10 @@ class __$$PostAggregatesImplCopyWithImpl<$Res>
 class _$PostAggregatesImpl implements _PostAggregates {
   const _$PostAggregatesImpl({
     @JsonKey(name: 'post_id') required this.postId,
-    required this.comments,
-    required this.score,
-    required this.upvotes,
-    required this.downvotes,
+    this.comments = 0,
+    this.score = 0,
+    this.upvotes = 0,
+    this.downvotes = 0,
     @JsonKey(name: 'newest_comment_time') this.newestCommentTime,
     @JsonKey(name: 'newest_comment_time_necro') this.newestCommentTimeNecro,
   });
@@ -743,12 +743,16 @@ class _$PostAggregatesImpl implements _PostAggregates {
   @JsonKey(name: 'post_id')
   final int postId;
   @override
+  @JsonKey()
   final int comments;
   @override
+  @JsonKey()
   final int score;
   @override
+  @JsonKey()
   final int upvotes;
   @override
+  @JsonKey()
   final int downvotes;
   @override
   @JsonKey(name: 'newest_comment_time')
@@ -813,10 +817,10 @@ class _$PostAggregatesImpl implements _PostAggregates {
 abstract class _PostAggregates implements PostAggregates {
   const factory _PostAggregates({
     @JsonKey(name: 'post_id') required final int postId,
-    required final int comments,
-    required final int score,
-    required final int upvotes,
-    required final int downvotes,
+    final int comments,
+    final int score,
+    final int upvotes,
+    final int downvotes,
     @JsonKey(name: 'newest_comment_time') final DateTime? newestCommentTime,
     @JsonKey(name: 'newest_comment_time_necro')
     final DateTime? newestCommentTimeNecro,
@@ -1020,10 +1024,10 @@ class __$$CommentAggregatesImplCopyWithImpl<$Res>
 class _$CommentAggregatesImpl implements _CommentAggregates {
   const _$CommentAggregatesImpl({
     @JsonKey(name: 'comment_id') required this.commentId,
-    required this.score,
-    required this.upvotes,
-    required this.downvotes,
-    @JsonKey(name: 'child_count') required this.childCount,
+    this.score = 0,
+    this.upvotes = 0,
+    this.downvotes = 0,
+    @JsonKey(name: 'child_count') this.childCount = 0,
   });
 
   factory _$CommentAggregatesImpl.fromJson(Map<String, dynamic> json) =>
@@ -1033,10 +1037,13 @@ class _$CommentAggregatesImpl implements _CommentAggregates {
   @JsonKey(name: 'comment_id')
   final int commentId;
   @override
+  @JsonKey()
   final int score;
   @override
+  @JsonKey()
   final int upvotes;
   @override
+  @JsonKey()
   final int downvotes;
   @override
   @JsonKey(name: 'child_count')
@@ -1093,10 +1100,10 @@ class _$CommentAggregatesImpl implements _CommentAggregates {
 abstract class _CommentAggregates implements CommentAggregates {
   const factory _CommentAggregates({
     @JsonKey(name: 'comment_id') required final int commentId,
-    required final int score,
-    required final int upvotes,
-    required final int downvotes,
-    @JsonKey(name: 'child_count') required final int childCount,
+    final int score,
+    final int upvotes,
+    final int downvotes,
+    @JsonKey(name: 'child_count') final int childCount,
   }) = _$CommentAggregatesImpl;
 
   factory _CommentAggregates.fromJson(Map<String, dynamic> json) =
