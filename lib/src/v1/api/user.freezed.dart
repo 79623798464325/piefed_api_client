@@ -197,6 +197,15 @@ mixin _$GetPersonDetails {
   int? get personId => throw _privateConstructorUsedError;
   String? get username => throw _privateConstructorUsedError;
   String? get auth => throw _privateConstructorUsedError;
+  String? get sort => throw _privateConstructorUsedError;
+  int? get page => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'community_id')
+  int? get communityId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'saved_only')
+  bool? get savedOnly => throw _privateConstructorUsedError;
+  @JsonKey(name: 'include_content')
+  bool? get includeContent => throw _privateConstructorUsedError;
 
   /// Serializes this GetPersonDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -219,6 +228,12 @@ abstract class $GetPersonDetailsCopyWith<$Res> {
     @JsonKey(name: 'person_id') int? personId,
     String? username,
     String? auth,
+    String? sort,
+    int? page,
+    int? limit,
+    @JsonKey(name: 'community_id') int? communityId,
+    @JsonKey(name: 'saved_only') bool? savedOnly,
+    @JsonKey(name: 'include_content') bool? includeContent,
   });
 }
 
@@ -240,6 +255,12 @@ class _$GetPersonDetailsCopyWithImpl<$Res, $Val extends GetPersonDetails>
     Object? personId = freezed,
     Object? username = freezed,
     Object? auth = freezed,
+    Object? sort = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? communityId = freezed,
+    Object? savedOnly = freezed,
+    Object? includeContent = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -258,6 +279,36 @@ class _$GetPersonDetailsCopyWithImpl<$Res, $Val extends GetPersonDetails>
                     ? _value.auth
                     : auth // ignore: cast_nullable_to_non_nullable
                         as String?,
+            sort:
+                freezed == sort
+                    ? _value.sort
+                    : sort // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            page:
+                freezed == page
+                    ? _value.page
+                    : page // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            limit:
+                freezed == limit
+                    ? _value.limit
+                    : limit // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            communityId:
+                freezed == communityId
+                    ? _value.communityId
+                    : communityId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            savedOnly:
+                freezed == savedOnly
+                    ? _value.savedOnly
+                    : savedOnly // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            includeContent:
+                freezed == includeContent
+                    ? _value.includeContent
+                    : includeContent // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -277,6 +328,12 @@ abstract class _$$GetPersonDetailsImplCopyWith<$Res>
     @JsonKey(name: 'person_id') int? personId,
     String? username,
     String? auth,
+    String? sort,
+    int? page,
+    int? limit,
+    @JsonKey(name: 'community_id') int? communityId,
+    @JsonKey(name: 'saved_only') bool? savedOnly,
+    @JsonKey(name: 'include_content') bool? includeContent,
   });
 }
 
@@ -297,6 +354,12 @@ class __$$GetPersonDetailsImplCopyWithImpl<$Res>
     Object? personId = freezed,
     Object? username = freezed,
     Object? auth = freezed,
+    Object? sort = freezed,
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? communityId = freezed,
+    Object? savedOnly = freezed,
+    Object? includeContent = freezed,
   }) {
     return _then(
       _$GetPersonDetailsImpl(
@@ -315,6 +378,36 @@ class __$$GetPersonDetailsImplCopyWithImpl<$Res>
                 ? _value.auth
                 : auth // ignore: cast_nullable_to_non_nullable
                     as String?,
+        sort:
+            freezed == sort
+                ? _value.sort
+                : sort // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        page:
+            freezed == page
+                ? _value.page
+                : page // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        limit:
+            freezed == limit
+                ? _value.limit
+                : limit // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        communityId:
+            freezed == communityId
+                ? _value.communityId
+                : communityId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        savedOnly:
+            freezed == savedOnly
+                ? _value.savedOnly
+                : savedOnly // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        includeContent:
+            freezed == includeContent
+                ? _value.includeContent
+                : includeContent // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -328,6 +421,12 @@ class _$GetPersonDetailsImpl extends _GetPersonDetails {
     @JsonKey(name: 'person_id') this.personId,
     this.username,
     this.auth,
+    this.sort,
+    this.page,
+    this.limit,
+    @JsonKey(name: 'community_id') this.communityId,
+    @JsonKey(name: 'saved_only') this.savedOnly,
+    @JsonKey(name: 'include_content') this.includeContent,
   }) : super._();
 
   factory _$GetPersonDetailsImpl.fromJson(Map<String, dynamic> json) =>
@@ -340,10 +439,25 @@ class _$GetPersonDetailsImpl extends _GetPersonDetails {
   final String? username;
   @override
   final String? auth;
+  @override
+  final String? sort;
+  @override
+  final int? page;
+  @override
+  final int? limit;
+  @override
+  @JsonKey(name: 'community_id')
+  final int? communityId;
+  @override
+  @JsonKey(name: 'saved_only')
+  final bool? savedOnly;
+  @override
+  @JsonKey(name: 'include_content')
+  final bool? includeContent;
 
   @override
   String toString() {
-    return 'GetPersonDetails(personId: $personId, username: $username, auth: $auth)';
+    return 'GetPersonDetails(personId: $personId, username: $username, auth: $auth, sort: $sort, page: $page, limit: $limit, communityId: $communityId, savedOnly: $savedOnly, includeContent: $includeContent)';
   }
 
   @override
@@ -355,12 +469,32 @@ class _$GetPersonDetailsImpl extends _GetPersonDetails {
                 other.personId == personId) &&
             (identical(other.username, username) ||
                 other.username == username) &&
-            (identical(other.auth, auth) || other.auth == auth));
+            (identical(other.auth, auth) || other.auth == auth) &&
+            (identical(other.sort, sort) || other.sort == sort) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.savedOnly, savedOnly) ||
+                other.savedOnly == savedOnly) &&
+            (identical(other.includeContent, includeContent) ||
+                other.includeContent == includeContent));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, personId, username, auth);
+  int get hashCode => Object.hash(
+    runtimeType,
+    personId,
+    username,
+    auth,
+    sort,
+    page,
+    limit,
+    communityId,
+    savedOnly,
+    includeContent,
+  );
 
   /// Create a copy of GetPersonDetails
   /// with the given fields replaced by the non-null parameter values.
@@ -384,6 +518,12 @@ abstract class _GetPersonDetails extends GetPersonDetails {
     @JsonKey(name: 'person_id') final int? personId,
     final String? username,
     final String? auth,
+    final String? sort,
+    final int? page,
+    final int? limit,
+    @JsonKey(name: 'community_id') final int? communityId,
+    @JsonKey(name: 'saved_only') final bool? savedOnly,
+    @JsonKey(name: 'include_content') final bool? includeContent,
   }) = _$GetPersonDetailsImpl;
   const _GetPersonDetails._() : super._();
 
@@ -397,6 +537,21 @@ abstract class _GetPersonDetails extends GetPersonDetails {
   String? get username;
   @override
   String? get auth;
+  @override
+  String? get sort;
+  @override
+  int? get page;
+  @override
+  int? get limit;
+  @override
+  @JsonKey(name: 'community_id')
+  int? get communityId;
+  @override
+  @JsonKey(name: 'saved_only')
+  bool? get savedOnly;
+  @override
+  @JsonKey(name: 'include_content')
+  bool? get includeContent;
 
   /// Create a copy of GetPersonDetails
   /// with the given fields replaced by the non-null parameter values.

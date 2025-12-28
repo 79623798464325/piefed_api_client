@@ -23,6 +23,12 @@ _$GetPersonDetailsImpl _$$GetPersonDetailsImplFromJson(
   personId: (json['person_id'] as num?)?.toInt(),
   username: json['username'] as String?,
   auth: json['auth'] as String?,
+  sort: json['sort'] as String?,
+  page: (json['page'] as num?)?.toInt(),
+  limit: (json['limit'] as num?)?.toInt(),
+  communityId: (json['community_id'] as num?)?.toInt(),
+  savedOnly: json['saved_only'] as bool?,
+  includeContent: json['include_content'] as bool?,
 );
 
 Map<String, dynamic> _$$GetPersonDetailsImplToJson(
@@ -31,6 +37,12 @@ Map<String, dynamic> _$$GetPersonDetailsImplToJson(
   if (instance.personId case final value?) 'person_id': value,
   if (instance.username case final value?) 'username': value,
   if (instance.auth case final value?) 'auth': value,
+  if (instance.sort case final value?) 'sort': value,
+  if (instance.page case final value?) 'page': value,
+  if (instance.limit case final value?) 'limit': value,
+  if (instance.communityId case final value?) 'community_id': value,
+  if (instance.savedOnly case final value?) 'saved_only': value,
+  if (instance.includeContent case final value?) 'include_content': value,
 };
 
 _$GetMyUserImpl _$$GetMyUserImplFromJson(Map<String, dynamic> json) =>

@@ -25,7 +25,17 @@ class Login with _$Login implements PieFedApiQuery<UserLoginResponse> {
 @freezed
 class GetPersonDetails with _$GetPersonDetails implements PieFedApiQuery<GetPersonDetailsResponse> {
   @JsonSerializable(includeIfNull: false)
-  const factory GetPersonDetails({@JsonKey(name: 'person_id') int? personId, String? username, String? auth}) = _GetPersonDetails;
+  const factory GetPersonDetails({
+    @JsonKey(name: 'person_id') int? personId,
+    String? username,
+    String? auth,
+    String? sort,
+    int? page,
+    int? limit,
+    @JsonKey(name: 'community_id') int? communityId,
+    @JsonKey(name: 'saved_only') bool? savedOnly,
+    @JsonKey(name: 'include_content') bool? includeContent,
+  }) = _GetPersonDetails;
 
   const GetPersonDetails._();
   factory GetPersonDetails.fromJson(Map<String, dynamic> json) => _$GetPersonDetailsFromJson(json);

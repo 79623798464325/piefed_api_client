@@ -1,4 +1,15 @@
 # Changelog
+## 0.7.1
+
+*   **Fixes**:
+    *   `GetPersonDetails`: Added missing parameters from the API spec:
+        *   `includeContent` - **Critical**: The PieFed API defaults this to `false`, which causes posts and comments to be returned as empty lists. Pass `includeContent: true` to retrieve user posts and comments.
+        *   `sort` - Sort order for posts/comments (e.g., "New", "Top", "Hot")
+        *   `page` - Page number for pagination (defaults to 1)
+        *   `limit` - Items per page (defaults to 20)
+        *   `communityId` - Filter posts/comments to a specific community
+        *   `savedOnly` - Only return saved posts/comments
+
 ## 0.7.0
 
 *   **PieFed v1.4 Support**:
