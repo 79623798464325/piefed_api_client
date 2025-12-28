@@ -40,6 +40,9 @@ class CreatePost with _$CreatePost implements PieFedApiQuery<GetPostResponse> {
     @JsonKey(name: 'language_id') int? languageId,
     required String auth,
     @JsonKey(name: 'honeypot') String? honeypot,
+    @JsonKey(name: 'ai_generated') bool? aiGenerated,
+    PostPoll? poll,
+    PostEvent? event,
   }) = _CreatePost;
 
   const CreatePost._();

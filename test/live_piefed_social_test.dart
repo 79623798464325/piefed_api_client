@@ -36,5 +36,16 @@ void main() {
         expect(post.post.title, isNotEmpty);
       }
     });
+
+    test('ListFeeds returns valid response (Regression check for null params)', () async {
+      try {
+        final response = await api.run(const ListFeeds(limit: 5));
+        expect(response.feeds, isNotNull);
+        print('Feeds found: ${response.feeds.length}');
+      } catch (e) {
+        print('FAILED with: $e');
+        rethrow;
+      }
+    });
   });
 }

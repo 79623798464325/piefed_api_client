@@ -18,6 +18,12 @@ void main() {
         'avatar': 'https://example.com/avatar.png',
         'banner': 'https://example.com/banner.png',
         'bio': 'Test bio',
+        'about': null,
+        'extra_fields': null,
+        'note': null,
+        'flair': null,
+        'title': null,
+        'published': null,
       };
       final model = Person.fromJson(json);
       expect(model.id, 1);
@@ -93,6 +99,7 @@ void main() {
         thumbnailUrl: 'https://example.com/thumb.jpg',
         published: now,
         updated: now.add(const Duration(hours: 1)),
+        aiGenerated: false,
       );
 
       final json = post.toJson();
@@ -192,7 +199,7 @@ void main() {
 
       // Minimal objects for brevity, mainly testing structure wrap
       final postView = PostView(
-        post: Post(id: 1, title: 't', apId: 'a', local: true, nsfw: false, deleted: false, removed: false, userId: 1, communityId: 1, published: DateTime.now().toUtc()),
+        post: Post(id: 1, title: 't', apId: 'a', local: true, nsfw: false, deleted: false, removed: false, userId: 1, communityId: 1, aiGenerated: false, published: DateTime.now().toUtc()),
         creator: Person(id: 1, name: 'u', actorId: 'a', local: true, banned: false, bot: false, deleted: false, instanceId: 1),
         community: Community(id: 1, name: 'c', title: 't', apId: 'a', local: true, nsfw: false, deleted: false, hidden: false, removed: false, instanceId: 1, aiGenerated: false),
         creatorBannedFromCommunity: false,

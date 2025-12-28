@@ -201,6 +201,7 @@ mixin _$CreateComment {
   @JsonKey(name: 'language_id')
   int? get languageId => throw _privateConstructorUsedError;
   String get auth => throw _privateConstructorUsedError;
+  bool get answer => throw _privateConstructorUsedError;
 
   /// Serializes this CreateComment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -225,6 +226,7 @@ abstract class $CreateCommentCopyWith<$Res> {
     @JsonKey(name: 'parent_id') int? parentId,
     @JsonKey(name: 'language_id') int? languageId,
     String auth,
+    bool answer,
   });
 }
 
@@ -248,6 +250,7 @@ class _$CreateCommentCopyWithImpl<$Res, $Val extends CreateComment>
     Object? parentId = freezed,
     Object? languageId = freezed,
     Object? auth = null,
+    Object? answer = null,
   }) {
     return _then(
       _value.copyWith(
@@ -276,6 +279,11 @@ class _$CreateCommentCopyWithImpl<$Res, $Val extends CreateComment>
                     ? _value.auth
                     : auth // ignore: cast_nullable_to_non_nullable
                         as String,
+            answer:
+                null == answer
+                    ? _value.answer
+                    : answer // ignore: cast_nullable_to_non_nullable
+                        as bool,
           )
           as $Val,
     );
@@ -297,6 +305,7 @@ abstract class _$$CreateCommentImplCopyWith<$Res>
     @JsonKey(name: 'parent_id') int? parentId,
     @JsonKey(name: 'language_id') int? languageId,
     String auth,
+    bool answer,
   });
 }
 
@@ -319,6 +328,7 @@ class __$$CreateCommentImplCopyWithImpl<$Res>
     Object? parentId = freezed,
     Object? languageId = freezed,
     Object? auth = null,
+    Object? answer = null,
   }) {
     return _then(
       _$CreateCommentImpl(
@@ -347,6 +357,11 @@ class __$$CreateCommentImplCopyWithImpl<$Res>
                 ? _value.auth
                 : auth // ignore: cast_nullable_to_non_nullable
                     as String,
+        answer:
+            null == answer
+                ? _value.answer
+                : answer // ignore: cast_nullable_to_non_nullable
+                    as bool,
       ),
     );
   }
@@ -362,6 +377,7 @@ class _$CreateCommentImpl extends _CreateComment {
     @JsonKey(name: 'parent_id') this.parentId,
     @JsonKey(name: 'language_id') this.languageId,
     required this.auth,
+    this.answer = false,
   }) : super._();
 
   factory _$CreateCommentImpl.fromJson(Map<String, dynamic> json) =>
@@ -380,10 +396,13 @@ class _$CreateCommentImpl extends _CreateComment {
   final int? languageId;
   @override
   final String auth;
+  @override
+  @JsonKey()
+  final bool answer;
 
   @override
   String toString() {
-    return 'CreateComment(body: $body, postId: $postId, parentId: $parentId, languageId: $languageId, auth: $auth)';
+    return 'CreateComment(body: $body, postId: $postId, parentId: $parentId, languageId: $languageId, auth: $auth, answer: $answer)';
   }
 
   @override
@@ -397,13 +416,21 @@ class _$CreateCommentImpl extends _CreateComment {
                 other.parentId == parentId) &&
             (identical(other.languageId, languageId) ||
                 other.languageId == languageId) &&
-            (identical(other.auth, auth) || other.auth == auth));
+            (identical(other.auth, auth) || other.auth == auth) &&
+            (identical(other.answer, answer) || other.answer == answer));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, body, postId, parentId, languageId, auth);
+  int get hashCode => Object.hash(
+    runtimeType,
+    body,
+    postId,
+    parentId,
+    languageId,
+    auth,
+    answer,
+  );
 
   /// Create a copy of CreateComment
   /// with the given fields replaced by the non-null parameter values.
@@ -426,6 +453,7 @@ abstract class _CreateComment extends CreateComment {
     @JsonKey(name: 'parent_id') final int? parentId,
     @JsonKey(name: 'language_id') final int? languageId,
     required final String auth,
+    final bool answer,
   }) = _$CreateCommentImpl;
   const _CreateComment._() : super._();
 
@@ -445,6 +473,8 @@ abstract class _CreateComment extends CreateComment {
   int? get languageId;
   @override
   String get auth;
+  @override
+  bool get answer;
 
   /// Create a copy of CreateComment
   /// with the given fields replaced by the non-null parameter values.

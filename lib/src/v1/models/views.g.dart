@@ -87,6 +87,11 @@ _$PostViewImpl _$$PostViewImplFromJson(Map<String, dynamic> json) =>
       read: json['read'] as bool,
       creatorBlocked: json['creator_blocked'] as bool? ?? false,
       myVote: (json['my_vote'] as num?)?.toInt(),
+      flairList:
+          (json['flair_list'] as List<dynamic>?)
+              ?.map((e) => CommunityFlair.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
     );
 
 Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
@@ -101,6 +106,8 @@ Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
       'read': instance.read,
       'creator_blocked': instance.creatorBlocked,
       'my_vote': instance.myVote,
+      'flair_list': instance.flairList,
+      'can_auth_user_moderate': instance.canAuthUserModerate,
     };
 
 _$PrivateMessageViewImpl _$$PrivateMessageViewImplFromJson(

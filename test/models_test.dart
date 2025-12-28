@@ -41,6 +41,7 @@ void main() {
         userId: 1,
         communityId: 1,
         published: DateTime.now().toUtc(),
+        aiGenerated: false,
       );
       final json = post.toJson();
       expect(json['title'], 'Test Post');

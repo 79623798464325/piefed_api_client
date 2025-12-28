@@ -36,7 +36,7 @@ class PieFedApiV1 implements PieFedApi {
       headers['Content-Type'] = 'application/json';
     }
 
-    if (queryJson.containsKey('auth')) {
+    if (queryJson.containsKey('auth') && queryJson['auth'] != null) {
       headers['Authorization'] = 'Bearer ${queryJson['auth']}';
     }
 
@@ -71,7 +71,10 @@ class PieFedApiV1 implements PieFedApi {
   Future<http.Response> _makeRequest(PieFedApiQuery query, Map<String, dynamic> queryJson) {
     switch (query.httpMethod) {
       case HttpMethod.get:
-        final queryParams = <String, String>{for (final entry in queryJson.entries) entry.key: entry.value.toString()};
+        final queryParams = <String, String>{
+          for (final entry in queryJson.entries)
+            if (entry.value != null) entry.key: entry.value.toString(),
+        };
         return _client.get(_buildUri(query.path, queryParams), headers: _buildHeaders(queryJson));
 
       case HttpMethod.post:

@@ -18,9 +18,22 @@ class Person with _$Person {
     String? avatar,
     String? banner,
     String? bio,
+    String? about,
+    @JsonKey(name: 'extra_fields') List<UserExtraField>? extraFields,
+    String? note,
+    String? flair,
+    String? title,
+    DateTime? published,
   }) = _Person;
 
   factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
+}
+
+@freezed
+class UserExtraField with _$UserExtraField {
+  const factory UserExtraField({required int id, required String label, required String text}) = _UserExtraField;
+
+  factory UserExtraField.fromJson(Map<String, dynamic> json) => _$UserExtraFieldFromJson(json);
 }
 
 @freezed
@@ -62,9 +75,100 @@ class Post with _$Post {
     @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
     @JsonKey(name: 'published') required DateTime published,
     DateTime? updated,
+    @JsonKey(name: 'ai_generated', defaultValue: false) required bool aiGenerated,
+    @JsonKey(name: 'post_type') PostType? postType,
+    PostPoll? poll,
+    PostEvent? event,
+    @JsonKey(name: 'emoji_reactions') List<Reactions>? emojiReactions,
+    @JsonKey(name: 'cross_posts') List<MiniCrossPosts>? crossPosts,
+    String? tags,
+    String? flair,
   }) = _Post;
 
   factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
+}
+
+enum PostType {
+  @JsonValue('Link')
+  link,
+  @JsonValue('Discussion')
+  discussion,
+  @JsonValue('Image')
+  image,
+  @JsonValue('Video')
+  video,
+  @JsonValue('Poll')
+  poll,
+  @JsonValue('Event')
+  event,
+}
+
+@freezed
+class PostPoll with _$PostPoll {
+  const factory PostPoll({@JsonKey(name: 'poll_id') int? pollId, @Default([]) List<PollChoice> options, @JsonKey(name: 'expires_at') DateTime? expiresAt, @JsonKey(name: 'my_vote') int? myVote}) =
+      _PostPoll;
+
+  factory PostPoll.fromJson(Map<String, dynamic> json) => _$PostPollFromJson(json);
+}
+
+@freezed
+class PollChoice with _$PollChoice {
+  const factory PollChoice({required int id, required String text, @Default(0) int count}) = _PollChoice;
+
+  factory PollChoice.fromJson(Map<String, dynamic> json) => _$PollChoiceFromJson(json);
+}
+
+@freezed
+class PostEvent with _$PostEvent {
+  const factory PostEvent({
+    required DateTime start,
+    required DateTime end,
+    String? timezone,
+    @JsonKey(name: 'max_attendees', defaultValue: 0) required int maxAttendees,
+    @JsonKey(name: 'participant_count', defaultValue: 0) required int participantCount,
+    @Default(false) bool full,
+    @JsonKey(name: 'online_link') String? onlineLink,
+    @JsonKey(name: 'join_mode') String? joinMode,
+    @JsonKey(name: 'external_participation_url') String? externalParticipationUrl,
+    @JsonKey(name: 'anonymous_participation', defaultValue: false) required bool anonymousParticipation,
+    @Default(false) bool online,
+    @JsonKey(name: 'buy_tickets_link') String? buyTicketsLink,
+    @JsonKey(name: 'event_fee_currency') String? eventFeeCurrency,
+    @JsonKey(name: 'event_fee_amount') num? eventFeeAmount,
+    @JsonKey(name: 'my_participation') String? myParticipation,
+  }) = _PostEvent;
+
+  factory PostEvent.fromJson(Map<String, dynamic> json) => _$PostEventFromJson(json);
+}
+
+@freezed
+class Reactions with _$Reactions {
+  const factory Reactions({String? url, required String token, required List<String> authors, required int count, @JsonKey(name: 'my_reaction') String? myReaction}) = _Reactions;
+
+  factory Reactions.fromJson(Map<String, dynamic> json) => _$ReactionsFromJson(json);
+}
+
+@freezed
+class MiniCrossPosts with _$MiniCrossPosts {
+  const factory MiniCrossPosts({@JsonKey(name: 'post_id') required int postId, @JsonKey(name: 'reply_count') required int replyCount, @JsonKey(name: 'community_name') required String communityName}) =
+      _MiniCrossPosts;
+
+  factory MiniCrossPosts.fromJson(Map<String, dynamic> json) => _$MiniCrossPostsFromJson(json);
+}
+
+@freezed
+class CommunityFlair with _$CommunityFlair {
+  const factory CommunityFlair({
+    required int id,
+    @JsonKey(name: 'community_id') required int communityId,
+    @JsonKey(name: 'flair_title') required String flairTitle,
+    @JsonKey(name: 'text_color') required String textColor,
+    @JsonKey(name: 'background_color') required String backgroundColor,
+    @JsonKey(name: 'blur_images') required bool blurImages,
+    @JsonKey(name: 'ap_id') String? apId,
+  }) = _CommunityFlair;
+
+  factory CommunityFlair.fromJson(Map<String, dynamic> json) => _$CommunityFlairFromJson(json);
 }
 
 @freezed
@@ -105,6 +209,8 @@ class Comment with _$Comment {
     @JsonKey(name: 'language_id') int? languageId,
     required DateTime published,
     DateTime? updated,
+    @Default(false) bool answer,
+    @JsonKey(name: 'emoji_reactions') List<Reactions>? emojiReactions,
   }) = _Comment;
 
   factory Comment.fromJson(Map<String, dynamic> json) => _$CommentFromJson(json);

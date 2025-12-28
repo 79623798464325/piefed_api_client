@@ -987,6 +987,10 @@ mixin _$PostView {
   bool get creatorBlocked => throw _privateConstructorUsedError;
   @JsonKey(name: 'my_vote')
   int? get myVote => throw _privateConstructorUsedError;
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList => throw _privateConstructorUsedError;
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate => throw _privateConstructorUsedError;
 
   /// Serializes this PostView to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1015,6 +1019,8 @@ abstract class $PostViewCopyWith<$Res> {
     bool read,
     @JsonKey(name: 'creator_blocked', defaultValue: false) bool creatorBlocked,
     @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
   });
 
   $PostCopyWith<$Res> get post;
@@ -1048,6 +1054,8 @@ class _$PostViewCopyWithImpl<$Res, $Val extends PostView>
     Object? read = null,
     Object? creatorBlocked = null,
     Object? myVote = freezed,
+    Object? flairList = freezed,
+    Object? canAuthUserModerate = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -1101,6 +1109,16 @@ class _$PostViewCopyWithImpl<$Res, $Val extends PostView>
                     ? _value.myVote
                     : myVote // ignore: cast_nullable_to_non_nullable
                         as int?,
+            flairList:
+                freezed == flairList
+                    ? _value.flairList
+                    : flairList // ignore: cast_nullable_to_non_nullable
+                        as List<CommunityFlair>?,
+            canAuthUserModerate:
+                freezed == canAuthUserModerate
+                    ? _value.canAuthUserModerate
+                    : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -1168,6 +1186,8 @@ abstract class _$$PostViewImplCopyWith<$Res>
     bool read,
     @JsonKey(name: 'creator_blocked', defaultValue: false) bool creatorBlocked,
     @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
   });
 
   @override
@@ -1204,6 +1224,8 @@ class __$$PostViewImplCopyWithImpl<$Res>
     Object? read = null,
     Object? creatorBlocked = null,
     Object? myVote = freezed,
+    Object? flairList = freezed,
+    Object? canAuthUserModerate = freezed,
   }) {
     return _then(
       _$PostViewImpl(
@@ -1257,6 +1279,16 @@ class __$$PostViewImplCopyWithImpl<$Res>
                 ? _value.myVote
                 : myVote // ignore: cast_nullable_to_non_nullable
                     as int?,
+        flairList:
+            freezed == flairList
+                ? _value._flairList
+                : flairList // ignore: cast_nullable_to_non_nullable
+                    as List<CommunityFlair>?,
+        canAuthUserModerate:
+            freezed == canAuthUserModerate
+                ? _value.canAuthUserModerate
+                : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -1278,7 +1310,9 @@ class _$PostViewImpl implements _PostView {
     @JsonKey(name: 'creator_blocked', defaultValue: false)
     required this.creatorBlocked,
     @JsonKey(name: 'my_vote') this.myVote,
-  });
+    @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') this.canAuthUserModerate,
+  }) : _flairList = flairList;
 
   factory _$PostViewImpl.fromJson(Map<String, dynamic> json) =>
       _$$PostViewImplFromJson(json);
@@ -1307,10 +1341,24 @@ class _$PostViewImpl implements _PostView {
   @override
   @JsonKey(name: 'my_vote')
   final int? myVote;
+  final List<CommunityFlair>? _flairList;
+  @override
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList {
+    final value = _flairList;
+    if (value == null) return null;
+    if (_flairList is EqualUnmodifiableListView) return _flairList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  final bool? canAuthUserModerate;
 
   @override
   String toString() {
-    return 'PostView(post: $post, creator: $creator, community: $community, creatorBannedFromCommunity: $creatorBannedFromCommunity, counts: $counts, subscribed: $subscribed, saved: $saved, read: $read, creatorBlocked: $creatorBlocked, myVote: $myVote)';
+    return 'PostView(post: $post, creator: $creator, community: $community, creatorBannedFromCommunity: $creatorBannedFromCommunity, counts: $counts, subscribed: $subscribed, saved: $saved, read: $read, creatorBlocked: $creatorBlocked, myVote: $myVote, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate)';
   }
 
   @override
@@ -1335,7 +1383,13 @@ class _$PostViewImpl implements _PostView {
             (identical(other.read, read) || other.read == read) &&
             (identical(other.creatorBlocked, creatorBlocked) ||
                 other.creatorBlocked == creatorBlocked) &&
-            (identical(other.myVote, myVote) || other.myVote == myVote));
+            (identical(other.myVote, myVote) || other.myVote == myVote) &&
+            const DeepCollectionEquality().equals(
+              other._flairList,
+              _flairList,
+            ) &&
+            (identical(other.canAuthUserModerate, canAuthUserModerate) ||
+                other.canAuthUserModerate == canAuthUserModerate));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1352,6 +1406,8 @@ class _$PostViewImpl implements _PostView {
     read,
     creatorBlocked,
     myVote,
+    const DeepCollectionEquality().hash(_flairList),
+    canAuthUserModerate,
   );
 
   /// Create a copy of PostView
@@ -1382,6 +1438,8 @@ abstract class _PostView implements PostView {
     @JsonKey(name: 'creator_blocked', defaultValue: false)
     required final bool creatorBlocked,
     @JsonKey(name: 'my_vote') final int? myVote,
+    @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') final bool? canAuthUserModerate,
   }) = _$PostViewImpl;
 
   factory _PostView.fromJson(Map<String, dynamic> json) =
@@ -1411,6 +1469,12 @@ abstract class _PostView implements PostView {
   @override
   @JsonKey(name: 'my_vote')
   int? get myVote;
+  @override
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList;
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate;
 
   /// Create a copy of PostView
   /// with the given fields replaced by the non-null parameter values.

@@ -59,6 +59,8 @@ class PostView with _$PostView {
     required bool read,
     @JsonKey(name: 'creator_blocked', defaultValue: false) required bool creatorBlocked,
     @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
   }) = _PostView;
 
   factory PostView.fromJson(Map<String, dynamic> json) => _$PostViewFromJson(json);

@@ -1,4 +1,21 @@
 # Changelog
+## 0.7.0
+
+*   **PieFed v1.4 Support**:
+    *   Added support for **Polls** (`PostPoll`, `PollChoice`, `PollVote`).
+    *   Added support for **Events** (`PostEvent`, `PostType.event`).
+    *   Added support for **Emoji Reactions** on posts and comments (`Reactions`).
+    *   Added support for **AI Tagging** on posts and communities.
+    *   Added support for **Answer Comments** (`Comment.answer`).
+    *   Added support for **Extra User Fields** (`UserExtraField`).
+    *   Added support for **Community Flairs** (`CommunityFlair`, `PostView.flairList`).
+*   **Model Updates**:
+    *   `Post`: Added `aiGenerated`, `poll`, `event`, `emojiReactions`, `tags` (as String for hashtags), `postType`, `crossPosts`.
+    *   `Person`: Added `about` (markdown), `extraFields`, `note`, `flair`.
+    *   `Comment`: Added `answer`, `emojiReactions`.
+    *   `CreatePost`: Added `aiGenerated`, `poll`, `event`.
+    *   `CreateComment`: Added `answer`.
+
 ## 0.6.5
 
 *   Fixes:

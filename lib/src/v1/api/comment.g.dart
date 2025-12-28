@@ -25,6 +25,7 @@ _$CreateCommentImpl _$$CreateCommentImplFromJson(Map<String, dynamic> json) =>
       parentId: (json['parent_id'] as num?)?.toInt(),
       languageId: (json['language_id'] as num?)?.toInt(),
       auth: json['auth'] as String,
+      answer: json['answer'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$CreateCommentImplToJson(_$CreateCommentImpl instance) =>
@@ -34,6 +35,7 @@ Map<String, dynamic> _$$CreateCommentImplToJson(_$CreateCommentImpl instance) =>
       if (instance.parentId case final value?) 'parent_id': value,
       if (instance.languageId case final value?) 'language_id': value,
       'auth': instance.auth,
+      'answer': instance.answer,
     };
 
 _$ReportCommentImpl _$$ReportCommentImplFromJson(Map<String, dynamic> json) =>

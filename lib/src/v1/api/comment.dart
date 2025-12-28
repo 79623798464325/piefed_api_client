@@ -32,6 +32,7 @@ class CreateComment with _$CreateComment implements PieFedApiQuery<GetCommentRes
     @JsonKey(name: 'parent_id') int? parentId,
     @JsonKey(name: 'language_id') int? languageId,
     required String auth,
+    @Default(false) bool answer,
   }) = _CreateComment;
 
   const CreateComment._();

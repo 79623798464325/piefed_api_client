@@ -28,6 +28,15 @@ _$CreatePostImpl _$$CreatePostImplFromJson(Map<String, dynamic> json) =>
       languageId: (json['language_id'] as num?)?.toInt(),
       auth: json['auth'] as String,
       honeypot: json['honeypot'] as String?,
+      aiGenerated: json['ai_generated'] as bool?,
+      poll:
+          json['poll'] == null
+              ? null
+              : PostPoll.fromJson(json['poll'] as Map<String, dynamic>),
+      event:
+          json['event'] == null
+              ? null
+              : PostEvent.fromJson(json['event'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$CreatePostImplToJson(_$CreatePostImpl instance) =>
@@ -40,6 +49,9 @@ Map<String, dynamic> _$$CreatePostImplToJson(_$CreatePostImpl instance) =>
       if (instance.languageId case final value?) 'language_id': value,
       'auth': instance.auth,
       if (instance.honeypot case final value?) 'honeypot': value,
+      if (instance.aiGenerated case final value?) 'ai_generated': value,
+      if (instance.poll case final value?) 'poll': value,
+      if (instance.event case final value?) 'event': value,
     };
 
 _$ReportPostImpl _$$ReportPostImplFromJson(Map<String, dynamic> json) =>

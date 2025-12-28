@@ -200,6 +200,10 @@ mixin _$CreatePost {
   String get auth => throw _privateConstructorUsedError;
   @JsonKey(name: 'honeypot')
   String? get honeypot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ai_generated')
+  bool? get aiGenerated => throw _privateConstructorUsedError;
+  PostPoll? get poll => throw _privateConstructorUsedError;
+  PostEvent? get event => throw _privateConstructorUsedError;
 
   /// Serializes this CreatePost to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -227,7 +231,13 @@ abstract class $CreatePostCopyWith<$Res> {
     @JsonKey(name: 'language_id') int? languageId,
     String auth,
     @JsonKey(name: 'honeypot') String? honeypot,
+    @JsonKey(name: 'ai_generated') bool? aiGenerated,
+    PostPoll? poll,
+    PostEvent? event,
   });
+
+  $PostPollCopyWith<$Res>? get poll;
+  $PostEventCopyWith<$Res>? get event;
 }
 
 /// @nodoc
@@ -253,6 +263,9 @@ class _$CreatePostCopyWithImpl<$Res, $Val extends CreatePost>
     Object? languageId = freezed,
     Object? auth = null,
     Object? honeypot = freezed,
+    Object? aiGenerated = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -296,9 +309,52 @@ class _$CreatePostCopyWithImpl<$Res, $Val extends CreatePost>
                     ? _value.honeypot
                     : honeypot // ignore: cast_nullable_to_non_nullable
                         as String?,
+            aiGenerated:
+                freezed == aiGenerated
+                    ? _value.aiGenerated
+                    : aiGenerated // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            poll:
+                freezed == poll
+                    ? _value.poll
+                    : poll // ignore: cast_nullable_to_non_nullable
+                        as PostPoll?,
+            event:
+                freezed == event
+                    ? _value.event
+                    : event // ignore: cast_nullable_to_non_nullable
+                        as PostEvent?,
           )
           as $Val,
     );
+  }
+
+  /// Create a copy of CreatePost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostPollCopyWith<$Res>? get poll {
+    if (_value.poll == null) {
+      return null;
+    }
+
+    return $PostPollCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
+    });
+  }
+
+  /// Create a copy of CreatePost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostEventCopyWith<$Res>? get event {
+    if (_value.event == null) {
+      return null;
+    }
+
+    return $PostEventCopyWith<$Res>(_value.event!, (value) {
+      return _then(_value.copyWith(event: value) as $Val);
+    });
   }
 }
 
@@ -320,7 +376,15 @@ abstract class _$$CreatePostImplCopyWith<$Res>
     @JsonKey(name: 'language_id') int? languageId,
     String auth,
     @JsonKey(name: 'honeypot') String? honeypot,
+    @JsonKey(name: 'ai_generated') bool? aiGenerated,
+    PostPoll? poll,
+    PostEvent? event,
   });
+
+  @override
+  $PostPollCopyWith<$Res>? get poll;
+  @override
+  $PostEventCopyWith<$Res>? get event;
 }
 
 /// @nodoc
@@ -345,6 +409,9 @@ class __$$CreatePostImplCopyWithImpl<$Res>
     Object? languageId = freezed,
     Object? auth = null,
     Object? honeypot = freezed,
+    Object? aiGenerated = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
   }) {
     return _then(
       _$CreatePostImpl(
@@ -388,6 +455,21 @@ class __$$CreatePostImplCopyWithImpl<$Res>
                 ? _value.honeypot
                 : honeypot // ignore: cast_nullable_to_non_nullable
                     as String?,
+        aiGenerated:
+            freezed == aiGenerated
+                ? _value.aiGenerated
+                : aiGenerated // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        poll:
+            freezed == poll
+                ? _value.poll
+                : poll // ignore: cast_nullable_to_non_nullable
+                    as PostPoll?,
+        event:
+            freezed == event
+                ? _value.event
+                : event // ignore: cast_nullable_to_non_nullable
+                    as PostEvent?,
       ),
     );
   }
@@ -406,6 +488,9 @@ class _$CreatePostImpl extends _CreatePost {
     @JsonKey(name: 'language_id') this.languageId,
     required this.auth,
     @JsonKey(name: 'honeypot') this.honeypot,
+    @JsonKey(name: 'ai_generated') this.aiGenerated,
+    this.poll,
+    this.event,
   }) : super._();
 
   factory _$CreatePostImpl.fromJson(Map<String, dynamic> json) =>
@@ -431,10 +516,17 @@ class _$CreatePostImpl extends _CreatePost {
   @override
   @JsonKey(name: 'honeypot')
   final String? honeypot;
+  @override
+  @JsonKey(name: 'ai_generated')
+  final bool? aiGenerated;
+  @override
+  final PostPoll? poll;
+  @override
+  final PostEvent? event;
 
   @override
   String toString() {
-    return 'CreatePost(title: $title, communityId: $communityId, body: $body, url: $url, nsfw: $nsfw, languageId: $languageId, auth: $auth, honeypot: $honeypot)';
+    return 'CreatePost(title: $title, communityId: $communityId, body: $body, url: $url, nsfw: $nsfw, languageId: $languageId, auth: $auth, honeypot: $honeypot, aiGenerated: $aiGenerated, poll: $poll, event: $event)';
   }
 
   @override
@@ -452,7 +544,11 @@ class _$CreatePostImpl extends _CreatePost {
                 other.languageId == languageId) &&
             (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.honeypot, honeypot) ||
-                other.honeypot == honeypot));
+                other.honeypot == honeypot) &&
+            (identical(other.aiGenerated, aiGenerated) ||
+                other.aiGenerated == aiGenerated) &&
+            (identical(other.poll, poll) || other.poll == poll) &&
+            (identical(other.event, event) || other.event == event));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -467,6 +563,9 @@ class _$CreatePostImpl extends _CreatePost {
     languageId,
     auth,
     honeypot,
+    aiGenerated,
+    poll,
+    event,
   );
 
   /// Create a copy of CreatePost
@@ -493,6 +592,9 @@ abstract class _CreatePost extends CreatePost {
     @JsonKey(name: 'language_id') final int? languageId,
     required final String auth,
     @JsonKey(name: 'honeypot') final String? honeypot,
+    @JsonKey(name: 'ai_generated') final bool? aiGenerated,
+    final PostPoll? poll,
+    final PostEvent? event,
   }) = _$CreatePostImpl;
   const _CreatePost._() : super._();
 
@@ -519,6 +621,13 @@ abstract class _CreatePost extends CreatePost {
   @override
   @JsonKey(name: 'honeypot')
   String? get honeypot;
+  @override
+  @JsonKey(name: 'ai_generated')
+  bool? get aiGenerated;
+  @override
+  PostPoll? get poll;
+  @override
+  PostEvent? get event;
 
   /// Create a copy of CreatePost
   /// with the given fields replaced by the non-null parameter values.
