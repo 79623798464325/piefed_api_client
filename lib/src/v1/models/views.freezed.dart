@@ -1997,10 +1997,14 @@ mixin _$FeedView {
   String get name => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
+  @JsonKey(name: 'actor_id')
   String get actorId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ap_domain')
   String get apDomain => throw _privateConstructorUsedError;
   bool get local => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_instance_feed')
   bool get isInstanceFeed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'communities_count')
   int get communitiesCount => throw _privateConstructorUsedError;
   List<Community> get communities => throw _privateConstructorUsedError;
   List<FeedView> get children => throw _privateConstructorUsedError;
@@ -2025,11 +2029,11 @@ abstract class $FeedViewCopyWith<$Res> {
     String name,
     String title,
     String? description,
-    String actorId,
-    String apDomain,
+    @JsonKey(name: 'actor_id') String actorId,
+    @JsonKey(name: 'ap_domain') String apDomain,
     bool local,
-    bool isInstanceFeed,
-    int communitiesCount,
+    @JsonKey(name: 'is_instance_feed') bool isInstanceFeed,
+    @JsonKey(name: 'communities_count') int communitiesCount,
     List<Community> communities,
     List<FeedView> children,
   });
@@ -2139,11 +2143,11 @@ abstract class _$$FeedViewImplCopyWith<$Res>
     String name,
     String title,
     String? description,
-    String actorId,
-    String apDomain,
+    @JsonKey(name: 'actor_id') String actorId,
+    @JsonKey(name: 'ap_domain') String apDomain,
     bool local,
-    bool isInstanceFeed,
-    int communitiesCount,
+    @JsonKey(name: 'is_instance_feed') bool isInstanceFeed,
+    @JsonKey(name: 'communities_count') int communitiesCount,
     List<Community> communities,
     List<FeedView> children,
   });
@@ -2245,11 +2249,11 @@ class _$FeedViewImpl implements _FeedView {
     required this.name,
     required this.title,
     this.description,
-    required this.actorId,
-    required this.apDomain,
+    @JsonKey(name: 'actor_id') required this.actorId,
+    @JsonKey(name: 'ap_domain') required this.apDomain,
     required this.local,
-    required this.isInstanceFeed,
-    required this.communitiesCount,
+    @JsonKey(name: 'is_instance_feed') required this.isInstanceFeed,
+    @JsonKey(name: 'communities_count') required this.communitiesCount,
     required final List<Community> communities,
     required final List<FeedView> children,
   }) : _communities = communities,
@@ -2267,14 +2271,18 @@ class _$FeedViewImpl implements _FeedView {
   @override
   final String? description;
   @override
+  @JsonKey(name: 'actor_id')
   final String actorId;
   @override
+  @JsonKey(name: 'ap_domain')
   final String apDomain;
   @override
   final bool local;
   @override
+  @JsonKey(name: 'is_instance_feed')
   final bool isInstanceFeed;
   @override
+  @JsonKey(name: 'communities_count')
   final int communitiesCount;
   final List<Community> _communities;
   @override
@@ -2359,11 +2367,11 @@ abstract class _FeedView implements FeedView {
     required final String name,
     required final String title,
     final String? description,
-    required final String actorId,
-    required final String apDomain,
+    @JsonKey(name: 'actor_id') required final String actorId,
+    @JsonKey(name: 'ap_domain') required final String apDomain,
     required final bool local,
-    required final bool isInstanceFeed,
-    required final int communitiesCount,
+    @JsonKey(name: 'is_instance_feed') required final bool isInstanceFeed,
+    @JsonKey(name: 'communities_count') required final int communitiesCount,
     required final List<Community> communities,
     required final List<FeedView> children,
   }) = _$FeedViewImpl;
@@ -2380,14 +2388,18 @@ abstract class _FeedView implements FeedView {
   @override
   String? get description;
   @override
+  @JsonKey(name: 'actor_id')
   String get actorId;
   @override
+  @JsonKey(name: 'ap_domain')
   String get apDomain;
   @override
   bool get local;
   @override
+  @JsonKey(name: 'is_instance_feed')
   bool get isInstanceFeed;
   @override
+  @JsonKey(name: 'communities_count')
   int get communitiesCount;
   @override
   List<Community> get communities;

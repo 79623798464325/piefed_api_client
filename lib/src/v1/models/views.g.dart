@@ -159,11 +159,11 @@ _$FeedViewImpl _$$FeedViewImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       title: json['title'] as String,
       description: json['description'] as String?,
-      actorId: json['actorId'] as String,
-      apDomain: json['apDomain'] as String,
+      actorId: json['actor_id'] as String,
+      apDomain: json['ap_domain'] as String,
       local: json['local'] as bool,
-      isInstanceFeed: json['isInstanceFeed'] as bool,
-      communitiesCount: (json['communitiesCount'] as num).toInt(),
+      isInstanceFeed: json['is_instance_feed'] as bool,
+      communitiesCount: (json['communities_count'] as num).toInt(),
       communities:
           (json['communities'] as List<dynamic>)
               .map((e) => Community.fromJson(e as Map<String, dynamic>))
@@ -180,11 +180,11 @@ Map<String, dynamic> _$$FeedViewImplToJson(_$FeedViewImpl instance) =>
       'name': instance.name,
       'title': instance.title,
       'description': instance.description,
-      'actorId': instance.actorId,
-      'apDomain': instance.apDomain,
+      'actor_id': instance.actorId,
+      'ap_domain': instance.apDomain,
       'local': instance.local,
-      'isInstanceFeed': instance.isInstanceFeed,
-      'communitiesCount': instance.communitiesCount,
+      'is_instance_feed': instance.isInstanceFeed,
+      'communities_count': instance.communitiesCount,
       'communities': instance.communities,
       'children': instance.children,
     };
