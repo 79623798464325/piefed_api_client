@@ -48,8 +48,7 @@ mixin _$Search {
 
 /// @nodoc
 abstract class $SearchCopyWith<$Res> {
-  factory $SearchCopyWith(Search value, $Res Function(Search) then) =
-      _$SearchCopyWithImpl<$Res, Search>;
+  factory $SearchCopyWith(Search value, $Res Function(Search) then) = _$SearchCopyWithImpl<$Res, Search>;
   @useResult
   $Res call({
     String q,
@@ -66,8 +65,7 @@ abstract class $SearchCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SearchCopyWithImpl<$Res, $Val extends Search>
-    implements $SearchCopyWith<$Res> {
+class _$SearchCopyWithImpl<$Res, $Val extends Search> implements $SearchCopyWith<$Res> {
   _$SearchCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -151,10 +149,7 @@ class _$SearchCopyWithImpl<$Res, $Val extends Search>
 
 /// @nodoc
 abstract class _$$SearchImplCopyWith<$Res> implements $SearchCopyWith<$Res> {
-  factory _$$SearchImplCopyWith(
-    _$SearchImpl value,
-    $Res Function(_$SearchImpl) then,
-  ) = __$$SearchImplCopyWithImpl<$Res>;
+  factory _$$SearchImplCopyWith(_$SearchImpl value, $Res Function(_$SearchImpl) then) = __$$SearchImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -172,13 +167,8 @@ abstract class _$$SearchImplCopyWith<$Res> implements $SearchCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SearchImplCopyWithImpl<$Res>
-    extends _$SearchCopyWithImpl<$Res, _$SearchImpl>
-    implements _$$SearchImplCopyWith<$Res> {
-  __$$SearchImplCopyWithImpl(
-    _$SearchImpl _value,
-    $Res Function(_$SearchImpl) _then,
-  ) : super(_value, _then);
+class __$$SearchImplCopyWithImpl<$Res> extends _$SearchCopyWithImpl<$Res, _$SearchImpl> implements _$$SearchImplCopyWith<$Res> {
+  __$$SearchImplCopyWithImpl(_$SearchImpl _value, $Res Function(_$SearchImpl) _then) : super(_value, _then);
 
   /// Create a copy of Search
   /// with the given fields replaced by the non-null parameter values.
@@ -270,8 +260,7 @@ class _$SearchImpl extends _Search {
     this.auth,
   }) : super._();
 
-  factory _$SearchImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SearchImplFromJson(json);
+  factory _$SearchImpl.fromJson(Map<String, dynamic> json) => _$$SearchImplFromJson(json);
 
   @override
   final String q;
@@ -313,14 +302,10 @@ class _$SearchImpl extends _Search {
             other is _$SearchImpl &&
             (identical(other.q, q) || other.q == q) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.listingType, listingType) ||
-                other.listingType == listingType) &&
-            (identical(other.communityId, communityId) ||
-                other.communityId == communityId) &&
-            (identical(other.communityName, communityName) ||
-                other.communityName == communityName) &&
-            (identical(other.creatorId, creatorId) ||
-                other.creatorId == creatorId) &&
+            (identical(other.listingType, listingType) || other.listingType == listingType) &&
+            (identical(other.communityId, communityId) || other.communityId == communityId) &&
+            (identical(other.communityName, communityName) || other.communityName == communityName) &&
+            (identical(other.creatorId, creatorId) || other.creatorId == creatorId) &&
             (identical(other.sort, sort) || other.sort == sort) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -329,27 +314,14 @@ class _$SearchImpl extends _Search {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    q,
-    type,
-    listingType,
-    communityId,
-    communityName,
-    creatorId,
-    sort,
-    page,
-    limit,
-    auth,
-  );
+  int get hashCode => Object.hash(runtimeType, q, type, listingType, communityId, communityName, creatorId, sort, page, limit, auth);
 
   /// Create a copy of Search
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
-      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith => __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -404,6 +376,5 @@ abstract class _Search extends Search {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith => throw _privateConstructorUsedError;
 }

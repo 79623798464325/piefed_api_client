@@ -52,16 +52,12 @@ mixin _$ListComments {
   /// Create a copy of ListComments
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ListCommentsCopyWith<ListComments> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListCommentsCopyWith<ListComments> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListCommentsCopyWith<$Res> {
-  factory $ListCommentsCopyWith(
-    ListComments value,
-    $Res Function(ListComments) then,
-  ) = _$ListCommentsCopyWithImpl<$Res, ListComments>;
+  factory $ListCommentsCopyWith(ListComments value, $Res Function(ListComments) then) = _$ListCommentsCopyWithImpl<$Res, ListComments>;
   @useResult
   $Res call({
     int? limit,
@@ -82,8 +78,7 @@ abstract class $ListCommentsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ListCommentsCopyWithImpl<$Res, $Val extends ListComments>
-    implements $ListCommentsCopyWith<$Res> {
+class _$ListCommentsCopyWithImpl<$Res, $Val extends ListComments> implements $ListCommentsCopyWith<$Res> {
   _$ListCommentsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -190,12 +185,8 @@ class _$ListCommentsCopyWithImpl<$Res, $Val extends ListComments>
 }
 
 /// @nodoc
-abstract class _$$ListCommentsImplCopyWith<$Res>
-    implements $ListCommentsCopyWith<$Res> {
-  factory _$$ListCommentsImplCopyWith(
-    _$ListCommentsImpl value,
-    $Res Function(_$ListCommentsImpl) then,
-  ) = __$$ListCommentsImplCopyWithImpl<$Res>;
+abstract class _$$ListCommentsImplCopyWith<$Res> implements $ListCommentsCopyWith<$Res> {
+  factory _$$ListCommentsImplCopyWith(_$ListCommentsImpl value, $Res Function(_$ListCommentsImpl) then) = __$$ListCommentsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -217,13 +208,8 @@ abstract class _$$ListCommentsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ListCommentsImplCopyWithImpl<$Res>
-    extends _$ListCommentsCopyWithImpl<$Res, _$ListCommentsImpl>
-    implements _$$ListCommentsImplCopyWith<$Res> {
-  __$$ListCommentsImplCopyWithImpl(
-    _$ListCommentsImpl _value,
-    $Res Function(_$ListCommentsImpl) _then,
-  ) : super(_value, _then);
+class __$$ListCommentsImplCopyWithImpl<$Res> extends _$ListCommentsCopyWithImpl<$Res, _$ListCommentsImpl> implements _$$ListCommentsImplCopyWith<$Res> {
+  __$$ListCommentsImplCopyWithImpl(_$ListCommentsImpl _value, $Res Function(_$ListCommentsImpl) _then) : super(_value, _then);
 
   /// Create a copy of ListComments
   /// with the given fields replaced by the non-null parameter values.
@@ -343,8 +329,7 @@ class _$ListCommentsImpl extends _ListComments {
     this.auth,
   }) : super._();
 
-  factory _$ListCommentsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ListCommentsImplFromJson(json);
+  factory _$ListCommentsImpl.fromJson(Map<String, dynamic> json) => _$$ListCommentsImplFromJson(json);
 
   @override
   final int? limit;
@@ -399,53 +384,28 @@ class _$ListCommentsImpl extends _ListComments {
             (identical(other.page, page) || other.page == page) &&
             (identical(other.sort, sort) || other.sort == sort) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.communityId, communityId) ||
-                other.communityId == communityId) &&
-            (identical(other.communityName, communityName) ||
-                other.communityName == communityName) &&
+            (identical(other.communityId, communityId) || other.communityId == communityId) &&
+            (identical(other.communityName, communityName) || other.communityName == communityName) &&
             (identical(other.postId, postId) || other.postId == postId) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
-            (identical(other.maxDepth, maxDepth) ||
-                other.maxDepth == maxDepth) &&
-            (identical(other.depthFirst, depthFirst) ||
-                other.depthFirst == depthFirst) &&
-            (identical(other.savedOnly, savedOnly) ||
-                other.savedOnly == savedOnly) &&
-            (identical(other.likedOnly, likedOnly) ||
-                other.likedOnly == likedOnly) &&
-            (identical(other.personId, personId) ||
-                other.personId == personId) &&
+            (identical(other.parentId, parentId) || other.parentId == parentId) &&
+            (identical(other.maxDepth, maxDepth) || other.maxDepth == maxDepth) &&
+            (identical(other.depthFirst, depthFirst) || other.depthFirst == depthFirst) &&
+            (identical(other.savedOnly, savedOnly) || other.savedOnly == savedOnly) &&
+            (identical(other.likedOnly, likedOnly) || other.likedOnly == likedOnly) &&
+            (identical(other.personId, personId) || other.personId == personId) &&
             (identical(other.auth, auth) || other.auth == auth));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    limit,
-    page,
-    sort,
-    type,
-    communityId,
-    communityName,
-    postId,
-    parentId,
-    maxDepth,
-    depthFirst,
-    savedOnly,
-    likedOnly,
-    personId,
-    auth,
-  );
+  int get hashCode => Object.hash(runtimeType, limit, page, sort, type, communityId, communityName, postId, parentId, maxDepth, depthFirst, savedOnly, likedOnly, personId, auth);
 
   /// Create a copy of ListComments
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListCommentsImplCopyWith<_$ListCommentsImpl> get copyWith =>
-      __$$ListCommentsImplCopyWithImpl<_$ListCommentsImpl>(this, _$identity);
+  _$$ListCommentsImplCopyWith<_$ListCommentsImpl> get copyWith => __$$ListCommentsImplCopyWithImpl<_$ListCommentsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -472,8 +432,7 @@ abstract class _ListComments extends ListComments {
   }) = _$ListCommentsImpl;
   const _ListComments._() : super._();
 
-  factory _ListComments.fromJson(Map<String, dynamic> json) =
-      _$ListCommentsImpl.fromJson;
+  factory _ListComments.fromJson(Map<String, dynamic> json) = _$ListCommentsImpl.fromJson;
 
   @override
   int? get limit;
@@ -518,6 +477,5 @@ abstract class _ListComments extends ListComments {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ListCommentsImplCopyWith<_$ListCommentsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ListCommentsImplCopyWith<_$ListCommentsImpl> get copyWith => throw _privateConstructorUsedError;
 }
