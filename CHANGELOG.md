@@ -1,4 +1,13 @@
 # Changelog
+## 0.7.2
+
+*   **PieFed v1.6.0 Support**:
+    *   Added `GetFeed` query (GET `/feed`).
+    *   Added `BanUser` (POST `/user/ban`) and `UnbanUser` (POST `/user/unban`) queries.
+    *   Added `FeedView` and `TopicView` models.
+*   **Improvements**:
+    *   `ListFeedsResponse` is now strongly typed (returns `List<FeedView>` instead of `List<dynamic>`).
+
 ## 0.7.1
 
 *   **Fixes**:

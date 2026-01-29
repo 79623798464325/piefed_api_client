@@ -79,3 +79,36 @@ class FederatedInstancesView with _$FederatedInstancesView {
 
   factory FederatedInstancesView.fromJson(Map<String, dynamic> json) => _$FederatedInstancesViewFromJson(json);
 }
+
+@freezed
+class FeedView with _$FeedView {
+  const factory FeedView({
+    required int id,
+    required String name,
+    required String title,
+    String? description,
+    required String actorId,
+    required String apDomain,
+    required bool local,
+    required bool isInstanceFeed,
+    required int communitiesCount,
+    required List<Community> communities,
+    required List<FeedView> children,
+  }) = _FeedView;
+
+  factory FeedView.fromJson(Map<String, dynamic> json) => _$FeedViewFromJson(json);
+}
+
+@freezed
+class TopicView with _$TopicView {
+  const factory TopicView({
+    required int id,
+    required String name,
+    required int communitiesCount,
+    required bool showPostsFromChildren,
+    required List<Community> communities,
+    required List<TopicView> children,
+  }) = _TopicView;
+
+  factory TopicView.fromJson(Map<String, dynamic> json) => _$TopicViewFromJson(json);
+}

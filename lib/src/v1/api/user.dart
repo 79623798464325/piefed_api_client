@@ -127,3 +127,35 @@ class MarkAllAsRead with _$MarkAllAsRead implements PieFedApiQuery<MarkAllAsRead
   @override
   MarkAllAsReadResponse responseFactory(Map<String, dynamic> json) => MarkAllAsReadResponse.fromJson(json);
 }
+
+@freezed
+class BanUser with _$BanUser implements PieFedApiQuery<UserBanResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory BanUser({@JsonKey(name: 'person_id') required int personId, String? reason, @JsonKey(name: 'remove_data') bool? removeData, int? expires, required String auth}) = _BanUser;
+
+  const BanUser._();
+  factory BanUser.fromJson(Map<String, dynamic> json) => _$BanUserFromJson(json);
+
+  @override
+  String get path => '/user/ban';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserBanResponse responseFactory(Map<String, dynamic> json) => UserBanResponse.fromJson(json);
+}
+
+@freezed
+class UnbanUser with _$UnbanUser implements PieFedApiQuery<UserBanResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory UnbanUser({@JsonKey(name: 'person_id') required int personId, String? reason, required String auth}) = _UnbanUser;
+
+  const UnbanUser._();
+  factory UnbanUser.fromJson(Map<String, dynamic> json) => _$UnbanUserFromJson(json);
+
+  @override
+  String get path => '/user/unban';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserBanResponse responseFactory(Map<String, dynamic> json) => UserBanResponse.fromJson(json);
+}

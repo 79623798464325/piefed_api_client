@@ -368,7 +368,12 @@ Map<String, dynamic> _$$ListCommunitiesResponseImplToJson(
 
 _$ListFeedsResponseImpl _$$ListFeedsResponseImplFromJson(
   Map<String, dynamic> json,
-) => _$ListFeedsResponseImpl(feeds: json['feeds'] as List<dynamic>);
+) => _$ListFeedsResponseImpl(
+  feeds:
+      (json['feeds'] as List<dynamic>)
+          .map((e) => FeedView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
 
 Map<String, dynamic> _$$ListFeedsResponseImplToJson(
   _$ListFeedsResponseImpl instance,
@@ -493,3 +498,23 @@ _$GetCommunityBansResponseImpl _$$GetCommunityBansResponseImplFromJson(
 Map<String, dynamic> _$$GetCommunityBansResponseImplToJson(
   _$GetCommunityBansResponseImpl instance,
 ) => <String, dynamic>{'bans': instance.bans};
+
+_$UserBanResponseImpl _$$UserBanResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserBanResponseImpl(
+  personView: PersonView.fromJson(json['person_view'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$UserBanResponseImplToJson(
+  _$UserBanResponseImpl instance,
+) => <String, dynamic>{'person_view': instance.personView};
+
+_$GetFeedResponseImpl _$$GetFeedResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetFeedResponseImpl(
+  feed: FeedView.fromJson(json['feed'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$GetFeedResponseImplToJson(
+  _$GetFeedResponseImpl instance,
+) => <String, dynamic>{'feed': instance.feed};

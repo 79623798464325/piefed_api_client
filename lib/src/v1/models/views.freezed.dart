@@ -1986,3 +1986,716 @@ abstract class _FederatedInstancesView implements FederatedInstancesView {
   _$$FederatedInstancesViewImplCopyWith<_$FederatedInstancesViewImpl>
   get copyWith => throw _privateConstructorUsedError;
 }
+
+FeedView _$FeedViewFromJson(Map<String, dynamic> json) {
+  return _FeedView.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FeedView {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String get actorId => throw _privateConstructorUsedError;
+  String get apDomain => throw _privateConstructorUsedError;
+  bool get local => throw _privateConstructorUsedError;
+  bool get isInstanceFeed => throw _privateConstructorUsedError;
+  int get communitiesCount => throw _privateConstructorUsedError;
+  List<Community> get communities => throw _privateConstructorUsedError;
+  List<FeedView> get children => throw _privateConstructorUsedError;
+
+  /// Serializes this FeedView to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of FeedView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $FeedViewCopyWith<FeedView> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FeedViewCopyWith<$Res> {
+  factory $FeedViewCopyWith(FeedView value, $Res Function(FeedView) then) =
+      _$FeedViewCopyWithImpl<$Res, FeedView>;
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    String title,
+    String? description,
+    String actorId,
+    String apDomain,
+    bool local,
+    bool isInstanceFeed,
+    int communitiesCount,
+    List<Community> communities,
+    List<FeedView> children,
+  });
+}
+
+/// @nodoc
+class _$FeedViewCopyWithImpl<$Res, $Val extends FeedView>
+    implements $FeedViewCopyWith<$Res> {
+  _$FeedViewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of FeedView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? title = null,
+    Object? description = freezed,
+    Object? actorId = null,
+    Object? apDomain = null,
+    Object? local = null,
+    Object? isInstanceFeed = null,
+    Object? communitiesCount = null,
+    Object? communities = null,
+    Object? children = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            name:
+                null == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String,
+            title:
+                null == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String,
+            description:
+                freezed == description
+                    ? _value.description
+                    : description // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            actorId:
+                null == actorId
+                    ? _value.actorId
+                    : actorId // ignore: cast_nullable_to_non_nullable
+                        as String,
+            apDomain:
+                null == apDomain
+                    ? _value.apDomain
+                    : apDomain // ignore: cast_nullable_to_non_nullable
+                        as String,
+            local:
+                null == local
+                    ? _value.local
+                    : local // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            isInstanceFeed:
+                null == isInstanceFeed
+                    ? _value.isInstanceFeed
+                    : isInstanceFeed // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            communitiesCount:
+                null == communitiesCount
+                    ? _value.communitiesCount
+                    : communitiesCount // ignore: cast_nullable_to_non_nullable
+                        as int,
+            communities:
+                null == communities
+                    ? _value.communities
+                    : communities // ignore: cast_nullable_to_non_nullable
+                        as List<Community>,
+            children:
+                null == children
+                    ? _value.children
+                    : children // ignore: cast_nullable_to_non_nullable
+                        as List<FeedView>,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$FeedViewImplCopyWith<$Res>
+    implements $FeedViewCopyWith<$Res> {
+  factory _$$FeedViewImplCopyWith(
+    _$FeedViewImpl value,
+    $Res Function(_$FeedViewImpl) then,
+  ) = __$$FeedViewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    String title,
+    String? description,
+    String actorId,
+    String apDomain,
+    bool local,
+    bool isInstanceFeed,
+    int communitiesCount,
+    List<Community> communities,
+    List<FeedView> children,
+  });
+}
+
+/// @nodoc
+class __$$FeedViewImplCopyWithImpl<$Res>
+    extends _$FeedViewCopyWithImpl<$Res, _$FeedViewImpl>
+    implements _$$FeedViewImplCopyWith<$Res> {
+  __$$FeedViewImplCopyWithImpl(
+    _$FeedViewImpl _value,
+    $Res Function(_$FeedViewImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of FeedView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? title = null,
+    Object? description = freezed,
+    Object? actorId = null,
+    Object? apDomain = null,
+    Object? local = null,
+    Object? isInstanceFeed = null,
+    Object? communitiesCount = null,
+    Object? communities = null,
+    Object? children = null,
+  }) {
+    return _then(
+      _$FeedViewImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        title:
+            null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String,
+        description:
+            freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        actorId:
+            null == actorId
+                ? _value.actorId
+                : actorId // ignore: cast_nullable_to_non_nullable
+                    as String,
+        apDomain:
+            null == apDomain
+                ? _value.apDomain
+                : apDomain // ignore: cast_nullable_to_non_nullable
+                    as String,
+        local:
+            null == local
+                ? _value.local
+                : local // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        isInstanceFeed:
+            null == isInstanceFeed
+                ? _value.isInstanceFeed
+                : isInstanceFeed // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        communitiesCount:
+            null == communitiesCount
+                ? _value.communitiesCount
+                : communitiesCount // ignore: cast_nullable_to_non_nullable
+                    as int,
+        communities:
+            null == communities
+                ? _value._communities
+                : communities // ignore: cast_nullable_to_non_nullable
+                    as List<Community>,
+        children:
+            null == children
+                ? _value._children
+                : children // ignore: cast_nullable_to_non_nullable
+                    as List<FeedView>,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FeedViewImpl implements _FeedView {
+  const _$FeedViewImpl({
+    required this.id,
+    required this.name,
+    required this.title,
+    this.description,
+    required this.actorId,
+    required this.apDomain,
+    required this.local,
+    required this.isInstanceFeed,
+    required this.communitiesCount,
+    required final List<Community> communities,
+    required final List<FeedView> children,
+  }) : _communities = communities,
+       _children = children;
+
+  factory _$FeedViewImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FeedViewImplFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final String title;
+  @override
+  final String? description;
+  @override
+  final String actorId;
+  @override
+  final String apDomain;
+  @override
+  final bool local;
+  @override
+  final bool isInstanceFeed;
+  @override
+  final int communitiesCount;
+  final List<Community> _communities;
+  @override
+  List<Community> get communities {
+    if (_communities is EqualUnmodifiableListView) return _communities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_communities);
+  }
+
+  final List<FeedView> _children;
+  @override
+  List<FeedView> get children {
+    if (_children is EqualUnmodifiableListView) return _children;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_children);
+  }
+
+  @override
+  String toString() {
+    return 'FeedView(id: $id, name: $name, title: $title, description: $description, actorId: $actorId, apDomain: $apDomain, local: $local, isInstanceFeed: $isInstanceFeed, communitiesCount: $communitiesCount, communities: $communities, children: $children)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FeedViewImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.actorId, actorId) || other.actorId == actorId) &&
+            (identical(other.apDomain, apDomain) ||
+                other.apDomain == apDomain) &&
+            (identical(other.local, local) || other.local == local) &&
+            (identical(other.isInstanceFeed, isInstanceFeed) ||
+                other.isInstanceFeed == isInstanceFeed) &&
+            (identical(other.communitiesCount, communitiesCount) ||
+                other.communitiesCount == communitiesCount) &&
+            const DeepCollectionEquality().equals(
+              other._communities,
+              _communities,
+            ) &&
+            const DeepCollectionEquality().equals(other._children, _children));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    name,
+    title,
+    description,
+    actorId,
+    apDomain,
+    local,
+    isInstanceFeed,
+    communitiesCount,
+    const DeepCollectionEquality().hash(_communities),
+    const DeepCollectionEquality().hash(_children),
+  );
+
+  /// Create a copy of FeedView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FeedViewImplCopyWith<_$FeedViewImpl> get copyWith =>
+      __$$FeedViewImplCopyWithImpl<_$FeedViewImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FeedViewImplToJson(this);
+  }
+}
+
+abstract class _FeedView implements FeedView {
+  const factory _FeedView({
+    required final int id,
+    required final String name,
+    required final String title,
+    final String? description,
+    required final String actorId,
+    required final String apDomain,
+    required final bool local,
+    required final bool isInstanceFeed,
+    required final int communitiesCount,
+    required final List<Community> communities,
+    required final List<FeedView> children,
+  }) = _$FeedViewImpl;
+
+  factory _FeedView.fromJson(Map<String, dynamic> json) =
+      _$FeedViewImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get name;
+  @override
+  String get title;
+  @override
+  String? get description;
+  @override
+  String get actorId;
+  @override
+  String get apDomain;
+  @override
+  bool get local;
+  @override
+  bool get isInstanceFeed;
+  @override
+  int get communitiesCount;
+  @override
+  List<Community> get communities;
+  @override
+  List<FeedView> get children;
+
+  /// Create a copy of FeedView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FeedViewImplCopyWith<_$FeedViewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TopicView _$TopicViewFromJson(Map<String, dynamic> json) {
+  return _TopicView.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TopicView {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get communitiesCount => throw _privateConstructorUsedError;
+  bool get showPostsFromChildren => throw _privateConstructorUsedError;
+  List<Community> get communities => throw _privateConstructorUsedError;
+  List<TopicView> get children => throw _privateConstructorUsedError;
+
+  /// Serializes this TopicView to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of TopicView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $TopicViewCopyWith<TopicView> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TopicViewCopyWith<$Res> {
+  factory $TopicViewCopyWith(TopicView value, $Res Function(TopicView) then) =
+      _$TopicViewCopyWithImpl<$Res, TopicView>;
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    int communitiesCount,
+    bool showPostsFromChildren,
+    List<Community> communities,
+    List<TopicView> children,
+  });
+}
+
+/// @nodoc
+class _$TopicViewCopyWithImpl<$Res, $Val extends TopicView>
+    implements $TopicViewCopyWith<$Res> {
+  _$TopicViewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of TopicView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? communitiesCount = null,
+    Object? showPostsFromChildren = null,
+    Object? communities = null,
+    Object? children = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            name:
+                null == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String,
+            communitiesCount:
+                null == communitiesCount
+                    ? _value.communitiesCount
+                    : communitiesCount // ignore: cast_nullable_to_non_nullable
+                        as int,
+            showPostsFromChildren:
+                null == showPostsFromChildren
+                    ? _value.showPostsFromChildren
+                    : showPostsFromChildren // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            communities:
+                null == communities
+                    ? _value.communities
+                    : communities // ignore: cast_nullable_to_non_nullable
+                        as List<Community>,
+            children:
+                null == children
+                    ? _value.children
+                    : children // ignore: cast_nullable_to_non_nullable
+                        as List<TopicView>,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$TopicViewImplCopyWith<$Res>
+    implements $TopicViewCopyWith<$Res> {
+  factory _$$TopicViewImplCopyWith(
+    _$TopicViewImpl value,
+    $Res Function(_$TopicViewImpl) then,
+  ) = __$$TopicViewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    int communitiesCount,
+    bool showPostsFromChildren,
+    List<Community> communities,
+    List<TopicView> children,
+  });
+}
+
+/// @nodoc
+class __$$TopicViewImplCopyWithImpl<$Res>
+    extends _$TopicViewCopyWithImpl<$Res, _$TopicViewImpl>
+    implements _$$TopicViewImplCopyWith<$Res> {
+  __$$TopicViewImplCopyWithImpl(
+    _$TopicViewImpl _value,
+    $Res Function(_$TopicViewImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of TopicView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? communitiesCount = null,
+    Object? showPostsFromChildren = null,
+    Object? communities = null,
+    Object? children = null,
+  }) {
+    return _then(
+      _$TopicViewImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        name:
+            null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        communitiesCount:
+            null == communitiesCount
+                ? _value.communitiesCount
+                : communitiesCount // ignore: cast_nullable_to_non_nullable
+                    as int,
+        showPostsFromChildren:
+            null == showPostsFromChildren
+                ? _value.showPostsFromChildren
+                : showPostsFromChildren // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        communities:
+            null == communities
+                ? _value._communities
+                : communities // ignore: cast_nullable_to_non_nullable
+                    as List<Community>,
+        children:
+            null == children
+                ? _value._children
+                : children // ignore: cast_nullable_to_non_nullable
+                    as List<TopicView>,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TopicViewImpl implements _TopicView {
+  const _$TopicViewImpl({
+    required this.id,
+    required this.name,
+    required this.communitiesCount,
+    required this.showPostsFromChildren,
+    required final List<Community> communities,
+    required final List<TopicView> children,
+  }) : _communities = communities,
+       _children = children;
+
+  factory _$TopicViewImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TopicViewImplFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final int communitiesCount;
+  @override
+  final bool showPostsFromChildren;
+  final List<Community> _communities;
+  @override
+  List<Community> get communities {
+    if (_communities is EqualUnmodifiableListView) return _communities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_communities);
+  }
+
+  final List<TopicView> _children;
+  @override
+  List<TopicView> get children {
+    if (_children is EqualUnmodifiableListView) return _children;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_children);
+  }
+
+  @override
+  String toString() {
+    return 'TopicView(id: $id, name: $name, communitiesCount: $communitiesCount, showPostsFromChildren: $showPostsFromChildren, communities: $communities, children: $children)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TopicViewImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.communitiesCount, communitiesCount) ||
+                other.communitiesCount == communitiesCount) &&
+            (identical(other.showPostsFromChildren, showPostsFromChildren) ||
+                other.showPostsFromChildren == showPostsFromChildren) &&
+            const DeepCollectionEquality().equals(
+              other._communities,
+              _communities,
+            ) &&
+            const DeepCollectionEquality().equals(other._children, _children));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    name,
+    communitiesCount,
+    showPostsFromChildren,
+    const DeepCollectionEquality().hash(_communities),
+    const DeepCollectionEquality().hash(_children),
+  );
+
+  /// Create a copy of TopicView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TopicViewImplCopyWith<_$TopicViewImpl> get copyWith =>
+      __$$TopicViewImplCopyWithImpl<_$TopicViewImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TopicViewImplToJson(this);
+  }
+}
+
+abstract class _TopicView implements TopicView {
+  const factory _TopicView({
+    required final int id,
+    required final String name,
+    required final int communitiesCount,
+    required final bool showPostsFromChildren,
+    required final List<Community> communities,
+    required final List<TopicView> children,
+  }) = _$TopicViewImpl;
+
+  factory _TopicView.fromJson(Map<String, dynamic> json) =
+      _$TopicViewImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get name;
+  @override
+  int get communitiesCount;
+  @override
+  bool get showPostsFromChildren;
+  @override
+  List<Community> get communities;
+  @override
+  List<TopicView> get children;
+
+  /// Create a copy of TopicView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TopicViewImplCopyWith<_$TopicViewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

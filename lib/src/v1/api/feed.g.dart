@@ -20,6 +20,20 @@ Map<String, dynamic> _$$ListFeedsImplToJson(_$ListFeedsImpl instance) =>
       'auth': instance.auth,
     };
 
+_$GetFeedImpl _$$GetFeedImplFromJson(Map<String, dynamic> json) =>
+    _$GetFeedImpl(
+      id: (json['id'] as num?)?.toInt(),
+      name: json['name'] as String?,
+      auth: json['auth'] as String?,
+    );
+
+Map<String, dynamic> _$$GetFeedImplToJson(_$GetFeedImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'auth': instance.auth,
+    };
+
 _$ListTopicsImpl _$$ListTopicsImplFromJson(Map<String, dynamic> json) =>
     _$ListTopicsImpl(
       limit: (json['limit'] as num?)?.toInt(),

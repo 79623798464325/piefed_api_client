@@ -23,6 +23,21 @@ class ListFeeds with _$ListFeeds implements PieFedApiQuery<ListFeedsResponse> {
 }
 
 @freezed
+class GetFeed with _$GetFeed implements PieFedApiQuery<GetFeedResponse> {
+  const factory GetFeed({int? id, String? name, String? auth}) = _GetFeed;
+
+  const GetFeed._();
+  factory GetFeed.fromJson(Map<String, dynamic> json) => _$GetFeedFromJson(json);
+
+  @override
+  String get path => '/feed';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetFeedResponse responseFactory(Map<String, dynamic> json) => GetFeedResponse.fromJson(json);
+}
+
+@freezed
 class ListTopics with _$ListTopics implements PieFedApiQuery<ListTopicsResponse> {
   const factory ListTopics({int? limit, int? page}) = _ListTopics;
 

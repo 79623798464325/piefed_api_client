@@ -152,3 +152,65 @@ Map<String, dynamic> _$$FederatedInstancesViewImplToJson(
   'blocked': instance.blocked,
   'linked': instance.linked,
 };
+
+_$FeedViewImpl _$$FeedViewImplFromJson(Map<String, dynamic> json) =>
+    _$FeedViewImpl(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String?,
+      actorId: json['actorId'] as String,
+      apDomain: json['apDomain'] as String,
+      local: json['local'] as bool,
+      isInstanceFeed: json['isInstanceFeed'] as bool,
+      communitiesCount: (json['communitiesCount'] as num).toInt(),
+      communities:
+          (json['communities'] as List<dynamic>)
+              .map((e) => Community.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      children:
+          (json['children'] as List<dynamic>)
+              .map((e) => FeedView.fromJson(e as Map<String, dynamic>))
+              .toList(),
+    );
+
+Map<String, dynamic> _$$FeedViewImplToJson(_$FeedViewImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'title': instance.title,
+      'description': instance.description,
+      'actorId': instance.actorId,
+      'apDomain': instance.apDomain,
+      'local': instance.local,
+      'isInstanceFeed': instance.isInstanceFeed,
+      'communitiesCount': instance.communitiesCount,
+      'communities': instance.communities,
+      'children': instance.children,
+    };
+
+_$TopicViewImpl _$$TopicViewImplFromJson(Map<String, dynamic> json) =>
+    _$TopicViewImpl(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      communitiesCount: (json['communitiesCount'] as num).toInt(),
+      showPostsFromChildren: json['showPostsFromChildren'] as bool,
+      communities:
+          (json['communities'] as List<dynamic>)
+              .map((e) => Community.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      children:
+          (json['children'] as List<dynamic>)
+              .map((e) => TopicView.fromJson(e as Map<String, dynamic>))
+              .toList(),
+    );
+
+Map<String, dynamic> _$$TopicViewImplToJson(_$TopicViewImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'communitiesCount': instance.communitiesCount,
+      'showPostsFromChildren': instance.showPostsFromChildren,
+      'communities': instance.communities,
+      'children': instance.children,
+    };

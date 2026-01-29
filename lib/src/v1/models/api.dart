@@ -225,7 +225,7 @@ class ListCommunitiesResponse with _$ListCommunitiesResponse {
 
 @freezed
 class ListFeedsResponse with _$ListFeedsResponse {
-  const factory ListFeedsResponse({required List<dynamic> feeds}) = _ListFeedsResponse; // Assuming dynamic or FeedView if available
+  const factory ListFeedsResponse({required List<FeedView> feeds}) = _ListFeedsResponse;
 
   factory ListFeedsResponse.fromJson(Map<String, dynamic> json) => _$ListFeedsResponseFromJson(json);
 }
@@ -330,4 +330,18 @@ class GetCommunityBansResponse with _$GetCommunityBansResponse {
   }) = _GetCommunityBansResponse;
 
   factory GetCommunityBansResponse.fromJson(Map<String, dynamic> json) => _$GetCommunityBansResponseFromJson(json);
+}
+
+@freezed
+class UserBanResponse with _$UserBanResponse {
+  const factory UserBanResponse({@JsonKey(name: 'person_view') required PersonView personView}) = _UserBanResponse;
+
+  factory UserBanResponse.fromJson(Map<String, dynamic> json) => _$UserBanResponseFromJson(json);
+}
+
+@freezed
+class GetFeedResponse with _$GetFeedResponse {
+  const factory GetFeedResponse({required FeedView feed}) = _GetFeedResponse;
+
+  factory GetFeedResponse.fromJson(Map<String, dynamic> json) => _$GetFeedResponseFromJson(json);
 }

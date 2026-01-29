@@ -211,6 +211,199 @@ abstract class _ListFeeds extends ListFeeds {
       throw _privateConstructorUsedError;
 }
 
+GetFeed _$GetFeedFromJson(Map<String, dynamic> json) {
+  return _GetFeed.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetFeed {
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this GetFeed to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetFeedCopyWith<GetFeed> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetFeedCopyWith<$Res> {
+  factory $GetFeedCopyWith(GetFeed value, $Res Function(GetFeed) then) =
+      _$GetFeedCopyWithImpl<$Res, GetFeed>;
+  @useResult
+  $Res call({int? id, String? name, String? auth});
+}
+
+/// @nodoc
+class _$GetFeedCopyWithImpl<$Res, $Val extends GetFeed>
+    implements $GetFeedCopyWith<$Res> {
+  _$GetFeedCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? auth = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            id:
+                freezed == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            name:
+                freezed == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            auth:
+                freezed == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$GetFeedImplCopyWith<$Res> implements $GetFeedCopyWith<$Res> {
+  factory _$$GetFeedImplCopyWith(
+    _$GetFeedImpl value,
+    $Res Function(_$GetFeedImpl) then,
+  ) = __$$GetFeedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? id, String? name, String? auth});
+}
+
+/// @nodoc
+class __$$GetFeedImplCopyWithImpl<$Res>
+    extends _$GetFeedCopyWithImpl<$Res, _$GetFeedImpl>
+    implements _$$GetFeedImplCopyWith<$Res> {
+  __$$GetFeedImplCopyWithImpl(
+    _$GetFeedImpl _value,
+    $Res Function(_$GetFeedImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? auth = freezed,
+  }) {
+    return _then(
+      _$GetFeedImpl(
+        id:
+            freezed == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        name:
+            freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        auth:
+            freezed == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetFeedImpl extends _GetFeed {
+  const _$GetFeedImpl({this.id, this.name, this.auth}) : super._();
+
+  factory _$GetFeedImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetFeedImplFromJson(json);
+
+  @override
+  final int? id;
+  @override
+  final String? name;
+  @override
+  final String? auth;
+
+  @override
+  String toString() {
+    return 'GetFeed(id: $id, name: $name, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFeedImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, auth);
+
+  /// Create a copy of GetFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFeedImplCopyWith<_$GetFeedImpl> get copyWith =>
+      __$$GetFeedImplCopyWithImpl<_$GetFeedImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetFeedImplToJson(this);
+  }
+}
+
+abstract class _GetFeed extends GetFeed {
+  const factory _GetFeed({
+    final int? id,
+    final String? name,
+    final String? auth,
+  }) = _$GetFeedImpl;
+  const _GetFeed._() : super._();
+
+  factory _GetFeed.fromJson(Map<String, dynamic> json) = _$GetFeedImpl.fromJson;
+
+  @override
+  int? get id;
+  @override
+  String? get name;
+  @override
+  String? get auth;
+
+  /// Create a copy of GetFeed
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetFeedImplCopyWith<_$GetFeedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 ListTopics _$ListTopicsFromJson(Map<String, dynamic> json) {
   return _ListTopics.fromJson(json);
 }

@@ -5363,7 +5363,7 @@ ListFeedsResponse _$ListFeedsResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ListFeedsResponse {
-  List<dynamic> get feeds => throw _privateConstructorUsedError;
+  List<FeedView> get feeds => throw _privateConstructorUsedError;
 
   /// Serializes this ListFeedsResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -5382,7 +5382,7 @@ abstract class $ListFeedsResponseCopyWith<$Res> {
     $Res Function(ListFeedsResponse) then,
   ) = _$ListFeedsResponseCopyWithImpl<$Res, ListFeedsResponse>;
   @useResult
-  $Res call({List<dynamic> feeds});
+  $Res call({List<FeedView> feeds});
 }
 
 /// @nodoc
@@ -5406,7 +5406,7 @@ class _$ListFeedsResponseCopyWithImpl<$Res, $Val extends ListFeedsResponse>
                 null == feeds
                     ? _value.feeds
                     : feeds // ignore: cast_nullable_to_non_nullable
-                        as List<dynamic>,
+                        as List<FeedView>,
           )
           as $Val,
     );
@@ -5422,7 +5422,7 @@ abstract class _$$ListFeedsResponseImplCopyWith<$Res>
   ) = __$$ListFeedsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<dynamic> feeds});
+  $Res call({List<FeedView> feeds});
 }
 
 /// @nodoc
@@ -5445,7 +5445,7 @@ class __$$ListFeedsResponseImplCopyWithImpl<$Res>
             null == feeds
                 ? _value._feeds
                 : feeds // ignore: cast_nullable_to_non_nullable
-                    as List<dynamic>,
+                    as List<FeedView>,
       ),
     );
   }
@@ -5454,15 +5454,15 @@ class __$$ListFeedsResponseImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ListFeedsResponseImpl implements _ListFeedsResponse {
-  const _$ListFeedsResponseImpl({required final List<dynamic> feeds})
+  const _$ListFeedsResponseImpl({required final List<FeedView> feeds})
     : _feeds = feeds;
 
   factory _$ListFeedsResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ListFeedsResponseImplFromJson(json);
 
-  final List<dynamic> _feeds;
+  final List<FeedView> _feeds;
   @override
-  List<dynamic> get feeds {
+  List<FeedView> get feeds {
     if (_feeds is EqualUnmodifiableListView) return _feeds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_feeds);
@@ -5504,14 +5504,14 @@ class _$ListFeedsResponseImpl implements _ListFeedsResponse {
 }
 
 abstract class _ListFeedsResponse implements ListFeedsResponse {
-  const factory _ListFeedsResponse({required final List<dynamic> feeds}) =
+  const factory _ListFeedsResponse({required final List<FeedView> feeds}) =
       _$ListFeedsResponseImpl;
 
   factory _ListFeedsResponse.fromJson(Map<String, dynamic> json) =
       _$ListFeedsResponseImpl.fromJson;
 
   @override
-  List<dynamic> get feeds;
+  List<FeedView> get feeds;
 
   /// Create a copy of ListFeedsResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -7775,4 +7775,355 @@ abstract class _GetCommunityBansResponse implements GetCommunityBansResponse {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetCommunityBansResponseImplCopyWith<_$GetCommunityBansResponseImpl>
   get copyWith => throw _privateConstructorUsedError;
+}
+
+UserBanResponse _$UserBanResponseFromJson(Map<String, dynamic> json) {
+  return _UserBanResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserBanResponse {
+  @JsonKey(name: 'person_view')
+  PersonView get personView => throw _privateConstructorUsedError;
+
+  /// Serializes this UserBanResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UserBanResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserBanResponseCopyWith<UserBanResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserBanResponseCopyWith<$Res> {
+  factory $UserBanResponseCopyWith(
+    UserBanResponse value,
+    $Res Function(UserBanResponse) then,
+  ) = _$UserBanResponseCopyWithImpl<$Res, UserBanResponse>;
+  @useResult
+  $Res call({@JsonKey(name: 'person_view') PersonView personView});
+
+  $PersonViewCopyWith<$Res> get personView;
+}
+
+/// @nodoc
+class _$UserBanResponseCopyWithImpl<$Res, $Val extends UserBanResponse>
+    implements $UserBanResponseCopyWith<$Res> {
+  _$UserBanResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserBanResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? personView = null}) {
+    return _then(
+      _value.copyWith(
+            personView:
+                null == personView
+                    ? _value.personView
+                    : personView // ignore: cast_nullable_to_non_nullable
+                        as PersonView,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of UserBanResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PersonViewCopyWith<$Res> get personView {
+    return $PersonViewCopyWith<$Res>(_value.personView, (value) {
+      return _then(_value.copyWith(personView: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$UserBanResponseImplCopyWith<$Res>
+    implements $UserBanResponseCopyWith<$Res> {
+  factory _$$UserBanResponseImplCopyWith(
+    _$UserBanResponseImpl value,
+    $Res Function(_$UserBanResponseImpl) then,
+  ) = __$$UserBanResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'person_view') PersonView personView});
+
+  @override
+  $PersonViewCopyWith<$Res> get personView;
+}
+
+/// @nodoc
+class __$$UserBanResponseImplCopyWithImpl<$Res>
+    extends _$UserBanResponseCopyWithImpl<$Res, _$UserBanResponseImpl>
+    implements _$$UserBanResponseImplCopyWith<$Res> {
+  __$$UserBanResponseImplCopyWithImpl(
+    _$UserBanResponseImpl _value,
+    $Res Function(_$UserBanResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UserBanResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? personView = null}) {
+    return _then(
+      _$UserBanResponseImpl(
+        personView:
+            null == personView
+                ? _value.personView
+                : personView // ignore: cast_nullable_to_non_nullable
+                    as PersonView,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserBanResponseImpl implements _UserBanResponse {
+  const _$UserBanResponseImpl({
+    @JsonKey(name: 'person_view') required this.personView,
+  });
+
+  factory _$UserBanResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserBanResponseImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'person_view')
+  final PersonView personView;
+
+  @override
+  String toString() {
+    return 'UserBanResponse(personView: $personView)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserBanResponseImpl &&
+            (identical(other.personView, personView) ||
+                other.personView == personView));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, personView);
+
+  /// Create a copy of UserBanResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserBanResponseImplCopyWith<_$UserBanResponseImpl> get copyWith =>
+      __$$UserBanResponseImplCopyWithImpl<_$UserBanResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserBanResponseImplToJson(this);
+  }
+}
+
+abstract class _UserBanResponse implements UserBanResponse {
+  const factory _UserBanResponse({
+    @JsonKey(name: 'person_view') required final PersonView personView,
+  }) = _$UserBanResponseImpl;
+
+  factory _UserBanResponse.fromJson(Map<String, dynamic> json) =
+      _$UserBanResponseImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'person_view')
+  PersonView get personView;
+
+  /// Create a copy of UserBanResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserBanResponseImplCopyWith<_$UserBanResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GetFeedResponse _$GetFeedResponseFromJson(Map<String, dynamic> json) {
+  return _GetFeedResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetFeedResponse {
+  FeedView get feed => throw _privateConstructorUsedError;
+
+  /// Serializes this GetFeedResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetFeedResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetFeedResponseCopyWith<GetFeedResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetFeedResponseCopyWith<$Res> {
+  factory $GetFeedResponseCopyWith(
+    GetFeedResponse value,
+    $Res Function(GetFeedResponse) then,
+  ) = _$GetFeedResponseCopyWithImpl<$Res, GetFeedResponse>;
+  @useResult
+  $Res call({FeedView feed});
+
+  $FeedViewCopyWith<$Res> get feed;
+}
+
+/// @nodoc
+class _$GetFeedResponseCopyWithImpl<$Res, $Val extends GetFeedResponse>
+    implements $GetFeedResponseCopyWith<$Res> {
+  _$GetFeedResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetFeedResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? feed = null}) {
+    return _then(
+      _value.copyWith(
+            feed:
+                null == feed
+                    ? _value.feed
+                    : feed // ignore: cast_nullable_to_non_nullable
+                        as FeedView,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of GetFeedResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FeedViewCopyWith<$Res> get feed {
+    return $FeedViewCopyWith<$Res>(_value.feed, (value) {
+      return _then(_value.copyWith(feed: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$GetFeedResponseImplCopyWith<$Res>
+    implements $GetFeedResponseCopyWith<$Res> {
+  factory _$$GetFeedResponseImplCopyWith(
+    _$GetFeedResponseImpl value,
+    $Res Function(_$GetFeedResponseImpl) then,
+  ) = __$$GetFeedResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({FeedView feed});
+
+  @override
+  $FeedViewCopyWith<$Res> get feed;
+}
+
+/// @nodoc
+class __$$GetFeedResponseImplCopyWithImpl<$Res>
+    extends _$GetFeedResponseCopyWithImpl<$Res, _$GetFeedResponseImpl>
+    implements _$$GetFeedResponseImplCopyWith<$Res> {
+  __$$GetFeedResponseImplCopyWithImpl(
+    _$GetFeedResponseImpl _value,
+    $Res Function(_$GetFeedResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetFeedResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? feed = null}) {
+    return _then(
+      _$GetFeedResponseImpl(
+        feed:
+            null == feed
+                ? _value.feed
+                : feed // ignore: cast_nullable_to_non_nullable
+                    as FeedView,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetFeedResponseImpl implements _GetFeedResponse {
+  const _$GetFeedResponseImpl({required this.feed});
+
+  factory _$GetFeedResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetFeedResponseImplFromJson(json);
+
+  @override
+  final FeedView feed;
+
+  @override
+  String toString() {
+    return 'GetFeedResponse(feed: $feed)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFeedResponseImpl &&
+            (identical(other.feed, feed) || other.feed == feed));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, feed);
+
+  /// Create a copy of GetFeedResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFeedResponseImplCopyWith<_$GetFeedResponseImpl> get copyWith =>
+      __$$GetFeedResponseImplCopyWithImpl<_$GetFeedResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetFeedResponseImplToJson(this);
+  }
+}
+
+abstract class _GetFeedResponse implements GetFeedResponse {
+  const factory _GetFeedResponse({required final FeedView feed}) =
+      _$GetFeedResponseImpl;
+
+  factory _GetFeedResponse.fromJson(Map<String, dynamic> json) =
+      _$GetFeedResponseImpl.fromJson;
+
+  @override
+  FeedView get feed;
+
+  /// Create a copy of GetFeedResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetFeedResponseImplCopyWith<_$GetFeedResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

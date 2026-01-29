@@ -93,3 +93,35 @@ _$MarkAllAsReadImpl _$$MarkAllAsReadImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$MarkAllAsReadImplToJson(_$MarkAllAsReadImpl instance) =>
     <String, dynamic>{'auth': instance.auth};
+
+_$BanUserImpl _$$BanUserImplFromJson(Map<String, dynamic> json) =>
+    _$BanUserImpl(
+      personId: (json['person_id'] as num).toInt(),
+      reason: json['reason'] as String?,
+      removeData: json['remove_data'] as bool?,
+      expires: (json['expires'] as num?)?.toInt(),
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$BanUserImplToJson(_$BanUserImpl instance) =>
+    <String, dynamic>{
+      'person_id': instance.personId,
+      if (instance.reason case final value?) 'reason': value,
+      if (instance.removeData case final value?) 'remove_data': value,
+      if (instance.expires case final value?) 'expires': value,
+      'auth': instance.auth,
+    };
+
+_$UnbanUserImpl _$$UnbanUserImplFromJson(Map<String, dynamic> json) =>
+    _$UnbanUserImpl(
+      personId: (json['person_id'] as num).toInt(),
+      reason: json['reason'] as String?,
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$UnbanUserImplToJson(_$UnbanUserImpl instance) =>
+    <String, dynamic>{
+      'person_id': instance.personId,
+      if (instance.reason case final value?) 'reason': value,
+      'auth': instance.auth,
+    };

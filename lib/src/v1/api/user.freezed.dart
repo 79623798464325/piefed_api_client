@@ -1478,3 +1478,475 @@ abstract class _MarkAllAsRead extends MarkAllAsRead {
   _$$MarkAllAsReadImplCopyWith<_$MarkAllAsReadImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+BanUser _$BanUserFromJson(Map<String, dynamic> json) {
+  return _BanUser.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BanUser {
+  @JsonKey(name: 'person_id')
+  int get personId => throw _privateConstructorUsedError;
+  String? get reason => throw _privateConstructorUsedError;
+  @JsonKey(name: 'remove_data')
+  bool? get removeData => throw _privateConstructorUsedError;
+  int? get expires => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this BanUser to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BanUserCopyWith<BanUser> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BanUserCopyWith<$Res> {
+  factory $BanUserCopyWith(BanUser value, $Res Function(BanUser) then) =
+      _$BanUserCopyWithImpl<$Res, BanUser>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    String? reason,
+    @JsonKey(name: 'remove_data') bool? removeData,
+    int? expires,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$BanUserCopyWithImpl<$Res, $Val extends BanUser>
+    implements $BanUserCopyWith<$Res> {
+  _$BanUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? reason = freezed,
+    Object? removeData = freezed,
+    Object? expires = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            personId:
+                null == personId
+                    ? _value.personId
+                    : personId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            reason:
+                freezed == reason
+                    ? _value.reason
+                    : reason // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            removeData:
+                freezed == removeData
+                    ? _value.removeData
+                    : removeData // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            expires:
+                freezed == expires
+                    ? _value.expires
+                    : expires // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$BanUserImplCopyWith<$Res> implements $BanUserCopyWith<$Res> {
+  factory _$$BanUserImplCopyWith(
+    _$BanUserImpl value,
+    $Res Function(_$BanUserImpl) then,
+  ) = __$$BanUserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    String? reason,
+    @JsonKey(name: 'remove_data') bool? removeData,
+    int? expires,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$BanUserImplCopyWithImpl<$Res>
+    extends _$BanUserCopyWithImpl<$Res, _$BanUserImpl>
+    implements _$$BanUserImplCopyWith<$Res> {
+  __$$BanUserImplCopyWithImpl(
+    _$BanUserImpl _value,
+    $Res Function(_$BanUserImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of BanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? reason = freezed,
+    Object? removeData = freezed,
+    Object? expires = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$BanUserImpl(
+        personId:
+            null == personId
+                ? _value.personId
+                : personId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        reason:
+            freezed == reason
+                ? _value.reason
+                : reason // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        removeData:
+            freezed == removeData
+                ? _value.removeData
+                : removeData // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        expires:
+            freezed == expires
+                ? _value.expires
+                : expires // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _$BanUserImpl extends _BanUser {
+  const _$BanUserImpl({
+    @JsonKey(name: 'person_id') required this.personId,
+    this.reason,
+    @JsonKey(name: 'remove_data') this.removeData,
+    this.expires,
+    required this.auth,
+  }) : super._();
+
+  factory _$BanUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BanUserImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'person_id')
+  final int personId;
+  @override
+  final String? reason;
+  @override
+  @JsonKey(name: 'remove_data')
+  final bool? removeData;
+  @override
+  final int? expires;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'BanUser(personId: $personId, reason: $reason, removeData: $removeData, expires: $expires, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BanUserImpl &&
+            (identical(other.personId, personId) ||
+                other.personId == personId) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.removeData, removeData) ||
+                other.removeData == removeData) &&
+            (identical(other.expires, expires) || other.expires == expires) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, personId, reason, removeData, expires, auth);
+
+  /// Create a copy of BanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BanUserImplCopyWith<_$BanUserImpl> get copyWith =>
+      __$$BanUserImplCopyWithImpl<_$BanUserImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BanUserImplToJson(this);
+  }
+}
+
+abstract class _BanUser extends BanUser {
+  const factory _BanUser({
+    @JsonKey(name: 'person_id') required final int personId,
+    final String? reason,
+    @JsonKey(name: 'remove_data') final bool? removeData,
+    final int? expires,
+    required final String auth,
+  }) = _$BanUserImpl;
+  const _BanUser._() : super._();
+
+  factory _BanUser.fromJson(Map<String, dynamic> json) = _$BanUserImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'person_id')
+  int get personId;
+  @override
+  String? get reason;
+  @override
+  @JsonKey(name: 'remove_data')
+  bool? get removeData;
+  @override
+  int? get expires;
+  @override
+  String get auth;
+
+  /// Create a copy of BanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BanUserImplCopyWith<_$BanUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UnbanUser _$UnbanUserFromJson(Map<String, dynamic> json) {
+  return _UnbanUser.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UnbanUser {
+  @JsonKey(name: 'person_id')
+  int get personId => throw _privateConstructorUsedError;
+  String? get reason => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this UnbanUser to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UnbanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UnbanUserCopyWith<UnbanUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UnbanUserCopyWith<$Res> {
+  factory $UnbanUserCopyWith(UnbanUser value, $Res Function(UnbanUser) then) =
+      _$UnbanUserCopyWithImpl<$Res, UnbanUser>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    String? reason,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$UnbanUserCopyWithImpl<$Res, $Val extends UnbanUser>
+    implements $UnbanUserCopyWith<$Res> {
+  _$UnbanUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UnbanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? reason = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            personId:
+                null == personId
+                    ? _value.personId
+                    : personId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            reason:
+                freezed == reason
+                    ? _value.reason
+                    : reason // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UnbanUserImplCopyWith<$Res>
+    implements $UnbanUserCopyWith<$Res> {
+  factory _$$UnbanUserImplCopyWith(
+    _$UnbanUserImpl value,
+    $Res Function(_$UnbanUserImpl) then,
+  ) = __$$UnbanUserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    String? reason,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$UnbanUserImplCopyWithImpl<$Res>
+    extends _$UnbanUserCopyWithImpl<$Res, _$UnbanUserImpl>
+    implements _$$UnbanUserImplCopyWith<$Res> {
+  __$$UnbanUserImplCopyWithImpl(
+    _$UnbanUserImpl _value,
+    $Res Function(_$UnbanUserImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UnbanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? reason = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$UnbanUserImpl(
+        personId:
+            null == personId
+                ? _value.personId
+                : personId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        reason:
+            freezed == reason
+                ? _value.reason
+                : reason // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _$UnbanUserImpl extends _UnbanUser {
+  const _$UnbanUserImpl({
+    @JsonKey(name: 'person_id') required this.personId,
+    this.reason,
+    required this.auth,
+  }) : super._();
+
+  factory _$UnbanUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnbanUserImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'person_id')
+  final int personId;
+  @override
+  final String? reason;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'UnbanUser(personId: $personId, reason: $reason, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnbanUserImpl &&
+            (identical(other.personId, personId) ||
+                other.personId == personId) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, personId, reason, auth);
+
+  /// Create a copy of UnbanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnbanUserImplCopyWith<_$UnbanUserImpl> get copyWith =>
+      __$$UnbanUserImplCopyWithImpl<_$UnbanUserImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnbanUserImplToJson(this);
+  }
+}
+
+abstract class _UnbanUser extends UnbanUser {
+  const factory _UnbanUser({
+    @JsonKey(name: 'person_id') required final int personId,
+    final String? reason,
+    required final String auth,
+  }) = _$UnbanUserImpl;
+  const _UnbanUser._() : super._();
+
+  factory _UnbanUser.fromJson(Map<String, dynamic> json) =
+      _$UnbanUserImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'person_id')
+  int get personId;
+  @override
+  String? get reason;
+  @override
+  String get auth;
+
+  /// Create a copy of UnbanUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnbanUserImplCopyWith<_$UnbanUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -522,5 +522,34 @@ void main() {
       final json = query.toJson();
       expect(json['url'], 'https://example.com');
     });
+
+    test('GetFeed', () {
+      const query = GetFeed(id: 42, name: 'my_feed');
+      expect(query.path, '/feed');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['id'], 42);
+      expect(json['name'], 'my_feed');
+    });
+
+    test('BanUser', () {
+      const query = BanUser(personId: 33, reason: 'Bad behavior', removeData: true, expires: 123456789, auth: 'tok');
+      expect(query.path, '/user/ban');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['person_id'], 33);
+      expect(json['reason'], 'Bad behavior');
+      expect(json['remove_data'], true);
+      expect(json['expires'], 123456789);
+    });
+
+    test('UnbanUser', () {
+      const query = UnbanUser(personId: 44, reason: 'Mistake', auth: 'tok');
+      expect(query.path, '/user/unban');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['person_id'], 44);
+      expect(json['reason'], 'Mistake');
+    });
   });
 }
