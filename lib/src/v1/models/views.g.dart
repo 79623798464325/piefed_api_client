@@ -33,6 +33,7 @@ _$CommunityViewImpl _$$CommunityViewImplFromJson(Map<String, dynamic> json) =>
       counts: CommunityAggregates.fromJson(
         json['counts'] as Map<String, dynamic>,
       ),
+      activityAlert: json['activity_alert'] as bool?,
     );
 
 Map<String, dynamic> _$$CommunityViewImplToJson(_$CommunityViewImpl instance) =>
@@ -41,6 +42,7 @@ Map<String, dynamic> _$$CommunityViewImplToJson(_$CommunityViewImpl instance) =>
       'subscribed': instance.subscribed,
       'blocked': instance.blocked,
       'counts': instance.counts,
+      'activity_alert': instance.activityAlert,
     };
 
 _$CommentViewImpl _$$CommentViewImplFromJson(Map<String, dynamic> json) =>
@@ -92,6 +94,7 @@ _$PostViewImpl _$$PostViewImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CommunityFlair.fromJson(e as Map<String, dynamic>))
               .toList(),
       canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
+      activityAlert: json['activity_alert'] as bool?,
     );
 
 Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
@@ -108,6 +111,7 @@ Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
       'my_vote': instance.myVote,
       'flair_list': instance.flairList,
       'can_auth_user_moderate': instance.canAuthUserModerate,
+      'activity_alert': instance.activityAlert,
     };
 
 _$PrivateMessageViewImpl _$$PrivateMessageViewImplFromJson(
@@ -193,8 +197,10 @@ _$TopicViewImpl _$$TopicViewImplFromJson(Map<String, dynamic> json) =>
     _$TopicViewImpl(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      communitiesCount: (json['communitiesCount'] as num).toInt(),
-      showPostsFromChildren: json['showPostsFromChildren'] as bool,
+      title: json['title'] as String,
+      communitiesCount: (json['communities_count'] as num).toInt(),
+      showPostsFromChildren: json['show_posts_from_children'] as bool,
+      parentTopicId: (json['parent_topic_id'] as num?)?.toInt(),
       communities:
           (json['communities'] as List<dynamic>)
               .map((e) => Community.fromJson(e as Map<String, dynamic>))
@@ -209,8 +215,186 @@ Map<String, dynamic> _$$TopicViewImplToJson(_$TopicViewImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'communitiesCount': instance.communitiesCount,
-      'showPostsFromChildren': instance.showPostsFromChildren,
+      'title': instance.title,
+      'communities_count': instance.communitiesCount,
+      'show_posts_from_children': instance.showPostsFromChildren,
+      'parent_topic_id': instance.parentTopicId,
       'communities': instance.communities,
       'children': instance.children,
     };
+
+_$LanguageViewImpl _$$LanguageViewImplFromJson(Map<String, dynamic> json) =>
+    _$LanguageViewImpl(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      code: json['code'] as String,
+    );
+
+Map<String, dynamic> _$$LanguageViewImplToJson(_$LanguageViewImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'code': instance.code,
+    };
+
+_$CommunityBlockViewImpl _$$CommunityBlockViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityBlockViewImpl(
+  community: Community.fromJson(json['community'] as Map<String, dynamic>),
+  person: Person.fromJson(json['person'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$CommunityBlockViewImplToJson(
+  _$CommunityBlockViewImpl instance,
+) => <String, dynamic>{
+  'community': instance.community,
+  'person': instance.person,
+};
+
+_$CommunityFollowerViewImpl _$$CommunityFollowerViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityFollowerViewImpl(
+  community: Community.fromJson(json['community'] as Map<String, dynamic>),
+  follower: Person.fromJson(json['follower'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$CommunityFollowerViewImplToJson(
+  _$CommunityFollowerViewImpl instance,
+) => <String, dynamic>{
+  'community': instance.community,
+  'follower': instance.follower,
+};
+
+_$InstanceBlockViewImpl _$$InstanceBlockViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$InstanceBlockViewImpl(
+  instance: Instance.fromJson(json['instance'] as Map<String, dynamic>),
+  person: Person.fromJson(json['person'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$InstanceBlockViewImplToJson(
+  _$InstanceBlockViewImpl instance,
+) => <String, dynamic>{
+  'instance': instance.instance,
+  'person': instance.person,
+};
+
+_$CommunityModeratorViewImpl _$$CommunityModeratorViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityModeratorViewImpl(
+  community: Community.fromJson(json['community'] as Map<String, dynamic>),
+  moderator: Person.fromJson(json['moderator'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$CommunityModeratorViewImplToJson(
+  _$CommunityModeratorViewImpl instance,
+) => <String, dynamic>{
+  'community': instance.community,
+  'moderator': instance.moderator,
+};
+
+_$PersonBlockViewImpl _$$PersonBlockViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$PersonBlockViewImpl(
+  person: Person.fromJson(json['person'] as Map<String, dynamic>),
+  target: Person.fromJson(json['target'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$PersonBlockViewImplToJson(
+  _$PersonBlockViewImpl instance,
+) => <String, dynamic>{'person': instance.person, 'target': instance.target};
+
+_$LocalUserViewImpl _$$LocalUserViewImplFromJson(Map<String, dynamic> json) =>
+    _$LocalUserViewImpl(
+      person: Person.fromJson(json['person'] as Map<String, dynamic>),
+      localUser: LocalUser.fromJson(json['local_user'] as Map<String, dynamic>),
+      counts: PersonAggregates.fromJson(json['counts'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$LocalUserViewImplToJson(_$LocalUserViewImpl instance) =>
+    <String, dynamic>{
+      'person': instance.person,
+      'local_user': instance.localUser,
+      'counts': instance.counts,
+    };
+
+_$UserNotificationItemViewImpl _$$UserNotificationItemViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserNotificationItemViewImpl(
+  author: Person.fromJson(json['author'] as Map<String, dynamic>),
+  notifBody: json['notif_body'] as String,
+  notifId: (json['notif_id'] as num).toInt(),
+  notifSubtype: json['notif_subtype'] as String,
+  notifType: (json['notif_type'] as num).toInt(),
+  status: json['status'] as String,
+  comment:
+      json['comment'] == null
+          ? null
+          : Comment.fromJson(json['comment'] as Map<String, dynamic>),
+  commentView:
+      json['comment_view'] == null
+          ? null
+          : CommentView.fromJson(json['comment_view'] as Map<String, dynamic>),
+  commentId: (json['comment_id'] as num?)?.toInt(),
+  community:
+      json['community'] == null
+          ? null
+          : Community.fromJson(json['community'] as Map<String, dynamic>),
+  post:
+      json['post'] == null
+          ? null
+          : PostView.fromJson(json['post'] as Map<String, dynamic>),
+  postId: (json['post_id'] as num?)?.toInt(),
+);
+
+Map<String, dynamic> _$$UserNotificationItemViewImplToJson(
+  _$UserNotificationItemViewImpl instance,
+) => <String, dynamic>{
+  'author': instance.author,
+  'notif_body': instance.notifBody,
+  'notif_id': instance.notifId,
+  'notif_subtype': instance.notifSubtype,
+  'notif_type': instance.notifType,
+  'status': instance.status,
+  'comment': instance.comment,
+  'comment_view': instance.commentView,
+  'comment_id': instance.commentId,
+  'community': instance.community,
+  'post': instance.post,
+  'post_id': instance.postId,
+};
+
+_$CommentReplyViewImpl _$$CommentReplyViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommentReplyViewImpl(
+  comment: Comment.fromJson(json['comment'] as Map<String, dynamic>),
+  creator: Person.fromJson(json['creator'] as Map<String, dynamic>),
+  post: Post.fromJson(json['post'] as Map<String, dynamic>),
+  community: Community.fromJson(json['community'] as Map<String, dynamic>),
+  commentReply: CommentReply.fromJson(
+    json['comment_reply'] as Map<String, dynamic>,
+  ),
+  counts:
+      json['counts'] == null
+          ? null
+          : CommentAggregates.fromJson(json['counts'] as Map<String, dynamic>),
+  activityAlert: json['activity_alert'] as bool?,
+  saved: json['saved'] as bool,
+  myVote: (json['my_vote'] as num?)?.toInt(),
+  subscribed: json['subscribed'] as bool?,
+);
+
+Map<String, dynamic> _$$CommentReplyViewImplToJson(
+  _$CommentReplyViewImpl instance,
+) => <String, dynamic>{
+  'comment': instance.comment,
+  'creator': instance.creator,
+  'post': instance.post,
+  'community': instance.community,
+  'comment_reply': instance.commentReply,
+  'counts': instance.counts,
+  'activity_alert': instance.activityAlert,
+  'saved': instance.saved,
+  'my_vote': instance.myVote,
+  'subscribed': instance.subscribed,
+};

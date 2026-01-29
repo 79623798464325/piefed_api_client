@@ -1950,3 +1950,666 @@ abstract class _UnbanUser extends UnbanUser {
   _$$UnbanUserImplCopyWith<_$UnbanUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+GetMentions _$GetMentionsFromJson(Map<String, dynamic> json) {
+  return _GetMentions.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetMentions {
+  int? get page => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  String? get sort => throw _privateConstructorUsedError;
+  @JsonKey(name: 'unread_only')
+  bool? get unreadOnly => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this GetMentions to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetMentions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetMentionsCopyWith<GetMentions> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetMentionsCopyWith<$Res> {
+  factory $GetMentionsCopyWith(
+    GetMentions value,
+    $Res Function(GetMentions) then,
+  ) = _$GetMentionsCopyWithImpl<$Res, GetMentions>;
+  @useResult
+  $Res call({
+    int? page,
+    int? limit,
+    String? sort,
+    @JsonKey(name: 'unread_only') bool? unreadOnly,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$GetMentionsCopyWithImpl<$Res, $Val extends GetMentions>
+    implements $GetMentionsCopyWith<$Res> {
+  _$GetMentionsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetMentions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sort = freezed,
+    Object? unreadOnly = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            page:
+                freezed == page
+                    ? _value.page
+                    : page // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            limit:
+                freezed == limit
+                    ? _value.limit
+                    : limit // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            sort:
+                freezed == sort
+                    ? _value.sort
+                    : sort // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            unreadOnly:
+                freezed == unreadOnly
+                    ? _value.unreadOnly
+                    : unreadOnly // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$GetMentionsImplCopyWith<$Res>
+    implements $GetMentionsCopyWith<$Res> {
+  factory _$$GetMentionsImplCopyWith(
+    _$GetMentionsImpl value,
+    $Res Function(_$GetMentionsImpl) then,
+  ) = __$$GetMentionsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int? page,
+    int? limit,
+    String? sort,
+    @JsonKey(name: 'unread_only') bool? unreadOnly,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$GetMentionsImplCopyWithImpl<$Res>
+    extends _$GetMentionsCopyWithImpl<$Res, _$GetMentionsImpl>
+    implements _$$GetMentionsImplCopyWith<$Res> {
+  __$$GetMentionsImplCopyWithImpl(
+    _$GetMentionsImpl _value,
+    $Res Function(_$GetMentionsImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetMentions
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? page = freezed,
+    Object? limit = freezed,
+    Object? sort = freezed,
+    Object? unreadOnly = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$GetMentionsImpl(
+        page:
+            freezed == page
+                ? _value.page
+                : page // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        limit:
+            freezed == limit
+                ? _value.limit
+                : limit // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        sort:
+            freezed == sort
+                ? _value.sort
+                : sort // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        unreadOnly:
+            freezed == unreadOnly
+                ? _value.unreadOnly
+                : unreadOnly // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetMentionsImpl extends _GetMentions {
+  const _$GetMentionsImpl({
+    this.page,
+    this.limit,
+    this.sort,
+    @JsonKey(name: 'unread_only') this.unreadOnly,
+    required this.auth,
+  }) : super._();
+
+  factory _$GetMentionsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetMentionsImplFromJson(json);
+
+  @override
+  final int? page;
+  @override
+  final int? limit;
+  @override
+  final String? sort;
+  @override
+  @JsonKey(name: 'unread_only')
+  final bool? unreadOnly;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'GetMentions(page: $page, limit: $limit, sort: $sort, unreadOnly: $unreadOnly, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMentionsImpl &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.sort, sort) || other.sort == sort) &&
+            (identical(other.unreadOnly, unreadOnly) ||
+                other.unreadOnly == unreadOnly) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, page, limit, sort, unreadOnly, auth);
+
+  /// Create a copy of GetMentions
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetMentionsImplCopyWith<_$GetMentionsImpl> get copyWith =>
+      __$$GetMentionsImplCopyWithImpl<_$GetMentionsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetMentionsImplToJson(this);
+  }
+}
+
+abstract class _GetMentions extends GetMentions {
+  const factory _GetMentions({
+    final int? page,
+    final int? limit,
+    final String? sort,
+    @JsonKey(name: 'unread_only') final bool? unreadOnly,
+    required final String auth,
+  }) = _$GetMentionsImpl;
+  const _GetMentions._() : super._();
+
+  factory _GetMentions.fromJson(Map<String, dynamic> json) =
+      _$GetMentionsImpl.fromJson;
+
+  @override
+  int? get page;
+  @override
+  int? get limit;
+  @override
+  String? get sort;
+  @override
+  @JsonKey(name: 'unread_only')
+  bool? get unreadOnly;
+  @override
+  String get auth;
+
+  /// Create a copy of GetMentions
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetMentionsImplCopyWith<_$GetMentionsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GetNotifications _$GetNotificationsFromJson(Map<String, dynamic> json) {
+  return _GetNotifications.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetNotifications {
+  String? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_page')
+  String? get nextPage => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this GetNotifications to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetNotifications
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetNotificationsCopyWith<GetNotifications> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetNotificationsCopyWith<$Res> {
+  factory $GetNotificationsCopyWith(
+    GetNotifications value,
+    $Res Function(GetNotifications) then,
+  ) = _$GetNotificationsCopyWithImpl<$Res, GetNotifications>;
+  @useResult
+  $Res call({
+    String? status,
+    @JsonKey(name: 'next_page') String? nextPage,
+    int? limit,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$GetNotificationsCopyWithImpl<$Res, $Val extends GetNotifications>
+    implements $GetNotificationsCopyWith<$Res> {
+  _$GetNotificationsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetNotifications
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? nextPage = freezed,
+    Object? limit = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            status:
+                freezed == status
+                    ? _value.status
+                    : status // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nextPage:
+                freezed == nextPage
+                    ? _value.nextPage
+                    : nextPage // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            limit:
+                freezed == limit
+                    ? _value.limit
+                    : limit // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$GetNotificationsImplCopyWith<$Res>
+    implements $GetNotificationsCopyWith<$Res> {
+  factory _$$GetNotificationsImplCopyWith(
+    _$GetNotificationsImpl value,
+    $Res Function(_$GetNotificationsImpl) then,
+  ) = __$$GetNotificationsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    String? status,
+    @JsonKey(name: 'next_page') String? nextPage,
+    int? limit,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$GetNotificationsImplCopyWithImpl<$Res>
+    extends _$GetNotificationsCopyWithImpl<$Res, _$GetNotificationsImpl>
+    implements _$$GetNotificationsImplCopyWith<$Res> {
+  __$$GetNotificationsImplCopyWithImpl(
+    _$GetNotificationsImpl _value,
+    $Res Function(_$GetNotificationsImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetNotifications
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? nextPage = freezed,
+    Object? limit = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$GetNotificationsImpl(
+        status:
+            freezed == status
+                ? _value.status
+                : status // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nextPage:
+            freezed == nextPage
+                ? _value.nextPage
+                : nextPage // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        limit:
+            freezed == limit
+                ? _value.limit
+                : limit // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetNotificationsImpl extends _GetNotifications {
+  const _$GetNotificationsImpl({
+    this.status,
+    @JsonKey(name: 'next_page') this.nextPage,
+    this.limit,
+    required this.auth,
+  }) : super._();
+
+  factory _$GetNotificationsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetNotificationsImplFromJson(json);
+
+  @override
+  final String? status;
+  @override
+  @JsonKey(name: 'next_page')
+  final String? nextPage;
+  @override
+  final int? limit;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'GetNotifications(status: $status, nextPage: $nextPage, limit: $limit, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNotificationsImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.nextPage, nextPage) ||
+                other.nextPage == nextPage) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, status, nextPage, limit, auth);
+
+  /// Create a copy of GetNotifications
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetNotificationsImplCopyWith<_$GetNotificationsImpl> get copyWith =>
+      __$$GetNotificationsImplCopyWithImpl<_$GetNotificationsImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetNotificationsImplToJson(this);
+  }
+}
+
+abstract class _GetNotifications extends GetNotifications {
+  const factory _GetNotifications({
+    final String? status,
+    @JsonKey(name: 'next_page') final String? nextPage,
+    final int? limit,
+    required final String auth,
+  }) = _$GetNotificationsImpl;
+  const _GetNotifications._() : super._();
+
+  factory _GetNotifications.fromJson(Map<String, dynamic> json) =
+      _$GetNotificationsImpl.fromJson;
+
+  @override
+  String? get status;
+  @override
+  @JsonKey(name: 'next_page')
+  String? get nextPage;
+  @override
+  int? get limit;
+  @override
+  String get auth;
+
+  /// Create a copy of GetNotifications
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetNotificationsImplCopyWith<_$GetNotificationsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+GetNotificationsCount _$GetNotificationsCountFromJson(
+  Map<String, dynamic> json,
+) {
+  return _GetNotificationsCount.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetNotificationsCount {
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this GetNotificationsCount to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetNotificationsCount
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetNotificationsCountCopyWith<GetNotificationsCount> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetNotificationsCountCopyWith<$Res> {
+  factory $GetNotificationsCountCopyWith(
+    GetNotificationsCount value,
+    $Res Function(GetNotificationsCount) then,
+  ) = _$GetNotificationsCountCopyWithImpl<$Res, GetNotificationsCount>;
+  @useResult
+  $Res call({String auth});
+}
+
+/// @nodoc
+class _$GetNotificationsCountCopyWithImpl<
+  $Res,
+  $Val extends GetNotificationsCount
+>
+    implements $GetNotificationsCountCopyWith<$Res> {
+  _$GetNotificationsCountCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetNotificationsCount
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$GetNotificationsCountImplCopyWith<$Res>
+    implements $GetNotificationsCountCopyWith<$Res> {
+  factory _$$GetNotificationsCountImplCopyWith(
+    _$GetNotificationsCountImpl value,
+    $Res Function(_$GetNotificationsCountImpl) then,
+  ) = __$$GetNotificationsCountImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String auth});
+}
+
+/// @nodoc
+class __$$GetNotificationsCountImplCopyWithImpl<$Res>
+    extends
+        _$GetNotificationsCountCopyWithImpl<$Res, _$GetNotificationsCountImpl>
+    implements _$$GetNotificationsCountImplCopyWith<$Res> {
+  __$$GetNotificationsCountImplCopyWithImpl(
+    _$GetNotificationsCountImpl _value,
+    $Res Function(_$GetNotificationsCountImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetNotificationsCount
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? auth = null}) {
+    return _then(
+      _$GetNotificationsCountImpl(
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetNotificationsCountImpl extends _GetNotificationsCount {
+  const _$GetNotificationsCountImpl({required this.auth}) : super._();
+
+  factory _$GetNotificationsCountImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetNotificationsCountImplFromJson(json);
+
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'GetNotificationsCount(auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetNotificationsCountImpl &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, auth);
+
+  /// Create a copy of GetNotificationsCount
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetNotificationsCountImplCopyWith<_$GetNotificationsCountImpl>
+  get copyWith =>
+      __$$GetNotificationsCountImplCopyWithImpl<_$GetNotificationsCountImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetNotificationsCountImplToJson(this);
+  }
+}
+
+abstract class _GetNotificationsCount extends GetNotificationsCount {
+  const factory _GetNotificationsCount({required final String auth}) =
+      _$GetNotificationsCountImpl;
+  const _GetNotificationsCount._() : super._();
+
+  factory _GetNotificationsCount.fromJson(Map<String, dynamic> json) =
+      _$GetNotificationsCountImpl.fromJson;
+
+  @override
+  String get auth;
+
+  /// Create a copy of GetNotificationsCount
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetNotificationsCountImplCopyWith<_$GetNotificationsCountImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}

@@ -125,3 +125,47 @@ Map<String, dynamic> _$$UnbanUserImplToJson(_$UnbanUserImpl instance) =>
       if (instance.reason case final value?) 'reason': value,
       'auth': instance.auth,
     };
+
+_$GetMentionsImpl _$$GetMentionsImplFromJson(Map<String, dynamic> json) =>
+    _$GetMentionsImpl(
+      page: (json['page'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      sort: json['sort'] as String?,
+      unreadOnly: json['unread_only'] as bool?,
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$GetMentionsImplToJson(_$GetMentionsImpl instance) =>
+    <String, dynamic>{
+      'page': instance.page,
+      'limit': instance.limit,
+      'sort': instance.sort,
+      'unread_only': instance.unreadOnly,
+      'auth': instance.auth,
+    };
+
+_$GetNotificationsImpl _$$GetNotificationsImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetNotificationsImpl(
+  status: json['status'] as String?,
+  nextPage: json['next_page'] as String?,
+  limit: (json['limit'] as num?)?.toInt(),
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$GetNotificationsImplToJson(
+  _$GetNotificationsImpl instance,
+) => <String, dynamic>{
+  'status': instance.status,
+  'next_page': instance.nextPage,
+  'limit': instance.limit,
+  'auth': instance.auth,
+};
+
+_$GetNotificationsCountImpl _$$GetNotificationsCountImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetNotificationsCountImpl(auth: json['auth'] as String);
+
+Map<String, dynamic> _$$GetNotificationsCountImplToJson(
+  _$GetNotificationsCountImpl instance,
+) => <String, dynamic>{'auth': instance.auth};

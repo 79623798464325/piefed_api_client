@@ -1,4 +1,13 @@
 # Changelog
+## 0.7.3
+
+*   **PieFed v1.6.0 Alignment**:
+    *   Added missing `MyUserInfo`, `LocalUser`, and various block/moderator/follower view models.
+    *   Updated `TopicView` to match the latest specification (added `title` and `parent_topic_id`).
+    *   Strongly typed more API responses (e.g., `ListTopicsResponse`, `GetSiteResponse.myUser`).
+*   **Tests**:
+    *   Added serialization tests for all new models.
+
 ## 0.7.2
 
 *   **PieFed v1.6.0 Support**:

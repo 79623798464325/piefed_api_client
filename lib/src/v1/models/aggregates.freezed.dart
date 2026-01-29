@@ -1129,3 +1129,218 @@ abstract class _CommentAggregates implements CommentAggregates {
   _$$CommentAggregatesImplCopyWith<_$CommentAggregatesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+UserNotificationsCounts _$UserNotificationsCountsFromJson(
+  Map<String, dynamic> json,
+) {
+  return _UserNotificationsCounts.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserNotificationsCounts {
+  int get unread => throw _privateConstructorUsedError;
+  int get read => throw _privateConstructorUsedError;
+  int get total => throw _privateConstructorUsedError;
+
+  /// Serializes this UserNotificationsCounts to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UserNotificationsCounts
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserNotificationsCountsCopyWith<UserNotificationsCounts> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserNotificationsCountsCopyWith<$Res> {
+  factory $UserNotificationsCountsCopyWith(
+    UserNotificationsCounts value,
+    $Res Function(UserNotificationsCounts) then,
+  ) = _$UserNotificationsCountsCopyWithImpl<$Res, UserNotificationsCounts>;
+  @useResult
+  $Res call({int unread, int read, int total});
+}
+
+/// @nodoc
+class _$UserNotificationsCountsCopyWithImpl<
+  $Res,
+  $Val extends UserNotificationsCounts
+>
+    implements $UserNotificationsCountsCopyWith<$Res> {
+  _$UserNotificationsCountsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserNotificationsCounts
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? unread = null,
+    Object? read = null,
+    Object? total = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            unread:
+                null == unread
+                    ? _value.unread
+                    : unread // ignore: cast_nullable_to_non_nullable
+                        as int,
+            read:
+                null == read
+                    ? _value.read
+                    : read // ignore: cast_nullable_to_non_nullable
+                        as int,
+            total:
+                null == total
+                    ? _value.total
+                    : total // ignore: cast_nullable_to_non_nullable
+                        as int,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UserNotificationsCountsImplCopyWith<$Res>
+    implements $UserNotificationsCountsCopyWith<$Res> {
+  factory _$$UserNotificationsCountsImplCopyWith(
+    _$UserNotificationsCountsImpl value,
+    $Res Function(_$UserNotificationsCountsImpl) then,
+  ) = __$$UserNotificationsCountsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int unread, int read, int total});
+}
+
+/// @nodoc
+class __$$UserNotificationsCountsImplCopyWithImpl<$Res>
+    extends
+        _$UserNotificationsCountsCopyWithImpl<
+          $Res,
+          _$UserNotificationsCountsImpl
+        >
+    implements _$$UserNotificationsCountsImplCopyWith<$Res> {
+  __$$UserNotificationsCountsImplCopyWithImpl(
+    _$UserNotificationsCountsImpl _value,
+    $Res Function(_$UserNotificationsCountsImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UserNotificationsCounts
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? unread = null,
+    Object? read = null,
+    Object? total = null,
+  }) {
+    return _then(
+      _$UserNotificationsCountsImpl(
+        unread:
+            null == unread
+                ? _value.unread
+                : unread // ignore: cast_nullable_to_non_nullable
+                    as int,
+        read:
+            null == read
+                ? _value.read
+                : read // ignore: cast_nullable_to_non_nullable
+                    as int,
+        total:
+            null == total
+                ? _value.total
+                : total // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserNotificationsCountsImpl implements _UserNotificationsCounts {
+  const _$UserNotificationsCountsImpl({
+    this.unread = 0,
+    this.read = 0,
+    this.total = 0,
+  });
+
+  factory _$UserNotificationsCountsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserNotificationsCountsImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final int unread;
+  @override
+  @JsonKey()
+  final int read;
+  @override
+  @JsonKey()
+  final int total;
+
+  @override
+  String toString() {
+    return 'UserNotificationsCounts(unread: $unread, read: $read, total: $total)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserNotificationsCountsImpl &&
+            (identical(other.unread, unread) || other.unread == unread) &&
+            (identical(other.read, read) || other.read == read) &&
+            (identical(other.total, total) || other.total == total));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, unread, read, total);
+
+  /// Create a copy of UserNotificationsCounts
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserNotificationsCountsImplCopyWith<_$UserNotificationsCountsImpl>
+  get copyWith => __$$UserNotificationsCountsImplCopyWithImpl<
+    _$UserNotificationsCountsImpl
+  >(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserNotificationsCountsImplToJson(this);
+  }
+}
+
+abstract class _UserNotificationsCounts implements UserNotificationsCounts {
+  const factory _UserNotificationsCounts({
+    final int unread,
+    final int read,
+    final int total,
+  }) = _$UserNotificationsCountsImpl;
+
+  factory _UserNotificationsCounts.fromJson(Map<String, dynamic> json) =
+      _$UserNotificationsCountsImpl.fromJson;
+
+  @override
+  int get unread;
+  @override
+  int get read;
+  @override
+  int get total;
+
+  /// Create a copy of UserNotificationsCounts
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserNotificationsCountsImplCopyWith<_$UserNotificationsCountsImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}

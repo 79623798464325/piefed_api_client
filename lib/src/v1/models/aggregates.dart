@@ -11,7 +11,8 @@ class PersonAggregates with _$PersonAggregates {
     @JsonKey(name: 'comment_count') @Default(0) int commentCount,
   }) = _PersonAggregates;
 
-  factory PersonAggregates.fromJson(Map<String, dynamic> json) => _$PersonAggregatesFromJson(json);
+  factory PersonAggregates.fromJson(Map<String, dynamic> json) =>
+      _$PersonAggregatesFromJson(json);
 }
 
 @freezed
@@ -24,7 +25,8 @@ class CommunityAggregates with _$CommunityAggregates {
     @JsonKey(name: 'total_subscriptions_count') int? totalSubscriptionsCount,
   }) = _CommunityAggregates;
 
-  factory CommunityAggregates.fromJson(Map<String, dynamic> json) => _$CommunityAggregatesFromJson(json);
+  factory CommunityAggregates.fromJson(Map<String, dynamic> json) =>
+      _$CommunityAggregatesFromJson(json);
 }
 
 @freezed
@@ -36,10 +38,12 @@ class PostAggregates with _$PostAggregates {
     @Default(0) int upvotes,
     @Default(0) int downvotes,
     @JsonKey(name: 'newest_comment_time') DateTime? newestCommentTime,
-    @JsonKey(name: 'newest_comment_time_necro') DateTime? newestCommentTimeNecro,
+    @JsonKey(name: 'newest_comment_time_necro')
+    DateTime? newestCommentTimeNecro,
   }) = _PostAggregates;
 
-  factory PostAggregates.fromJson(Map<String, dynamic> json) => _$PostAggregatesFromJson(json);
+  factory PostAggregates.fromJson(Map<String, dynamic> json) =>
+      _$PostAggregatesFromJson(json);
 }
 
 @freezed
@@ -52,5 +56,18 @@ class CommentAggregates with _$CommentAggregates {
     @JsonKey(name: 'child_count') @Default(0) int childCount,
   }) = _CommentAggregates;
 
-  factory CommentAggregates.fromJson(Map<String, dynamic> json) => _$CommentAggregatesFromJson(json);
+  factory CommentAggregates.fromJson(Map<String, dynamic> json) =>
+      _$CommentAggregatesFromJson(json);
+}
+
+@freezed
+class UserNotificationsCounts with _$UserNotificationsCounts {
+  const factory UserNotificationsCounts({
+    @Default(0) int unread,
+    @Default(0) int read,
+    @Default(0) int total,
+  }) = _UserNotificationsCounts;
+
+  factory UserNotificationsCounts.fromJson(Map<String, dynamic> json) =>
+      _$UserNotificationsCountsFromJson(json);
 }

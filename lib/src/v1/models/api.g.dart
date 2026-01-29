@@ -49,7 +49,10 @@ _$GetSiteResponseImpl _$$GetSiteResponseImplFromJson(
           .map((e) => PersonView.fromJson(e as Map<String, dynamic>))
           .toList(),
   version: json['version'] as String,
-  myUser: json['my_user'] as Map<String, dynamic>?,
+  myUser:
+      json['my_user'] == null
+          ? null
+          : MyUserInfo.fromJson(json['my_user'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$$GetSiteResponseImplToJson(
@@ -381,7 +384,12 @@ Map<String, dynamic> _$$ListFeedsResponseImplToJson(
 
 _$ListTopicsResponseImpl _$$ListTopicsResponseImplFromJson(
   Map<String, dynamic> json,
-) => _$ListTopicsResponseImpl(topics: json['topics'] as List<dynamic>);
+) => _$ListTopicsResponseImpl(
+  topics:
+      (json['topics'] as List<dynamic>)
+          .map((e) => TopicView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
 
 Map<String, dynamic> _$$ListTopicsResponseImplToJson(
   _$ListTopicsResponseImpl instance,
@@ -518,3 +526,100 @@ _$GetFeedResponseImpl _$$GetFeedResponseImplFromJson(
 Map<String, dynamic> _$$GetFeedResponseImplToJson(
   _$GetFeedResponseImpl instance,
 ) => <String, dynamic>{'feed': instance.feed};
+
+_$UserNotificationsResponseImpl _$$UserNotificationsResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserNotificationsResponseImpl(
+  counts: UserNotificationsCounts.fromJson(
+    json['counts'] as Map<String, dynamic>,
+  ),
+  items:
+      (json['items'] as List<dynamic>)
+          .map(
+            (e) => UserNotificationItemView.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+  status: json['status'] as String,
+  username: json['username'] as String,
+  nextPage: json['next_page'] as String?,
+);
+
+Map<String, dynamic> _$$UserNotificationsResponseImplToJson(
+  _$UserNotificationsResponseImpl instance,
+) => <String, dynamic>{
+  'counts': instance.counts,
+  'items': instance.items,
+  'status': instance.status,
+  'username': instance.username,
+  'next_page': instance.nextPage,
+};
+
+_$UserNotificationsCountResponseImpl
+_$$UserNotificationsCountResponseImplFromJson(Map<String, dynamic> json) =>
+    _$UserNotificationsCountResponseImpl(count: (json['count'] as num).toInt());
+
+Map<String, dynamic> _$$UserNotificationsCountResponseImplToJson(
+  _$UserNotificationsCountResponseImpl instance,
+) => <String, dynamic>{'count': instance.count};
+
+_$UserMentionsResponseImpl _$$UserMentionsResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserMentionsResponseImpl(
+  replies:
+      (json['replies'] as List<dynamic>)
+          .map((e) => CommentReplyView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  nextPage: json['next_page'] as String?,
+);
+
+Map<String, dynamic> _$$UserMentionsResponseImplToJson(
+  _$UserMentionsResponseImpl instance,
+) => <String, dynamic>{
+  'replies': instance.replies,
+  'next_page': instance.nextPage,
+};
+
+_$MyUserInfoImpl _$$MyUserInfoImplFromJson(
+  Map<String, dynamic> json,
+) => _$MyUserInfoImpl(
+  communityBlocks:
+      (json['community_blocks'] as List<dynamic>)
+          .map((e) => CommunityBlockView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  discussionLanguages:
+      (json['discussion_languages'] as List<dynamic>)
+          .map((e) => LanguageView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  follows:
+      (json['follows'] as List<dynamic>)
+          .map((e) => CommunityFollowerView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  instanceBlocks:
+      (json['instance_blocks'] as List<dynamic>)
+          .map((e) => InstanceBlockView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  localUserView: LocalUserView.fromJson(
+    json['local_user_view'] as Map<String, dynamic>,
+  ),
+  moderates:
+      (json['moderates'] as List<dynamic>)
+          .map(
+            (e) => CommunityModeratorView.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+  personBlocks:
+      (json['person_blocks'] as List<dynamic>)
+          .map((e) => PersonBlockView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
+
+Map<String, dynamic> _$$MyUserInfoImplToJson(_$MyUserInfoImpl instance) =>
+    <String, dynamic>{
+      'community_blocks': instance.communityBlocks,
+      'discussion_languages': instance.discussionLanguages,
+      'follows': instance.follows,
+      'instance_blocks': instance.instanceBlocks,
+      'local_user_view': instance.localUserView,
+      'moderates': instance.moderates,
+      'person_blocks': instance.personBlocks,
+    };

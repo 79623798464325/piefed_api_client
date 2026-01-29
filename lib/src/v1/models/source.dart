@@ -231,3 +231,48 @@ class PrivateMessage with _$PrivateMessage {
 
   factory PrivateMessage.fromJson(Map<String, dynamic> json) => _$PrivateMessageFromJson(json);
 }
+
+@freezed
+class CommentReply with _$CommentReply {
+  const factory CommentReply({
+    required int id,
+    @JsonKey(name: 'comment_id') required int commentId,
+    required DateTime published,
+    required bool read,
+    @JsonKey(name: 'recipient_id') required int recipientId,
+  }) = _CommentReply;
+
+  factory CommentReply.fromJson(Map<String, dynamic> json) => _$CommentReplyFromJson(json);
+}
+
+@freezed
+class LocalUser with _$LocalUser {
+  const factory LocalUser({
+    @JsonKey(name: 'accept_private_messages') required String acceptPrivateMessages,
+    @JsonKey(name: 'bot_visibility') required String botVisibility,
+    @JsonKey(name: 'ai_visibility') required String aiVisibility,
+    @JsonKey(name: 'community_keyword_filter') List<String>? communityKeywordFilter,
+    @JsonKey(name: 'default_comment_sort_type') required String defaultCommentSortType,
+    @JsonKey(name: 'default_listing_type') required String defaultListingType,
+    @JsonKey(name: 'default_sort_type') String? defaultSortType,
+    @JsonKey(name: 'email_unread') required bool emailUnread,
+    @JsonKey(name: 'federate_votes') required bool federateVotes,
+    @JsonKey(name: 'feed_auto_follow') required bool feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') required bool feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') required bool hideLowQuality,
+    required bool indexable,
+    required bool newsletter,
+    @JsonKey(name: 'nsfl_visibility') required String nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') required String nsfwVisibility,
+    @JsonKey(name: 'reply_collapse_threshold') required int replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') required int replyHideThreshold,
+    required bool searchable,
+    @JsonKey(name: 'show_bot_accounts') required bool showBotAccounts,
+    @JsonKey(name: 'show_nsfl') required bool showNsfl,
+    @JsonKey(name: 'show_nsfw') required bool showNsfw,
+    @JsonKey(name: 'show_read_posts') required bool showReadPosts,
+    @JsonKey(name: 'show_scores') required bool showScores,
+  }) = _LocalUser;
+
+  factory LocalUser.fromJson(Map<String, dynamic> json) => _$LocalUserFromJson(json);
+}

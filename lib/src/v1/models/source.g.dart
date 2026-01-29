@@ -423,3 +423,80 @@ Map<String, dynamic> _$$PrivateMessageImplToJson(
   'published': instance.published.toIso8601String(),
   'updated': instance.updated?.toIso8601String(),
 };
+
+_$CommentReplyImpl _$$CommentReplyImplFromJson(Map<String, dynamic> json) =>
+    _$CommentReplyImpl(
+      id: (json['id'] as num).toInt(),
+      commentId: (json['comment_id'] as num).toInt(),
+      published: DateTime.parse(json['published'] as String),
+      read: json['read'] as bool,
+      recipientId: (json['recipient_id'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$CommentReplyImplToJson(_$CommentReplyImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'comment_id': instance.commentId,
+      'published': instance.published.toIso8601String(),
+      'read': instance.read,
+      'recipient_id': instance.recipientId,
+    };
+
+_$LocalUserImpl _$$LocalUserImplFromJson(Map<String, dynamic> json) =>
+    _$LocalUserImpl(
+      acceptPrivateMessages: json['accept_private_messages'] as String,
+      botVisibility: json['bot_visibility'] as String,
+      aiVisibility: json['ai_visibility'] as String,
+      communityKeywordFilter:
+          (json['community_keyword_filter'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
+      defaultCommentSortType: json['default_comment_sort_type'] as String,
+      defaultListingType: json['default_listing_type'] as String,
+      defaultSortType: json['default_sort_type'] as String?,
+      emailUnread: json['email_unread'] as bool,
+      federateVotes: json['federate_votes'] as bool,
+      feedAutoFollow: json['feed_auto_follow'] as bool,
+      feedAutoLeave: json['feed_auto_leave'] as bool,
+      hideLowQuality: json['hide_low_quality'] as bool,
+      indexable: json['indexable'] as bool,
+      newsletter: json['newsletter'] as bool,
+      nsflVisibility: json['nsfl_visibility'] as String,
+      nsfwVisibility: json['nsfw_visibility'] as String,
+      replyCollapseThreshold: (json['reply_collapse_threshold'] as num).toInt(),
+      replyHideThreshold: (json['reply_hide_threshold'] as num).toInt(),
+      searchable: json['searchable'] as bool,
+      showBotAccounts: json['show_bot_accounts'] as bool,
+      showNsfl: json['show_nsfl'] as bool,
+      showNsfw: json['show_nsfw'] as bool,
+      showReadPosts: json['show_read_posts'] as bool,
+      showScores: json['show_scores'] as bool,
+    );
+
+Map<String, dynamic> _$$LocalUserImplToJson(_$LocalUserImpl instance) =>
+    <String, dynamic>{
+      'accept_private_messages': instance.acceptPrivateMessages,
+      'bot_visibility': instance.botVisibility,
+      'ai_visibility': instance.aiVisibility,
+      'community_keyword_filter': instance.communityKeywordFilter,
+      'default_comment_sort_type': instance.defaultCommentSortType,
+      'default_listing_type': instance.defaultListingType,
+      'default_sort_type': instance.defaultSortType,
+      'email_unread': instance.emailUnread,
+      'federate_votes': instance.federateVotes,
+      'feed_auto_follow': instance.feedAutoFollow,
+      'feed_auto_leave': instance.feedAutoLeave,
+      'hide_low_quality': instance.hideLowQuality,
+      'indexable': instance.indexable,
+      'newsletter': instance.newsletter,
+      'nsfl_visibility': instance.nsflVisibility,
+      'nsfw_visibility': instance.nsfwVisibility,
+      'reply_collapse_threshold': instance.replyCollapseThreshold,
+      'reply_hide_threshold': instance.replyHideThreshold,
+      'searchable': instance.searchable,
+      'show_bot_accounts': instance.showBotAccounts,
+      'show_nsfl': instance.showNsfl,
+      'show_nsfw': instance.showNsfw,
+      'show_read_posts': instance.showReadPosts,
+      'show_scores': instance.showScores,
+    };

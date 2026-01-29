@@ -86,5 +86,49 @@ void main() {
       expect(json['content'], 'Secret');
       expect(PrivateMessage.fromJson(json), pm);
     });
+    test('TopicView serialization', () {
+      const topic = TopicView(id: 1, name: 'tech', title: 'Technology', communitiesCount: 5, showPostsFromChildren: true, communities: [], children: []);
+      final json = topic.toJson();
+      expect(json['name'], 'tech');
+      expect(json['title'], 'Technology');
+      expect(TopicView.fromJson(json), topic);
+    });
+
+    test('LanguageView serialization', () {
+      const language = LanguageView(id: 1, name: 'English', code: 'en');
+      final json = language.toJson();
+      expect(json['name'], 'English');
+      expect(LanguageView.fromJson(json), language);
+    });
+
+    test('LocalUser serialization', () {
+      const localUser = LocalUser(
+        acceptPrivateMessages: 'All',
+        botVisibility: 'Show',
+        aiVisibility: 'Show',
+        defaultCommentSortType: 'Hot',
+        defaultListingType: 'All',
+        emailUnread: true,
+        federateVotes: true,
+        feedAutoFollow: true,
+        feedAutoLeave: true,
+        hideLowQuality: false,
+        indexable: true,
+        newsletter: true,
+        nsflVisibility: 'Blur',
+        nsfwVisibility: 'Blur',
+        replyCollapseThreshold: -5,
+        replyHideThreshold: -10,
+        searchable: true,
+        showBotAccounts: true,
+        showNsfl: true,
+        showNsfw: true,
+        showReadPosts: true,
+        showScores: true,
+      );
+      final json = localUser.toJson();
+      expect(json['accept_private_messages'], 'All');
+      expect(LocalUser.fromJson(json), localUser);
+    });
   });
 }

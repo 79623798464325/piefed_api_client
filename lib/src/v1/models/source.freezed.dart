@@ -5242,3 +5242,1072 @@ abstract class _PrivateMessage implements PrivateMessage {
   _$$PrivateMessageImplCopyWith<_$PrivateMessageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+CommentReply _$CommentReplyFromJson(Map<String, dynamic> json) {
+  return _CommentReply.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CommentReply {
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'comment_id')
+  int get commentId => throw _privateConstructorUsedError;
+  DateTime get published => throw _privateConstructorUsedError;
+  bool get read => throw _privateConstructorUsedError;
+  @JsonKey(name: 'recipient_id')
+  int get recipientId => throw _privateConstructorUsedError;
+
+  /// Serializes this CommentReply to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of CommentReply
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CommentReplyCopyWith<CommentReply> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommentReplyCopyWith<$Res> {
+  factory $CommentReplyCopyWith(
+    CommentReply value,
+    $Res Function(CommentReply) then,
+  ) = _$CommentReplyCopyWithImpl<$Res, CommentReply>;
+  @useResult
+  $Res call({
+    int id,
+    @JsonKey(name: 'comment_id') int commentId,
+    DateTime published,
+    bool read,
+    @JsonKey(name: 'recipient_id') int recipientId,
+  });
+}
+
+/// @nodoc
+class _$CommentReplyCopyWithImpl<$Res, $Val extends CommentReply>
+    implements $CommentReplyCopyWith<$Res> {
+  _$CommentReplyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of CommentReply
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? commentId = null,
+    Object? published = null,
+    Object? read = null,
+    Object? recipientId = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            commentId:
+                null == commentId
+                    ? _value.commentId
+                    : commentId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            published:
+                null == published
+                    ? _value.published
+                    : published // ignore: cast_nullable_to_non_nullable
+                        as DateTime,
+            read:
+                null == read
+                    ? _value.read
+                    : read // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            recipientId:
+                null == recipientId
+                    ? _value.recipientId
+                    : recipientId // ignore: cast_nullable_to_non_nullable
+                        as int,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$CommentReplyImplCopyWith<$Res>
+    implements $CommentReplyCopyWith<$Res> {
+  factory _$$CommentReplyImplCopyWith(
+    _$CommentReplyImpl value,
+    $Res Function(_$CommentReplyImpl) then,
+  ) = __$$CommentReplyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int id,
+    @JsonKey(name: 'comment_id') int commentId,
+    DateTime published,
+    bool read,
+    @JsonKey(name: 'recipient_id') int recipientId,
+  });
+}
+
+/// @nodoc
+class __$$CommentReplyImplCopyWithImpl<$Res>
+    extends _$CommentReplyCopyWithImpl<$Res, _$CommentReplyImpl>
+    implements _$$CommentReplyImplCopyWith<$Res> {
+  __$$CommentReplyImplCopyWithImpl(
+    _$CommentReplyImpl _value,
+    $Res Function(_$CommentReplyImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of CommentReply
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? commentId = null,
+    Object? published = null,
+    Object? read = null,
+    Object? recipientId = null,
+  }) {
+    return _then(
+      _$CommentReplyImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        commentId:
+            null == commentId
+                ? _value.commentId
+                : commentId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        published:
+            null == published
+                ? _value.published
+                : published // ignore: cast_nullable_to_non_nullable
+                    as DateTime,
+        read:
+            null == read
+                ? _value.read
+                : read // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        recipientId:
+            null == recipientId
+                ? _value.recipientId
+                : recipientId // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CommentReplyImpl implements _CommentReply {
+  const _$CommentReplyImpl({
+    required this.id,
+    @JsonKey(name: 'comment_id') required this.commentId,
+    required this.published,
+    required this.read,
+    @JsonKey(name: 'recipient_id') required this.recipientId,
+  });
+
+  factory _$CommentReplyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommentReplyImplFromJson(json);
+
+  @override
+  final int id;
+  @override
+  @JsonKey(name: 'comment_id')
+  final int commentId;
+  @override
+  final DateTime published;
+  @override
+  final bool read;
+  @override
+  @JsonKey(name: 'recipient_id')
+  final int recipientId;
+
+  @override
+  String toString() {
+    return 'CommentReply(id: $id, commentId: $commentId, published: $published, read: $read, recipientId: $recipientId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CommentReplyImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.commentId, commentId) ||
+                other.commentId == commentId) &&
+            (identical(other.published, published) ||
+                other.published == published) &&
+            (identical(other.read, read) || other.read == read) &&
+            (identical(other.recipientId, recipientId) ||
+                other.recipientId == recipientId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, commentId, published, read, recipientId);
+
+  /// Create a copy of CommentReply
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CommentReplyImplCopyWith<_$CommentReplyImpl> get copyWith =>
+      __$$CommentReplyImplCopyWithImpl<_$CommentReplyImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CommentReplyImplToJson(this);
+  }
+}
+
+abstract class _CommentReply implements CommentReply {
+  const factory _CommentReply({
+    required final int id,
+    @JsonKey(name: 'comment_id') required final int commentId,
+    required final DateTime published,
+    required final bool read,
+    @JsonKey(name: 'recipient_id') required final int recipientId,
+  }) = _$CommentReplyImpl;
+
+  factory _CommentReply.fromJson(Map<String, dynamic> json) =
+      _$CommentReplyImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  @JsonKey(name: 'comment_id')
+  int get commentId;
+  @override
+  DateTime get published;
+  @override
+  bool get read;
+  @override
+  @JsonKey(name: 'recipient_id')
+  int get recipientId;
+
+  /// Create a copy of CommentReply
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CommentReplyImplCopyWith<_$CommentReplyImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LocalUser _$LocalUserFromJson(Map<String, dynamic> json) {
+  return _LocalUser.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LocalUser {
+  @JsonKey(name: 'accept_private_messages')
+  String get acceptPrivateMessages => throw _privateConstructorUsedError;
+  @JsonKey(name: 'bot_visibility')
+  String get botVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ai_visibility')
+  String get aiVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'community_keyword_filter')
+  List<String>? get communityKeywordFilter =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'default_comment_sort_type')
+  String get defaultCommentSortType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'default_listing_type')
+  String get defaultListingType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'default_sort_type')
+  String? get defaultSortType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'email_unread')
+  bool get emailUnread => throw _privateConstructorUsedError;
+  @JsonKey(name: 'federate_votes')
+  bool get federateVotes => throw _privateConstructorUsedError;
+  @JsonKey(name: 'feed_auto_follow')
+  bool get feedAutoFollow => throw _privateConstructorUsedError;
+  @JsonKey(name: 'feed_auto_leave')
+  bool get feedAutoLeave => throw _privateConstructorUsedError;
+  @JsonKey(name: 'hide_low_quality')
+  bool get hideLowQuality => throw _privateConstructorUsedError;
+  bool get indexable => throw _privateConstructorUsedError;
+  bool get newsletter => throw _privateConstructorUsedError;
+  @JsonKey(name: 'nsfl_visibility')
+  String get nsflVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'nsfw_visibility')
+  String get nsfwVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'reply_collapse_threshold')
+  int get replyCollapseThreshold => throw _privateConstructorUsedError;
+  @JsonKey(name: 'reply_hide_threshold')
+  int get replyHideThreshold => throw _privateConstructorUsedError;
+  bool get searchable => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_bot_accounts')
+  bool get showBotAccounts => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_nsfl')
+  bool get showNsfl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_nsfw')
+  bool get showNsfw => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_read_posts')
+  bool get showReadPosts => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_scores')
+  bool get showScores => throw _privateConstructorUsedError;
+
+  /// Serializes this LocalUser to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LocalUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LocalUserCopyWith<LocalUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LocalUserCopyWith<$Res> {
+  factory $LocalUserCopyWith(LocalUser value, $Res Function(LocalUser) then) =
+      _$LocalUserCopyWithImpl<$Res, LocalUser>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'accept_private_messages') String acceptPrivateMessages,
+    @JsonKey(name: 'bot_visibility') String botVisibility,
+    @JsonKey(name: 'ai_visibility') String aiVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    List<String>? communityKeywordFilter,
+    @JsonKey(name: 'default_comment_sort_type') String defaultCommentSortType,
+    @JsonKey(name: 'default_listing_type') String defaultListingType,
+    @JsonKey(name: 'default_sort_type') String? defaultSortType,
+    @JsonKey(name: 'email_unread') bool emailUnread,
+    @JsonKey(name: 'federate_votes') bool federateVotes,
+    @JsonKey(name: 'feed_auto_follow') bool feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') bool feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') bool hideLowQuality,
+    bool indexable,
+    bool newsletter,
+    @JsonKey(name: 'nsfl_visibility') String nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') String nsfwVisibility,
+    @JsonKey(name: 'reply_collapse_threshold') int replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') int replyHideThreshold,
+    bool searchable,
+    @JsonKey(name: 'show_bot_accounts') bool showBotAccounts,
+    @JsonKey(name: 'show_nsfl') bool showNsfl,
+    @JsonKey(name: 'show_nsfw') bool showNsfw,
+    @JsonKey(name: 'show_read_posts') bool showReadPosts,
+    @JsonKey(name: 'show_scores') bool showScores,
+  });
+}
+
+/// @nodoc
+class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser>
+    implements $LocalUserCopyWith<$Res> {
+  _$LocalUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LocalUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? acceptPrivateMessages = null,
+    Object? botVisibility = null,
+    Object? aiVisibility = null,
+    Object? communityKeywordFilter = freezed,
+    Object? defaultCommentSortType = null,
+    Object? defaultListingType = null,
+    Object? defaultSortType = freezed,
+    Object? emailUnread = null,
+    Object? federateVotes = null,
+    Object? feedAutoFollow = null,
+    Object? feedAutoLeave = null,
+    Object? hideLowQuality = null,
+    Object? indexable = null,
+    Object? newsletter = null,
+    Object? nsflVisibility = null,
+    Object? nsfwVisibility = null,
+    Object? replyCollapseThreshold = null,
+    Object? replyHideThreshold = null,
+    Object? searchable = null,
+    Object? showBotAccounts = null,
+    Object? showNsfl = null,
+    Object? showNsfw = null,
+    Object? showReadPosts = null,
+    Object? showScores = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            acceptPrivateMessages:
+                null == acceptPrivateMessages
+                    ? _value.acceptPrivateMessages
+                    : acceptPrivateMessages // ignore: cast_nullable_to_non_nullable
+                        as String,
+            botVisibility:
+                null == botVisibility
+                    ? _value.botVisibility
+                    : botVisibility // ignore: cast_nullable_to_non_nullable
+                        as String,
+            aiVisibility:
+                null == aiVisibility
+                    ? _value.aiVisibility
+                    : aiVisibility // ignore: cast_nullable_to_non_nullable
+                        as String,
+            communityKeywordFilter:
+                freezed == communityKeywordFilter
+                    ? _value.communityKeywordFilter
+                    : communityKeywordFilter // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
+            defaultCommentSortType:
+                null == defaultCommentSortType
+                    ? _value.defaultCommentSortType
+                    : defaultCommentSortType // ignore: cast_nullable_to_non_nullable
+                        as String,
+            defaultListingType:
+                null == defaultListingType
+                    ? _value.defaultListingType
+                    : defaultListingType // ignore: cast_nullable_to_non_nullable
+                        as String,
+            defaultSortType:
+                freezed == defaultSortType
+                    ? _value.defaultSortType
+                    : defaultSortType // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            emailUnread:
+                null == emailUnread
+                    ? _value.emailUnread
+                    : emailUnread // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            federateVotes:
+                null == federateVotes
+                    ? _value.federateVotes
+                    : federateVotes // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            feedAutoFollow:
+                null == feedAutoFollow
+                    ? _value.feedAutoFollow
+                    : feedAutoFollow // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            feedAutoLeave:
+                null == feedAutoLeave
+                    ? _value.feedAutoLeave
+                    : feedAutoLeave // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            hideLowQuality:
+                null == hideLowQuality
+                    ? _value.hideLowQuality
+                    : hideLowQuality // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            indexable:
+                null == indexable
+                    ? _value.indexable
+                    : indexable // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            newsletter:
+                null == newsletter
+                    ? _value.newsletter
+                    : newsletter // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            nsflVisibility:
+                null == nsflVisibility
+                    ? _value.nsflVisibility
+                    : nsflVisibility // ignore: cast_nullable_to_non_nullable
+                        as String,
+            nsfwVisibility:
+                null == nsfwVisibility
+                    ? _value.nsfwVisibility
+                    : nsfwVisibility // ignore: cast_nullable_to_non_nullable
+                        as String,
+            replyCollapseThreshold:
+                null == replyCollapseThreshold
+                    ? _value.replyCollapseThreshold
+                    : replyCollapseThreshold // ignore: cast_nullable_to_non_nullable
+                        as int,
+            replyHideThreshold:
+                null == replyHideThreshold
+                    ? _value.replyHideThreshold
+                    : replyHideThreshold // ignore: cast_nullable_to_non_nullable
+                        as int,
+            searchable:
+                null == searchable
+                    ? _value.searchable
+                    : searchable // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            showBotAccounts:
+                null == showBotAccounts
+                    ? _value.showBotAccounts
+                    : showBotAccounts // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            showNsfl:
+                null == showNsfl
+                    ? _value.showNsfl
+                    : showNsfl // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            showNsfw:
+                null == showNsfw
+                    ? _value.showNsfw
+                    : showNsfw // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            showReadPosts:
+                null == showReadPosts
+                    ? _value.showReadPosts
+                    : showReadPosts // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            showScores:
+                null == showScores
+                    ? _value.showScores
+                    : showScores // ignore: cast_nullable_to_non_nullable
+                        as bool,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$LocalUserImplCopyWith<$Res>
+    implements $LocalUserCopyWith<$Res> {
+  factory _$$LocalUserImplCopyWith(
+    _$LocalUserImpl value,
+    $Res Function(_$LocalUserImpl) then,
+  ) = __$$LocalUserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'accept_private_messages') String acceptPrivateMessages,
+    @JsonKey(name: 'bot_visibility') String botVisibility,
+    @JsonKey(name: 'ai_visibility') String aiVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    List<String>? communityKeywordFilter,
+    @JsonKey(name: 'default_comment_sort_type') String defaultCommentSortType,
+    @JsonKey(name: 'default_listing_type') String defaultListingType,
+    @JsonKey(name: 'default_sort_type') String? defaultSortType,
+    @JsonKey(name: 'email_unread') bool emailUnread,
+    @JsonKey(name: 'federate_votes') bool federateVotes,
+    @JsonKey(name: 'feed_auto_follow') bool feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') bool feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') bool hideLowQuality,
+    bool indexable,
+    bool newsletter,
+    @JsonKey(name: 'nsfl_visibility') String nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') String nsfwVisibility,
+    @JsonKey(name: 'reply_collapse_threshold') int replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') int replyHideThreshold,
+    bool searchable,
+    @JsonKey(name: 'show_bot_accounts') bool showBotAccounts,
+    @JsonKey(name: 'show_nsfl') bool showNsfl,
+    @JsonKey(name: 'show_nsfw') bool showNsfw,
+    @JsonKey(name: 'show_read_posts') bool showReadPosts,
+    @JsonKey(name: 'show_scores') bool showScores,
+  });
+}
+
+/// @nodoc
+class __$$LocalUserImplCopyWithImpl<$Res>
+    extends _$LocalUserCopyWithImpl<$Res, _$LocalUserImpl>
+    implements _$$LocalUserImplCopyWith<$Res> {
+  __$$LocalUserImplCopyWithImpl(
+    _$LocalUserImpl _value,
+    $Res Function(_$LocalUserImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of LocalUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? acceptPrivateMessages = null,
+    Object? botVisibility = null,
+    Object? aiVisibility = null,
+    Object? communityKeywordFilter = freezed,
+    Object? defaultCommentSortType = null,
+    Object? defaultListingType = null,
+    Object? defaultSortType = freezed,
+    Object? emailUnread = null,
+    Object? federateVotes = null,
+    Object? feedAutoFollow = null,
+    Object? feedAutoLeave = null,
+    Object? hideLowQuality = null,
+    Object? indexable = null,
+    Object? newsletter = null,
+    Object? nsflVisibility = null,
+    Object? nsfwVisibility = null,
+    Object? replyCollapseThreshold = null,
+    Object? replyHideThreshold = null,
+    Object? searchable = null,
+    Object? showBotAccounts = null,
+    Object? showNsfl = null,
+    Object? showNsfw = null,
+    Object? showReadPosts = null,
+    Object? showScores = null,
+  }) {
+    return _then(
+      _$LocalUserImpl(
+        acceptPrivateMessages:
+            null == acceptPrivateMessages
+                ? _value.acceptPrivateMessages
+                : acceptPrivateMessages // ignore: cast_nullable_to_non_nullable
+                    as String,
+        botVisibility:
+            null == botVisibility
+                ? _value.botVisibility
+                : botVisibility // ignore: cast_nullable_to_non_nullable
+                    as String,
+        aiVisibility:
+            null == aiVisibility
+                ? _value.aiVisibility
+                : aiVisibility // ignore: cast_nullable_to_non_nullable
+                    as String,
+        communityKeywordFilter:
+            freezed == communityKeywordFilter
+                ? _value._communityKeywordFilter
+                : communityKeywordFilter // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
+        defaultCommentSortType:
+            null == defaultCommentSortType
+                ? _value.defaultCommentSortType
+                : defaultCommentSortType // ignore: cast_nullable_to_non_nullable
+                    as String,
+        defaultListingType:
+            null == defaultListingType
+                ? _value.defaultListingType
+                : defaultListingType // ignore: cast_nullable_to_non_nullable
+                    as String,
+        defaultSortType:
+            freezed == defaultSortType
+                ? _value.defaultSortType
+                : defaultSortType // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        emailUnread:
+            null == emailUnread
+                ? _value.emailUnread
+                : emailUnread // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        federateVotes:
+            null == federateVotes
+                ? _value.federateVotes
+                : federateVotes // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        feedAutoFollow:
+            null == feedAutoFollow
+                ? _value.feedAutoFollow
+                : feedAutoFollow // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        feedAutoLeave:
+            null == feedAutoLeave
+                ? _value.feedAutoLeave
+                : feedAutoLeave // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        hideLowQuality:
+            null == hideLowQuality
+                ? _value.hideLowQuality
+                : hideLowQuality // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        indexable:
+            null == indexable
+                ? _value.indexable
+                : indexable // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        newsletter:
+            null == newsletter
+                ? _value.newsletter
+                : newsletter // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        nsflVisibility:
+            null == nsflVisibility
+                ? _value.nsflVisibility
+                : nsflVisibility // ignore: cast_nullable_to_non_nullable
+                    as String,
+        nsfwVisibility:
+            null == nsfwVisibility
+                ? _value.nsfwVisibility
+                : nsfwVisibility // ignore: cast_nullable_to_non_nullable
+                    as String,
+        replyCollapseThreshold:
+            null == replyCollapseThreshold
+                ? _value.replyCollapseThreshold
+                : replyCollapseThreshold // ignore: cast_nullable_to_non_nullable
+                    as int,
+        replyHideThreshold:
+            null == replyHideThreshold
+                ? _value.replyHideThreshold
+                : replyHideThreshold // ignore: cast_nullable_to_non_nullable
+                    as int,
+        searchable:
+            null == searchable
+                ? _value.searchable
+                : searchable // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        showBotAccounts:
+            null == showBotAccounts
+                ? _value.showBotAccounts
+                : showBotAccounts // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        showNsfl:
+            null == showNsfl
+                ? _value.showNsfl
+                : showNsfl // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        showNsfw:
+            null == showNsfw
+                ? _value.showNsfw
+                : showNsfw // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        showReadPosts:
+            null == showReadPosts
+                ? _value.showReadPosts
+                : showReadPosts // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        showScores:
+            null == showScores
+                ? _value.showScores
+                : showScores // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LocalUserImpl implements _LocalUser {
+  const _$LocalUserImpl({
+    @JsonKey(name: 'accept_private_messages')
+    required this.acceptPrivateMessages,
+    @JsonKey(name: 'bot_visibility') required this.botVisibility,
+    @JsonKey(name: 'ai_visibility') required this.aiVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    final List<String>? communityKeywordFilter,
+    @JsonKey(name: 'default_comment_sort_type')
+    required this.defaultCommentSortType,
+    @JsonKey(name: 'default_listing_type') required this.defaultListingType,
+    @JsonKey(name: 'default_sort_type') this.defaultSortType,
+    @JsonKey(name: 'email_unread') required this.emailUnread,
+    @JsonKey(name: 'federate_votes') required this.federateVotes,
+    @JsonKey(name: 'feed_auto_follow') required this.feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') required this.feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') required this.hideLowQuality,
+    required this.indexable,
+    required this.newsletter,
+    @JsonKey(name: 'nsfl_visibility') required this.nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') required this.nsfwVisibility,
+    @JsonKey(name: 'reply_collapse_threshold')
+    required this.replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') required this.replyHideThreshold,
+    required this.searchable,
+    @JsonKey(name: 'show_bot_accounts') required this.showBotAccounts,
+    @JsonKey(name: 'show_nsfl') required this.showNsfl,
+    @JsonKey(name: 'show_nsfw') required this.showNsfw,
+    @JsonKey(name: 'show_read_posts') required this.showReadPosts,
+    @JsonKey(name: 'show_scores') required this.showScores,
+  }) : _communityKeywordFilter = communityKeywordFilter;
+
+  factory _$LocalUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocalUserImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'accept_private_messages')
+  final String acceptPrivateMessages;
+  @override
+  @JsonKey(name: 'bot_visibility')
+  final String botVisibility;
+  @override
+  @JsonKey(name: 'ai_visibility')
+  final String aiVisibility;
+  final List<String>? _communityKeywordFilter;
+  @override
+  @JsonKey(name: 'community_keyword_filter')
+  List<String>? get communityKeywordFilter {
+    final value = _communityKeywordFilter;
+    if (value == null) return null;
+    if (_communityKeywordFilter is EqualUnmodifiableListView)
+      return _communityKeywordFilter;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'default_comment_sort_type')
+  final String defaultCommentSortType;
+  @override
+  @JsonKey(name: 'default_listing_type')
+  final String defaultListingType;
+  @override
+  @JsonKey(name: 'default_sort_type')
+  final String? defaultSortType;
+  @override
+  @JsonKey(name: 'email_unread')
+  final bool emailUnread;
+  @override
+  @JsonKey(name: 'federate_votes')
+  final bool federateVotes;
+  @override
+  @JsonKey(name: 'feed_auto_follow')
+  final bool feedAutoFollow;
+  @override
+  @JsonKey(name: 'feed_auto_leave')
+  final bool feedAutoLeave;
+  @override
+  @JsonKey(name: 'hide_low_quality')
+  final bool hideLowQuality;
+  @override
+  final bool indexable;
+  @override
+  final bool newsletter;
+  @override
+  @JsonKey(name: 'nsfl_visibility')
+  final String nsflVisibility;
+  @override
+  @JsonKey(name: 'nsfw_visibility')
+  final String nsfwVisibility;
+  @override
+  @JsonKey(name: 'reply_collapse_threshold')
+  final int replyCollapseThreshold;
+  @override
+  @JsonKey(name: 'reply_hide_threshold')
+  final int replyHideThreshold;
+  @override
+  final bool searchable;
+  @override
+  @JsonKey(name: 'show_bot_accounts')
+  final bool showBotAccounts;
+  @override
+  @JsonKey(name: 'show_nsfl')
+  final bool showNsfl;
+  @override
+  @JsonKey(name: 'show_nsfw')
+  final bool showNsfw;
+  @override
+  @JsonKey(name: 'show_read_posts')
+  final bool showReadPosts;
+  @override
+  @JsonKey(name: 'show_scores')
+  final bool showScores;
+
+  @override
+  String toString() {
+    return 'LocalUser(acceptPrivateMessages: $acceptPrivateMessages, botVisibility: $botVisibility, aiVisibility: $aiVisibility, communityKeywordFilter: $communityKeywordFilter, defaultCommentSortType: $defaultCommentSortType, defaultListingType: $defaultListingType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, searchable: $searchable, showBotAccounts: $showBotAccounts, showNsfl: $showNsfl, showNsfw: $showNsfw, showReadPosts: $showReadPosts, showScores: $showScores)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocalUserImpl &&
+            (identical(other.acceptPrivateMessages, acceptPrivateMessages) ||
+                other.acceptPrivateMessages == acceptPrivateMessages) &&
+            (identical(other.botVisibility, botVisibility) ||
+                other.botVisibility == botVisibility) &&
+            (identical(other.aiVisibility, aiVisibility) ||
+                other.aiVisibility == aiVisibility) &&
+            const DeepCollectionEquality().equals(
+              other._communityKeywordFilter,
+              _communityKeywordFilter,
+            ) &&
+            (identical(other.defaultCommentSortType, defaultCommentSortType) ||
+                other.defaultCommentSortType == defaultCommentSortType) &&
+            (identical(other.defaultListingType, defaultListingType) ||
+                other.defaultListingType == defaultListingType) &&
+            (identical(other.defaultSortType, defaultSortType) ||
+                other.defaultSortType == defaultSortType) &&
+            (identical(other.emailUnread, emailUnread) ||
+                other.emailUnread == emailUnread) &&
+            (identical(other.federateVotes, federateVotes) ||
+                other.federateVotes == federateVotes) &&
+            (identical(other.feedAutoFollow, feedAutoFollow) ||
+                other.feedAutoFollow == feedAutoFollow) &&
+            (identical(other.feedAutoLeave, feedAutoLeave) ||
+                other.feedAutoLeave == feedAutoLeave) &&
+            (identical(other.hideLowQuality, hideLowQuality) ||
+                other.hideLowQuality == hideLowQuality) &&
+            (identical(other.indexable, indexable) ||
+                other.indexable == indexable) &&
+            (identical(other.newsletter, newsletter) ||
+                other.newsletter == newsletter) &&
+            (identical(other.nsflVisibility, nsflVisibility) ||
+                other.nsflVisibility == nsflVisibility) &&
+            (identical(other.nsfwVisibility, nsfwVisibility) ||
+                other.nsfwVisibility == nsfwVisibility) &&
+            (identical(other.replyCollapseThreshold, replyCollapseThreshold) ||
+                other.replyCollapseThreshold == replyCollapseThreshold) &&
+            (identical(other.replyHideThreshold, replyHideThreshold) ||
+                other.replyHideThreshold == replyHideThreshold) &&
+            (identical(other.searchable, searchable) ||
+                other.searchable == searchable) &&
+            (identical(other.showBotAccounts, showBotAccounts) ||
+                other.showBotAccounts == showBotAccounts) &&
+            (identical(other.showNsfl, showNsfl) ||
+                other.showNsfl == showNsfl) &&
+            (identical(other.showNsfw, showNsfw) ||
+                other.showNsfw == showNsfw) &&
+            (identical(other.showReadPosts, showReadPosts) ||
+                other.showReadPosts == showReadPosts) &&
+            (identical(other.showScores, showScores) ||
+                other.showScores == showScores));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+    runtimeType,
+    acceptPrivateMessages,
+    botVisibility,
+    aiVisibility,
+    const DeepCollectionEquality().hash(_communityKeywordFilter),
+    defaultCommentSortType,
+    defaultListingType,
+    defaultSortType,
+    emailUnread,
+    federateVotes,
+    feedAutoFollow,
+    feedAutoLeave,
+    hideLowQuality,
+    indexable,
+    newsletter,
+    nsflVisibility,
+    nsfwVisibility,
+    replyCollapseThreshold,
+    replyHideThreshold,
+    searchable,
+    showBotAccounts,
+    showNsfl,
+    showNsfw,
+    showReadPosts,
+    showScores,
+  ]);
+
+  /// Create a copy of LocalUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LocalUserImplCopyWith<_$LocalUserImpl> get copyWith =>
+      __$$LocalUserImplCopyWithImpl<_$LocalUserImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LocalUserImplToJson(this);
+  }
+}
+
+abstract class _LocalUser implements LocalUser {
+  const factory _LocalUser({
+    @JsonKey(name: 'accept_private_messages')
+    required final String acceptPrivateMessages,
+    @JsonKey(name: 'bot_visibility') required final String botVisibility,
+    @JsonKey(name: 'ai_visibility') required final String aiVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    final List<String>? communityKeywordFilter,
+    @JsonKey(name: 'default_comment_sort_type')
+    required final String defaultCommentSortType,
+    @JsonKey(name: 'default_listing_type')
+    required final String defaultListingType,
+    @JsonKey(name: 'default_sort_type') final String? defaultSortType,
+    @JsonKey(name: 'email_unread') required final bool emailUnread,
+    @JsonKey(name: 'federate_votes') required final bool federateVotes,
+    @JsonKey(name: 'feed_auto_follow') required final bool feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') required final bool feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') required final bool hideLowQuality,
+    required final bool indexable,
+    required final bool newsletter,
+    @JsonKey(name: 'nsfl_visibility') required final String nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') required final String nsfwVisibility,
+    @JsonKey(name: 'reply_collapse_threshold')
+    required final int replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold')
+    required final int replyHideThreshold,
+    required final bool searchable,
+    @JsonKey(name: 'show_bot_accounts') required final bool showBotAccounts,
+    @JsonKey(name: 'show_nsfl') required final bool showNsfl,
+    @JsonKey(name: 'show_nsfw') required final bool showNsfw,
+    @JsonKey(name: 'show_read_posts') required final bool showReadPosts,
+    @JsonKey(name: 'show_scores') required final bool showScores,
+  }) = _$LocalUserImpl;
+
+  factory _LocalUser.fromJson(Map<String, dynamic> json) =
+      _$LocalUserImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'accept_private_messages')
+  String get acceptPrivateMessages;
+  @override
+  @JsonKey(name: 'bot_visibility')
+  String get botVisibility;
+  @override
+  @JsonKey(name: 'ai_visibility')
+  String get aiVisibility;
+  @override
+  @JsonKey(name: 'community_keyword_filter')
+  List<String>? get communityKeywordFilter;
+  @override
+  @JsonKey(name: 'default_comment_sort_type')
+  String get defaultCommentSortType;
+  @override
+  @JsonKey(name: 'default_listing_type')
+  String get defaultListingType;
+  @override
+  @JsonKey(name: 'default_sort_type')
+  String? get defaultSortType;
+  @override
+  @JsonKey(name: 'email_unread')
+  bool get emailUnread;
+  @override
+  @JsonKey(name: 'federate_votes')
+  bool get federateVotes;
+  @override
+  @JsonKey(name: 'feed_auto_follow')
+  bool get feedAutoFollow;
+  @override
+  @JsonKey(name: 'feed_auto_leave')
+  bool get feedAutoLeave;
+  @override
+  @JsonKey(name: 'hide_low_quality')
+  bool get hideLowQuality;
+  @override
+  bool get indexable;
+  @override
+  bool get newsletter;
+  @override
+  @JsonKey(name: 'nsfl_visibility')
+  String get nsflVisibility;
+  @override
+  @JsonKey(name: 'nsfw_visibility')
+  String get nsfwVisibility;
+  @override
+  @JsonKey(name: 'reply_collapse_threshold')
+  int get replyCollapseThreshold;
+  @override
+  @JsonKey(name: 'reply_hide_threshold')
+  int get replyHideThreshold;
+  @override
+  bool get searchable;
+  @override
+  @JsonKey(name: 'show_bot_accounts')
+  bool get showBotAccounts;
+  @override
+  @JsonKey(name: 'show_nsfl')
+  bool get showNsfl;
+  @override
+  @JsonKey(name: 'show_nsfw')
+  bool get showNsfw;
+  @override
+  @JsonKey(name: 'show_read_posts')
+  bool get showReadPosts;
+  @override
+  @JsonKey(name: 'show_scores')
+  bool get showScores;
+
+  /// Create a copy of LocalUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LocalUserImplCopyWith<_$LocalUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

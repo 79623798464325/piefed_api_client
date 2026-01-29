@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'source.dart';
 import 'views.dart';
+import 'aggregates.dart';
 
 part 'api.freezed.dart';
 part 'api.g.dart';
@@ -29,12 +30,7 @@ class UserLoginResponse with _$UserLoginResponse {
 
 @freezed
 class GetSiteResponse with _$GetSiteResponse {
-  const factory GetSiteResponse({
-    required Site site,
-    required List<PersonView> admins,
-    required String version,
-    @JsonKey(name: 'my_user') Map<String, dynamic>? myUser, // Simplified for now
-  }) = _GetSiteResponse;
+  const factory GetSiteResponse({required Site site, required List<PersonView> admins, required String version, @JsonKey(name: 'my_user') MyUserInfo? myUser}) = _GetSiteResponse;
 
   factory GetSiteResponse.fromJson(Map<String, dynamic> json) => _$GetSiteResponseFromJson(json);
 }
@@ -232,7 +228,7 @@ class ListFeedsResponse with _$ListFeedsResponse {
 
 @freezed
 class ListTopicsResponse with _$ListTopicsResponse {
-  const factory ListTopicsResponse({required List<dynamic> topics}) = _ListTopicsResponse; // Assuming dynamic or TopicView if available
+  const factory ListTopicsResponse({required List<TopicView> topics}) = _ListTopicsResponse;
 
   factory ListTopicsResponse.fromJson(Map<String, dynamic> json) => _$ListTopicsResponseFromJson(json);
 }
@@ -344,4 +340,46 @@ class GetFeedResponse with _$GetFeedResponse {
   const factory GetFeedResponse({required FeedView feed}) = _GetFeedResponse;
 
   factory GetFeedResponse.fromJson(Map<String, dynamic> json) => _$GetFeedResponseFromJson(json);
+}
+
+@freezed
+class UserNotificationsResponse with _$UserNotificationsResponse {
+  const factory UserNotificationsResponse({
+    required UserNotificationsCounts counts,
+    required List<UserNotificationItemView> items,
+    required String status,
+    required String username,
+    @JsonKey(name: 'next_page') String? nextPage,
+  }) = _UserNotificationsResponse;
+
+  factory UserNotificationsResponse.fromJson(Map<String, dynamic> json) => _$UserNotificationsResponseFromJson(json);
+}
+
+@freezed
+class UserNotificationsCountResponse with _$UserNotificationsCountResponse {
+  const factory UserNotificationsCountResponse({required int count}) = _UserNotificationsCountResponse;
+
+  factory UserNotificationsCountResponse.fromJson(Map<String, dynamic> json) => _$UserNotificationsCountResponseFromJson(json);
+}
+
+@freezed
+class UserMentionsResponse with _$UserMentionsResponse {
+  const factory UserMentionsResponse({required List<CommentReplyView> replies, @JsonKey(name: 'next_page') String? nextPage}) = _UserMentionsResponse;
+
+  factory UserMentionsResponse.fromJson(Map<String, dynamic> json) => _$UserMentionsResponseFromJson(json);
+}
+
+@freezed
+class MyUserInfo with _$MyUserInfo {
+  const factory MyUserInfo({
+    @JsonKey(name: 'community_blocks') required List<CommunityBlockView> communityBlocks,
+    @JsonKey(name: 'discussion_languages') required List<LanguageView> discussionLanguages,
+    required List<CommunityFollowerView> follows,
+    @JsonKey(name: 'instance_blocks') required List<InstanceBlockView> instanceBlocks,
+    @JsonKey(name: 'local_user_view') required LocalUserView localUserView,
+    required List<CommunityModeratorView> moderates,
+    @JsonKey(name: 'person_blocks') required List<PersonBlockView> personBlocks,
+  }) = _MyUserInfo;
+
+  factory MyUserInfo.fromJson(Map<String, dynamic> json) => _$MyUserInfoFromJson(json);
 }

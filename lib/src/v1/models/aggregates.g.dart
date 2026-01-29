@@ -91,3 +91,19 @@ Map<String, dynamic> _$$CommentAggregatesImplToJson(
   'downvotes': instance.downvotes,
   'child_count': instance.childCount,
 };
+
+_$UserNotificationsCountsImpl _$$UserNotificationsCountsImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserNotificationsCountsImpl(
+  unread: (json['unread'] as num?)?.toInt() ?? 0,
+  read: (json['read'] as num?)?.toInt() ?? 0,
+  total: (json['total'] as num?)?.toInt() ?? 0,
+);
+
+Map<String, dynamic> _$$UserNotificationsCountsImplToJson(
+  _$UserNotificationsCountsImpl instance,
+) => <String, dynamic>{
+  'unread': instance.unread,
+  'read': instance.read,
+  'total': instance.total,
+};

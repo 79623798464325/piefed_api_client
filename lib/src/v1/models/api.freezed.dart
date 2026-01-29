@@ -605,7 +605,7 @@ mixin _$GetSiteResponse {
   List<PersonView> get admins => throw _privateConstructorUsedError;
   String get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'my_user')
-  Map<String, dynamic>? get myUser => throw _privateConstructorUsedError;
+  MyUserInfo? get myUser => throw _privateConstructorUsedError;
 
   /// Serializes this GetSiteResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -628,10 +628,11 @@ abstract class $GetSiteResponseCopyWith<$Res> {
     Site site,
     List<PersonView> admins,
     String version,
-    @JsonKey(name: 'my_user') Map<String, dynamic>? myUser,
+    @JsonKey(name: 'my_user') MyUserInfo? myUser,
   });
 
   $SiteCopyWith<$Res> get site;
+  $MyUserInfoCopyWith<$Res>? get myUser;
 }
 
 /// @nodoc
@@ -675,7 +676,7 @@ class _$GetSiteResponseCopyWithImpl<$Res, $Val extends GetSiteResponse>
                 freezed == myUser
                     ? _value.myUser
                     : myUser // ignore: cast_nullable_to_non_nullable
-                        as Map<String, dynamic>?,
+                        as MyUserInfo?,
           )
           as $Val,
     );
@@ -688,6 +689,20 @@ class _$GetSiteResponseCopyWithImpl<$Res, $Val extends GetSiteResponse>
   $SiteCopyWith<$Res> get site {
     return $SiteCopyWith<$Res>(_value.site, (value) {
       return _then(_value.copyWith(site: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GetSiteResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MyUserInfoCopyWith<$Res>? get myUser {
+    if (_value.myUser == null) {
+      return null;
+    }
+
+    return $MyUserInfoCopyWith<$Res>(_value.myUser!, (value) {
+      return _then(_value.copyWith(myUser: value) as $Val);
     });
   }
 }
@@ -705,11 +720,13 @@ abstract class _$$GetSiteResponseImplCopyWith<$Res>
     Site site,
     List<PersonView> admins,
     String version,
-    @JsonKey(name: 'my_user') Map<String, dynamic>? myUser,
+    @JsonKey(name: 'my_user') MyUserInfo? myUser,
   });
 
   @override
   $SiteCopyWith<$Res> get site;
+  @override
+  $MyUserInfoCopyWith<$Res>? get myUser;
 }
 
 /// @nodoc
@@ -750,9 +767,9 @@ class __$$GetSiteResponseImplCopyWithImpl<$Res>
                     as String,
         myUser:
             freezed == myUser
-                ? _value._myUser
+                ? _value.myUser
                 : myUser // ignore: cast_nullable_to_non_nullable
-                    as Map<String, dynamic>?,
+                    as MyUserInfo?,
       ),
     );
   }
@@ -765,9 +782,8 @@ class _$GetSiteResponseImpl implements _GetSiteResponse {
     required this.site,
     required final List<PersonView> admins,
     required this.version,
-    @JsonKey(name: 'my_user') final Map<String, dynamic>? myUser,
-  }) : _admins = admins,
-       _myUser = myUser;
+    @JsonKey(name: 'my_user') this.myUser,
+  }) : _admins = admins;
 
   factory _$GetSiteResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetSiteResponseImplFromJson(json);
@@ -784,16 +800,9 @@ class _$GetSiteResponseImpl implements _GetSiteResponse {
 
   @override
   final String version;
-  final Map<String, dynamic>? _myUser;
   @override
   @JsonKey(name: 'my_user')
-  Map<String, dynamic>? get myUser {
-    final value = _myUser;
-    if (value == null) return null;
-    if (_myUser is EqualUnmodifiableMapView) return _myUser;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  final MyUserInfo? myUser;
 
   @override
   String toString() {
@@ -808,7 +817,7 @@ class _$GetSiteResponseImpl implements _GetSiteResponse {
             (identical(other.site, site) || other.site == site) &&
             const DeepCollectionEquality().equals(other._admins, _admins) &&
             (identical(other.version, version) || other.version == version) &&
-            const DeepCollectionEquality().equals(other._myUser, _myUser));
+            (identical(other.myUser, myUser) || other.myUser == myUser));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -818,7 +827,7 @@ class _$GetSiteResponseImpl implements _GetSiteResponse {
     site,
     const DeepCollectionEquality().hash(_admins),
     version,
-    const DeepCollectionEquality().hash(_myUser),
+    myUser,
   );
 
   /// Create a copy of GetSiteResponse
@@ -843,7 +852,7 @@ abstract class _GetSiteResponse implements GetSiteResponse {
     required final Site site,
     required final List<PersonView> admins,
     required final String version,
-    @JsonKey(name: 'my_user') final Map<String, dynamic>? myUser,
+    @JsonKey(name: 'my_user') final MyUserInfo? myUser,
   }) = _$GetSiteResponseImpl;
 
   factory _GetSiteResponse.fromJson(Map<String, dynamic> json) =
@@ -857,7 +866,7 @@ abstract class _GetSiteResponse implements GetSiteResponse {
   String get version;
   @override
   @JsonKey(name: 'my_user')
-  Map<String, dynamic>? get myUser;
+  MyUserInfo? get myUser;
 
   /// Create a copy of GetSiteResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -5527,7 +5536,7 @@ ListTopicsResponse _$ListTopicsResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ListTopicsResponse {
-  List<dynamic> get topics => throw _privateConstructorUsedError;
+  List<TopicView> get topics => throw _privateConstructorUsedError;
 
   /// Serializes this ListTopicsResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -5546,7 +5555,7 @@ abstract class $ListTopicsResponseCopyWith<$Res> {
     $Res Function(ListTopicsResponse) then,
   ) = _$ListTopicsResponseCopyWithImpl<$Res, ListTopicsResponse>;
   @useResult
-  $Res call({List<dynamic> topics});
+  $Res call({List<TopicView> topics});
 }
 
 /// @nodoc
@@ -5570,7 +5579,7 @@ class _$ListTopicsResponseCopyWithImpl<$Res, $Val extends ListTopicsResponse>
                 null == topics
                     ? _value.topics
                     : topics // ignore: cast_nullable_to_non_nullable
-                        as List<dynamic>,
+                        as List<TopicView>,
           )
           as $Val,
     );
@@ -5586,7 +5595,7 @@ abstract class _$$ListTopicsResponseImplCopyWith<$Res>
   ) = __$$ListTopicsResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<dynamic> topics});
+  $Res call({List<TopicView> topics});
 }
 
 /// @nodoc
@@ -5609,7 +5618,7 @@ class __$$ListTopicsResponseImplCopyWithImpl<$Res>
             null == topics
                 ? _value._topics
                 : topics // ignore: cast_nullable_to_non_nullable
-                    as List<dynamic>,
+                    as List<TopicView>,
       ),
     );
   }
@@ -5618,15 +5627,15 @@ class __$$ListTopicsResponseImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ListTopicsResponseImpl implements _ListTopicsResponse {
-  const _$ListTopicsResponseImpl({required final List<dynamic> topics})
+  const _$ListTopicsResponseImpl({required final List<TopicView> topics})
     : _topics = topics;
 
   factory _$ListTopicsResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ListTopicsResponseImplFromJson(json);
 
-  final List<dynamic> _topics;
+  final List<TopicView> _topics;
   @override
-  List<dynamic> get topics {
+  List<TopicView> get topics {
     if (_topics is EqualUnmodifiableListView) return _topics;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_topics);
@@ -5668,14 +5677,14 @@ class _$ListTopicsResponseImpl implements _ListTopicsResponse {
 }
 
 abstract class _ListTopicsResponse implements ListTopicsResponse {
-  const factory _ListTopicsResponse({required final List<dynamic> topics}) =
+  const factory _ListTopicsResponse({required final List<TopicView> topics}) =
       _$ListTopicsResponseImpl;
 
   factory _ListTopicsResponse.fromJson(Map<String, dynamic> json) =
       _$ListTopicsResponseImpl.fromJson;
 
   @override
-  List<dynamic> get topics;
+  List<TopicView> get topics;
 
   /// Create a copy of ListTopicsResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -8125,5 +8134,1089 @@ abstract class _GetFeedResponse implements GetFeedResponse {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetFeedResponseImplCopyWith<_$GetFeedResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UserNotificationsResponse _$UserNotificationsResponseFromJson(
+  Map<String, dynamic> json,
+) {
+  return _UserNotificationsResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserNotificationsResponse {
+  UserNotificationsCounts get counts => throw _privateConstructorUsedError;
+  List<UserNotificationItemView> get items =>
+      throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_page')
+  String? get nextPage => throw _privateConstructorUsedError;
+
+  /// Serializes this UserNotificationsResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UserNotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserNotificationsResponseCopyWith<UserNotificationsResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserNotificationsResponseCopyWith<$Res> {
+  factory $UserNotificationsResponseCopyWith(
+    UserNotificationsResponse value,
+    $Res Function(UserNotificationsResponse) then,
+  ) = _$UserNotificationsResponseCopyWithImpl<$Res, UserNotificationsResponse>;
+  @useResult
+  $Res call({
+    UserNotificationsCounts counts,
+    List<UserNotificationItemView> items,
+    String status,
+    String username,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+
+  $UserNotificationsCountsCopyWith<$Res> get counts;
+}
+
+/// @nodoc
+class _$UserNotificationsResponseCopyWithImpl<
+  $Res,
+  $Val extends UserNotificationsResponse
+>
+    implements $UserNotificationsResponseCopyWith<$Res> {
+  _$UserNotificationsResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserNotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? counts = null,
+    Object? items = null,
+    Object? status = null,
+    Object? username = null,
+    Object? nextPage = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            counts:
+                null == counts
+                    ? _value.counts
+                    : counts // ignore: cast_nullable_to_non_nullable
+                        as UserNotificationsCounts,
+            items:
+                null == items
+                    ? _value.items
+                    : items // ignore: cast_nullable_to_non_nullable
+                        as List<UserNotificationItemView>,
+            status:
+                null == status
+                    ? _value.status
+                    : status // ignore: cast_nullable_to_non_nullable
+                        as String,
+            username:
+                null == username
+                    ? _value.username
+                    : username // ignore: cast_nullable_to_non_nullable
+                        as String,
+            nextPage:
+                freezed == nextPage
+                    ? _value.nextPage
+                    : nextPage // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of UserNotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserNotificationsCountsCopyWith<$Res> get counts {
+    return $UserNotificationsCountsCopyWith<$Res>(_value.counts, (value) {
+      return _then(_value.copyWith(counts: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$UserNotificationsResponseImplCopyWith<$Res>
+    implements $UserNotificationsResponseCopyWith<$Res> {
+  factory _$$UserNotificationsResponseImplCopyWith(
+    _$UserNotificationsResponseImpl value,
+    $Res Function(_$UserNotificationsResponseImpl) then,
+  ) = __$$UserNotificationsResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    UserNotificationsCounts counts,
+    List<UserNotificationItemView> items,
+    String status,
+    String username,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+
+  @override
+  $UserNotificationsCountsCopyWith<$Res> get counts;
+}
+
+/// @nodoc
+class __$$UserNotificationsResponseImplCopyWithImpl<$Res>
+    extends
+        _$UserNotificationsResponseCopyWithImpl<
+          $Res,
+          _$UserNotificationsResponseImpl
+        >
+    implements _$$UserNotificationsResponseImplCopyWith<$Res> {
+  __$$UserNotificationsResponseImplCopyWithImpl(
+    _$UserNotificationsResponseImpl _value,
+    $Res Function(_$UserNotificationsResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UserNotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? counts = null,
+    Object? items = null,
+    Object? status = null,
+    Object? username = null,
+    Object? nextPage = freezed,
+  }) {
+    return _then(
+      _$UserNotificationsResponseImpl(
+        counts:
+            null == counts
+                ? _value.counts
+                : counts // ignore: cast_nullable_to_non_nullable
+                    as UserNotificationsCounts,
+        items:
+            null == items
+                ? _value._items
+                : items // ignore: cast_nullable_to_non_nullable
+                    as List<UserNotificationItemView>,
+        status:
+            null == status
+                ? _value.status
+                : status // ignore: cast_nullable_to_non_nullable
+                    as String,
+        username:
+            null == username
+                ? _value.username
+                : username // ignore: cast_nullable_to_non_nullable
+                    as String,
+        nextPage:
+            freezed == nextPage
+                ? _value.nextPage
+                : nextPage // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserNotificationsResponseImpl implements _UserNotificationsResponse {
+  const _$UserNotificationsResponseImpl({
+    required this.counts,
+    required final List<UserNotificationItemView> items,
+    required this.status,
+    required this.username,
+    @JsonKey(name: 'next_page') this.nextPage,
+  }) : _items = items;
+
+  factory _$UserNotificationsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserNotificationsResponseImplFromJson(json);
+
+  @override
+  final UserNotificationsCounts counts;
+  final List<UserNotificationItemView> _items;
+  @override
+  List<UserNotificationItemView> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  @override
+  final String status;
+  @override
+  final String username;
+  @override
+  @JsonKey(name: 'next_page')
+  final String? nextPage;
+
+  @override
+  String toString() {
+    return 'UserNotificationsResponse(counts: $counts, items: $items, status: $status, username: $username, nextPage: $nextPage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserNotificationsResponseImpl &&
+            (identical(other.counts, counts) || other.counts == counts) &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.nextPage, nextPage) ||
+                other.nextPage == nextPage));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    counts,
+    const DeepCollectionEquality().hash(_items),
+    status,
+    username,
+    nextPage,
+  );
+
+  /// Create a copy of UserNotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserNotificationsResponseImplCopyWith<_$UserNotificationsResponseImpl>
+  get copyWith => __$$UserNotificationsResponseImplCopyWithImpl<
+    _$UserNotificationsResponseImpl
+  >(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserNotificationsResponseImplToJson(this);
+  }
+}
+
+abstract class _UserNotificationsResponse implements UserNotificationsResponse {
+  const factory _UserNotificationsResponse({
+    required final UserNotificationsCounts counts,
+    required final List<UserNotificationItemView> items,
+    required final String status,
+    required final String username,
+    @JsonKey(name: 'next_page') final String? nextPage,
+  }) = _$UserNotificationsResponseImpl;
+
+  factory _UserNotificationsResponse.fromJson(Map<String, dynamic> json) =
+      _$UserNotificationsResponseImpl.fromJson;
+
+  @override
+  UserNotificationsCounts get counts;
+  @override
+  List<UserNotificationItemView> get items;
+  @override
+  String get status;
+  @override
+  String get username;
+  @override
+  @JsonKey(name: 'next_page')
+  String? get nextPage;
+
+  /// Create a copy of UserNotificationsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserNotificationsResponseImplCopyWith<_$UserNotificationsResponseImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+UserNotificationsCountResponse _$UserNotificationsCountResponseFromJson(
+  Map<String, dynamic> json,
+) {
+  return _UserNotificationsCountResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserNotificationsCountResponse {
+  int get count => throw _privateConstructorUsedError;
+
+  /// Serializes this UserNotificationsCountResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UserNotificationsCountResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserNotificationsCountResponseCopyWith<UserNotificationsCountResponse>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserNotificationsCountResponseCopyWith<$Res> {
+  factory $UserNotificationsCountResponseCopyWith(
+    UserNotificationsCountResponse value,
+    $Res Function(UserNotificationsCountResponse) then,
+  ) =
+      _$UserNotificationsCountResponseCopyWithImpl<
+        $Res,
+        UserNotificationsCountResponse
+      >;
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class _$UserNotificationsCountResponseCopyWithImpl<
+  $Res,
+  $Val extends UserNotificationsCountResponse
+>
+    implements $UserNotificationsCountResponseCopyWith<$Res> {
+  _$UserNotificationsCountResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserNotificationsCountResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? count = null}) {
+    return _then(
+      _value.copyWith(
+            count:
+                null == count
+                    ? _value.count
+                    : count // ignore: cast_nullable_to_non_nullable
+                        as int,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UserNotificationsCountResponseImplCopyWith<$Res>
+    implements $UserNotificationsCountResponseCopyWith<$Res> {
+  factory _$$UserNotificationsCountResponseImplCopyWith(
+    _$UserNotificationsCountResponseImpl value,
+    $Res Function(_$UserNotificationsCountResponseImpl) then,
+  ) = __$$UserNotificationsCountResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class __$$UserNotificationsCountResponseImplCopyWithImpl<$Res>
+    extends
+        _$UserNotificationsCountResponseCopyWithImpl<
+          $Res,
+          _$UserNotificationsCountResponseImpl
+        >
+    implements _$$UserNotificationsCountResponseImplCopyWith<$Res> {
+  __$$UserNotificationsCountResponseImplCopyWithImpl(
+    _$UserNotificationsCountResponseImpl _value,
+    $Res Function(_$UserNotificationsCountResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UserNotificationsCountResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? count = null}) {
+    return _then(
+      _$UserNotificationsCountResponseImpl(
+        count:
+            null == count
+                ? _value.count
+                : count // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserNotificationsCountResponseImpl
+    implements _UserNotificationsCountResponse {
+  const _$UserNotificationsCountResponseImpl({required this.count});
+
+  factory _$UserNotificationsCountResponseImpl.fromJson(
+    Map<String, dynamic> json,
+  ) => _$$UserNotificationsCountResponseImplFromJson(json);
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'UserNotificationsCountResponse(count: $count)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserNotificationsCountResponseImpl &&
+            (identical(other.count, count) || other.count == count));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, count);
+
+  /// Create a copy of UserNotificationsCountResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserNotificationsCountResponseImplCopyWith<
+    _$UserNotificationsCountResponseImpl
+  >
+  get copyWith => __$$UserNotificationsCountResponseImplCopyWithImpl<
+    _$UserNotificationsCountResponseImpl
+  >(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserNotificationsCountResponseImplToJson(this);
+  }
+}
+
+abstract class _UserNotificationsCountResponse
+    implements UserNotificationsCountResponse {
+  const factory _UserNotificationsCountResponse({required final int count}) =
+      _$UserNotificationsCountResponseImpl;
+
+  factory _UserNotificationsCountResponse.fromJson(Map<String, dynamic> json) =
+      _$UserNotificationsCountResponseImpl.fromJson;
+
+  @override
+  int get count;
+
+  /// Create a copy of UserNotificationsCountResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserNotificationsCountResponseImplCopyWith<
+    _$UserNotificationsCountResponseImpl
+  >
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+UserMentionsResponse _$UserMentionsResponseFromJson(Map<String, dynamic> json) {
+  return _UserMentionsResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserMentionsResponse {
+  List<CommentReplyView> get replies => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_page')
+  String? get nextPage => throw _privateConstructorUsedError;
+
+  /// Serializes this UserMentionsResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UserMentionsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserMentionsResponseCopyWith<UserMentionsResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserMentionsResponseCopyWith<$Res> {
+  factory $UserMentionsResponseCopyWith(
+    UserMentionsResponse value,
+    $Res Function(UserMentionsResponse) then,
+  ) = _$UserMentionsResponseCopyWithImpl<$Res, UserMentionsResponse>;
+  @useResult
+  $Res call({
+    List<CommentReplyView> replies,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+}
+
+/// @nodoc
+class _$UserMentionsResponseCopyWithImpl<
+  $Res,
+  $Val extends UserMentionsResponse
+>
+    implements $UserMentionsResponseCopyWith<$Res> {
+  _$UserMentionsResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserMentionsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? replies = null, Object? nextPage = freezed}) {
+    return _then(
+      _value.copyWith(
+            replies:
+                null == replies
+                    ? _value.replies
+                    : replies // ignore: cast_nullable_to_non_nullable
+                        as List<CommentReplyView>,
+            nextPage:
+                freezed == nextPage
+                    ? _value.nextPage
+                    : nextPage // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UserMentionsResponseImplCopyWith<$Res>
+    implements $UserMentionsResponseCopyWith<$Res> {
+  factory _$$UserMentionsResponseImplCopyWith(
+    _$UserMentionsResponseImpl value,
+    $Res Function(_$UserMentionsResponseImpl) then,
+  ) = __$$UserMentionsResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    List<CommentReplyView> replies,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+}
+
+/// @nodoc
+class __$$UserMentionsResponseImplCopyWithImpl<$Res>
+    extends _$UserMentionsResponseCopyWithImpl<$Res, _$UserMentionsResponseImpl>
+    implements _$$UserMentionsResponseImplCopyWith<$Res> {
+  __$$UserMentionsResponseImplCopyWithImpl(
+    _$UserMentionsResponseImpl _value,
+    $Res Function(_$UserMentionsResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UserMentionsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? replies = null, Object? nextPage = freezed}) {
+    return _then(
+      _$UserMentionsResponseImpl(
+        replies:
+            null == replies
+                ? _value._replies
+                : replies // ignore: cast_nullable_to_non_nullable
+                    as List<CommentReplyView>,
+        nextPage:
+            freezed == nextPage
+                ? _value.nextPage
+                : nextPage // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserMentionsResponseImpl implements _UserMentionsResponse {
+  const _$UserMentionsResponseImpl({
+    required final List<CommentReplyView> replies,
+    @JsonKey(name: 'next_page') this.nextPage,
+  }) : _replies = replies;
+
+  factory _$UserMentionsResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserMentionsResponseImplFromJson(json);
+
+  final List<CommentReplyView> _replies;
+  @override
+  List<CommentReplyView> get replies {
+    if (_replies is EqualUnmodifiableListView) return _replies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_replies);
+  }
+
+  @override
+  @JsonKey(name: 'next_page')
+  final String? nextPage;
+
+  @override
+  String toString() {
+    return 'UserMentionsResponse(replies: $replies, nextPage: $nextPage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserMentionsResponseImpl &&
+            const DeepCollectionEquality().equals(other._replies, _replies) &&
+            (identical(other.nextPage, nextPage) ||
+                other.nextPage == nextPage));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_replies),
+    nextPage,
+  );
+
+  /// Create a copy of UserMentionsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserMentionsResponseImplCopyWith<_$UserMentionsResponseImpl>
+  get copyWith =>
+      __$$UserMentionsResponseImplCopyWithImpl<_$UserMentionsResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserMentionsResponseImplToJson(this);
+  }
+}
+
+abstract class _UserMentionsResponse implements UserMentionsResponse {
+  const factory _UserMentionsResponse({
+    required final List<CommentReplyView> replies,
+    @JsonKey(name: 'next_page') final String? nextPage,
+  }) = _$UserMentionsResponseImpl;
+
+  factory _UserMentionsResponse.fromJson(Map<String, dynamic> json) =
+      _$UserMentionsResponseImpl.fromJson;
+
+  @override
+  List<CommentReplyView> get replies;
+  @override
+  @JsonKey(name: 'next_page')
+  String? get nextPage;
+
+  /// Create a copy of UserMentionsResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserMentionsResponseImplCopyWith<_$UserMentionsResponseImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+MyUserInfo _$MyUserInfoFromJson(Map<String, dynamic> json) {
+  return _MyUserInfo.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MyUserInfo {
+  @JsonKey(name: 'community_blocks')
+  List<CommunityBlockView> get communityBlocks =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'discussion_languages')
+  List<LanguageView> get discussionLanguages =>
+      throw _privateConstructorUsedError;
+  List<CommunityFollowerView> get follows => throw _privateConstructorUsedError;
+  @JsonKey(name: 'instance_blocks')
+  List<InstanceBlockView> get instanceBlocks =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'local_user_view')
+  LocalUserView get localUserView => throw _privateConstructorUsedError;
+  List<CommunityModeratorView> get moderates =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'person_blocks')
+  List<PersonBlockView> get personBlocks => throw _privateConstructorUsedError;
+
+  /// Serializes this MyUserInfo to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of MyUserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $MyUserInfoCopyWith<MyUserInfo> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MyUserInfoCopyWith<$Res> {
+  factory $MyUserInfoCopyWith(
+    MyUserInfo value,
+    $Res Function(MyUserInfo) then,
+  ) = _$MyUserInfoCopyWithImpl<$Res, MyUserInfo>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'community_blocks') List<CommunityBlockView> communityBlocks,
+    @JsonKey(name: 'discussion_languages')
+    List<LanguageView> discussionLanguages,
+    List<CommunityFollowerView> follows,
+    @JsonKey(name: 'instance_blocks') List<InstanceBlockView> instanceBlocks,
+    @JsonKey(name: 'local_user_view') LocalUserView localUserView,
+    List<CommunityModeratorView> moderates,
+    @JsonKey(name: 'person_blocks') List<PersonBlockView> personBlocks,
+  });
+
+  $LocalUserViewCopyWith<$Res> get localUserView;
+}
+
+/// @nodoc
+class _$MyUserInfoCopyWithImpl<$Res, $Val extends MyUserInfo>
+    implements $MyUserInfoCopyWith<$Res> {
+  _$MyUserInfoCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of MyUserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityBlocks = null,
+    Object? discussionLanguages = null,
+    Object? follows = null,
+    Object? instanceBlocks = null,
+    Object? localUserView = null,
+    Object? moderates = null,
+    Object? personBlocks = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            communityBlocks:
+                null == communityBlocks
+                    ? _value.communityBlocks
+                    : communityBlocks // ignore: cast_nullable_to_non_nullable
+                        as List<CommunityBlockView>,
+            discussionLanguages:
+                null == discussionLanguages
+                    ? _value.discussionLanguages
+                    : discussionLanguages // ignore: cast_nullable_to_non_nullable
+                        as List<LanguageView>,
+            follows:
+                null == follows
+                    ? _value.follows
+                    : follows // ignore: cast_nullable_to_non_nullable
+                        as List<CommunityFollowerView>,
+            instanceBlocks:
+                null == instanceBlocks
+                    ? _value.instanceBlocks
+                    : instanceBlocks // ignore: cast_nullable_to_non_nullable
+                        as List<InstanceBlockView>,
+            localUserView:
+                null == localUserView
+                    ? _value.localUserView
+                    : localUserView // ignore: cast_nullable_to_non_nullable
+                        as LocalUserView,
+            moderates:
+                null == moderates
+                    ? _value.moderates
+                    : moderates // ignore: cast_nullable_to_non_nullable
+                        as List<CommunityModeratorView>,
+            personBlocks:
+                null == personBlocks
+                    ? _value.personBlocks
+                    : personBlocks // ignore: cast_nullable_to_non_nullable
+                        as List<PersonBlockView>,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of MyUserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LocalUserViewCopyWith<$Res> get localUserView {
+    return $LocalUserViewCopyWith<$Res>(_value.localUserView, (value) {
+      return _then(_value.copyWith(localUserView: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$MyUserInfoImplCopyWith<$Res>
+    implements $MyUserInfoCopyWith<$Res> {
+  factory _$$MyUserInfoImplCopyWith(
+    _$MyUserInfoImpl value,
+    $Res Function(_$MyUserInfoImpl) then,
+  ) = __$$MyUserInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'community_blocks') List<CommunityBlockView> communityBlocks,
+    @JsonKey(name: 'discussion_languages')
+    List<LanguageView> discussionLanguages,
+    List<CommunityFollowerView> follows,
+    @JsonKey(name: 'instance_blocks') List<InstanceBlockView> instanceBlocks,
+    @JsonKey(name: 'local_user_view') LocalUserView localUserView,
+    List<CommunityModeratorView> moderates,
+    @JsonKey(name: 'person_blocks') List<PersonBlockView> personBlocks,
+  });
+
+  @override
+  $LocalUserViewCopyWith<$Res> get localUserView;
+}
+
+/// @nodoc
+class __$$MyUserInfoImplCopyWithImpl<$Res>
+    extends _$MyUserInfoCopyWithImpl<$Res, _$MyUserInfoImpl>
+    implements _$$MyUserInfoImplCopyWith<$Res> {
+  __$$MyUserInfoImplCopyWithImpl(
+    _$MyUserInfoImpl _value,
+    $Res Function(_$MyUserInfoImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of MyUserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityBlocks = null,
+    Object? discussionLanguages = null,
+    Object? follows = null,
+    Object? instanceBlocks = null,
+    Object? localUserView = null,
+    Object? moderates = null,
+    Object? personBlocks = null,
+  }) {
+    return _then(
+      _$MyUserInfoImpl(
+        communityBlocks:
+            null == communityBlocks
+                ? _value._communityBlocks
+                : communityBlocks // ignore: cast_nullable_to_non_nullable
+                    as List<CommunityBlockView>,
+        discussionLanguages:
+            null == discussionLanguages
+                ? _value._discussionLanguages
+                : discussionLanguages // ignore: cast_nullable_to_non_nullable
+                    as List<LanguageView>,
+        follows:
+            null == follows
+                ? _value._follows
+                : follows // ignore: cast_nullable_to_non_nullable
+                    as List<CommunityFollowerView>,
+        instanceBlocks:
+            null == instanceBlocks
+                ? _value._instanceBlocks
+                : instanceBlocks // ignore: cast_nullable_to_non_nullable
+                    as List<InstanceBlockView>,
+        localUserView:
+            null == localUserView
+                ? _value.localUserView
+                : localUserView // ignore: cast_nullable_to_non_nullable
+                    as LocalUserView,
+        moderates:
+            null == moderates
+                ? _value._moderates
+                : moderates // ignore: cast_nullable_to_non_nullable
+                    as List<CommunityModeratorView>,
+        personBlocks:
+            null == personBlocks
+                ? _value._personBlocks
+                : personBlocks // ignore: cast_nullable_to_non_nullable
+                    as List<PersonBlockView>,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MyUserInfoImpl implements _MyUserInfo {
+  const _$MyUserInfoImpl({
+    @JsonKey(name: 'community_blocks')
+    required final List<CommunityBlockView> communityBlocks,
+    @JsonKey(name: 'discussion_languages')
+    required final List<LanguageView> discussionLanguages,
+    required final List<CommunityFollowerView> follows,
+    @JsonKey(name: 'instance_blocks')
+    required final List<InstanceBlockView> instanceBlocks,
+    @JsonKey(name: 'local_user_view') required this.localUserView,
+    required final List<CommunityModeratorView> moderates,
+    @JsonKey(name: 'person_blocks')
+    required final List<PersonBlockView> personBlocks,
+  }) : _communityBlocks = communityBlocks,
+       _discussionLanguages = discussionLanguages,
+       _follows = follows,
+       _instanceBlocks = instanceBlocks,
+       _moderates = moderates,
+       _personBlocks = personBlocks;
+
+  factory _$MyUserInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MyUserInfoImplFromJson(json);
+
+  final List<CommunityBlockView> _communityBlocks;
+  @override
+  @JsonKey(name: 'community_blocks')
+  List<CommunityBlockView> get communityBlocks {
+    if (_communityBlocks is EqualUnmodifiableListView) return _communityBlocks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_communityBlocks);
+  }
+
+  final List<LanguageView> _discussionLanguages;
+  @override
+  @JsonKey(name: 'discussion_languages')
+  List<LanguageView> get discussionLanguages {
+    if (_discussionLanguages is EqualUnmodifiableListView)
+      return _discussionLanguages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_discussionLanguages);
+  }
+
+  final List<CommunityFollowerView> _follows;
+  @override
+  List<CommunityFollowerView> get follows {
+    if (_follows is EqualUnmodifiableListView) return _follows;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_follows);
+  }
+
+  final List<InstanceBlockView> _instanceBlocks;
+  @override
+  @JsonKey(name: 'instance_blocks')
+  List<InstanceBlockView> get instanceBlocks {
+    if (_instanceBlocks is EqualUnmodifiableListView) return _instanceBlocks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_instanceBlocks);
+  }
+
+  @override
+  @JsonKey(name: 'local_user_view')
+  final LocalUserView localUserView;
+  final List<CommunityModeratorView> _moderates;
+  @override
+  List<CommunityModeratorView> get moderates {
+    if (_moderates is EqualUnmodifiableListView) return _moderates;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_moderates);
+  }
+
+  final List<PersonBlockView> _personBlocks;
+  @override
+  @JsonKey(name: 'person_blocks')
+  List<PersonBlockView> get personBlocks {
+    if (_personBlocks is EqualUnmodifiableListView) return _personBlocks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_personBlocks);
+  }
+
+  @override
+  String toString() {
+    return 'MyUserInfo(communityBlocks: $communityBlocks, discussionLanguages: $discussionLanguages, follows: $follows, instanceBlocks: $instanceBlocks, localUserView: $localUserView, moderates: $moderates, personBlocks: $personBlocks)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MyUserInfoImpl &&
+            const DeepCollectionEquality().equals(
+              other._communityBlocks,
+              _communityBlocks,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._discussionLanguages,
+              _discussionLanguages,
+            ) &&
+            const DeepCollectionEquality().equals(other._follows, _follows) &&
+            const DeepCollectionEquality().equals(
+              other._instanceBlocks,
+              _instanceBlocks,
+            ) &&
+            (identical(other.localUserView, localUserView) ||
+                other.localUserView == localUserView) &&
+            const DeepCollectionEquality().equals(
+              other._moderates,
+              _moderates,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._personBlocks,
+              _personBlocks,
+            ));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_communityBlocks),
+    const DeepCollectionEquality().hash(_discussionLanguages),
+    const DeepCollectionEquality().hash(_follows),
+    const DeepCollectionEquality().hash(_instanceBlocks),
+    localUserView,
+    const DeepCollectionEquality().hash(_moderates),
+    const DeepCollectionEquality().hash(_personBlocks),
+  );
+
+  /// Create a copy of MyUserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MyUserInfoImplCopyWith<_$MyUserInfoImpl> get copyWith =>
+      __$$MyUserInfoImplCopyWithImpl<_$MyUserInfoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MyUserInfoImplToJson(this);
+  }
+}
+
+abstract class _MyUserInfo implements MyUserInfo {
+  const factory _MyUserInfo({
+    @JsonKey(name: 'community_blocks')
+    required final List<CommunityBlockView> communityBlocks,
+    @JsonKey(name: 'discussion_languages')
+    required final List<LanguageView> discussionLanguages,
+    required final List<CommunityFollowerView> follows,
+    @JsonKey(name: 'instance_blocks')
+    required final List<InstanceBlockView> instanceBlocks,
+    @JsonKey(name: 'local_user_view')
+    required final LocalUserView localUserView,
+    required final List<CommunityModeratorView> moderates,
+    @JsonKey(name: 'person_blocks')
+    required final List<PersonBlockView> personBlocks,
+  }) = _$MyUserInfoImpl;
+
+  factory _MyUserInfo.fromJson(Map<String, dynamic> json) =
+      _$MyUserInfoImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'community_blocks')
+  List<CommunityBlockView> get communityBlocks;
+  @override
+  @JsonKey(name: 'discussion_languages')
+  List<LanguageView> get discussionLanguages;
+  @override
+  List<CommunityFollowerView> get follows;
+  @override
+  @JsonKey(name: 'instance_blocks')
+  List<InstanceBlockView> get instanceBlocks;
+  @override
+  @JsonKey(name: 'local_user_view')
+  LocalUserView get localUserView;
+  @override
+  List<CommunityModeratorView> get moderates;
+  @override
+  @JsonKey(name: 'person_blocks')
+  List<PersonBlockView> get personBlocks;
+
+  /// Create a copy of MyUserInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MyUserInfoImplCopyWith<_$MyUserInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
