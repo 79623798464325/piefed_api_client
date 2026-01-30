@@ -9,14 +9,19 @@ part 'api.g.dart';
 
 @freezed
 class GetPostResponse with _$GetPostResponse {
-  const factory GetPostResponse({required Post post, required Person creator, required Community community}) = _GetPostResponse;
+  const factory GetPostResponse({required Post post, required Person creator, required Community community, @JsonKey(name: 'activity_alert') bool? activityAlert}) = _GetPostResponse;
 
   factory GetPostResponse.fromJson(Map<String, dynamic> json) => _$GetPostResponseFromJson(json);
 }
 
 @freezed
 class GetCommunityResponse with _$GetCommunityResponse {
-  const factory GetCommunityResponse({required Community community}) = _GetCommunityResponse;
+  const factory GetCommunityResponse({
+    required Community community,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'subscribed') bool? subscribed,
+    @JsonKey(name: 'blocked') bool? blocked,
+  }) = _GetCommunityResponse;
 
   factory GetCommunityResponse.fromJson(Map<String, dynamic> json) => _$GetCommunityResponseFromJson(json);
 }

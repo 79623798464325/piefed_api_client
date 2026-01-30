@@ -50,12 +50,14 @@ mixin _$ListPosts {
   /// Create a copy of ListPosts
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ListPostsCopyWith<ListPosts> get copyWith => throw _privateConstructorUsedError;
+  $ListPostsCopyWith<ListPosts> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListPostsCopyWith<$Res> {
-  factory $ListPostsCopyWith(ListPosts value, $Res Function(ListPosts) then) = _$ListPostsCopyWithImpl<$Res, ListPosts>;
+  factory $ListPostsCopyWith(ListPosts value, $Res Function(ListPosts) then) =
+      _$ListPostsCopyWithImpl<$Res, ListPosts>;
   @useResult
   $Res call({
     int? limit,
@@ -75,7 +77,8 @@ abstract class $ListPostsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ListPostsCopyWithImpl<$Res, $Val extends ListPosts> implements $ListPostsCopyWith<$Res> {
+class _$ListPostsCopyWithImpl<$Res, $Val extends ListPosts>
+    implements $ListPostsCopyWith<$Res> {
   _$ListPostsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -176,8 +179,12 @@ class _$ListPostsCopyWithImpl<$Res, $Val extends ListPosts> implements $ListPost
 }
 
 /// @nodoc
-abstract class _$$ListPostsImplCopyWith<$Res> implements $ListPostsCopyWith<$Res> {
-  factory _$$ListPostsImplCopyWith(_$ListPostsImpl value, $Res Function(_$ListPostsImpl) then) = __$$ListPostsImplCopyWithImpl<$Res>;
+abstract class _$$ListPostsImplCopyWith<$Res>
+    implements $ListPostsCopyWith<$Res> {
+  factory _$$ListPostsImplCopyWith(
+    _$ListPostsImpl value,
+    $Res Function(_$ListPostsImpl) then,
+  ) = __$$ListPostsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -198,8 +205,13 @@ abstract class _$$ListPostsImplCopyWith<$Res> implements $ListPostsCopyWith<$Res
 }
 
 /// @nodoc
-class __$$ListPostsImplCopyWithImpl<$Res> extends _$ListPostsCopyWithImpl<$Res, _$ListPostsImpl> implements _$$ListPostsImplCopyWith<$Res> {
-  __$$ListPostsImplCopyWithImpl(_$ListPostsImpl _value, $Res Function(_$ListPostsImpl) _then) : super(_value, _then);
+class __$$ListPostsImplCopyWithImpl<$Res>
+    extends _$ListPostsCopyWithImpl<$Res, _$ListPostsImpl>
+    implements _$$ListPostsImplCopyWith<$Res> {
+  __$$ListPostsImplCopyWithImpl(
+    _$ListPostsImpl _value,
+    $Res Function(_$ListPostsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ListPosts
   /// with the given fields replaced by the non-null parameter values.
@@ -312,7 +324,8 @@ class _$ListPostsImpl extends _ListPosts {
     this.auth,
   }) : super._();
 
-  factory _$ListPostsImpl.fromJson(Map<String, dynamic> json) => _$$ListPostsImplFromJson(json);
+  factory _$ListPostsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ListPostsImplFromJson(json);
 
   @override
   final int? limit;
@@ -364,27 +377,49 @@ class _$ListPostsImpl extends _ListPosts {
             (identical(other.page, page) || other.page == page) &&
             (identical(other.sort, sort) || other.sort == sort) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.communityId, communityId) || other.communityId == communityId) &&
-            (identical(other.communityName, communityName) || other.communityName == communityName) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.communityName, communityName) ||
+                other.communityName == communityName) &&
             (identical(other.feedId, feedId) || other.feedId == feedId) &&
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
-            (identical(other.savedOnly, savedOnly) || other.savedOnly == savedOnly) &&
-            (identical(other.likedOnly, likedOnly) || other.likedOnly == likedOnly) &&
-            (identical(other.personId, personId) || other.personId == personId) &&
-            (identical(other.ignoreSticky, ignoreSticky) || other.ignoreSticky == ignoreSticky) &&
+            (identical(other.savedOnly, savedOnly) ||
+                other.savedOnly == savedOnly) &&
+            (identical(other.likedOnly, likedOnly) ||
+                other.likedOnly == likedOnly) &&
+            (identical(other.personId, personId) ||
+                other.personId == personId) &&
+            (identical(other.ignoreSticky, ignoreSticky) ||
+                other.ignoreSticky == ignoreSticky) &&
             (identical(other.auth, auth) || other.auth == auth));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, limit, page, sort, type, communityId, communityName, feedId, topicId, savedOnly, likedOnly, personId, ignoreSticky, auth);
+  int get hashCode => Object.hash(
+    runtimeType,
+    limit,
+    page,
+    sort,
+    type,
+    communityId,
+    communityName,
+    feedId,
+    topicId,
+    savedOnly,
+    likedOnly,
+    personId,
+    ignoreSticky,
+    auth,
+  );
 
   /// Create a copy of ListPosts
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListPostsImplCopyWith<_$ListPostsImpl> get copyWith => __$$ListPostsImplCopyWithImpl<_$ListPostsImpl>(this, _$identity);
+  _$$ListPostsImplCopyWith<_$ListPostsImpl> get copyWith =>
+      __$$ListPostsImplCopyWithImpl<_$ListPostsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -410,7 +445,8 @@ abstract class _ListPosts extends ListPosts {
   }) = _$ListPostsImpl;
   const _ListPosts._() : super._();
 
-  factory _ListPosts.fromJson(Map<String, dynamic> json) = _$ListPostsImpl.fromJson;
+  factory _ListPosts.fromJson(Map<String, dynamic> json) =
+      _$ListPostsImpl.fromJson;
 
   @override
   int? get limit;
@@ -452,5 +488,6 @@ abstract class _ListPosts extends ListPosts {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ListPostsImplCopyWith<_$ListPostsImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ListPostsImplCopyWith<_$ListPostsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

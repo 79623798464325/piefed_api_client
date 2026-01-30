@@ -37,18 +37,21 @@ mixin _$SavePost {
   /// Create a copy of SavePost
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SavePostCopyWith<SavePost> get copyWith => throw _privateConstructorUsedError;
+  $SavePostCopyWith<SavePost> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SavePostCopyWith<$Res> {
-  factory $SavePostCopyWith(SavePost value, $Res Function(SavePost) then) = _$SavePostCopyWithImpl<$Res, SavePost>;
+  factory $SavePostCopyWith(SavePost value, $Res Function(SavePost) then) =
+      _$SavePostCopyWithImpl<$Res, SavePost>;
   @useResult
   $Res call({@JsonKey(name: 'post_id') int postId, bool save, String auth});
 }
 
 /// @nodoc
-class _$SavePostCopyWithImpl<$Res, $Val extends SavePost> implements $SavePostCopyWith<$Res> {
+class _$SavePostCopyWithImpl<$Res, $Val extends SavePost>
+    implements $SavePostCopyWith<$Res> {
   _$SavePostCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -85,16 +88,25 @@ class _$SavePostCopyWithImpl<$Res, $Val extends SavePost> implements $SavePostCo
 }
 
 /// @nodoc
-abstract class _$$SavePostImplCopyWith<$Res> implements $SavePostCopyWith<$Res> {
-  factory _$$SavePostImplCopyWith(_$SavePostImpl value, $Res Function(_$SavePostImpl) then) = __$$SavePostImplCopyWithImpl<$Res>;
+abstract class _$$SavePostImplCopyWith<$Res>
+    implements $SavePostCopyWith<$Res> {
+  factory _$$SavePostImplCopyWith(
+    _$SavePostImpl value,
+    $Res Function(_$SavePostImpl) then,
+  ) = __$$SavePostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'post_id') int postId, bool save, String auth});
 }
 
 /// @nodoc
-class __$$SavePostImplCopyWithImpl<$Res> extends _$SavePostCopyWithImpl<$Res, _$SavePostImpl> implements _$$SavePostImplCopyWith<$Res> {
-  __$$SavePostImplCopyWithImpl(_$SavePostImpl _value, $Res Function(_$SavePostImpl) _then) : super(_value, _then);
+class __$$SavePostImplCopyWithImpl<$Res>
+    extends _$SavePostCopyWithImpl<$Res, _$SavePostImpl>
+    implements _$$SavePostImplCopyWith<$Res> {
+  __$$SavePostImplCopyWithImpl(
+    _$SavePostImpl _value,
+    $Res Function(_$SavePostImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SavePost
   /// with the given fields replaced by the non-null parameter values.
@@ -127,9 +139,14 @@ class __$$SavePostImplCopyWithImpl<$Res> extends _$SavePostCopyWithImpl<$Res, _$
 
 @JsonSerializable(includeIfNull: false)
 class _$SavePostImpl extends _SavePost {
-  const _$SavePostImpl({@JsonKey(name: 'post_id') required this.postId, required this.save, required this.auth}) : super._();
+  const _$SavePostImpl({
+    @JsonKey(name: 'post_id') required this.postId,
+    required this.save,
+    required this.auth,
+  }) : super._();
 
-  factory _$SavePostImpl.fromJson(Map<String, dynamic> json) => _$$SavePostImplFromJson(json);
+  factory _$SavePostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SavePostImplFromJson(json);
 
   /// The post to save/unsave.
   @override
@@ -168,7 +185,8 @@ class _$SavePostImpl extends _SavePost {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SavePostImplCopyWith<_$SavePostImpl> get copyWith => __$$SavePostImplCopyWithImpl<_$SavePostImpl>(this, _$identity);
+  _$$SavePostImplCopyWith<_$SavePostImpl> get copyWith =>
+      __$$SavePostImplCopyWithImpl<_$SavePostImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -177,10 +195,15 @@ class _$SavePostImpl extends _SavePost {
 }
 
 abstract class _SavePost extends SavePost {
-  const factory _SavePost({@JsonKey(name: 'post_id') required final int postId, required final bool save, required final String auth}) = _$SavePostImpl;
+  const factory _SavePost({
+    @JsonKey(name: 'post_id') required final int postId,
+    required final bool save,
+    required final String auth,
+  }) = _$SavePostImpl;
   const _SavePost._() : super._();
 
-  factory _SavePost.fromJson(Map<String, dynamic> json) = _$SavePostImpl.fromJson;
+  factory _SavePost.fromJson(Map<String, dynamic> json) =
+      _$SavePostImpl.fromJson;
 
   /// The post to save/unsave.
   @override
@@ -199,5 +222,6 @@ abstract class _SavePost extends SavePost {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SavePostImplCopyWith<_$SavePostImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$SavePostImplCopyWith<_$SavePostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

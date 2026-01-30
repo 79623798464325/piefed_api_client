@@ -1,4 +1,13 @@
 # Changelog
+## 0.7.4
+
+*   **PieFed v1.6.0 Alignment**:
+    *   Added missing fields to `GetPostResponse` (`activity_alert`) and `GetCommunityResponse` (`activity_alert`, `subscribed`, `blocked`).
+    *   Synchronized all generated models via `build_runner`.
+*   **Fixes**:
+    *   Fixed formatting in `lib/src/v1/models/api.dart`.
+    *   Removed unnecessary import in `lib/src/v1/api/post.dart`.
+    *   Ensured all CI tests pass.
 ## 0.7.3
 
 *   **PieFed v1.6.0 Alignment**:

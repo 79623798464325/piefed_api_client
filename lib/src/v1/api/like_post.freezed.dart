@@ -37,18 +37,21 @@ mixin _$LikePost {
   /// Create a copy of LikePost
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LikePostCopyWith<LikePost> get copyWith => throw _privateConstructorUsedError;
+  $LikePostCopyWith<LikePost> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LikePostCopyWith<$Res> {
-  factory $LikePostCopyWith(LikePost value, $Res Function(LikePost) then) = _$LikePostCopyWithImpl<$Res, LikePost>;
+  factory $LikePostCopyWith(LikePost value, $Res Function(LikePost) then) =
+      _$LikePostCopyWithImpl<$Res, LikePost>;
   @useResult
   $Res call({@JsonKey(name: 'post_id') int postId, int score, String auth});
 }
 
 /// @nodoc
-class _$LikePostCopyWithImpl<$Res, $Val extends LikePost> implements $LikePostCopyWith<$Res> {
+class _$LikePostCopyWithImpl<$Res, $Val extends LikePost>
+    implements $LikePostCopyWith<$Res> {
   _$LikePostCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -60,7 +63,11 @@ class _$LikePostCopyWithImpl<$Res, $Val extends LikePost> implements $LikePostCo
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? postId = null, Object? score = null, Object? auth = null}) {
+  $Res call({
+    Object? postId = null,
+    Object? score = null,
+    Object? auth = null,
+  }) {
     return _then(
       _value.copyWith(
             postId:
@@ -85,22 +92,35 @@ class _$LikePostCopyWithImpl<$Res, $Val extends LikePost> implements $LikePostCo
 }
 
 /// @nodoc
-abstract class _$$LikePostImplCopyWith<$Res> implements $LikePostCopyWith<$Res> {
-  factory _$$LikePostImplCopyWith(_$LikePostImpl value, $Res Function(_$LikePostImpl) then) = __$$LikePostImplCopyWithImpl<$Res>;
+abstract class _$$LikePostImplCopyWith<$Res>
+    implements $LikePostCopyWith<$Res> {
+  factory _$$LikePostImplCopyWith(
+    _$LikePostImpl value,
+    $Res Function(_$LikePostImpl) then,
+  ) = __$$LikePostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'post_id') int postId, int score, String auth});
 }
 
 /// @nodoc
-class __$$LikePostImplCopyWithImpl<$Res> extends _$LikePostCopyWithImpl<$Res, _$LikePostImpl> implements _$$LikePostImplCopyWith<$Res> {
-  __$$LikePostImplCopyWithImpl(_$LikePostImpl _value, $Res Function(_$LikePostImpl) _then) : super(_value, _then);
+class __$$LikePostImplCopyWithImpl<$Res>
+    extends _$LikePostCopyWithImpl<$Res, _$LikePostImpl>
+    implements _$$LikePostImplCopyWith<$Res> {
+  __$$LikePostImplCopyWithImpl(
+    _$LikePostImpl _value,
+    $Res Function(_$LikePostImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LikePost
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? postId = null, Object? score = null, Object? auth = null}) {
+  $Res call({
+    Object? postId = null,
+    Object? score = null,
+    Object? auth = null,
+  }) {
     return _then(
       _$LikePostImpl(
         postId:
@@ -127,9 +147,14 @@ class __$$LikePostImplCopyWithImpl<$Res> extends _$LikePostCopyWithImpl<$Res, _$
 
 @JsonSerializable(includeIfNull: false)
 class _$LikePostImpl extends _LikePost {
-  const _$LikePostImpl({@JsonKey(name: 'post_id') required this.postId, required this.score, required this.auth}) : super._();
+  const _$LikePostImpl({
+    @JsonKey(name: 'post_id') required this.postId,
+    required this.score,
+    required this.auth,
+  }) : super._();
 
-  factory _$LikePostImpl.fromJson(Map<String, dynamic> json) => _$$LikePostImplFromJson(json);
+  factory _$LikePostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LikePostImplFromJson(json);
 
   /// The post to vote on.
   @override
@@ -168,7 +193,8 @@ class _$LikePostImpl extends _LikePost {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LikePostImplCopyWith<_$LikePostImpl> get copyWith => __$$LikePostImplCopyWithImpl<_$LikePostImpl>(this, _$identity);
+  _$$LikePostImplCopyWith<_$LikePostImpl> get copyWith =>
+      __$$LikePostImplCopyWithImpl<_$LikePostImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -177,10 +203,15 @@ class _$LikePostImpl extends _LikePost {
 }
 
 abstract class _LikePost extends LikePost {
-  const factory _LikePost({@JsonKey(name: 'post_id') required final int postId, required final int score, required final String auth}) = _$LikePostImpl;
+  const factory _LikePost({
+    @JsonKey(name: 'post_id') required final int postId,
+    required final int score,
+    required final String auth,
+  }) = _$LikePostImpl;
   const _LikePost._() : super._();
 
-  factory _LikePost.fromJson(Map<String, dynamic> json) = _$LikePostImpl.fromJson;
+  factory _LikePost.fromJson(Map<String, dynamic> json) =
+      _$LikePostImpl.fromJson;
 
   /// The post to vote on.
   @override
@@ -199,5 +230,6 @@ abstract class _LikePost extends LikePost {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LikePostImplCopyWith<_$LikePostImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$LikePostImplCopyWith<_$LikePostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

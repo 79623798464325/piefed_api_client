@@ -30,18 +30,23 @@ mixin _$ResolveObject {
   /// Create a copy of ResolveObject
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ResolveObjectCopyWith<ResolveObject> get copyWith => throw _privateConstructorUsedError;
+  $ResolveObjectCopyWith<ResolveObject> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResolveObjectCopyWith<$Res> {
-  factory $ResolveObjectCopyWith(ResolveObject value, $Res Function(ResolveObject) then) = _$ResolveObjectCopyWithImpl<$Res, ResolveObject>;
+  factory $ResolveObjectCopyWith(
+    ResolveObject value,
+    $Res Function(ResolveObject) then,
+  ) = _$ResolveObjectCopyWithImpl<$Res, ResolveObject>;
   @useResult
   $Res call({String q, String? auth});
 }
 
 /// @nodoc
-class _$ResolveObjectCopyWithImpl<$Res, $Val extends ResolveObject> implements $ResolveObjectCopyWith<$Res> {
+class _$ResolveObjectCopyWithImpl<$Res, $Val extends ResolveObject>
+    implements $ResolveObjectCopyWith<$Res> {
   _$ResolveObjectCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -73,16 +78,25 @@ class _$ResolveObjectCopyWithImpl<$Res, $Val extends ResolveObject> implements $
 }
 
 /// @nodoc
-abstract class _$$ResolveObjectImplCopyWith<$Res> implements $ResolveObjectCopyWith<$Res> {
-  factory _$$ResolveObjectImplCopyWith(_$ResolveObjectImpl value, $Res Function(_$ResolveObjectImpl) then) = __$$ResolveObjectImplCopyWithImpl<$Res>;
+abstract class _$$ResolveObjectImplCopyWith<$Res>
+    implements $ResolveObjectCopyWith<$Res> {
+  factory _$$ResolveObjectImplCopyWith(
+    _$ResolveObjectImpl value,
+    $Res Function(_$ResolveObjectImpl) then,
+  ) = __$$ResolveObjectImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String q, String? auth});
 }
 
 /// @nodoc
-class __$$ResolveObjectImplCopyWithImpl<$Res> extends _$ResolveObjectCopyWithImpl<$Res, _$ResolveObjectImpl> implements _$$ResolveObjectImplCopyWith<$Res> {
-  __$$ResolveObjectImplCopyWithImpl(_$ResolveObjectImpl _value, $Res Function(_$ResolveObjectImpl) _then) : super(_value, _then);
+class __$$ResolveObjectImplCopyWithImpl<$Res>
+    extends _$ResolveObjectCopyWithImpl<$Res, _$ResolveObjectImpl>
+    implements _$$ResolveObjectImplCopyWith<$Res> {
+  __$$ResolveObjectImplCopyWithImpl(
+    _$ResolveObjectImpl _value,
+    $Res Function(_$ResolveObjectImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ResolveObject
   /// with the given fields replaced by the non-null parameter values.
@@ -112,7 +126,8 @@ class __$$ResolveObjectImplCopyWithImpl<$Res> extends _$ResolveObjectCopyWithImp
 class _$ResolveObjectImpl extends _ResolveObject {
   const _$ResolveObjectImpl({required this.q, this.auth}) : super._();
 
-  factory _$ResolveObjectImpl.fromJson(Map<String, dynamic> json) => _$$ResolveObjectImplFromJson(json);
+  factory _$ResolveObjectImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResolveObjectImplFromJson(json);
 
   @override
   final String q;
@@ -127,7 +142,10 @@ class _$ResolveObjectImpl extends _ResolveObject {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResolveObjectImpl && (identical(other.q, q) || other.q == q) && (identical(other.auth, auth) || other.auth == auth));
+        (other.runtimeType == runtimeType &&
+            other is _$ResolveObjectImpl &&
+            (identical(other.q, q) || other.q == q) &&
+            (identical(other.auth, auth) || other.auth == auth));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -139,7 +157,8 @@ class _$ResolveObjectImpl extends _ResolveObject {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ResolveObjectImplCopyWith<_$ResolveObjectImpl> get copyWith => __$$ResolveObjectImplCopyWithImpl<_$ResolveObjectImpl>(this, _$identity);
+  _$$ResolveObjectImplCopyWith<_$ResolveObjectImpl> get copyWith =>
+      __$$ResolveObjectImplCopyWithImpl<_$ResolveObjectImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -148,10 +167,12 @@ class _$ResolveObjectImpl extends _ResolveObject {
 }
 
 abstract class _ResolveObject extends ResolveObject {
-  const factory _ResolveObject({required final String q, final String? auth}) = _$ResolveObjectImpl;
+  const factory _ResolveObject({required final String q, final String? auth}) =
+      _$ResolveObjectImpl;
   const _ResolveObject._() : super._();
 
-  factory _ResolveObject.fromJson(Map<String, dynamic> json) = _$ResolveObjectImpl.fromJson;
+  factory _ResolveObject.fromJson(Map<String, dynamic> json) =
+      _$ResolveObjectImpl.fromJson;
 
   @override
   String get q;
@@ -162,5 +183,6 @@ abstract class _ResolveObject extends ResolveObject {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ResolveObjectImplCopyWith<_$ResolveObjectImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ResolveObjectImplCopyWith<_$ResolveObjectImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

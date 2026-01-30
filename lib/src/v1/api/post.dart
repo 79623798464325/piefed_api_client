@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../shared/query.dart';
-import '../models/api.dart';
+
 import '../models/models.dart';
 
 part 'post.freezed.dart';
