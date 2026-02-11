@@ -186,7 +186,6 @@ class Reactions with _$Reactions {
   factory Reactions.fromJson(Map<String, dynamic> json) => _$ReactionsFromJson(json);
 }
 
-
 @freezed
 class MiniCrossPosts with _$MiniCrossPosts {
   const factory MiniCrossPosts({@JsonKey(name: 'post_id') required int postId, @JsonKey(name: 'reply_count') required int replyCount, @JsonKey(name: 'community_name') required String communityName}) =
