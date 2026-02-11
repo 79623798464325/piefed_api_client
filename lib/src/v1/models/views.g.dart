@@ -16,6 +16,7 @@ _$PersonViewImpl _$$PersonViewImplFromJson(Map<String, dynamic> json) =>
                 json['counts'] as Map<String, dynamic>,
               ),
       isAdmin: json['is_admin'] as bool,
+      activityAlert: json['activity_alert'] as bool?,
     );
 
 Map<String, dynamic> _$$PersonViewImplToJson(_$PersonViewImpl instance) =>
@@ -23,6 +24,7 @@ Map<String, dynamic> _$$PersonViewImplToJson(_$PersonViewImpl instance) =>
       'person': instance.person,
       'counts': instance.counts,
       'is_admin': instance.isAdmin,
+      'activity_alert': instance.activityAlert,
     };
 
 _$CommunityViewImpl _$$CommunityViewImplFromJson(Map<String, dynamic> json) =>
@@ -59,8 +61,13 @@ _$CommentViewImpl _$$CommentViewImplFromJson(Map<String, dynamic> json) =>
               ),
       creatorBannedFromCommunity: json['creator_banned_from_community'] as bool,
       creatorBlocked: json['creator_blocked'] as bool,
+      creatorIsAdmin: json['creator_is_admin'] as bool?,
+      creatorIsModerator: json['creator_is_moderator'] as bool?,
       saved: json['saved'] as bool,
       myVote: (json['my_vote'] as num?)?.toInt(),
+      canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
+      activityAlert: json['activity_alert'] as bool?,
+      subscribed: _subscribedFromJson(json['subscribed']),
     );
 
 Map<String, dynamic> _$$CommentViewImplToJson(_$CommentViewImpl instance) =>
@@ -72,8 +79,13 @@ Map<String, dynamic> _$$CommentViewImplToJson(_$CommentViewImpl instance) =>
       'counts': instance.counts,
       'creator_banned_from_community': instance.creatorBannedFromCommunity,
       'creator_blocked': instance.creatorBlocked,
+      'creator_is_admin': instance.creatorIsAdmin,
+      'creator_is_moderator': instance.creatorIsModerator,
       'saved': instance.saved,
       'my_vote': instance.myVote,
+      'can_auth_user_moderate': instance.canAuthUserModerate,
+      'activity_alert': instance.activityAlert,
+      'subscribed': instance.subscribed,
     };
 
 _$PostViewImpl _$$PostViewImplFromJson(Map<String, dynamic> json) =>
@@ -221,20 +233,6 @@ Map<String, dynamic> _$$TopicViewImplToJson(_$TopicViewImpl instance) =>
       'parent_topic_id': instance.parentTopicId,
       'communities': instance.communities,
       'children': instance.children,
-    };
-
-_$LanguageViewImpl _$$LanguageViewImplFromJson(Map<String, dynamic> json) =>
-    _$LanguageViewImpl(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      code: json['code'] as String,
-    );
-
-Map<String, dynamic> _$$LanguageViewImplToJson(_$LanguageViewImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'code': instance.code,
     };
 
 _$CommunityBlockViewImpl _$$CommunityBlockViewImplFromJson(

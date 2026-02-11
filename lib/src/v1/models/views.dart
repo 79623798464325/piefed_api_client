@@ -8,7 +8,7 @@ part 'views.g.dart';
 
 @freezed
 class PersonView with _$PersonView {
-  const factory PersonView({required Person person, PersonAggregates? counts, @JsonKey(name: 'is_admin') required bool isAdmin}) = _PersonView;
+  const factory PersonView({required Person person, PersonAggregates? counts, @JsonKey(name: 'is_admin') required bool isAdmin, @JsonKey(name: 'activity_alert') bool? activityAlert}) = _PersonView;
 
   factory PersonView.fromJson(Map<String, dynamic> json) => _$PersonViewFromJson(json);
 }
@@ -44,8 +44,13 @@ class CommentView with _$CommentView {
     CommentAggregates? counts,
     @JsonKey(name: 'creator_banned_from_community') required bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') required bool creatorBlocked,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
     required bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(fromJson: _subscribedFromJson) bool? subscribed,
   }) = _CommentView;
 
   factory CommentView.fromJson(Map<String, dynamic> json) => _$CommentViewFromJson(json);
@@ -119,13 +124,6 @@ class TopicView with _$TopicView {
   }) = _TopicView;
 
   factory TopicView.fromJson(Map<String, dynamic> json) => _$TopicViewFromJson(json);
-}
-
-@freezed
-class LanguageView with _$LanguageView {
-  const factory LanguageView({required int id, required String name, required String code}) = _LanguageView;
-
-  factory LanguageView.fromJson(Map<String, dynamic> json) => _$LanguageViewFromJson(json);
 }
 
 @freezed

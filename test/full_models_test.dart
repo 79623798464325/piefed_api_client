@@ -19,6 +19,7 @@ void main() {
         'banner': 'https://example.com/banner.png',
         'bio': 'Test bio',
         'about': null,
+        'about_html': null,
         'extra_fields': null,
         'note': null,
         'flair': null,
@@ -55,6 +56,12 @@ void main() {
         'removed': false,
         'instance_id': 200,
         'ai_generated': true,
+        'ap_domain': null,
+        'restricted_to_mods': null,
+        'banned': null,
+        'question_answer': null,
+        'posting_warning': null,
+        'updated': null,
         'description': 'A community for testing',
         'icon': 'https://example.com/icon.png',
         'banner': 'https://example.com/c/banner.png',
@@ -80,10 +87,6 @@ void main() {
 
     test('Post full round-trip', () {
       final now = DateTime.now().toUtc();
-      // Truncate to millis or whatever minimal precision JSON supports if needed,
-      // but commonly Dart DateTime roundtrip might need exact iso string match.
-      // We'll trust default serializer or handle iso strings manually if fails.
-
       final post = Post(
         id: 42,
         title: 'A Post Title',
@@ -117,7 +120,7 @@ void main() {
       expect(fromJson.body, 'Post Body');
       expect(fromJson.url, 'https://example.com/link');
       expect(fromJson.thumbnailUrl, 'https://example.com/thumb.jpg');
-      expect(fromJson.published, now); // DateTime equality check
+      expect(fromJson.published, now);
       expect(fromJson.updated, post.updated);
     });
 
@@ -169,7 +172,17 @@ void main() {
       final personAgg = PersonAggregates(personId: 1, postCount: 5, commentCount: 10);
       expect(PersonAggregates.fromJson(personAgg.toJson()), personAgg);
 
-      final commAgg = CommunityAggregates(id: 2, postCount: 100, postReplyCount: 50, subscriptionsCount: 200, totalSubscriptionsCount: 250);
+      final commAgg = CommunityAggregates(
+        id: 2,
+        postCount: 100,
+        postReplyCount: 50,
+        subscriptionsCount: 200,
+        totalSubscriptionsCount: 250,
+        activeDaily: 0,
+        activeWeekly: 0,
+        activeMonthly: 0,
+        active6monthly: 0,
+      );
       expect(CommunityAggregates.fromJson(commAgg.toJson()), commAgg);
 
       final postAgg = PostAggregates(postId: 42, comments: 3, score: 10, upvotes: 12, downvotes: 2, newestCommentTime: DateTime.now().toUtc(), newestCommentTimeNecro: DateTime.now().toUtc());
@@ -185,8 +198,6 @@ void main() {
         counts: PersonAggregates(personId: 1, postCount: 0, commentCount: 0),
         isAdmin: true,
       );
-      // We must encode/decode to convert nested objects to Maps, as toJson() returns instances for nested types.
-      // correct testing practice for json_serializable without explicitToJson: true.
       expect(PersonView.fromJson(jsonDecode(jsonEncode(personView))), personView);
 
       final communityView = CommunityView(
@@ -197,7 +208,6 @@ void main() {
       );
       expect(CommunityView.fromJson(jsonDecode(jsonEncode(communityView))), communityView);
 
-      // Minimal objects for brevity, mainly testing structure wrap
       final postView = PostView(
         post: Post(id: 1, title: 't', apId: 'a', local: true, nsfw: false, deleted: false, removed: false, userId: 1, communityId: 1, aiGenerated: false, published: DateTime.now().toUtc()),
         creator: Person(id: 1, name: 'u', actorId: 'a', local: true, banned: false, bot: false, deleted: false, instanceId: 1),

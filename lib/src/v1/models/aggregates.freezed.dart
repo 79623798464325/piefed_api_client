@@ -256,6 +256,14 @@ mixin _$CommunityAggregates {
   int get subscriptionsCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'total_subscriptions_count')
   int? get totalSubscriptionsCount => throw _privateConstructorUsedError;
+  @JsonKey(name: 'active_daily')
+  int get activeDaily => throw _privateConstructorUsedError;
+  @JsonKey(name: 'active_weekly')
+  int get activeWeekly => throw _privateConstructorUsedError;
+  @JsonKey(name: 'active_monthly')
+  int get activeMonthly => throw _privateConstructorUsedError;
+  @JsonKey(name: 'active_6monthly')
+  int get active6monthly => throw _privateConstructorUsedError;
 
   /// Serializes this CommunityAggregates to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -280,6 +288,10 @@ abstract class $CommunityAggregatesCopyWith<$Res> {
     @JsonKey(name: 'post_reply_count') int postReplyCount,
     @JsonKey(name: 'subscriptions_count') int subscriptionsCount,
     @JsonKey(name: 'total_subscriptions_count') int? totalSubscriptionsCount,
+    @JsonKey(name: 'active_daily') int activeDaily,
+    @JsonKey(name: 'active_weekly') int activeWeekly,
+    @JsonKey(name: 'active_monthly') int activeMonthly,
+    @JsonKey(name: 'active_6monthly') int active6monthly,
   });
 }
 
@@ -303,6 +315,10 @@ class _$CommunityAggregatesCopyWithImpl<$Res, $Val extends CommunityAggregates>
     Object? postReplyCount = null,
     Object? subscriptionsCount = null,
     Object? totalSubscriptionsCount = freezed,
+    Object? activeDaily = null,
+    Object? activeWeekly = null,
+    Object? activeMonthly = null,
+    Object? active6monthly = null,
   }) {
     return _then(
       _value.copyWith(
@@ -331,6 +347,26 @@ class _$CommunityAggregatesCopyWithImpl<$Res, $Val extends CommunityAggregates>
                     ? _value.totalSubscriptionsCount
                     : totalSubscriptionsCount // ignore: cast_nullable_to_non_nullable
                         as int?,
+            activeDaily:
+                null == activeDaily
+                    ? _value.activeDaily
+                    : activeDaily // ignore: cast_nullable_to_non_nullable
+                        as int,
+            activeWeekly:
+                null == activeWeekly
+                    ? _value.activeWeekly
+                    : activeWeekly // ignore: cast_nullable_to_non_nullable
+                        as int,
+            activeMonthly:
+                null == activeMonthly
+                    ? _value.activeMonthly
+                    : activeMonthly // ignore: cast_nullable_to_non_nullable
+                        as int,
+            active6monthly:
+                null == active6monthly
+                    ? _value.active6monthly
+                    : active6monthly // ignore: cast_nullable_to_non_nullable
+                        as int,
           )
           as $Val,
     );
@@ -352,6 +388,10 @@ abstract class _$$CommunityAggregatesImplCopyWith<$Res>
     @JsonKey(name: 'post_reply_count') int postReplyCount,
     @JsonKey(name: 'subscriptions_count') int subscriptionsCount,
     @JsonKey(name: 'total_subscriptions_count') int? totalSubscriptionsCount,
+    @JsonKey(name: 'active_daily') int activeDaily,
+    @JsonKey(name: 'active_weekly') int activeWeekly,
+    @JsonKey(name: 'active_monthly') int activeMonthly,
+    @JsonKey(name: 'active_6monthly') int active6monthly,
   });
 }
 
@@ -374,6 +414,10 @@ class __$$CommunityAggregatesImplCopyWithImpl<$Res>
     Object? postReplyCount = null,
     Object? subscriptionsCount = null,
     Object? totalSubscriptionsCount = freezed,
+    Object? activeDaily = null,
+    Object? activeWeekly = null,
+    Object? activeMonthly = null,
+    Object? active6monthly = null,
   }) {
     return _then(
       _$CommunityAggregatesImpl(
@@ -402,6 +446,26 @@ class __$$CommunityAggregatesImplCopyWithImpl<$Res>
                 ? _value.totalSubscriptionsCount
                 : totalSubscriptionsCount // ignore: cast_nullable_to_non_nullable
                     as int?,
+        activeDaily:
+            null == activeDaily
+                ? _value.activeDaily
+                : activeDaily // ignore: cast_nullable_to_non_nullable
+                    as int,
+        activeWeekly:
+            null == activeWeekly
+                ? _value.activeWeekly
+                : activeWeekly // ignore: cast_nullable_to_non_nullable
+                    as int,
+        activeMonthly:
+            null == activeMonthly
+                ? _value.activeMonthly
+                : activeMonthly // ignore: cast_nullable_to_non_nullable
+                    as int,
+        active6monthly:
+            null == active6monthly
+                ? _value.active6monthly
+                : active6monthly // ignore: cast_nullable_to_non_nullable
+                    as int,
       ),
     );
   }
@@ -416,6 +480,10 @@ class _$CommunityAggregatesImpl implements _CommunityAggregates {
     @JsonKey(name: 'post_reply_count') this.postReplyCount = 0,
     @JsonKey(name: 'subscriptions_count') this.subscriptionsCount = 0,
     @JsonKey(name: 'total_subscriptions_count') this.totalSubscriptionsCount,
+    @JsonKey(name: 'active_daily') this.activeDaily = 0,
+    @JsonKey(name: 'active_weekly') this.activeWeekly = 0,
+    @JsonKey(name: 'active_monthly') this.activeMonthly = 0,
+    @JsonKey(name: 'active_6monthly') this.active6monthly = 0,
   });
 
   factory _$CommunityAggregatesImpl.fromJson(Map<String, dynamic> json) =>
@@ -436,10 +504,22 @@ class _$CommunityAggregatesImpl implements _CommunityAggregates {
   @override
   @JsonKey(name: 'total_subscriptions_count')
   final int? totalSubscriptionsCount;
+  @override
+  @JsonKey(name: 'active_daily')
+  final int activeDaily;
+  @override
+  @JsonKey(name: 'active_weekly')
+  final int activeWeekly;
+  @override
+  @JsonKey(name: 'active_monthly')
+  final int activeMonthly;
+  @override
+  @JsonKey(name: 'active_6monthly')
+  final int active6monthly;
 
   @override
   String toString() {
-    return 'CommunityAggregates(id: $id, postCount: $postCount, postReplyCount: $postReplyCount, subscriptionsCount: $subscriptionsCount, totalSubscriptionsCount: $totalSubscriptionsCount)';
+    return 'CommunityAggregates(id: $id, postCount: $postCount, postReplyCount: $postReplyCount, subscriptionsCount: $subscriptionsCount, totalSubscriptionsCount: $totalSubscriptionsCount, activeDaily: $activeDaily, activeWeekly: $activeWeekly, activeMonthly: $activeMonthly, active6monthly: $active6monthly)';
   }
 
   @override
@@ -458,7 +538,15 @@ class _$CommunityAggregatesImpl implements _CommunityAggregates {
                   other.totalSubscriptionsCount,
                   totalSubscriptionsCount,
                 ) ||
-                other.totalSubscriptionsCount == totalSubscriptionsCount));
+                other.totalSubscriptionsCount == totalSubscriptionsCount) &&
+            (identical(other.activeDaily, activeDaily) ||
+                other.activeDaily == activeDaily) &&
+            (identical(other.activeWeekly, activeWeekly) ||
+                other.activeWeekly == activeWeekly) &&
+            (identical(other.activeMonthly, activeMonthly) ||
+                other.activeMonthly == activeMonthly) &&
+            (identical(other.active6monthly, active6monthly) ||
+                other.active6monthly == active6monthly));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -470,6 +558,10 @@ class _$CommunityAggregatesImpl implements _CommunityAggregates {
     postReplyCount,
     subscriptionsCount,
     totalSubscriptionsCount,
+    activeDaily,
+    activeWeekly,
+    activeMonthly,
+    active6monthly,
   );
 
   /// Create a copy of CommunityAggregates
@@ -497,6 +589,10 @@ abstract class _CommunityAggregates implements CommunityAggregates {
     @JsonKey(name: 'subscriptions_count') final int subscriptionsCount,
     @JsonKey(name: 'total_subscriptions_count')
     final int? totalSubscriptionsCount,
+    @JsonKey(name: 'active_daily') final int activeDaily,
+    @JsonKey(name: 'active_weekly') final int activeWeekly,
+    @JsonKey(name: 'active_monthly') final int activeMonthly,
+    @JsonKey(name: 'active_6monthly') final int active6monthly,
   }) = _$CommunityAggregatesImpl;
 
   factory _CommunityAggregates.fromJson(Map<String, dynamic> json) =
@@ -517,6 +613,18 @@ abstract class _CommunityAggregates implements CommunityAggregates {
   @override
   @JsonKey(name: 'total_subscriptions_count')
   int? get totalSubscriptionsCount;
+  @override
+  @JsonKey(name: 'active_daily')
+  int get activeDaily;
+  @override
+  @JsonKey(name: 'active_weekly')
+  int get activeWeekly;
+  @override
+  @JsonKey(name: 'active_monthly')
+  int get activeMonthly;
+  @override
+  @JsonKey(name: 'active_6monthly')
+  int get active6monthly;
 
   /// Create a copy of CommunityAggregates
   /// with the given fields replaced by the non-null parameter values.

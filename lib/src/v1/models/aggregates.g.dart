@@ -30,6 +30,10 @@ _$CommunityAggregatesImpl _$$CommunityAggregatesImplFromJson(
   postReplyCount: (json['post_reply_count'] as num?)?.toInt() ?? 0,
   subscriptionsCount: (json['subscriptions_count'] as num?)?.toInt() ?? 0,
   totalSubscriptionsCount: (json['total_subscriptions_count'] as num?)?.toInt(),
+  activeDaily: (json['active_daily'] as num?)?.toInt() ?? 0,
+  activeWeekly: (json['active_weekly'] as num?)?.toInt() ?? 0,
+  activeMonthly: (json['active_monthly'] as num?)?.toInt() ?? 0,
+  active6monthly: (json['active_6monthly'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$$CommunityAggregatesImplToJson(
@@ -40,6 +44,10 @@ Map<String, dynamic> _$$CommunityAggregatesImplToJson(
   'post_reply_count': instance.postReplyCount,
   'subscriptions_count': instance.subscriptionsCount,
   'total_subscriptions_count': instance.totalSubscriptionsCount,
+  'active_daily': instance.activeDaily,
+  'active_weekly': instance.activeWeekly,
+  'active_monthly': instance.activeMonthly,
+  'active_6monthly': instance.active6monthly,
 };
 
 _$PostAggregatesImpl _$$PostAggregatesImplFromJson(Map<String, dynamic> json) =>

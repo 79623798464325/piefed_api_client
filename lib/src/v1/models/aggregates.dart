@@ -22,6 +22,10 @@ class CommunityAggregates with _$CommunityAggregates {
     @JsonKey(name: 'post_reply_count') @Default(0) int postReplyCount,
     @JsonKey(name: 'subscriptions_count') @Default(0) int subscriptionsCount,
     @JsonKey(name: 'total_subscriptions_count') int? totalSubscriptionsCount,
+    @JsonKey(name: 'active_daily') @Default(0) int activeDaily,
+    @JsonKey(name: 'active_weekly') @Default(0) int activeWeekly,
+    @JsonKey(name: 'active_monthly') @Default(0) int activeMonthly,
+    @JsonKey(name: 'active_6monthly') @Default(0) int active6monthly,
   }) = _CommunityAggregates;
 
   factory CommunityAggregates.fromJson(Map<String, dynamic> json) => _$CommunityAggregatesFromJson(json);

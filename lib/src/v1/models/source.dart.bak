@@ -186,6 +186,12 @@ class Reactions with _$Reactions {
   factory Reactions.fromJson(Map<String, dynamic> json) => _$ReactionsFromJson(json);
 }
 
+@freezed
+class LanguageView with _$LanguageView {
+  const factory LanguageView({required int id, required String name, required String code}) = _LanguageView;
+
+  factory LanguageView.fromJson(Map<String, dynamic> json) => _$LanguageViewFromJson(json);
+}
 
 @freezed
 class MiniCrossPosts with _$MiniCrossPosts {

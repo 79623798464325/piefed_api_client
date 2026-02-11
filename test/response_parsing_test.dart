@@ -176,5 +176,65 @@ void main() {
         // Expected
       }
     });
+    test('Post Poll Response Parsing', () async {
+      final mockClient = MockClient((request) async {
+        return http.Response(
+          jsonEncode({
+            'post_view': {
+              'post': {
+                'id': 1,
+                'title': 'Poll Post',
+                'ap_id': 'http://example.com/post/1',
+                'local': true,
+                'nsfw': false,
+                'deleted': false,
+                'removed': false,
+                'user_id': 1,
+                'community_id': 1,
+                'published': DateTime.now().toIso8601String(),
+                'ai_generated': false,
+                'poll': {
+                  'mode': 'single',
+                  'choices': [
+                    {'id': 1, 'choice_text': 'Option A', 'num_votes': 10, 'sort_order': 0},
+                    {'id': 2, 'choice_text': 'Option B', 'num_votes': 5, 'sort_order': 1},
+                  ],
+                  'my_votes': [1],
+                },
+              },
+              'creator': {'id': 1, 'user_name': 'user', 'actor_id': 'http://example.com/user/1', 'local': true, 'banned': false, 'bot': false, 'deleted': false, 'instance_id': 1},
+              'community': {
+                'id': 1,
+                'name': 'comm',
+                'title': 'Community',
+                'actor_id': 'http://example.com/c/comm',
+                'local': true,
+                'nsfw': false,
+                'deleted': false,
+                'hidden': false,
+                'removed': false,
+                'instance_id': 1,
+                'ai_generated': false,
+              },
+              'counts': {'post_id': 1, 'comments': 0, 'score': 0, 'upvotes': 0, 'downvotes': 0},
+              'subscribed': 'NotSubscribed',
+              'saved': false,
+              'read': false,
+            },
+          }),
+          200,
+        );
+      });
+
+      final api = PieFedApiV1('example.com', client: mockClient);
+      final response = await api.run(const GetPost(id: 1));
+
+      expect(response.post.poll, isNotNull);
+      expect(response.post.poll!.mode, 'single');
+      expect(response.post.poll!.choices.length, 2);
+      expect(response.post.poll!.choices[0].choiceText, 'Option A');
+      expect(response.post.poll!.choices[0].numVotes, 10);
+      expect(response.post.poll!.myVotes, contains(1));
+    });
   });
 }

@@ -1,4 +1,28 @@
 # Changelog
+
+## 0.8.0
+
+*   **100% Swagger 1.6.0 Compliance**:
+    *   **Breaking Changes**:
+        *   Refactored `PostPoll`: Renamed `poll_id` to `id`, `options` to `choices`, `expires_at` to `end_poll`. Removed `my_vote` in favor of `my_votes` (List).
+        *   Refactored `PollChoice`: Renamed `text` to `choice_text`, `count` to `num_votes`.
+    *   **New Models**:
+        *   Added `WidthHeight` for image details.
+        *   Moved `LanguageView` to `source.dart` for better internal referencing.
+    *   **New Fields**:
+        *   `Post`: Added `sticky`, `language_id`, `alt_text`, `small_thumbnail_url`, `image_details`, `locked`.
+        *   `Comment`: Added `locked`, `answer`.
+        *   `Person`: Added `about_html`.
+        *   `Site`: Added `all_languages` (`List<LanguageView>`).
+        *   `PostPoll`: Added `mode`, `local_only`, `latest_vote`, `my_votes`.
+        *   `PollChoice`: Added `sort_order`.
+        *   `CommunityAggregates`: Added `active_daily`, `active_weekly`, `active_monthly`, `active_6monthly`.
+        *   `PostView`: Added `activity_alert`, `alt_text`, `flair_list`, `can_auth_user_moderate`.
+        *   `CommentView`: Added `activity_alert`, `creator_is_admin`, `creator_is_moderator`, `can_auth_user_moderate`.
+        *   `PersonView`: Added `activity_alert`.
+    *   **Improvements**:
+        *   Ensured all new model factory constructors are `const` for improved performance.
+        *   Updated unit and integration tests to verify new fields and breaking changes.
 ## 0.7.4
 
 *   **PieFed v1.6.0 Alignment**:

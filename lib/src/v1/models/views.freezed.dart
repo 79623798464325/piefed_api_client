@@ -25,6 +25,8 @@ mixin _$PersonView {
   PersonAggregates? get counts => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_admin')
   bool get isAdmin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert => throw _privateConstructorUsedError;
 
   /// Serializes this PersonView to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,6 +49,7 @@ abstract class $PersonViewCopyWith<$Res> {
     Person person,
     PersonAggregates? counts,
     @JsonKey(name: 'is_admin') bool isAdmin,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
   });
 
   $PersonCopyWith<$Res> get person;
@@ -71,6 +74,7 @@ class _$PersonViewCopyWithImpl<$Res, $Val extends PersonView>
     Object? person = null,
     Object? counts = freezed,
     Object? isAdmin = null,
+    Object? activityAlert = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -89,6 +93,11 @@ class _$PersonViewCopyWithImpl<$Res, $Val extends PersonView>
                     ? _value.isAdmin
                     : isAdmin // ignore: cast_nullable_to_non_nullable
                         as bool,
+            activityAlert:
+                freezed == activityAlert
+                    ? _value.activityAlert
+                    : activityAlert // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -132,6 +141,7 @@ abstract class _$$PersonViewImplCopyWith<$Res>
     Person person,
     PersonAggregates? counts,
     @JsonKey(name: 'is_admin') bool isAdmin,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
   });
 
   @override
@@ -157,6 +167,7 @@ class __$$PersonViewImplCopyWithImpl<$Res>
     Object? person = null,
     Object? counts = freezed,
     Object? isAdmin = null,
+    Object? activityAlert = freezed,
   }) {
     return _then(
       _$PersonViewImpl(
@@ -175,6 +186,11 @@ class __$$PersonViewImplCopyWithImpl<$Res>
                 ? _value.isAdmin
                 : isAdmin // ignore: cast_nullable_to_non_nullable
                     as bool,
+        activityAlert:
+            freezed == activityAlert
+                ? _value.activityAlert
+                : activityAlert // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -187,6 +203,7 @@ class _$PersonViewImpl implements _PersonView {
     required this.person,
     this.counts,
     @JsonKey(name: 'is_admin') required this.isAdmin,
+    @JsonKey(name: 'activity_alert') this.activityAlert,
   });
 
   factory _$PersonViewImpl.fromJson(Map<String, dynamic> json) =>
@@ -199,10 +216,13 @@ class _$PersonViewImpl implements _PersonView {
   @override
   @JsonKey(name: 'is_admin')
   final bool isAdmin;
+  @override
+  @JsonKey(name: 'activity_alert')
+  final bool? activityAlert;
 
   @override
   String toString() {
-    return 'PersonView(person: $person, counts: $counts, isAdmin: $isAdmin)';
+    return 'PersonView(person: $person, counts: $counts, isAdmin: $isAdmin, activityAlert: $activityAlert)';
   }
 
   @override
@@ -212,12 +232,15 @@ class _$PersonViewImpl implements _PersonView {
             other is _$PersonViewImpl &&
             (identical(other.person, person) || other.person == person) &&
             (identical(other.counts, counts) || other.counts == counts) &&
-            (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin));
+            (identical(other.isAdmin, isAdmin) || other.isAdmin == isAdmin) &&
+            (identical(other.activityAlert, activityAlert) ||
+                other.activityAlert == activityAlert));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, person, counts, isAdmin);
+  int get hashCode =>
+      Object.hash(runtimeType, person, counts, isAdmin, activityAlert);
 
   /// Create a copy of PersonView
   /// with the given fields replaced by the non-null parameter values.
@@ -238,6 +261,7 @@ abstract class _PersonView implements PersonView {
     required final Person person,
     final PersonAggregates? counts,
     @JsonKey(name: 'is_admin') required final bool isAdmin,
+    @JsonKey(name: 'activity_alert') final bool? activityAlert,
   }) = _$PersonViewImpl;
 
   factory _PersonView.fromJson(Map<String, dynamic> json) =
@@ -250,6 +274,9 @@ abstract class _PersonView implements PersonView {
   @override
   @JsonKey(name: 'is_admin')
   bool get isAdmin;
+  @override
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert;
 
   /// Create a copy of PersonView
   /// with the given fields replaced by the non-null parameter values.
@@ -571,9 +598,19 @@ mixin _$CommentView {
   bool get creatorBannedFromCommunity => throw _privateConstructorUsedError;
   @JsonKey(name: 'creator_blocked')
   bool get creatorBlocked => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_is_admin')
+  bool? get creatorIsAdmin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_is_moderator')
+  bool? get creatorIsModerator => throw _privateConstructorUsedError;
   bool get saved => throw _privateConstructorUsedError;
   @JsonKey(name: 'my_vote')
   int? get myVote => throw _privateConstructorUsedError;
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _subscribedFromJson)
+  bool? get subscribed => throw _privateConstructorUsedError;
 
   /// Serializes this CommentView to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -601,8 +638,13 @@ abstract class $CommentViewCopyWith<$Res> {
     @JsonKey(name: 'creator_banned_from_community')
     bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
     bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(fromJson: _subscribedFromJson) bool? subscribed,
   });
 
   $CommentCopyWith<$Res> get comment;
@@ -634,8 +676,13 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView>
     Object? counts = freezed,
     Object? creatorBannedFromCommunity = null,
     Object? creatorBlocked = null,
+    Object? creatorIsAdmin = freezed,
+    Object? creatorIsModerator = freezed,
     Object? saved = null,
     Object? myVote = freezed,
+    Object? canAuthUserModerate = freezed,
+    Object? activityAlert = freezed,
+    Object? subscribed = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -674,6 +721,16 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView>
                     ? _value.creatorBlocked
                     : creatorBlocked // ignore: cast_nullable_to_non_nullable
                         as bool,
+            creatorIsAdmin:
+                freezed == creatorIsAdmin
+                    ? _value.creatorIsAdmin
+                    : creatorIsAdmin // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            creatorIsModerator:
+                freezed == creatorIsModerator
+                    ? _value.creatorIsModerator
+                    : creatorIsModerator // ignore: cast_nullable_to_non_nullable
+                        as bool?,
             saved:
                 null == saved
                     ? _value.saved
@@ -684,6 +741,21 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView>
                     ? _value.myVote
                     : myVote // ignore: cast_nullable_to_non_nullable
                         as int?,
+            canAuthUserModerate:
+                freezed == canAuthUserModerate
+                    ? _value.canAuthUserModerate
+                    : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            activityAlert:
+                freezed == activityAlert
+                    ? _value.activityAlert
+                    : activityAlert // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            subscribed:
+                freezed == subscribed
+                    ? _value.subscribed
+                    : subscribed // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -762,8 +834,13 @@ abstract class _$$CommentViewImplCopyWith<$Res>
     @JsonKey(name: 'creator_banned_from_community')
     bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
     bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(fromJson: _subscribedFromJson) bool? subscribed,
   });
 
   @override
@@ -799,8 +876,13 @@ class __$$CommentViewImplCopyWithImpl<$Res>
     Object? counts = freezed,
     Object? creatorBannedFromCommunity = null,
     Object? creatorBlocked = null,
+    Object? creatorIsAdmin = freezed,
+    Object? creatorIsModerator = freezed,
     Object? saved = null,
     Object? myVote = freezed,
+    Object? canAuthUserModerate = freezed,
+    Object? activityAlert = freezed,
+    Object? subscribed = freezed,
   }) {
     return _then(
       _$CommentViewImpl(
@@ -839,6 +921,16 @@ class __$$CommentViewImplCopyWithImpl<$Res>
                 ? _value.creatorBlocked
                 : creatorBlocked // ignore: cast_nullable_to_non_nullable
                     as bool,
+        creatorIsAdmin:
+            freezed == creatorIsAdmin
+                ? _value.creatorIsAdmin
+                : creatorIsAdmin // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        creatorIsModerator:
+            freezed == creatorIsModerator
+                ? _value.creatorIsModerator
+                : creatorIsModerator // ignore: cast_nullable_to_non_nullable
+                    as bool?,
         saved:
             null == saved
                 ? _value.saved
@@ -849,6 +941,21 @@ class __$$CommentViewImplCopyWithImpl<$Res>
                 ? _value.myVote
                 : myVote // ignore: cast_nullable_to_non_nullable
                     as int?,
+        canAuthUserModerate:
+            freezed == canAuthUserModerate
+                ? _value.canAuthUserModerate
+                : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        activityAlert:
+            freezed == activityAlert
+                ? _value.activityAlert
+                : activityAlert // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        subscribed:
+            freezed == subscribed
+                ? _value.subscribed
+                : subscribed // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -866,8 +973,13 @@ class _$CommentViewImpl implements _CommentView {
     @JsonKey(name: 'creator_banned_from_community')
     required this.creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') required this.creatorBlocked,
+    @JsonKey(name: 'creator_is_admin') this.creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') this.creatorIsModerator,
     required this.saved,
     @JsonKey(name: 'my_vote') this.myVote,
+    @JsonKey(name: 'can_auth_user_moderate') this.canAuthUserModerate,
+    @JsonKey(name: 'activity_alert') this.activityAlert,
+    @JsonKey(fromJson: _subscribedFromJson) this.subscribed,
   });
 
   factory _$CommentViewImpl.fromJson(Map<String, dynamic> json) =>
@@ -890,14 +1002,29 @@ class _$CommentViewImpl implements _CommentView {
   @JsonKey(name: 'creator_blocked')
   final bool creatorBlocked;
   @override
+  @JsonKey(name: 'creator_is_admin')
+  final bool? creatorIsAdmin;
+  @override
+  @JsonKey(name: 'creator_is_moderator')
+  final bool? creatorIsModerator;
+  @override
   final bool saved;
   @override
   @JsonKey(name: 'my_vote')
   final int? myVote;
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  final bool? canAuthUserModerate;
+  @override
+  @JsonKey(name: 'activity_alert')
+  final bool? activityAlert;
+  @override
+  @JsonKey(fromJson: _subscribedFromJson)
+  final bool? subscribed;
 
   @override
   String toString() {
-    return 'CommentView(comment: $comment, creator: $creator, post: $post, community: $community, counts: $counts, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorBlocked: $creatorBlocked, saved: $saved, myVote: $myVote)';
+    return 'CommentView(comment: $comment, creator: $creator, post: $post, community: $community, counts: $counts, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorBlocked: $creatorBlocked, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, saved: $saved, myVote: $myVote, canAuthUserModerate: $canAuthUserModerate, activityAlert: $activityAlert, subscribed: $subscribed)';
   }
 
   @override
@@ -919,8 +1046,18 @@ class _$CommentViewImpl implements _CommentView {
                     creatorBannedFromCommunity) &&
             (identical(other.creatorBlocked, creatorBlocked) ||
                 other.creatorBlocked == creatorBlocked) &&
+            (identical(other.creatorIsAdmin, creatorIsAdmin) ||
+                other.creatorIsAdmin == creatorIsAdmin) &&
+            (identical(other.creatorIsModerator, creatorIsModerator) ||
+                other.creatorIsModerator == creatorIsModerator) &&
             (identical(other.saved, saved) || other.saved == saved) &&
-            (identical(other.myVote, myVote) || other.myVote == myVote));
+            (identical(other.myVote, myVote) || other.myVote == myVote) &&
+            (identical(other.canAuthUserModerate, canAuthUserModerate) ||
+                other.canAuthUserModerate == canAuthUserModerate) &&
+            (identical(other.activityAlert, activityAlert) ||
+                other.activityAlert == activityAlert) &&
+            (identical(other.subscribed, subscribed) ||
+                other.subscribed == subscribed));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -934,8 +1071,13 @@ class _$CommentViewImpl implements _CommentView {
     counts,
     creatorBannedFromCommunity,
     creatorBlocked,
+    creatorIsAdmin,
+    creatorIsModerator,
     saved,
     myVote,
+    canAuthUserModerate,
+    activityAlert,
+    subscribed,
   );
 
   /// Create a copy of CommentView
@@ -962,8 +1104,13 @@ abstract class _CommentView implements CommentView {
     @JsonKey(name: 'creator_banned_from_community')
     required final bool creatorBannedFromCommunity,
     @JsonKey(name: 'creator_blocked') required final bool creatorBlocked,
+    @JsonKey(name: 'creator_is_admin') final bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') final bool? creatorIsModerator,
     required final bool saved,
     @JsonKey(name: 'my_vote') final int? myVote,
+    @JsonKey(name: 'can_auth_user_moderate') final bool? canAuthUserModerate,
+    @JsonKey(name: 'activity_alert') final bool? activityAlert,
+    @JsonKey(fromJson: _subscribedFromJson) final bool? subscribed,
   }) = _$CommentViewImpl;
 
   factory _CommentView.fromJson(Map<String, dynamic> json) =
@@ -986,10 +1133,25 @@ abstract class _CommentView implements CommentView {
   @JsonKey(name: 'creator_blocked')
   bool get creatorBlocked;
   @override
+  @JsonKey(name: 'creator_is_admin')
+  bool? get creatorIsAdmin;
+  @override
+  @JsonKey(name: 'creator_is_moderator')
+  bool? get creatorIsModerator;
+  @override
   bool get saved;
   @override
   @JsonKey(name: 'my_vote')
   int? get myVote;
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate;
+  @override
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert;
+  @override
+  @JsonKey(fromJson: _subscribedFromJson)
+  bool? get subscribed;
 
   /// Create a copy of CommentView
   /// with the given fields replaced by the non-null parameter values.
@@ -2826,199 +2988,6 @@ abstract class _TopicView implements TopicView {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TopicViewImplCopyWith<_$TopicViewImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LanguageView _$LanguageViewFromJson(Map<String, dynamic> json) {
-  return _LanguageView.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LanguageView {
-  int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
-
-  /// Serializes this LanguageView to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LanguageView
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LanguageViewCopyWith<LanguageView> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LanguageViewCopyWith<$Res> {
-  factory $LanguageViewCopyWith(
-    LanguageView value,
-    $Res Function(LanguageView) then,
-  ) = _$LanguageViewCopyWithImpl<$Res, LanguageView>;
-  @useResult
-  $Res call({int id, String name, String code});
-}
-
-/// @nodoc
-class _$LanguageViewCopyWithImpl<$Res, $Val extends LanguageView>
-    implements $LanguageViewCopyWith<$Res> {
-  _$LanguageViewCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LanguageView
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? id = null, Object? name = null, Object? code = null}) {
-    return _then(
-      _value.copyWith(
-            id:
-                null == id
-                    ? _value.id
-                    : id // ignore: cast_nullable_to_non_nullable
-                        as int,
-            name:
-                null == name
-                    ? _value.name
-                    : name // ignore: cast_nullable_to_non_nullable
-                        as String,
-            code:
-                null == code
-                    ? _value.code
-                    : code // ignore: cast_nullable_to_non_nullable
-                        as String,
-          )
-          as $Val,
-    );
-  }
-}
-
-/// @nodoc
-abstract class _$$LanguageViewImplCopyWith<$Res>
-    implements $LanguageViewCopyWith<$Res> {
-  factory _$$LanguageViewImplCopyWith(
-    _$LanguageViewImpl value,
-    $Res Function(_$LanguageViewImpl) then,
-  ) = __$$LanguageViewImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int id, String name, String code});
-}
-
-/// @nodoc
-class __$$LanguageViewImplCopyWithImpl<$Res>
-    extends _$LanguageViewCopyWithImpl<$Res, _$LanguageViewImpl>
-    implements _$$LanguageViewImplCopyWith<$Res> {
-  __$$LanguageViewImplCopyWithImpl(
-    _$LanguageViewImpl _value,
-    $Res Function(_$LanguageViewImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of LanguageView
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? id = null, Object? name = null, Object? code = null}) {
-    return _then(
-      _$LanguageViewImpl(
-        id:
-            null == id
-                ? _value.id
-                : id // ignore: cast_nullable_to_non_nullable
-                    as int,
-        name:
-            null == name
-                ? _value.name
-                : name // ignore: cast_nullable_to_non_nullable
-                    as String,
-        code:
-            null == code
-                ? _value.code
-                : code // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LanguageViewImpl implements _LanguageView {
-  const _$LanguageViewImpl({
-    required this.id,
-    required this.name,
-    required this.code,
-  });
-
-  factory _$LanguageViewImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LanguageViewImplFromJson(json);
-
-  @override
-  final int id;
-  @override
-  final String name;
-  @override
-  final String code;
-
-  @override
-  String toString() {
-    return 'LanguageView(id: $id, name: $name, code: $code)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LanguageViewImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.code, code) || other.code == code));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, code);
-
-  /// Create a copy of LanguageView
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LanguageViewImplCopyWith<_$LanguageViewImpl> get copyWith =>
-      __$$LanguageViewImplCopyWithImpl<_$LanguageViewImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LanguageViewImplToJson(this);
-  }
-}
-
-abstract class _LanguageView implements LanguageView {
-  const factory _LanguageView({
-    required final int id,
-    required final String name,
-    required final String code,
-  }) = _$LanguageViewImpl;
-
-  factory _LanguageView.fromJson(Map<String, dynamic> json) =
-      _$LanguageViewImpl.fromJson;
-
-  @override
-  int get id;
-  @override
-  String get name;
-  @override
-  String get code;
-
-  /// Create a copy of LanguageView
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LanguageViewImplCopyWith<_$LanguageViewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
