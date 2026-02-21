@@ -31,21 +31,18 @@ mixin _$ListFeeds {
   /// Create a copy of ListFeeds
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ListFeedsCopyWith<ListFeeds> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListFeedsCopyWith<ListFeeds> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListFeedsCopyWith<$Res> {
-  factory $ListFeedsCopyWith(ListFeeds value, $Res Function(ListFeeds) then) =
-      _$ListFeedsCopyWithImpl<$Res, ListFeeds>;
+  factory $ListFeedsCopyWith(ListFeeds value, $Res Function(ListFeeds) then) = _$ListFeedsCopyWithImpl<$Res, ListFeeds>;
   @useResult
   $Res call({int? limit, int? page, String? auth});
 }
 
 /// @nodoc
-class _$ListFeedsCopyWithImpl<$Res, $Val extends ListFeeds>
-    implements $ListFeedsCopyWith<$Res> {
+class _$ListFeedsCopyWithImpl<$Res, $Val extends ListFeeds> implements $ListFeedsCopyWith<$Res> {
   _$ListFeedsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -57,11 +54,7 @@ class _$ListFeedsCopyWithImpl<$Res, $Val extends ListFeeds>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? page = freezed,
-    Object? auth = freezed,
-  }) {
+  $Res call({Object? limit = freezed, Object? page = freezed, Object? auth = freezed}) {
     return _then(
       _value.copyWith(
             limit:
@@ -86,35 +79,22 @@ class _$ListFeedsCopyWithImpl<$Res, $Val extends ListFeeds>
 }
 
 /// @nodoc
-abstract class _$$ListFeedsImplCopyWith<$Res>
-    implements $ListFeedsCopyWith<$Res> {
-  factory _$$ListFeedsImplCopyWith(
-    _$ListFeedsImpl value,
-    $Res Function(_$ListFeedsImpl) then,
-  ) = __$$ListFeedsImplCopyWithImpl<$Res>;
+abstract class _$$ListFeedsImplCopyWith<$Res> implements $ListFeedsCopyWith<$Res> {
+  factory _$$ListFeedsImplCopyWith(_$ListFeedsImpl value, $Res Function(_$ListFeedsImpl) then) = __$$ListFeedsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? limit, int? page, String? auth});
 }
 
 /// @nodoc
-class __$$ListFeedsImplCopyWithImpl<$Res>
-    extends _$ListFeedsCopyWithImpl<$Res, _$ListFeedsImpl>
-    implements _$$ListFeedsImplCopyWith<$Res> {
-  __$$ListFeedsImplCopyWithImpl(
-    _$ListFeedsImpl _value,
-    $Res Function(_$ListFeedsImpl) _then,
-  ) : super(_value, _then);
+class __$$ListFeedsImplCopyWithImpl<$Res> extends _$ListFeedsCopyWithImpl<$Res, _$ListFeedsImpl> implements _$$ListFeedsImplCopyWith<$Res> {
+  __$$ListFeedsImplCopyWithImpl(_$ListFeedsImpl _value, $Res Function(_$ListFeedsImpl) _then) : super(_value, _then);
 
   /// Create a copy of ListFeeds
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? page = freezed,
-    Object? auth = freezed,
-  }) {
+  $Res call({Object? limit = freezed, Object? page = freezed, Object? auth = freezed}) {
     return _then(
       _$ListFeedsImpl(
         limit:
@@ -142,8 +122,7 @@ class __$$ListFeedsImplCopyWithImpl<$Res>
 class _$ListFeedsImpl extends _ListFeeds {
   const _$ListFeedsImpl({this.limit, this.page, this.auth}) : super._();
 
-  factory _$ListFeedsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ListFeedsImplFromJson(json);
+  factory _$ListFeedsImpl.fromJson(Map<String, dynamic> json) => _$$ListFeedsImplFromJson(json);
 
   @override
   final int? limit;
@@ -176,8 +155,7 @@ class _$ListFeedsImpl extends _ListFeeds {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListFeedsImplCopyWith<_$ListFeedsImpl> get copyWith =>
-      __$$ListFeedsImplCopyWithImpl<_$ListFeedsImpl>(this, _$identity);
+  _$$ListFeedsImplCopyWith<_$ListFeedsImpl> get copyWith => __$$ListFeedsImplCopyWithImpl<_$ListFeedsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -186,15 +164,10 @@ class _$ListFeedsImpl extends _ListFeeds {
 }
 
 abstract class _ListFeeds extends ListFeeds {
-  const factory _ListFeeds({
-    final int? limit,
-    final int? page,
-    final String? auth,
-  }) = _$ListFeedsImpl;
+  const factory _ListFeeds({final int? limit, final int? page, final String? auth}) = _$ListFeedsImpl;
   const _ListFeeds._() : super._();
 
-  factory _ListFeeds.fromJson(Map<String, dynamic> json) =
-      _$ListFeedsImpl.fromJson;
+  factory _ListFeeds.fromJson(Map<String, dynamic> json) = _$ListFeedsImpl.fromJson;
 
   @override
   int? get limit;
@@ -207,8 +180,7 @@ abstract class _ListFeeds extends ListFeeds {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ListFeedsImplCopyWith<_$ListFeedsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ListFeedsImplCopyWith<_$ListFeedsImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 GetFeed _$GetFeedFromJson(Map<String, dynamic> json) {
@@ -232,15 +204,13 @@ mixin _$GetFeed {
 
 /// @nodoc
 abstract class $GetFeedCopyWith<$Res> {
-  factory $GetFeedCopyWith(GetFeed value, $Res Function(GetFeed) then) =
-      _$GetFeedCopyWithImpl<$Res, GetFeed>;
+  factory $GetFeedCopyWith(GetFeed value, $Res Function(GetFeed) then) = _$GetFeedCopyWithImpl<$Res, GetFeed>;
   @useResult
   $Res call({int? id, String? name, String? auth});
 }
 
 /// @nodoc
-class _$GetFeedCopyWithImpl<$Res, $Val extends GetFeed>
-    implements $GetFeedCopyWith<$Res> {
+class _$GetFeedCopyWithImpl<$Res, $Val extends GetFeed> implements $GetFeedCopyWith<$Res> {
   _$GetFeedCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -252,11 +222,7 @@ class _$GetFeedCopyWithImpl<$Res, $Val extends GetFeed>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? auth = freezed,
-  }) {
+  $Res call({Object? id = freezed, Object? name = freezed, Object? auth = freezed}) {
     return _then(
       _value.copyWith(
             id:
@@ -282,33 +248,21 @@ class _$GetFeedCopyWithImpl<$Res, $Val extends GetFeed>
 
 /// @nodoc
 abstract class _$$GetFeedImplCopyWith<$Res> implements $GetFeedCopyWith<$Res> {
-  factory _$$GetFeedImplCopyWith(
-    _$GetFeedImpl value,
-    $Res Function(_$GetFeedImpl) then,
-  ) = __$$GetFeedImplCopyWithImpl<$Res>;
+  factory _$$GetFeedImplCopyWith(_$GetFeedImpl value, $Res Function(_$GetFeedImpl) then) = __$$GetFeedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? id, String? name, String? auth});
 }
 
 /// @nodoc
-class __$$GetFeedImplCopyWithImpl<$Res>
-    extends _$GetFeedCopyWithImpl<$Res, _$GetFeedImpl>
-    implements _$$GetFeedImplCopyWith<$Res> {
-  __$$GetFeedImplCopyWithImpl(
-    _$GetFeedImpl _value,
-    $Res Function(_$GetFeedImpl) _then,
-  ) : super(_value, _then);
+class __$$GetFeedImplCopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res, _$GetFeedImpl> implements _$$GetFeedImplCopyWith<$Res> {
+  __$$GetFeedImplCopyWithImpl(_$GetFeedImpl _value, $Res Function(_$GetFeedImpl) _then) : super(_value, _then);
 
   /// Create a copy of GetFeed
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? auth = freezed,
-  }) {
+  $Res call({Object? id = freezed, Object? name = freezed, Object? auth = freezed}) {
     return _then(
       _$GetFeedImpl(
         id:
@@ -336,8 +290,7 @@ class __$$GetFeedImplCopyWithImpl<$Res>
 class _$GetFeedImpl extends _GetFeed {
   const _$GetFeedImpl({this.id, this.name, this.auth}) : super._();
 
-  factory _$GetFeedImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetFeedImplFromJson(json);
+  factory _$GetFeedImpl.fromJson(Map<String, dynamic> json) => _$$GetFeedImplFromJson(json);
 
   @override
   final int? id;
@@ -370,8 +323,7 @@ class _$GetFeedImpl extends _GetFeed {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetFeedImplCopyWith<_$GetFeedImpl> get copyWith =>
-      __$$GetFeedImplCopyWithImpl<_$GetFeedImpl>(this, _$identity);
+  _$$GetFeedImplCopyWith<_$GetFeedImpl> get copyWith => __$$GetFeedImplCopyWithImpl<_$GetFeedImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -380,11 +332,7 @@ class _$GetFeedImpl extends _GetFeed {
 }
 
 abstract class _GetFeed extends GetFeed {
-  const factory _GetFeed({
-    final int? id,
-    final String? name,
-    final String? auth,
-  }) = _$GetFeedImpl;
+  const factory _GetFeed({final int? id, final String? name, final String? auth}) = _$GetFeedImpl;
   const _GetFeed._() : super._();
 
   factory _GetFeed.fromJson(Map<String, dynamic> json) = _$GetFeedImpl.fromJson;
@@ -400,8 +348,7 @@ abstract class _GetFeed extends GetFeed {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetFeedImplCopyWith<_$GetFeedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GetFeedImplCopyWith<_$GetFeedImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 ListTopics _$ListTopicsFromJson(Map<String, dynamic> json) {
@@ -419,23 +366,18 @@ mixin _$ListTopics {
   /// Create a copy of ListTopics
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ListTopicsCopyWith<ListTopics> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListTopicsCopyWith<ListTopics> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListTopicsCopyWith<$Res> {
-  factory $ListTopicsCopyWith(
-    ListTopics value,
-    $Res Function(ListTopics) then,
-  ) = _$ListTopicsCopyWithImpl<$Res, ListTopics>;
+  factory $ListTopicsCopyWith(ListTopics value, $Res Function(ListTopics) then) = _$ListTopicsCopyWithImpl<$Res, ListTopics>;
   @useResult
   $Res call({int? limit, int? page});
 }
 
 /// @nodoc
-class _$ListTopicsCopyWithImpl<$Res, $Val extends ListTopics>
-    implements $ListTopicsCopyWith<$Res> {
+class _$ListTopicsCopyWithImpl<$Res, $Val extends ListTopics> implements $ListTopicsCopyWith<$Res> {
   _$ListTopicsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -467,25 +409,16 @@ class _$ListTopicsCopyWithImpl<$Res, $Val extends ListTopics>
 }
 
 /// @nodoc
-abstract class _$$ListTopicsImplCopyWith<$Res>
-    implements $ListTopicsCopyWith<$Res> {
-  factory _$$ListTopicsImplCopyWith(
-    _$ListTopicsImpl value,
-    $Res Function(_$ListTopicsImpl) then,
-  ) = __$$ListTopicsImplCopyWithImpl<$Res>;
+abstract class _$$ListTopicsImplCopyWith<$Res> implements $ListTopicsCopyWith<$Res> {
+  factory _$$ListTopicsImplCopyWith(_$ListTopicsImpl value, $Res Function(_$ListTopicsImpl) then) = __$$ListTopicsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? limit, int? page});
 }
 
 /// @nodoc
-class __$$ListTopicsImplCopyWithImpl<$Res>
-    extends _$ListTopicsCopyWithImpl<$Res, _$ListTopicsImpl>
-    implements _$$ListTopicsImplCopyWith<$Res> {
-  __$$ListTopicsImplCopyWithImpl(
-    _$ListTopicsImpl _value,
-    $Res Function(_$ListTopicsImpl) _then,
-  ) : super(_value, _then);
+class __$$ListTopicsImplCopyWithImpl<$Res> extends _$ListTopicsCopyWithImpl<$Res, _$ListTopicsImpl> implements _$$ListTopicsImplCopyWith<$Res> {
+  __$$ListTopicsImplCopyWithImpl(_$ListTopicsImpl _value, $Res Function(_$ListTopicsImpl) _then) : super(_value, _then);
 
   /// Create a copy of ListTopics
   /// with the given fields replaced by the non-null parameter values.
@@ -514,8 +447,7 @@ class __$$ListTopicsImplCopyWithImpl<$Res>
 class _$ListTopicsImpl extends _ListTopics {
   const _$ListTopicsImpl({this.limit, this.page}) : super._();
 
-  factory _$ListTopicsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ListTopicsImplFromJson(json);
+  factory _$ListTopicsImpl.fromJson(Map<String, dynamic> json) => _$$ListTopicsImplFromJson(json);
 
   @override
   final int? limit;
@@ -530,10 +462,7 @@ class _$ListTopicsImpl extends _ListTopics {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ListTopicsImpl &&
-            (identical(other.limit, limit) || other.limit == limit) &&
-            (identical(other.page, page) || other.page == page));
+        (other.runtimeType == runtimeType && other is _$ListTopicsImpl && (identical(other.limit, limit) || other.limit == limit) && (identical(other.page, page) || other.page == page));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -545,8 +474,7 @@ class _$ListTopicsImpl extends _ListTopics {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListTopicsImplCopyWith<_$ListTopicsImpl> get copyWith =>
-      __$$ListTopicsImplCopyWithImpl<_$ListTopicsImpl>(this, _$identity);
+  _$$ListTopicsImplCopyWith<_$ListTopicsImpl> get copyWith => __$$ListTopicsImplCopyWithImpl<_$ListTopicsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -555,12 +483,10 @@ class _$ListTopicsImpl extends _ListTopics {
 }
 
 abstract class _ListTopics extends ListTopics {
-  const factory _ListTopics({final int? limit, final int? page}) =
-      _$ListTopicsImpl;
+  const factory _ListTopics({final int? limit, final int? page}) = _$ListTopicsImpl;
   const _ListTopics._() : super._();
 
-  factory _ListTopics.fromJson(Map<String, dynamic> json) =
-      _$ListTopicsImpl.fromJson;
+  factory _ListTopics.fromJson(Map<String, dynamic> json) = _$ListTopicsImpl.fromJson;
 
   @override
   int? get limit;
@@ -571,6 +497,5 @@ abstract class _ListTopics extends ListTopics {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ListTopicsImplCopyWith<_$ListTopicsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ListTopicsImplCopyWith<_$ListTopicsImpl> get copyWith => throw _privateConstructorUsedError;
 }
