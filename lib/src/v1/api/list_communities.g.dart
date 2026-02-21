@@ -6,9 +6,7 @@ part of 'list_communities.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ListCommunitiesImpl _$$ListCommunitiesImplFromJson(
-  Map<String, dynamic> json,
-) => _$ListCommunitiesImpl(
+_$ListCommunitiesImpl _$$ListCommunitiesImplFromJson(Map<String, dynamic> json) => _$ListCommunitiesImpl(
   limit: (json['limit'] as num?)?.toInt(),
   page: (json['page'] as num?)?.toInt(),
   sort: json['sort'] as String?,
@@ -17,9 +15,7 @@ _$ListCommunitiesImpl _$$ListCommunitiesImplFromJson(
   auth: json['auth'] as String?,
 );
 
-Map<String, dynamic> _$$ListCommunitiesImplToJson(
-  _$ListCommunitiesImpl instance,
-) => <String, dynamic>{
+Map<String, dynamic> _$$ListCommunitiesImplToJson(_$ListCommunitiesImpl instance) => <String, dynamic>{
   if (instance.limit case final value?) 'limit': value,
   if (instance.page case final value?) 'page': value,
   if (instance.sort case final value?) 'sort': value,
