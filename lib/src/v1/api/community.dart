@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -21,6 +22,11 @@ class GetCommunity with _$GetCommunity implements PieFedApiQuery<GetCommunityRes
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetCommunityResponse responseFactory(Map<String, dynamic> json) => GetCommunityResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -37,6 +43,11 @@ class AddMod with _$AddMod implements PieFedApiQuery<AddModResponse> {
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   AddModResponse responseFactory(Map<String, dynamic> json) => AddModResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -60,6 +71,11 @@ class EditCommunity with _$EditCommunity implements PieFedApiQuery<GetCommunityR
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   GetCommunityResponse responseFactory(Map<String, dynamic> json) => GetCommunityResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -75,6 +91,11 @@ class DeleteCommunity with _$DeleteCommunity implements PieFedApiQuery<DeleteCom
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   DeleteCommunityResponse responseFactory(Map<String, dynamic> json) => DeleteCommunityResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -100,6 +121,11 @@ class CreateCommunity with _$CreateCommunity implements PieFedApiQuery<GetCommun
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   GetCommunityResponse responseFactory(Map<String, dynamic> json) => GetCommunityResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -115,6 +141,11 @@ class BlockCommunity with _$BlockCommunity implements PieFedApiQuery<BlockCommun
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   BlockCommunityResponse responseFactory(Map<String, dynamic> json) => BlockCommunityResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -130,6 +161,11 @@ class GetCommunityBans with _$GetCommunityBans implements PieFedApiQuery<GetComm
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetCommunityBansResponse responseFactory(Map<String, dynamic> json) => GetCommunityBansResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -152,6 +188,11 @@ class CreateCommunityFlair with _$CreateCommunityFlair implements PieFedApiQuery
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   CommunityFlairCreateResponse responseFactory(Map<String, dynamic> json) => CommunityFlairCreateResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -167,6 +208,11 @@ class DeleteCommunityFlair with _$DeleteCommunityFlair implements PieFedApiQuery
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   CommunityFlairDeleteResponse responseFactory(Map<String, dynamic> json) => CommunityFlairDeleteResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -182,6 +228,11 @@ class LeaveAllCommunities with _$LeaveAllCommunities implements PieFedApiQuery<U
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -202,6 +253,11 @@ class ModeratePostNsfw with _$ModeratePostNsfw implements PieFedApiQuery<GetPost
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -224,6 +280,11 @@ class EditCommunityFlair with _$EditCommunityFlair implements PieFedApiQuery<Com
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   CommunityFlairEditResponse responseFactory(Map<String, dynamic> json) => CommunityFlairEditResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -239,6 +300,11 @@ class CommunityUnban with _$CommunityUnban implements PieFedApiQuery<CommunityMo
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   CommunityModerationBanItem responseFactory(Map<String, dynamic> json) => CommunityModerationBanItem.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -254,6 +320,11 @@ class SubscribeCommunity with _$SubscribeCommunity implements PieFedApiQuery<Com
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   CommunityResponse responseFactory(Map<String, dynamic> json) => CommunityResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -277,4 +348,9 @@ class BanFromCommunity with _$BanFromCommunity implements PieFedApiQuery<Communi
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   CommunityModerationBanItem responseFactory(Map<String, dynamic> json) => CommunityModerationBanItem.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

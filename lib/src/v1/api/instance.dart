@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -20,4 +21,9 @@ class GetFederatedInstances with _$GetFederatedInstances implements PieFedApiQue
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetFederatedInstancesResponse responseFactory(Map<String, dynamic> json) => GetFederatedInstancesResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

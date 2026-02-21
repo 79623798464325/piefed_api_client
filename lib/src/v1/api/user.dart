@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -20,6 +21,11 @@ class Login with _$Login implements PieFedApiQuery<UserLoginResponse> {
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -46,6 +52,11 @@ class GetPersonDetails with _$GetPersonDetails implements PieFedApiQuery<GetPers
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetPersonDetailsResponse responseFactory(Map<String, dynamic> json) => GetPersonDetailsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -62,6 +73,11 @@ class GetMyUser with _$GetMyUser implements PieFedApiQuery<GetMyUserResponse> {
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetMyUserResponse responseFactory(Map<String, dynamic> json) => GetMyUserResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -78,6 +94,11 @@ class GetUnreadCount with _$GetUnreadCount implements PieFedApiQuery<GetUnreadCo
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetUnreadCountResponse responseFactory(Map<String, dynamic> json) => GetUnreadCountResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -94,6 +115,11 @@ class GetReplies with _$GetReplies implements PieFedApiQuery<GetRepliesResponse>
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetRepliesResponse responseFactory(Map<String, dynamic> json) => GetRepliesResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -110,6 +136,11 @@ class BlockUser with _$BlockUser implements PieFedApiQuery<BlockUserResponse> {
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   BlockUserResponse responseFactory(Map<String, dynamic> json) => BlockUserResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -126,6 +157,11 @@ class MarkAllNotificationsAsRead with _$MarkAllNotificationsAsRead implements Pi
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   UserMarkAllNotifsReadResponse responseFactory(Map<String, dynamic> json) => UserMarkAllNotifsReadResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -142,6 +178,11 @@ class BanUser with _$BanUser implements PieFedApiQuery<UserBanResponse> {
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserBanResponse responseFactory(Map<String, dynamic> json) => UserBanResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -158,6 +199,11 @@ class UnbanUser with _$UnbanUser implements PieFedApiQuery<UserBanResponse> {
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserBanResponse responseFactory(Map<String, dynamic> json) => UserBanResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -173,6 +219,11 @@ class GetMentions with _$GetMentions implements PieFedApiQuery<UserMentionsRespo
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   UserMentionsResponse responseFactory(Map<String, dynamic> json) => UserMentionsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -188,6 +239,11 @@ class GetNotifications with _$GetNotifications implements PieFedApiQuery<UserNot
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   UserNotificationsResponse responseFactory(Map<String, dynamic> json) => UserNotificationsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -203,6 +259,11 @@ class GetNotificationsCount with _$GetNotificationsCount implements PieFedApiQue
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   UserNotificationsCountResponse responseFactory(Map<String, dynamic> json) => UserNotificationsCountResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -218,6 +279,11 @@ class GetUserMedia with _$GetUserMedia implements PieFedApiQuery<UserMediaRespon
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   UserMediaResponse responseFactory(Map<String, dynamic> json) => UserMediaResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -233,6 +299,11 @@ class MarkAllAsReadUser with _$MarkAllAsReadUser implements PieFedApiQuery<UserM
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserMarkAllReadResponse responseFactory(Map<String, dynamic> json) => UserMarkAllReadResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -248,6 +319,11 @@ class AddUserNote with _$AddUserNote implements PieFedApiQuery<UserSetNoteRespon
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserSetNoteResponse responseFactory(Map<String, dynamic> json) => UserSetNoteResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -263,6 +339,11 @@ class SetUserFlair with _$SetUserFlair implements PieFedApiQuery<UserLoginRespon
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -278,6 +359,11 @@ class VerifyCredentials with _$VerifyCredentials implements PieFedApiQuery<UserL
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -293,6 +379,11 @@ class UpdateNotificationState with _$UpdateNotificationState implements PieFedAp
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -336,6 +427,11 @@ class SaveUserSettings with _$SaveUserSettings implements PieFedApiQuery<UserSav
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   UserSaveSettingsResponse responseFactory(Map<String, dynamic> json) => UserSaveSettingsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -351,4 +447,9 @@ class SubscribeUser with _$SubscribeUser implements PieFedApiQuery<UserSubscribe
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   UserSubscribeResponse responseFactory(Map<String, dynamic> json) => UserSubscribeResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

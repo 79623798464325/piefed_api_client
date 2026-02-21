@@ -60,7 +60,8 @@ class PieFedApiV1 implements PieFedApi {
         throw PieFedApiException(errorMessage);
       }
 
-      final Map<String, dynamic> json = jsonDecode(utf8.decode(res.bodyBytes));
+      final String responseBody = utf8.decode(res.bodyBytes);
+      final Map<String, dynamic> json = responseBody.isEmpty ? <String, dynamic>{} : jsonDecode(responseBody);
       return query.responseFactory(json);
     } catch (e) {
       if (e is PieFedApiException) rethrow;
@@ -78,9 +79,31 @@ class PieFedApiV1 implements PieFedApi {
         return _client.get(_buildUri(query.path, queryParams), headers: _buildHeaders(queryJson));
 
       case HttpMethod.post:
+        if (query.isMultipart) {
+          final request = http.MultipartRequest('POST', _buildUri(query.path));
+          request.headers.addAll(_buildHeaders(queryJson));
+          for (final entry in queryJson.entries) {
+            if (entry.value != null && entry.key != 'auth') {
+              request.fields[entry.key] = entry.value.toString();
+            }
+          }
+          request.files.addAll(query.multipartFiles!);
+          return _client.send(request).then(http.Response.fromStream);
+        }
         return _client.post(_buildUri(query.path), body: jsonEncode(queryJson), headers: _buildHeaders(queryJson, includeContentType: true));
 
       case HttpMethod.put:
+        if (query.isMultipart) {
+          final request = http.MultipartRequest('PUT', _buildUri(query.path));
+          request.headers.addAll(_buildHeaders(queryJson));
+          for (final entry in queryJson.entries) {
+            if (entry.value != null && entry.key != 'auth') {
+              request.fields[entry.key] = entry.value.toString();
+            }
+          }
+          request.files.addAll(query.multipartFiles!);
+          return _client.send(request).then(http.Response.fromStream);
+        }
         return _client.put(_buildUri(query.path), body: jsonEncode(queryJson), headers: _buildHeaders(queryJson, includeContentType: true));
 
       case HttpMethod.delete:

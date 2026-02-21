@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -30,4 +31,9 @@ class SavePost with _$SavePost implements PieFedApiQuery<GetPostResponse> {
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

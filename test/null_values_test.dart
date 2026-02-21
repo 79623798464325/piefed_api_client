@@ -262,5 +262,14 @@ void main() {
         expect(view.counts!.childCount, 0);
       });
     });
+    group('GetPostResponse', () {
+      test('handles empty json response', () {
+        final json = <String, dynamic>{};
+        final response = GetPostResponse.fromJson(json);
+        expect(response.post, isNull);
+        expect(response.creator, isNull);
+        expect(response.community, isNull);
+      });
+    });
   });
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -36,4 +37,9 @@ class ListComments with _$ListComments implements PieFedApiQuery<ListCommentsRes
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   ListCommentsResponse responseFactory(Map<String, dynamic> json) => ListCommentsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

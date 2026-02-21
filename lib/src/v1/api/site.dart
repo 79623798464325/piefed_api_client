@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -21,6 +22,11 @@ class GetSite with _$GetSite implements PieFedApiQuery<GetSiteResponse> {
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetSiteResponse responseFactory(Map<String, dynamic> json) => GetSiteResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -37,6 +43,11 @@ class GetSiteVersion with _$GetSiteVersion implements PieFedApiQuery<GetSiteVers
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetSiteVersionResponse responseFactory(Map<String, dynamic> json) => GetSiteVersionResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -53,6 +64,11 @@ class BlockInstance with _$BlockInstance implements PieFedApiQuery<BlockInstance
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   BlockInstanceResponse responseFactory(Map<String, dynamic> json) => BlockInstanceResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -69,6 +85,11 @@ class GetInstanceChooser with _$GetInstanceChooser implements PieFedApiQuery<Get
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetInstanceChooserResponse responseFactory(Map<String, dynamic> json) => GetInstanceChooserResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -85,4 +106,9 @@ class SearchInstances with _$SearchInstances implements PieFedApiQuery<SearchIns
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   SearchInstancesResponse responseFactory(Map<String, dynamic> json) => SearchInstancesResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

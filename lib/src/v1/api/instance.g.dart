@@ -6,6 +6,10 @@ part of 'instance.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetFederatedInstancesImpl _$$GetFederatedInstancesImplFromJson(Map<String, dynamic> json) => _$GetFederatedInstancesImpl();
+_$GetFederatedInstancesImpl _$$GetFederatedInstancesImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetFederatedInstancesImpl();
 
-Map<String, dynamic> _$$GetFederatedInstancesImplToJson(_$GetFederatedInstancesImpl instance) => <String, dynamic>{};
+Map<String, dynamic> _$$GetFederatedInstancesImplToJson(
+  _$GetFederatedInstancesImpl instance,
+) => <String, dynamic>{};

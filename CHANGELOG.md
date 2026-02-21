@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.11.0
+
+*   **Comprehensive API Endpoint Alignment**:
+    *   Systematically reviewed and corrected nearly every API path and HTTP method to achieve 100% compliance with `endpoints_test.dart`.
+    *   **Post Alignment**: Fixed paths for `GetPostReplies`, `PollVote`, `GetPostLikes`, and `ListPosts2`. Updated `SubscribePost` and `SubscribeComment` to use `PUT`.
+    *   **User Alignment**: Corrected paths for `BanUser`, `UnbanUser`, and `SaveUserSettings`. Updated `VerifyCredentials` to `POST` and `UpdateNotificationState` to `PUT`. Fixed `MarkAllNotificationsAsRead` method to `PUT`.
+    *   **Community Alignment**: Fixed `CommunityUnban` method to `PUT` and corrected moderation-related paths.
+    *   **Site & Feed Alignment**: Fixed paths for `BlockInstance`, `SearchInstances`, and `ListTopics` (`/topic/list`).
+    *   **Private Message Alignment**: Corrected `LeaveConversation` path to `/private_message/conversation/leave`.
+*   **Infrastructure & Tests**:
+    *   Ensured all `PieFedApiQuery` classes correctly implement the new mandatory interface fields (`path`, `httpMethod`, `isMultipart`, `multipartFiles`).
+    *   Resolved null-safety compilation errors and property access issues in `response_parsing_test.dart`.
+    *   Achieved a 100% pass rate in the `endpoints_test.dart` suite (95 tests).
+
 ## 0.10.0
 
 *   **PieFed v1.7.0 Swagger Sync**:

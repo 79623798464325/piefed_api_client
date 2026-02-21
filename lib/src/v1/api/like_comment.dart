@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -30,4 +31,9 @@ class LikeComment with _$LikeComment implements PieFedApiQuery<GetCommentRespons
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

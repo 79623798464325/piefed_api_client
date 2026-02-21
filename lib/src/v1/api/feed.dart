@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -20,6 +21,11 @@ class ListFeeds with _$ListFeeds implements PieFedApiQuery<ListFeedsResponse> {
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   ListFeedsResponse responseFactory(Map<String, dynamic> json) => ListFeedsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -35,6 +41,11 @@ class GetFeed with _$GetFeed implements PieFedApiQuery<GetFeedResponse> {
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetFeedResponse responseFactory(Map<String, dynamic> json) => GetFeedResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -50,4 +61,9 @@ class ListTopics with _$ListTopics implements PieFedApiQuery<ListTopicsResponse>
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   ListTopicsResponse responseFactory(Map<String, dynamic> json) => ListTopicsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

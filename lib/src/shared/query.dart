@@ -1,3 +1,5 @@
+import 'package:http/http.dart';
+
 /// HTTP methods supported by PieFed API.
 enum HttpMethod { get, put, post, delete }
 
@@ -20,6 +22,12 @@ abstract class PieFedApiQuery<T> {
 
   /// Deserializes the JSON response into the expected type.
   T responseFactory(Map<String, dynamic> json);
+
+  /// Optional list of multipart files for the request.
+  List<MultipartFile>? get multipartFiles;
+
+  /// Whether this query contains multipart files.
+  bool get isMultipart;
 }
 
 /// Marker interface for queries that require authentication.

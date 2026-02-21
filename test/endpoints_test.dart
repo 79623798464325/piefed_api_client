@@ -1,3 +1,4 @@
+import 'package:http/http.dart';
 import 'package:piefed_api_client/v1.dart';
 import 'package:test/test.dart';
 
@@ -715,9 +716,34 @@ void main() {
       expect(query.path, '/private_message/report');
       expect(query.httpMethod, HttpMethod.post);
     });
-    test('SuggestCompletion', () => expect(1, 1)); // We check these manually due to syntax constraints right now
-    test('UploadCommunityImage', () => expect(1, 1));
-    test('UploadUserImage', () => expect(1, 1));
-    test('DeleteImage', () => expect(1, 1));
+    test('UploadImage', () {
+      final file = MultipartFile.fromBytes('file', [0, 1, 2], filename: 'test.jpg');
+      final query = UploadImage(file: file, auth: 'token');
+      expect(query.path, '/upload/image');
+      expect(query.httpMethod, HttpMethod.post);
+      expect(query.isMultipart, isTrue);
+      expect(query.multipartFiles, contains(file));
+    });
+    test('UploadCommunityImage', () {
+      final file = MultipartFile.fromBytes('file', [0, 1, 2], filename: 'test.jpg');
+      final query = UploadCommunityImage(file: file, communityId: 1, auth: 'token');
+      expect(query.path, '/upload/community_image');
+      expect(query.httpMethod, HttpMethod.post);
+      expect(query.isMultipart, isTrue);
+      expect(query.multipartFiles, contains(file));
+    });
+    test('UploadUserImage', () {
+      final file = MultipartFile.fromBytes('file', [0, 1, 2], filename: 'test.jpg');
+      final query = UploadUserImage(file: file, auth: 'token');
+      expect(query.path, '/upload/user_image');
+      expect(query.httpMethod, HttpMethod.post);
+      expect(query.isMultipart, isTrue);
+      expect(query.multipartFiles, contains(file));
+    });
+    test('DeleteImage', () {
+      const query = DeleteImage(file: 'test.jpg', auth: 'token');
+      expect(query.path, '/image/delete');
+      expect(query.httpMethod, HttpMethod.post);
+    });
   });
 }

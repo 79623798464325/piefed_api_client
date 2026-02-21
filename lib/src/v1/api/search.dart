@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -31,6 +32,11 @@ class Search with _$Search implements PieFedApiQuery<SearchResponse> {
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   SearchResponse responseFactory(Map<String, dynamic> json) => SearchResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -41,9 +47,14 @@ class SuggestCompletion with _$SuggestCompletion implements PieFedApiQuery<GetSu
   factory SuggestCompletion.fromJson(Map<String, dynamic> json) => _$SuggestCompletionFromJson(json);
 
   @override
-  String get path => '/suggest_completion';
+  String get path => '/search/suggest';
   @override
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetSuggestCompletionResponse responseFactory(Map<String, dynamic> json) => GetSuggestCompletionResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

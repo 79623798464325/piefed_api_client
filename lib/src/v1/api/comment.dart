@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -21,6 +22,11 @@ class GetComment with _$GetComment implements PieFedApiQuery<GetCommentResponse>
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -44,6 +50,11 @@ class CreateComment with _$CreateComment implements PieFedApiQuery<GetCommentRes
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -60,6 +71,11 @@ class ReportComment with _$ReportComment implements PieFedApiQuery<ReportComment
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   ReportCommentResponse responseFactory(Map<String, dynamic> json) => ReportCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -76,6 +92,11 @@ class MarkCommentAsRead with _$MarkCommentAsRead implements PieFedApiQuery<GetCo
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -91,6 +112,11 @@ class EditComment with _$EditComment implements PieFedApiQuery<GetCommentRespons
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -106,6 +132,11 @@ class DeleteComment with _$DeleteComment implements PieFedApiQuery<DeleteComment
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   DeleteCommentResponse responseFactory(Map<String, dynamic> json) => DeleteCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -121,6 +152,11 @@ class RemoveComment with _$RemoveComment implements PieFedApiQuery<GetCommentRes
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -136,6 +172,11 @@ class GetCommentLikes with _$GetCommentLikes implements PieFedApiQuery<ListComme
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   ListCommentLikesResponse responseFactory(Map<String, dynamic> json) => ListCommentLikesResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -151,6 +192,11 @@ class LockComment with _$LockComment implements PieFedApiQuery<GetCommentRespons
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -166,6 +212,11 @@ class MarkCommentAsAnswer with _$MarkCommentAsAnswer implements PieFedApiQuery<G
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   GetCommentReplyResponse responseFactory(Map<String, dynamic> json) => GetCommentReplyResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -181,4 +232,9 @@ class SubscribeComment with _$SubscribeComment implements PieFedApiQuery<GetComm
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

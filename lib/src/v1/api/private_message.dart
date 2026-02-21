@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
-import '../models/models.dart';
 
 part 'private_message.freezed.dart';
 part 'private_message.g.dart';
@@ -21,6 +21,11 @@ class GetPrivateMessages with _$GetPrivateMessages implements PieFedApiQuery<Pri
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   PrivateMessagesResponse responseFactory(Map<String, dynamic> json) => PrivateMessagesResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -37,6 +42,11 @@ class CreatePrivateMessage with _$CreatePrivateMessage implements PieFedApiQuery
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   PrivateMessageResponse responseFactory(Map<String, dynamic> json) => PrivateMessageResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -52,6 +62,11 @@ class EditPrivateMessage with _$EditPrivateMessage implements PieFedApiQuery<Pri
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   PrivateMessageResponse responseFactory(Map<String, dynamic> json) => PrivateMessageResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -67,6 +82,11 @@ class DeletePrivateMessage with _$DeletePrivateMessage implements PieFedApiQuery
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   DeletePrivateMessageResponse responseFactory(Map<String, dynamic> json) => DeletePrivateMessageResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -85,6 +105,11 @@ class LeaveConversation with _$LeaveConversation implements PieFedApiQuery<Leave
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   LeaveConversationResponse responseFactory(Map<String, dynamic> json) => LeaveConversationResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -100,6 +125,11 @@ class MarkPrivateMessageAsRead with _$MarkPrivateMessageAsRead implements PieFed
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   PrivateMessageResponse responseFactory(Map<String, dynamic> json) => PrivateMessageResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -115,6 +145,11 @@ class ReportPrivateMessage with _$ReportPrivateMessage implements PieFedApiQuery
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   PrivateMessageResponse responseFactory(Map<String, dynamic> json) => PrivateMessageResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -132,4 +167,9 @@ class GetPrivateMessageConversation with _$GetPrivateMessageConversation impleme
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetPrivateMessageConversationResponse responseFactory(Map<String, dynamic> json) => GetPrivateMessageConversationResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

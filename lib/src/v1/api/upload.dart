@@ -25,6 +25,11 @@ class UploadImage with _$UploadImage implements PieFedApiQuery<UploadImageRespon
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UploadImageResponse responseFactory(Map<String, dynamic> json) => UploadImageResponse.fromJson(json);
+
+  @override
+  List<MultipartFile> get multipartFiles => [file];
+  @override
+  bool get isMultipart => true;
 }
 
 @freezed
@@ -45,6 +50,11 @@ class UploadCommunityImage with _$UploadCommunityImage implements PieFedApiQuery
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   UploadImageResponse responseFactory(Map<String, dynamic> json) => UploadImageResponse.fromJson(json);
+
+  @override
+  List<MultipartFile> get multipartFiles => [file];
+  @override
+  bool get isMultipart => true;
 }
 
 @freezed
@@ -64,6 +74,11 @@ class UploadUserImage with _$UploadUserImage implements PieFedApiQuery<ImageUplo
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   ImageUploadResponse responseFactory(Map<String, dynamic> json) => ImageUploadResponse.fromJson(json);
+
+  @override
+  List<MultipartFile> get multipartFiles => [file];
+  @override
+  bool get isMultipart => true;
 }
 
 @freezed
@@ -79,4 +94,9 @@ class DeleteImage with _$DeleteImage implements PieFedApiQuery<ImageDeleteRespon
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   ImageDeleteResponse responseFactory(Map<String, dynamic> json) => ImageDeleteResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

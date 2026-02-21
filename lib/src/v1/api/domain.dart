@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -20,4 +21,9 @@ class BlockDomain with _$BlockDomain implements PieFedApiQuery<BlockDomainRespon
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   BlockDomainResponse responseFactory(Map<String, dynamic> json) => BlockDomainResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }

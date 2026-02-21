@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 import '../models/api.dart';
@@ -30,4 +31,9 @@ class FollowCommunity with _$FollowCommunity implements PieFedApiQuery<Community
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   CommunityResponse responseFactory(Map<String, dynamic> json) => CommunityResponse.fromJson(json);
+
+  @override
+  bool get isMultipart => false;
+  @override
+  List<MultipartFile>? get multipartFiles => null;
 }

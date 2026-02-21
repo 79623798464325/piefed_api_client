@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 
 import '../../shared/query.dart';
 
@@ -26,6 +27,11 @@ class GetPost with _$GetPost implements PieFedApiQuery<GetPostResponse> {
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -59,6 +65,11 @@ class CreatePost with _$CreatePost implements PieFedApiQuery<GetPostResponse> {
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -75,6 +86,11 @@ class ReportPost with _$ReportPost implements PieFedApiQuery<ReportPostResponse>
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   ReportPostResponse responseFactory(Map<String, dynamic> json) => ReportPostResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -96,6 +112,11 @@ class MarkPostAsRead with _$MarkPostAsRead implements PieFedApiQuery<GetPostResp
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -112,6 +133,11 @@ class GetPostReplies with _$GetPostReplies implements PieFedApiQuery<GetRepliesR
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetRepliesResponse responseFactory(Map<String, dynamic> json) => GetRepliesResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -140,6 +166,11 @@ class EditPost with _$EditPost implements PieFedApiQuery<GetPostResponse> {
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -155,6 +186,11 @@ class DeletePost with _$DeletePost implements PieFedApiQuery<DeletePostResponse>
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   DeletePostResponse responseFactory(Map<String, dynamic> json) => DeletePostResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -180,10 +216,16 @@ class FeaturePost with _$FeaturePost implements PieFedApiQuery<GetPostResponse> 
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
 class RemovePost with _$RemovePost implements PieFedApiQuery<GetPostResponse> {
+  @JsonSerializable(includeIfNull: false)
   const factory RemovePost({@JsonKey(name: 'post_id') required int postId, required bool removed, String? reason, required String auth}) = _RemovePost;
 
   const RemovePost._();
@@ -200,6 +242,11 @@ class RemovePost with _$RemovePost implements PieFedApiQuery<GetPostResponse> {
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -220,6 +267,11 @@ class PollVote with _$PollVote implements PieFedApiQuery<GetPostResponse> {
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -235,6 +287,11 @@ class GetSiteMetadata with _$GetSiteMetadata implements PieFedApiQuery<GetSiteMe
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetSiteMetadataResponse responseFactory(Map<String, dynamic> json) => GetSiteMetadataResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -250,6 +307,11 @@ class GetPostLikes with _$GetPostLikes implements PieFedApiQuery<GetPostLikesRes
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   GetPostLikesResponse responseFactory(Map<String, dynamic> json) => GetPostLikesResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -280,6 +342,11 @@ class ListPosts2 with _$ListPosts2 implements PieFedApiQuery<ListPostsResponse> 
   HttpMethod get httpMethod => HttpMethod.get;
   @override
   ListPostsResponse responseFactory(Map<String, dynamic> json) => ListPostsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -295,6 +362,11 @@ class AssignPostFlair with _$AssignPostFlair implements PieFedApiQuery<PostSetFl
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   PostSetFlairResponse responseFactory(Map<String, dynamic> json) => PostSetFlairResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -315,6 +387,11 @@ class HidePost with _$HidePost implements PieFedApiQuery<GetPostResponse> {
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -335,6 +412,11 @@ class LockPost with _$LockPost implements PieFedApiQuery<GetPostResponse> {
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
 
 @freezed
@@ -355,4 +437,9 @@ class SubscribePost with _$SubscribePost implements PieFedApiQuery<GetPostRespon
     }
     return GetPostResponse.fromJson(json);
   }
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
 }
