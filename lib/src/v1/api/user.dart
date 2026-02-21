@@ -204,3 +204,151 @@ class GetNotificationsCount with _$GetNotificationsCount implements PieFedApiQue
   @override
   UserNotificationsCountResponse responseFactory(Map<String, dynamic> json) => UserNotificationsCountResponse.fromJson(json);
 }
+
+@freezed
+class GetUserMedia with _$GetUserMedia implements PieFedApiQuery<UserMediaResponse> {
+  const factory GetUserMedia({int? limit, int? page, String? sort, @JsonKey(name: 'unread_only') bool? unreadOnly, required String auth}) = _GetUserMedia;
+
+  const GetUserMedia._();
+  factory GetUserMedia.fromJson(Map<String, dynamic> json) => _$GetUserMediaFromJson(json);
+
+  @override
+  String get path => '/user/media';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  UserMediaResponse responseFactory(Map<String, dynamic> json) => UserMediaResponse.fromJson(json);
+}
+
+@freezed
+class MarkAllAsReadUser with _$MarkAllAsReadUser implements PieFedApiQuery<UserMarkAllReadResponse> {
+  const factory MarkAllAsReadUser({required String auth}) = _MarkAllAsReadUser;
+
+  const MarkAllAsReadUser._();
+  factory MarkAllAsReadUser.fromJson(Map<String, dynamic> json) => _$MarkAllAsReadUserFromJson(json);
+
+  @override
+  String get path => '/user/mark_all_as_read';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserMarkAllReadResponse responseFactory(Map<String, dynamic> json) => UserMarkAllReadResponse.fromJson(json);
+}
+
+@freezed
+class AddUserNote with _$AddUserNote implements PieFedApiQuery<UserSetNoteResponse> {
+  const factory AddUserNote({@JsonKey(name: 'person_id') required int personId, required String note, required String auth}) = _AddUserNote;
+
+  const AddUserNote._();
+  factory AddUserNote.fromJson(Map<String, dynamic> json) => _$AddUserNoteFromJson(json);
+
+  @override
+  String get path => '/user/note';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserSetNoteResponse responseFactory(Map<String, dynamic> json) => UserSetNoteResponse.fromJson(json);
+}
+
+@freezed
+class SetUserFlair with _$SetUserFlair implements PieFedApiQuery<UserLoginResponse> {
+  const factory SetUserFlair({@JsonKey(name: 'community_id') required int communityId, @JsonKey(name: 'flair_text') String? flairText, required String auth}) = _SetUserFlair;
+
+  const SetUserFlair._();
+  factory SetUserFlair.fromJson(Map<String, dynamic> json) => _$SetUserFlairFromJson(json);
+
+  @override
+  String get path => '/user/set_flair';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+}
+
+@freezed
+class VerifyCredentials with _$VerifyCredentials implements PieFedApiQuery<UserLoginResponse> {
+  const factory VerifyCredentials({required String username, required String password}) = _VerifyCredentials;
+
+  const VerifyCredentials._();
+  factory VerifyCredentials.fromJson(Map<String, dynamic> json) => _$VerifyCredentialsFromJson(json);
+
+  @override
+  String get path => '/user/verify_credentials';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+}
+
+@freezed
+class UpdateNotificationState with _$UpdateNotificationState implements PieFedApiQuery<UserLoginResponse> {
+  const factory UpdateNotificationState({@JsonKey(name: 'notif_id') required int notifId, @JsonKey(name: 'read_state') required bool readState, required String auth}) = _UpdateNotificationState;
+
+  const UpdateNotificationState._();
+  factory UpdateNotificationState.fromJson(Map<String, dynamic> json) => _$UpdateNotificationStateFromJson(json);
+
+  @override
+  String get path => '/user/notification_state';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+}
+
+@freezed
+class SaveUserSettings with _$SaveUserSettings implements PieFedApiQuery<UserSaveSettingsResponse> {
+  const factory SaveUserSettings({
+    @JsonKey(name: 'accept_private_messages') String? acceptPrivateMessages,
+    String? avatar,
+    String? bio,
+    bool? bot,
+    @JsonKey(name: 'bot_visibility') String? botVisibility,
+    @JsonKey(name: 'community_keyword_filter') List<String>? communityKeywordFilter,
+    String? cover,
+    @JsonKey(name: 'default_comment_sort_type') String? defaultCommentSortType,
+    @JsonKey(name: 'default_sort_type') String? defaultSortType,
+    @JsonKey(name: 'email_unread') bool? emailUnread,
+    @JsonKey(name: 'extra_fields') List<String>? extraFields,
+    @JsonKey(name: 'federate_votes') bool? federateVotes,
+    @JsonKey(name: 'feed_auto_follow') bool? feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') bool? feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') bool? hideLowQuality,
+    bool? indexable,
+    bool? newsletter,
+    @JsonKey(name: 'nsfl_visibility') String? nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') String? nsfwVisibility,
+    @JsonKey(name: 'genai_visibility') String? genaiVisibility,
+    @JsonKey(name: 'reply_collapse_threshold') int? replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') int? replyHideThreshold,
+    @JsonKey(name: 'show_nsfw') bool? showNsfw,
+    @JsonKey(name: 'show_nsfl') bool? showNsfl,
+    @JsonKey(name: 'show_read_posts') bool? showReadPosts,
+    bool? searchable,
+    required String auth,
+  }) = _SaveUserSettings;
+
+  const SaveUserSettings._();
+  factory SaveUserSettings.fromJson(Map<String, dynamic> json) => _$SaveUserSettingsFromJson(json);
+
+  @override
+  String get path => '/user/save_user_settings';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  UserSaveSettingsResponse responseFactory(Map<String, dynamic> json) => UserSaveSettingsResponse.fromJson(json);
+}
+
+@freezed
+class SubscribeUser with _$SubscribeUser implements PieFedApiQuery<UserSubscribeResponse> {
+  const factory SubscribeUser({@JsonKey(name: 'person_id') required int personId, required bool subscribe, required String auth}) = _SubscribeUser;
+
+  const SubscribeUser._();
+  factory SubscribeUser.fromJson(Map<String, dynamic> json) => _$SubscribeUserFromJson(json);
+
+  @override
+  String get path => '/user/subscribe';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  UserSubscribeResponse responseFactory(Map<String, dynamic> json) => UserSubscribeResponse.fromJson(json);
+}

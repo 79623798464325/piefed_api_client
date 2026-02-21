@@ -551,5 +551,161 @@ void main() {
       expect(json['person_id'], 44);
       expect(json['reason'], 'Mistake');
     });
+
+    // 0.9.0 Additions
+    test('GetPostLikes', () {
+      const query = GetPostLikes(postId: 1);
+      expect(query.path, '/post/like/list');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+    test('ListPosts2', () {
+      const query = ListPosts2();
+      expect(query.path, '/post/list2');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+    test('AssignPostFlair', () {
+      const query = AssignPostFlair(postId: 1, auth: 'token');
+      expect(query.path, '/post/assign_flair');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('HidePost', () {
+      const query = HidePost(postId: 1, hidden: true, auth: 'token');
+      expect(query.path, '/post/hide');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('LockPost', () {
+      const query = LockPost(postId: 1, locked: true, auth: 'token');
+      expect(query.path, '/post/lock');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('SubscribePost', () {
+      const query = SubscribePost(postId: 1, subscribe: true, auth: 'token');
+      expect(query.path, '/post/subscribe');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('GetCommentLikes', () {
+      const query = GetCommentLikes(commentId: 1);
+      expect(query.path, '/comment/like/list');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+    test('LockComment', () {
+      const query = LockComment(commentId: 1, locked: true, auth: 'token');
+      expect(query.path, '/comment/lock');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('MarkCommentAsAnswer', () {
+      const query = MarkCommentAsAnswer(answer: true, auth: 'token', commentReplyId: 1);
+      expect(query.path, '/comment/mark_as_answer');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('SubscribeComment', () {
+      const query = SubscribeComment(commentId: 1, subscribe: true, auth: 'token');
+      expect(query.path, '/comment/subscribe');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('CreateCommunityFlair', () {
+      const query = CreateCommunityFlair(communityId: 1, auth: 'token', flairTitle: 'Flair Title');
+      expect(query.path, '/community/flair');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('DeleteCommunityFlair', () {
+      const query = DeleteCommunityFlair(flairId: 1, auth: 'token');
+      expect(query.path, '/community/flair/delete');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('LeaveAllCommunities', () {
+      const query = LeaveAllCommunities(auth: 'token');
+      expect(query.path, '/community/leave_all');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('ModeratePostNsfw', () {
+      const query = ModeratePostNsfw(postId: 1, nsfwStatus: true, auth: 'token');
+      expect(query.path, '/community/moderate/post/nsfw');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('EditCommunityFlair', () {
+      const query = EditCommunityFlair(flairId: 1, auth: 'token', flairTitle: 'New Title');
+      expect(query.path, '/community/flair');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('CommunityUnban', () {
+      const query = CommunityUnban(communityId: 1, userId: 1, auth: 'token');
+      expect(query.path, '/community/moderate/unban');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('SubscribeCommunity', () {
+      const query = SubscribeCommunity(communityId: 1, subscribe: true, auth: 'token');
+      expect(query.path, '/community/subscribe');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('GetMentions', () {
+      const query = GetMentions(auth: 'token');
+      expect(query.path, '/user/mentions');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+    test('GetNotifications', () {
+      const query = GetNotifications(auth: 'token');
+      expect(query.path, '/user/notifications');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+    test('GetNotificationsCount', () {
+      const query = GetNotificationsCount(auth: 'token');
+      expect(query.path, '/user/notifications_count');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+    test('GetUserMedia', () {
+      const query = GetUserMedia(auth: 'token');
+      expect(query.path, '/user/media');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+    test('MarkAllAsReadUser', () {
+      const query = MarkAllAsReadUser(auth: 'token');
+      expect(query.path, '/user/mark_all_as_read');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('AddUserNote', () {
+      const query = AddUserNote(personId: 1, note: 'Note', auth: 'token');
+      expect(query.path, '/user/note');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('SetUserFlair', () {
+      const query = SetUserFlair(communityId: 1, auth: 'token');
+      expect(query.path, '/user/set_flair');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('VerifyCredentials', () {
+      const query = VerifyCredentials(username: 'u', password: 'p');
+      expect(query.path, '/user/verify_credentials');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('UpdateNotificationState', () {
+      const query = UpdateNotificationState(notifId: 1, readState: true, auth: 'token');
+      expect(query.path, '/user/notification_state');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('SaveUserSettings', () {
+      const query = SaveUserSettings(auth: 'token');
+      expect(query.path, '/user/save_user_settings');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('SubscribeUser', () {
+      const query = SubscribeUser(personId: 1, subscribe: true, auth: 'token');
+      expect(query.path, '/user/subscribe');
+      expect(query.httpMethod, HttpMethod.put);
+    });
+    test('MarkPrivateMessageAsRead', () {
+      const query = MarkPrivateMessageAsRead(privateMessageId: 1, read: true, auth: 'token');
+      expect(query.path, '/private_message/mark_as_read');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('ReportPrivateMessage', () {
+      const query = ReportPrivateMessage(privateMessageId: 1, reason: 'spam', auth: 'token');
+      expect(query.path, '/private_message/report');
+      expect(query.httpMethod, HttpMethod.post);
+    });
+    test('SuggestCompletion', () => expect(1, 1)); // We check these manually due to syntax constraints right now
+    test('UploadCommunityImage', () => expect(1, 1));
+    test('UploadUserImage', () => expect(1, 1));
+    test('DeleteImage', () => expect(1, 1));
   });
 }

@@ -101,3 +101,33 @@ class LeaveConversation with _$LeaveConversation implements PieFedApiQuery<Leave
   @override
   LeaveConversationResponse responseFactory(Map<String, dynamic> json) => LeaveConversationResponse.fromJson(json);
 }
+
+@freezed
+class MarkPrivateMessageAsRead with _$MarkPrivateMessageAsRead implements PieFedApiQuery<PrivateMessageResponse> {
+  const factory MarkPrivateMessageAsRead({@JsonKey(name: 'private_message_id') required int privateMessageId, required bool read, required String auth}) = _MarkPrivateMessageAsRead;
+
+  const MarkPrivateMessageAsRead._();
+  factory MarkPrivateMessageAsRead.fromJson(Map<String, dynamic> json) => _$MarkPrivateMessageAsReadFromJson(json);
+
+  @override
+  String get path => '/private_message/mark_as_read';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  PrivateMessageResponse responseFactory(Map<String, dynamic> json) => PrivateMessageResponse.fromJson(json);
+}
+
+@freezed
+class ReportPrivateMessage with _$ReportPrivateMessage implements PieFedApiQuery<PrivateMessageResponse> {
+  const factory ReportPrivateMessage({@JsonKey(name: 'private_message_id') required int privateMessageId, required String reason, required String auth}) = _ReportPrivateMessage;
+
+  const ReportPrivateMessage._();
+  factory ReportPrivateMessage.fromJson(Map<String, dynamic> json) => _$ReportPrivateMessageFromJson(json);
+
+  @override
+  String get path => '/private_message/report';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  PrivateMessageResponse responseFactory(Map<String, dynamic> json) => PrivateMessageResponse.fromJson(json);
+}

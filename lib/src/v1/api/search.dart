@@ -32,3 +32,18 @@ class Search with _$Search implements PieFedApiQuery<SearchResponse> {
   @override
   SearchResponse responseFactory(Map<String, dynamic> json) => SearchResponse.fromJson(json);
 }
+
+@freezed
+class SuggestCompletion with _$SuggestCompletion implements PieFedApiQuery<GetSuggestCompletionResponse> {
+  const factory SuggestCompletion({required String q}) = _SuggestCompletion;
+
+  const SuggestCompletion._();
+  factory SuggestCompletion.fromJson(Map<String, dynamic> json) => _$SuggestCompletionFromJson(json);
+
+  @override
+  String get path => '/suggest_completion';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetSuggestCompletionResponse responseFactory(Map<String, dynamic> json) => GetSuggestCompletionResponse.fromJson(json);
+}

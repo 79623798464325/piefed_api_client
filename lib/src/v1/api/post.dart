@@ -236,3 +236,144 @@ class GetSiteMetadata with _$GetSiteMetadata implements PieFedApiQuery<GetSiteMe
   @override
   GetSiteMetadataResponse responseFactory(Map<String, dynamic> json) => GetSiteMetadataResponse.fromJson(json);
 }
+
+@freezed
+class GetPostLikes with _$GetPostLikes implements PieFedApiQuery<GetPostLikesResponse> {
+  const factory GetPostLikes({
+    @JsonKey(name: 'post_id') required int postId,
+    int? page,
+    int? limit,
+    String? auth,
+  }) = _GetPostLikes;
+
+  const GetPostLikes._();
+  factory GetPostLikes.fromJson(Map<String, dynamic> json) => _$GetPostLikesFromJson(json);
+
+  @override
+  String get path => '/post/like/list';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetPostLikesResponse responseFactory(Map<String, dynamic> json) => GetPostLikesResponse.fromJson(json);
+}
+
+@freezed
+class ListPosts2 with _$ListPosts2 implements PieFedApiQuery<ListPostsResponse> {
+  const factory ListPosts2({
+    @JsonKey(name: 'type_') String? type,
+    String? sort,
+    @JsonKey(name: 'community_id') int? communityId,
+    @JsonKey(name: 'community_name') String? communityName,
+    @JsonKey(name: 'saved_only') bool? savedOnly,
+    @JsonKey(name: 'person_id') int? personId,
+    int? limit,
+    int? page,
+    @JsonKey(name: 'liked_only') bool? likedOnly,
+    @JsonKey(name: 'feed_id') int? feedId,
+    @JsonKey(name: 'topic_id') int? topicId,
+    @JsonKey(name: 'ignore_sticky') bool? ignoreSticky,
+    String? q,
+    String? auth,
+  }) = _ListPosts2;
+
+  const ListPosts2._();
+  factory ListPosts2.fromJson(Map<String, dynamic> json) => _$ListPosts2FromJson(json);
+
+  @override
+  String get path => '/post/list2';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  ListPostsResponse responseFactory(Map<String, dynamic> json) => ListPostsResponse.fromJson(json);
+}
+
+@freezed
+class AssignPostFlair with _$AssignPostFlair implements PieFedApiQuery<PostSetFlairResponse> {
+  const factory AssignPostFlair({
+    @JsonKey(name: 'post_id') required int postId,
+    @JsonKey(name: 'flair_id_list') List<int>? flairIdList,
+    required String auth,
+  }) = _AssignPostFlair;
+
+  const AssignPostFlair._();
+  factory AssignPostFlair.fromJson(Map<String, dynamic> json) => _$AssignPostFlairFromJson(json);
+
+  @override
+  String get path => '/post/assign_flair';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  PostSetFlairResponse responseFactory(Map<String, dynamic> json) => PostSetFlairResponse.fromJson(json);
+}
+
+@freezed
+class HidePost with _$HidePost implements PieFedApiQuery<GetPostResponse> {
+  const factory HidePost({
+    @JsonKey(name: 'post_id') required int postId,
+    required bool hidden,
+    required String auth,
+  }) = _HidePost;
+
+  const HidePost._();
+  factory HidePost.fromJson(Map<String, dynamic> json) => _$HidePostFromJson(json);
+
+  @override
+  String get path => '/post/hide';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
+}
+
+@freezed
+class LockPost with _$LockPost implements PieFedApiQuery<GetPostResponse> {
+  const factory LockPost({
+    @JsonKey(name: 'post_id') required int postId,
+    required bool locked,
+    required String auth,
+  }) = _LockPost;
+
+  const LockPost._();
+  factory LockPost.fromJson(Map<String, dynamic> json) => _$LockPostFromJson(json);
+
+  @override
+  String get path => '/post/lock';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
+}
+
+@freezed
+class SubscribePost with _$SubscribePost implements PieFedApiQuery<GetPostResponse> {
+  const factory SubscribePost({
+    @JsonKey(name: 'post_id') required int postId,
+    required bool subscribe,
+    required String auth,
+  }) = _SubscribePost;
+
+  const SubscribePost._();
+  factory SubscribePost.fromJson(Map<String, dynamic> json) => _$SubscribePostFromJson(json);
+
+  @override
+  String get path => '/post/subscribe';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
+}

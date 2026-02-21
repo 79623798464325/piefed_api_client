@@ -131,3 +131,127 @@ class GetCommunityBans with _$GetCommunityBans implements PieFedApiQuery<GetComm
   @override
   GetCommunityBansResponse responseFactory(Map<String, dynamic> json) => GetCommunityBansResponse.fromJson(json);
 }
+
+@freezed
+class CreateCommunityFlair with _$CreateCommunityFlair implements PieFedApiQuery<CommunityFlairCreateResponse> {
+  const factory CreateCommunityFlair({
+    @JsonKey(name: 'community_id') required int communityId,
+    @JsonKey(name: 'flair_title') required String flairTitle,
+    @JsonKey(name: 'text_color') String? textColor,
+    @JsonKey(name: 'background_color') String? backgroundColor,
+    @JsonKey(name: 'blur_images') bool? blurImages,
+    required String auth,
+  }) = _CreateCommunityFlair;
+
+  const CreateCommunityFlair._();
+  factory CreateCommunityFlair.fromJson(Map<String, dynamic> json) => _$CreateCommunityFlairFromJson(json);
+
+  @override
+  String get path => '/community/flair';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  CommunityFlairCreateResponse responseFactory(Map<String, dynamic> json) => CommunityFlairCreateResponse.fromJson(json);
+}
+
+@freezed
+class DeleteCommunityFlair with _$DeleteCommunityFlair implements PieFedApiQuery<CommunityFlairDeleteResponse> {
+  const factory DeleteCommunityFlair({@JsonKey(name: 'flair_id') required int flairId, required String auth}) = _DeleteCommunityFlair;
+
+  const DeleteCommunityFlair._();
+  factory DeleteCommunityFlair.fromJson(Map<String, dynamic> json) => _$DeleteCommunityFlairFromJson(json);
+
+  @override
+  String get path => '/community/flair/delete';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  CommunityFlairDeleteResponse responseFactory(Map<String, dynamic> json) => CommunityFlairDeleteResponse.fromJson(json);
+}
+
+@freezed
+class LeaveAllCommunities with _$LeaveAllCommunities implements PieFedApiQuery<UserLoginResponse> {
+  const factory LeaveAllCommunities({required String auth}) = _LeaveAllCommunities;
+
+  const LeaveAllCommunities._();
+  factory LeaveAllCommunities.fromJson(Map<String, dynamic> json) => _$LeaveAllCommunitiesFromJson(json);
+
+  @override
+  String get path => '/community/leave_all';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserLoginResponse responseFactory(Map<String, dynamic> json) => UserLoginResponse.fromJson(json);
+}
+
+@freezed
+class ModeratePostNsfw with _$ModeratePostNsfw implements PieFedApiQuery<GetPostResponse> {
+  const factory ModeratePostNsfw({@JsonKey(name: 'post_id') required int postId, @JsonKey(name: 'nsfw_status') required bool nsfwStatus, required String auth}) = _ModeratePostNsfw;
+
+  const ModeratePostNsfw._();
+  factory ModeratePostNsfw.fromJson(Map<String, dynamic> json) => _$ModeratePostNsfwFromJson(json);
+
+  @override
+  String get path => '/community/moderate/post/nsfw';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetPostResponse responseFactory(Map<String, dynamic> json) {
+    if (json.containsKey('post_view')) {
+      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
+    }
+    return GetPostResponse.fromJson(json);
+  }
+}
+
+@freezed
+class EditCommunityFlair with _$EditCommunityFlair implements PieFedApiQuery<CommunityFlairEditResponse> {
+  const factory EditCommunityFlair({
+    @JsonKey(name: 'flair_id') required int flairId,
+    @JsonKey(name: 'flair_title') String? flairTitle,
+    @JsonKey(name: 'text_color') String? textColor,
+    @JsonKey(name: 'background_color') String? backgroundColor,
+    @JsonKey(name: 'blur_images') bool? blurImages,
+    required String auth,
+  }) = _EditCommunityFlair;
+
+  const EditCommunityFlair._();
+  factory EditCommunityFlair.fromJson(Map<String, dynamic> json) => _$EditCommunityFlairFromJson(json);
+
+  @override
+  String get path => '/community/flair';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  CommunityFlairEditResponse responseFactory(Map<String, dynamic> json) => CommunityFlairEditResponse.fromJson(json);
+}
+
+@freezed
+class CommunityUnban with _$CommunityUnban implements PieFedApiQuery<CommunityModerationBanItem> {
+  const factory CommunityUnban({@JsonKey(name: 'community_id') required int communityId, @JsonKey(name: 'user_id') required int userId, required String auth}) = _CommunityUnban;
+
+  const CommunityUnban._();
+  factory CommunityUnban.fromJson(Map<String, dynamic> json) => _$CommunityUnbanFromJson(json);
+
+  @override
+  String get path => '/community/moderate/unban';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  CommunityModerationBanItem responseFactory(Map<String, dynamic> json) => CommunityModerationBanItem.fromJson(json);
+}
+
+@freezed
+class SubscribeCommunity with _$SubscribeCommunity implements PieFedApiQuery<CommunityResponse> {
+  const factory SubscribeCommunity({@JsonKey(name: 'community_id') required int communityId, required bool subscribe, required String auth}) = _SubscribeCommunity;
+
+  const SubscribeCommunity._();
+  factory SubscribeCommunity.fromJson(Map<String, dynamic> json) => _$SubscribeCommunityFromJson(json);
+
+  @override
+  String get path => '/community/subscribe';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  CommunityResponse responseFactory(Map<String, dynamic> json) => CommunityResponse.fromJson(json);
+}

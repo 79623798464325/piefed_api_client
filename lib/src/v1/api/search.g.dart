@@ -32,3 +32,11 @@ Map<String, dynamic> _$$SearchImplToJson(_$SearchImpl instance) =>
       if (instance.limit case final value?) 'limit': value,
       if (instance.auth case final value?) 'auth': value,
     };
+
+_$SuggestCompletionImpl _$$SuggestCompletionImplFromJson(
+  Map<String, dynamic> json,
+) => _$SuggestCompletionImpl(q: json['q'] as String);
+
+Map<String, dynamic> _$$SuggestCompletionImplToJson(
+  _$SuggestCompletionImpl instance,
+) => <String, dynamic>{'q': instance.q};

@@ -215,3 +215,22 @@ class CommentReplyView with _$CommentReplyView {
 
   factory CommentReplyView.fromJson(Map<String, dynamic> json) => _$CommentReplyViewFromJson(json);
 }
+
+@freezed
+class MediaView with _$MediaView {
+  const factory MediaView({required String url, String? name}) = _MediaView;
+
+  factory MediaView.fromJson(Map<String, dynamic> json) => _$MediaViewFromJson(json);
+}
+
+@freezed
+class CommentLikeView with _$CommentLikeView {
+  const factory CommentLikeView({
+    required Person creator,
+    @JsonKey(name: 'creator_banned') required bool creatorBanned,
+    @JsonKey(name: 'creator_banned_from_community') required bool creatorBannedFromCommunity,
+    required int score,
+  }) = _CommentLikeView;
+
+  factory CommentLikeView.fromJson(Map<String, dynamic> json) => _$CommentLikeViewFromJson(json);
+}

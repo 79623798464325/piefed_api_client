@@ -1256,3 +1256,449 @@ abstract class _LeaveConversation extends LeaveConversation {
   _$$LeaveConversationImplCopyWith<_$LeaveConversationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+MarkPrivateMessageAsRead _$MarkPrivateMessageAsReadFromJson(
+  Map<String, dynamic> json,
+) {
+  return _MarkPrivateMessageAsRead.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MarkPrivateMessageAsRead {
+  @JsonKey(name: 'private_message_id')
+  int get privateMessageId => throw _privateConstructorUsedError;
+  bool get read => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this MarkPrivateMessageAsRead to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of MarkPrivateMessageAsRead
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $MarkPrivateMessageAsReadCopyWith<MarkPrivateMessageAsRead> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MarkPrivateMessageAsReadCopyWith<$Res> {
+  factory $MarkPrivateMessageAsReadCopyWith(
+    MarkPrivateMessageAsRead value,
+    $Res Function(MarkPrivateMessageAsRead) then,
+  ) = _$MarkPrivateMessageAsReadCopyWithImpl<$Res, MarkPrivateMessageAsRead>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'private_message_id') int privateMessageId,
+    bool read,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$MarkPrivateMessageAsReadCopyWithImpl<
+  $Res,
+  $Val extends MarkPrivateMessageAsRead
+>
+    implements $MarkPrivateMessageAsReadCopyWith<$Res> {
+  _$MarkPrivateMessageAsReadCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of MarkPrivateMessageAsRead
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? privateMessageId = null,
+    Object? read = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            privateMessageId:
+                null == privateMessageId
+                    ? _value.privateMessageId
+                    : privateMessageId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            read:
+                null == read
+                    ? _value.read
+                    : read // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$MarkPrivateMessageAsReadImplCopyWith<$Res>
+    implements $MarkPrivateMessageAsReadCopyWith<$Res> {
+  factory _$$MarkPrivateMessageAsReadImplCopyWith(
+    _$MarkPrivateMessageAsReadImpl value,
+    $Res Function(_$MarkPrivateMessageAsReadImpl) then,
+  ) = __$$MarkPrivateMessageAsReadImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'private_message_id') int privateMessageId,
+    bool read,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$MarkPrivateMessageAsReadImplCopyWithImpl<$Res>
+    extends
+        _$MarkPrivateMessageAsReadCopyWithImpl<
+          $Res,
+          _$MarkPrivateMessageAsReadImpl
+        >
+    implements _$$MarkPrivateMessageAsReadImplCopyWith<$Res> {
+  __$$MarkPrivateMessageAsReadImplCopyWithImpl(
+    _$MarkPrivateMessageAsReadImpl _value,
+    $Res Function(_$MarkPrivateMessageAsReadImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of MarkPrivateMessageAsRead
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? privateMessageId = null,
+    Object? read = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$MarkPrivateMessageAsReadImpl(
+        privateMessageId:
+            null == privateMessageId
+                ? _value.privateMessageId
+                : privateMessageId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        read:
+            null == read
+                ? _value.read
+                : read // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MarkPrivateMessageAsReadImpl extends _MarkPrivateMessageAsRead {
+  const _$MarkPrivateMessageAsReadImpl({
+    @JsonKey(name: 'private_message_id') required this.privateMessageId,
+    required this.read,
+    required this.auth,
+  }) : super._();
+
+  factory _$MarkPrivateMessageAsReadImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MarkPrivateMessageAsReadImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'private_message_id')
+  final int privateMessageId;
+  @override
+  final bool read;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'MarkPrivateMessageAsRead(privateMessageId: $privateMessageId, read: $read, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkPrivateMessageAsReadImpl &&
+            (identical(other.privateMessageId, privateMessageId) ||
+                other.privateMessageId == privateMessageId) &&
+            (identical(other.read, read) || other.read == read) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, privateMessageId, read, auth);
+
+  /// Create a copy of MarkPrivateMessageAsRead
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkPrivateMessageAsReadImplCopyWith<_$MarkPrivateMessageAsReadImpl>
+  get copyWith => __$$MarkPrivateMessageAsReadImplCopyWithImpl<
+    _$MarkPrivateMessageAsReadImpl
+  >(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MarkPrivateMessageAsReadImplToJson(this);
+  }
+}
+
+abstract class _MarkPrivateMessageAsRead extends MarkPrivateMessageAsRead {
+  const factory _MarkPrivateMessageAsRead({
+    @JsonKey(name: 'private_message_id') required final int privateMessageId,
+    required final bool read,
+    required final String auth,
+  }) = _$MarkPrivateMessageAsReadImpl;
+  const _MarkPrivateMessageAsRead._() : super._();
+
+  factory _MarkPrivateMessageAsRead.fromJson(Map<String, dynamic> json) =
+      _$MarkPrivateMessageAsReadImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'private_message_id')
+  int get privateMessageId;
+  @override
+  bool get read;
+  @override
+  String get auth;
+
+  /// Create a copy of MarkPrivateMessageAsRead
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MarkPrivateMessageAsReadImplCopyWith<_$MarkPrivateMessageAsReadImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+ReportPrivateMessage _$ReportPrivateMessageFromJson(Map<String, dynamic> json) {
+  return _ReportPrivateMessage.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportPrivateMessage {
+  @JsonKey(name: 'private_message_id')
+  int get privateMessageId => throw _privateConstructorUsedError;
+  String get reason => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this ReportPrivateMessage to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ReportPrivateMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ReportPrivateMessageCopyWith<ReportPrivateMessage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportPrivateMessageCopyWith<$Res> {
+  factory $ReportPrivateMessageCopyWith(
+    ReportPrivateMessage value,
+    $Res Function(ReportPrivateMessage) then,
+  ) = _$ReportPrivateMessageCopyWithImpl<$Res, ReportPrivateMessage>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'private_message_id') int privateMessageId,
+    String reason,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$ReportPrivateMessageCopyWithImpl<
+  $Res,
+  $Val extends ReportPrivateMessage
+>
+    implements $ReportPrivateMessageCopyWith<$Res> {
+  _$ReportPrivateMessageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ReportPrivateMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? privateMessageId = null,
+    Object? reason = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            privateMessageId:
+                null == privateMessageId
+                    ? _value.privateMessageId
+                    : privateMessageId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            reason:
+                null == reason
+                    ? _value.reason
+                    : reason // ignore: cast_nullable_to_non_nullable
+                        as String,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$ReportPrivateMessageImplCopyWith<$Res>
+    implements $ReportPrivateMessageCopyWith<$Res> {
+  factory _$$ReportPrivateMessageImplCopyWith(
+    _$ReportPrivateMessageImpl value,
+    $Res Function(_$ReportPrivateMessageImpl) then,
+  ) = __$$ReportPrivateMessageImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'private_message_id') int privateMessageId,
+    String reason,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$ReportPrivateMessageImplCopyWithImpl<$Res>
+    extends _$ReportPrivateMessageCopyWithImpl<$Res, _$ReportPrivateMessageImpl>
+    implements _$$ReportPrivateMessageImplCopyWith<$Res> {
+  __$$ReportPrivateMessageImplCopyWithImpl(
+    _$ReportPrivateMessageImpl _value,
+    $Res Function(_$ReportPrivateMessageImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ReportPrivateMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? privateMessageId = null,
+    Object? reason = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$ReportPrivateMessageImpl(
+        privateMessageId:
+            null == privateMessageId
+                ? _value.privateMessageId
+                : privateMessageId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        reason:
+            null == reason
+                ? _value.reason
+                : reason // ignore: cast_nullable_to_non_nullable
+                    as String,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReportPrivateMessageImpl extends _ReportPrivateMessage {
+  const _$ReportPrivateMessageImpl({
+    @JsonKey(name: 'private_message_id') required this.privateMessageId,
+    required this.reason,
+    required this.auth,
+  }) : super._();
+
+  factory _$ReportPrivateMessageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReportPrivateMessageImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'private_message_id')
+  final int privateMessageId;
+  @override
+  final String reason;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'ReportPrivateMessage(privateMessageId: $privateMessageId, reason: $reason, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReportPrivateMessageImpl &&
+            (identical(other.privateMessageId, privateMessageId) ||
+                other.privateMessageId == privateMessageId) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, privateMessageId, reason, auth);
+
+  /// Create a copy of ReportPrivateMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReportPrivateMessageImplCopyWith<_$ReportPrivateMessageImpl>
+  get copyWith =>
+      __$$ReportPrivateMessageImplCopyWithImpl<_$ReportPrivateMessageImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReportPrivateMessageImplToJson(this);
+  }
+}
+
+abstract class _ReportPrivateMessage extends ReportPrivateMessage {
+  const factory _ReportPrivateMessage({
+    @JsonKey(name: 'private_message_id') required final int privateMessageId,
+    required final String reason,
+    required final String auth,
+  }) = _$ReportPrivateMessageImpl;
+  const _ReportPrivateMessage._() : super._();
+
+  factory _ReportPrivateMessage.fromJson(Map<String, dynamic> json) =
+      _$ReportPrivateMessageImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'private_message_id')
+  int get privateMessageId;
+  @override
+  String get reason;
+  @override
+  String get auth;
+
+  /// Create a copy of ReportPrivateMessage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReportPrivateMessageImplCopyWith<_$ReportPrivateMessageImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.9.0
+
+*   **Complete PieFed API coverage**:
+    *   **Post APIs**: `AssignPostFlair`, `HidePost`, `LockPost`, `SubscribePost`, `ListPostLikes`, `ListPosts2`.
+    *   **Comment APIs**: `ListCommentLikes`, `LockComment`, `MarkCommentAsAnswer`, `SubscribeComment`.
+    *   **Community APIs**: `CreateCommunityFlair`, `DeleteCommunityFlair`, `LeaveAllCommunities`, `ModeratePostNsfw`, `EditCommunityFlair`, `CommunityUnban`, `SubscribeCommunity`.
+    *   **User APIs**: `AddUserNote`, `GetUserMedia`, `MarkAllAsReadUser`, `SetUserFlair`, `VerifyCredentials`, `UpdateNotificationState`, `SaveUserSettings`, `SubscribeUser`.
+    *   **Private Message APIs**: `MarkPrivateMessageAsRead`, `ReportPrivateMessage`.
+    *   **Search & Misc APIs**: `SuggestCompletion`, `DeleteImage`, `UploadUserImage`.
+
 ## 0.8.1
 
 *   **Fixes**:

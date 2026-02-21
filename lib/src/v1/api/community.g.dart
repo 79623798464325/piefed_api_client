@@ -130,3 +130,113 @@ Map<String, dynamic> _$$GetCommunityBansImplToJson(
   'community_id': instance.communityId,
   'auth': instance.auth,
 };
+
+_$CreateCommunityFlairImpl _$$CreateCommunityFlairImplFromJson(
+  Map<String, dynamic> json,
+) => _$CreateCommunityFlairImpl(
+  communityId: (json['community_id'] as num).toInt(),
+  flairTitle: json['flair_title'] as String,
+  textColor: json['text_color'] as String?,
+  backgroundColor: json['background_color'] as String?,
+  blurImages: json['blur_images'] as bool?,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$CreateCommunityFlairImplToJson(
+  _$CreateCommunityFlairImpl instance,
+) => <String, dynamic>{
+  'community_id': instance.communityId,
+  'flair_title': instance.flairTitle,
+  'text_color': instance.textColor,
+  'background_color': instance.backgroundColor,
+  'blur_images': instance.blurImages,
+  'auth': instance.auth,
+};
+
+_$DeleteCommunityFlairImpl _$$DeleteCommunityFlairImplFromJson(
+  Map<String, dynamic> json,
+) => _$DeleteCommunityFlairImpl(
+  flairId: (json['flair_id'] as num).toInt(),
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$DeleteCommunityFlairImplToJson(
+  _$DeleteCommunityFlairImpl instance,
+) => <String, dynamic>{'flair_id': instance.flairId, 'auth': instance.auth};
+
+_$LeaveAllCommunitiesImpl _$$LeaveAllCommunitiesImplFromJson(
+  Map<String, dynamic> json,
+) => _$LeaveAllCommunitiesImpl(auth: json['auth'] as String);
+
+Map<String, dynamic> _$$LeaveAllCommunitiesImplToJson(
+  _$LeaveAllCommunitiesImpl instance,
+) => <String, dynamic>{'auth': instance.auth};
+
+_$ModeratePostNsfwImpl _$$ModeratePostNsfwImplFromJson(
+  Map<String, dynamic> json,
+) => _$ModeratePostNsfwImpl(
+  postId: (json['post_id'] as num).toInt(),
+  nsfwStatus: json['nsfw_status'] as bool,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$ModeratePostNsfwImplToJson(
+  _$ModeratePostNsfwImpl instance,
+) => <String, dynamic>{
+  'post_id': instance.postId,
+  'nsfw_status': instance.nsfwStatus,
+  'auth': instance.auth,
+};
+
+_$EditCommunityFlairImpl _$$EditCommunityFlairImplFromJson(
+  Map<String, dynamic> json,
+) => _$EditCommunityFlairImpl(
+  flairId: (json['flair_id'] as num).toInt(),
+  flairTitle: json['flair_title'] as String?,
+  textColor: json['text_color'] as String?,
+  backgroundColor: json['background_color'] as String?,
+  blurImages: json['blur_images'] as bool?,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$EditCommunityFlairImplToJson(
+  _$EditCommunityFlairImpl instance,
+) => <String, dynamic>{
+  'flair_id': instance.flairId,
+  'flair_title': instance.flairTitle,
+  'text_color': instance.textColor,
+  'background_color': instance.backgroundColor,
+  'blur_images': instance.blurImages,
+  'auth': instance.auth,
+};
+
+_$CommunityUnbanImpl _$$CommunityUnbanImplFromJson(Map<String, dynamic> json) =>
+    _$CommunityUnbanImpl(
+      communityId: (json['community_id'] as num).toInt(),
+      userId: (json['user_id'] as num).toInt(),
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$CommunityUnbanImplToJson(
+  _$CommunityUnbanImpl instance,
+) => <String, dynamic>{
+  'community_id': instance.communityId,
+  'user_id': instance.userId,
+  'auth': instance.auth,
+};
+
+_$SubscribeCommunityImpl _$$SubscribeCommunityImplFromJson(
+  Map<String, dynamic> json,
+) => _$SubscribeCommunityImpl(
+  communityId: (json['community_id'] as num).toInt(),
+  subscribe: json['subscribe'] as bool,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$SubscribeCommunityImplToJson(
+  _$SubscribeCommunityImpl instance,
+) => <String, dynamic>{
+  'community_id': instance.communityId,
+  'subscribe': instance.subscribe,
+  'auth': instance.auth,
+};

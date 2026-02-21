@@ -407,3 +407,27 @@ Map<String, dynamic> _$$CommentReplyViewImplToJson(
   'my_vote': instance.myVote,
   'subscribed': _$SubscribedTypeEnumMap[instance.subscribed],
 };
+
+_$MediaViewImpl _$$MediaViewImplFromJson(Map<String, dynamic> json) =>
+    _$MediaViewImpl(url: json['url'] as String, name: json['name'] as String?);
+
+Map<String, dynamic> _$$MediaViewImplToJson(_$MediaViewImpl instance) =>
+    <String, dynamic>{'url': instance.url, 'name': instance.name};
+
+_$CommentLikeViewImpl _$$CommentLikeViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommentLikeViewImpl(
+  creator: Person.fromJson(json['creator'] as Map<String, dynamic>),
+  creatorBanned: json['creator_banned'] as bool,
+  creatorBannedFromCommunity: json['creator_banned_from_community'] as bool,
+  score: (json['score'] as num).toInt(),
+);
+
+Map<String, dynamic> _$$CommentLikeViewImplToJson(
+  _$CommentLikeViewImpl instance,
+) => <String, dynamic>{
+  'creator': instance.creator,
+  'creator_banned': instance.creatorBanned,
+  'creator_banned_from_community': instance.creatorBannedFromCommunity,
+  'score': instance.score,
+};

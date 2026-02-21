@@ -2613,3 +2613,2356 @@ abstract class _GetNotificationsCount extends GetNotificationsCount {
   _$$GetNotificationsCountImplCopyWith<_$GetNotificationsCountImpl>
   get copyWith => throw _privateConstructorUsedError;
 }
+
+GetUserMedia _$GetUserMediaFromJson(Map<String, dynamic> json) {
+  return _GetUserMedia.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetUserMedia {
+  int? get limit => throw _privateConstructorUsedError;
+  int? get page => throw _privateConstructorUsedError;
+  String? get sort => throw _privateConstructorUsedError;
+  @JsonKey(name: 'unread_only')
+  bool? get unreadOnly => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this GetUserMedia to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetUserMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetUserMediaCopyWith<GetUserMedia> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetUserMediaCopyWith<$Res> {
+  factory $GetUserMediaCopyWith(
+    GetUserMedia value,
+    $Res Function(GetUserMedia) then,
+  ) = _$GetUserMediaCopyWithImpl<$Res, GetUserMedia>;
+  @useResult
+  $Res call({
+    int? limit,
+    int? page,
+    String? sort,
+    @JsonKey(name: 'unread_only') bool? unreadOnly,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$GetUserMediaCopyWithImpl<$Res, $Val extends GetUserMedia>
+    implements $GetUserMediaCopyWith<$Res> {
+  _$GetUserMediaCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetUserMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? page = freezed,
+    Object? sort = freezed,
+    Object? unreadOnly = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            limit:
+                freezed == limit
+                    ? _value.limit
+                    : limit // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            page:
+                freezed == page
+                    ? _value.page
+                    : page // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            sort:
+                freezed == sort
+                    ? _value.sort
+                    : sort // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            unreadOnly:
+                freezed == unreadOnly
+                    ? _value.unreadOnly
+                    : unreadOnly // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$GetUserMediaImplCopyWith<$Res>
+    implements $GetUserMediaCopyWith<$Res> {
+  factory _$$GetUserMediaImplCopyWith(
+    _$GetUserMediaImpl value,
+    $Res Function(_$GetUserMediaImpl) then,
+  ) = __$$GetUserMediaImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int? limit,
+    int? page,
+    String? sort,
+    @JsonKey(name: 'unread_only') bool? unreadOnly,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$GetUserMediaImplCopyWithImpl<$Res>
+    extends _$GetUserMediaCopyWithImpl<$Res, _$GetUserMediaImpl>
+    implements _$$GetUserMediaImplCopyWith<$Res> {
+  __$$GetUserMediaImplCopyWithImpl(
+    _$GetUserMediaImpl _value,
+    $Res Function(_$GetUserMediaImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetUserMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? limit = freezed,
+    Object? page = freezed,
+    Object? sort = freezed,
+    Object? unreadOnly = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$GetUserMediaImpl(
+        limit:
+            freezed == limit
+                ? _value.limit
+                : limit // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        page:
+            freezed == page
+                ? _value.page
+                : page // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        sort:
+            freezed == sort
+                ? _value.sort
+                : sort // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        unreadOnly:
+            freezed == unreadOnly
+                ? _value.unreadOnly
+                : unreadOnly // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetUserMediaImpl extends _GetUserMedia {
+  const _$GetUserMediaImpl({
+    this.limit,
+    this.page,
+    this.sort,
+    @JsonKey(name: 'unread_only') this.unreadOnly,
+    required this.auth,
+  }) : super._();
+
+  factory _$GetUserMediaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetUserMediaImplFromJson(json);
+
+  @override
+  final int? limit;
+  @override
+  final int? page;
+  @override
+  final String? sort;
+  @override
+  @JsonKey(name: 'unread_only')
+  final bool? unreadOnly;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'GetUserMedia(limit: $limit, page: $page, sort: $sort, unreadOnly: $unreadOnly, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserMediaImpl &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.sort, sort) || other.sort == sort) &&
+            (identical(other.unreadOnly, unreadOnly) ||
+                other.unreadOnly == unreadOnly) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, limit, page, sort, unreadOnly, auth);
+
+  /// Create a copy of GetUserMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserMediaImplCopyWith<_$GetUserMediaImpl> get copyWith =>
+      __$$GetUserMediaImplCopyWithImpl<_$GetUserMediaImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetUserMediaImplToJson(this);
+  }
+}
+
+abstract class _GetUserMedia extends GetUserMedia {
+  const factory _GetUserMedia({
+    final int? limit,
+    final int? page,
+    final String? sort,
+    @JsonKey(name: 'unread_only') final bool? unreadOnly,
+    required final String auth,
+  }) = _$GetUserMediaImpl;
+  const _GetUserMedia._() : super._();
+
+  factory _GetUserMedia.fromJson(Map<String, dynamic> json) =
+      _$GetUserMediaImpl.fromJson;
+
+  @override
+  int? get limit;
+  @override
+  int? get page;
+  @override
+  String? get sort;
+  @override
+  @JsonKey(name: 'unread_only')
+  bool? get unreadOnly;
+  @override
+  String get auth;
+
+  /// Create a copy of GetUserMedia
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetUserMediaImplCopyWith<_$GetUserMediaImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MarkAllAsReadUser _$MarkAllAsReadUserFromJson(Map<String, dynamic> json) {
+  return _MarkAllAsReadUser.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MarkAllAsReadUser {
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this MarkAllAsReadUser to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of MarkAllAsReadUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $MarkAllAsReadUserCopyWith<MarkAllAsReadUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MarkAllAsReadUserCopyWith<$Res> {
+  factory $MarkAllAsReadUserCopyWith(
+    MarkAllAsReadUser value,
+    $Res Function(MarkAllAsReadUser) then,
+  ) = _$MarkAllAsReadUserCopyWithImpl<$Res, MarkAllAsReadUser>;
+  @useResult
+  $Res call({String auth});
+}
+
+/// @nodoc
+class _$MarkAllAsReadUserCopyWithImpl<$Res, $Val extends MarkAllAsReadUser>
+    implements $MarkAllAsReadUserCopyWith<$Res> {
+  _$MarkAllAsReadUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of MarkAllAsReadUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$MarkAllAsReadUserImplCopyWith<$Res>
+    implements $MarkAllAsReadUserCopyWith<$Res> {
+  factory _$$MarkAllAsReadUserImplCopyWith(
+    _$MarkAllAsReadUserImpl value,
+    $Res Function(_$MarkAllAsReadUserImpl) then,
+  ) = __$$MarkAllAsReadUserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String auth});
+}
+
+/// @nodoc
+class __$$MarkAllAsReadUserImplCopyWithImpl<$Res>
+    extends _$MarkAllAsReadUserCopyWithImpl<$Res, _$MarkAllAsReadUserImpl>
+    implements _$$MarkAllAsReadUserImplCopyWith<$Res> {
+  __$$MarkAllAsReadUserImplCopyWithImpl(
+    _$MarkAllAsReadUserImpl _value,
+    $Res Function(_$MarkAllAsReadUserImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of MarkAllAsReadUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? auth = null}) {
+    return _then(
+      _$MarkAllAsReadUserImpl(
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MarkAllAsReadUserImpl extends _MarkAllAsReadUser {
+  const _$MarkAllAsReadUserImpl({required this.auth}) : super._();
+
+  factory _$MarkAllAsReadUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MarkAllAsReadUserImplFromJson(json);
+
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'MarkAllAsReadUser(auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkAllAsReadUserImpl &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, auth);
+
+  /// Create a copy of MarkAllAsReadUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkAllAsReadUserImplCopyWith<_$MarkAllAsReadUserImpl> get copyWith =>
+      __$$MarkAllAsReadUserImplCopyWithImpl<_$MarkAllAsReadUserImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MarkAllAsReadUserImplToJson(this);
+  }
+}
+
+abstract class _MarkAllAsReadUser extends MarkAllAsReadUser {
+  const factory _MarkAllAsReadUser({required final String auth}) =
+      _$MarkAllAsReadUserImpl;
+  const _MarkAllAsReadUser._() : super._();
+
+  factory _MarkAllAsReadUser.fromJson(Map<String, dynamic> json) =
+      _$MarkAllAsReadUserImpl.fromJson;
+
+  @override
+  String get auth;
+
+  /// Create a copy of MarkAllAsReadUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MarkAllAsReadUserImplCopyWith<_$MarkAllAsReadUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AddUserNote _$AddUserNoteFromJson(Map<String, dynamic> json) {
+  return _AddUserNote.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AddUserNote {
+  @JsonKey(name: 'person_id')
+  int get personId => throw _privateConstructorUsedError;
+  String get note => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this AddUserNote to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AddUserNote
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AddUserNoteCopyWith<AddUserNote> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddUserNoteCopyWith<$Res> {
+  factory $AddUserNoteCopyWith(
+    AddUserNote value,
+    $Res Function(AddUserNote) then,
+  ) = _$AddUserNoteCopyWithImpl<$Res, AddUserNote>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    String note,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$AddUserNoteCopyWithImpl<$Res, $Val extends AddUserNote>
+    implements $AddUserNoteCopyWith<$Res> {
+  _$AddUserNoteCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AddUserNote
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? note = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            personId:
+                null == personId
+                    ? _value.personId
+                    : personId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            note:
+                null == note
+                    ? _value.note
+                    : note // ignore: cast_nullable_to_non_nullable
+                        as String,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$AddUserNoteImplCopyWith<$Res>
+    implements $AddUserNoteCopyWith<$Res> {
+  factory _$$AddUserNoteImplCopyWith(
+    _$AddUserNoteImpl value,
+    $Res Function(_$AddUserNoteImpl) then,
+  ) = __$$AddUserNoteImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    String note,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$AddUserNoteImplCopyWithImpl<$Res>
+    extends _$AddUserNoteCopyWithImpl<$Res, _$AddUserNoteImpl>
+    implements _$$AddUserNoteImplCopyWith<$Res> {
+  __$$AddUserNoteImplCopyWithImpl(
+    _$AddUserNoteImpl _value,
+    $Res Function(_$AddUserNoteImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of AddUserNote
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? note = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$AddUserNoteImpl(
+        personId:
+            null == personId
+                ? _value.personId
+                : personId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        note:
+            null == note
+                ? _value.note
+                : note // ignore: cast_nullable_to_non_nullable
+                    as String,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AddUserNoteImpl extends _AddUserNote {
+  const _$AddUserNoteImpl({
+    @JsonKey(name: 'person_id') required this.personId,
+    required this.note,
+    required this.auth,
+  }) : super._();
+
+  factory _$AddUserNoteImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AddUserNoteImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'person_id')
+  final int personId;
+  @override
+  final String note;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'AddUserNote(personId: $personId, note: $note, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddUserNoteImpl &&
+            (identical(other.personId, personId) ||
+                other.personId == personId) &&
+            (identical(other.note, note) || other.note == note) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, personId, note, auth);
+
+  /// Create a copy of AddUserNote
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddUserNoteImplCopyWith<_$AddUserNoteImpl> get copyWith =>
+      __$$AddUserNoteImplCopyWithImpl<_$AddUserNoteImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AddUserNoteImplToJson(this);
+  }
+}
+
+abstract class _AddUserNote extends AddUserNote {
+  const factory _AddUserNote({
+    @JsonKey(name: 'person_id') required final int personId,
+    required final String note,
+    required final String auth,
+  }) = _$AddUserNoteImpl;
+  const _AddUserNote._() : super._();
+
+  factory _AddUserNote.fromJson(Map<String, dynamic> json) =
+      _$AddUserNoteImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'person_id')
+  int get personId;
+  @override
+  String get note;
+  @override
+  String get auth;
+
+  /// Create a copy of AddUserNote
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddUserNoteImplCopyWith<_$AddUserNoteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SetUserFlair _$SetUserFlairFromJson(Map<String, dynamic> json) {
+  return _SetUserFlair.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SetUserFlair {
+  @JsonKey(name: 'community_id')
+  int get communityId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'flair_text')
+  String? get flairText => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this SetUserFlair to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SetUserFlair
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SetUserFlairCopyWith<SetUserFlair> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetUserFlairCopyWith<$Res> {
+  factory $SetUserFlairCopyWith(
+    SetUserFlair value,
+    $Res Function(SetUserFlair) then,
+  ) = _$SetUserFlairCopyWithImpl<$Res, SetUserFlair>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'community_id') int communityId,
+    @JsonKey(name: 'flair_text') String? flairText,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$SetUserFlairCopyWithImpl<$Res, $Val extends SetUserFlair>
+    implements $SetUserFlairCopyWith<$Res> {
+  _$SetUserFlairCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SetUserFlair
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityId = null,
+    Object? flairText = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            communityId:
+                null == communityId
+                    ? _value.communityId
+                    : communityId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            flairText:
+                freezed == flairText
+                    ? _value.flairText
+                    : flairText // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$SetUserFlairImplCopyWith<$Res>
+    implements $SetUserFlairCopyWith<$Res> {
+  factory _$$SetUserFlairImplCopyWith(
+    _$SetUserFlairImpl value,
+    $Res Function(_$SetUserFlairImpl) then,
+  ) = __$$SetUserFlairImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'community_id') int communityId,
+    @JsonKey(name: 'flair_text') String? flairText,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$SetUserFlairImplCopyWithImpl<$Res>
+    extends _$SetUserFlairCopyWithImpl<$Res, _$SetUserFlairImpl>
+    implements _$$SetUserFlairImplCopyWith<$Res> {
+  __$$SetUserFlairImplCopyWithImpl(
+    _$SetUserFlairImpl _value,
+    $Res Function(_$SetUserFlairImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of SetUserFlair
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? communityId = null,
+    Object? flairText = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$SetUserFlairImpl(
+        communityId:
+            null == communityId
+                ? _value.communityId
+                : communityId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        flairText:
+            freezed == flairText
+                ? _value.flairText
+                : flairText // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SetUserFlairImpl extends _SetUserFlair {
+  const _$SetUserFlairImpl({
+    @JsonKey(name: 'community_id') required this.communityId,
+    @JsonKey(name: 'flair_text') this.flairText,
+    required this.auth,
+  }) : super._();
+
+  factory _$SetUserFlairImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SetUserFlairImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'community_id')
+  final int communityId;
+  @override
+  @JsonKey(name: 'flair_text')
+  final String? flairText;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'SetUserFlair(communityId: $communityId, flairText: $flairText, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetUserFlairImpl &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.flairText, flairText) ||
+                other.flairText == flairText) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, communityId, flairText, auth);
+
+  /// Create a copy of SetUserFlair
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetUserFlairImplCopyWith<_$SetUserFlairImpl> get copyWith =>
+      __$$SetUserFlairImplCopyWithImpl<_$SetUserFlairImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SetUserFlairImplToJson(this);
+  }
+}
+
+abstract class _SetUserFlair extends SetUserFlair {
+  const factory _SetUserFlair({
+    @JsonKey(name: 'community_id') required final int communityId,
+    @JsonKey(name: 'flair_text') final String? flairText,
+    required final String auth,
+  }) = _$SetUserFlairImpl;
+  const _SetUserFlair._() : super._();
+
+  factory _SetUserFlair.fromJson(Map<String, dynamic> json) =
+      _$SetUserFlairImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'community_id')
+  int get communityId;
+  @override
+  @JsonKey(name: 'flair_text')
+  String? get flairText;
+  @override
+  String get auth;
+
+  /// Create a copy of SetUserFlair
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetUserFlairImplCopyWith<_$SetUserFlairImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+VerifyCredentials _$VerifyCredentialsFromJson(Map<String, dynamic> json) {
+  return _VerifyCredentials.fromJson(json);
+}
+
+/// @nodoc
+mixin _$VerifyCredentials {
+  String get username => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
+
+  /// Serializes this VerifyCredentials to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of VerifyCredentials
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $VerifyCredentialsCopyWith<VerifyCredentials> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $VerifyCredentialsCopyWith<$Res> {
+  factory $VerifyCredentialsCopyWith(
+    VerifyCredentials value,
+    $Res Function(VerifyCredentials) then,
+  ) = _$VerifyCredentialsCopyWithImpl<$Res, VerifyCredentials>;
+  @useResult
+  $Res call({String username, String password});
+}
+
+/// @nodoc
+class _$VerifyCredentialsCopyWithImpl<$Res, $Val extends VerifyCredentials>
+    implements $VerifyCredentialsCopyWith<$Res> {
+  _$VerifyCredentialsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of VerifyCredentials
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? username = null, Object? password = null}) {
+    return _then(
+      _value.copyWith(
+            username:
+                null == username
+                    ? _value.username
+                    : username // ignore: cast_nullable_to_non_nullable
+                        as String,
+            password:
+                null == password
+                    ? _value.password
+                    : password // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$VerifyCredentialsImplCopyWith<$Res>
+    implements $VerifyCredentialsCopyWith<$Res> {
+  factory _$$VerifyCredentialsImplCopyWith(
+    _$VerifyCredentialsImpl value,
+    $Res Function(_$VerifyCredentialsImpl) then,
+  ) = __$$VerifyCredentialsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String username, String password});
+}
+
+/// @nodoc
+class __$$VerifyCredentialsImplCopyWithImpl<$Res>
+    extends _$VerifyCredentialsCopyWithImpl<$Res, _$VerifyCredentialsImpl>
+    implements _$$VerifyCredentialsImplCopyWith<$Res> {
+  __$$VerifyCredentialsImplCopyWithImpl(
+    _$VerifyCredentialsImpl _value,
+    $Res Function(_$VerifyCredentialsImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of VerifyCredentials
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? username = null, Object? password = null}) {
+    return _then(
+      _$VerifyCredentialsImpl(
+        username:
+            null == username
+                ? _value.username
+                : username // ignore: cast_nullable_to_non_nullable
+                    as String,
+        password:
+            null == password
+                ? _value.password
+                : password // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$VerifyCredentialsImpl extends _VerifyCredentials {
+  const _$VerifyCredentialsImpl({
+    required this.username,
+    required this.password,
+  }) : super._();
+
+  factory _$VerifyCredentialsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VerifyCredentialsImplFromJson(json);
+
+  @override
+  final String username;
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'VerifyCredentials(username: $username, password: $password)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyCredentialsImpl &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, username, password);
+
+  /// Create a copy of VerifyCredentials
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyCredentialsImplCopyWith<_$VerifyCredentialsImpl> get copyWith =>
+      __$$VerifyCredentialsImplCopyWithImpl<_$VerifyCredentialsImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$VerifyCredentialsImplToJson(this);
+  }
+}
+
+abstract class _VerifyCredentials extends VerifyCredentials {
+  const factory _VerifyCredentials({
+    required final String username,
+    required final String password,
+  }) = _$VerifyCredentialsImpl;
+  const _VerifyCredentials._() : super._();
+
+  factory _VerifyCredentials.fromJson(Map<String, dynamic> json) =
+      _$VerifyCredentialsImpl.fromJson;
+
+  @override
+  String get username;
+  @override
+  String get password;
+
+  /// Create a copy of VerifyCredentials
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VerifyCredentialsImplCopyWith<_$VerifyCredentialsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UpdateNotificationState _$UpdateNotificationStateFromJson(
+  Map<String, dynamic> json,
+) {
+  return _UpdateNotificationState.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UpdateNotificationState {
+  @JsonKey(name: 'notif_id')
+  int get notifId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'read_state')
+  bool get readState => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this UpdateNotificationState to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UpdateNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UpdateNotificationStateCopyWith<UpdateNotificationState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UpdateNotificationStateCopyWith<$Res> {
+  factory $UpdateNotificationStateCopyWith(
+    UpdateNotificationState value,
+    $Res Function(UpdateNotificationState) then,
+  ) = _$UpdateNotificationStateCopyWithImpl<$Res, UpdateNotificationState>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'notif_id') int notifId,
+    @JsonKey(name: 'read_state') bool readState,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$UpdateNotificationStateCopyWithImpl<
+  $Res,
+  $Val extends UpdateNotificationState
+>
+    implements $UpdateNotificationStateCopyWith<$Res> {
+  _$UpdateNotificationStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UpdateNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notifId = null,
+    Object? readState = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            notifId:
+                null == notifId
+                    ? _value.notifId
+                    : notifId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            readState:
+                null == readState
+                    ? _value.readState
+                    : readState // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UpdateNotificationStateImplCopyWith<$Res>
+    implements $UpdateNotificationStateCopyWith<$Res> {
+  factory _$$UpdateNotificationStateImplCopyWith(
+    _$UpdateNotificationStateImpl value,
+    $Res Function(_$UpdateNotificationStateImpl) then,
+  ) = __$$UpdateNotificationStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'notif_id') int notifId,
+    @JsonKey(name: 'read_state') bool readState,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$UpdateNotificationStateImplCopyWithImpl<$Res>
+    extends
+        _$UpdateNotificationStateCopyWithImpl<
+          $Res,
+          _$UpdateNotificationStateImpl
+        >
+    implements _$$UpdateNotificationStateImplCopyWith<$Res> {
+  __$$UpdateNotificationStateImplCopyWithImpl(
+    _$UpdateNotificationStateImpl _value,
+    $Res Function(_$UpdateNotificationStateImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UpdateNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notifId = null,
+    Object? readState = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$UpdateNotificationStateImpl(
+        notifId:
+            null == notifId
+                ? _value.notifId
+                : notifId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        readState:
+            null == readState
+                ? _value.readState
+                : readState // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UpdateNotificationStateImpl extends _UpdateNotificationState {
+  const _$UpdateNotificationStateImpl({
+    @JsonKey(name: 'notif_id') required this.notifId,
+    @JsonKey(name: 'read_state') required this.readState,
+    required this.auth,
+  }) : super._();
+
+  factory _$UpdateNotificationStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdateNotificationStateImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'notif_id')
+  final int notifId;
+  @override
+  @JsonKey(name: 'read_state')
+  final bool readState;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'UpdateNotificationState(notifId: $notifId, readState: $readState, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateNotificationStateImpl &&
+            (identical(other.notifId, notifId) || other.notifId == notifId) &&
+            (identical(other.readState, readState) ||
+                other.readState == readState) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, notifId, readState, auth);
+
+  /// Create a copy of UpdateNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateNotificationStateImplCopyWith<_$UpdateNotificationStateImpl>
+  get copyWith => __$$UpdateNotificationStateImplCopyWithImpl<
+    _$UpdateNotificationStateImpl
+  >(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UpdateNotificationStateImplToJson(this);
+  }
+}
+
+abstract class _UpdateNotificationState extends UpdateNotificationState {
+  const factory _UpdateNotificationState({
+    @JsonKey(name: 'notif_id') required final int notifId,
+    @JsonKey(name: 'read_state') required final bool readState,
+    required final String auth,
+  }) = _$UpdateNotificationStateImpl;
+  const _UpdateNotificationState._() : super._();
+
+  factory _UpdateNotificationState.fromJson(Map<String, dynamic> json) =
+      _$UpdateNotificationStateImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'notif_id')
+  int get notifId;
+  @override
+  @JsonKey(name: 'read_state')
+  bool get readState;
+  @override
+  String get auth;
+
+  /// Create a copy of UpdateNotificationState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateNotificationStateImplCopyWith<_$UpdateNotificationStateImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+SaveUserSettings _$SaveUserSettingsFromJson(Map<String, dynamic> json) {
+  return _SaveUserSettings.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SaveUserSettings {
+  @JsonKey(name: 'accept_private_messages')
+  String? get acceptPrivateMessages => throw _privateConstructorUsedError;
+  String? get avatar => throw _privateConstructorUsedError;
+  String? get bio => throw _privateConstructorUsedError;
+  bool? get bot => throw _privateConstructorUsedError;
+  @JsonKey(name: 'bot_visibility')
+  String? get botVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'community_keyword_filter')
+  List<String>? get communityKeywordFilter =>
+      throw _privateConstructorUsedError;
+  String? get cover => throw _privateConstructorUsedError;
+  @JsonKey(name: 'default_comment_sort_type')
+  String? get defaultCommentSortType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'default_sort_type')
+  String? get defaultSortType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'email_unread')
+  bool? get emailUnread => throw _privateConstructorUsedError;
+  @JsonKey(name: 'extra_fields')
+  List<String>? get extraFields => throw _privateConstructorUsedError;
+  @JsonKey(name: 'federate_votes')
+  bool? get federateVotes => throw _privateConstructorUsedError;
+  @JsonKey(name: 'feed_auto_follow')
+  bool? get feedAutoFollow => throw _privateConstructorUsedError;
+  @JsonKey(name: 'feed_auto_leave')
+  bool? get feedAutoLeave => throw _privateConstructorUsedError;
+  @JsonKey(name: 'hide_low_quality')
+  bool? get hideLowQuality => throw _privateConstructorUsedError;
+  bool? get indexable => throw _privateConstructorUsedError;
+  bool? get newsletter => throw _privateConstructorUsedError;
+  @JsonKey(name: 'nsfl_visibility')
+  String? get nsflVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'nsfw_visibility')
+  String? get nsfwVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'genai_visibility')
+  String? get genaiVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'reply_collapse_threshold')
+  int? get replyCollapseThreshold => throw _privateConstructorUsedError;
+  @JsonKey(name: 'reply_hide_threshold')
+  int? get replyHideThreshold => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_nsfw')
+  bool? get showNsfw => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_nsfl')
+  bool? get showNsfl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'show_read_posts')
+  bool? get showReadPosts => throw _privateConstructorUsedError;
+  bool? get searchable => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this SaveUserSettings to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SaveUserSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SaveUserSettingsCopyWith<SaveUserSettings> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SaveUserSettingsCopyWith<$Res> {
+  factory $SaveUserSettingsCopyWith(
+    SaveUserSettings value,
+    $Res Function(SaveUserSettings) then,
+  ) = _$SaveUserSettingsCopyWithImpl<$Res, SaveUserSettings>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'accept_private_messages') String? acceptPrivateMessages,
+    String? avatar,
+    String? bio,
+    bool? bot,
+    @JsonKey(name: 'bot_visibility') String? botVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    List<String>? communityKeywordFilter,
+    String? cover,
+    @JsonKey(name: 'default_comment_sort_type') String? defaultCommentSortType,
+    @JsonKey(name: 'default_sort_type') String? defaultSortType,
+    @JsonKey(name: 'email_unread') bool? emailUnread,
+    @JsonKey(name: 'extra_fields') List<String>? extraFields,
+    @JsonKey(name: 'federate_votes') bool? federateVotes,
+    @JsonKey(name: 'feed_auto_follow') bool? feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') bool? feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') bool? hideLowQuality,
+    bool? indexable,
+    bool? newsletter,
+    @JsonKey(name: 'nsfl_visibility') String? nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') String? nsfwVisibility,
+    @JsonKey(name: 'genai_visibility') String? genaiVisibility,
+    @JsonKey(name: 'reply_collapse_threshold') int? replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') int? replyHideThreshold,
+    @JsonKey(name: 'show_nsfw') bool? showNsfw,
+    @JsonKey(name: 'show_nsfl') bool? showNsfl,
+    @JsonKey(name: 'show_read_posts') bool? showReadPosts,
+    bool? searchable,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$SaveUserSettingsCopyWithImpl<$Res, $Val extends SaveUserSettings>
+    implements $SaveUserSettingsCopyWith<$Res> {
+  _$SaveUserSettingsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SaveUserSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? acceptPrivateMessages = freezed,
+    Object? avatar = freezed,
+    Object? bio = freezed,
+    Object? bot = freezed,
+    Object? botVisibility = freezed,
+    Object? communityKeywordFilter = freezed,
+    Object? cover = freezed,
+    Object? defaultCommentSortType = freezed,
+    Object? defaultSortType = freezed,
+    Object? emailUnread = freezed,
+    Object? extraFields = freezed,
+    Object? federateVotes = freezed,
+    Object? feedAutoFollow = freezed,
+    Object? feedAutoLeave = freezed,
+    Object? hideLowQuality = freezed,
+    Object? indexable = freezed,
+    Object? newsletter = freezed,
+    Object? nsflVisibility = freezed,
+    Object? nsfwVisibility = freezed,
+    Object? genaiVisibility = freezed,
+    Object? replyCollapseThreshold = freezed,
+    Object? replyHideThreshold = freezed,
+    Object? showNsfw = freezed,
+    Object? showNsfl = freezed,
+    Object? showReadPosts = freezed,
+    Object? searchable = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            acceptPrivateMessages:
+                freezed == acceptPrivateMessages
+                    ? _value.acceptPrivateMessages
+                    : acceptPrivateMessages // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            avatar:
+                freezed == avatar
+                    ? _value.avatar
+                    : avatar // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            bio:
+                freezed == bio
+                    ? _value.bio
+                    : bio // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            bot:
+                freezed == bot
+                    ? _value.bot
+                    : bot // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            botVisibility:
+                freezed == botVisibility
+                    ? _value.botVisibility
+                    : botVisibility // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            communityKeywordFilter:
+                freezed == communityKeywordFilter
+                    ? _value.communityKeywordFilter
+                    : communityKeywordFilter // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
+            cover:
+                freezed == cover
+                    ? _value.cover
+                    : cover // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            defaultCommentSortType:
+                freezed == defaultCommentSortType
+                    ? _value.defaultCommentSortType
+                    : defaultCommentSortType // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            defaultSortType:
+                freezed == defaultSortType
+                    ? _value.defaultSortType
+                    : defaultSortType // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            emailUnread:
+                freezed == emailUnread
+                    ? _value.emailUnread
+                    : emailUnread // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            extraFields:
+                freezed == extraFields
+                    ? _value.extraFields
+                    : extraFields // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
+            federateVotes:
+                freezed == federateVotes
+                    ? _value.federateVotes
+                    : federateVotes // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            feedAutoFollow:
+                freezed == feedAutoFollow
+                    ? _value.feedAutoFollow
+                    : feedAutoFollow // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            feedAutoLeave:
+                freezed == feedAutoLeave
+                    ? _value.feedAutoLeave
+                    : feedAutoLeave // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            hideLowQuality:
+                freezed == hideLowQuality
+                    ? _value.hideLowQuality
+                    : hideLowQuality // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            indexable:
+                freezed == indexable
+                    ? _value.indexable
+                    : indexable // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            newsletter:
+                freezed == newsletter
+                    ? _value.newsletter
+                    : newsletter // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            nsflVisibility:
+                freezed == nsflVisibility
+                    ? _value.nsflVisibility
+                    : nsflVisibility // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nsfwVisibility:
+                freezed == nsfwVisibility
+                    ? _value.nsfwVisibility
+                    : nsfwVisibility // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            genaiVisibility:
+                freezed == genaiVisibility
+                    ? _value.genaiVisibility
+                    : genaiVisibility // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            replyCollapseThreshold:
+                freezed == replyCollapseThreshold
+                    ? _value.replyCollapseThreshold
+                    : replyCollapseThreshold // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            replyHideThreshold:
+                freezed == replyHideThreshold
+                    ? _value.replyHideThreshold
+                    : replyHideThreshold // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            showNsfw:
+                freezed == showNsfw
+                    ? _value.showNsfw
+                    : showNsfw // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            showNsfl:
+                freezed == showNsfl
+                    ? _value.showNsfl
+                    : showNsfl // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            showReadPosts:
+                freezed == showReadPosts
+                    ? _value.showReadPosts
+                    : showReadPosts // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            searchable:
+                freezed == searchable
+                    ? _value.searchable
+                    : searchable // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$SaveUserSettingsImplCopyWith<$Res>
+    implements $SaveUserSettingsCopyWith<$Res> {
+  factory _$$SaveUserSettingsImplCopyWith(
+    _$SaveUserSettingsImpl value,
+    $Res Function(_$SaveUserSettingsImpl) then,
+  ) = __$$SaveUserSettingsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'accept_private_messages') String? acceptPrivateMessages,
+    String? avatar,
+    String? bio,
+    bool? bot,
+    @JsonKey(name: 'bot_visibility') String? botVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    List<String>? communityKeywordFilter,
+    String? cover,
+    @JsonKey(name: 'default_comment_sort_type') String? defaultCommentSortType,
+    @JsonKey(name: 'default_sort_type') String? defaultSortType,
+    @JsonKey(name: 'email_unread') bool? emailUnread,
+    @JsonKey(name: 'extra_fields') List<String>? extraFields,
+    @JsonKey(name: 'federate_votes') bool? federateVotes,
+    @JsonKey(name: 'feed_auto_follow') bool? feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') bool? feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') bool? hideLowQuality,
+    bool? indexable,
+    bool? newsletter,
+    @JsonKey(name: 'nsfl_visibility') String? nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') String? nsfwVisibility,
+    @JsonKey(name: 'genai_visibility') String? genaiVisibility,
+    @JsonKey(name: 'reply_collapse_threshold') int? replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') int? replyHideThreshold,
+    @JsonKey(name: 'show_nsfw') bool? showNsfw,
+    @JsonKey(name: 'show_nsfl') bool? showNsfl,
+    @JsonKey(name: 'show_read_posts') bool? showReadPosts,
+    bool? searchable,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$SaveUserSettingsImplCopyWithImpl<$Res>
+    extends _$SaveUserSettingsCopyWithImpl<$Res, _$SaveUserSettingsImpl>
+    implements _$$SaveUserSettingsImplCopyWith<$Res> {
+  __$$SaveUserSettingsImplCopyWithImpl(
+    _$SaveUserSettingsImpl _value,
+    $Res Function(_$SaveUserSettingsImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of SaveUserSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? acceptPrivateMessages = freezed,
+    Object? avatar = freezed,
+    Object? bio = freezed,
+    Object? bot = freezed,
+    Object? botVisibility = freezed,
+    Object? communityKeywordFilter = freezed,
+    Object? cover = freezed,
+    Object? defaultCommentSortType = freezed,
+    Object? defaultSortType = freezed,
+    Object? emailUnread = freezed,
+    Object? extraFields = freezed,
+    Object? federateVotes = freezed,
+    Object? feedAutoFollow = freezed,
+    Object? feedAutoLeave = freezed,
+    Object? hideLowQuality = freezed,
+    Object? indexable = freezed,
+    Object? newsletter = freezed,
+    Object? nsflVisibility = freezed,
+    Object? nsfwVisibility = freezed,
+    Object? genaiVisibility = freezed,
+    Object? replyCollapseThreshold = freezed,
+    Object? replyHideThreshold = freezed,
+    Object? showNsfw = freezed,
+    Object? showNsfl = freezed,
+    Object? showReadPosts = freezed,
+    Object? searchable = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$SaveUserSettingsImpl(
+        acceptPrivateMessages:
+            freezed == acceptPrivateMessages
+                ? _value.acceptPrivateMessages
+                : acceptPrivateMessages // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        avatar:
+            freezed == avatar
+                ? _value.avatar
+                : avatar // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        bio:
+            freezed == bio
+                ? _value.bio
+                : bio // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        bot:
+            freezed == bot
+                ? _value.bot
+                : bot // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        botVisibility:
+            freezed == botVisibility
+                ? _value.botVisibility
+                : botVisibility // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        communityKeywordFilter:
+            freezed == communityKeywordFilter
+                ? _value._communityKeywordFilter
+                : communityKeywordFilter // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
+        cover:
+            freezed == cover
+                ? _value.cover
+                : cover // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        defaultCommentSortType:
+            freezed == defaultCommentSortType
+                ? _value.defaultCommentSortType
+                : defaultCommentSortType // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        defaultSortType:
+            freezed == defaultSortType
+                ? _value.defaultSortType
+                : defaultSortType // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        emailUnread:
+            freezed == emailUnread
+                ? _value.emailUnread
+                : emailUnread // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        extraFields:
+            freezed == extraFields
+                ? _value._extraFields
+                : extraFields // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
+        federateVotes:
+            freezed == federateVotes
+                ? _value.federateVotes
+                : federateVotes // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        feedAutoFollow:
+            freezed == feedAutoFollow
+                ? _value.feedAutoFollow
+                : feedAutoFollow // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        feedAutoLeave:
+            freezed == feedAutoLeave
+                ? _value.feedAutoLeave
+                : feedAutoLeave // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        hideLowQuality:
+            freezed == hideLowQuality
+                ? _value.hideLowQuality
+                : hideLowQuality // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        indexable:
+            freezed == indexable
+                ? _value.indexable
+                : indexable // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        newsletter:
+            freezed == newsletter
+                ? _value.newsletter
+                : newsletter // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        nsflVisibility:
+            freezed == nsflVisibility
+                ? _value.nsflVisibility
+                : nsflVisibility // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nsfwVisibility:
+            freezed == nsfwVisibility
+                ? _value.nsfwVisibility
+                : nsfwVisibility // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        genaiVisibility:
+            freezed == genaiVisibility
+                ? _value.genaiVisibility
+                : genaiVisibility // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        replyCollapseThreshold:
+            freezed == replyCollapseThreshold
+                ? _value.replyCollapseThreshold
+                : replyCollapseThreshold // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        replyHideThreshold:
+            freezed == replyHideThreshold
+                ? _value.replyHideThreshold
+                : replyHideThreshold // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        showNsfw:
+            freezed == showNsfw
+                ? _value.showNsfw
+                : showNsfw // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        showNsfl:
+            freezed == showNsfl
+                ? _value.showNsfl
+                : showNsfl // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        showReadPosts:
+            freezed == showReadPosts
+                ? _value.showReadPosts
+                : showReadPosts // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        searchable:
+            freezed == searchable
+                ? _value.searchable
+                : searchable // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SaveUserSettingsImpl extends _SaveUserSettings {
+  const _$SaveUserSettingsImpl({
+    @JsonKey(name: 'accept_private_messages') this.acceptPrivateMessages,
+    this.avatar,
+    this.bio,
+    this.bot,
+    @JsonKey(name: 'bot_visibility') this.botVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    final List<String>? communityKeywordFilter,
+    this.cover,
+    @JsonKey(name: 'default_comment_sort_type') this.defaultCommentSortType,
+    @JsonKey(name: 'default_sort_type') this.defaultSortType,
+    @JsonKey(name: 'email_unread') this.emailUnread,
+    @JsonKey(name: 'extra_fields') final List<String>? extraFields,
+    @JsonKey(name: 'federate_votes') this.federateVotes,
+    @JsonKey(name: 'feed_auto_follow') this.feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') this.feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') this.hideLowQuality,
+    this.indexable,
+    this.newsletter,
+    @JsonKey(name: 'nsfl_visibility') this.nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') this.nsfwVisibility,
+    @JsonKey(name: 'genai_visibility') this.genaiVisibility,
+    @JsonKey(name: 'reply_collapse_threshold') this.replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') this.replyHideThreshold,
+    @JsonKey(name: 'show_nsfw') this.showNsfw,
+    @JsonKey(name: 'show_nsfl') this.showNsfl,
+    @JsonKey(name: 'show_read_posts') this.showReadPosts,
+    this.searchable,
+    required this.auth,
+  }) : _communityKeywordFilter = communityKeywordFilter,
+       _extraFields = extraFields,
+       super._();
+
+  factory _$SaveUserSettingsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SaveUserSettingsImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'accept_private_messages')
+  final String? acceptPrivateMessages;
+  @override
+  final String? avatar;
+  @override
+  final String? bio;
+  @override
+  final bool? bot;
+  @override
+  @JsonKey(name: 'bot_visibility')
+  final String? botVisibility;
+  final List<String>? _communityKeywordFilter;
+  @override
+  @JsonKey(name: 'community_keyword_filter')
+  List<String>? get communityKeywordFilter {
+    final value = _communityKeywordFilter;
+    if (value == null) return null;
+    if (_communityKeywordFilter is EqualUnmodifiableListView)
+      return _communityKeywordFilter;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? cover;
+  @override
+  @JsonKey(name: 'default_comment_sort_type')
+  final String? defaultCommentSortType;
+  @override
+  @JsonKey(name: 'default_sort_type')
+  final String? defaultSortType;
+  @override
+  @JsonKey(name: 'email_unread')
+  final bool? emailUnread;
+  final List<String>? _extraFields;
+  @override
+  @JsonKey(name: 'extra_fields')
+  List<String>? get extraFields {
+    final value = _extraFields;
+    if (value == null) return null;
+    if (_extraFields is EqualUnmodifiableListView) return _extraFields;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'federate_votes')
+  final bool? federateVotes;
+  @override
+  @JsonKey(name: 'feed_auto_follow')
+  final bool? feedAutoFollow;
+  @override
+  @JsonKey(name: 'feed_auto_leave')
+  final bool? feedAutoLeave;
+  @override
+  @JsonKey(name: 'hide_low_quality')
+  final bool? hideLowQuality;
+  @override
+  final bool? indexable;
+  @override
+  final bool? newsletter;
+  @override
+  @JsonKey(name: 'nsfl_visibility')
+  final String? nsflVisibility;
+  @override
+  @JsonKey(name: 'nsfw_visibility')
+  final String? nsfwVisibility;
+  @override
+  @JsonKey(name: 'genai_visibility')
+  final String? genaiVisibility;
+  @override
+  @JsonKey(name: 'reply_collapse_threshold')
+  final int? replyCollapseThreshold;
+  @override
+  @JsonKey(name: 'reply_hide_threshold')
+  final int? replyHideThreshold;
+  @override
+  @JsonKey(name: 'show_nsfw')
+  final bool? showNsfw;
+  @override
+  @JsonKey(name: 'show_nsfl')
+  final bool? showNsfl;
+  @override
+  @JsonKey(name: 'show_read_posts')
+  final bool? showReadPosts;
+  @override
+  final bool? searchable;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'SaveUserSettings(acceptPrivateMessages: $acceptPrivateMessages, avatar: $avatar, bio: $bio, bot: $bot, botVisibility: $botVisibility, communityKeywordFilter: $communityKeywordFilter, cover: $cover, defaultCommentSortType: $defaultCommentSortType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, extraFields: $extraFields, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, genaiVisibility: $genaiVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, showNsfw: $showNsfw, showNsfl: $showNsfl, showReadPosts: $showReadPosts, searchable: $searchable, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveUserSettingsImpl &&
+            (identical(other.acceptPrivateMessages, acceptPrivateMessages) ||
+                other.acceptPrivateMessages == acceptPrivateMessages) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.bio, bio) || other.bio == bio) &&
+            (identical(other.bot, bot) || other.bot == bot) &&
+            (identical(other.botVisibility, botVisibility) ||
+                other.botVisibility == botVisibility) &&
+            const DeepCollectionEquality().equals(
+              other._communityKeywordFilter,
+              _communityKeywordFilter,
+            ) &&
+            (identical(other.cover, cover) || other.cover == cover) &&
+            (identical(other.defaultCommentSortType, defaultCommentSortType) ||
+                other.defaultCommentSortType == defaultCommentSortType) &&
+            (identical(other.defaultSortType, defaultSortType) ||
+                other.defaultSortType == defaultSortType) &&
+            (identical(other.emailUnread, emailUnread) ||
+                other.emailUnread == emailUnread) &&
+            const DeepCollectionEquality().equals(
+              other._extraFields,
+              _extraFields,
+            ) &&
+            (identical(other.federateVotes, federateVotes) ||
+                other.federateVotes == federateVotes) &&
+            (identical(other.feedAutoFollow, feedAutoFollow) ||
+                other.feedAutoFollow == feedAutoFollow) &&
+            (identical(other.feedAutoLeave, feedAutoLeave) ||
+                other.feedAutoLeave == feedAutoLeave) &&
+            (identical(other.hideLowQuality, hideLowQuality) ||
+                other.hideLowQuality == hideLowQuality) &&
+            (identical(other.indexable, indexable) ||
+                other.indexable == indexable) &&
+            (identical(other.newsletter, newsletter) ||
+                other.newsletter == newsletter) &&
+            (identical(other.nsflVisibility, nsflVisibility) ||
+                other.nsflVisibility == nsflVisibility) &&
+            (identical(other.nsfwVisibility, nsfwVisibility) ||
+                other.nsfwVisibility == nsfwVisibility) &&
+            (identical(other.genaiVisibility, genaiVisibility) ||
+                other.genaiVisibility == genaiVisibility) &&
+            (identical(other.replyCollapseThreshold, replyCollapseThreshold) ||
+                other.replyCollapseThreshold == replyCollapseThreshold) &&
+            (identical(other.replyHideThreshold, replyHideThreshold) ||
+                other.replyHideThreshold == replyHideThreshold) &&
+            (identical(other.showNsfw, showNsfw) ||
+                other.showNsfw == showNsfw) &&
+            (identical(other.showNsfl, showNsfl) ||
+                other.showNsfl == showNsfl) &&
+            (identical(other.showReadPosts, showReadPosts) ||
+                other.showReadPosts == showReadPosts) &&
+            (identical(other.searchable, searchable) ||
+                other.searchable == searchable) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+    runtimeType,
+    acceptPrivateMessages,
+    avatar,
+    bio,
+    bot,
+    botVisibility,
+    const DeepCollectionEquality().hash(_communityKeywordFilter),
+    cover,
+    defaultCommentSortType,
+    defaultSortType,
+    emailUnread,
+    const DeepCollectionEquality().hash(_extraFields),
+    federateVotes,
+    feedAutoFollow,
+    feedAutoLeave,
+    hideLowQuality,
+    indexable,
+    newsletter,
+    nsflVisibility,
+    nsfwVisibility,
+    genaiVisibility,
+    replyCollapseThreshold,
+    replyHideThreshold,
+    showNsfw,
+    showNsfl,
+    showReadPosts,
+    searchable,
+    auth,
+  ]);
+
+  /// Create a copy of SaveUserSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveUserSettingsImplCopyWith<_$SaveUserSettingsImpl> get copyWith =>
+      __$$SaveUserSettingsImplCopyWithImpl<_$SaveUserSettingsImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SaveUserSettingsImplToJson(this);
+  }
+}
+
+abstract class _SaveUserSettings extends SaveUserSettings {
+  const factory _SaveUserSettings({
+    @JsonKey(name: 'accept_private_messages')
+    final String? acceptPrivateMessages,
+    final String? avatar,
+    final String? bio,
+    final bool? bot,
+    @JsonKey(name: 'bot_visibility') final String? botVisibility,
+    @JsonKey(name: 'community_keyword_filter')
+    final List<String>? communityKeywordFilter,
+    final String? cover,
+    @JsonKey(name: 'default_comment_sort_type')
+    final String? defaultCommentSortType,
+    @JsonKey(name: 'default_sort_type') final String? defaultSortType,
+    @JsonKey(name: 'email_unread') final bool? emailUnread,
+    @JsonKey(name: 'extra_fields') final List<String>? extraFields,
+    @JsonKey(name: 'federate_votes') final bool? federateVotes,
+    @JsonKey(name: 'feed_auto_follow') final bool? feedAutoFollow,
+    @JsonKey(name: 'feed_auto_leave') final bool? feedAutoLeave,
+    @JsonKey(name: 'hide_low_quality') final bool? hideLowQuality,
+    final bool? indexable,
+    final bool? newsletter,
+    @JsonKey(name: 'nsfl_visibility') final String? nsflVisibility,
+    @JsonKey(name: 'nsfw_visibility') final String? nsfwVisibility,
+    @JsonKey(name: 'genai_visibility') final String? genaiVisibility,
+    @JsonKey(name: 'reply_collapse_threshold')
+    final int? replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold') final int? replyHideThreshold,
+    @JsonKey(name: 'show_nsfw') final bool? showNsfw,
+    @JsonKey(name: 'show_nsfl') final bool? showNsfl,
+    @JsonKey(name: 'show_read_posts') final bool? showReadPosts,
+    final bool? searchable,
+    required final String auth,
+  }) = _$SaveUserSettingsImpl;
+  const _SaveUserSettings._() : super._();
+
+  factory _SaveUserSettings.fromJson(Map<String, dynamic> json) =
+      _$SaveUserSettingsImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'accept_private_messages')
+  String? get acceptPrivateMessages;
+  @override
+  String? get avatar;
+  @override
+  String? get bio;
+  @override
+  bool? get bot;
+  @override
+  @JsonKey(name: 'bot_visibility')
+  String? get botVisibility;
+  @override
+  @JsonKey(name: 'community_keyword_filter')
+  List<String>? get communityKeywordFilter;
+  @override
+  String? get cover;
+  @override
+  @JsonKey(name: 'default_comment_sort_type')
+  String? get defaultCommentSortType;
+  @override
+  @JsonKey(name: 'default_sort_type')
+  String? get defaultSortType;
+  @override
+  @JsonKey(name: 'email_unread')
+  bool? get emailUnread;
+  @override
+  @JsonKey(name: 'extra_fields')
+  List<String>? get extraFields;
+  @override
+  @JsonKey(name: 'federate_votes')
+  bool? get federateVotes;
+  @override
+  @JsonKey(name: 'feed_auto_follow')
+  bool? get feedAutoFollow;
+  @override
+  @JsonKey(name: 'feed_auto_leave')
+  bool? get feedAutoLeave;
+  @override
+  @JsonKey(name: 'hide_low_quality')
+  bool? get hideLowQuality;
+  @override
+  bool? get indexable;
+  @override
+  bool? get newsletter;
+  @override
+  @JsonKey(name: 'nsfl_visibility')
+  String? get nsflVisibility;
+  @override
+  @JsonKey(name: 'nsfw_visibility')
+  String? get nsfwVisibility;
+  @override
+  @JsonKey(name: 'genai_visibility')
+  String? get genaiVisibility;
+  @override
+  @JsonKey(name: 'reply_collapse_threshold')
+  int? get replyCollapseThreshold;
+  @override
+  @JsonKey(name: 'reply_hide_threshold')
+  int? get replyHideThreshold;
+  @override
+  @JsonKey(name: 'show_nsfw')
+  bool? get showNsfw;
+  @override
+  @JsonKey(name: 'show_nsfl')
+  bool? get showNsfl;
+  @override
+  @JsonKey(name: 'show_read_posts')
+  bool? get showReadPosts;
+  @override
+  bool? get searchable;
+  @override
+  String get auth;
+
+  /// Create a copy of SaveUserSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SaveUserSettingsImplCopyWith<_$SaveUserSettingsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SubscribeUser _$SubscribeUserFromJson(Map<String, dynamic> json) {
+  return _SubscribeUser.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SubscribeUser {
+  @JsonKey(name: 'person_id')
+  int get personId => throw _privateConstructorUsedError;
+  bool get subscribe => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this SubscribeUser to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SubscribeUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SubscribeUserCopyWith<SubscribeUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SubscribeUserCopyWith<$Res> {
+  factory $SubscribeUserCopyWith(
+    SubscribeUser value,
+    $Res Function(SubscribeUser) then,
+  ) = _$SubscribeUserCopyWithImpl<$Res, SubscribeUser>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    bool subscribe,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$SubscribeUserCopyWithImpl<$Res, $Val extends SubscribeUser>
+    implements $SubscribeUserCopyWith<$Res> {
+  _$SubscribeUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SubscribeUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? subscribe = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            personId:
+                null == personId
+                    ? _value.personId
+                    : personId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            subscribe:
+                null == subscribe
+                    ? _value.subscribe
+                    : subscribe // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$SubscribeUserImplCopyWith<$Res>
+    implements $SubscribeUserCopyWith<$Res> {
+  factory _$$SubscribeUserImplCopyWith(
+    _$SubscribeUserImpl value,
+    $Res Function(_$SubscribeUserImpl) then,
+  ) = __$$SubscribeUserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    bool subscribe,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$SubscribeUserImplCopyWithImpl<$Res>
+    extends _$SubscribeUserCopyWithImpl<$Res, _$SubscribeUserImpl>
+    implements _$$SubscribeUserImplCopyWith<$Res> {
+  __$$SubscribeUserImplCopyWithImpl(
+    _$SubscribeUserImpl _value,
+    $Res Function(_$SubscribeUserImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of SubscribeUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? personId = null,
+    Object? subscribe = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$SubscribeUserImpl(
+        personId:
+            null == personId
+                ? _value.personId
+                : personId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        subscribe:
+            null == subscribe
+                ? _value.subscribe
+                : subscribe // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SubscribeUserImpl extends _SubscribeUser {
+  const _$SubscribeUserImpl({
+    @JsonKey(name: 'person_id') required this.personId,
+    required this.subscribe,
+    required this.auth,
+  }) : super._();
+
+  factory _$SubscribeUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SubscribeUserImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'person_id')
+  final int personId;
+  @override
+  final bool subscribe;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'SubscribeUser(personId: $personId, subscribe: $subscribe, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SubscribeUserImpl &&
+            (identical(other.personId, personId) ||
+                other.personId == personId) &&
+            (identical(other.subscribe, subscribe) ||
+                other.subscribe == subscribe) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, personId, subscribe, auth);
+
+  /// Create a copy of SubscribeUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SubscribeUserImplCopyWith<_$SubscribeUserImpl> get copyWith =>
+      __$$SubscribeUserImplCopyWithImpl<_$SubscribeUserImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SubscribeUserImplToJson(this);
+  }
+}
+
+abstract class _SubscribeUser extends SubscribeUser {
+  const factory _SubscribeUser({
+    @JsonKey(name: 'person_id') required final int personId,
+    required final bool subscribe,
+    required final String auth,
+  }) = _$SubscribeUserImpl;
+  const _SubscribeUser._() : super._();
+
+  factory _SubscribeUser.fromJson(Map<String, dynamic> json) =
+      _$SubscribeUserImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'person_id')
+  int get personId;
+  @override
+  bool get subscribe;
+  @override
+  String get auth;
+
+  /// Create a copy of SubscribeUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SubscribeUserImplCopyWith<_$SubscribeUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

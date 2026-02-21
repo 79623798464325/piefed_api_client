@@ -122,3 +122,63 @@ class RemoveComment with _$RemoveComment implements PieFedApiQuery<GetCommentRes
   @override
   GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
 }
+
+@freezed
+class GetCommentLikes with _$GetCommentLikes implements PieFedApiQuery<ListCommentLikesResponse> {
+  const factory GetCommentLikes({@JsonKey(name: 'comment_id') required int commentId, int? page, int? limit, String? auth}) = _GetCommentLikes;
+
+  const GetCommentLikes._();
+  factory GetCommentLikes.fromJson(Map<String, dynamic> json) => _$GetCommentLikesFromJson(json);
+
+  @override
+  String get path => '/comment/like/list';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  ListCommentLikesResponse responseFactory(Map<String, dynamic> json) => ListCommentLikesResponse.fromJson(json);
+}
+
+@freezed
+class LockComment with _$LockComment implements PieFedApiQuery<GetCommentResponse> {
+  const factory LockComment({@JsonKey(name: 'comment_id') required int commentId, required bool locked, required String auth}) = _LockComment;
+
+  const LockComment._();
+  factory LockComment.fromJson(Map<String, dynamic> json) => _$LockCommentFromJson(json);
+
+  @override
+  String get path => '/comment/lock';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+}
+
+@freezed
+class MarkCommentAsAnswer with _$MarkCommentAsAnswer implements PieFedApiQuery<GetCommentReplyResponse> {
+  const factory MarkCommentAsAnswer({@JsonKey(name: 'comment_reply_id') required int commentReplyId, required bool answer, required String auth}) = _MarkCommentAsAnswer;
+
+  const MarkCommentAsAnswer._();
+  factory MarkCommentAsAnswer.fromJson(Map<String, dynamic> json) => _$MarkCommentAsAnswerFromJson(json);
+
+  @override
+  String get path => '/comment/mark_as_answer';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetCommentReplyResponse responseFactory(Map<String, dynamic> json) => GetCommentReplyResponse.fromJson(json);
+}
+
+@freezed
+class SubscribeComment with _$SubscribeComment implements PieFedApiQuery<GetCommentResponse> {
+  const factory SubscribeComment({@JsonKey(name: 'comment_id') required int commentId, required bool subscribe, required String auth}) = _SubscribeComment;
+
+  const SubscribeComment._();
+  factory SubscribeComment.fromJson(Map<String, dynamic> json) => _$SubscribeCommentFromJson(json);
+
+  @override
+  String get path => '/comment/subscribe';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+}

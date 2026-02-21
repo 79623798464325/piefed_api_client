@@ -5346,3 +5346,442 @@ abstract class _CommentReplyView implements CommentReplyView {
   _$$CommentReplyViewImplCopyWith<_$CommentReplyViewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+MediaView _$MediaViewFromJson(Map<String, dynamic> json) {
+  return _MediaView.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MediaView {
+  String get url => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+
+  /// Serializes this MediaView to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of MediaView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $MediaViewCopyWith<MediaView> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MediaViewCopyWith<$Res> {
+  factory $MediaViewCopyWith(MediaView value, $Res Function(MediaView) then) =
+      _$MediaViewCopyWithImpl<$Res, MediaView>;
+  @useResult
+  $Res call({String url, String? name});
+}
+
+/// @nodoc
+class _$MediaViewCopyWithImpl<$Res, $Val extends MediaView>
+    implements $MediaViewCopyWith<$Res> {
+  _$MediaViewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of MediaView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? url = null, Object? name = freezed}) {
+    return _then(
+      _value.copyWith(
+            url:
+                null == url
+                    ? _value.url
+                    : url // ignore: cast_nullable_to_non_nullable
+                        as String,
+            name:
+                freezed == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$MediaViewImplCopyWith<$Res>
+    implements $MediaViewCopyWith<$Res> {
+  factory _$$MediaViewImplCopyWith(
+    _$MediaViewImpl value,
+    $Res Function(_$MediaViewImpl) then,
+  ) = __$$MediaViewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String url, String? name});
+}
+
+/// @nodoc
+class __$$MediaViewImplCopyWithImpl<$Res>
+    extends _$MediaViewCopyWithImpl<$Res, _$MediaViewImpl>
+    implements _$$MediaViewImplCopyWith<$Res> {
+  __$$MediaViewImplCopyWithImpl(
+    _$MediaViewImpl _value,
+    $Res Function(_$MediaViewImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of MediaView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? url = null, Object? name = freezed}) {
+    return _then(
+      _$MediaViewImpl(
+        url:
+            null == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String,
+        name:
+            freezed == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MediaViewImpl implements _MediaView {
+  const _$MediaViewImpl({required this.url, this.name});
+
+  factory _$MediaViewImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MediaViewImplFromJson(json);
+
+  @override
+  final String url;
+  @override
+  final String? name;
+
+  @override
+  String toString() {
+    return 'MediaView(url: $url, name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MediaViewImpl &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, url, name);
+
+  /// Create a copy of MediaView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MediaViewImplCopyWith<_$MediaViewImpl> get copyWith =>
+      __$$MediaViewImplCopyWithImpl<_$MediaViewImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MediaViewImplToJson(this);
+  }
+}
+
+abstract class _MediaView implements MediaView {
+  const factory _MediaView({required final String url, final String? name}) =
+      _$MediaViewImpl;
+
+  factory _MediaView.fromJson(Map<String, dynamic> json) =
+      _$MediaViewImpl.fromJson;
+
+  @override
+  String get url;
+  @override
+  String? get name;
+
+  /// Create a copy of MediaView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MediaViewImplCopyWith<_$MediaViewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CommentLikeView _$CommentLikeViewFromJson(Map<String, dynamic> json) {
+  return _CommentLikeView.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CommentLikeView {
+  Person get creator => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_banned')
+  bool get creatorBanned => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_banned_from_community')
+  bool get creatorBannedFromCommunity => throw _privateConstructorUsedError;
+  int get score => throw _privateConstructorUsedError;
+
+  /// Serializes this CommentLikeView to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of CommentLikeView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CommentLikeViewCopyWith<CommentLikeView> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommentLikeViewCopyWith<$Res> {
+  factory $CommentLikeViewCopyWith(
+    CommentLikeView value,
+    $Res Function(CommentLikeView) then,
+  ) = _$CommentLikeViewCopyWithImpl<$Res, CommentLikeView>;
+  @useResult
+  $Res call({
+    Person creator,
+    @JsonKey(name: 'creator_banned') bool creatorBanned,
+    @JsonKey(name: 'creator_banned_from_community')
+    bool creatorBannedFromCommunity,
+    int score,
+  });
+
+  $PersonCopyWith<$Res> get creator;
+}
+
+/// @nodoc
+class _$CommentLikeViewCopyWithImpl<$Res, $Val extends CommentLikeView>
+    implements $CommentLikeViewCopyWith<$Res> {
+  _$CommentLikeViewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of CommentLikeView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? creator = null,
+    Object? creatorBanned = null,
+    Object? creatorBannedFromCommunity = null,
+    Object? score = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            creator:
+                null == creator
+                    ? _value.creator
+                    : creator // ignore: cast_nullable_to_non_nullable
+                        as Person,
+            creatorBanned:
+                null == creatorBanned
+                    ? _value.creatorBanned
+                    : creatorBanned // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            creatorBannedFromCommunity:
+                null == creatorBannedFromCommunity
+                    ? _value.creatorBannedFromCommunity
+                    : creatorBannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            score:
+                null == score
+                    ? _value.score
+                    : score // ignore: cast_nullable_to_non_nullable
+                        as int,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of CommentLikeView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PersonCopyWith<$Res> get creator {
+    return $PersonCopyWith<$Res>(_value.creator, (value) {
+      return _then(_value.copyWith(creator: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$CommentLikeViewImplCopyWith<$Res>
+    implements $CommentLikeViewCopyWith<$Res> {
+  factory _$$CommentLikeViewImplCopyWith(
+    _$CommentLikeViewImpl value,
+    $Res Function(_$CommentLikeViewImpl) then,
+  ) = __$$CommentLikeViewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    Person creator,
+    @JsonKey(name: 'creator_banned') bool creatorBanned,
+    @JsonKey(name: 'creator_banned_from_community')
+    bool creatorBannedFromCommunity,
+    int score,
+  });
+
+  @override
+  $PersonCopyWith<$Res> get creator;
+}
+
+/// @nodoc
+class __$$CommentLikeViewImplCopyWithImpl<$Res>
+    extends _$CommentLikeViewCopyWithImpl<$Res, _$CommentLikeViewImpl>
+    implements _$$CommentLikeViewImplCopyWith<$Res> {
+  __$$CommentLikeViewImplCopyWithImpl(
+    _$CommentLikeViewImpl _value,
+    $Res Function(_$CommentLikeViewImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of CommentLikeView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? creator = null,
+    Object? creatorBanned = null,
+    Object? creatorBannedFromCommunity = null,
+    Object? score = null,
+  }) {
+    return _then(
+      _$CommentLikeViewImpl(
+        creator:
+            null == creator
+                ? _value.creator
+                : creator // ignore: cast_nullable_to_non_nullable
+                    as Person,
+        creatorBanned:
+            null == creatorBanned
+                ? _value.creatorBanned
+                : creatorBanned // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        creatorBannedFromCommunity:
+            null == creatorBannedFromCommunity
+                ? _value.creatorBannedFromCommunity
+                : creatorBannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        score:
+            null == score
+                ? _value.score
+                : score // ignore: cast_nullable_to_non_nullable
+                    as int,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CommentLikeViewImpl implements _CommentLikeView {
+  const _$CommentLikeViewImpl({
+    required this.creator,
+    @JsonKey(name: 'creator_banned') required this.creatorBanned,
+    @JsonKey(name: 'creator_banned_from_community')
+    required this.creatorBannedFromCommunity,
+    required this.score,
+  });
+
+  factory _$CommentLikeViewImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommentLikeViewImplFromJson(json);
+
+  @override
+  final Person creator;
+  @override
+  @JsonKey(name: 'creator_banned')
+  final bool creatorBanned;
+  @override
+  @JsonKey(name: 'creator_banned_from_community')
+  final bool creatorBannedFromCommunity;
+  @override
+  final int score;
+
+  @override
+  String toString() {
+    return 'CommentLikeView(creator: $creator, creatorBanned: $creatorBanned, creatorBannedFromCommunity: $creatorBannedFromCommunity, score: $score)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CommentLikeViewImpl &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.creatorBanned, creatorBanned) ||
+                other.creatorBanned == creatorBanned) &&
+            (identical(
+                  other.creatorBannedFromCommunity,
+                  creatorBannedFromCommunity,
+                ) ||
+                other.creatorBannedFromCommunity ==
+                    creatorBannedFromCommunity) &&
+            (identical(other.score, score) || other.score == score));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    creator,
+    creatorBanned,
+    creatorBannedFromCommunity,
+    score,
+  );
+
+  /// Create a copy of CommentLikeView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CommentLikeViewImplCopyWith<_$CommentLikeViewImpl> get copyWith =>
+      __$$CommentLikeViewImplCopyWithImpl<_$CommentLikeViewImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CommentLikeViewImplToJson(this);
+  }
+}
+
+abstract class _CommentLikeView implements CommentLikeView {
+  const factory _CommentLikeView({
+    required final Person creator,
+    @JsonKey(name: 'creator_banned') required final bool creatorBanned,
+    @JsonKey(name: 'creator_banned_from_community')
+    required final bool creatorBannedFromCommunity,
+    required final int score,
+  }) = _$CommentLikeViewImpl;
+
+  factory _CommentLikeView.fromJson(Map<String, dynamic> json) =
+      _$CommentLikeViewImpl.fromJson;
+
+  @override
+  Person get creator;
+  @override
+  @JsonKey(name: 'creator_banned')
+  bool get creatorBanned;
+  @override
+  @JsonKey(name: 'creator_banned_from_community')
+  bool get creatorBannedFromCommunity;
+  @override
+  int get score;
+
+  /// Create a copy of CommentLikeView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CommentLikeViewImplCopyWith<_$CommentLikeViewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

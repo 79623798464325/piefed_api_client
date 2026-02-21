@@ -111,3 +111,67 @@ Map<String, dynamic> _$$RemoveCommentImplToJson(_$RemoveCommentImpl instance) =>
       'reason': instance.reason,
       'auth': instance.auth,
     };
+
+_$GetCommentLikesImpl _$$GetCommentLikesImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetCommentLikesImpl(
+  commentId: (json['comment_id'] as num).toInt(),
+  page: (json['page'] as num?)?.toInt(),
+  limit: (json['limit'] as num?)?.toInt(),
+  auth: json['auth'] as String?,
+);
+
+Map<String, dynamic> _$$GetCommentLikesImplToJson(
+  _$GetCommentLikesImpl instance,
+) => <String, dynamic>{
+  'comment_id': instance.commentId,
+  'page': instance.page,
+  'limit': instance.limit,
+  'auth': instance.auth,
+};
+
+_$LockCommentImpl _$$LockCommentImplFromJson(Map<String, dynamic> json) =>
+    _$LockCommentImpl(
+      commentId: (json['comment_id'] as num).toInt(),
+      locked: json['locked'] as bool,
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$LockCommentImplToJson(_$LockCommentImpl instance) =>
+    <String, dynamic>{
+      'comment_id': instance.commentId,
+      'locked': instance.locked,
+      'auth': instance.auth,
+    };
+
+_$MarkCommentAsAnswerImpl _$$MarkCommentAsAnswerImplFromJson(
+  Map<String, dynamic> json,
+) => _$MarkCommentAsAnswerImpl(
+  commentReplyId: (json['comment_reply_id'] as num).toInt(),
+  answer: json['answer'] as bool,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$MarkCommentAsAnswerImplToJson(
+  _$MarkCommentAsAnswerImpl instance,
+) => <String, dynamic>{
+  'comment_reply_id': instance.commentReplyId,
+  'answer': instance.answer,
+  'auth': instance.auth,
+};
+
+_$SubscribeCommentImpl _$$SubscribeCommentImplFromJson(
+  Map<String, dynamic> json,
+) => _$SubscribeCommentImpl(
+  commentId: (json['comment_id'] as num).toInt(),
+  subscribe: json['subscribe'] as bool,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$SubscribeCommentImplToJson(
+  _$SubscribeCommentImpl instance,
+) => <String, dynamic>{
+  'comment_id': instance.commentId,
+  'subscribe': instance.subscribe,
+  'auth': instance.auth,
+};

@@ -646,3 +646,333 @@ Map<String, dynamic> _$$MyUserInfoImplToJson(_$MyUserInfoImpl instance) =>
       'moderates': instance.moderates,
       'person_blocks': instance.personBlocks,
     };
+
+_$GetPostLikesResponseImpl _$$GetPostLikesResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetPostLikesResponseImpl(
+  postLikes:
+      (json['post_likes'] as List<dynamic>)
+          .map((e) => PersonView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
+
+Map<String, dynamic> _$$GetPostLikesResponseImplToJson(
+  _$GetPostLikesResponseImpl instance,
+) => <String, dynamic>{'post_likes': instance.postLikes};
+
+_$PostSetFlairResponseImpl _$$PostSetFlairResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$PostSetFlairResponseImpl(
+  bannedFromCommunity: json['banned_from_community'] as bool,
+  creatorBannedFromCommunity: json['creator_banned_from_community'] as bool,
+  creatorIsAdmin: json['creator_is_admin'] as bool,
+  creatorIsModerator: json['creator_is_moderator'] as bool,
+  hidden: json['hidden'] as bool,
+  read: json['read'] as bool,
+  saved: json['saved'] as bool,
+  subscribed: $enumDecode(_$SubscribedTypeEnumMap, json['subscribed']),
+  unreadComments: (json['unread_comments'] as num).toInt(),
+  activityAlert: json['activity_alert'] as bool?,
+  altText: json['alt_text'] as String?,
+  myVote: (json['my_vote'] as num?)?.toInt(),
+  flairList:
+      (json['flair_list'] as List<dynamic>?)
+          ?.map((e) => CommunityFlair.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
+  community:
+      json['community'] == null
+          ? null
+          : Community.fromJson(json['community'] as Map<String, dynamic>),
+  creator:
+      json['creator'] == null
+          ? null
+          : Person.fromJson(json['creator'] as Map<String, dynamic>),
+  post:
+      json['post'] == null
+          ? null
+          : Post.fromJson(json['post'] as Map<String, dynamic>),
+  counts:
+      json['counts'] == null
+          ? null
+          : PostAggregates.fromJson(json['counts'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$PostSetFlairResponseImplToJson(
+  _$PostSetFlairResponseImpl instance,
+) => <String, dynamic>{
+  'banned_from_community': instance.bannedFromCommunity,
+  'creator_banned_from_community': instance.creatorBannedFromCommunity,
+  'creator_is_admin': instance.creatorIsAdmin,
+  'creator_is_moderator': instance.creatorIsModerator,
+  'hidden': instance.hidden,
+  'read': instance.read,
+  'saved': instance.saved,
+  'subscribed': _$SubscribedTypeEnumMap[instance.subscribed]!,
+  'unread_comments': instance.unreadComments,
+  'activity_alert': instance.activityAlert,
+  'alt_text': instance.altText,
+  'my_vote': instance.myVote,
+  'flair_list': instance.flairList,
+  'can_auth_user_moderate': instance.canAuthUserModerate,
+  'community': instance.community,
+  'creator': instance.creator,
+  'post': instance.post,
+  'counts': instance.counts,
+};
+
+const _$SubscribedTypeEnumMap = {
+  SubscribedType.subscribed: 'Subscribed',
+  SubscribedType.notSubscribed: 'NotSubscribed',
+  SubscribedType.pending: 'Pending',
+};
+
+_$GetCommentReplyResponseImpl _$$GetCommentReplyResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetCommentReplyResponseImpl(
+  commentReplyView: CommentReplyView.fromJson(
+    json['comment_reply_view'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$$GetCommentReplyResponseImplToJson(
+  _$GetCommentReplyResponseImpl instance,
+) => <String, dynamic>{'comment_reply_view': instance.commentReplyView};
+
+_$CommunityFlairCreateResponseImpl _$$CommunityFlairCreateResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityFlairCreateResponseImpl(
+  id: (json['id'] as num).toInt(),
+  communityId: (json['community_id'] as num).toInt(),
+  flairTitle: json['flair_title'] as String,
+  textColor: json['text_color'] as String,
+  backgroundColor: json['background_color'] as String,
+  blurImages: json['blur_images'] as bool,
+  apId: json['ap_id'] as String?,
+);
+
+Map<String, dynamic> _$$CommunityFlairCreateResponseImplToJson(
+  _$CommunityFlairCreateResponseImpl instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'community_id': instance.communityId,
+  'flair_title': instance.flairTitle,
+  'text_color': instance.textColor,
+  'background_color': instance.backgroundColor,
+  'blur_images': instance.blurImages,
+  'ap_id': instance.apId,
+};
+
+_$CommunityFlairDeleteResponseImpl _$$CommunityFlairDeleteResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityFlairDeleteResponseImpl(
+  communityView:
+      json['community_view'] == null
+          ? null
+          : CommunityView.fromJson(
+            json['community_view'] as Map<String, dynamic>,
+          ),
+  discussionLanguages:
+      (json['discussion_languages'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+  moderators:
+      (json['moderators'] as List<dynamic>?)
+          ?.map(
+            (e) => CommunityModeratorView.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+  site:
+      json['site'] == null
+          ? null
+          : Site.fromJson(json['site'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$CommunityFlairDeleteResponseImplToJson(
+  _$CommunityFlairDeleteResponseImpl instance,
+) => <String, dynamic>{
+  'community_view': instance.communityView,
+  'discussion_languages': instance.discussionLanguages,
+  'moderators': instance.moderators,
+  'site': instance.site,
+};
+
+_$CommunityFlairEditResponseImpl _$$CommunityFlairEditResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityFlairEditResponseImpl(
+  id: (json['id'] as num).toInt(),
+  communityId: (json['community_id'] as num).toInt(),
+  flairTitle: json['flair_title'] as String,
+  textColor: json['text_color'] as String,
+  backgroundColor: json['background_color'] as String,
+  blurImages: json['blur_images'] as bool,
+  apId: json['ap_id'] as String?,
+);
+
+Map<String, dynamic> _$$CommunityFlairEditResponseImplToJson(
+  _$CommunityFlairEditResponseImpl instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'community_id': instance.communityId,
+  'flair_title': instance.flairTitle,
+  'text_color': instance.textColor,
+  'background_color': instance.backgroundColor,
+  'blur_images': instance.blurImages,
+  'ap_id': instance.apId,
+};
+
+_$CommunityModerationBanItemImpl _$$CommunityModerationBanItemImplFromJson(
+  Map<String, dynamic> json,
+) => _$CommunityModerationBanItemImpl(
+  bannedBy:
+      json['banned_by'] == null
+          ? null
+          : Person.fromJson(json['banned_by'] as Map<String, dynamic>),
+  bannedUser:
+      json['banned_user'] == null
+          ? null
+          : Person.fromJson(json['banned_user'] as Map<String, dynamic>),
+  community:
+      json['community'] == null
+          ? null
+          : Community.fromJson(json['community'] as Map<String, dynamic>),
+  expired: json['expired'] as bool?,
+  expiredAt: json['expired_at'] as String?,
+  expiresAt: json['expires_at'] as String?,
+  reason: json['reason'] as String?,
+);
+
+Map<String, dynamic> _$$CommunityModerationBanItemImplToJson(
+  _$CommunityModerationBanItemImpl instance,
+) => <String, dynamic>{
+  'banned_by': instance.bannedBy,
+  'banned_user': instance.bannedUser,
+  'community': instance.community,
+  'expired': instance.expired,
+  'expired_at': instance.expiredAt,
+  'expires_at': instance.expiresAt,
+  'reason': instance.reason,
+};
+
+_$UserSaveSettingsResponseImpl _$$UserSaveSettingsResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserSaveSettingsResponseImpl(
+  myUser:
+      json['my_user'] == null
+          ? null
+          : PersonView.fromJson(json['my_user'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$UserSaveSettingsResponseImplToJson(
+  _$UserSaveSettingsResponseImpl instance,
+) => <String, dynamic>{'my_user': instance.myUser};
+
+_$UserSubscribeResponseImpl _$$UserSubscribeResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserSubscribeResponseImpl(
+  personView:
+      json['person_view'] == null
+          ? null
+          : PersonView.fromJson(json['person_view'] as Map<String, dynamic>),
+  subscribed: json['subscribed'] as bool?,
+);
+
+Map<String, dynamic> _$$UserSubscribeResponseImplToJson(
+  _$UserSubscribeResponseImpl instance,
+) => <String, dynamic>{
+  'person_view': instance.personView,
+  'subscribed': instance.subscribed,
+};
+
+_$ImageDeleteResponseImpl _$$ImageDeleteResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$ImageDeleteResponseImpl(result: json['result'] as String?);
+
+Map<String, dynamic> _$$ImageDeleteResponseImplToJson(
+  _$ImageDeleteResponseImpl instance,
+) => <String, dynamic>{'result': instance.result};
+
+_$ImageUploadResponseImpl _$$ImageUploadResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$ImageUploadResponseImpl(
+  url: json['url'] as String?,
+  likedOnly: json['liked_only'] as bool?,
+  savedOnly: json['saved_only'] as bool?,
+  q: json['q'] as String?,
+);
+
+Map<String, dynamic> _$$ImageUploadResponseImplToJson(
+  _$ImageUploadResponseImpl instance,
+) => <String, dynamic>{
+  'url': instance.url,
+  'liked_only': instance.likedOnly,
+  'saved_only': instance.savedOnly,
+  'q': instance.q,
+};
+
+_$UserMediaResponseImpl _$$UserMediaResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserMediaResponseImpl(
+  nextPage: json['next_page'] as String?,
+  media:
+      (json['media'] as List<dynamic>)
+          .map((e) => MediaView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
+
+Map<String, dynamic> _$$UserMediaResponseImplToJson(
+  _$UserMediaResponseImpl instance,
+) => <String, dynamic>{'next_page': instance.nextPage, 'media': instance.media};
+
+_$GetSuggestCompletionResponseImpl _$$GetSuggestCompletionResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetSuggestCompletionResponseImpl(
+  result: (json['result'] as List<dynamic>).map((e) => e as String).toList(),
+);
+
+Map<String, dynamic> _$$GetSuggestCompletionResponseImplToJson(
+  _$GetSuggestCompletionResponseImpl instance,
+) => <String, dynamic>{'result': instance.result};
+
+_$UserSetNoteResponseImpl _$$UserSetNoteResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserSetNoteResponseImpl(
+  personView:
+      json['person_view'] == null
+          ? null
+          : PersonView.fromJson(json['person_view'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$$UserSetNoteResponseImplToJson(
+  _$UserSetNoteResponseImpl instance,
+) => <String, dynamic>{'person_view': instance.personView};
+
+_$UserMarkAllReadResponseImpl _$$UserMarkAllReadResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserMarkAllReadResponseImpl(
+  replies:
+      (json['replies'] as List<dynamic>)
+          .map((e) => CommentReplyView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
+
+Map<String, dynamic> _$$UserMarkAllReadResponseImplToJson(
+  _$UserMarkAllReadResponseImpl instance,
+) => <String, dynamic>{'replies': instance.replies};
+
+_$ListCommentLikesResponseImpl _$$ListCommentLikesResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$ListCommentLikesResponseImpl(
+  commentLikes:
+      (json['comment_likes'] as List<dynamic>)
+          .map((e) => CommentLikeView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  nextPage: json['next_page'] as String?,
+);
+
+Map<String, dynamic> _$$ListCommentLikesResponseImplToJson(
+  _$ListCommentLikesResponseImpl instance,
+) => <String, dynamic>{
+  'comment_likes': instance.commentLikes,
+  'next_page': instance.nextPage,
+};

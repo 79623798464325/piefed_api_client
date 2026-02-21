@@ -388,3 +388,163 @@ class MyUserInfo with _$MyUserInfo {
 
   factory MyUserInfo.fromJson(Map<String, dynamic> json) => _$MyUserInfoFromJson(json);
 }
+
+@freezed
+class GetPostLikesResponse with _$GetPostLikesResponse {
+  const factory GetPostLikesResponse({@JsonKey(name: 'post_likes') required List<PersonView> postLikes}) = _GetPostLikesResponse;
+
+  factory GetPostLikesResponse.fromJson(Map<String, dynamic> json) => _$GetPostLikesResponseFromJson(json);
+}
+
+@freezed
+class PostSetFlairResponse with _$PostSetFlairResponse {
+  const factory PostSetFlairResponse({
+    @JsonKey(name: 'banned_from_community') required bool bannedFromCommunity,
+    @JsonKey(name: 'creator_banned_from_community') required bool creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') required bool creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') required bool creatorIsModerator,
+    required bool hidden,
+    required bool read,
+    required bool saved,
+    required SubscribedType subscribed,
+    @JsonKey(name: 'unread_comments') required int unreadComments,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'alt_text') String? altText,
+    @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    Community? community,
+    Person? creator,
+    Post? post,
+    PostAggregates? counts,
+  }) = _PostSetFlairResponse;
+
+  factory PostSetFlairResponse.fromJson(Map<String, dynamic> json) => _$PostSetFlairResponseFromJson(json);
+}
+
+@freezed
+class GetCommentReplyResponse with _$GetCommentReplyResponse {
+  const factory GetCommentReplyResponse({@JsonKey(name: 'comment_reply_view') required CommentReplyView commentReplyView}) = _GetCommentReplyResponse;
+
+  factory GetCommentReplyResponse.fromJson(Map<String, dynamic> json) => _$GetCommentReplyResponseFromJson(json);
+}
+
+@freezed
+class CommunityFlairCreateResponse with _$CommunityFlairCreateResponse {
+  const factory CommunityFlairCreateResponse({
+    required int id,
+    @JsonKey(name: 'community_id') required int communityId,
+    @JsonKey(name: 'flair_title') required String flairTitle,
+    @JsonKey(name: 'text_color') required String textColor,
+    @JsonKey(name: 'background_color') required String backgroundColor,
+    @JsonKey(name: 'blur_images') required bool blurImages,
+    @JsonKey(name: 'ap_id') String? apId,
+  }) = _CommunityFlairCreateResponse;
+
+  factory CommunityFlairCreateResponse.fromJson(Map<String, dynamic> json) => _$CommunityFlairCreateResponseFromJson(json);
+}
+
+@freezed
+class CommunityFlairDeleteResponse with _$CommunityFlairDeleteResponse {
+  const factory CommunityFlairDeleteResponse({
+    @JsonKey(name: 'community_view') CommunityView? communityView,
+    @JsonKey(name: 'discussion_languages') List<int>? discussionLanguages,
+    List<CommunityModeratorView>? moderators,
+    Site? site,
+  }) = _CommunityFlairDeleteResponse;
+
+  factory CommunityFlairDeleteResponse.fromJson(Map<String, dynamic> json) => _$CommunityFlairDeleteResponseFromJson(json);
+}
+
+@freezed
+class CommunityFlairEditResponse with _$CommunityFlairEditResponse {
+  const factory CommunityFlairEditResponse({
+    required int id,
+    @JsonKey(name: 'community_id') required int communityId,
+    @JsonKey(name: 'flair_title') required String flairTitle,
+    @JsonKey(name: 'text_color') required String textColor,
+    @JsonKey(name: 'background_color') required String backgroundColor,
+    @JsonKey(name: 'blur_images') required bool blurImages,
+    @JsonKey(name: 'ap_id') String? apId,
+  }) = _CommunityFlairEditResponse;
+
+  factory CommunityFlairEditResponse.fromJson(Map<String, dynamic> json) => _$CommunityFlairEditResponseFromJson(json);
+}
+
+@freezed
+class CommunityModerationBanItem with _$CommunityModerationBanItem {
+  const factory CommunityModerationBanItem({
+    @JsonKey(name: 'banned_by') Person? bannedBy,
+    @JsonKey(name: 'banned_user') Person? bannedUser,
+    Community? community,
+    bool? expired,
+    @JsonKey(name: 'expired_at') String? expiredAt,
+    @JsonKey(name: 'expires_at') String? expiresAt,
+    String? reason,
+  }) = _CommunityModerationBanItem;
+
+  factory CommunityModerationBanItem.fromJson(Map<String, dynamic> json) => _$CommunityModerationBanItemFromJson(json);
+}
+
+@freezed
+class UserSaveSettingsResponse with _$UserSaveSettingsResponse {
+  const factory UserSaveSettingsResponse({@JsonKey(name: 'my_user') PersonView? myUser}) = _UserSaveSettingsResponse;
+
+  factory UserSaveSettingsResponse.fromJson(Map<String, dynamic> json) => _$UserSaveSettingsResponseFromJson(json);
+}
+
+@freezed
+class UserSubscribeResponse with _$UserSubscribeResponse {
+  const factory UserSubscribeResponse({@JsonKey(name: 'person_view') PersonView? personView, bool? subscribed}) = _UserSubscribeResponse;
+
+  factory UserSubscribeResponse.fromJson(Map<String, dynamic> json) => _$UserSubscribeResponseFromJson(json);
+}
+
+@freezed
+class ImageDeleteResponse with _$ImageDeleteResponse {
+  const factory ImageDeleteResponse({String? result}) = _ImageDeleteResponse;
+
+  factory ImageDeleteResponse.fromJson(Map<String, dynamic> json) => _$ImageDeleteResponseFromJson(json);
+}
+
+@freezed
+class ImageUploadResponse with _$ImageUploadResponse {
+  const factory ImageUploadResponse({String? url, @JsonKey(name: 'liked_only') bool? likedOnly, @JsonKey(name: 'saved_only') bool? savedOnly, String? q}) = _ImageUploadResponse;
+
+  factory ImageUploadResponse.fromJson(Map<String, dynamic> json) => _$ImageUploadResponseFromJson(json);
+}
+
+@freezed
+class UserMediaResponse with _$UserMediaResponse {
+  const factory UserMediaResponse({@JsonKey(name: 'next_page') String? nextPage, required List<MediaView> media}) = _UserMediaResponse;
+
+  factory UserMediaResponse.fromJson(Map<String, dynamic> json) => _$UserMediaResponseFromJson(json);
+}
+
+@freezed
+class GetSuggestCompletionResponse with _$GetSuggestCompletionResponse {
+  const factory GetSuggestCompletionResponse({required List<String> result}) = _GetSuggestCompletionResponse;
+
+  factory GetSuggestCompletionResponse.fromJson(Map<String, dynamic> json) => _$GetSuggestCompletionResponseFromJson(json);
+}
+
+@freezed
+class UserSetNoteResponse with _$UserSetNoteResponse {
+  const factory UserSetNoteResponse({@JsonKey(name: 'person_view') PersonView? personView}) = _UserSetNoteResponse;
+
+  factory UserSetNoteResponse.fromJson(Map<String, dynamic> json) => _$UserSetNoteResponseFromJson(json);
+}
+
+@freezed
+class UserMarkAllReadResponse with _$UserMarkAllReadResponse {
+  const factory UserMarkAllReadResponse({required List<CommentReplyView> replies}) = _UserMarkAllReadResponse;
+
+  factory UserMarkAllReadResponse.fromJson(Map<String, dynamic> json) => _$UserMarkAllReadResponseFromJson(json);
+}
+
+@freezed
+class ListCommentLikesResponse with _$ListCommentLikesResponse {
+  const factory ListCommentLikesResponse({@JsonKey(name: 'comment_likes') required List<CommentLikeView> commentLikes, @JsonKey(name: 'next_page') String? nextPage}) = _ListCommentLikesResponse;
+
+  factory ListCommentLikesResponse.fromJson(Map<String, dynamic> json) => _$ListCommentLikesResponseFromJson(json);
+}

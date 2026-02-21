@@ -387,3 +387,352 @@ abstract class _UploadCommunityImage extends UploadCommunityImage {
   _$$UploadCommunityImageImplCopyWith<_$UploadCommunityImageImpl>
   get copyWith => throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$UploadUserImage {
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  MultipartFile get file => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Create a copy of UploadUserImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UploadUserImageCopyWith<UploadUserImage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UploadUserImageCopyWith<$Res> {
+  factory $UploadUserImageCopyWith(
+    UploadUserImage value,
+    $Res Function(UploadUserImage) then,
+  ) = _$UploadUserImageCopyWithImpl<$Res, UploadUserImage>;
+  @useResult
+  $Res call({
+    @JsonKey(includeFromJson: false, includeToJson: false) MultipartFile file,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$UploadUserImageCopyWithImpl<$Res, $Val extends UploadUserImage>
+    implements $UploadUserImageCopyWith<$Res> {
+  _$UploadUserImageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UploadUserImage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? file = null, Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            file:
+                null == file
+                    ? _value.file
+                    : file // ignore: cast_nullable_to_non_nullable
+                        as MultipartFile,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UploadUserImageImplCopyWith<$Res>
+    implements $UploadUserImageCopyWith<$Res> {
+  factory _$$UploadUserImageImplCopyWith(
+    _$UploadUserImageImpl value,
+    $Res Function(_$UploadUserImageImpl) then,
+  ) = __$$UploadUserImageImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(includeFromJson: false, includeToJson: false) MultipartFile file,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$UploadUserImageImplCopyWithImpl<$Res>
+    extends _$UploadUserImageCopyWithImpl<$Res, _$UploadUserImageImpl>
+    implements _$$UploadUserImageImplCopyWith<$Res> {
+  __$$UploadUserImageImplCopyWithImpl(
+    _$UploadUserImageImpl _value,
+    $Res Function(_$UploadUserImageImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UploadUserImage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? file = null, Object? auth = null}) {
+    return _then(
+      _$UploadUserImageImpl(
+        file:
+            null == file
+                ? _value.file
+                : file // ignore: cast_nullable_to_non_nullable
+                    as MultipartFile,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$UploadUserImageImpl extends _UploadUserImage {
+  _$UploadUserImageImpl({
+    @JsonKey(includeFromJson: false, includeToJson: false) required this.file,
+    required this.auth,
+  }) : super._();
+
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final MultipartFile file;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'UploadUserImage(file: $file, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadUserImageImpl &&
+            (identical(other.file, file) || other.file == file) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, file, auth);
+
+  /// Create a copy of UploadUserImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadUserImageImplCopyWith<_$UploadUserImageImpl> get copyWith =>
+      __$$UploadUserImageImplCopyWithImpl<_$UploadUserImageImpl>(
+        this,
+        _$identity,
+      );
+}
+
+abstract class _UploadUserImage extends UploadUserImage {
+  factory _UploadUserImage({
+    @JsonKey(includeFromJson: false, includeToJson: false)
+    required final MultipartFile file,
+    required final String auth,
+  }) = _$UploadUserImageImpl;
+  _UploadUserImage._() : super._();
+
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  MultipartFile get file;
+  @override
+  String get auth;
+
+  /// Create a copy of UploadUserImage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UploadUserImageImplCopyWith<_$UploadUserImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DeleteImage _$DeleteImageFromJson(Map<String, dynamic> json) {
+  return _DeleteImage.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DeleteImage {
+  @JsonKey(name: 'file')
+  String get file => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this DeleteImage to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of DeleteImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $DeleteImageCopyWith<DeleteImage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteImageCopyWith<$Res> {
+  factory $DeleteImageCopyWith(
+    DeleteImage value,
+    $Res Function(DeleteImage) then,
+  ) = _$DeleteImageCopyWithImpl<$Res, DeleteImage>;
+  @useResult
+  $Res call({@JsonKey(name: 'file') String file, String auth});
+}
+
+/// @nodoc
+class _$DeleteImageCopyWithImpl<$Res, $Val extends DeleteImage>
+    implements $DeleteImageCopyWith<$Res> {
+  _$DeleteImageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of DeleteImage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? file = null, Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            file:
+                null == file
+                    ? _value.file
+                    : file // ignore: cast_nullable_to_non_nullable
+                        as String,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$DeleteImageImplCopyWith<$Res>
+    implements $DeleteImageCopyWith<$Res> {
+  factory _$$DeleteImageImplCopyWith(
+    _$DeleteImageImpl value,
+    $Res Function(_$DeleteImageImpl) then,
+  ) = __$$DeleteImageImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'file') String file, String auth});
+}
+
+/// @nodoc
+class __$$DeleteImageImplCopyWithImpl<$Res>
+    extends _$DeleteImageCopyWithImpl<$Res, _$DeleteImageImpl>
+    implements _$$DeleteImageImplCopyWith<$Res> {
+  __$$DeleteImageImplCopyWithImpl(
+    _$DeleteImageImpl _value,
+    $Res Function(_$DeleteImageImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of DeleteImage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? file = null, Object? auth = null}) {
+    return _then(
+      _$DeleteImageImpl(
+        file:
+            null == file
+                ? _value.file
+                : file // ignore: cast_nullable_to_non_nullable
+                    as String,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DeleteImageImpl extends _DeleteImage {
+  const _$DeleteImageImpl({
+    @JsonKey(name: 'file') required this.file,
+    required this.auth,
+  }) : super._();
+
+  factory _$DeleteImageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DeleteImageImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'file')
+  final String file;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'DeleteImage(file: $file, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteImageImpl &&
+            (identical(other.file, file) || other.file == file) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, file, auth);
+
+  /// Create a copy of DeleteImage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteImageImplCopyWith<_$DeleteImageImpl> get copyWith =>
+      __$$DeleteImageImplCopyWithImpl<_$DeleteImageImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DeleteImageImplToJson(this);
+  }
+}
+
+abstract class _DeleteImage extends DeleteImage {
+  const factory _DeleteImage({
+    @JsonKey(name: 'file') required final String file,
+    required final String auth,
+  }) = _$DeleteImageImpl;
+  const _DeleteImage._() : super._();
+
+  factory _DeleteImage.fromJson(Map<String, dynamic> json) =
+      _$DeleteImageImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'file')
+  String get file;
+  @override
+  String get auth;
+
+  /// Create a copy of DeleteImage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteImageImplCopyWith<_$DeleteImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

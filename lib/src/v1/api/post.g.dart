@@ -185,3 +185,116 @@ _$GetSiteMetadataImpl _$$GetSiteMetadataImplFromJson(
 Map<String, dynamic> _$$GetSiteMetadataImplToJson(
   _$GetSiteMetadataImpl instance,
 ) => <String, dynamic>{'url': instance.url};
+
+_$GetPostLikesImpl _$$GetPostLikesImplFromJson(Map<String, dynamic> json) =>
+    _$GetPostLikesImpl(
+      postId: (json['post_id'] as num).toInt(),
+      page: (json['page'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      auth: json['auth'] as String?,
+    );
+
+Map<String, dynamic> _$$GetPostLikesImplToJson(_$GetPostLikesImpl instance) =>
+    <String, dynamic>{
+      'post_id': instance.postId,
+      'page': instance.page,
+      'limit': instance.limit,
+      'auth': instance.auth,
+    };
+
+_$ListPosts2Impl _$$ListPosts2ImplFromJson(Map<String, dynamic> json) =>
+    _$ListPosts2Impl(
+      type: json['type_'] as String?,
+      sort: json['sort'] as String?,
+      communityId: (json['community_id'] as num?)?.toInt(),
+      communityName: json['community_name'] as String?,
+      savedOnly: json['saved_only'] as bool?,
+      personId: (json['person_id'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt(),
+      page: (json['page'] as num?)?.toInt(),
+      likedOnly: json['liked_only'] as bool?,
+      feedId: (json['feed_id'] as num?)?.toInt(),
+      topicId: (json['topic_id'] as num?)?.toInt(),
+      ignoreSticky: json['ignore_sticky'] as bool?,
+      q: json['q'] as String?,
+      auth: json['auth'] as String?,
+    );
+
+Map<String, dynamic> _$$ListPosts2ImplToJson(_$ListPosts2Impl instance) =>
+    <String, dynamic>{
+      'type_': instance.type,
+      'sort': instance.sort,
+      'community_id': instance.communityId,
+      'community_name': instance.communityName,
+      'saved_only': instance.savedOnly,
+      'person_id': instance.personId,
+      'limit': instance.limit,
+      'page': instance.page,
+      'liked_only': instance.likedOnly,
+      'feed_id': instance.feedId,
+      'topic_id': instance.topicId,
+      'ignore_sticky': instance.ignoreSticky,
+      'q': instance.q,
+      'auth': instance.auth,
+    };
+
+_$AssignPostFlairImpl _$$AssignPostFlairImplFromJson(
+  Map<String, dynamic> json,
+) => _$AssignPostFlairImpl(
+  postId: (json['post_id'] as num).toInt(),
+  flairIdList:
+      (json['flair_id_list'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$AssignPostFlairImplToJson(
+  _$AssignPostFlairImpl instance,
+) => <String, dynamic>{
+  'post_id': instance.postId,
+  'flair_id_list': instance.flairIdList,
+  'auth': instance.auth,
+};
+
+_$HidePostImpl _$$HidePostImplFromJson(Map<String, dynamic> json) =>
+    _$HidePostImpl(
+      postId: (json['post_id'] as num).toInt(),
+      hidden: json['hidden'] as bool,
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$HidePostImplToJson(_$HidePostImpl instance) =>
+    <String, dynamic>{
+      'post_id': instance.postId,
+      'hidden': instance.hidden,
+      'auth': instance.auth,
+    };
+
+_$LockPostImpl _$$LockPostImplFromJson(Map<String, dynamic> json) =>
+    _$LockPostImpl(
+      postId: (json['post_id'] as num).toInt(),
+      locked: json['locked'] as bool,
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$LockPostImplToJson(_$LockPostImpl instance) =>
+    <String, dynamic>{
+      'post_id': instance.postId,
+      'locked': instance.locked,
+      'auth': instance.auth,
+    };
+
+_$SubscribePostImpl _$$SubscribePostImplFromJson(Map<String, dynamic> json) =>
+    _$SubscribePostImpl(
+      postId: (json['post_id'] as num).toInt(),
+      subscribe: json['subscribe'] as bool,
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$SubscribePostImplToJson(_$SubscribePostImpl instance) =>
+    <String, dynamic>{
+      'post_id': instance.postId,
+      'subscribe': instance.subscribe,
+      'auth': instance.auth,
+    };

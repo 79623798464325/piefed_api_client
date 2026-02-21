@@ -93,3 +93,35 @@ Map<String, dynamic> _$$LeaveConversationImplToJson(
   'recipient_id': instance.recipientId,
   'auth': instance.auth,
 };
+
+_$MarkPrivateMessageAsReadImpl _$$MarkPrivateMessageAsReadImplFromJson(
+  Map<String, dynamic> json,
+) => _$MarkPrivateMessageAsReadImpl(
+  privateMessageId: (json['private_message_id'] as num).toInt(),
+  read: json['read'] as bool,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$MarkPrivateMessageAsReadImplToJson(
+  _$MarkPrivateMessageAsReadImpl instance,
+) => <String, dynamic>{
+  'private_message_id': instance.privateMessageId,
+  'read': instance.read,
+  'auth': instance.auth,
+};
+
+_$ReportPrivateMessageImpl _$$ReportPrivateMessageImplFromJson(
+  Map<String, dynamic> json,
+) => _$ReportPrivateMessageImpl(
+  privateMessageId: (json['private_message_id'] as num).toInt(),
+  reason: json['reason'] as String,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$ReportPrivateMessageImplToJson(
+  _$ReportPrivateMessageImpl instance,
+) => <String, dynamic>{
+  'private_message_id': instance.privateMessageId,
+  'reason': instance.reason,
+  'auth': instance.auth,
+};

@@ -407,3 +407,161 @@ abstract class _Search extends Search {
   _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+SuggestCompletion _$SuggestCompletionFromJson(Map<String, dynamic> json) {
+  return _SuggestCompletion.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SuggestCompletion {
+  String get q => throw _privateConstructorUsedError;
+
+  /// Serializes this SuggestCompletion to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of SuggestCompletion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SuggestCompletionCopyWith<SuggestCompletion> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SuggestCompletionCopyWith<$Res> {
+  factory $SuggestCompletionCopyWith(
+    SuggestCompletion value,
+    $Res Function(SuggestCompletion) then,
+  ) = _$SuggestCompletionCopyWithImpl<$Res, SuggestCompletion>;
+  @useResult
+  $Res call({String q});
+}
+
+/// @nodoc
+class _$SuggestCompletionCopyWithImpl<$Res, $Val extends SuggestCompletion>
+    implements $SuggestCompletionCopyWith<$Res> {
+  _$SuggestCompletionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of SuggestCompletion
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? q = null}) {
+    return _then(
+      _value.copyWith(
+            q:
+                null == q
+                    ? _value.q
+                    : q // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$SuggestCompletionImplCopyWith<$Res>
+    implements $SuggestCompletionCopyWith<$Res> {
+  factory _$$SuggestCompletionImplCopyWith(
+    _$SuggestCompletionImpl value,
+    $Res Function(_$SuggestCompletionImpl) then,
+  ) = __$$SuggestCompletionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String q});
+}
+
+/// @nodoc
+class __$$SuggestCompletionImplCopyWithImpl<$Res>
+    extends _$SuggestCompletionCopyWithImpl<$Res, _$SuggestCompletionImpl>
+    implements _$$SuggestCompletionImplCopyWith<$Res> {
+  __$$SuggestCompletionImplCopyWithImpl(
+    _$SuggestCompletionImpl _value,
+    $Res Function(_$SuggestCompletionImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of SuggestCompletion
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? q = null}) {
+    return _then(
+      _$SuggestCompletionImpl(
+        q:
+            null == q
+                ? _value.q
+                : q // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SuggestCompletionImpl extends _SuggestCompletion {
+  const _$SuggestCompletionImpl({required this.q}) : super._();
+
+  factory _$SuggestCompletionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuggestCompletionImplFromJson(json);
+
+  @override
+  final String q;
+
+  @override
+  String toString() {
+    return 'SuggestCompletion(q: $q)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuggestCompletionImpl &&
+            (identical(other.q, q) || other.q == q));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, q);
+
+  /// Create a copy of SuggestCompletion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuggestCompletionImplCopyWith<_$SuggestCompletionImpl> get copyWith =>
+      __$$SuggestCompletionImplCopyWithImpl<_$SuggestCompletionImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SuggestCompletionImplToJson(this);
+  }
+}
+
+abstract class _SuggestCompletion extends SuggestCompletion {
+  const factory _SuggestCompletion({required final String q}) =
+      _$SuggestCompletionImpl;
+  const _SuggestCompletion._() : super._();
+
+  factory _SuggestCompletion.fromJson(Map<String, dynamic> json) =
+      _$SuggestCompletionImpl.fromJson;
+
+  @override
+  String get q;
+
+  /// Create a copy of SuggestCompletion
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuggestCompletionImplCopyWith<_$SuggestCompletionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
