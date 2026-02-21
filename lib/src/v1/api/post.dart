@@ -21,12 +21,7 @@ class GetPost with _$GetPost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.get;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -59,12 +54,7 @@ class CreatePost with _$CreatePost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -94,7 +84,7 @@ class ReportPost with _$ReportPost implements PieFedApiQuery<ReportPostResponse>
 }
 
 @freezed
-class MarkPostAsRead with _$MarkPostAsRead implements PieFedApiQuery<GetPostResponse> {
+class MarkPostAsRead with _$MarkPostAsRead implements PieFedApiQuery<SuccessResponse> {
   @JsonSerializable(includeIfNull: false)
   const factory MarkPostAsRead({@JsonKey(name: 'post_id') required int postId, required bool read, required String auth}) = _MarkPostAsRead;
 
@@ -106,12 +96,7 @@ class MarkPostAsRead with _$MarkPostAsRead implements PieFedApiQuery<GetPostResp
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  SuccessResponse responseFactory(Map<String, dynamic> json) => SuccessResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -160,12 +145,7 @@ class EditPost with _$EditPost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.put;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -210,12 +190,7 @@ class FeaturePost with _$FeaturePost implements PieFedApiQuery<GetPostResponse> 
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -236,12 +211,7 @@ class RemovePost with _$RemovePost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -261,12 +231,7 @@ class PollVote with _$PollVote implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -381,12 +346,7 @@ class HidePost with _$HidePost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -406,12 +366,7 @@ class LockPost with _$LockPost implements PieFedApiQuery<GetPostResponse> {
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;
@@ -431,12 +386,7 @@ class SubscribePost with _$SubscribePost implements PieFedApiQuery<GetPostRespon
   @override
   HttpMethod get httpMethod => HttpMethod.put;
   @override
-  GetPostResponse responseFactory(Map<String, dynamic> json) {
-    if (json.containsKey('post_view')) {
-      return GetPostResponse.fromJson(json['post_view'] as Map<String, dynamic>);
-    }
-    return GetPostResponse.fromJson(json);
-  }
+  GetPostResponse responseFactory(Map<String, dynamic> json) => GetPostResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;

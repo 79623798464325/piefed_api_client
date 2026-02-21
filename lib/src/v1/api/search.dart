@@ -47,7 +47,7 @@ class SuggestCompletion with _$SuggestCompletion implements PieFedApiQuery<GetSu
   factory SuggestCompletion.fromJson(Map<String, dynamic> json) => _$SuggestCompletionFromJson(json);
 
   @override
-  String get path => '/search/suggest';
+  String get path => '/suggest_completion';
   @override
   HttpMethod get httpMethod => HttpMethod.get;
   @override

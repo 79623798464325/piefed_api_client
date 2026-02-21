@@ -79,7 +79,7 @@ class ReportComment with _$ReportComment implements PieFedApiQuery<ReportComment
 }
 
 @freezed
-class MarkCommentAsRead with _$MarkCommentAsRead implements PieFedApiQuery<GetCommentResponse> {
+class MarkCommentAsRead with _$MarkCommentAsRead implements PieFedApiQuery<SuccessResponse> {
   @JsonSerializable(includeIfNull: false)
   const factory MarkCommentAsRead({@JsonKey(name: 'comment_id') required int commentId, required bool read, required String auth}) = _MarkCommentAsRead;
 
@@ -91,7 +91,7 @@ class MarkCommentAsRead with _$MarkCommentAsRead implements PieFedApiQuery<GetCo
   @override
   HttpMethod get httpMethod => HttpMethod.post;
   @override
-  GetCommentResponse responseFactory(Map<String, dynamic> json) => GetCommentResponse.fromJson(json);
+  SuccessResponse responseFactory(Map<String, dynamic> json) => SuccessResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;

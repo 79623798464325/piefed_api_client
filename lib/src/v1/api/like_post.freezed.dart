@@ -31,6 +31,12 @@ mixin _$LikePost {
   /// Auth token.
   String get auth => throw _privateConstructorUsedError;
 
+  /// Optional emoji for the vote.
+  String? get emoji => throw _privateConstructorUsedError;
+
+  /// Whether the vote is private.
+  bool? get private => throw _privateConstructorUsedError;
+
   /// Serializes this LikePost to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -44,7 +50,7 @@ mixin _$LikePost {
 abstract class $LikePostCopyWith<$Res> {
   factory $LikePostCopyWith(LikePost value, $Res Function(LikePost) then) = _$LikePostCopyWithImpl<$Res, LikePost>;
   @useResult
-  $Res call({@JsonKey(name: 'post_id') int postId, int score, String auth});
+  $Res call({@JsonKey(name: 'post_id') int postId, int score, String auth, String? emoji, bool? private});
 }
 
 /// @nodoc
@@ -60,7 +66,7 @@ class _$LikePostCopyWithImpl<$Res, $Val extends LikePost> implements $LikePostCo
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? postId = null, Object? score = null, Object? auth = null}) {
+  $Res call({Object? postId = null, Object? score = null, Object? auth = null, Object? emoji = freezed, Object? private = freezed}) {
     return _then(
       _value.copyWith(
             postId:
@@ -78,6 +84,16 @@ class _$LikePostCopyWithImpl<$Res, $Val extends LikePost> implements $LikePostCo
                     ? _value.auth
                     : auth // ignore: cast_nullable_to_non_nullable
                         as String,
+            emoji:
+                freezed == emoji
+                    ? _value.emoji
+                    : emoji // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            private:
+                freezed == private
+                    ? _value.private
+                    : private // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -89,7 +105,7 @@ abstract class _$$LikePostImplCopyWith<$Res> implements $LikePostCopyWith<$Res> 
   factory _$$LikePostImplCopyWith(_$LikePostImpl value, $Res Function(_$LikePostImpl) then) = __$$LikePostImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'post_id') int postId, int score, String auth});
+  $Res call({@JsonKey(name: 'post_id') int postId, int score, String auth, String? emoji, bool? private});
 }
 
 /// @nodoc
@@ -100,7 +116,7 @@ class __$$LikePostImplCopyWithImpl<$Res> extends _$LikePostCopyWithImpl<$Res, _$
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? postId = null, Object? score = null, Object? auth = null}) {
+  $Res call({Object? postId = null, Object? score = null, Object? auth = null, Object? emoji = freezed, Object? private = freezed}) {
     return _then(
       _$LikePostImpl(
         postId:
@@ -118,6 +134,16 @@ class __$$LikePostImplCopyWithImpl<$Res> extends _$LikePostCopyWithImpl<$Res, _$
                 ? _value.auth
                 : auth // ignore: cast_nullable_to_non_nullable
                     as String,
+        emoji:
+            freezed == emoji
+                ? _value.emoji
+                : emoji // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        private:
+            freezed == private
+                ? _value.private
+                : private // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -127,7 +153,7 @@ class __$$LikePostImplCopyWithImpl<$Res> extends _$LikePostCopyWithImpl<$Res, _$
 
 @JsonSerializable(includeIfNull: false)
 class _$LikePostImpl extends _LikePost {
-  const _$LikePostImpl({@JsonKey(name: 'post_id') required this.postId, required this.score, required this.auth}) : super._();
+  const _$LikePostImpl({@JsonKey(name: 'post_id') required this.postId, required this.score, required this.auth, this.emoji, this.private}) : super._();
 
   factory _$LikePostImpl.fromJson(Map<String, dynamic> json) => _$$LikePostImplFromJson(json);
 
@@ -144,9 +170,17 @@ class _$LikePostImpl extends _LikePost {
   @override
   final String auth;
 
+  /// Optional emoji for the vote.
+  @override
+  final String? emoji;
+
+  /// Whether the vote is private.
+  @override
+  final bool? private;
+
   @override
   String toString() {
-    return 'LikePost(postId: $postId, score: $score, auth: $auth)';
+    return 'LikePost(postId: $postId, score: $score, auth: $auth, emoji: $emoji, private: $private)';
   }
 
   @override
@@ -156,12 +190,14 @@ class _$LikePostImpl extends _LikePost {
             other is _$LikePostImpl &&
             (identical(other.postId, postId) || other.postId == postId) &&
             (identical(other.score, score) || other.score == score) &&
-            (identical(other.auth, auth) || other.auth == auth));
+            (identical(other.auth, auth) || other.auth == auth) &&
+            (identical(other.emoji, emoji) || other.emoji == emoji) &&
+            (identical(other.private, private) || other.private == private));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, postId, score, auth);
+  int get hashCode => Object.hash(runtimeType, postId, score, auth, emoji, private);
 
   /// Create a copy of LikePost
   /// with the given fields replaced by the non-null parameter values.
@@ -177,7 +213,7 @@ class _$LikePostImpl extends _LikePost {
 }
 
 abstract class _LikePost extends LikePost {
-  const factory _LikePost({@JsonKey(name: 'post_id') required final int postId, required final int score, required final String auth}) = _$LikePostImpl;
+  const factory _LikePost({@JsonKey(name: 'post_id') required final int postId, required final int score, required final String auth, final String? emoji, final bool? private}) = _$LikePostImpl;
   const _LikePost._() : super._();
 
   factory _LikePost.fromJson(Map<String, dynamic> json) = _$LikePostImpl.fromJson;
@@ -194,6 +230,14 @@ abstract class _LikePost extends LikePost {
   /// Auth token.
   @override
   String get auth;
+
+  /// Optional emoji for the vote.
+  @override
+  String? get emoji;
+
+  /// Whether the vote is private.
+  @override
+  bool? get private;
 
   /// Create a copy of LikePost
   /// with the given fields replaced by the non-null parameter values.

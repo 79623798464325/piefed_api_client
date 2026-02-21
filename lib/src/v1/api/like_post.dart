@@ -20,6 +20,12 @@ class LikePost with _$LikePost implements PieFedApiQuery<GetPostResponse> {
 
     /// Auth token.
     required String auth,
+
+    /// Optional emoji for the vote.
+    String? emoji,
+
+    /// Whether the vote is private.
+    bool? private,
   }) = _LikePost;
 
   const LikePost._();

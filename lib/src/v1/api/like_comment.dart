@@ -20,6 +20,12 @@ class LikeComment with _$LikeComment implements PieFedApiQuery<GetCommentRespons
 
     /// Auth token.
     required String auth,
+
+    /// Optional emoji for the vote.
+    String? emoji,
+
+    /// Whether the vote is private.
+    bool? private,
   }) = _LikeComment;
 
   const LikeComment._();

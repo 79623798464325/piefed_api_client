@@ -7,18 +7,22 @@ part of 'api.dart';
 // **************************************************************************
 
 _$GetPostResponseImpl _$$GetPostResponseImplFromJson(Map<String, dynamic> json) => _$GetPostResponseImpl(
-  post: Post.fromJson(json['post'] as Map<String, dynamic>),
-  creator: Person.fromJson(json['creator'] as Map<String, dynamic>),
-  community: Community.fromJson(json['community'] as Map<String, dynamic>),
-  activityAlert: json['activity_alert'] as bool?,
+  postView: PostView.fromJson(json['post_view'] as Map<String, dynamic>),
+  communityView: json['community_view'] == null ? null : CommunityView.fromJson(json['community_view'] as Map<String, dynamic>),
+  moderators: (json['moderators'] as List<dynamic>?)?.map((e) => CommunityModeratorView.fromJson(e as Map<String, dynamic>)).toList(),
+  crossPosts: (json['cross_posts'] as List<dynamic>?)?.map((e) => PostView.fromJson(e as Map<String, dynamic>)).toList(),
 );
 
 Map<String, dynamic> _$$GetPostResponseImplToJson(_$GetPostResponseImpl instance) => <String, dynamic>{
-  'post': instance.post,
-  'creator': instance.creator,
-  'community': instance.community,
-  'activity_alert': instance.activityAlert,
+  'post_view': instance.postView,
+  'community_view': instance.communityView,
+  'moderators': instance.moderators,
+  'cross_posts': instance.crossPosts,
 };
+
+_$SuccessResponseImpl _$$SuccessResponseImplFromJson(Map<String, dynamic> json) => _$SuccessResponseImpl(success: json['success'] as bool);
+
+Map<String, dynamic> _$$SuccessResponseImplToJson(_$SuccessResponseImpl instance) => <String, dynamic>{'success': instance.success};
 
 _$GetCommunityResponseImpl _$$GetCommunityResponseImplFromJson(Map<String, dynamic> json) => _$GetCommunityResponseImpl(
   communityView: CommunityView.fromJson(json['community_view'] as Map<String, dynamic>),

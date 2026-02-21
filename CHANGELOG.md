@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.12.0
+
+*   **PieFed v1.7.0 Swagger Support**:
+    *   **Models**: 
+        *   Restructured `GetPostResponse` and `GetCommunityResponse` to match API's nested structure (`post_view`, `community_view`).
+        *   Expanded `PostView` and `CommentView` with missing moderation fields (`banned_from_community`, `creator_is_admin`, `creator_is_moderator`, `hidden`, etc.).
+        *   Added `SuccessResponse` for simple boolean-return actions.
+    *   **Voting**: Added missing `emoji` and `private` parameters to `LikePost` and `LikeComment`.
+    *   **User Settings**: Expanded `SaveUserSettings` with visibility controls (GenAI, NSFW, NSFL), thresholds, and management toggles.
+    *   **Path Corrections**: Fixed `SuggestCompletion` endpoint path to `/suggest_completion`.
+    *   **Cleaning**: Simplified response factories and updated `MarkPostAsRead` / `MarkCommentAsRead` to return `SuccessResponse`.
+
 ## 0.11.0
 
 *   **Comprehensive API Endpoint Alignment**:

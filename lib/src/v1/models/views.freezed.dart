@@ -547,6 +547,8 @@ mixin _$CommentView {
   bool? get creatorIsAdmin => throw _privateConstructorUsedError;
   @JsonKey(name: 'creator_is_moderator')
   bool? get creatorIsModerator => throw _privateConstructorUsedError;
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity => throw _privateConstructorUsedError;
   bool get saved => throw _privateConstructorUsedError;
   @JsonKey(name: 'my_vote')
   int? get myVote => throw _privateConstructorUsedError;
@@ -580,6 +582,7 @@ abstract class $CommentViewCopyWith<$Res> {
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
     @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
     @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
     bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
@@ -617,6 +620,7 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView> implements $Comm
     Object? creatorBlocked = null,
     Object? creatorIsAdmin = freezed,
     Object? creatorIsModerator = freezed,
+    Object? bannedFromCommunity = freezed,
     Object? saved = null,
     Object? myVote = freezed,
     Object? canAuthUserModerate = freezed,
@@ -669,6 +673,11 @@ class _$CommentViewCopyWithImpl<$Res, $Val extends CommentView> implements $Comm
                 freezed == creatorIsModerator
                     ? _value.creatorIsModerator
                     : creatorIsModerator // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            bannedFromCommunity:
+                freezed == bannedFromCommunity
+                    ? _value.bannedFromCommunity
+                    : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
                         as bool?,
             saved:
                 null == saved
@@ -770,6 +779,7 @@ abstract class _$$CommentViewImplCopyWith<$Res> implements $CommentViewCopyWith<
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
     @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
     @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
     bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
@@ -807,6 +817,7 @@ class __$$CommentViewImplCopyWithImpl<$Res> extends _$CommentViewCopyWithImpl<$R
     Object? creatorBlocked = null,
     Object? creatorIsAdmin = freezed,
     Object? creatorIsModerator = freezed,
+    Object? bannedFromCommunity = freezed,
     Object? saved = null,
     Object? myVote = freezed,
     Object? canAuthUserModerate = freezed,
@@ -860,6 +871,11 @@ class __$$CommentViewImplCopyWithImpl<$Res> extends _$CommentViewCopyWithImpl<$R
                 ? _value.creatorIsModerator
                 : creatorIsModerator // ignore: cast_nullable_to_non_nullable
                     as bool?,
+        bannedFromCommunity:
+            freezed == bannedFromCommunity
+                ? _value.bannedFromCommunity
+                : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                    as bool?,
         saved:
             null == saved
                 ? _value.saved
@@ -903,6 +919,7 @@ class _$CommentViewImpl implements _CommentView {
     @JsonKey(name: 'creator_blocked') required this.creatorBlocked,
     @JsonKey(name: 'creator_is_admin') this.creatorIsAdmin,
     @JsonKey(name: 'creator_is_moderator') this.creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') this.bannedFromCommunity,
     required this.saved,
     @JsonKey(name: 'my_vote') this.myVote,
     @JsonKey(name: 'can_auth_user_moderate') this.canAuthUserModerate,
@@ -935,6 +952,9 @@ class _$CommentViewImpl implements _CommentView {
   @JsonKey(name: 'creator_is_moderator')
   final bool? creatorIsModerator;
   @override
+  @JsonKey(name: 'banned_from_community')
+  final bool? bannedFromCommunity;
+  @override
   final bool saved;
   @override
   @JsonKey(name: 'my_vote')
@@ -951,7 +971,7 @@ class _$CommentViewImpl implements _CommentView {
 
   @override
   String toString() {
-    return 'CommentView(comment: $comment, creator: $creator, post: $post, community: $community, counts: $counts, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorBlocked: $creatorBlocked, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, saved: $saved, myVote: $myVote, canAuthUserModerate: $canAuthUserModerate, activityAlert: $activityAlert, subscribed: $subscribed)';
+    return 'CommentView(comment: $comment, creator: $creator, post: $post, community: $community, counts: $counts, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorBlocked: $creatorBlocked, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, bannedFromCommunity: $bannedFromCommunity, saved: $saved, myVote: $myVote, canAuthUserModerate: $canAuthUserModerate, activityAlert: $activityAlert, subscribed: $subscribed)';
   }
 
   @override
@@ -968,6 +988,7 @@ class _$CommentViewImpl implements _CommentView {
             (identical(other.creatorBlocked, creatorBlocked) || other.creatorBlocked == creatorBlocked) &&
             (identical(other.creatorIsAdmin, creatorIsAdmin) || other.creatorIsAdmin == creatorIsAdmin) &&
             (identical(other.creatorIsModerator, creatorIsModerator) || other.creatorIsModerator == creatorIsModerator) &&
+            (identical(other.bannedFromCommunity, bannedFromCommunity) || other.bannedFromCommunity == bannedFromCommunity) &&
             (identical(other.saved, saved) || other.saved == saved) &&
             (identical(other.myVote, myVote) || other.myVote == myVote) &&
             (identical(other.canAuthUserModerate, canAuthUserModerate) || other.canAuthUserModerate == canAuthUserModerate) &&
@@ -988,6 +1009,7 @@ class _$CommentViewImpl implements _CommentView {
     creatorBlocked,
     creatorIsAdmin,
     creatorIsModerator,
+    bannedFromCommunity,
     saved,
     myVote,
     canAuthUserModerate,
@@ -1019,6 +1041,7 @@ abstract class _CommentView implements CommentView {
     @JsonKey(name: 'creator_blocked') required final bool creatorBlocked,
     @JsonKey(name: 'creator_is_admin') final bool? creatorIsAdmin,
     @JsonKey(name: 'creator_is_moderator') final bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') final bool? bannedFromCommunity,
     required final bool saved,
     @JsonKey(name: 'my_vote') final int? myVote,
     @JsonKey(name: 'can_auth_user_moderate') final bool? canAuthUserModerate,
@@ -1050,6 +1073,9 @@ abstract class _CommentView implements CommentView {
   @override
   @JsonKey(name: 'creator_is_moderator')
   bool? get creatorIsModerator;
+  @override
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity;
   @override
   bool get saved;
   @override
@@ -1098,6 +1124,17 @@ mixin _$PostView {
   bool? get canAuthUserModerate => throw _privateConstructorUsedError;
   @JsonKey(name: 'activity_alert')
   bool? get activityAlert => throw _privateConstructorUsedError;
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_is_admin')
+  bool? get creatorIsAdmin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_is_moderator')
+  bool? get creatorIsModerator => throw _privateConstructorUsedError;
+  bool? get hidden => throw _privateConstructorUsedError;
+  @JsonKey(name: 'unread_comments')
+  int? get unreadComments => throw _privateConstructorUsedError;
+  @JsonKey(name: 'alt_text')
+  String? get altText => throw _privateConstructorUsedError;
 
   /// Serializes this PostView to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1126,6 +1163,12 @@ abstract class $PostViewCopyWith<$Res> {
     @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
     @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    bool? hidden,
+    @JsonKey(name: 'unread_comments') int? unreadComments,
+    @JsonKey(name: 'alt_text') String? altText,
   });
 
   $PostCopyWith<$Res> get post;
@@ -1161,6 +1204,12 @@ class _$PostViewCopyWithImpl<$Res, $Val extends PostView> implements $PostViewCo
     Object? flairList = freezed,
     Object? canAuthUserModerate = freezed,
     Object? activityAlert = freezed,
+    Object? bannedFromCommunity = freezed,
+    Object? creatorIsAdmin = freezed,
+    Object? creatorIsModerator = freezed,
+    Object? hidden = freezed,
+    Object? unreadComments = freezed,
+    Object? altText = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -1229,6 +1278,36 @@ class _$PostViewCopyWithImpl<$Res, $Val extends PostView> implements $PostViewCo
                     ? _value.activityAlert
                     : activityAlert // ignore: cast_nullable_to_non_nullable
                         as bool?,
+            bannedFromCommunity:
+                freezed == bannedFromCommunity
+                    ? _value.bannedFromCommunity
+                    : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            creatorIsAdmin:
+                freezed == creatorIsAdmin
+                    ? _value.creatorIsAdmin
+                    : creatorIsAdmin // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            creatorIsModerator:
+                freezed == creatorIsModerator
+                    ? _value.creatorIsModerator
+                    : creatorIsModerator // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            hidden:
+                freezed == hidden
+                    ? _value.hidden
+                    : hidden // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            unreadComments:
+                freezed == unreadComments
+                    ? _value.unreadComments
+                    : unreadComments // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            altText:
+                freezed == altText
+                    ? _value.altText
+                    : altText // ignore: cast_nullable_to_non_nullable
+                        as String?,
           )
           as $Val,
     );
@@ -1294,6 +1373,12 @@ abstract class _$$PostViewImplCopyWith<$Res> implements $PostViewCopyWith<$Res> 
     @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
     @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    bool? hidden,
+    @JsonKey(name: 'unread_comments') int? unreadComments,
+    @JsonKey(name: 'alt_text') String? altText,
   });
 
   @override
@@ -1328,6 +1413,12 @@ class __$$PostViewImplCopyWithImpl<$Res> extends _$PostViewCopyWithImpl<$Res, _$
     Object? flairList = freezed,
     Object? canAuthUserModerate = freezed,
     Object? activityAlert = freezed,
+    Object? bannedFromCommunity = freezed,
+    Object? creatorIsAdmin = freezed,
+    Object? creatorIsModerator = freezed,
+    Object? hidden = freezed,
+    Object? unreadComments = freezed,
+    Object? altText = freezed,
   }) {
     return _then(
       _$PostViewImpl(
@@ -1396,6 +1487,36 @@ class __$$PostViewImplCopyWithImpl<$Res> extends _$PostViewCopyWithImpl<$Res, _$
                 ? _value.activityAlert
                 : activityAlert // ignore: cast_nullable_to_non_nullable
                     as bool?,
+        bannedFromCommunity:
+            freezed == bannedFromCommunity
+                ? _value.bannedFromCommunity
+                : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        creatorIsAdmin:
+            freezed == creatorIsAdmin
+                ? _value.creatorIsAdmin
+                : creatorIsAdmin // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        creatorIsModerator:
+            freezed == creatorIsModerator
+                ? _value.creatorIsModerator
+                : creatorIsModerator // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        hidden:
+            freezed == hidden
+                ? _value.hidden
+                : hidden // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        unreadComments:
+            freezed == unreadComments
+                ? _value.unreadComments
+                : unreadComments // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        altText:
+            freezed == altText
+                ? _value.altText
+                : altText // ignore: cast_nullable_to_non_nullable
+                    as String?,
       ),
     );
   }
@@ -1418,6 +1539,12 @@ class _$PostViewImpl implements _PostView {
     @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') this.canAuthUserModerate,
     @JsonKey(name: 'activity_alert') this.activityAlert,
+    @JsonKey(name: 'banned_from_community') this.bannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') this.creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') this.creatorIsModerator,
+    this.hidden,
+    @JsonKey(name: 'unread_comments') this.unreadComments,
+    @JsonKey(name: 'alt_text') this.altText,
   }) : _flairList = flairList;
 
   factory _$PostViewImpl.fromJson(Map<String, dynamic> json) => _$$PostViewImplFromJson(json);
@@ -1463,10 +1590,27 @@ class _$PostViewImpl implements _PostView {
   @override
   @JsonKey(name: 'activity_alert')
   final bool? activityAlert;
+  @override
+  @JsonKey(name: 'banned_from_community')
+  final bool? bannedFromCommunity;
+  @override
+  @JsonKey(name: 'creator_is_admin')
+  final bool? creatorIsAdmin;
+  @override
+  @JsonKey(name: 'creator_is_moderator')
+  final bool? creatorIsModerator;
+  @override
+  final bool? hidden;
+  @override
+  @JsonKey(name: 'unread_comments')
+  final int? unreadComments;
+  @override
+  @JsonKey(name: 'alt_text')
+  final String? altText;
 
   @override
   String toString() {
-    return 'PostView(post: $post, creator: $creator, community: $community, creatorBannedFromCommunity: $creatorBannedFromCommunity, counts: $counts, subscribed: $subscribed, saved: $saved, read: $read, creatorBlocked: $creatorBlocked, myVote: $myVote, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate, activityAlert: $activityAlert)';
+    return 'PostView(post: $post, creator: $creator, community: $community, creatorBannedFromCommunity: $creatorBannedFromCommunity, counts: $counts, subscribed: $subscribed, saved: $saved, read: $read, creatorBlocked: $creatorBlocked, myVote: $myVote, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate, activityAlert: $activityAlert, bannedFromCommunity: $bannedFromCommunity, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, hidden: $hidden, unreadComments: $unreadComments, altText: $altText)';
   }
 
   @override
@@ -1486,12 +1630,18 @@ class _$PostViewImpl implements _PostView {
             (identical(other.myVote, myVote) || other.myVote == myVote) &&
             const DeepCollectionEquality().equals(other._flairList, _flairList) &&
             (identical(other.canAuthUserModerate, canAuthUserModerate) || other.canAuthUserModerate == canAuthUserModerate) &&
-            (identical(other.activityAlert, activityAlert) || other.activityAlert == activityAlert));
+            (identical(other.activityAlert, activityAlert) || other.activityAlert == activityAlert) &&
+            (identical(other.bannedFromCommunity, bannedFromCommunity) || other.bannedFromCommunity == bannedFromCommunity) &&
+            (identical(other.creatorIsAdmin, creatorIsAdmin) || other.creatorIsAdmin == creatorIsAdmin) &&
+            (identical(other.creatorIsModerator, creatorIsModerator) || other.creatorIsModerator == creatorIsModerator) &&
+            (identical(other.hidden, hidden) || other.hidden == hidden) &&
+            (identical(other.unreadComments, unreadComments) || other.unreadComments == unreadComments) &&
+            (identical(other.altText, altText) || other.altText == altText));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     runtimeType,
     post,
     creator,
@@ -1506,7 +1656,13 @@ class _$PostViewImpl implements _PostView {
     const DeepCollectionEquality().hash(_flairList),
     canAuthUserModerate,
     activityAlert,
-  );
+    bannedFromCommunity,
+    creatorIsAdmin,
+    creatorIsModerator,
+    hidden,
+    unreadComments,
+    altText,
+  ]);
 
   /// Create a copy of PostView
   /// with the given fields replaced by the non-null parameter values.
@@ -1536,6 +1692,12 @@ abstract class _PostView implements PostView {
     @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') final bool? canAuthUserModerate,
     @JsonKey(name: 'activity_alert') final bool? activityAlert,
+    @JsonKey(name: 'banned_from_community') final bool? bannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') final bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') final bool? creatorIsModerator,
+    final bool? hidden,
+    @JsonKey(name: 'unread_comments') final int? unreadComments,
+    @JsonKey(name: 'alt_text') final String? altText,
   }) = _$PostViewImpl;
 
   factory _PostView.fromJson(Map<String, dynamic> json) = _$PostViewImpl.fromJson;
@@ -1573,6 +1735,23 @@ abstract class _PostView implements PostView {
   @override
   @JsonKey(name: 'activity_alert')
   bool? get activityAlert;
+  @override
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity;
+  @override
+  @JsonKey(name: 'creator_is_admin')
+  bool? get creatorIsAdmin;
+  @override
+  @JsonKey(name: 'creator_is_moderator')
+  bool? get creatorIsModerator;
+  @override
+  bool? get hidden;
+  @override
+  @JsonKey(name: 'unread_comments')
+  int? get unreadComments;
+  @override
+  @JsonKey(name: 'alt_text')
+  String? get altText;
 
   /// Create a copy of PostView
   /// with the given fields replaced by the non-null parameter values.

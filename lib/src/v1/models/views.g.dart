@@ -50,6 +50,7 @@ _$CommentViewImpl _$$CommentViewImplFromJson(Map<String, dynamic> json) => _$Com
   creatorBlocked: json['creator_blocked'] as bool,
   creatorIsAdmin: json['creator_is_admin'] as bool?,
   creatorIsModerator: json['creator_is_moderator'] as bool?,
+  bannedFromCommunity: json['banned_from_community'] as bool?,
   saved: json['saved'] as bool,
   myVote: (json['my_vote'] as num?)?.toInt(),
   canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
@@ -67,6 +68,7 @@ Map<String, dynamic> _$$CommentViewImplToJson(_$CommentViewImpl instance) => <St
   'creator_blocked': instance.creatorBlocked,
   'creator_is_admin': instance.creatorIsAdmin,
   'creator_is_moderator': instance.creatorIsModerator,
+  'banned_from_community': instance.bannedFromCommunity,
   'saved': instance.saved,
   'my_vote': instance.myVote,
   'can_auth_user_moderate': instance.canAuthUserModerate,
@@ -88,6 +90,12 @@ _$PostViewImpl _$$PostViewImplFromJson(Map<String, dynamic> json) => _$PostViewI
   flairList: (json['flair_list'] as List<dynamic>?)?.map((e) => CommunityFlair.fromJson(e as Map<String, dynamic>)).toList(),
   canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
   activityAlert: json['activity_alert'] as bool?,
+  bannedFromCommunity: json['banned_from_community'] as bool?,
+  creatorIsAdmin: json['creator_is_admin'] as bool?,
+  creatorIsModerator: json['creator_is_moderator'] as bool?,
+  hidden: json['hidden'] as bool?,
+  unreadComments: (json['unread_comments'] as num?)?.toInt(),
+  altText: json['alt_text'] as String?,
 );
 
 Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) => <String, dynamic>{
@@ -104,6 +112,12 @@ Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) => <String, 
   'flair_list': instance.flairList,
   'can_auth_user_moderate': instance.canAuthUserModerate,
   'activity_alert': instance.activityAlert,
+  'banned_from_community': instance.bannedFromCommunity,
+  'creator_is_admin': instance.creatorIsAdmin,
+  'creator_is_moderator': instance.creatorIsModerator,
+  'hidden': instance.hidden,
+  'unread_comments': instance.unreadComments,
+  'alt_text': instance.altText,
 };
 
 _$PrivateMessageViewImpl _$$PrivateMessageViewImplFromJson(Map<String, dynamic> json) => _$PrivateMessageViewImpl(

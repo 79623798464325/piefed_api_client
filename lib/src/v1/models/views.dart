@@ -56,6 +56,7 @@ class CommentView with _$CommentView {
     @JsonKey(name: 'creator_blocked') required bool creatorBlocked,
     @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
     @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
     required bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
@@ -82,6 +83,12 @@ class PostView with _$PostView {
     @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
     @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    bool? hidden,
+    @JsonKey(name: 'unread_comments') int? unreadComments,
+    @JsonKey(name: 'alt_text') String? altText,
   }) = _PostView;
 
   factory PostView.fromJson(Map<String, dynamic> json) => _$PostViewFromJson(json);

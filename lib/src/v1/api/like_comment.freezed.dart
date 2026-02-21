@@ -31,6 +31,12 @@ mixin _$LikeComment {
   /// Auth token.
   String get auth => throw _privateConstructorUsedError;
 
+  /// Optional emoji for the vote.
+  String? get emoji => throw _privateConstructorUsedError;
+
+  /// Whether the vote is private.
+  bool? get private => throw _privateConstructorUsedError;
+
   /// Serializes this LikeComment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -44,7 +50,7 @@ mixin _$LikeComment {
 abstract class $LikeCommentCopyWith<$Res> {
   factory $LikeCommentCopyWith(LikeComment value, $Res Function(LikeComment) then) = _$LikeCommentCopyWithImpl<$Res, LikeComment>;
   @useResult
-  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, String auth});
+  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, String auth, String? emoji, bool? private});
 }
 
 /// @nodoc
@@ -60,7 +66,7 @@ class _$LikeCommentCopyWithImpl<$Res, $Val extends LikeComment> implements $Like
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? commentId = null, Object? score = null, Object? auth = null}) {
+  $Res call({Object? commentId = null, Object? score = null, Object? auth = null, Object? emoji = freezed, Object? private = freezed}) {
     return _then(
       _value.copyWith(
             commentId:
@@ -78,6 +84,16 @@ class _$LikeCommentCopyWithImpl<$Res, $Val extends LikeComment> implements $Like
                     ? _value.auth
                     : auth // ignore: cast_nullable_to_non_nullable
                         as String,
+            emoji:
+                freezed == emoji
+                    ? _value.emoji
+                    : emoji // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            private:
+                freezed == private
+                    ? _value.private
+                    : private // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -89,7 +105,7 @@ abstract class _$$LikeCommentImplCopyWith<$Res> implements $LikeCommentCopyWith<
   factory _$$LikeCommentImplCopyWith(_$LikeCommentImpl value, $Res Function(_$LikeCommentImpl) then) = __$$LikeCommentImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, String auth});
+  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, String auth, String? emoji, bool? private});
 }
 
 /// @nodoc
@@ -100,7 +116,7 @@ class __$$LikeCommentImplCopyWithImpl<$Res> extends _$LikeCommentCopyWithImpl<$R
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? commentId = null, Object? score = null, Object? auth = null}) {
+  $Res call({Object? commentId = null, Object? score = null, Object? auth = null, Object? emoji = freezed, Object? private = freezed}) {
     return _then(
       _$LikeCommentImpl(
         commentId:
@@ -118,6 +134,16 @@ class __$$LikeCommentImplCopyWithImpl<$Res> extends _$LikeCommentCopyWithImpl<$R
                 ? _value.auth
                 : auth // ignore: cast_nullable_to_non_nullable
                     as String,
+        emoji:
+            freezed == emoji
+                ? _value.emoji
+                : emoji // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        private:
+            freezed == private
+                ? _value.private
+                : private // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -127,7 +153,7 @@ class __$$LikeCommentImplCopyWithImpl<$Res> extends _$LikeCommentCopyWithImpl<$R
 
 @JsonSerializable(includeIfNull: false)
 class _$LikeCommentImpl extends _LikeComment {
-  const _$LikeCommentImpl({@JsonKey(name: 'comment_id') required this.commentId, required this.score, required this.auth}) : super._();
+  const _$LikeCommentImpl({@JsonKey(name: 'comment_id') required this.commentId, required this.score, required this.auth, this.emoji, this.private}) : super._();
 
   factory _$LikeCommentImpl.fromJson(Map<String, dynamic> json) => _$$LikeCommentImplFromJson(json);
 
@@ -144,9 +170,17 @@ class _$LikeCommentImpl extends _LikeComment {
   @override
   final String auth;
 
+  /// Optional emoji for the vote.
+  @override
+  final String? emoji;
+
+  /// Whether the vote is private.
+  @override
+  final bool? private;
+
   @override
   String toString() {
-    return 'LikeComment(commentId: $commentId, score: $score, auth: $auth)';
+    return 'LikeComment(commentId: $commentId, score: $score, auth: $auth, emoji: $emoji, private: $private)';
   }
 
   @override
@@ -156,12 +190,14 @@ class _$LikeCommentImpl extends _LikeComment {
             other is _$LikeCommentImpl &&
             (identical(other.commentId, commentId) || other.commentId == commentId) &&
             (identical(other.score, score) || other.score == score) &&
-            (identical(other.auth, auth) || other.auth == auth));
+            (identical(other.auth, auth) || other.auth == auth) &&
+            (identical(other.emoji, emoji) || other.emoji == emoji) &&
+            (identical(other.private, private) || other.private == private));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, commentId, score, auth);
+  int get hashCode => Object.hash(runtimeType, commentId, score, auth, emoji, private);
 
   /// Create a copy of LikeComment
   /// with the given fields replaced by the non-null parameter values.
@@ -177,7 +213,8 @@ class _$LikeCommentImpl extends _LikeComment {
 }
 
 abstract class _LikeComment extends LikeComment {
-  const factory _LikeComment({@JsonKey(name: 'comment_id') required final int commentId, required final int score, required final String auth}) = _$LikeCommentImpl;
+  const factory _LikeComment({@JsonKey(name: 'comment_id') required final int commentId, required final int score, required final String auth, final String? emoji, final bool? private}) =
+      _$LikeCommentImpl;
   const _LikeComment._() : super._();
 
   factory _LikeComment.fromJson(Map<String, dynamic> json) = _$LikeCommentImpl.fromJson;
@@ -194,6 +231,14 @@ abstract class _LikeComment extends LikeComment {
   /// Auth token.
   @override
   String get auth;
+
+  /// Optional emoji for the vote.
+  @override
+  String? get emoji;
+
+  /// Whether the vote is private.
+  @override
+  bool? get private;
 
   /// Create a copy of LikeComment
   /// with the given fields replaced by the non-null parameter values.
