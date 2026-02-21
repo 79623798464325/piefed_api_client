@@ -88,6 +88,7 @@ class Post with _$Post {
     DateTime? updated,
     @JsonKey(name: 'ai_generated', defaultValue: false) required bool aiGenerated,
     bool? sticky,
+    @JsonKey(name: 'instance_sticky') bool? instanceSticky,
     bool? locked,
     @JsonKey(name: 'post_type') PostType? postType,
     PostPoll? poll,

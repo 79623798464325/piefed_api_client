@@ -6,6 +6,8 @@
     *   `GetCommunity`: Fixed `GetCommunityResponse` model to accurately mirror the API's `community_view` structure, including `flair_list`, `counts`, `moderators`, and `discussion_languages`.
     *   `SubscribedType`: Replaced boolean `subscribed` fields in `CommunityView`, `PostView`, `CommentView`, and `CommentReplyView` with a new `SubscribedType` enum (`"Subscribed"`, `"NotSubscribed"`, `"Pending"`) to match the API and support the "Pending" state.
     *   Simplified response deserialization logic for `GetCommunity`, `CreateCommunity`, and `EditCommunity`.
+*   **New Fields**:
+    *   `Post`: Added `instance_sticky`.
 ## 0.8.0
 
 *   **100% Swagger 1.6.0 Compliance**:

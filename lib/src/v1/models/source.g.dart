@@ -150,6 +150,7 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
           : DateTime.parse(json['updated'] as String),
   aiGenerated: json['ai_generated'] as bool? ?? false,
   sticky: json['sticky'] as bool?,
+  instanceSticky: json['instance_sticky'] as bool?,
   locked: json['locked'] as bool?,
   postType: $enumDecodeNullable(_$PostTypeEnumMap, json['post_type']),
   poll:
@@ -194,6 +195,7 @@ Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
       'updated': instance.updated?.toIso8601String(),
       'ai_generated': instance.aiGenerated,
       'sticky': instance.sticky,
+      'instance_sticky': instance.instanceSticky,
       'locked': instance.locked,
       'post_type': _$PostTypeEnumMap[instance.postType],
       'poll': instance.poll,

@@ -1490,6 +1490,8 @@ mixin _$Post {
   @JsonKey(name: 'ai_generated', defaultValue: false)
   bool get aiGenerated => throw _privateConstructorUsedError;
   bool? get sticky => throw _privateConstructorUsedError;
+  @JsonKey(name: 'instance_sticky')
+  bool? get instanceSticky => throw _privateConstructorUsedError;
   bool? get locked => throw _privateConstructorUsedError;
   @JsonKey(name: 'post_type')
   PostType? get postType => throw _privateConstructorUsedError;
@@ -1537,6 +1539,7 @@ abstract class $PostCopyWith<$Res> {
     DateTime? updated,
     @JsonKey(name: 'ai_generated', defaultValue: false) bool aiGenerated,
     bool? sticky,
+    @JsonKey(name: 'instance_sticky') bool? instanceSticky,
     bool? locked,
     @JsonKey(name: 'post_type') PostType? postType,
     PostPoll? poll,
@@ -1587,6 +1590,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? updated = freezed,
     Object? aiGenerated = null,
     Object? sticky = freezed,
+    Object? instanceSticky = freezed,
     Object? locked = freezed,
     Object? postType = freezed,
     Object? poll = freezed,
@@ -1697,6 +1701,11 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
                 freezed == sticky
                     ? _value.sticky
                     : sticky // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            instanceSticky:
+                freezed == instanceSticky
+                    ? _value.instanceSticky
+                    : instanceSticky // ignore: cast_nullable_to_non_nullable
                         as bool?,
             locked:
                 freezed == locked
@@ -1815,6 +1824,7 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
     DateTime? updated,
     @JsonKey(name: 'ai_generated', defaultValue: false) bool aiGenerated,
     bool? sticky,
+    @JsonKey(name: 'instance_sticky') bool? instanceSticky,
     bool? locked,
     @JsonKey(name: 'post_type') PostType? postType,
     PostPoll? poll,
@@ -1865,6 +1875,7 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? updated = freezed,
     Object? aiGenerated = null,
     Object? sticky = freezed,
+    Object? instanceSticky = freezed,
     Object? locked = freezed,
     Object? postType = freezed,
     Object? poll = freezed,
@@ -1976,6 +1987,11 @@ class __$$PostImplCopyWithImpl<$Res>
                 ? _value.sticky
                 : sticky // ignore: cast_nullable_to_non_nullable
                     as bool?,
+        instanceSticky:
+            freezed == instanceSticky
+                ? _value.instanceSticky
+                : instanceSticky // ignore: cast_nullable_to_non_nullable
+                    as bool?,
         locked:
             freezed == locked
                 ? _value.locked
@@ -2046,6 +2062,7 @@ class _$PostImpl implements _Post {
     @JsonKey(name: 'ai_generated', defaultValue: false)
     required this.aiGenerated,
     this.sticky,
+    @JsonKey(name: 'instance_sticky') this.instanceSticky,
     this.locked,
     @JsonKey(name: 'post_type') this.postType,
     this.poll,
@@ -2111,6 +2128,9 @@ class _$PostImpl implements _Post {
   @override
   final bool? sticky;
   @override
+  @JsonKey(name: 'instance_sticky')
+  final bool? instanceSticky;
+  @override
   final bool? locked;
   @override
   @JsonKey(name: 'post_type')
@@ -2148,7 +2168,7 @@ class _$PostImpl implements _Post {
 
   @override
   String toString() {
-    return 'Post(id: $id, title: $title, apId: $apId, local: $local, nsfw: $nsfw, deleted: $deleted, removed: $removed, userId: $userId, communityId: $communityId, languageId: $languageId, body: $body, url: $url, smallThumbnailUrl: $smallThumbnailUrl, thumbnailUrl: $thumbnailUrl, altText: $altText, imageDetails: $imageDetails, published: $published, updated: $updated, aiGenerated: $aiGenerated, sticky: $sticky, locked: $locked, postType: $postType, poll: $poll, event: $event, emojiReactions: $emojiReactions, crossPosts: $crossPosts, tags: $tags, flair: $flair)';
+    return 'Post(id: $id, title: $title, apId: $apId, local: $local, nsfw: $nsfw, deleted: $deleted, removed: $removed, userId: $userId, communityId: $communityId, languageId: $languageId, body: $body, url: $url, smallThumbnailUrl: $smallThumbnailUrl, thumbnailUrl: $thumbnailUrl, altText: $altText, imageDetails: $imageDetails, published: $published, updated: $updated, aiGenerated: $aiGenerated, sticky: $sticky, instanceSticky: $instanceSticky, locked: $locked, postType: $postType, poll: $poll, event: $event, emojiReactions: $emojiReactions, crossPosts: $crossPosts, tags: $tags, flair: $flair)';
   }
 
   @override
@@ -2183,6 +2203,8 @@ class _$PostImpl implements _Post {
             (identical(other.aiGenerated, aiGenerated) ||
                 other.aiGenerated == aiGenerated) &&
             (identical(other.sticky, sticky) || other.sticky == sticky) &&
+            (identical(other.instanceSticky, instanceSticky) ||
+                other.instanceSticky == instanceSticky) &&
             (identical(other.locked, locked) || other.locked == locked) &&
             (identical(other.postType, postType) ||
                 other.postType == postType) &&
@@ -2224,6 +2246,7 @@ class _$PostImpl implements _Post {
     updated,
     aiGenerated,
     sticky,
+    instanceSticky,
     locked,
     postType,
     poll,
@@ -2271,6 +2294,7 @@ abstract class _Post implements Post {
     @JsonKey(name: 'ai_generated', defaultValue: false)
     required final bool aiGenerated,
     final bool? sticky,
+    @JsonKey(name: 'instance_sticky') final bool? instanceSticky,
     final bool? locked,
     @JsonKey(name: 'post_type') final PostType? postType,
     final PostPoll? poll,
@@ -2333,6 +2357,9 @@ abstract class _Post implements Post {
   bool get aiGenerated;
   @override
   bool? get sticky;
+  @override
+  @JsonKey(name: 'instance_sticky')
+  bool? get instanceSticky;
   @override
   bool? get locked;
   @override
