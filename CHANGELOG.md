@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.10.0
+
+*   **PieFed v1.7.0 Swagger Sync**:
+    *   **New Endpoints Added**:
+        *   `BanFromCommunity` (`POST /community/moderate/ban`): Allows moderators to ban users from a community.
+        *   `GetPrivateMessageConversation` (`GET /private_message/conversation`): Fetch full conversation histories between users.
+    *   **Endpoints Updated**:
+        *   `MarkAllNotificationsAsRead`: Renamed from `MarkAllAsRead` and changed from a `POST` method (`/user/notifs/all_read`) to a `PUT` method (`/user/mark_all_notifications_read`) to match the updated 1.7.0 specification.
+    *   **Endpoints Removed**:
+        *   `MarkAllPMsAsRead`: Deprecated and removed (`POST /private_message/mark_all_read`) as it is no longer supported in v1.7.0.
+    *   **Models**:
+        *   Added `GetPrivateMessageConversationResponse` and `UserMarkAllNotifsReadResponse`.
+    *   **Bug Fixes**:
+        *   Fixed missing `path` override in `ReportPrivateMessage` endpoint class.
+
 ## 0.9.0
 
 *   **Complete PieFed API coverage**:
