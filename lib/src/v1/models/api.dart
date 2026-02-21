@@ -9,7 +9,7 @@ part 'api.g.dart';
 
 @freezed
 class GetPostResponse with _$GetPostResponse {
-  const factory GetPostResponse({Post? post, Person? creator, Community? community, @JsonKey(name: 'activity_alert') bool? activityAlert}) = _GetPostResponse;
+  const factory GetPostResponse({required Post post, required Person creator, required Community community, @JsonKey(name: 'activity_alert') bool? activityAlert}) = _GetPostResponse;
 
   factory GetPostResponse.fromJson(Map<String, dynamic> json) => _$GetPostResponseFromJson(json);
 }

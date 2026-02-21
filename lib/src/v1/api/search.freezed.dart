@@ -48,7 +48,8 @@ mixin _$Search {
 
 /// @nodoc
 abstract class $SearchCopyWith<$Res> {
-  factory $SearchCopyWith(Search value, $Res Function(Search) then) = _$SearchCopyWithImpl<$Res, Search>;
+  factory $SearchCopyWith(Search value, $Res Function(Search) then) =
+      _$SearchCopyWithImpl<$Res, Search>;
   @useResult
   $Res call({
     String q,
@@ -65,7 +66,8 @@ abstract class $SearchCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SearchCopyWithImpl<$Res, $Val extends Search> implements $SearchCopyWith<$Res> {
+class _$SearchCopyWithImpl<$Res, $Val extends Search>
+    implements $SearchCopyWith<$Res> {
   _$SearchCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -149,7 +151,10 @@ class _$SearchCopyWithImpl<$Res, $Val extends Search> implements $SearchCopyWith
 
 /// @nodoc
 abstract class _$$SearchImplCopyWith<$Res> implements $SearchCopyWith<$Res> {
-  factory _$$SearchImplCopyWith(_$SearchImpl value, $Res Function(_$SearchImpl) then) = __$$SearchImplCopyWithImpl<$Res>;
+  factory _$$SearchImplCopyWith(
+    _$SearchImpl value,
+    $Res Function(_$SearchImpl) then,
+  ) = __$$SearchImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -167,8 +172,13 @@ abstract class _$$SearchImplCopyWith<$Res> implements $SearchCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SearchImplCopyWithImpl<$Res> extends _$SearchCopyWithImpl<$Res, _$SearchImpl> implements _$$SearchImplCopyWith<$Res> {
-  __$$SearchImplCopyWithImpl(_$SearchImpl _value, $Res Function(_$SearchImpl) _then) : super(_value, _then);
+class __$$SearchImplCopyWithImpl<$Res>
+    extends _$SearchCopyWithImpl<$Res, _$SearchImpl>
+    implements _$$SearchImplCopyWith<$Res> {
+  __$$SearchImplCopyWithImpl(
+    _$SearchImpl _value,
+    $Res Function(_$SearchImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Search
   /// with the given fields replaced by the non-null parameter values.
@@ -260,7 +270,8 @@ class _$SearchImpl extends _Search {
     this.auth,
   }) : super._();
 
-  factory _$SearchImpl.fromJson(Map<String, dynamic> json) => _$$SearchImplFromJson(json);
+  factory _$SearchImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SearchImplFromJson(json);
 
   @override
   final String q;
@@ -302,10 +313,14 @@ class _$SearchImpl extends _Search {
             other is _$SearchImpl &&
             (identical(other.q, q) || other.q == q) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.listingType, listingType) || other.listingType == listingType) &&
-            (identical(other.communityId, communityId) || other.communityId == communityId) &&
-            (identical(other.communityName, communityName) || other.communityName == communityName) &&
-            (identical(other.creatorId, creatorId) || other.creatorId == creatorId) &&
+            (identical(other.listingType, listingType) ||
+                other.listingType == listingType) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.communityName, communityName) ||
+                other.communityName == communityName) &&
+            (identical(other.creatorId, creatorId) ||
+                other.creatorId == creatorId) &&
             (identical(other.sort, sort) || other.sort == sort) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -314,14 +329,27 @@ class _$SearchImpl extends _Search {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, q, type, listingType, communityId, communityName, creatorId, sort, page, limit, auth);
+  int get hashCode => Object.hash(
+    runtimeType,
+    q,
+    type,
+    listingType,
+    communityId,
+    communityName,
+    creatorId,
+    sort,
+    page,
+    limit,
+    auth,
+  );
 
   /// Create a copy of Search
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith => __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -376,7 +404,8 @@ abstract class _Search extends Search {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 SuggestCompletion _$SuggestCompletionFromJson(Map<String, dynamic> json) {
@@ -393,18 +422,23 @@ mixin _$SuggestCompletion {
   /// Create a copy of SuggestCompletion
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SuggestCompletionCopyWith<SuggestCompletion> get copyWith => throw _privateConstructorUsedError;
+  $SuggestCompletionCopyWith<SuggestCompletion> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SuggestCompletionCopyWith<$Res> {
-  factory $SuggestCompletionCopyWith(SuggestCompletion value, $Res Function(SuggestCompletion) then) = _$SuggestCompletionCopyWithImpl<$Res, SuggestCompletion>;
+  factory $SuggestCompletionCopyWith(
+    SuggestCompletion value,
+    $Res Function(SuggestCompletion) then,
+  ) = _$SuggestCompletionCopyWithImpl<$Res, SuggestCompletion>;
   @useResult
   $Res call({String q});
 }
 
 /// @nodoc
-class _$SuggestCompletionCopyWithImpl<$Res, $Val extends SuggestCompletion> implements $SuggestCompletionCopyWith<$Res> {
+class _$SuggestCompletionCopyWithImpl<$Res, $Val extends SuggestCompletion>
+    implements $SuggestCompletionCopyWith<$Res> {
   _$SuggestCompletionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -431,16 +465,25 @@ class _$SuggestCompletionCopyWithImpl<$Res, $Val extends SuggestCompletion> impl
 }
 
 /// @nodoc
-abstract class _$$SuggestCompletionImplCopyWith<$Res> implements $SuggestCompletionCopyWith<$Res> {
-  factory _$$SuggestCompletionImplCopyWith(_$SuggestCompletionImpl value, $Res Function(_$SuggestCompletionImpl) then) = __$$SuggestCompletionImplCopyWithImpl<$Res>;
+abstract class _$$SuggestCompletionImplCopyWith<$Res>
+    implements $SuggestCompletionCopyWith<$Res> {
+  factory _$$SuggestCompletionImplCopyWith(
+    _$SuggestCompletionImpl value,
+    $Res Function(_$SuggestCompletionImpl) then,
+  ) = __$$SuggestCompletionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String q});
 }
 
 /// @nodoc
-class __$$SuggestCompletionImplCopyWithImpl<$Res> extends _$SuggestCompletionCopyWithImpl<$Res, _$SuggestCompletionImpl> implements _$$SuggestCompletionImplCopyWith<$Res> {
-  __$$SuggestCompletionImplCopyWithImpl(_$SuggestCompletionImpl _value, $Res Function(_$SuggestCompletionImpl) _then) : super(_value, _then);
+class __$$SuggestCompletionImplCopyWithImpl<$Res>
+    extends _$SuggestCompletionCopyWithImpl<$Res, _$SuggestCompletionImpl>
+    implements _$$SuggestCompletionImplCopyWith<$Res> {
+  __$$SuggestCompletionImplCopyWithImpl(
+    _$SuggestCompletionImpl _value,
+    $Res Function(_$SuggestCompletionImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of SuggestCompletion
   /// with the given fields replaced by the non-null parameter values.
@@ -464,7 +507,8 @@ class __$$SuggestCompletionImplCopyWithImpl<$Res> extends _$SuggestCompletionCop
 class _$SuggestCompletionImpl extends _SuggestCompletion {
   const _$SuggestCompletionImpl({required this.q}) : super._();
 
-  factory _$SuggestCompletionImpl.fromJson(Map<String, dynamic> json) => _$$SuggestCompletionImplFromJson(json);
+  factory _$SuggestCompletionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SuggestCompletionImplFromJson(json);
 
   @override
   final String q;
@@ -476,7 +520,10 @@ class _$SuggestCompletionImpl extends _SuggestCompletion {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SuggestCompletionImpl && (identical(other.q, q) || other.q == q));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuggestCompletionImpl &&
+            (identical(other.q, q) || other.q == q));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -488,7 +535,11 @@ class _$SuggestCompletionImpl extends _SuggestCompletion {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuggestCompletionImplCopyWith<_$SuggestCompletionImpl> get copyWith => __$$SuggestCompletionImplCopyWithImpl<_$SuggestCompletionImpl>(this, _$identity);
+  _$$SuggestCompletionImplCopyWith<_$SuggestCompletionImpl> get copyWith =>
+      __$$SuggestCompletionImplCopyWithImpl<_$SuggestCompletionImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -497,10 +548,12 @@ class _$SuggestCompletionImpl extends _SuggestCompletion {
 }
 
 abstract class _SuggestCompletion extends SuggestCompletion {
-  const factory _SuggestCompletion({required final String q}) = _$SuggestCompletionImpl;
+  const factory _SuggestCompletion({required final String q}) =
+      _$SuggestCompletionImpl;
   const _SuggestCompletion._() : super._();
 
-  factory _SuggestCompletion.fromJson(Map<String, dynamic> json) = _$SuggestCompletionImpl.fromJson;
+  factory _SuggestCompletion.fromJson(Map<String, dynamic> json) =
+      _$SuggestCompletionImpl.fromJson;
 
   @override
   String get q;
@@ -509,5 +562,6 @@ abstract class _SuggestCompletion extends SuggestCompletion {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuggestCompletionImplCopyWith<_$SuggestCompletionImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$SuggestCompletionImplCopyWith<_$SuggestCompletionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
