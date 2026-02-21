@@ -17,10 +17,10 @@ class GetPostResponse with _$GetPostResponse {
 @freezed
 class GetCommunityResponse with _$GetCommunityResponse {
   const factory GetCommunityResponse({
-    required Community community,
-    @JsonKey(name: 'activity_alert') bool? activityAlert,
-    @JsonKey(name: 'subscribed') bool? subscribed,
-    @JsonKey(name: 'blocked') bool? blocked,
+    @JsonKey(name: 'community_view') required CommunityView communityView,
+    @JsonKey(name: 'discussion_languages') List<int>? discussionLanguages,
+    List<CommunityModeratorView>? moderators,
+    Site? site,
   }) = _GetCommunityResponse;
 
   factory GetCommunityResponse.fromJson(Map<String, dynamic> json) => _$GetCommunityResponseFromJson(json);

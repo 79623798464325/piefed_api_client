@@ -69,7 +69,12 @@ void main() {
                 'instance_id': 1,
                 'ai_generated': false,
               },
+              'subscribed': 'NotSubscribed',
+              'blocked': false,
+              'counts': {'id': 1, 'post_count': 0, 'post_reply_count': 0, 'subscriptions_count': 0},
             },
+            'discussion_languages': [1],
+            'moderators': [],
           }),
           200,
         );
@@ -78,8 +83,9 @@ void main() {
       final api = PieFedApiV1('example.com', client: mockClient);
       final response = await api.run(const GetCommunity(id: 1));
 
-      expect(response.community.name, 'test_community');
-      expect(response.community.title, 'Test Community');
+      expect(response.communityView.community.name, 'test_community');
+      expect(response.communityView.community.title, 'Test Community');
+      expect(response.communityView.subscribed, SubscribedType.notSubscribed);
     });
 
     test('UserLogin Response Parsing', () async {

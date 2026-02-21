@@ -202,7 +202,7 @@ void main() {
 
       final communityView = CommunityView(
         community: Community(id: 1, name: 'c', title: 't', apId: 'a', local: true, nsfw: false, deleted: false, hidden: false, removed: false, instanceId: 1, aiGenerated: false),
-        subscribed: true,
+        subscribed: SubscribedType.subscribed,
         blocked: false,
         counts: CommunityAggregates(id: 1, postCount: 0, postReplyCount: 0, subscriptionsCount: 0),
       );
@@ -214,7 +214,7 @@ void main() {
         community: Community(id: 1, name: 'c', title: 't', apId: 'a', local: true, nsfw: false, deleted: false, hidden: false, removed: false, instanceId: 1, aiGenerated: false),
         creatorBannedFromCommunity: false,
         counts: PostAggregates(postId: 1, comments: 0, score: 0, upvotes: 0, downvotes: 0),
-        subscribed: true,
+        subscribed: SubscribedType.subscribed,
         saved: false,
         read: true,
         creatorBlocked: false,

@@ -58,7 +58,8 @@ mixin _$Person {
 
 /// @nodoc
 abstract class $PersonCopyWith<$Res> {
-  factory $PersonCopyWith(Person value, $Res Function(Person) then) = _$PersonCopyWithImpl<$Res, Person>;
+  factory $PersonCopyWith(Person value, $Res Function(Person) then) =
+      _$PersonCopyWithImpl<$Res, Person>;
   @useResult
   $Res call({
     int id,
@@ -84,7 +85,8 @@ abstract class $PersonCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PersonCopyWithImpl<$Res, $Val extends Person> implements $PersonCopyWith<$Res> {
+class _$PersonCopyWithImpl<$Res, $Val extends Person>
+    implements $PersonCopyWith<$Res> {
   _$PersonCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -222,7 +224,10 @@ class _$PersonCopyWithImpl<$Res, $Val extends Person> implements $PersonCopyWith
 
 /// @nodoc
 abstract class _$$PersonImplCopyWith<$Res> implements $PersonCopyWith<$Res> {
-  factory _$$PersonImplCopyWith(_$PersonImpl value, $Res Function(_$PersonImpl) then) = __$$PersonImplCopyWithImpl<$Res>;
+  factory _$$PersonImplCopyWith(
+    _$PersonImpl value,
+    $Res Function(_$PersonImpl) then,
+  ) = __$$PersonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -249,8 +254,13 @@ abstract class _$$PersonImplCopyWith<$Res> implements $PersonCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PersonImplCopyWithImpl<$Res> extends _$PersonCopyWithImpl<$Res, _$PersonImpl> implements _$$PersonImplCopyWith<$Res> {
-  __$$PersonImplCopyWithImpl(_$PersonImpl _value, $Res Function(_$PersonImpl) _then) : super(_value, _then);
+class __$$PersonImplCopyWithImpl<$Res>
+    extends _$PersonCopyWithImpl<$Res, _$PersonImpl>
+    implements _$$PersonImplCopyWith<$Res> {
+  __$$PersonImplCopyWithImpl(
+    _$PersonImpl _value,
+    $Res Function(_$PersonImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Person
   /// with the given fields replaced by the non-null parameter values.
@@ -404,7 +414,8 @@ class _$PersonImpl implements _Person {
     this.published,
   }) : _extraFields = extraFields;
 
-  factory _$PersonImpl.fromJson(Map<String, dynamic> json) => _$$PersonImplFromJson(json);
+  factory _$PersonImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PersonImplFromJson(json);
 
   @override
   final int id;
@@ -476,18 +487,25 @@ class _$PersonImpl implements _Person {
             (identical(other.banned, banned) || other.banned == banned) &&
             (identical(other.bot, bot) || other.bot == bot) &&
             (identical(other.deleted, deleted) || other.deleted == deleted) &&
-            (identical(other.instanceId, instanceId) || other.instanceId == instanceId) &&
-            (identical(other.displayName, displayName) || other.displayName == displayName) &&
+            (identical(other.instanceId, instanceId) ||
+                other.instanceId == instanceId) &&
+            (identical(other.displayName, displayName) ||
+                other.displayName == displayName) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.banner, banner) || other.banner == banner) &&
             (identical(other.bio, bio) || other.bio == bio) &&
             (identical(other.about, about) || other.about == about) &&
-            (identical(other.aboutHtml, aboutHtml) || other.aboutHtml == aboutHtml) &&
-            const DeepCollectionEquality().equals(other._extraFields, _extraFields) &&
+            (identical(other.aboutHtml, aboutHtml) ||
+                other.aboutHtml == aboutHtml) &&
+            const DeepCollectionEquality().equals(
+              other._extraFields,
+              _extraFields,
+            ) &&
             (identical(other.note, note) || other.note == note) &&
             (identical(other.flair, flair) || other.flair == flair) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.published, published) || other.published == published));
+            (identical(other.published, published) ||
+                other.published == published));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -520,7 +538,8 @@ class _$PersonImpl implements _Person {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PersonImplCopyWith<_$PersonImpl> get copyWith => __$$PersonImplCopyWithImpl<_$PersonImpl>(this, _$identity);
+  _$$PersonImplCopyWith<_$PersonImpl> get copyWith =>
+      __$$PersonImplCopyWithImpl<_$PersonImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -602,7 +621,8 @@ abstract class _Person implements Person {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PersonImplCopyWith<_$PersonImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PersonImplCopyWith<_$PersonImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 UserExtraField _$UserExtraFieldFromJson(Map<String, dynamic> json) {
@@ -621,18 +641,23 @@ mixin _$UserExtraField {
   /// Create a copy of UserExtraField
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserExtraFieldCopyWith<UserExtraField> get copyWith => throw _privateConstructorUsedError;
+  $UserExtraFieldCopyWith<UserExtraField> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserExtraFieldCopyWith<$Res> {
-  factory $UserExtraFieldCopyWith(UserExtraField value, $Res Function(UserExtraField) then) = _$UserExtraFieldCopyWithImpl<$Res, UserExtraField>;
+  factory $UserExtraFieldCopyWith(
+    UserExtraField value,
+    $Res Function(UserExtraField) then,
+  ) = _$UserExtraFieldCopyWithImpl<$Res, UserExtraField>;
   @useResult
   $Res call({int id, String label, String text});
 }
 
 /// @nodoc
-class _$UserExtraFieldCopyWithImpl<$Res, $Val extends UserExtraField> implements $UserExtraFieldCopyWith<$Res> {
+class _$UserExtraFieldCopyWithImpl<$Res, $Val extends UserExtraField>
+    implements $UserExtraFieldCopyWith<$Res> {
   _$UserExtraFieldCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -669,16 +694,25 @@ class _$UserExtraFieldCopyWithImpl<$Res, $Val extends UserExtraField> implements
 }
 
 /// @nodoc
-abstract class _$$UserExtraFieldImplCopyWith<$Res> implements $UserExtraFieldCopyWith<$Res> {
-  factory _$$UserExtraFieldImplCopyWith(_$UserExtraFieldImpl value, $Res Function(_$UserExtraFieldImpl) then) = __$$UserExtraFieldImplCopyWithImpl<$Res>;
+abstract class _$$UserExtraFieldImplCopyWith<$Res>
+    implements $UserExtraFieldCopyWith<$Res> {
+  factory _$$UserExtraFieldImplCopyWith(
+    _$UserExtraFieldImpl value,
+    $Res Function(_$UserExtraFieldImpl) then,
+  ) = __$$UserExtraFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String label, String text});
 }
 
 /// @nodoc
-class __$$UserExtraFieldImplCopyWithImpl<$Res> extends _$UserExtraFieldCopyWithImpl<$Res, _$UserExtraFieldImpl> implements _$$UserExtraFieldImplCopyWith<$Res> {
-  __$$UserExtraFieldImplCopyWithImpl(_$UserExtraFieldImpl _value, $Res Function(_$UserExtraFieldImpl) _then) : super(_value, _then);
+class __$$UserExtraFieldImplCopyWithImpl<$Res>
+    extends _$UserExtraFieldCopyWithImpl<$Res, _$UserExtraFieldImpl>
+    implements _$$UserExtraFieldImplCopyWith<$Res> {
+  __$$UserExtraFieldImplCopyWithImpl(
+    _$UserExtraFieldImpl _value,
+    $Res Function(_$UserExtraFieldImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of UserExtraField
   /// with the given fields replaced by the non-null parameter values.
@@ -710,9 +744,14 @@ class __$$UserExtraFieldImplCopyWithImpl<$Res> extends _$UserExtraFieldCopyWithI
 /// @nodoc
 @JsonSerializable()
 class _$UserExtraFieldImpl implements _UserExtraField {
-  const _$UserExtraFieldImpl({required this.id, required this.label, required this.text});
+  const _$UserExtraFieldImpl({
+    required this.id,
+    required this.label,
+    required this.text,
+  });
 
-  factory _$UserExtraFieldImpl.fromJson(Map<String, dynamic> json) => _$$UserExtraFieldImplFromJson(json);
+  factory _$UserExtraFieldImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserExtraFieldImplFromJson(json);
 
   @override
   final int id;
@@ -745,7 +784,11 @@ class _$UserExtraFieldImpl implements _UserExtraField {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserExtraFieldImplCopyWith<_$UserExtraFieldImpl> get copyWith => __$$UserExtraFieldImplCopyWithImpl<_$UserExtraFieldImpl>(this, _$identity);
+  _$$UserExtraFieldImplCopyWith<_$UserExtraFieldImpl> get copyWith =>
+      __$$UserExtraFieldImplCopyWithImpl<_$UserExtraFieldImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -754,9 +797,14 @@ class _$UserExtraFieldImpl implements _UserExtraField {
 }
 
 abstract class _UserExtraField implements UserExtraField {
-  const factory _UserExtraField({required final int id, required final String label, required final String text}) = _$UserExtraFieldImpl;
+  const factory _UserExtraField({
+    required final int id,
+    required final String label,
+    required final String text,
+  }) = _$UserExtraFieldImpl;
 
-  factory _UserExtraField.fromJson(Map<String, dynamic> json) = _$UserExtraFieldImpl.fromJson;
+  factory _UserExtraField.fromJson(Map<String, dynamic> json) =
+      _$UserExtraFieldImpl.fromJson;
 
   @override
   int get id;
@@ -769,7 +817,8 @@ abstract class _UserExtraField implements UserExtraField {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserExtraFieldImplCopyWith<_$UserExtraFieldImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$UserExtraFieldImplCopyWith<_$UserExtraFieldImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Community _$CommunityFromJson(Map<String, dynamic> json) {
@@ -812,12 +861,14 @@ mixin _$Community {
   /// Create a copy of Community
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CommunityCopyWith<Community> get copyWith => throw _privateConstructorUsedError;
+  $CommunityCopyWith<Community> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommunityCopyWith<$Res> {
-  factory $CommunityCopyWith(Community value, $Res Function(Community) then) = _$CommunityCopyWithImpl<$Res, Community>;
+  factory $CommunityCopyWith(Community value, $Res Function(Community) then) =
+      _$CommunityCopyWithImpl<$Res, Community>;
   @useResult
   $Res call({
     int id,
@@ -844,7 +895,8 @@ abstract class $CommunityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CommunityCopyWithImpl<$Res, $Val extends Community> implements $CommunityCopyWith<$Res> {
+class _$CommunityCopyWithImpl<$Res, $Val extends Community>
+    implements $CommunityCopyWith<$Res> {
   _$CommunityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -987,8 +1039,12 @@ class _$CommunityCopyWithImpl<$Res, $Val extends Community> implements $Communit
 }
 
 /// @nodoc
-abstract class _$$CommunityImplCopyWith<$Res> implements $CommunityCopyWith<$Res> {
-  factory _$$CommunityImplCopyWith(_$CommunityImpl value, $Res Function(_$CommunityImpl) then) = __$$CommunityImplCopyWithImpl<$Res>;
+abstract class _$$CommunityImplCopyWith<$Res>
+    implements $CommunityCopyWith<$Res> {
+  factory _$$CommunityImplCopyWith(
+    _$CommunityImpl value,
+    $Res Function(_$CommunityImpl) then,
+  ) = __$$CommunityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -1016,8 +1072,13 @@ abstract class _$$CommunityImplCopyWith<$Res> implements $CommunityCopyWith<$Res
 }
 
 /// @nodoc
-class __$$CommunityImplCopyWithImpl<$Res> extends _$CommunityCopyWithImpl<$Res, _$CommunityImpl> implements _$$CommunityImplCopyWith<$Res> {
-  __$$CommunityImplCopyWithImpl(_$CommunityImpl _value, $Res Function(_$CommunityImpl) _then) : super(_value, _then);
+class __$$CommunityImplCopyWithImpl<$Res>
+    extends _$CommunityCopyWithImpl<$Res, _$CommunityImpl>
+    implements _$$CommunityImplCopyWith<$Res> {
+  __$$CommunityImplCopyWithImpl(
+    _$CommunityImpl _value,
+    $Res Function(_$CommunityImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Community
   /// with the given fields replaced by the non-null parameter values.
@@ -1166,7 +1227,8 @@ class _$CommunityImpl implements _Community {
     required this.hidden,
     required this.removed,
     @JsonKey(name: 'instance_id') required this.instanceId,
-    @JsonKey(name: 'ai_generated', defaultValue: false) required this.aiGenerated,
+    @JsonKey(name: 'ai_generated', defaultValue: false)
+    required this.aiGenerated,
     @JsonKey(name: 'ap_domain') this.apDomain,
     @JsonKey(name: 'restricted_to_mods') this.restrictedToMods,
     this.banned,
@@ -1178,7 +1240,8 @@ class _$CommunityImpl implements _Community {
     this.banner,
   });
 
-  factory _$CommunityImpl.fromJson(Map<String, dynamic> json) => _$$CommunityImplFromJson(json);
+  factory _$CommunityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommunityImplFromJson(json);
 
   @override
   final int id;
@@ -1247,15 +1310,22 @@ class _$CommunityImpl implements _Community {
             (identical(other.deleted, deleted) || other.deleted == deleted) &&
             (identical(other.hidden, hidden) || other.hidden == hidden) &&
             (identical(other.removed, removed) || other.removed == removed) &&
-            (identical(other.instanceId, instanceId) || other.instanceId == instanceId) &&
-            (identical(other.aiGenerated, aiGenerated) || other.aiGenerated == aiGenerated) &&
-            (identical(other.apDomain, apDomain) || other.apDomain == apDomain) &&
-            (identical(other.restrictedToMods, restrictedToMods) || other.restrictedToMods == restrictedToMods) &&
+            (identical(other.instanceId, instanceId) ||
+                other.instanceId == instanceId) &&
+            (identical(other.aiGenerated, aiGenerated) ||
+                other.aiGenerated == aiGenerated) &&
+            (identical(other.apDomain, apDomain) ||
+                other.apDomain == apDomain) &&
+            (identical(other.restrictedToMods, restrictedToMods) ||
+                other.restrictedToMods == restrictedToMods) &&
             (identical(other.banned, banned) || other.banned == banned) &&
-            (identical(other.questionAnswer, questionAnswer) || other.questionAnswer == questionAnswer) &&
-            (identical(other.postingWarning, postingWarning) || other.postingWarning == postingWarning) &&
+            (identical(other.questionAnswer, questionAnswer) ||
+                other.questionAnswer == questionAnswer) &&
+            (identical(other.postingWarning, postingWarning) ||
+                other.postingWarning == postingWarning) &&
             (identical(other.updated, updated) || other.updated == updated) &&
-            (identical(other.description, description) || other.description == description) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.banner, banner) || other.banner == banner));
   }
@@ -1291,7 +1361,8 @@ class _$CommunityImpl implements _Community {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CommunityImplCopyWith<_$CommunityImpl> get copyWith => __$$CommunityImplCopyWithImpl<_$CommunityImpl>(this, _$identity);
+  _$$CommunityImplCopyWith<_$CommunityImpl> get copyWith =>
+      __$$CommunityImplCopyWithImpl<_$CommunityImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1311,7 +1382,8 @@ abstract class _Community implements Community {
     required final bool hidden,
     required final bool removed,
     @JsonKey(name: 'instance_id') required final int instanceId,
-    @JsonKey(name: 'ai_generated', defaultValue: false) required final bool aiGenerated,
+    @JsonKey(name: 'ai_generated', defaultValue: false)
+    required final bool aiGenerated,
     @JsonKey(name: 'ap_domain') final String? apDomain,
     @JsonKey(name: 'restricted_to_mods') final bool? restrictedToMods,
     final bool? banned,
@@ -1323,7 +1395,8 @@ abstract class _Community implements Community {
     final String? banner,
   }) = _$CommunityImpl;
 
-  factory _Community.fromJson(Map<String, dynamic> json) = _$CommunityImpl.fromJson;
+  factory _Community.fromJson(Map<String, dynamic> json) =
+      _$CommunityImpl.fromJson;
 
   @override
   int get id;
@@ -1377,7 +1450,8 @@ abstract class _Community implements Community {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CommunityImplCopyWith<_$CommunityImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$CommunityImplCopyWith<_$CommunityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Post _$PostFromJson(Map<String, dynamic> json) {
@@ -1439,7 +1513,8 @@ mixin _$Post {
 
 /// @nodoc
 abstract class $PostCopyWith<$Res> {
-  factory $PostCopyWith(Post value, $Res Function(Post) then) = _$PostCopyWithImpl<$Res, Post>;
+  factory $PostCopyWith(Post value, $Res Function(Post) then) =
+      _$PostCopyWithImpl<$Res, Post>;
   @useResult
   $Res call({
     int id,
@@ -1478,7 +1553,8 @@ abstract class $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostCopyWithImpl<$Res, $Val extends Post> implements $PostCopyWith<$Res> {
+class _$PostCopyWithImpl<$Res, $Val extends Post>
+    implements $PostCopyWith<$Res> {
   _$PostCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1712,7 +1788,10 @@ class _$PostCopyWithImpl<$Res, $Val extends Post> implements $PostCopyWith<$Res>
 
 /// @nodoc
 abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
-  factory _$$PostImplCopyWith(_$PostImpl value, $Res Function(_$PostImpl) then) = __$$PostImplCopyWithImpl<$Res>;
+  factory _$$PostImplCopyWith(
+    _$PostImpl value,
+    $Res Function(_$PostImpl) then,
+  ) = __$$PostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -1755,8 +1834,11 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PostImplCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$PostImpl> implements _$$PostImplCopyWith<$Res> {
-  __$$PostImplCopyWithImpl(_$PostImpl _value, $Res Function(_$PostImpl) _then) : super(_value, _then);
+class __$$PostImplCopyWithImpl<$Res>
+    extends _$PostCopyWithImpl<$Res, _$PostImpl>
+    implements _$$PostImplCopyWith<$Res> {
+  __$$PostImplCopyWithImpl(_$PostImpl _value, $Res Function(_$PostImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Post
   /// with the given fields replaced by the non-null parameter values.
@@ -1961,7 +2043,8 @@ class _$PostImpl implements _Post {
     @JsonKey(name: 'image_details') this.imageDetails,
     @JsonKey(name: 'published') required this.published,
     this.updated,
-    @JsonKey(name: 'ai_generated', defaultValue: false) required this.aiGenerated,
+    @JsonKey(name: 'ai_generated', defaultValue: false)
+    required this.aiGenerated,
     this.sticky,
     this.locked,
     @JsonKey(name: 'post_type') this.postType,
@@ -1974,7 +2057,8 @@ class _$PostImpl implements _Post {
   }) : _emojiReactions = emojiReactions,
        _crossPosts = crossPosts;
 
-  factory _$PostImpl.fromJson(Map<String, dynamic> json) => _$$PostImplFromJson(json);
+  factory _$PostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostImplFromJson(json);
 
   @override
   final int id;
@@ -2080,24 +2164,38 @@ class _$PostImpl implements _Post {
             (identical(other.deleted, deleted) || other.deleted == deleted) &&
             (identical(other.removed, removed) || other.removed == removed) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.communityId, communityId) || other.communityId == communityId) &&
-            (identical(other.languageId, languageId) || other.languageId == languageId) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
             (identical(other.body, body) || other.body == body) &&
             (identical(other.url, url) || other.url == url) &&
-            (identical(other.smallThumbnailUrl, smallThumbnailUrl) || other.smallThumbnailUrl == smallThumbnailUrl) &&
-            (identical(other.thumbnailUrl, thumbnailUrl) || other.thumbnailUrl == thumbnailUrl) &&
+            (identical(other.smallThumbnailUrl, smallThumbnailUrl) ||
+                other.smallThumbnailUrl == smallThumbnailUrl) &&
+            (identical(other.thumbnailUrl, thumbnailUrl) ||
+                other.thumbnailUrl == thumbnailUrl) &&
             (identical(other.altText, altText) || other.altText == altText) &&
-            (identical(other.imageDetails, imageDetails) || other.imageDetails == imageDetails) &&
-            (identical(other.published, published) || other.published == published) &&
+            (identical(other.imageDetails, imageDetails) ||
+                other.imageDetails == imageDetails) &&
+            (identical(other.published, published) ||
+                other.published == published) &&
             (identical(other.updated, updated) || other.updated == updated) &&
-            (identical(other.aiGenerated, aiGenerated) || other.aiGenerated == aiGenerated) &&
+            (identical(other.aiGenerated, aiGenerated) ||
+                other.aiGenerated == aiGenerated) &&
             (identical(other.sticky, sticky) || other.sticky == sticky) &&
             (identical(other.locked, locked) || other.locked == locked) &&
-            (identical(other.postType, postType) || other.postType == postType) &&
+            (identical(other.postType, postType) ||
+                other.postType == postType) &&
             (identical(other.poll, poll) || other.poll == poll) &&
             (identical(other.event, event) || other.event == event) &&
-            const DeepCollectionEquality().equals(other._emojiReactions, _emojiReactions) &&
-            const DeepCollectionEquality().equals(other._crossPosts, _crossPosts) &&
+            const DeepCollectionEquality().equals(
+              other._emojiReactions,
+              _emojiReactions,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._crossPosts,
+              _crossPosts,
+            ) &&
             (identical(other.tags, tags) || other.tags == tags) &&
             (identical(other.flair, flair) || other.flair == flair));
   }
@@ -2141,7 +2239,8 @@ class _$PostImpl implements _Post {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PostImplCopyWith<_$PostImpl> get copyWith => __$$PostImplCopyWithImpl<_$PostImpl>(this, _$identity);
+  _$$PostImplCopyWith<_$PostImpl> get copyWith =>
+      __$$PostImplCopyWithImpl<_$PostImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -2169,7 +2268,8 @@ abstract class _Post implements Post {
     @JsonKey(name: 'image_details') final WidthHeight? imageDetails,
     @JsonKey(name: 'published') required final DateTime published,
     final DateTime? updated,
-    @JsonKey(name: 'ai_generated', defaultValue: false) required final bool aiGenerated,
+    @JsonKey(name: 'ai_generated', defaultValue: false)
+    required final bool aiGenerated,
     final bool? sticky,
     final bool? locked,
     @JsonKey(name: 'post_type') final PostType? postType,
@@ -2257,7 +2357,8 @@ abstract class _Post implements Post {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PostImplCopyWith<_$PostImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PostImplCopyWith<_$PostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PostPoll _$PostPollFromJson(Map<String, dynamic> json) {
@@ -2283,12 +2384,14 @@ mixin _$PostPoll {
   /// Create a copy of PostPoll
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PostPollCopyWith<PostPoll> get copyWith => throw _privateConstructorUsedError;
+  $PostPollCopyWith<PostPoll> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PostPollCopyWith<$Res> {
-  factory $PostPollCopyWith(PostPoll value, $Res Function(PostPoll) then) = _$PostPollCopyWithImpl<$Res, PostPoll>;
+  factory $PostPollCopyWith(PostPoll value, $Res Function(PostPoll) then) =
+      _$PostPollCopyWithImpl<$Res, PostPoll>;
   @useResult
   $Res call({
     @JsonKey(name: 'end_poll') DateTime? endPoll,
@@ -2301,7 +2404,8 @@ abstract class $PostPollCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostPollCopyWithImpl<$Res, $Val extends PostPoll> implements $PostPollCopyWith<$Res> {
+class _$PostPollCopyWithImpl<$Res, $Val extends PostPoll>
+    implements $PostPollCopyWith<$Res> {
   _$PostPollCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2313,7 +2417,14 @@ class _$PostPollCopyWithImpl<$Res, $Val extends PostPoll> implements $PostPollCo
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? endPoll = freezed, Object? mode = freezed, Object? localOnly = freezed, Object? latestVote = freezed, Object? choices = null, Object? myVotes = freezed}) {
+  $Res call({
+    Object? endPoll = freezed,
+    Object? mode = freezed,
+    Object? localOnly = freezed,
+    Object? latestVote = freezed,
+    Object? choices = null,
+    Object? myVotes = freezed,
+  }) {
     return _then(
       _value.copyWith(
             endPoll:
@@ -2353,8 +2464,12 @@ class _$PostPollCopyWithImpl<$Res, $Val extends PostPoll> implements $PostPollCo
 }
 
 /// @nodoc
-abstract class _$$PostPollImplCopyWith<$Res> implements $PostPollCopyWith<$Res> {
-  factory _$$PostPollImplCopyWith(_$PostPollImpl value, $Res Function(_$PostPollImpl) then) = __$$PostPollImplCopyWithImpl<$Res>;
+abstract class _$$PostPollImplCopyWith<$Res>
+    implements $PostPollCopyWith<$Res> {
+  factory _$$PostPollImplCopyWith(
+    _$PostPollImpl value,
+    $Res Function(_$PostPollImpl) then,
+  ) = __$$PostPollImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -2368,14 +2483,26 @@ abstract class _$$PostPollImplCopyWith<$Res> implements $PostPollCopyWith<$Res> 
 }
 
 /// @nodoc
-class __$$PostPollImplCopyWithImpl<$Res> extends _$PostPollCopyWithImpl<$Res, _$PostPollImpl> implements _$$PostPollImplCopyWith<$Res> {
-  __$$PostPollImplCopyWithImpl(_$PostPollImpl _value, $Res Function(_$PostPollImpl) _then) : super(_value, _then);
+class __$$PostPollImplCopyWithImpl<$Res>
+    extends _$PostPollCopyWithImpl<$Res, _$PostPollImpl>
+    implements _$$PostPollImplCopyWith<$Res> {
+  __$$PostPollImplCopyWithImpl(
+    _$PostPollImpl _value,
+    $Res Function(_$PostPollImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PostPoll
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? endPoll = freezed, Object? mode = freezed, Object? localOnly = freezed, Object? latestVote = freezed, Object? choices = null, Object? myVotes = freezed}) {
+  $Res call({
+    Object? endPoll = freezed,
+    Object? mode = freezed,
+    Object? localOnly = freezed,
+    Object? latestVote = freezed,
+    Object? choices = null,
+    Object? myVotes = freezed,
+  }) {
     return _then(
       _$PostPollImpl(
         endPoll:
@@ -2426,7 +2553,8 @@ class _$PostPollImpl implements _PostPoll {
   }) : _choices = choices,
        _myVotes = myVotes;
 
-  factory _$PostPollImpl.fromJson(Map<String, dynamic> json) => _$$PostPollImplFromJson(json);
+  factory _$PostPollImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostPollImplFromJson(json);
 
   @override
   @JsonKey(name: 'end_poll')
@@ -2472,22 +2600,33 @@ class _$PostPollImpl implements _PostPoll {
             other is _$PostPollImpl &&
             (identical(other.endPoll, endPoll) || other.endPoll == endPoll) &&
             (identical(other.mode, mode) || other.mode == mode) &&
-            (identical(other.localOnly, localOnly) || other.localOnly == localOnly) &&
-            (identical(other.latestVote, latestVote) || other.latestVote == latestVote) &&
+            (identical(other.localOnly, localOnly) ||
+                other.localOnly == localOnly) &&
+            (identical(other.latestVote, latestVote) ||
+                other.latestVote == latestVote) &&
             const DeepCollectionEquality().equals(other._choices, _choices) &&
             const DeepCollectionEquality().equals(other._myVotes, _myVotes));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, endPoll, mode, localOnly, latestVote, const DeepCollectionEquality().hash(_choices), const DeepCollectionEquality().hash(_myVotes));
+  int get hashCode => Object.hash(
+    runtimeType,
+    endPoll,
+    mode,
+    localOnly,
+    latestVote,
+    const DeepCollectionEquality().hash(_choices),
+    const DeepCollectionEquality().hash(_myVotes),
+  );
 
   /// Create a copy of PostPoll
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PostPollImplCopyWith<_$PostPollImpl> get copyWith => __$$PostPollImplCopyWithImpl<_$PostPollImpl>(this, _$identity);
+  _$$PostPollImplCopyWith<_$PostPollImpl> get copyWith =>
+      __$$PostPollImplCopyWithImpl<_$PostPollImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -2505,7 +2644,8 @@ abstract class _PostPoll implements PostPoll {
     @JsonKey(name: 'my_votes') final List<int>? myVotes,
   }) = _$PostPollImpl;
 
-  factory _PostPoll.fromJson(Map<String, dynamic> json) = _$PostPollImpl.fromJson;
+  factory _PostPoll.fromJson(Map<String, dynamic> json) =
+      _$PostPollImpl.fromJson;
 
   @override
   @JsonKey(name: 'end_poll')
@@ -2528,7 +2668,8 @@ abstract class _PostPoll implements PostPoll {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PostPollImplCopyWith<_$PostPollImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PostPollImplCopyWith<_$PostPollImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PollChoice _$PollChoiceFromJson(Map<String, dynamic> json) {
@@ -2551,18 +2692,28 @@ mixin _$PollChoice {
   /// Create a copy of PollChoice
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PollChoiceCopyWith<PollChoice> get copyWith => throw _privateConstructorUsedError;
+  $PollChoiceCopyWith<PollChoice> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PollChoiceCopyWith<$Res> {
-  factory $PollChoiceCopyWith(PollChoice value, $Res Function(PollChoice) then) = _$PollChoiceCopyWithImpl<$Res, PollChoice>;
+  factory $PollChoiceCopyWith(
+    PollChoice value,
+    $Res Function(PollChoice) then,
+  ) = _$PollChoiceCopyWithImpl<$Res, PollChoice>;
   @useResult
-  $Res call({int id, @JsonKey(name: 'choice_text') String choiceText, @JsonKey(name: 'sort_order') int? sortOrder, @JsonKey(name: 'num_votes') int numVotes});
+  $Res call({
+    int id,
+    @JsonKey(name: 'choice_text') String choiceText,
+    @JsonKey(name: 'sort_order') int? sortOrder,
+    @JsonKey(name: 'num_votes') int numVotes,
+  });
 }
 
 /// @nodoc
-class _$PollChoiceCopyWithImpl<$Res, $Val extends PollChoice> implements $PollChoiceCopyWith<$Res> {
+class _$PollChoiceCopyWithImpl<$Res, $Val extends PollChoice>
+    implements $PollChoiceCopyWith<$Res> {
   _$PollChoiceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2574,7 +2725,12 @@ class _$PollChoiceCopyWithImpl<$Res, $Val extends PollChoice> implements $PollCh
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? choiceText = null, Object? sortOrder = freezed, Object? numVotes = null}) {
+  $Res call({
+    Object? id = null,
+    Object? choiceText = null,
+    Object? sortOrder = freezed,
+    Object? numVotes = null,
+  }) {
     return _then(
       _value.copyWith(
             id:
@@ -2604,22 +2760,41 @@ class _$PollChoiceCopyWithImpl<$Res, $Val extends PollChoice> implements $PollCh
 }
 
 /// @nodoc
-abstract class _$$PollChoiceImplCopyWith<$Res> implements $PollChoiceCopyWith<$Res> {
-  factory _$$PollChoiceImplCopyWith(_$PollChoiceImpl value, $Res Function(_$PollChoiceImpl) then) = __$$PollChoiceImplCopyWithImpl<$Res>;
+abstract class _$$PollChoiceImplCopyWith<$Res>
+    implements $PollChoiceCopyWith<$Res> {
+  factory _$$PollChoiceImplCopyWith(
+    _$PollChoiceImpl value,
+    $Res Function(_$PollChoiceImpl) then,
+  ) = __$$PollChoiceImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, @JsonKey(name: 'choice_text') String choiceText, @JsonKey(name: 'sort_order') int? sortOrder, @JsonKey(name: 'num_votes') int numVotes});
+  $Res call({
+    int id,
+    @JsonKey(name: 'choice_text') String choiceText,
+    @JsonKey(name: 'sort_order') int? sortOrder,
+    @JsonKey(name: 'num_votes') int numVotes,
+  });
 }
 
 /// @nodoc
-class __$$PollChoiceImplCopyWithImpl<$Res> extends _$PollChoiceCopyWithImpl<$Res, _$PollChoiceImpl> implements _$$PollChoiceImplCopyWith<$Res> {
-  __$$PollChoiceImplCopyWithImpl(_$PollChoiceImpl _value, $Res Function(_$PollChoiceImpl) _then) : super(_value, _then);
+class __$$PollChoiceImplCopyWithImpl<$Res>
+    extends _$PollChoiceCopyWithImpl<$Res, _$PollChoiceImpl>
+    implements _$$PollChoiceImplCopyWith<$Res> {
+  __$$PollChoiceImplCopyWithImpl(
+    _$PollChoiceImpl _value,
+    $Res Function(_$PollChoiceImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PollChoice
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? choiceText = null, Object? sortOrder = freezed, Object? numVotes = null}) {
+  $Res call({
+    Object? id = null,
+    Object? choiceText = null,
+    Object? sortOrder = freezed,
+    Object? numVotes = null,
+  }) {
     return _then(
       _$PollChoiceImpl(
         id:
@@ -2650,9 +2825,15 @@ class __$$PollChoiceImplCopyWithImpl<$Res> extends _$PollChoiceCopyWithImpl<$Res
 /// @nodoc
 @JsonSerializable()
 class _$PollChoiceImpl implements _PollChoice {
-  const _$PollChoiceImpl({required this.id, @JsonKey(name: 'choice_text') required this.choiceText, @JsonKey(name: 'sort_order') this.sortOrder, @JsonKey(name: 'num_votes') this.numVotes = 0});
+  const _$PollChoiceImpl({
+    required this.id,
+    @JsonKey(name: 'choice_text') required this.choiceText,
+    @JsonKey(name: 'sort_order') this.sortOrder,
+    @JsonKey(name: 'num_votes') this.numVotes = 0,
+  });
 
-  factory _$PollChoiceImpl.fromJson(Map<String, dynamic> json) => _$$PollChoiceImplFromJson(json);
+  factory _$PollChoiceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PollChoiceImplFromJson(json);
 
   @override
   final int id;
@@ -2677,21 +2858,26 @@ class _$PollChoiceImpl implements _PollChoice {
         (other.runtimeType == runtimeType &&
             other is _$PollChoiceImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.choiceText, choiceText) || other.choiceText == choiceText) &&
-            (identical(other.sortOrder, sortOrder) || other.sortOrder == sortOrder) &&
-            (identical(other.numVotes, numVotes) || other.numVotes == numVotes));
+            (identical(other.choiceText, choiceText) ||
+                other.choiceText == choiceText) &&
+            (identical(other.sortOrder, sortOrder) ||
+                other.sortOrder == sortOrder) &&
+            (identical(other.numVotes, numVotes) ||
+                other.numVotes == numVotes));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, choiceText, sortOrder, numVotes);
+  int get hashCode =>
+      Object.hash(runtimeType, id, choiceText, sortOrder, numVotes);
 
   /// Create a copy of PollChoice
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PollChoiceImplCopyWith<_$PollChoiceImpl> get copyWith => __$$PollChoiceImplCopyWithImpl<_$PollChoiceImpl>(this, _$identity);
+  _$$PollChoiceImplCopyWith<_$PollChoiceImpl> get copyWith =>
+      __$$PollChoiceImplCopyWithImpl<_$PollChoiceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -2707,7 +2893,8 @@ abstract class _PollChoice implements PollChoice {
     @JsonKey(name: 'num_votes') final int numVotes,
   }) = _$PollChoiceImpl;
 
-  factory _PollChoice.fromJson(Map<String, dynamic> json) = _$PollChoiceImpl.fromJson;
+  factory _PollChoice.fromJson(Map<String, dynamic> json) =
+      _$PollChoiceImpl.fromJson;
 
   @override
   int get id;
@@ -2725,7 +2912,8 @@ abstract class _PollChoice implements PollChoice {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PollChoiceImplCopyWith<_$PollChoiceImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PollChoiceImplCopyWith<_$PollChoiceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 WidthHeight _$WidthHeightFromJson(Map<String, dynamic> json) {
@@ -2743,18 +2931,23 @@ mixin _$WidthHeight {
   /// Create a copy of WidthHeight
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WidthHeightCopyWith<WidthHeight> get copyWith => throw _privateConstructorUsedError;
+  $WidthHeightCopyWith<WidthHeight> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WidthHeightCopyWith<$Res> {
-  factory $WidthHeightCopyWith(WidthHeight value, $Res Function(WidthHeight) then) = _$WidthHeightCopyWithImpl<$Res, WidthHeight>;
+  factory $WidthHeightCopyWith(
+    WidthHeight value,
+    $Res Function(WidthHeight) then,
+  ) = _$WidthHeightCopyWithImpl<$Res, WidthHeight>;
   @useResult
   $Res call({int? width, int? height});
 }
 
 /// @nodoc
-class _$WidthHeightCopyWithImpl<$Res, $Val extends WidthHeight> implements $WidthHeightCopyWith<$Res> {
+class _$WidthHeightCopyWithImpl<$Res, $Val extends WidthHeight>
+    implements $WidthHeightCopyWith<$Res> {
   _$WidthHeightCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2786,16 +2979,25 @@ class _$WidthHeightCopyWithImpl<$Res, $Val extends WidthHeight> implements $Widt
 }
 
 /// @nodoc
-abstract class _$$WidthHeightImplCopyWith<$Res> implements $WidthHeightCopyWith<$Res> {
-  factory _$$WidthHeightImplCopyWith(_$WidthHeightImpl value, $Res Function(_$WidthHeightImpl) then) = __$$WidthHeightImplCopyWithImpl<$Res>;
+abstract class _$$WidthHeightImplCopyWith<$Res>
+    implements $WidthHeightCopyWith<$Res> {
+  factory _$$WidthHeightImplCopyWith(
+    _$WidthHeightImpl value,
+    $Res Function(_$WidthHeightImpl) then,
+  ) = __$$WidthHeightImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? width, int? height});
 }
 
 /// @nodoc
-class __$$WidthHeightImplCopyWithImpl<$Res> extends _$WidthHeightCopyWithImpl<$Res, _$WidthHeightImpl> implements _$$WidthHeightImplCopyWith<$Res> {
-  __$$WidthHeightImplCopyWithImpl(_$WidthHeightImpl _value, $Res Function(_$WidthHeightImpl) _then) : super(_value, _then);
+class __$$WidthHeightImplCopyWithImpl<$Res>
+    extends _$WidthHeightCopyWithImpl<$Res, _$WidthHeightImpl>
+    implements _$$WidthHeightImplCopyWith<$Res> {
+  __$$WidthHeightImplCopyWithImpl(
+    _$WidthHeightImpl _value,
+    $Res Function(_$WidthHeightImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of WidthHeight
   /// with the given fields replaced by the non-null parameter values.
@@ -2824,7 +3026,8 @@ class __$$WidthHeightImplCopyWithImpl<$Res> extends _$WidthHeightCopyWithImpl<$R
 class _$WidthHeightImpl implements _WidthHeight {
   const _$WidthHeightImpl({this.width, this.height});
 
-  factory _$WidthHeightImpl.fromJson(Map<String, dynamic> json) => _$$WidthHeightImplFromJson(json);
+  factory _$WidthHeightImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WidthHeightImplFromJson(json);
 
   @override
   final int? width;
@@ -2839,7 +3042,10 @@ class _$WidthHeightImpl implements _WidthHeight {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$WidthHeightImpl && (identical(other.width, width) || other.width == width) && (identical(other.height, height) || other.height == height));
+        (other.runtimeType == runtimeType &&
+            other is _$WidthHeightImpl &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.height, height) || other.height == height));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2851,7 +3057,8 @@ class _$WidthHeightImpl implements _WidthHeight {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WidthHeightImplCopyWith<_$WidthHeightImpl> get copyWith => __$$WidthHeightImplCopyWithImpl<_$WidthHeightImpl>(this, _$identity);
+  _$$WidthHeightImplCopyWith<_$WidthHeightImpl> get copyWith =>
+      __$$WidthHeightImplCopyWithImpl<_$WidthHeightImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -2860,9 +3067,11 @@ class _$WidthHeightImpl implements _WidthHeight {
 }
 
 abstract class _WidthHeight implements WidthHeight {
-  const factory _WidthHeight({final int? width, final int? height}) = _$WidthHeightImpl;
+  const factory _WidthHeight({final int? width, final int? height}) =
+      _$WidthHeightImpl;
 
-  factory _WidthHeight.fromJson(Map<String, dynamic> json) = _$WidthHeightImpl.fromJson;
+  factory _WidthHeight.fromJson(Map<String, dynamic> json) =
+      _$WidthHeightImpl.fromJson;
 
   @override
   int? get width;
@@ -2873,7 +3082,8 @@ abstract class _WidthHeight implements WidthHeight {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WidthHeightImplCopyWith<_$WidthHeightImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$WidthHeightImplCopyWith<_$WidthHeightImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 LanguageView _$LanguageViewFromJson(Map<String, dynamic> json) {
@@ -2892,18 +3102,23 @@ mixin _$LanguageView {
   /// Create a copy of LanguageView
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LanguageViewCopyWith<LanguageView> get copyWith => throw _privateConstructorUsedError;
+  $LanguageViewCopyWith<LanguageView> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LanguageViewCopyWith<$Res> {
-  factory $LanguageViewCopyWith(LanguageView value, $Res Function(LanguageView) then) = _$LanguageViewCopyWithImpl<$Res, LanguageView>;
+  factory $LanguageViewCopyWith(
+    LanguageView value,
+    $Res Function(LanguageView) then,
+  ) = _$LanguageViewCopyWithImpl<$Res, LanguageView>;
   @useResult
   $Res call({int id, String name, String code});
 }
 
 /// @nodoc
-class _$LanguageViewCopyWithImpl<$Res, $Val extends LanguageView> implements $LanguageViewCopyWith<$Res> {
+class _$LanguageViewCopyWithImpl<$Res, $Val extends LanguageView>
+    implements $LanguageViewCopyWith<$Res> {
   _$LanguageViewCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2940,16 +3155,25 @@ class _$LanguageViewCopyWithImpl<$Res, $Val extends LanguageView> implements $La
 }
 
 /// @nodoc
-abstract class _$$LanguageViewImplCopyWith<$Res> implements $LanguageViewCopyWith<$Res> {
-  factory _$$LanguageViewImplCopyWith(_$LanguageViewImpl value, $Res Function(_$LanguageViewImpl) then) = __$$LanguageViewImplCopyWithImpl<$Res>;
+abstract class _$$LanguageViewImplCopyWith<$Res>
+    implements $LanguageViewCopyWith<$Res> {
+  factory _$$LanguageViewImplCopyWith(
+    _$LanguageViewImpl value,
+    $Res Function(_$LanguageViewImpl) then,
+  ) = __$$LanguageViewImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String name, String code});
 }
 
 /// @nodoc
-class __$$LanguageViewImplCopyWithImpl<$Res> extends _$LanguageViewCopyWithImpl<$Res, _$LanguageViewImpl> implements _$$LanguageViewImplCopyWith<$Res> {
-  __$$LanguageViewImplCopyWithImpl(_$LanguageViewImpl _value, $Res Function(_$LanguageViewImpl) _then) : super(_value, _then);
+class __$$LanguageViewImplCopyWithImpl<$Res>
+    extends _$LanguageViewCopyWithImpl<$Res, _$LanguageViewImpl>
+    implements _$$LanguageViewImplCopyWith<$Res> {
+  __$$LanguageViewImplCopyWithImpl(
+    _$LanguageViewImpl _value,
+    $Res Function(_$LanguageViewImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LanguageView
   /// with the given fields replaced by the non-null parameter values.
@@ -2981,9 +3205,14 @@ class __$$LanguageViewImplCopyWithImpl<$Res> extends _$LanguageViewCopyWithImpl<
 /// @nodoc
 @JsonSerializable()
 class _$LanguageViewImpl implements _LanguageView {
-  const _$LanguageViewImpl({required this.id, required this.name, required this.code});
+  const _$LanguageViewImpl({
+    required this.id,
+    required this.name,
+    required this.code,
+  });
 
-  factory _$LanguageViewImpl.fromJson(Map<String, dynamic> json) => _$$LanguageViewImplFromJson(json);
+  factory _$LanguageViewImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LanguageViewImplFromJson(json);
 
   @override
   final int id;
@@ -3016,7 +3245,8 @@ class _$LanguageViewImpl implements _LanguageView {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LanguageViewImplCopyWith<_$LanguageViewImpl> get copyWith => __$$LanguageViewImplCopyWithImpl<_$LanguageViewImpl>(this, _$identity);
+  _$$LanguageViewImplCopyWith<_$LanguageViewImpl> get copyWith =>
+      __$$LanguageViewImplCopyWithImpl<_$LanguageViewImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -3025,9 +3255,14 @@ class _$LanguageViewImpl implements _LanguageView {
 }
 
 abstract class _LanguageView implements LanguageView {
-  const factory _LanguageView({required final int id, required final String name, required final String code}) = _$LanguageViewImpl;
+  const factory _LanguageView({
+    required final int id,
+    required final String name,
+    required final String code,
+  }) = _$LanguageViewImpl;
 
-  factory _LanguageView.fromJson(Map<String, dynamic> json) = _$LanguageViewImpl.fromJson;
+  factory _LanguageView.fromJson(Map<String, dynamic> json) =
+      _$LanguageViewImpl.fromJson;
 
   @override
   int get id;
@@ -3040,7 +3275,8 @@ abstract class _LanguageView implements LanguageView {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LanguageViewImplCopyWith<_$LanguageViewImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$LanguageViewImplCopyWith<_$LanguageViewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PostEvent _$PostEventFromJson(Map<String, dynamic> json) {
@@ -3081,12 +3317,14 @@ mixin _$PostEvent {
   /// Create a copy of PostEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PostEventCopyWith<PostEvent> get copyWith => throw _privateConstructorUsedError;
+  $PostEventCopyWith<PostEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PostEventCopyWith<$Res> {
-  factory $PostEventCopyWith(PostEvent value, $Res Function(PostEvent) then) = _$PostEventCopyWithImpl<$Res, PostEvent>;
+  factory $PostEventCopyWith(PostEvent value, $Res Function(PostEvent) then) =
+      _$PostEventCopyWithImpl<$Res, PostEvent>;
   @useResult
   $Res call({
     DateTime start,
@@ -3097,8 +3335,10 @@ abstract class $PostEventCopyWith<$Res> {
     bool full,
     @JsonKey(name: 'online_link') String? onlineLink,
     @JsonKey(name: 'join_mode') String? joinMode,
-    @JsonKey(name: 'external_participation_url') String? externalParticipationUrl,
-    @JsonKey(name: 'anonymous_participation', defaultValue: false) bool anonymousParticipation,
+    @JsonKey(name: 'external_participation_url')
+    String? externalParticipationUrl,
+    @JsonKey(name: 'anonymous_participation', defaultValue: false)
+    bool anonymousParticipation,
     bool online,
     @JsonKey(name: 'buy_tickets_link') String? buyTicketsLink,
     @JsonKey(name: 'event_fee_currency') String? eventFeeCurrency,
@@ -3108,7 +3348,8 @@ abstract class $PostEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PostEventCopyWithImpl<$Res, $Val extends PostEvent> implements $PostEventCopyWith<$Res> {
+class _$PostEventCopyWithImpl<$Res, $Val extends PostEvent>
+    implements $PostEventCopyWith<$Res> {
   _$PostEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3221,8 +3462,12 @@ class _$PostEventCopyWithImpl<$Res, $Val extends PostEvent> implements $PostEven
 }
 
 /// @nodoc
-abstract class _$$PostEventImplCopyWith<$Res> implements $PostEventCopyWith<$Res> {
-  factory _$$PostEventImplCopyWith(_$PostEventImpl value, $Res Function(_$PostEventImpl) then) = __$$PostEventImplCopyWithImpl<$Res>;
+abstract class _$$PostEventImplCopyWith<$Res>
+    implements $PostEventCopyWith<$Res> {
+  factory _$$PostEventImplCopyWith(
+    _$PostEventImpl value,
+    $Res Function(_$PostEventImpl) then,
+  ) = __$$PostEventImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -3234,8 +3479,10 @@ abstract class _$$PostEventImplCopyWith<$Res> implements $PostEventCopyWith<$Res
     bool full,
     @JsonKey(name: 'online_link') String? onlineLink,
     @JsonKey(name: 'join_mode') String? joinMode,
-    @JsonKey(name: 'external_participation_url') String? externalParticipationUrl,
-    @JsonKey(name: 'anonymous_participation', defaultValue: false) bool anonymousParticipation,
+    @JsonKey(name: 'external_participation_url')
+    String? externalParticipationUrl,
+    @JsonKey(name: 'anonymous_participation', defaultValue: false)
+    bool anonymousParticipation,
     bool online,
     @JsonKey(name: 'buy_tickets_link') String? buyTicketsLink,
     @JsonKey(name: 'event_fee_currency') String? eventFeeCurrency,
@@ -3245,8 +3492,13 @@ abstract class _$$PostEventImplCopyWith<$Res> implements $PostEventCopyWith<$Res
 }
 
 /// @nodoc
-class __$$PostEventImplCopyWithImpl<$Res> extends _$PostEventCopyWithImpl<$Res, _$PostEventImpl> implements _$$PostEventImplCopyWith<$Res> {
-  __$$PostEventImplCopyWithImpl(_$PostEventImpl _value, $Res Function(_$PostEventImpl) _then) : super(_value, _then);
+class __$$PostEventImplCopyWithImpl<$Res>
+    extends _$PostEventCopyWithImpl<$Res, _$PostEventImpl>
+    implements _$$PostEventImplCopyWith<$Res> {
+  __$$PostEventImplCopyWithImpl(
+    _$PostEventImpl _value,
+    $Res Function(_$PostEventImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PostEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -3359,12 +3611,14 @@ class _$PostEventImpl implements _PostEvent {
     required this.end,
     this.timezone,
     @JsonKey(name: 'max_attendees', defaultValue: 0) required this.maxAttendees,
-    @JsonKey(name: 'participant_count', defaultValue: 0) required this.participantCount,
+    @JsonKey(name: 'participant_count', defaultValue: 0)
+    required this.participantCount,
     this.full = false,
     @JsonKey(name: 'online_link') this.onlineLink,
     @JsonKey(name: 'join_mode') this.joinMode,
     @JsonKey(name: 'external_participation_url') this.externalParticipationUrl,
-    @JsonKey(name: 'anonymous_participation', defaultValue: false) required this.anonymousParticipation,
+    @JsonKey(name: 'anonymous_participation', defaultValue: false)
+    required this.anonymousParticipation,
     this.online = false,
     @JsonKey(name: 'buy_tickets_link') this.buyTicketsLink,
     @JsonKey(name: 'event_fee_currency') this.eventFeeCurrency,
@@ -3372,7 +3626,8 @@ class _$PostEventImpl implements _PostEvent {
     @JsonKey(name: 'my_participation') this.myParticipation,
   });
 
-  factory _$PostEventImpl.fromJson(Map<String, dynamic> json) => _$$PostEventImplFromJson(json);
+  factory _$PostEventImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostEventImplFromJson(json);
 
   @override
   final DateTime start;
@@ -3429,19 +3684,33 @@ class _$PostEventImpl implements _PostEvent {
             other is _$PostEventImpl &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
-            (identical(other.timezone, timezone) || other.timezone == timezone) &&
-            (identical(other.maxAttendees, maxAttendees) || other.maxAttendees == maxAttendees) &&
-            (identical(other.participantCount, participantCount) || other.participantCount == participantCount) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
+            (identical(other.maxAttendees, maxAttendees) ||
+                other.maxAttendees == maxAttendees) &&
+            (identical(other.participantCount, participantCount) ||
+                other.participantCount == participantCount) &&
             (identical(other.full, full) || other.full == full) &&
-            (identical(other.onlineLink, onlineLink) || other.onlineLink == onlineLink) &&
-            (identical(other.joinMode, joinMode) || other.joinMode == joinMode) &&
-            (identical(other.externalParticipationUrl, externalParticipationUrl) || other.externalParticipationUrl == externalParticipationUrl) &&
-            (identical(other.anonymousParticipation, anonymousParticipation) || other.anonymousParticipation == anonymousParticipation) &&
+            (identical(other.onlineLink, onlineLink) ||
+                other.onlineLink == onlineLink) &&
+            (identical(other.joinMode, joinMode) ||
+                other.joinMode == joinMode) &&
+            (identical(
+                  other.externalParticipationUrl,
+                  externalParticipationUrl,
+                ) ||
+                other.externalParticipationUrl == externalParticipationUrl) &&
+            (identical(other.anonymousParticipation, anonymousParticipation) ||
+                other.anonymousParticipation == anonymousParticipation) &&
             (identical(other.online, online) || other.online == online) &&
-            (identical(other.buyTicketsLink, buyTicketsLink) || other.buyTicketsLink == buyTicketsLink) &&
-            (identical(other.eventFeeCurrency, eventFeeCurrency) || other.eventFeeCurrency == eventFeeCurrency) &&
-            (identical(other.eventFeeAmount, eventFeeAmount) || other.eventFeeAmount == eventFeeAmount) &&
-            (identical(other.myParticipation, myParticipation) || other.myParticipation == myParticipation));
+            (identical(other.buyTicketsLink, buyTicketsLink) ||
+                other.buyTicketsLink == buyTicketsLink) &&
+            (identical(other.eventFeeCurrency, eventFeeCurrency) ||
+                other.eventFeeCurrency == eventFeeCurrency) &&
+            (identical(other.eventFeeAmount, eventFeeAmount) ||
+                other.eventFeeAmount == eventFeeAmount) &&
+            (identical(other.myParticipation, myParticipation) ||
+                other.myParticipation == myParticipation));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3470,7 +3739,8 @@ class _$PostEventImpl implements _PostEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PostEventImplCopyWith<_$PostEventImpl> get copyWith => __$$PostEventImplCopyWithImpl<_$PostEventImpl>(this, _$identity);
+  _$$PostEventImplCopyWith<_$PostEventImpl> get copyWith =>
+      __$$PostEventImplCopyWithImpl<_$PostEventImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -3483,13 +3753,17 @@ abstract class _PostEvent implements PostEvent {
     required final DateTime start,
     required final DateTime end,
     final String? timezone,
-    @JsonKey(name: 'max_attendees', defaultValue: 0) required final int maxAttendees,
-    @JsonKey(name: 'participant_count', defaultValue: 0) required final int participantCount,
+    @JsonKey(name: 'max_attendees', defaultValue: 0)
+    required final int maxAttendees,
+    @JsonKey(name: 'participant_count', defaultValue: 0)
+    required final int participantCount,
     final bool full,
     @JsonKey(name: 'online_link') final String? onlineLink,
     @JsonKey(name: 'join_mode') final String? joinMode,
-    @JsonKey(name: 'external_participation_url') final String? externalParticipationUrl,
-    @JsonKey(name: 'anonymous_participation', defaultValue: false) required final bool anonymousParticipation,
+    @JsonKey(name: 'external_participation_url')
+    final String? externalParticipationUrl,
+    @JsonKey(name: 'anonymous_participation', defaultValue: false)
+    required final bool anonymousParticipation,
     final bool online,
     @JsonKey(name: 'buy_tickets_link') final String? buyTicketsLink,
     @JsonKey(name: 'event_fee_currency') final String? eventFeeCurrency,
@@ -3497,7 +3771,8 @@ abstract class _PostEvent implements PostEvent {
     @JsonKey(name: 'my_participation') final String? myParticipation,
   }) = _$PostEventImpl;
 
-  factory _PostEvent.fromJson(Map<String, dynamic> json) = _$PostEventImpl.fromJson;
+  factory _PostEvent.fromJson(Map<String, dynamic> json) =
+      _$PostEventImpl.fromJson;
 
   @override
   DateTime get start;
@@ -3544,7 +3819,8 @@ abstract class _PostEvent implements PostEvent {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PostEventImplCopyWith<_$PostEventImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PostEventImplCopyWith<_$PostEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Reactions _$ReactionsFromJson(Map<String, dynamic> json) {
@@ -3566,18 +3842,27 @@ mixin _$Reactions {
   /// Create a copy of Reactions
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ReactionsCopyWith<Reactions> get copyWith => throw _privateConstructorUsedError;
+  $ReactionsCopyWith<Reactions> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReactionsCopyWith<$Res> {
-  factory $ReactionsCopyWith(Reactions value, $Res Function(Reactions) then) = _$ReactionsCopyWithImpl<$Res, Reactions>;
+  factory $ReactionsCopyWith(Reactions value, $Res Function(Reactions) then) =
+      _$ReactionsCopyWithImpl<$Res, Reactions>;
   @useResult
-  $Res call({String? url, String token, List<String> authors, int count, @JsonKey(name: 'my_reaction') String? myReaction});
+  $Res call({
+    String? url,
+    String token,
+    List<String> authors,
+    int count,
+    @JsonKey(name: 'my_reaction') String? myReaction,
+  });
 }
 
 /// @nodoc
-class _$ReactionsCopyWithImpl<$Res, $Val extends Reactions> implements $ReactionsCopyWith<$Res> {
+class _$ReactionsCopyWithImpl<$Res, $Val extends Reactions>
+    implements $ReactionsCopyWith<$Res> {
   _$ReactionsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3589,7 +3874,13 @@ class _$ReactionsCopyWithImpl<$Res, $Val extends Reactions> implements $Reaction
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? url = freezed, Object? token = null, Object? authors = null, Object? count = null, Object? myReaction = freezed}) {
+  $Res call({
+    Object? url = freezed,
+    Object? token = null,
+    Object? authors = null,
+    Object? count = null,
+    Object? myReaction = freezed,
+  }) {
     return _then(
       _value.copyWith(
             url:
@@ -3624,22 +3915,43 @@ class _$ReactionsCopyWithImpl<$Res, $Val extends Reactions> implements $Reaction
 }
 
 /// @nodoc
-abstract class _$$ReactionsImplCopyWith<$Res> implements $ReactionsCopyWith<$Res> {
-  factory _$$ReactionsImplCopyWith(_$ReactionsImpl value, $Res Function(_$ReactionsImpl) then) = __$$ReactionsImplCopyWithImpl<$Res>;
+abstract class _$$ReactionsImplCopyWith<$Res>
+    implements $ReactionsCopyWith<$Res> {
+  factory _$$ReactionsImplCopyWith(
+    _$ReactionsImpl value,
+    $Res Function(_$ReactionsImpl) then,
+  ) = __$$ReactionsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? url, String token, List<String> authors, int count, @JsonKey(name: 'my_reaction') String? myReaction});
+  $Res call({
+    String? url,
+    String token,
+    List<String> authors,
+    int count,
+    @JsonKey(name: 'my_reaction') String? myReaction,
+  });
 }
 
 /// @nodoc
-class __$$ReactionsImplCopyWithImpl<$Res> extends _$ReactionsCopyWithImpl<$Res, _$ReactionsImpl> implements _$$ReactionsImplCopyWith<$Res> {
-  __$$ReactionsImplCopyWithImpl(_$ReactionsImpl _value, $Res Function(_$ReactionsImpl) _then) : super(_value, _then);
+class __$$ReactionsImplCopyWithImpl<$Res>
+    extends _$ReactionsCopyWithImpl<$Res, _$ReactionsImpl>
+    implements _$$ReactionsImplCopyWith<$Res> {
+  __$$ReactionsImplCopyWithImpl(
+    _$ReactionsImpl _value,
+    $Res Function(_$ReactionsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Reactions
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? url = freezed, Object? token = null, Object? authors = null, Object? count = null, Object? myReaction = freezed}) {
+  $Res call({
+    Object? url = freezed,
+    Object? token = null,
+    Object? authors = null,
+    Object? count = null,
+    Object? myReaction = freezed,
+  }) {
     return _then(
       _$ReactionsImpl(
         url:
@@ -3675,9 +3987,16 @@ class __$$ReactionsImplCopyWithImpl<$Res> extends _$ReactionsCopyWithImpl<$Res, 
 /// @nodoc
 @JsonSerializable()
 class _$ReactionsImpl implements _Reactions {
-  const _$ReactionsImpl({this.url, required this.token, required final List<String> authors, required this.count, @JsonKey(name: 'my_reaction') this.myReaction}) : _authors = authors;
+  const _$ReactionsImpl({
+    this.url,
+    required this.token,
+    required final List<String> authors,
+    required this.count,
+    @JsonKey(name: 'my_reaction') this.myReaction,
+  }) : _authors = authors;
 
-  factory _$ReactionsImpl.fromJson(Map<String, dynamic> json) => _$$ReactionsImplFromJson(json);
+  factory _$ReactionsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReactionsImplFromJson(json);
 
   @override
   final String? url;
@@ -3711,19 +4030,28 @@ class _$ReactionsImpl implements _Reactions {
             (identical(other.token, token) || other.token == token) &&
             const DeepCollectionEquality().equals(other._authors, _authors) &&
             (identical(other.count, count) || other.count == count) &&
-            (identical(other.myReaction, myReaction) || other.myReaction == myReaction));
+            (identical(other.myReaction, myReaction) ||
+                other.myReaction == myReaction));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, url, token, const DeepCollectionEquality().hash(_authors), count, myReaction);
+  int get hashCode => Object.hash(
+    runtimeType,
+    url,
+    token,
+    const DeepCollectionEquality().hash(_authors),
+    count,
+    myReaction,
+  );
 
   /// Create a copy of Reactions
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReactionsImplCopyWith<_$ReactionsImpl> get copyWith => __$$ReactionsImplCopyWithImpl<_$ReactionsImpl>(this, _$identity);
+  _$$ReactionsImplCopyWith<_$ReactionsImpl> get copyWith =>
+      __$$ReactionsImplCopyWithImpl<_$ReactionsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -3732,10 +4060,16 @@ class _$ReactionsImpl implements _Reactions {
 }
 
 abstract class _Reactions implements Reactions {
-  const factory _Reactions({final String? url, required final String token, required final List<String> authors, required final int count, @JsonKey(name: 'my_reaction') final String? myReaction}) =
-      _$ReactionsImpl;
+  const factory _Reactions({
+    final String? url,
+    required final String token,
+    required final List<String> authors,
+    required final int count,
+    @JsonKey(name: 'my_reaction') final String? myReaction,
+  }) = _$ReactionsImpl;
 
-  factory _Reactions.fromJson(Map<String, dynamic> json) = _$ReactionsImpl.fromJson;
+  factory _Reactions.fromJson(Map<String, dynamic> json) =
+      _$ReactionsImpl.fromJson;
 
   @override
   String? get url;
@@ -3753,7 +4087,8 @@ abstract class _Reactions implements Reactions {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ReactionsImplCopyWith<_$ReactionsImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$ReactionsImplCopyWith<_$ReactionsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 MiniCrossPosts _$MiniCrossPostsFromJson(Map<String, dynamic> json) {
@@ -3775,18 +4110,27 @@ mixin _$MiniCrossPosts {
   /// Create a copy of MiniCrossPosts
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MiniCrossPostsCopyWith<MiniCrossPosts> get copyWith => throw _privateConstructorUsedError;
+  $MiniCrossPostsCopyWith<MiniCrossPosts> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MiniCrossPostsCopyWith<$Res> {
-  factory $MiniCrossPostsCopyWith(MiniCrossPosts value, $Res Function(MiniCrossPosts) then) = _$MiniCrossPostsCopyWithImpl<$Res, MiniCrossPosts>;
+  factory $MiniCrossPostsCopyWith(
+    MiniCrossPosts value,
+    $Res Function(MiniCrossPosts) then,
+  ) = _$MiniCrossPostsCopyWithImpl<$Res, MiniCrossPosts>;
   @useResult
-  $Res call({@JsonKey(name: 'post_id') int postId, @JsonKey(name: 'reply_count') int replyCount, @JsonKey(name: 'community_name') String communityName});
+  $Res call({
+    @JsonKey(name: 'post_id') int postId,
+    @JsonKey(name: 'reply_count') int replyCount,
+    @JsonKey(name: 'community_name') String communityName,
+  });
 }
 
 /// @nodoc
-class _$MiniCrossPostsCopyWithImpl<$Res, $Val extends MiniCrossPosts> implements $MiniCrossPostsCopyWith<$Res> {
+class _$MiniCrossPostsCopyWithImpl<$Res, $Val extends MiniCrossPosts>
+    implements $MiniCrossPostsCopyWith<$Res> {
   _$MiniCrossPostsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3798,7 +4142,11 @@ class _$MiniCrossPostsCopyWithImpl<$Res, $Val extends MiniCrossPosts> implements
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? postId = null, Object? replyCount = null, Object? communityName = null}) {
+  $Res call({
+    Object? postId = null,
+    Object? replyCount = null,
+    Object? communityName = null,
+  }) {
     return _then(
       _value.copyWith(
             postId:
@@ -3823,22 +4171,39 @@ class _$MiniCrossPostsCopyWithImpl<$Res, $Val extends MiniCrossPosts> implements
 }
 
 /// @nodoc
-abstract class _$$MiniCrossPostsImplCopyWith<$Res> implements $MiniCrossPostsCopyWith<$Res> {
-  factory _$$MiniCrossPostsImplCopyWith(_$MiniCrossPostsImpl value, $Res Function(_$MiniCrossPostsImpl) then) = __$$MiniCrossPostsImplCopyWithImpl<$Res>;
+abstract class _$$MiniCrossPostsImplCopyWith<$Res>
+    implements $MiniCrossPostsCopyWith<$Res> {
+  factory _$$MiniCrossPostsImplCopyWith(
+    _$MiniCrossPostsImpl value,
+    $Res Function(_$MiniCrossPostsImpl) then,
+  ) = __$$MiniCrossPostsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'post_id') int postId, @JsonKey(name: 'reply_count') int replyCount, @JsonKey(name: 'community_name') String communityName});
+  $Res call({
+    @JsonKey(name: 'post_id') int postId,
+    @JsonKey(name: 'reply_count') int replyCount,
+    @JsonKey(name: 'community_name') String communityName,
+  });
 }
 
 /// @nodoc
-class __$$MiniCrossPostsImplCopyWithImpl<$Res> extends _$MiniCrossPostsCopyWithImpl<$Res, _$MiniCrossPostsImpl> implements _$$MiniCrossPostsImplCopyWith<$Res> {
-  __$$MiniCrossPostsImplCopyWithImpl(_$MiniCrossPostsImpl _value, $Res Function(_$MiniCrossPostsImpl) _then) : super(_value, _then);
+class __$$MiniCrossPostsImplCopyWithImpl<$Res>
+    extends _$MiniCrossPostsCopyWithImpl<$Res, _$MiniCrossPostsImpl>
+    implements _$$MiniCrossPostsImplCopyWith<$Res> {
+  __$$MiniCrossPostsImplCopyWithImpl(
+    _$MiniCrossPostsImpl _value,
+    $Res Function(_$MiniCrossPostsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of MiniCrossPosts
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? postId = null, Object? replyCount = null, Object? communityName = null}) {
+  $Res call({
+    Object? postId = null,
+    Object? replyCount = null,
+    Object? communityName = null,
+  }) {
     return _then(
       _$MiniCrossPostsImpl(
         postId:
@@ -3864,9 +4229,14 @@ class __$$MiniCrossPostsImplCopyWithImpl<$Res> extends _$MiniCrossPostsCopyWithI
 /// @nodoc
 @JsonSerializable()
 class _$MiniCrossPostsImpl implements _MiniCrossPosts {
-  const _$MiniCrossPostsImpl({@JsonKey(name: 'post_id') required this.postId, @JsonKey(name: 'reply_count') required this.replyCount, @JsonKey(name: 'community_name') required this.communityName});
+  const _$MiniCrossPostsImpl({
+    @JsonKey(name: 'post_id') required this.postId,
+    @JsonKey(name: 'reply_count') required this.replyCount,
+    @JsonKey(name: 'community_name') required this.communityName,
+  });
 
-  factory _$MiniCrossPostsImpl.fromJson(Map<String, dynamic> json) => _$$MiniCrossPostsImplFromJson(json);
+  factory _$MiniCrossPostsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MiniCrossPostsImplFromJson(json);
 
   @override
   @JsonKey(name: 'post_id')
@@ -3889,20 +4259,27 @@ class _$MiniCrossPostsImpl implements _MiniCrossPosts {
         (other.runtimeType == runtimeType &&
             other is _$MiniCrossPostsImpl &&
             (identical(other.postId, postId) || other.postId == postId) &&
-            (identical(other.replyCount, replyCount) || other.replyCount == replyCount) &&
-            (identical(other.communityName, communityName) || other.communityName == communityName));
+            (identical(other.replyCount, replyCount) ||
+                other.replyCount == replyCount) &&
+            (identical(other.communityName, communityName) ||
+                other.communityName == communityName));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, postId, replyCount, communityName);
+  int get hashCode =>
+      Object.hash(runtimeType, postId, replyCount, communityName);
 
   /// Create a copy of MiniCrossPosts
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MiniCrossPostsImplCopyWith<_$MiniCrossPostsImpl> get copyWith => __$$MiniCrossPostsImplCopyWithImpl<_$MiniCrossPostsImpl>(this, _$identity);
+  _$$MiniCrossPostsImplCopyWith<_$MiniCrossPostsImpl> get copyWith =>
+      __$$MiniCrossPostsImplCopyWithImpl<_$MiniCrossPostsImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -3917,7 +4294,8 @@ abstract class _MiniCrossPosts implements MiniCrossPosts {
     @JsonKey(name: 'community_name') required final String communityName,
   }) = _$MiniCrossPostsImpl;
 
-  factory _MiniCrossPosts.fromJson(Map<String, dynamic> json) = _$MiniCrossPostsImpl.fromJson;
+  factory _MiniCrossPosts.fromJson(Map<String, dynamic> json) =
+      _$MiniCrossPostsImpl.fromJson;
 
   @override
   @JsonKey(name: 'post_id')
@@ -3933,7 +4311,8 @@ abstract class _MiniCrossPosts implements MiniCrossPosts {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MiniCrossPostsImplCopyWith<_$MiniCrossPostsImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$MiniCrossPostsImplCopyWith<_$MiniCrossPostsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 CommunityFlair _$CommunityFlairFromJson(Map<String, dynamic> json) {
@@ -3962,12 +4341,16 @@ mixin _$CommunityFlair {
   /// Create a copy of CommunityFlair
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CommunityFlairCopyWith<CommunityFlair> get copyWith => throw _privateConstructorUsedError;
+  $CommunityFlairCopyWith<CommunityFlair> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommunityFlairCopyWith<$Res> {
-  factory $CommunityFlairCopyWith(CommunityFlair value, $Res Function(CommunityFlair) then) = _$CommunityFlairCopyWithImpl<$Res, CommunityFlair>;
+  factory $CommunityFlairCopyWith(
+    CommunityFlair value,
+    $Res Function(CommunityFlair) then,
+  ) = _$CommunityFlairCopyWithImpl<$Res, CommunityFlair>;
   @useResult
   $Res call({
     int id,
@@ -3981,7 +4364,8 @@ abstract class $CommunityFlairCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CommunityFlairCopyWithImpl<$Res, $Val extends CommunityFlair> implements $CommunityFlairCopyWith<$Res> {
+class _$CommunityFlairCopyWithImpl<$Res, $Val extends CommunityFlair>
+    implements $CommunityFlairCopyWith<$Res> {
   _$CommunityFlairCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3993,7 +4377,15 @@ class _$CommunityFlairCopyWithImpl<$Res, $Val extends CommunityFlair> implements
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? communityId = null, Object? flairTitle = null, Object? textColor = null, Object? backgroundColor = null, Object? blurImages = null, Object? apId = freezed}) {
+  $Res call({
+    Object? id = null,
+    Object? communityId = null,
+    Object? flairTitle = null,
+    Object? textColor = null,
+    Object? backgroundColor = null,
+    Object? blurImages = null,
+    Object? apId = freezed,
+  }) {
     return _then(
       _value.copyWith(
             id:
@@ -4038,8 +4430,12 @@ class _$CommunityFlairCopyWithImpl<$Res, $Val extends CommunityFlair> implements
 }
 
 /// @nodoc
-abstract class _$$CommunityFlairImplCopyWith<$Res> implements $CommunityFlairCopyWith<$Res> {
-  factory _$$CommunityFlairImplCopyWith(_$CommunityFlairImpl value, $Res Function(_$CommunityFlairImpl) then) = __$$CommunityFlairImplCopyWithImpl<$Res>;
+abstract class _$$CommunityFlairImplCopyWith<$Res>
+    implements $CommunityFlairCopyWith<$Res> {
+  factory _$$CommunityFlairImplCopyWith(
+    _$CommunityFlairImpl value,
+    $Res Function(_$CommunityFlairImpl) then,
+  ) = __$$CommunityFlairImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -4054,14 +4450,27 @@ abstract class _$$CommunityFlairImplCopyWith<$Res> implements $CommunityFlairCop
 }
 
 /// @nodoc
-class __$$CommunityFlairImplCopyWithImpl<$Res> extends _$CommunityFlairCopyWithImpl<$Res, _$CommunityFlairImpl> implements _$$CommunityFlairImplCopyWith<$Res> {
-  __$$CommunityFlairImplCopyWithImpl(_$CommunityFlairImpl _value, $Res Function(_$CommunityFlairImpl) _then) : super(_value, _then);
+class __$$CommunityFlairImplCopyWithImpl<$Res>
+    extends _$CommunityFlairCopyWithImpl<$Res, _$CommunityFlairImpl>
+    implements _$$CommunityFlairImplCopyWith<$Res> {
+  __$$CommunityFlairImplCopyWithImpl(
+    _$CommunityFlairImpl _value,
+    $Res Function(_$CommunityFlairImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CommunityFlair
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? communityId = null, Object? flairTitle = null, Object? textColor = null, Object? backgroundColor = null, Object? blurImages = null, Object? apId = freezed}) {
+  $Res call({
+    Object? id = null,
+    Object? communityId = null,
+    Object? flairTitle = null,
+    Object? textColor = null,
+    Object? backgroundColor = null,
+    Object? blurImages = null,
+    Object? apId = freezed,
+  }) {
     return _then(
       _$CommunityFlairImpl(
         id:
@@ -4117,7 +4526,8 @@ class _$CommunityFlairImpl implements _CommunityFlair {
     @JsonKey(name: 'ap_id') this.apId,
   });
 
-  factory _$CommunityFlairImpl.fromJson(Map<String, dynamic> json) => _$$CommunityFlairImplFromJson(json);
+  factory _$CommunityFlairImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommunityFlairImplFromJson(json);
 
   @override
   final int id;
@@ -4151,24 +4561,42 @@ class _$CommunityFlairImpl implements _CommunityFlair {
         (other.runtimeType == runtimeType &&
             other is _$CommunityFlairImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.communityId, communityId) || other.communityId == communityId) &&
-            (identical(other.flairTitle, flairTitle) || other.flairTitle == flairTitle) &&
-            (identical(other.textColor, textColor) || other.textColor == textColor) &&
-            (identical(other.backgroundColor, backgroundColor) || other.backgroundColor == backgroundColor) &&
-            (identical(other.blurImages, blurImages) || other.blurImages == blurImages) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.flairTitle, flairTitle) ||
+                other.flairTitle == flairTitle) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.backgroundColor, backgroundColor) ||
+                other.backgroundColor == backgroundColor) &&
+            (identical(other.blurImages, blurImages) ||
+                other.blurImages == blurImages) &&
             (identical(other.apId, apId) || other.apId == apId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, communityId, flairTitle, textColor, backgroundColor, blurImages, apId);
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    communityId,
+    flairTitle,
+    textColor,
+    backgroundColor,
+    blurImages,
+    apId,
+  );
 
   /// Create a copy of CommunityFlair
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CommunityFlairImplCopyWith<_$CommunityFlairImpl> get copyWith => __$$CommunityFlairImplCopyWithImpl<_$CommunityFlairImpl>(this, _$identity);
+  _$$CommunityFlairImplCopyWith<_$CommunityFlairImpl> get copyWith =>
+      __$$CommunityFlairImplCopyWithImpl<_$CommunityFlairImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -4187,7 +4615,8 @@ abstract class _CommunityFlair implements CommunityFlair {
     @JsonKey(name: 'ap_id') final String? apId,
   }) = _$CommunityFlairImpl;
 
-  factory _CommunityFlair.fromJson(Map<String, dynamic> json) = _$CommunityFlairImpl.fromJson;
+  factory _CommunityFlair.fromJson(Map<String, dynamic> json) =
+      _$CommunityFlairImpl.fromJson;
 
   @override
   int get id;
@@ -4214,7 +4643,8 @@ abstract class _CommunityFlair implements CommunityFlair {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CommunityFlairImplCopyWith<_$CommunityFlairImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$CommunityFlairImplCopyWith<_$CommunityFlairImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Site _$SiteFromJson(Map<String, dynamic> json) {
@@ -4251,7 +4681,8 @@ mixin _$Site {
 
 /// @nodoc
 abstract class $SiteCopyWith<$Res> {
-  factory $SiteCopyWith(Site value, $Res Function(Site) then) = _$SiteCopyWithImpl<$Res, Site>;
+  factory $SiteCopyWith(Site value, $Res Function(Site) then) =
+      _$SiteCopyWithImpl<$Res, Site>;
   @useResult
   $Res call({
     @JsonKey(name: 'actor_id') String actorId,
@@ -4268,7 +4699,8 @@ abstract class $SiteCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SiteCopyWithImpl<$Res, $Val extends Site> implements $SiteCopyWith<$Res> {
+class _$SiteCopyWithImpl<$Res, $Val extends Site>
+    implements $SiteCopyWith<$Res> {
   _$SiteCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -4352,7 +4784,10 @@ class _$SiteCopyWithImpl<$Res, $Val extends Site> implements $SiteCopyWith<$Res>
 
 /// @nodoc
 abstract class _$$SiteImplCopyWith<$Res> implements $SiteCopyWith<$Res> {
-  factory _$$SiteImplCopyWith(_$SiteImpl value, $Res Function(_$SiteImpl) then) = __$$SiteImplCopyWithImpl<$Res>;
+  factory _$$SiteImplCopyWith(
+    _$SiteImpl value,
+    $Res Function(_$SiteImpl) then,
+  ) = __$$SiteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -4370,8 +4805,11 @@ abstract class _$$SiteImplCopyWith<$Res> implements $SiteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SiteImplCopyWithImpl<$Res> extends _$SiteCopyWithImpl<$Res, _$SiteImpl> implements _$$SiteImplCopyWith<$Res> {
-  __$$SiteImplCopyWithImpl(_$SiteImpl _value, $Res Function(_$SiteImpl) _then) : super(_value, _then);
+class __$$SiteImplCopyWithImpl<$Res>
+    extends _$SiteCopyWithImpl<$Res, _$SiteImpl>
+    implements _$$SiteImplCopyWith<$Res> {
+  __$$SiteImplCopyWithImpl(_$SiteImpl _value, $Res Function(_$SiteImpl) _then)
+    : super(_value, _then);
 
   /// Create a copy of Site
   /// with the given fields replaced by the non-null parameter values.
@@ -4462,7 +4900,8 @@ class _$SiteImpl implements _Site {
     @JsonKey(name: 'all_languages') final List<LanguageView>? allLanguages,
   }) : _allLanguages = allLanguages;
 
-  factory _$SiteImpl.fromJson(Map<String, dynamic> json) => _$$SiteImplFromJson(json);
+  factory _$SiteImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SiteImplFromJson(json);
 
   @override
   @JsonKey(name: 'actor_id')
@@ -4510,26 +4949,47 @@ class _$SiteImpl implements _Site {
             other is _$SiteImpl &&
             (identical(other.actorId, actorId) || other.actorId == actorId) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) || other.description == description) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.enableDownvotes, enableDownvotes) || other.enableDownvotes == enableDownvotes) &&
-            (identical(other.registrationMode, registrationMode) || other.registrationMode == registrationMode) &&
+            (identical(other.enableDownvotes, enableDownvotes) ||
+                other.enableDownvotes == enableDownvotes) &&
+            (identical(other.registrationMode, registrationMode) ||
+                other.registrationMode == registrationMode) &&
             (identical(other.sidebar, sidebar) || other.sidebar == sidebar) &&
-            (identical(other.sidebarMd, sidebarMd) || other.sidebarMd == sidebarMd) &&
-            (identical(other.userCount, userCount) || other.userCount == userCount) &&
-            const DeepCollectionEquality().equals(other._allLanguages, _allLanguages));
+            (identical(other.sidebarMd, sidebarMd) ||
+                other.sidebarMd == sidebarMd) &&
+            (identical(other.userCount, userCount) ||
+                other.userCount == userCount) &&
+            const DeepCollectionEquality().equals(
+              other._allLanguages,
+              _allLanguages,
+            ));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, actorId, name, description, icon, enableDownvotes, registrationMode, sidebar, sidebarMd, userCount, const DeepCollectionEquality().hash(_allLanguages));
+  int get hashCode => Object.hash(
+    runtimeType,
+    actorId,
+    name,
+    description,
+    icon,
+    enableDownvotes,
+    registrationMode,
+    sidebar,
+    sidebarMd,
+    userCount,
+    const DeepCollectionEquality().hash(_allLanguages),
+  );
 
   /// Create a copy of Site
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SiteImplCopyWith<_$SiteImpl> get copyWith => __$$SiteImplCopyWithImpl<_$SiteImpl>(this, _$identity);
+  _$$SiteImplCopyWith<_$SiteImpl> get copyWith =>
+      __$$SiteImplCopyWithImpl<_$SiteImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -4584,7 +5044,8 @@ abstract class _Site implements Site {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SiteImplCopyWith<_$SiteImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$SiteImplCopyWith<_$SiteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Instance _$InstanceFromJson(Map<String, dynamic> json) {
@@ -4605,18 +5066,27 @@ mixin _$Instance {
   /// Create a copy of Instance
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $InstanceCopyWith<Instance> get copyWith => throw _privateConstructorUsedError;
+  $InstanceCopyWith<Instance> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InstanceCopyWith<$Res> {
-  factory $InstanceCopyWith(Instance value, $Res Function(Instance) then) = _$InstanceCopyWithImpl<$Res, Instance>;
+  factory $InstanceCopyWith(Instance value, $Res Function(Instance) then) =
+      _$InstanceCopyWithImpl<$Res, Instance>;
   @useResult
-  $Res call({int id, String domain, DateTime published, String? software, String? version});
+  $Res call({
+    int id,
+    String domain,
+    DateTime published,
+    String? software,
+    String? version,
+  });
 }
 
 /// @nodoc
-class _$InstanceCopyWithImpl<$Res, $Val extends Instance> implements $InstanceCopyWith<$Res> {
+class _$InstanceCopyWithImpl<$Res, $Val extends Instance>
+    implements $InstanceCopyWith<$Res> {
   _$InstanceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -4628,7 +5098,13 @@ class _$InstanceCopyWithImpl<$Res, $Val extends Instance> implements $InstanceCo
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? domain = null, Object? published = null, Object? software = freezed, Object? version = freezed}) {
+  $Res call({
+    Object? id = null,
+    Object? domain = null,
+    Object? published = null,
+    Object? software = freezed,
+    Object? version = freezed,
+  }) {
     return _then(
       _value.copyWith(
             id:
@@ -4663,22 +5139,43 @@ class _$InstanceCopyWithImpl<$Res, $Val extends Instance> implements $InstanceCo
 }
 
 /// @nodoc
-abstract class _$$InstanceImplCopyWith<$Res> implements $InstanceCopyWith<$Res> {
-  factory _$$InstanceImplCopyWith(_$InstanceImpl value, $Res Function(_$InstanceImpl) then) = __$$InstanceImplCopyWithImpl<$Res>;
+abstract class _$$InstanceImplCopyWith<$Res>
+    implements $InstanceCopyWith<$Res> {
+  factory _$$InstanceImplCopyWith(
+    _$InstanceImpl value,
+    $Res Function(_$InstanceImpl) then,
+  ) = __$$InstanceImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String domain, DateTime published, String? software, String? version});
+  $Res call({
+    int id,
+    String domain,
+    DateTime published,
+    String? software,
+    String? version,
+  });
 }
 
 /// @nodoc
-class __$$InstanceImplCopyWithImpl<$Res> extends _$InstanceCopyWithImpl<$Res, _$InstanceImpl> implements _$$InstanceImplCopyWith<$Res> {
-  __$$InstanceImplCopyWithImpl(_$InstanceImpl _value, $Res Function(_$InstanceImpl) _then) : super(_value, _then);
+class __$$InstanceImplCopyWithImpl<$Res>
+    extends _$InstanceCopyWithImpl<$Res, _$InstanceImpl>
+    implements _$$InstanceImplCopyWith<$Res> {
+  __$$InstanceImplCopyWithImpl(
+    _$InstanceImpl _value,
+    $Res Function(_$InstanceImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Instance
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? domain = null, Object? published = null, Object? software = freezed, Object? version = freezed}) {
+  $Res call({
+    Object? id = null,
+    Object? domain = null,
+    Object? published = null,
+    Object? software = freezed,
+    Object? version = freezed,
+  }) {
     return _then(
       _$InstanceImpl(
         id:
@@ -4714,9 +5211,16 @@ class __$$InstanceImplCopyWithImpl<$Res> extends _$InstanceCopyWithImpl<$Res, _$
 /// @nodoc
 @JsonSerializable()
 class _$InstanceImpl implements _Instance {
-  const _$InstanceImpl({required this.id, required this.domain, required this.published, this.software, this.version});
+  const _$InstanceImpl({
+    required this.id,
+    required this.domain,
+    required this.published,
+    this.software,
+    this.version,
+  });
 
-  factory _$InstanceImpl.fromJson(Map<String, dynamic> json) => _$$InstanceImplFromJson(json);
+  factory _$InstanceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InstanceImplFromJson(json);
 
   @override
   final int id;
@@ -4741,21 +5245,25 @@ class _$InstanceImpl implements _Instance {
             other is _$InstanceImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.domain, domain) || other.domain == domain) &&
-            (identical(other.published, published) || other.published == published) &&
-            (identical(other.software, software) || other.software == software) &&
+            (identical(other.published, published) ||
+                other.published == published) &&
+            (identical(other.software, software) ||
+                other.software == software) &&
             (identical(other.version, version) || other.version == version));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, domain, published, software, version);
+  int get hashCode =>
+      Object.hash(runtimeType, id, domain, published, software, version);
 
   /// Create a copy of Instance
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$InstanceImplCopyWith<_$InstanceImpl> get copyWith => __$$InstanceImplCopyWithImpl<_$InstanceImpl>(this, _$identity);
+  _$$InstanceImplCopyWith<_$InstanceImpl> get copyWith =>
+      __$$InstanceImplCopyWithImpl<_$InstanceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -4764,9 +5272,16 @@ class _$InstanceImpl implements _Instance {
 }
 
 abstract class _Instance implements Instance {
-  const factory _Instance({required final int id, required final String domain, required final DateTime published, final String? software, final String? version}) = _$InstanceImpl;
+  const factory _Instance({
+    required final int id,
+    required final String domain,
+    required final DateTime published,
+    final String? software,
+    final String? version,
+  }) = _$InstanceImpl;
 
-  factory _Instance.fromJson(Map<String, dynamic> json) = _$InstanceImpl.fromJson;
+  factory _Instance.fromJson(Map<String, dynamic> json) =
+      _$InstanceImpl.fromJson;
 
   @override
   int get id;
@@ -4783,7 +5298,8 @@ abstract class _Instance implements Instance {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InstanceImplCopyWith<_$InstanceImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$InstanceImplCopyWith<_$InstanceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Comment _$CommentFromJson(Map<String, dynamic> json) {
@@ -4825,7 +5341,8 @@ mixin _$Comment {
 
 /// @nodoc
 abstract class $CommentCopyWith<$Res> {
-  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) = _$CommentCopyWithImpl<$Res, Comment>;
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
+      _$CommentCopyWithImpl<$Res, Comment>;
   @useResult
   $Res call({
     int id,
@@ -4848,7 +5365,8 @@ abstract class $CommentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CommentCopyWithImpl<$Res, $Val extends Comment> implements $CommentCopyWith<$Res> {
+class _$CommentCopyWithImpl<$Res, $Val extends Comment>
+    implements $CommentCopyWith<$Res> {
   _$CommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -4968,7 +5486,10 @@ class _$CommentCopyWithImpl<$Res, $Val extends Comment> implements $CommentCopyW
 
 /// @nodoc
 abstract class _$$CommentImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
-  factory _$$CommentImplCopyWith(_$CommentImpl value, $Res Function(_$CommentImpl) then) = __$$CommentImplCopyWithImpl<$Res>;
+  factory _$$CommentImplCopyWith(
+    _$CommentImpl value,
+    $Res Function(_$CommentImpl) then,
+  ) = __$$CommentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -4992,8 +5513,13 @@ abstract class _$$CommentImplCopyWith<$Res> implements $CommentCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CommentImplCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res, _$CommentImpl> implements _$$CommentImplCopyWith<$Res> {
-  __$$CommentImplCopyWithImpl(_$CommentImpl _value, $Res Function(_$CommentImpl) _then) : super(_value, _then);
+class __$$CommentImplCopyWithImpl<$Res>
+    extends _$CommentCopyWithImpl<$Res, _$CommentImpl>
+    implements _$$CommentImplCopyWith<$Res> {
+  __$$CommentImplCopyWithImpl(
+    _$CommentImpl _value,
+    $Res Function(_$CommentImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Comment
   /// with the given fields replaced by the non-null parameter values.
@@ -5126,7 +5652,8 @@ class _$CommentImpl implements _Comment {
     @JsonKey(name: 'emoji_reactions') final List<Reactions>? emojiReactions,
   }) : _emojiReactions = emojiReactions;
 
-  factory _$CommentImpl.fromJson(Map<String, dynamic> json) => _$$CommentImplFromJson(json);
+  factory _$CommentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommentImplFromJson(json);
 
   @override
   final int id;
@@ -5193,13 +5720,19 @@ class _$CommentImpl implements _Comment {
             (identical(other.deleted, deleted) || other.deleted == deleted) &&
             (identical(other.removed, removed) || other.removed == removed) &&
             (identical(other.path, path) || other.path == path) &&
-            (identical(other.distinguished, distinguished) || other.distinguished == distinguished) &&
-            (identical(other.languageId, languageId) || other.languageId == languageId) &&
-            (identical(other.published, published) || other.published == published) &&
+            (identical(other.distinguished, distinguished) ||
+                other.distinguished == distinguished) &&
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
+            (identical(other.published, published) ||
+                other.published == published) &&
             (identical(other.updated, updated) || other.updated == updated) &&
             (identical(other.locked, locked) || other.locked == locked) &&
             (identical(other.answer, answer) || other.answer == answer) &&
-            const DeepCollectionEquality().equals(other._emojiReactions, _emojiReactions));
+            const DeepCollectionEquality().equals(
+              other._emojiReactions,
+              _emojiReactions,
+            ));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -5229,7 +5762,8 @@ class _$CommentImpl implements _Comment {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CommentImplCopyWith<_$CommentImpl> get copyWith => __$$CommentImplCopyWithImpl<_$CommentImpl>(this, _$identity);
+  _$$CommentImplCopyWith<_$CommentImpl> get copyWith =>
+      __$$CommentImplCopyWithImpl<_$CommentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -5301,7 +5835,8 @@ abstract class _Comment implements Comment {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CommentImplCopyWith<_$CommentImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$CommentImplCopyWith<_$CommentImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PrivateMessage _$PrivateMessageFromJson(Map<String, dynamic> json) {
@@ -5327,18 +5862,32 @@ mixin _$PrivateMessage {
   /// Create a copy of PrivateMessage
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PrivateMessageCopyWith<PrivateMessage> get copyWith => throw _privateConstructorUsedError;
+  $PrivateMessageCopyWith<PrivateMessage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PrivateMessageCopyWith<$Res> {
-  factory $PrivateMessageCopyWith(PrivateMessage value, $Res Function(PrivateMessage) then) = _$PrivateMessageCopyWithImpl<$Res, PrivateMessage>;
+  factory $PrivateMessageCopyWith(
+    PrivateMessage value,
+    $Res Function(PrivateMessage) then,
+  ) = _$PrivateMessageCopyWithImpl<$Res, PrivateMessage>;
   @useResult
-  $Res call({int id, @JsonKey(name: 'user_id') int userId, @JsonKey(name: 'recipient_id') int recipientId, String content, bool deleted, bool read, DateTime published, DateTime? updated});
+  $Res call({
+    int id,
+    @JsonKey(name: 'user_id') int userId,
+    @JsonKey(name: 'recipient_id') int recipientId,
+    String content,
+    bool deleted,
+    bool read,
+    DateTime published,
+    DateTime? updated,
+  });
 }
 
 /// @nodoc
-class _$PrivateMessageCopyWithImpl<$Res, $Val extends PrivateMessage> implements $PrivateMessageCopyWith<$Res> {
+class _$PrivateMessageCopyWithImpl<$Res, $Val extends PrivateMessage>
+    implements $PrivateMessageCopyWith<$Res> {
   _$PrivateMessageCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5409,16 +5958,34 @@ class _$PrivateMessageCopyWithImpl<$Res, $Val extends PrivateMessage> implements
 }
 
 /// @nodoc
-abstract class _$$PrivateMessageImplCopyWith<$Res> implements $PrivateMessageCopyWith<$Res> {
-  factory _$$PrivateMessageImplCopyWith(_$PrivateMessageImpl value, $Res Function(_$PrivateMessageImpl) then) = __$$PrivateMessageImplCopyWithImpl<$Res>;
+abstract class _$$PrivateMessageImplCopyWith<$Res>
+    implements $PrivateMessageCopyWith<$Res> {
+  factory _$$PrivateMessageImplCopyWith(
+    _$PrivateMessageImpl value,
+    $Res Function(_$PrivateMessageImpl) then,
+  ) = __$$PrivateMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, @JsonKey(name: 'user_id') int userId, @JsonKey(name: 'recipient_id') int recipientId, String content, bool deleted, bool read, DateTime published, DateTime? updated});
+  $Res call({
+    int id,
+    @JsonKey(name: 'user_id') int userId,
+    @JsonKey(name: 'recipient_id') int recipientId,
+    String content,
+    bool deleted,
+    bool read,
+    DateTime published,
+    DateTime? updated,
+  });
 }
 
 /// @nodoc
-class __$$PrivateMessageImplCopyWithImpl<$Res> extends _$PrivateMessageCopyWithImpl<$Res, _$PrivateMessageImpl> implements _$$PrivateMessageImplCopyWith<$Res> {
-  __$$PrivateMessageImplCopyWithImpl(_$PrivateMessageImpl _value, $Res Function(_$PrivateMessageImpl) _then) : super(_value, _then);
+class __$$PrivateMessageImplCopyWithImpl<$Res>
+    extends _$PrivateMessageCopyWithImpl<$Res, _$PrivateMessageImpl>
+    implements _$$PrivateMessageImplCopyWith<$Res> {
+  __$$PrivateMessageImplCopyWithImpl(
+    _$PrivateMessageImpl _value,
+    $Res Function(_$PrivateMessageImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PrivateMessage
   /// with the given fields replaced by the non-null parameter values.
@@ -5495,7 +6062,8 @@ class _$PrivateMessageImpl implements _PrivateMessage {
     this.updated,
   });
 
-  factory _$PrivateMessageImpl.fromJson(Map<String, dynamic> json) => _$$PrivateMessageImplFromJson(json);
+  factory _$PrivateMessageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PrivateMessageImplFromJson(json);
 
   @override
   final int id;
@@ -5528,24 +6096,40 @@ class _$PrivateMessageImpl implements _PrivateMessage {
             other is _$PrivateMessageImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.recipientId, recipientId) || other.recipientId == recipientId) &&
+            (identical(other.recipientId, recipientId) ||
+                other.recipientId == recipientId) &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.deleted, deleted) || other.deleted == deleted) &&
             (identical(other.read, read) || other.read == read) &&
-            (identical(other.published, published) || other.published == published) &&
+            (identical(other.published, published) ||
+                other.published == published) &&
             (identical(other.updated, updated) || other.updated == updated));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, recipientId, content, deleted, read, published, updated);
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    userId,
+    recipientId,
+    content,
+    deleted,
+    read,
+    published,
+    updated,
+  );
 
   /// Create a copy of PrivateMessage
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PrivateMessageImplCopyWith<_$PrivateMessageImpl> get copyWith => __$$PrivateMessageImplCopyWithImpl<_$PrivateMessageImpl>(this, _$identity);
+  _$$PrivateMessageImplCopyWith<_$PrivateMessageImpl> get copyWith =>
+      __$$PrivateMessageImplCopyWithImpl<_$PrivateMessageImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -5565,7 +6149,8 @@ abstract class _PrivateMessage implements PrivateMessage {
     final DateTime? updated,
   }) = _$PrivateMessageImpl;
 
-  factory _PrivateMessage.fromJson(Map<String, dynamic> json) = _$PrivateMessageImpl.fromJson;
+  factory _PrivateMessage.fromJson(Map<String, dynamic> json) =
+      _$PrivateMessageImpl.fromJson;
 
   @override
   int get id;
@@ -5590,7 +6175,8 @@ abstract class _PrivateMessage implements PrivateMessage {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PrivateMessageImplCopyWith<_$PrivateMessageImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PrivateMessageImplCopyWith<_$PrivateMessageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 CommentReply _$CommentReplyFromJson(Map<String, dynamic> json) {
@@ -5613,18 +6199,29 @@ mixin _$CommentReply {
   /// Create a copy of CommentReply
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CommentReplyCopyWith<CommentReply> get copyWith => throw _privateConstructorUsedError;
+  $CommentReplyCopyWith<CommentReply> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommentReplyCopyWith<$Res> {
-  factory $CommentReplyCopyWith(CommentReply value, $Res Function(CommentReply) then) = _$CommentReplyCopyWithImpl<$Res, CommentReply>;
+  factory $CommentReplyCopyWith(
+    CommentReply value,
+    $Res Function(CommentReply) then,
+  ) = _$CommentReplyCopyWithImpl<$Res, CommentReply>;
   @useResult
-  $Res call({int id, @JsonKey(name: 'comment_id') int commentId, DateTime published, bool read, @JsonKey(name: 'recipient_id') int recipientId});
+  $Res call({
+    int id,
+    @JsonKey(name: 'comment_id') int commentId,
+    DateTime published,
+    bool read,
+    @JsonKey(name: 'recipient_id') int recipientId,
+  });
 }
 
 /// @nodoc
-class _$CommentReplyCopyWithImpl<$Res, $Val extends CommentReply> implements $CommentReplyCopyWith<$Res> {
+class _$CommentReplyCopyWithImpl<$Res, $Val extends CommentReply>
+    implements $CommentReplyCopyWith<$Res> {
   _$CommentReplyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5636,7 +6233,13 @@ class _$CommentReplyCopyWithImpl<$Res, $Val extends CommentReply> implements $Co
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? commentId = null, Object? published = null, Object? read = null, Object? recipientId = null}) {
+  $Res call({
+    Object? id = null,
+    Object? commentId = null,
+    Object? published = null,
+    Object? read = null,
+    Object? recipientId = null,
+  }) {
     return _then(
       _value.copyWith(
             id:
@@ -5671,22 +6274,43 @@ class _$CommentReplyCopyWithImpl<$Res, $Val extends CommentReply> implements $Co
 }
 
 /// @nodoc
-abstract class _$$CommentReplyImplCopyWith<$Res> implements $CommentReplyCopyWith<$Res> {
-  factory _$$CommentReplyImplCopyWith(_$CommentReplyImpl value, $Res Function(_$CommentReplyImpl) then) = __$$CommentReplyImplCopyWithImpl<$Res>;
+abstract class _$$CommentReplyImplCopyWith<$Res>
+    implements $CommentReplyCopyWith<$Res> {
+  factory _$$CommentReplyImplCopyWith(
+    _$CommentReplyImpl value,
+    $Res Function(_$CommentReplyImpl) then,
+  ) = __$$CommentReplyImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, @JsonKey(name: 'comment_id') int commentId, DateTime published, bool read, @JsonKey(name: 'recipient_id') int recipientId});
+  $Res call({
+    int id,
+    @JsonKey(name: 'comment_id') int commentId,
+    DateTime published,
+    bool read,
+    @JsonKey(name: 'recipient_id') int recipientId,
+  });
 }
 
 /// @nodoc
-class __$$CommentReplyImplCopyWithImpl<$Res> extends _$CommentReplyCopyWithImpl<$Res, _$CommentReplyImpl> implements _$$CommentReplyImplCopyWith<$Res> {
-  __$$CommentReplyImplCopyWithImpl(_$CommentReplyImpl _value, $Res Function(_$CommentReplyImpl) _then) : super(_value, _then);
+class __$$CommentReplyImplCopyWithImpl<$Res>
+    extends _$CommentReplyCopyWithImpl<$Res, _$CommentReplyImpl>
+    implements _$$CommentReplyImplCopyWith<$Res> {
+  __$$CommentReplyImplCopyWithImpl(
+    _$CommentReplyImpl _value,
+    $Res Function(_$CommentReplyImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CommentReply
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null, Object? commentId = null, Object? published = null, Object? read = null, Object? recipientId = null}) {
+  $Res call({
+    Object? id = null,
+    Object? commentId = null,
+    Object? published = null,
+    Object? read = null,
+    Object? recipientId = null,
+  }) {
     return _then(
       _$CommentReplyImpl(
         id:
@@ -5730,7 +6354,8 @@ class _$CommentReplyImpl implements _CommentReply {
     @JsonKey(name: 'recipient_id') required this.recipientId,
   });
 
-  factory _$CommentReplyImpl.fromJson(Map<String, dynamic> json) => _$$CommentReplyImplFromJson(json);
+  factory _$CommentReplyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommentReplyImplFromJson(json);
 
   @override
   final int id;
@@ -5756,22 +6381,27 @@ class _$CommentReplyImpl implements _CommentReply {
         (other.runtimeType == runtimeType &&
             other is _$CommentReplyImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.commentId, commentId) || other.commentId == commentId) &&
-            (identical(other.published, published) || other.published == published) &&
+            (identical(other.commentId, commentId) ||
+                other.commentId == commentId) &&
+            (identical(other.published, published) ||
+                other.published == published) &&
             (identical(other.read, read) || other.read == read) &&
-            (identical(other.recipientId, recipientId) || other.recipientId == recipientId));
+            (identical(other.recipientId, recipientId) ||
+                other.recipientId == recipientId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, commentId, published, read, recipientId);
+  int get hashCode =>
+      Object.hash(runtimeType, id, commentId, published, read, recipientId);
 
   /// Create a copy of CommentReply
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CommentReplyImplCopyWith<_$CommentReplyImpl> get copyWith => __$$CommentReplyImplCopyWithImpl<_$CommentReplyImpl>(this, _$identity);
+  _$$CommentReplyImplCopyWith<_$CommentReplyImpl> get copyWith =>
+      __$$CommentReplyImplCopyWithImpl<_$CommentReplyImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -5788,7 +6418,8 @@ abstract class _CommentReply implements CommentReply {
     @JsonKey(name: 'recipient_id') required final int recipientId,
   }) = _$CommentReplyImpl;
 
-  factory _CommentReply.fromJson(Map<String, dynamic> json) = _$CommentReplyImpl.fromJson;
+  factory _CommentReply.fromJson(Map<String, dynamic> json) =
+      _$CommentReplyImpl.fromJson;
 
   @override
   int get id;
@@ -5807,7 +6438,8 @@ abstract class _CommentReply implements CommentReply {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CommentReplyImplCopyWith<_$CommentReplyImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$CommentReplyImplCopyWith<_$CommentReplyImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 LocalUser _$LocalUserFromJson(Map<String, dynamic> json) {
@@ -5823,7 +6455,8 @@ mixin _$LocalUser {
   @JsonKey(name: 'ai_visibility')
   String get aiVisibility => throw _privateConstructorUsedError;
   @JsonKey(name: 'community_keyword_filter')
-  List<String>? get communityKeywordFilter => throw _privateConstructorUsedError;
+  List<String>? get communityKeywordFilter =>
+      throw _privateConstructorUsedError;
   @JsonKey(name: 'default_comment_sort_type')
   String get defaultCommentSortType => throw _privateConstructorUsedError;
   @JsonKey(name: 'default_listing_type')
@@ -5868,18 +6501,21 @@ mixin _$LocalUser {
   /// Create a copy of LocalUser
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LocalUserCopyWith<LocalUser> get copyWith => throw _privateConstructorUsedError;
+  $LocalUserCopyWith<LocalUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LocalUserCopyWith<$Res> {
-  factory $LocalUserCopyWith(LocalUser value, $Res Function(LocalUser) then) = _$LocalUserCopyWithImpl<$Res, LocalUser>;
+  factory $LocalUserCopyWith(LocalUser value, $Res Function(LocalUser) then) =
+      _$LocalUserCopyWithImpl<$Res, LocalUser>;
   @useResult
   $Res call({
     @JsonKey(name: 'accept_private_messages') String acceptPrivateMessages,
     @JsonKey(name: 'bot_visibility') String botVisibility,
     @JsonKey(name: 'ai_visibility') String aiVisibility,
-    @JsonKey(name: 'community_keyword_filter') List<String>? communityKeywordFilter,
+    @JsonKey(name: 'community_keyword_filter')
+    List<String>? communityKeywordFilter,
     @JsonKey(name: 'default_comment_sort_type') String defaultCommentSortType,
     @JsonKey(name: 'default_listing_type') String defaultListingType,
     @JsonKey(name: 'default_sort_type') String? defaultSortType,
@@ -5904,7 +6540,8 @@ abstract class $LocalUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser> implements $LocalUserCopyWith<$Res> {
+class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser>
+    implements $LocalUserCopyWith<$Res> {
   _$LocalUserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -6071,15 +6708,20 @@ class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser> implements $LocalUse
 }
 
 /// @nodoc
-abstract class _$$LocalUserImplCopyWith<$Res> implements $LocalUserCopyWith<$Res> {
-  factory _$$LocalUserImplCopyWith(_$LocalUserImpl value, $Res Function(_$LocalUserImpl) then) = __$$LocalUserImplCopyWithImpl<$Res>;
+abstract class _$$LocalUserImplCopyWith<$Res>
+    implements $LocalUserCopyWith<$Res> {
+  factory _$$LocalUserImplCopyWith(
+    _$LocalUserImpl value,
+    $Res Function(_$LocalUserImpl) then,
+  ) = __$$LocalUserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
     @JsonKey(name: 'accept_private_messages') String acceptPrivateMessages,
     @JsonKey(name: 'bot_visibility') String botVisibility,
     @JsonKey(name: 'ai_visibility') String aiVisibility,
-    @JsonKey(name: 'community_keyword_filter') List<String>? communityKeywordFilter,
+    @JsonKey(name: 'community_keyword_filter')
+    List<String>? communityKeywordFilter,
     @JsonKey(name: 'default_comment_sort_type') String defaultCommentSortType,
     @JsonKey(name: 'default_listing_type') String defaultListingType,
     @JsonKey(name: 'default_sort_type') String? defaultSortType,
@@ -6104,8 +6746,13 @@ abstract class _$$LocalUserImplCopyWith<$Res> implements $LocalUserCopyWith<$Res
 }
 
 /// @nodoc
-class __$$LocalUserImplCopyWithImpl<$Res> extends _$LocalUserCopyWithImpl<$Res, _$LocalUserImpl> implements _$$LocalUserImplCopyWith<$Res> {
-  __$$LocalUserImplCopyWithImpl(_$LocalUserImpl _value, $Res Function(_$LocalUserImpl) _then) : super(_value, _then);
+class __$$LocalUserImplCopyWithImpl<$Res>
+    extends _$LocalUserCopyWithImpl<$Res, _$LocalUserImpl>
+    implements _$$LocalUserImplCopyWith<$Res> {
+  __$$LocalUserImplCopyWithImpl(
+    _$LocalUserImpl _value,
+    $Res Function(_$LocalUserImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LocalUser
   /// with the given fields replaced by the non-null parameter values.
@@ -6268,11 +6915,14 @@ class __$$LocalUserImplCopyWithImpl<$Res> extends _$LocalUserCopyWithImpl<$Res, 
 @JsonSerializable()
 class _$LocalUserImpl implements _LocalUser {
   const _$LocalUserImpl({
-    @JsonKey(name: 'accept_private_messages') required this.acceptPrivateMessages,
+    @JsonKey(name: 'accept_private_messages')
+    required this.acceptPrivateMessages,
     @JsonKey(name: 'bot_visibility') required this.botVisibility,
     @JsonKey(name: 'ai_visibility') required this.aiVisibility,
-    @JsonKey(name: 'community_keyword_filter') final List<String>? communityKeywordFilter,
-    @JsonKey(name: 'default_comment_sort_type') required this.defaultCommentSortType,
+    @JsonKey(name: 'community_keyword_filter')
+    final List<String>? communityKeywordFilter,
+    @JsonKey(name: 'default_comment_sort_type')
+    required this.defaultCommentSortType,
     @JsonKey(name: 'default_listing_type') required this.defaultListingType,
     @JsonKey(name: 'default_sort_type') this.defaultSortType,
     @JsonKey(name: 'email_unread') required this.emailUnread,
@@ -6284,7 +6934,8 @@ class _$LocalUserImpl implements _LocalUser {
     required this.newsletter,
     @JsonKey(name: 'nsfl_visibility') required this.nsflVisibility,
     @JsonKey(name: 'nsfw_visibility') required this.nsfwVisibility,
-    @JsonKey(name: 'reply_collapse_threshold') required this.replyCollapseThreshold,
+    @JsonKey(name: 'reply_collapse_threshold')
+    required this.replyCollapseThreshold,
     @JsonKey(name: 'reply_hide_threshold') required this.replyHideThreshold,
     required this.searchable,
     @JsonKey(name: 'show_bot_accounts') required this.showBotAccounts,
@@ -6294,7 +6945,8 @@ class _$LocalUserImpl implements _LocalUser {
     @JsonKey(name: 'show_scores') required this.showScores,
   }) : _communityKeywordFilter = communityKeywordFilter;
 
-  factory _$LocalUserImpl.fromJson(Map<String, dynamic> json) => _$$LocalUserImplFromJson(json);
+  factory _$LocalUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocalUserImplFromJson(json);
 
   @override
   @JsonKey(name: 'accept_private_messages')
@@ -6311,7 +6963,8 @@ class _$LocalUserImpl implements _LocalUser {
   List<String>? get communityKeywordFilter {
     final value = _communityKeywordFilter;
     if (value == null) return null;
-    if (_communityKeywordFilter is EqualUnmodifiableListView) return _communityKeywordFilter;
+    if (_communityKeywordFilter is EqualUnmodifiableListView)
+      return _communityKeywordFilter;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -6384,30 +7037,56 @@ class _$LocalUserImpl implements _LocalUser {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LocalUserImpl &&
-            (identical(other.acceptPrivateMessages, acceptPrivateMessages) || other.acceptPrivateMessages == acceptPrivateMessages) &&
-            (identical(other.botVisibility, botVisibility) || other.botVisibility == botVisibility) &&
-            (identical(other.aiVisibility, aiVisibility) || other.aiVisibility == aiVisibility) &&
-            const DeepCollectionEquality().equals(other._communityKeywordFilter, _communityKeywordFilter) &&
-            (identical(other.defaultCommentSortType, defaultCommentSortType) || other.defaultCommentSortType == defaultCommentSortType) &&
-            (identical(other.defaultListingType, defaultListingType) || other.defaultListingType == defaultListingType) &&
-            (identical(other.defaultSortType, defaultSortType) || other.defaultSortType == defaultSortType) &&
-            (identical(other.emailUnread, emailUnread) || other.emailUnread == emailUnread) &&
-            (identical(other.federateVotes, federateVotes) || other.federateVotes == federateVotes) &&
-            (identical(other.feedAutoFollow, feedAutoFollow) || other.feedAutoFollow == feedAutoFollow) &&
-            (identical(other.feedAutoLeave, feedAutoLeave) || other.feedAutoLeave == feedAutoLeave) &&
-            (identical(other.hideLowQuality, hideLowQuality) || other.hideLowQuality == hideLowQuality) &&
-            (identical(other.indexable, indexable) || other.indexable == indexable) &&
-            (identical(other.newsletter, newsletter) || other.newsletter == newsletter) &&
-            (identical(other.nsflVisibility, nsflVisibility) || other.nsflVisibility == nsflVisibility) &&
-            (identical(other.nsfwVisibility, nsfwVisibility) || other.nsfwVisibility == nsfwVisibility) &&
-            (identical(other.replyCollapseThreshold, replyCollapseThreshold) || other.replyCollapseThreshold == replyCollapseThreshold) &&
-            (identical(other.replyHideThreshold, replyHideThreshold) || other.replyHideThreshold == replyHideThreshold) &&
-            (identical(other.searchable, searchable) || other.searchable == searchable) &&
-            (identical(other.showBotAccounts, showBotAccounts) || other.showBotAccounts == showBotAccounts) &&
-            (identical(other.showNsfl, showNsfl) || other.showNsfl == showNsfl) &&
-            (identical(other.showNsfw, showNsfw) || other.showNsfw == showNsfw) &&
-            (identical(other.showReadPosts, showReadPosts) || other.showReadPosts == showReadPosts) &&
-            (identical(other.showScores, showScores) || other.showScores == showScores));
+            (identical(other.acceptPrivateMessages, acceptPrivateMessages) ||
+                other.acceptPrivateMessages == acceptPrivateMessages) &&
+            (identical(other.botVisibility, botVisibility) ||
+                other.botVisibility == botVisibility) &&
+            (identical(other.aiVisibility, aiVisibility) ||
+                other.aiVisibility == aiVisibility) &&
+            const DeepCollectionEquality().equals(
+              other._communityKeywordFilter,
+              _communityKeywordFilter,
+            ) &&
+            (identical(other.defaultCommentSortType, defaultCommentSortType) ||
+                other.defaultCommentSortType == defaultCommentSortType) &&
+            (identical(other.defaultListingType, defaultListingType) ||
+                other.defaultListingType == defaultListingType) &&
+            (identical(other.defaultSortType, defaultSortType) ||
+                other.defaultSortType == defaultSortType) &&
+            (identical(other.emailUnread, emailUnread) ||
+                other.emailUnread == emailUnread) &&
+            (identical(other.federateVotes, federateVotes) ||
+                other.federateVotes == federateVotes) &&
+            (identical(other.feedAutoFollow, feedAutoFollow) ||
+                other.feedAutoFollow == feedAutoFollow) &&
+            (identical(other.feedAutoLeave, feedAutoLeave) ||
+                other.feedAutoLeave == feedAutoLeave) &&
+            (identical(other.hideLowQuality, hideLowQuality) ||
+                other.hideLowQuality == hideLowQuality) &&
+            (identical(other.indexable, indexable) ||
+                other.indexable == indexable) &&
+            (identical(other.newsletter, newsletter) ||
+                other.newsletter == newsletter) &&
+            (identical(other.nsflVisibility, nsflVisibility) ||
+                other.nsflVisibility == nsflVisibility) &&
+            (identical(other.nsfwVisibility, nsfwVisibility) ||
+                other.nsfwVisibility == nsfwVisibility) &&
+            (identical(other.replyCollapseThreshold, replyCollapseThreshold) ||
+                other.replyCollapseThreshold == replyCollapseThreshold) &&
+            (identical(other.replyHideThreshold, replyHideThreshold) ||
+                other.replyHideThreshold == replyHideThreshold) &&
+            (identical(other.searchable, searchable) ||
+                other.searchable == searchable) &&
+            (identical(other.showBotAccounts, showBotAccounts) ||
+                other.showBotAccounts == showBotAccounts) &&
+            (identical(other.showNsfl, showNsfl) ||
+                other.showNsfl == showNsfl) &&
+            (identical(other.showNsfw, showNsfw) ||
+                other.showNsfw == showNsfw) &&
+            (identical(other.showReadPosts, showReadPosts) ||
+                other.showReadPosts == showReadPosts) &&
+            (identical(other.showScores, showScores) ||
+                other.showScores == showScores));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -6445,7 +7124,8 @@ class _$LocalUserImpl implements _LocalUser {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LocalUserImplCopyWith<_$LocalUserImpl> get copyWith => __$$LocalUserImplCopyWithImpl<_$LocalUserImpl>(this, _$identity);
+  _$$LocalUserImplCopyWith<_$LocalUserImpl> get copyWith =>
+      __$$LocalUserImplCopyWithImpl<_$LocalUserImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -6455,12 +7135,16 @@ class _$LocalUserImpl implements _LocalUser {
 
 abstract class _LocalUser implements LocalUser {
   const factory _LocalUser({
-    @JsonKey(name: 'accept_private_messages') required final String acceptPrivateMessages,
+    @JsonKey(name: 'accept_private_messages')
+    required final String acceptPrivateMessages,
     @JsonKey(name: 'bot_visibility') required final String botVisibility,
     @JsonKey(name: 'ai_visibility') required final String aiVisibility,
-    @JsonKey(name: 'community_keyword_filter') final List<String>? communityKeywordFilter,
-    @JsonKey(name: 'default_comment_sort_type') required final String defaultCommentSortType,
-    @JsonKey(name: 'default_listing_type') required final String defaultListingType,
+    @JsonKey(name: 'community_keyword_filter')
+    final List<String>? communityKeywordFilter,
+    @JsonKey(name: 'default_comment_sort_type')
+    required final String defaultCommentSortType,
+    @JsonKey(name: 'default_listing_type')
+    required final String defaultListingType,
     @JsonKey(name: 'default_sort_type') final String? defaultSortType,
     @JsonKey(name: 'email_unread') required final bool emailUnread,
     @JsonKey(name: 'federate_votes') required final bool federateVotes,
@@ -6471,8 +7155,10 @@ abstract class _LocalUser implements LocalUser {
     required final bool newsletter,
     @JsonKey(name: 'nsfl_visibility') required final String nsflVisibility,
     @JsonKey(name: 'nsfw_visibility') required final String nsfwVisibility,
-    @JsonKey(name: 'reply_collapse_threshold') required final int replyCollapseThreshold,
-    @JsonKey(name: 'reply_hide_threshold') required final int replyHideThreshold,
+    @JsonKey(name: 'reply_collapse_threshold')
+    required final int replyCollapseThreshold,
+    @JsonKey(name: 'reply_hide_threshold')
+    required final int replyHideThreshold,
     required final bool searchable,
     @JsonKey(name: 'show_bot_accounts') required final bool showBotAccounts,
     @JsonKey(name: 'show_nsfl') required final bool showNsfl,
@@ -6481,7 +7167,8 @@ abstract class _LocalUser implements LocalUser {
     @JsonKey(name: 'show_scores') required final bool showScores,
   }) = _$LocalUserImpl;
 
-  factory _LocalUser.fromJson(Map<String, dynamic> json) = _$LocalUserImpl.fromJson;
+  factory _LocalUser.fromJson(Map<String, dynamic> json) =
+      _$LocalUserImpl.fromJson;
 
   @override
   @JsonKey(name: 'accept_private_messages')
@@ -6557,5 +7244,6 @@ abstract class _LocalUser implements LocalUser {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LocalUserImplCopyWith<_$LocalUserImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$LocalUserImplCopyWith<_$LocalUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

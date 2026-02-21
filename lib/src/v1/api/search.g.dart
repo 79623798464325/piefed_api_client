@@ -19,15 +19,16 @@ _$SearchImpl _$$SearchImplFromJson(Map<String, dynamic> json) => _$SearchImpl(
   auth: json['auth'] as String?,
 );
 
-Map<String, dynamic> _$$SearchImplToJson(_$SearchImpl instance) => <String, dynamic>{
-  'q': instance.q,
-  if (instance.type case final value?) 'type_': value,
-  if (instance.listingType case final value?) 'listing_type': value,
-  if (instance.communityId case final value?) 'community_id': value,
-  if (instance.communityName case final value?) 'community_name': value,
-  if (instance.creatorId case final value?) 'creator_id': value,
-  if (instance.sort case final value?) 'sort': value,
-  if (instance.page case final value?) 'page': value,
-  if (instance.limit case final value?) 'limit': value,
-  if (instance.auth case final value?) 'auth': value,
-};
+Map<String, dynamic> _$$SearchImplToJson(_$SearchImpl instance) =>
+    <String, dynamic>{
+      'q': instance.q,
+      if (instance.type case final value?) 'type_': value,
+      if (instance.listingType case final value?) 'listing_type': value,
+      if (instance.communityId case final value?) 'community_id': value,
+      if (instance.communityName case final value?) 'community_name': value,
+      if (instance.creatorId case final value?) 'creator_id': value,
+      if (instance.sort case final value?) 'sort': value,
+      if (instance.page case final value?) 'page': value,
+      if (instance.limit case final value?) 'limit': value,
+      if (instance.auth case final value?) 'auth': value,
+    };

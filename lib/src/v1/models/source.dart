@@ -116,6 +116,15 @@ enum PostType {
   event,
 }
 
+enum SubscribedType {
+  @JsonValue('Subscribed')
+  subscribed,
+  @JsonValue('NotSubscribed')
+  notSubscribed,
+  @JsonValue('Pending')
+  pending,
+}
+
 @freezed
 class PostPoll with _$PostPoll {
   const factory PostPoll({

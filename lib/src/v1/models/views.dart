@@ -13,22 +13,32 @@ class PersonView with _$PersonView {
   factory PersonView.fromJson(Map<String, dynamic> json) => _$PersonViewFromJson(json);
 }
 
-bool _subscribedFromJson(dynamic input) {
-  if (input is bool) return input;
-  if (input is String) {
-    return input == 'Subscribed';
+SubscribedType _subscribedFromJson(dynamic input) {
+  if (input is bool) {
+    return input ? SubscribedType.subscribed : SubscribedType.notSubscribed;
   }
-  return false;
+  if (input is String) {
+    switch (input) {
+      case 'Subscribed':
+        return SubscribedType.subscribed;
+      case 'NotSubscribed':
+        return SubscribedType.notSubscribed;
+      case 'Pending':
+        return SubscribedType.pending;
+    }
+  }
+  return SubscribedType.notSubscribed;
 }
 
 @freezed
 class CommunityView with _$CommunityView {
   const factory CommunityView({
     required Community community,
-    @JsonKey(fromJson: _subscribedFromJson) required bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) required SubscribedType subscribed,
     required bool blocked,
     required CommunityAggregates counts,
     @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
   }) = _CommunityView;
 
   factory CommunityView.fromJson(Map<String, dynamic> json) => _$CommunityViewFromJson(json);
@@ -50,7 +60,7 @@ class CommentView with _$CommentView {
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
     @JsonKey(name: 'activity_alert') bool? activityAlert,
-    @JsonKey(fromJson: _subscribedFromJson) bool? subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) SubscribedType? subscribed,
   }) = _CommentView;
 
   factory CommentView.fromJson(Map<String, dynamic> json) => _$CommentViewFromJson(json);
@@ -64,7 +74,7 @@ class PostView with _$PostView {
     required Community community,
     @JsonKey(name: 'creator_banned_from_community', defaultValue: false) required bool creatorBannedFromCommunity,
     required PostAggregates counts,
-    @JsonKey(fromJson: _subscribedFromJson) required bool subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) required SubscribedType subscribed,
     required bool saved,
     required bool read,
     @JsonKey(name: 'creator_blocked', defaultValue: false) required bool creatorBlocked,
@@ -200,7 +210,7 @@ class CommentReplyView with _$CommentReplyView {
     @JsonKey(name: 'activity_alert') bool? activityAlert,
     required bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
-    bool? subscribed,
+    @JsonKey(fromJson: _subscribedFromJson) SubscribedType? subscribed,
   }) = _CommentReplyView;
 
   factory CommentReplyView.fromJson(Map<String, dynamic> json) => _$CommentReplyViewFromJson(json);
