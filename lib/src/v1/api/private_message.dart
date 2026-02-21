@@ -70,21 +70,6 @@ class DeletePrivateMessage with _$DeletePrivateMessage implements PieFedApiQuery
 }
 
 @freezed
-class MarkAllPMsAsRead with _$MarkAllPMsAsRead implements PieFedApiQuery<MarkAllPMsAsReadResponse> {
-  const factory MarkAllPMsAsRead({required String auth}) = _MarkAllPMsAsRead;
-
-  const MarkAllPMsAsRead._();
-  factory MarkAllPMsAsRead.fromJson(Map<String, dynamic> json) => _$MarkAllPMsAsReadFromJson(json);
-
-  @override
-  String get path => '/private_message/mark_all_read';
-  @override
-  HttpMethod get httpMethod => HttpMethod.post;
-  @override
-  MarkAllPMsAsReadResponse responseFactory(Map<String, dynamic> json) => MarkAllPMsAsReadResponse.fromJson(json);
-}
-
-@freezed
 class LeaveConversation with _$LeaveConversation implements PieFedApiQuery<LeaveConversationResponse> {
   const factory LeaveConversation({
     @JsonKey(name: 'recipient_id') required int recipientId, // Assuming recipient_id refers to the other person in conv
@@ -130,4 +115,21 @@ class ReportPrivateMessage with _$ReportPrivateMessage implements PieFedApiQuery
   HttpMethod get httpMethod => HttpMethod.post;
   @override
   PrivateMessageResponse responseFactory(Map<String, dynamic> json) => PrivateMessageResponse.fromJson(json);
+}
+
+@freezed
+class GetPrivateMessageConversation with _$GetPrivateMessageConversation implements PieFedApiQuery<GetPrivateMessageConversationResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory GetPrivateMessageConversation({@JsonKey(name: 'person_id') int? personId, @JsonKey(name: 'conversation_id') int? conversationId, int? page, int? limit, required String auth}) =
+      _GetPrivateMessageConversation;
+
+  const GetPrivateMessageConversation._();
+  factory GetPrivateMessageConversation.fromJson(Map<String, dynamic> json) => _$GetPrivateMessageConversationFromJson(json);
+
+  @override
+  String get path => '/private_message/conversation';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetPrivateMessageConversationResponse responseFactory(Map<String, dynamic> json) => GetPrivateMessageConversationResponse.fromJson(json);
 }

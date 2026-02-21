@@ -36,30 +36,18 @@ mixin _$ListCommunities {
   /// Create a copy of ListCommunities
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ListCommunitiesCopyWith<ListCommunities> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListCommunitiesCopyWith<ListCommunities> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListCommunitiesCopyWith<$Res> {
-  factory $ListCommunitiesCopyWith(
-    ListCommunities value,
-    $Res Function(ListCommunities) then,
-  ) = _$ListCommunitiesCopyWithImpl<$Res, ListCommunities>;
+  factory $ListCommunitiesCopyWith(ListCommunities value, $Res Function(ListCommunities) then) = _$ListCommunitiesCopyWithImpl<$Res, ListCommunities>;
   @useResult
-  $Res call({
-    int? limit,
-    int? page,
-    String? sort,
-    @JsonKey(name: 'type_') String? type,
-    @JsonKey(name: 'query_term') String? queryTerm,
-    String? auth,
-  });
+  $Res call({int? limit, int? page, String? sort, @JsonKey(name: 'type_') String? type, @JsonKey(name: 'query_term') String? queryTerm, String? auth});
 }
 
 /// @nodoc
-class _$ListCommunitiesCopyWithImpl<$Res, $Val extends ListCommunities>
-    implements $ListCommunitiesCopyWith<$Res> {
+class _$ListCommunitiesCopyWithImpl<$Res, $Val extends ListCommunities> implements $ListCommunitiesCopyWith<$Res> {
   _$ListCommunitiesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -71,14 +59,7 @@ class _$ListCommunitiesCopyWithImpl<$Res, $Val extends ListCommunities>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? page = freezed,
-    Object? sort = freezed,
-    Object? type = freezed,
-    Object? queryTerm = freezed,
-    Object? auth = freezed,
-  }) {
+  $Res call({Object? limit = freezed, Object? page = freezed, Object? sort = freezed, Object? type = freezed, Object? queryTerm = freezed, Object? auth = freezed}) {
     return _then(
       _value.copyWith(
             limit:
@@ -118,45 +99,22 @@ class _$ListCommunitiesCopyWithImpl<$Res, $Val extends ListCommunities>
 }
 
 /// @nodoc
-abstract class _$$ListCommunitiesImplCopyWith<$Res>
-    implements $ListCommunitiesCopyWith<$Res> {
-  factory _$$ListCommunitiesImplCopyWith(
-    _$ListCommunitiesImpl value,
-    $Res Function(_$ListCommunitiesImpl) then,
-  ) = __$$ListCommunitiesImplCopyWithImpl<$Res>;
+abstract class _$$ListCommunitiesImplCopyWith<$Res> implements $ListCommunitiesCopyWith<$Res> {
+  factory _$$ListCommunitiesImplCopyWith(_$ListCommunitiesImpl value, $Res Function(_$ListCommunitiesImpl) then) = __$$ListCommunitiesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({
-    int? limit,
-    int? page,
-    String? sort,
-    @JsonKey(name: 'type_') String? type,
-    @JsonKey(name: 'query_term') String? queryTerm,
-    String? auth,
-  });
+  $Res call({int? limit, int? page, String? sort, @JsonKey(name: 'type_') String? type, @JsonKey(name: 'query_term') String? queryTerm, String? auth});
 }
 
 /// @nodoc
-class __$$ListCommunitiesImplCopyWithImpl<$Res>
-    extends _$ListCommunitiesCopyWithImpl<$Res, _$ListCommunitiesImpl>
-    implements _$$ListCommunitiesImplCopyWith<$Res> {
-  __$$ListCommunitiesImplCopyWithImpl(
-    _$ListCommunitiesImpl _value,
-    $Res Function(_$ListCommunitiesImpl) _then,
-  ) : super(_value, _then);
+class __$$ListCommunitiesImplCopyWithImpl<$Res> extends _$ListCommunitiesCopyWithImpl<$Res, _$ListCommunitiesImpl> implements _$$ListCommunitiesImplCopyWith<$Res> {
+  __$$ListCommunitiesImplCopyWithImpl(_$ListCommunitiesImpl _value, $Res Function(_$ListCommunitiesImpl) _then) : super(_value, _then);
 
   /// Create a copy of ListCommunities
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? limit = freezed,
-    Object? page = freezed,
-    Object? sort = freezed,
-    Object? type = freezed,
-    Object? queryTerm = freezed,
-    Object? auth = freezed,
-  }) {
+  $Res call({Object? limit = freezed, Object? page = freezed, Object? sort = freezed, Object? type = freezed, Object? queryTerm = freezed, Object? auth = freezed}) {
     return _then(
       _$ListCommunitiesImpl(
         limit:
@@ -198,17 +156,9 @@ class __$$ListCommunitiesImplCopyWithImpl<$Res>
 
 @JsonSerializable(includeIfNull: false)
 class _$ListCommunitiesImpl extends _ListCommunities {
-  const _$ListCommunitiesImpl({
-    this.limit,
-    this.page,
-    this.sort,
-    @JsonKey(name: 'type_') this.type,
-    @JsonKey(name: 'query_term') this.queryTerm,
-    this.auth,
-  }) : super._();
+  const _$ListCommunitiesImpl({this.limit, this.page, this.sort, @JsonKey(name: 'type_') this.type, @JsonKey(name: 'query_term') this.queryTerm, this.auth}) : super._();
 
-  factory _$ListCommunitiesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ListCommunitiesImplFromJson(json);
+  factory _$ListCommunitiesImpl.fromJson(Map<String, dynamic> json) => _$$ListCommunitiesImplFromJson(json);
 
   @override
   final int? limit;
@@ -240,26 +190,20 @@ class _$ListCommunitiesImpl extends _ListCommunities {
             (identical(other.page, page) || other.page == page) &&
             (identical(other.sort, sort) || other.sort == sort) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.queryTerm, queryTerm) ||
-                other.queryTerm == queryTerm) &&
+            (identical(other.queryTerm, queryTerm) || other.queryTerm == queryTerm) &&
             (identical(other.auth, auth) || other.auth == auth));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, limit, page, sort, type, queryTerm, auth);
+  int get hashCode => Object.hash(runtimeType, limit, page, sort, type, queryTerm, auth);
 
   /// Create a copy of ListCommunities
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ListCommunitiesImplCopyWith<_$ListCommunitiesImpl> get copyWith =>
-      __$$ListCommunitiesImplCopyWithImpl<_$ListCommunitiesImpl>(
-        this,
-        _$identity,
-      );
+  _$$ListCommunitiesImplCopyWith<_$ListCommunitiesImpl> get copyWith => __$$ListCommunitiesImplCopyWithImpl<_$ListCommunitiesImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -278,8 +222,7 @@ abstract class _ListCommunities extends ListCommunities {
   }) = _$ListCommunitiesImpl;
   const _ListCommunities._() : super._();
 
-  factory _ListCommunities.fromJson(Map<String, dynamic> json) =
-      _$ListCommunitiesImpl.fromJson;
+  factory _ListCommunities.fromJson(Map<String, dynamic> json) = _$ListCommunitiesImpl.fromJson;
 
   @override
   int? get limit;
@@ -300,6 +243,5 @@ abstract class _ListCommunities extends ListCommunities {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ListCommunitiesImplCopyWith<_$ListCommunitiesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ListCommunitiesImplCopyWith<_$ListCommunitiesImpl> get copyWith => throw _privateConstructorUsedError;
 }

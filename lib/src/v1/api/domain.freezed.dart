@@ -31,23 +31,18 @@ mixin _$BlockDomain {
   /// Create a copy of BlockDomain
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BlockDomainCopyWith<BlockDomain> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BlockDomainCopyWith<BlockDomain> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BlockDomainCopyWith<$Res> {
-  factory $BlockDomainCopyWith(
-    BlockDomain value,
-    $Res Function(BlockDomain) then,
-  ) = _$BlockDomainCopyWithImpl<$Res, BlockDomain>;
+  factory $BlockDomainCopyWith(BlockDomain value, $Res Function(BlockDomain) then) = _$BlockDomainCopyWithImpl<$Res, BlockDomain>;
   @useResult
   $Res call({String domain, bool block, String auth});
 }
 
 /// @nodoc
-class _$BlockDomainCopyWithImpl<$Res, $Val extends BlockDomain>
-    implements $BlockDomainCopyWith<$Res> {
+class _$BlockDomainCopyWithImpl<$Res, $Val extends BlockDomain> implements $BlockDomainCopyWith<$Res> {
   _$BlockDomainCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -59,11 +54,7 @@ class _$BlockDomainCopyWithImpl<$Res, $Val extends BlockDomain>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? domain = null,
-    Object? block = null,
-    Object? auth = null,
-  }) {
+  $Res call({Object? domain = null, Object? block = null, Object? auth = null}) {
     return _then(
       _value.copyWith(
             domain:
@@ -88,35 +79,22 @@ class _$BlockDomainCopyWithImpl<$Res, $Val extends BlockDomain>
 }
 
 /// @nodoc
-abstract class _$$BlockDomainImplCopyWith<$Res>
-    implements $BlockDomainCopyWith<$Res> {
-  factory _$$BlockDomainImplCopyWith(
-    _$BlockDomainImpl value,
-    $Res Function(_$BlockDomainImpl) then,
-  ) = __$$BlockDomainImplCopyWithImpl<$Res>;
+abstract class _$$BlockDomainImplCopyWith<$Res> implements $BlockDomainCopyWith<$Res> {
+  factory _$$BlockDomainImplCopyWith(_$BlockDomainImpl value, $Res Function(_$BlockDomainImpl) then) = __$$BlockDomainImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String domain, bool block, String auth});
 }
 
 /// @nodoc
-class __$$BlockDomainImplCopyWithImpl<$Res>
-    extends _$BlockDomainCopyWithImpl<$Res, _$BlockDomainImpl>
-    implements _$$BlockDomainImplCopyWith<$Res> {
-  __$$BlockDomainImplCopyWithImpl(
-    _$BlockDomainImpl _value,
-    $Res Function(_$BlockDomainImpl) _then,
-  ) : super(_value, _then);
+class __$$BlockDomainImplCopyWithImpl<$Res> extends _$BlockDomainCopyWithImpl<$Res, _$BlockDomainImpl> implements _$$BlockDomainImplCopyWith<$Res> {
+  __$$BlockDomainImplCopyWithImpl(_$BlockDomainImpl _value, $Res Function(_$BlockDomainImpl) _then) : super(_value, _then);
 
   /// Create a copy of BlockDomain
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? domain = null,
-    Object? block = null,
-    Object? auth = null,
-  }) {
+  $Res call({Object? domain = null, Object? block = null, Object? auth = null}) {
     return _then(
       _$BlockDomainImpl(
         domain:
@@ -142,14 +120,9 @@ class __$$BlockDomainImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$BlockDomainImpl extends _BlockDomain {
-  const _$BlockDomainImpl({
-    required this.domain,
-    required this.block,
-    required this.auth,
-  }) : super._();
+  const _$BlockDomainImpl({required this.domain, required this.block, required this.auth}) : super._();
 
-  factory _$BlockDomainImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BlockDomainImplFromJson(json);
+  factory _$BlockDomainImpl.fromJson(Map<String, dynamic> json) => _$$BlockDomainImplFromJson(json);
 
   @override
   final String domain;
@@ -182,8 +155,7 @@ class _$BlockDomainImpl extends _BlockDomain {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BlockDomainImplCopyWith<_$BlockDomainImpl> get copyWith =>
-      __$$BlockDomainImplCopyWithImpl<_$BlockDomainImpl>(this, _$identity);
+  _$$BlockDomainImplCopyWith<_$BlockDomainImpl> get copyWith => __$$BlockDomainImplCopyWithImpl<_$BlockDomainImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -192,15 +164,10 @@ class _$BlockDomainImpl extends _BlockDomain {
 }
 
 abstract class _BlockDomain extends BlockDomain {
-  const factory _BlockDomain({
-    required final String domain,
-    required final bool block,
-    required final String auth,
-  }) = _$BlockDomainImpl;
+  const factory _BlockDomain({required final String domain, required final bool block, required final String auth}) = _$BlockDomainImpl;
   const _BlockDomain._() : super._();
 
-  factory _BlockDomain.fromJson(Map<String, dynamic> json) =
-      _$BlockDomainImpl.fromJson;
+  factory _BlockDomain.fromJson(Map<String, dynamic> json) = _$BlockDomainImpl.fromJson;
 
   @override
   String get domain;
@@ -213,6 +180,5 @@ abstract class _BlockDomain extends BlockDomain {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BlockDomainImplCopyWith<_$BlockDomainImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$BlockDomainImplCopyWith<_$BlockDomainImpl> get copyWith => throw _privateConstructorUsedError;
 }

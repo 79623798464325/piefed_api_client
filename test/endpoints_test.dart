@@ -171,10 +171,10 @@ void main() {
       expect(json['block'], true);
     });
 
-    test('MarkAllAsRead', () {
-      const query = MarkAllAsRead(auth: 'token');
-      expect(query.path, '/user/notifs/all_read');
-      expect(query.httpMethod, HttpMethod.post);
+    test('MarkAllNotificationsAsRead', () {
+      const query = MarkAllNotificationsAsRead(auth: 'token');
+      expect(query.path, '/user/mark_all_notifications_read');
+      expect(query.httpMethod, HttpMethod.put);
     });
 
     // Phase 4 Tests
@@ -436,10 +436,13 @@ void main() {
       expect(json['deleted'], true);
     });
 
-    test('MarkAllPMsAsRead', () {
-      const query = MarkAllPMsAsRead(auth: 'token');
-      expect(query.path, '/private_message/mark_all_read');
-      expect(query.httpMethod, HttpMethod.post);
+    test('GetPrivateMessageConversation', () {
+      const query = GetPrivateMessageConversation(personId: 99, limit: 10, auth: 'token');
+      expect(query.path, '/private_message/conversation');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['person_id'], 99);
+      expect(json['limit'], 10);
     });
 
     test('LeaveConversation', () {
@@ -637,6 +640,15 @@ void main() {
       const query = SubscribeCommunity(communityId: 1, subscribe: true, auth: 'token');
       expect(query.path, '/community/subscribe');
       expect(query.httpMethod, HttpMethod.put);
+    });
+    test('BanFromCommunity', () {
+      const query = BanFromCommunity(communityId: 1, userId: 2, reason: 'spam', auth: 'token');
+      expect(query.path, '/community/moderate/ban');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['community_id'], 1);
+      expect(json['user_id'], 2);
+      expect(json['reason'], 'spam');
     });
     test('GetMentions', () {
       const query = GetMentions(auth: 'token');

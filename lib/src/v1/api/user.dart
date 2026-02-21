@@ -113,19 +113,19 @@ class BlockUser with _$BlockUser implements PieFedApiQuery<BlockUserResponse> {
 }
 
 @freezed
-class MarkAllAsRead with _$MarkAllAsRead implements PieFedApiQuery<MarkAllAsReadResponse> {
+class MarkAllNotificationsAsRead with _$MarkAllNotificationsAsRead implements PieFedApiQuery<UserMarkAllNotifsReadResponse> {
   @JsonSerializable(includeIfNull: false)
-  const factory MarkAllAsRead({required String auth}) = _MarkAllAsRead;
+  const factory MarkAllNotificationsAsRead({required String auth}) = _MarkAllNotificationsAsRead;
 
-  const MarkAllAsRead._();
-  factory MarkAllAsRead.fromJson(Map<String, dynamic> json) => _$MarkAllAsReadFromJson(json);
+  const MarkAllNotificationsAsRead._();
+  factory MarkAllNotificationsAsRead.fromJson(Map<String, dynamic> json) => _$MarkAllNotificationsAsReadFromJson(json);
 
   @override
-  String get path => '/user/notifs/all_read';
+  String get path => '/user/mark_all_notifications_read';
   @override
-  HttpMethod get httpMethod => HttpMethod.post;
+  HttpMethod get httpMethod => HttpMethod.put;
   @override
-  MarkAllAsReadResponse responseFactory(Map<String, dynamic> json) => MarkAllAsReadResponse.fromJson(json);
+  UserMarkAllNotifsReadResponse responseFactory(Map<String, dynamic> json) => UserMarkAllNotifsReadResponse.fromJson(json);
 }
 
 @freezed

@@ -239,12 +239,7 @@ class GetSiteMetadata with _$GetSiteMetadata implements PieFedApiQuery<GetSiteMe
 
 @freezed
 class GetPostLikes with _$GetPostLikes implements PieFedApiQuery<GetPostLikesResponse> {
-  const factory GetPostLikes({
-    @JsonKey(name: 'post_id') required int postId,
-    int? page,
-    int? limit,
-    String? auth,
-  }) = _GetPostLikes;
+  const factory GetPostLikes({@JsonKey(name: 'post_id') required int postId, int? page, int? limit, String? auth}) = _GetPostLikes;
 
   const GetPostLikes._();
   factory GetPostLikes.fromJson(Map<String, dynamic> json) => _$GetPostLikesFromJson(json);
@@ -289,11 +284,7 @@ class ListPosts2 with _$ListPosts2 implements PieFedApiQuery<ListPostsResponse> 
 
 @freezed
 class AssignPostFlair with _$AssignPostFlair implements PieFedApiQuery<PostSetFlairResponse> {
-  const factory AssignPostFlair({
-    @JsonKey(name: 'post_id') required int postId,
-    @JsonKey(name: 'flair_id_list') List<int>? flairIdList,
-    required String auth,
-  }) = _AssignPostFlair;
+  const factory AssignPostFlair({@JsonKey(name: 'post_id') required int postId, @JsonKey(name: 'flair_id_list') List<int>? flairIdList, required String auth}) = _AssignPostFlair;
 
   const AssignPostFlair._();
   factory AssignPostFlair.fromJson(Map<String, dynamic> json) => _$AssignPostFlairFromJson(json);
@@ -308,11 +299,7 @@ class AssignPostFlair with _$AssignPostFlair implements PieFedApiQuery<PostSetFl
 
 @freezed
 class HidePost with _$HidePost implements PieFedApiQuery<GetPostResponse> {
-  const factory HidePost({
-    @JsonKey(name: 'post_id') required int postId,
-    required bool hidden,
-    required String auth,
-  }) = _HidePost;
+  const factory HidePost({@JsonKey(name: 'post_id') required int postId, required bool hidden, required String auth}) = _HidePost;
 
   const HidePost._();
   factory HidePost.fromJson(Map<String, dynamic> json) => _$HidePostFromJson(json);
@@ -332,11 +319,7 @@ class HidePost with _$HidePost implements PieFedApiQuery<GetPostResponse> {
 
 @freezed
 class LockPost with _$LockPost implements PieFedApiQuery<GetPostResponse> {
-  const factory LockPost({
-    @JsonKey(name: 'post_id') required int postId,
-    required bool locked,
-    required String auth,
-  }) = _LockPost;
+  const factory LockPost({@JsonKey(name: 'post_id') required int postId, required bool locked, required String auth}) = _LockPost;
 
   const LockPost._();
   factory LockPost.fromJson(Map<String, dynamic> json) => _$LockPostFromJson(json);
@@ -356,11 +339,7 @@ class LockPost with _$LockPost implements PieFedApiQuery<GetPostResponse> {
 
 @freezed
 class SubscribePost with _$SubscribePost implements PieFedApiQuery<GetPostResponse> {
-  const factory SubscribePost({
-    @JsonKey(name: 'post_id') required int postId,
-    required bool subscribe,
-    required String auth,
-  }) = _SubscribePost;
+  const factory SubscribePost({@JsonKey(name: 'post_id') required int postId, required bool subscribe, required String auth}) = _SubscribePost;
 
   const SubscribePost._();
   factory SubscribePost.fromJson(Map<String, dynamic> json) => _$SubscribePostFromJson(json);

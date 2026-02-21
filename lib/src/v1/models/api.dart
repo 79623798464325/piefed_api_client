@@ -62,6 +62,20 @@ class PrivateMessagesResponse with _$PrivateMessagesResponse {
 }
 
 @freezed
+class GetPrivateMessageConversationResponse with _$GetPrivateMessageConversationResponse {
+  const factory GetPrivateMessageConversationResponse({@JsonKey(name: 'private_messages') required List<PrivateMessageView> privateMessages}) = _GetPrivateMessageConversationResponse;
+
+  factory GetPrivateMessageConversationResponse.fromJson(Map<String, dynamic> json) => _$GetPrivateMessageConversationResponseFromJson(json);
+}
+
+@freezed
+class UserMarkAllNotifsReadResponse with _$UserMarkAllNotifsReadResponse {
+  const factory UserMarkAllNotifsReadResponse({@JsonKey(name: 'mark_all_notifications_as_read') required String markAllNotificationsAsRead}) = _UserMarkAllNotifsReadResponse;
+
+  factory UserMarkAllNotifsReadResponse.fromJson(Map<String, dynamic> json) => _$UserMarkAllNotifsReadResponseFromJson(json);
+}
+
+@freezed
 class GetFederatedInstancesResponse with _$GetFederatedInstancesResponse {
   const factory GetFederatedInstancesResponse({@JsonKey(name: 'federated_instances') required FederatedInstancesView federatedInstances}) = _GetFederatedInstancesResponse;
 

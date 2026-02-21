@@ -255,3 +255,26 @@ class SubscribeCommunity with _$SubscribeCommunity implements PieFedApiQuery<Com
   @override
   CommunityResponse responseFactory(Map<String, dynamic> json) => CommunityResponse.fromJson(json);
 }
+
+@freezed
+class BanFromCommunity with _$BanFromCommunity implements PieFedApiQuery<CommunityModerationBanItem> {
+  @JsonSerializable(includeIfNull: false)
+  const factory BanFromCommunity({
+    @JsonKey(name: 'community_id') required int communityId,
+    required String reason,
+    @JsonKey(name: 'user_id') required int userId,
+    @JsonKey(name: 'expires_at') String? expiresAt,
+    bool? permanent,
+    required String auth,
+  }) = _BanFromCommunity;
+
+  const BanFromCommunity._();
+  factory BanFromCommunity.fromJson(Map<String, dynamic> json) => _$BanFromCommunityFromJson(json);
+
+  @override
+  String get path => '/community/moderate/ban';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  CommunityModerationBanItem responseFactory(Map<String, dynamic> json) => CommunityModerationBanItem.fromJson(json);
+}
