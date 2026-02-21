@@ -46,9 +46,9 @@ void main() {
       final api = PieFedApiV1('example.com', client: mockClient);
       final response = await api.run(const GetPost(id: 1));
 
-      expect(response.post!.title, 'Test Post');
-      expect(response.creator!.name, 'user');
-      expect(response.community!.name, 'comm');
+      expect(response.post.title, 'Test Post');
+      expect(response.creator.name, 'user');
+      expect(response.community.name, 'comm');
     });
 
     test('GetCommunity Response Parsing', () async {
@@ -235,12 +235,12 @@ void main() {
       final api = PieFedApiV1('example.com', client: mockClient);
       final response = await api.run(const GetPost(id: 1));
 
-      expect(response.post!.poll, isNotNull);
-      expect(response.post!.poll!.mode, 'single');
-      expect(response.post!.poll!.choices.length, 2);
-      expect(response.post!.poll!.choices[0].choiceText, 'Option A');
-      expect(response.post!.poll!.choices[0].numVotes, 10);
-      expect(response.post!.poll!.myVotes, contains(1));
+      expect(response.post.poll, isNotNull);
+      expect(response.post.poll!.mode, 'single');
+      expect(response.post.poll!.choices.length, 2);
+      expect(response.post.poll!.choices[0].choiceText, 'Option A');
+      expect(response.post.poll!.choices[0].numVotes, 10);
+      expect(response.post.poll!.myVotes, contains(1));
     });
   });
 }
