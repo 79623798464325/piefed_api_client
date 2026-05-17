@@ -393,6 +393,7 @@ class SaveUserSettings with _$SaveUserSettings implements PieFedApiQuery<UserSav
     String? avatar,
     String? bio,
     bool? bot,
+    @JsonKey(name: 'display_name') String? displayName,
     @JsonKey(name: 'bot_visibility') String? botVisibility,
     @JsonKey(name: 'community_keyword_filter') List<String>? communityKeywordFilter,
     String? cover,
@@ -427,6 +428,57 @@ class SaveUserSettings with _$SaveUserSettings implements PieFedApiQuery<UserSav
   HttpMethod get httpMethod => HttpMethod.put;
   @override
   UserSaveSettingsResponse responseFactory(Map<String, dynamic> json) => UserSaveSettingsResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class GetCaptcha with _$GetCaptcha implements PieFedApiQuery<FetchCaptchaResponse> {
+  const factory GetCaptcha() = _GetCaptcha;
+
+  const GetCaptcha._();
+  factory GetCaptcha.fromJson(Map<String, dynamic> json) => _$GetCaptchaFromJson(json);
+
+  @override
+  String get path => '/user/get_captcha';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  FetchCaptchaResponse responseFactory(Map<String, dynamic> json) => FetchCaptchaResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class Register with _$Register implements PieFedApiQuery<UserRegistrationResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory Register({
+    required String username,
+    required String password,
+    @JsonKey(name: 'password_verify') required String passwordVerify,
+    @JsonKey(name: 'show_nsfw') bool? showNsfw,
+    String? email,
+    @JsonKey(name: 'captcha_uuid') String? captchaUuid,
+    @JsonKey(name: 'captcha_answer') String? captchaAnswer,
+    String? honeypot,
+    String? answer,
+  }) = _Register;
+
+  const Register._();
+  factory Register.fromJson(Map<String, dynamic> json) => _$RegisterFromJson(json);
+
+  @override
+  String get path => '/user/register';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserRegistrationResponse responseFactory(Map<String, dynamic> json) => UserRegistrationResponse.fromJson(json);
 
   @override
   List<MultipartFile>? get multipartFiles => null;

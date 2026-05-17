@@ -186,6 +186,169 @@ void main() {
         // Expected
       }
     });
+    test('GetModLog Response Parsing', () async {
+      final mockClient = MockClient((request) async {
+        return http.Response(
+          jsonEncode({
+            'removed_posts': [],
+            'locked_posts': [],
+            'featured_posts': [],
+            'removed_comments': [],
+            'removed_communities': [],
+            'banned_from_community': [],
+            'banned': [
+              {
+                'mod_ban': {'id': 1, 'mod_person_id': 2, 'other_person_id': 3, 'reason': 'spam', 'banned': true, 'expires': null, 'when_': '2026-05-17T12:00:00Z'},
+                'moderator': {'id': 2, 'user_name': 'mod', 'actor_id': 'http://example.com/u/mod', 'local': true, 'banned': false, 'bot': false, 'deleted': false, 'instance_id': 1},
+                'banned_person': {'id': 3, 'user_name': 'spammer', 'actor_id': 'http://example.com/u/spammer', 'local': true, 'banned': true, 'bot': false, 'deleted': false, 'instance_id': 1},
+              },
+            ],
+            'added_to_community': [],
+            'transferred_to_community': [],
+            'added': [],
+            'admin_purged_persons': [],
+            'admin_purged_communities': [],
+            'admin_purged_posts': [],
+            'admin_purged_comments': [],
+            'hidden_communities': [],
+          }),
+          200,
+        );
+      });
+
+      final api = PieFedApiV1('example.com', client: mockClient);
+      final response = await api.run(const GetModLog(type: ModLogType.modBan, auth: 'token'));
+
+      expect(response.banned.length, 1);
+      expect(response.banned.first.modBan.id, 1);
+      expect(response.banned.first.modBan.banned, true);
+      expect(response.banned.first.modBan.when, DateTime.utc(2026, 5, 17, 12, 0, 0));
+      expect(response.banned.first.moderator?.name, 'mod');
+      expect(response.banned.first.bannedPerson?.name, 'spammer');
+      expect(response.removedPosts, isEmpty);
+      expect(response.adminPurgedPersons, isEmpty);
+    });
+
+    test('GetModLog Response Parsing with empty body uses defaults', () async {
+      final mockClient = MockClient((request) async {
+        return http.Response('{}', 200);
+      });
+
+      final api = PieFedApiV1('example.com', client: mockClient);
+      final response = await api.run(const GetModLog(auth: 'token'));
+
+      expect(response.banned, isEmpty);
+      expect(response.removedPosts, isEmpty);
+      expect(response.hiddenCommunities, isEmpty);
+    });
+
+    test('ListCommentReports Response Parsing', () async {
+      final mockClient = MockClient((request) async {
+        return http.Response(
+          jsonEncode({
+            'comment_reports': [
+              {
+                'comment_report': {
+                  'id': 1,
+                  'creator_id': 5,
+                  'comment_id': 9,
+                  'original_comment_text': 'rude text',
+                  'reason': 'harassment',
+                  'description': 'targeted abuse',
+                  'resolved': false,
+                  'published': '2026-05-17T12:00:00Z',
+                },
+                'comment': {
+                  'id': 9,
+                  'ap_id': 'http://example.com/comment/9',
+                  'post_id': 1,
+                  'body': 'rude text',
+                  'local': true,
+                  'deleted': false,
+                  'removed': false,
+                  'path': '0.9',
+                  'distinguished': false,
+                  'published': '2026-05-17T11:00:00Z',
+                },
+                'post': {
+                  'id': 1,
+                  'title': 'Post',
+                  'ap_id': 'http://example.com/post/1',
+                  'local': true,
+                  'nsfw': false,
+                  'deleted': false,
+                  'removed': false,
+                  'user_id': 1,
+                  'community_id': 1,
+                  'published': '2026-05-17T10:00:00Z',
+                  'ai_generated': false,
+                },
+                'community': {
+                  'id': 1,
+                  'name': 'c',
+                  'title': 'C',
+                  'actor_id': 'http://example.com/c/c',
+                  'local': true,
+                  'nsfw': false,
+                  'deleted': false,
+                  'hidden': false,
+                  'removed': false,
+                  'instance_id': 1,
+                  'ai_generated': false,
+                },
+                'creator': {'id': 5, 'user_name': 'reporter', 'actor_id': 'http://example.com/u/r', 'local': true, 'banned': false, 'bot': false, 'deleted': false, 'instance_id': 1},
+              },
+            ],
+            'next_page': 'next_cursor',
+          }),
+          200,
+        );
+      });
+
+      final api = PieFedApiV1('example.com', client: mockClient);
+      final response = await api.run(const ListCommentReports(auth: 'token'));
+
+      expect(response.commentReports.length, 1);
+      expect(response.commentReports.first.commentReport.description, 'targeted abuse');
+      expect(response.commentReports.first.commentReport.resolved, false);
+      expect(response.commentReports.first.comment.body, 'rude text');
+      expect(response.nextPage, 'next_cursor');
+    });
+
+    test('FetchCaptcha Response Parsing', () async {
+      final mockClient = MockClient((request) async {
+        return http.Response(
+          jsonEncode({
+            'ok': [
+              {'png': 'pngdata', 'wav': 'wavdata', 'uuid': 'abc-123'},
+            ],
+          }),
+          200,
+        );
+      });
+
+      final api = PieFedApiV1('example.com', client: mockClient);
+      final response = await api.run(const GetCaptcha());
+
+      expect(response.ok, isNotNull);
+      expect(response.ok!.length, 1);
+      expect(response.ok!.first.uuid, 'abc-123');
+      expect(response.ok!.first.png, 'pngdata');
+    });
+
+    test('Register Response Parsing', () async {
+      final mockClient = MockClient((request) async {
+        return http.Response(jsonEncode({'jwt': 'token123', 'registration_created': true, 'verify_email_sent': false}), 200);
+      });
+
+      final api = PieFedApiV1('example.com', client: mockClient);
+      final response = await api.run(const Register(username: 'u', password: 'p', passwordVerify: 'p'));
+
+      expect(response.jwt, 'token123');
+      expect(response.registrationCreated, true);
+      expect(response.verifyEmailSent, false);
+    });
+
     test('Post Poll Response Parsing', () async {
       final mockClient = MockClient((request) async {
         return http.Response(

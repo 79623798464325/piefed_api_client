@@ -218,6 +218,7 @@ class CommentReplyView with _$CommentReplyView {
     required bool saved,
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(fromJson: _subscribedFromJson) SubscribedType? subscribed,
+    bool? distinguished,
   }) = _CommentReplyView;
 
   factory CommentReplyView.fromJson(Map<String, dynamic> json) => _$CommentReplyViewFromJson(json);
@@ -228,6 +229,87 @@ class MediaView with _$MediaView {
   const factory MediaView({required String url, String? name}) = _MediaView;
 
   factory MediaView.fromJson(Map<String, dynamic> json) => _$MediaViewFromJson(json);
+}
+
+@freezed
+class PostReportView with _$PostReportView {
+  const factory PostReportView({
+    @JsonKey(name: 'post_report') required PostReport postReport,
+    required Post post,
+    required Community community,
+    required Person creator,
+    @JsonKey(name: 'post_creator') required Person postCreator,
+    required PostAggregates counts,
+    @JsonKey(name: 'creator_banned_from_community') required bool creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_moderator') required bool creatorIsModerator,
+    @JsonKey(name: 'creator_is_admin') required bool creatorIsAdmin,
+    @JsonKey(name: 'creator_blocked') required bool creatorBlocked,
+    @JsonKey(fromJson: _subscribedFromJson) required SubscribedType subscribed,
+    required bool saved,
+  }) = _PostReportView;
+
+  factory PostReportView.fromJson(Map<String, dynamic> json) => _$PostReportViewFromJson(json);
+}
+
+@freezed
+class CommentReportView with _$CommentReportView {
+  const factory CommentReportView({
+    @JsonKey(name: 'comment_report') required CommentReport commentReport,
+    required Comment comment,
+    required Post post,
+    required Community community,
+    required Person creator,
+    CommentAggregates? counts,
+    @JsonKey(name: 'creator_banned_from_community') bool? creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_blocked') bool? creatorBlocked,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(fromJson: _subscribedFromJson) SubscribedType? subscribed,
+    bool? saved,
+    @JsonKey(name: 'my_vote') int? myVote,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+  }) = _CommentReportView;
+
+  factory CommentReportView.fromJson(Map<String, dynamic> json) => _$CommentReportViewFromJson(json);
+}
+
+@freezed
+class PrivateMessageReportView with _$PrivateMessageReportView {
+  const factory PrivateMessageReportView({
+    @JsonKey(name: 'private_message_report') PrivateMessageReport? privateMessageReport,
+    @JsonKey(name: 'private_message') PrivateMessage? privateMessage,
+    @JsonKey(name: 'private_message_creator') Person? privateMessageCreator,
+    Person? creator,
+  }) = _PrivateMessageReportView;
+
+  factory PrivateMessageReportView.fromJson(Map<String, dynamic> json) => _$PrivateMessageReportViewFromJson(json);
+}
+
+@freezed
+class ConversationInfoView with _$ConversationInfoView {
+  const factory ConversationInfoView({
+    required int id,
+    @Default(<Person>[]) List<Person> members,
+    @JsonKey(name: 'creator_id') required int creatorId,
+    required DateTime published,
+    required DateTime updated,
+  }) = _ConversationInfoView;
+
+  factory ConversationInfoView.fromJson(Map<String, dynamic> json) => _$ConversationInfoViewFromJson(json);
+}
+
+@freezed
+class ConversationReportView with _$ConversationReportView {
+  const factory ConversationReportView({
+    @JsonKey(name: 'conversation_report') required ConversationReport conversationReport,
+    @JsonKey(name: 'conversation_information') required ConversationInfoView conversationInformation,
+    @JsonKey(name: 'message_history') List<PrivateMessageView>? messageHistory,
+    required Person creator,
+  }) = _ConversationReportView;
+
+  factory ConversationReportView.fromJson(Map<String, dynamic> json) => _$ConversationReportViewFromJson(json);
 }
 
 @freezed

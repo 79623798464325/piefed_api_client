@@ -162,7 +162,7 @@ void main() {
 
     test('PrivateMessage full round-trip', () {
       final now = DateTime.now().toUtc();
-      final pm = PrivateMessage(id: 300, userId: 10, recipientId: 20, content: 'Secret message', deleted: false, read: true, published: now, updated: now.add(const Duration(seconds: 30)));
+      final pm = PrivateMessage(id: 300, creatorId: 10, recipientId: 20, content: 'Secret message', deleted: false, read: true, published: now, updated: now.add(const Duration(seconds: 30)));
 
       final fromJson = PrivateMessage.fromJson(pm.toJson());
       expect(fromJson, pm);

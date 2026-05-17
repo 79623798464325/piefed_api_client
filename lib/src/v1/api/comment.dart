@@ -220,6 +220,74 @@ class MarkCommentAsAnswer with _$MarkCommentAsAnswer implements PieFedApiQuery<G
 }
 
 @freezed
+class MarkCommentAsDistinguished with _$MarkCommentAsDistinguished implements PieFedApiQuery<GetCommentReplyResponse> {
+  const factory MarkCommentAsDistinguished({@JsonKey(name: 'comment_reply_id') required int commentReplyId, required bool distinguished, required String auth}) = _MarkCommentAsDistinguished;
+
+  const MarkCommentAsDistinguished._();
+  factory MarkCommentAsDistinguished.fromJson(Map<String, dynamic> json) => _$MarkCommentAsDistinguishedFromJson(json);
+
+  @override
+  String get path => '/comment/distinguish';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetCommentReplyResponse responseFactory(Map<String, dynamic> json) => GetCommentReplyResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ListCommentReports with _$ListCommentReports implements PieFedApiQuery<GetCommentReportListResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory ListCommentReports({
+    @JsonKey(name: 'comment_id') int? commentId,
+    @JsonKey(name: 'community_id') int? communityId,
+    int? limit,
+    int? page,
+    @JsonKey(name: 'unresolved_only') bool? unresolvedOnly,
+    required String auth,
+  }) = _ListCommentReports;
+
+  const ListCommentReports._();
+  factory ListCommentReports.fromJson(Map<String, dynamic> json) => _$ListCommentReportsFromJson(json);
+
+  @override
+  String get path => '/comment/report/list';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetCommentReportListResponse responseFactory(Map<String, dynamic> json) => GetCommentReportListResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ResolveCommentReport with _$ResolveCommentReport implements PieFedApiQuery<SuccessResponse> {
+  const factory ResolveCommentReport({@JsonKey(name: 'report_id') required int reportId, required bool resolved, required String auth}) = _ResolveCommentReport;
+
+  const ResolveCommentReport._();
+  factory ResolveCommentReport.fromJson(Map<String, dynamic> json) => _$ResolveCommentReportFromJson(json);
+
+  @override
+  String get path => '/comment/report/resolve';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  SuccessResponse responseFactory(Map<String, dynamic> json) => SuccessResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
 class SubscribeComment with _$SubscribeComment implements PieFedApiQuery<GetCommentResponse> {
   const factory SubscribeComment({@JsonKey(name: 'comment_id') required int commentId, required bool subscribe, required String auth}) = _SubscribeComment;
 

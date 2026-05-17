@@ -745,5 +745,204 @@ void main() {
       expect(query.path, '/image/delete');
       expect(query.httpMethod, HttpMethod.post);
     });
+
+    // PieFed 1.7.0 additions
+
+    test('CreateFeed', () {
+      const query = CreateFeed(name: 'tech', title: 'Tech', description: 'd', auth: 'token');
+      expect(query.path, '/feed');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['name'], 'tech');
+      expect(json['title'], 'Tech');
+      expect(json['description'], 'd');
+    });
+
+    test('EditFeed', () {
+      const query = EditFeed(feedId: 5, title: 'New Title', auth: 'token');
+      expect(query.path, '/feed');
+      expect(query.httpMethod, HttpMethod.put);
+      expect(query.toJson()['feed_id'], 5);
+    });
+
+    test('DeleteFeed', () {
+      const query = DeleteFeed(feedId: 5, deleted: true, auth: 'token');
+      expect(query.path, '/feed/delete');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['feed_id'], 5);
+      expect(json['deleted'], true);
+    });
+
+    test('FollowFeed', () {
+      const query = FollowFeed(feedId: 5, follow: true, auth: 'token');
+      expect(query.path, '/feed/follow');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['feed_id'], 5);
+      expect(json['follow'], true);
+    });
+
+    test('MarkCommentAsDistinguished', () {
+      const query = MarkCommentAsDistinguished(commentReplyId: 7, distinguished: true, auth: 'token');
+      expect(query.path, '/comment/distinguish');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['comment_reply_id'], 7);
+      expect(json['distinguished'], true);
+    });
+
+    test('ListCommentReports', () {
+      const query = ListCommentReports(commentId: 3, communityId: 9, unresolvedOnly: true, auth: 'token');
+      expect(query.path, '/comment/report/list');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['comment_id'], 3);
+      expect(json['community_id'], 9);
+      expect(json['unresolved_only'], true);
+    });
+
+    test('ResolveCommentReport', () {
+      const query = ResolveCommentReport(reportId: 4, resolved: true, auth: 'token');
+      expect(query.path, '/comment/report/resolve');
+      expect(query.httpMethod, HttpMethod.put);
+      final json = query.toJson();
+      expect(json['report_id'], 4);
+      expect(json['resolved'], true);
+    });
+
+    test('ListPostReports', () {
+      const query = ListPostReports(communityId: 9, postId: 12, unresolvedOnly: false, auth: 'token');
+      expect(query.path, '/post/report/list');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['community_id'], 9);
+      expect(json['post_id'], 12);
+      expect(json['unresolved_only'], false);
+    });
+
+    test('ResolvePostReport', () {
+      const query = ResolvePostReport(reportId: 4, resolved: true, auth: 'token');
+      expect(query.path, '/post/report/resolve');
+      expect(query.httpMethod, HttpMethod.put);
+      final json = query.toJson();
+      expect(json['report_id'], 4);
+      expect(json['resolved'], true);
+    });
+
+    test('ListPrivateMessageReports', () {
+      const query = ListPrivateMessageReports(conversationId: 11, privateMessageId: 22, auth: 'token');
+      expect(query.path, '/private_message/report/list');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['conversation_id'], 11);
+      expect(json['private_message_id'], 22);
+    });
+
+    test('ResolvePrivateMessageReport', () {
+      const query = ResolvePrivateMessageReport(reportId: 4, resolved: false, auth: 'token');
+      expect(query.path, '/private_message/report/resolve');
+      expect(query.httpMethod, HttpMethod.put);
+      final json = query.toJson();
+      expect(json['report_id'], 4);
+      expect(json['resolved'], false);
+    });
+
+    test('ReportConversation', () {
+      const query = ReportConversation(conversationId: 33, reason: 'harassment', auth: 'token');
+      expect(query.path, '/private_message/conversation/report');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['conversation_id'], 33);
+      expect(json['reason'], 'harassment');
+    });
+
+    test('ListConversationReports', () {
+      const query = ListConversationReports(conversationId: 33, messageHistoryLimit: 10, auth: 'token');
+      expect(query.path, '/private_message/conversation/report/list');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['conversation_id'], 33);
+      expect(json['message_history_limit'], 10);
+    });
+
+    test('ResolveConversationReport', () {
+      const query = ResolveConversationReport(reportId: 4, resolved: true, auth: 'token');
+      expect(query.path, '/private_message/conversation/report/resolve');
+      expect(query.httpMethod, HttpMethod.put);
+      final json = query.toJson();
+      expect(json['report_id'], 4);
+      expect(json['resolved'], true);
+    });
+
+    test('GetCaptcha', () {
+      const query = GetCaptcha();
+      expect(query.path, '/user/get_captcha');
+      expect(query.httpMethod, HttpMethod.get);
+    });
+
+    test('Register', () {
+      const query = Register(username: 'newuser', password: 'pw', passwordVerify: 'pw', email: 'a@b.c', captchaUuid: 'u', captchaAnswer: 'a');
+      expect(query.path, '/user/register');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['username'], 'newuser');
+      expect(json['password_verify'], 'pw');
+      expect(json['captcha_uuid'], 'u');
+      expect(json['captcha_answer'], 'a');
+    });
+
+    test('ListRegistrationApplications', () {
+      const query = ListRegistrationApplications(page: 2, pendingOnly: false, sort: 'Old', auth: 'token');
+      expect(query.path, '/admin/registration_application/list');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['page'], 2);
+      expect(json['pending_only'], false);
+      expect(json['sort'], 'Old');
+    });
+
+    test('ApproveRegistrationApplication', () {
+      const query = ApproveRegistrationApplication(approve: true, userId: 42, auth: 'token');
+      expect(query.path, '/admin/registration_application/approve');
+      expect(query.httpMethod, HttpMethod.put);
+      final json = query.toJson();
+      expect(json['approve'], true);
+      expect(json['user_id'], 42);
+    });
+
+    test('GetModLog serializes type_ enum', () {
+      const query = GetModLog(modPersonId: 1, communityId: 2, type: ModLogType.adminPurgePost, auth: 'token');
+      expect(query.path, '/modlog');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['mod_person_id'], 1);
+      expect(json['community_id'], 2);
+      expect(json['type_'], 'AdminPurgePost');
+    });
+
+    test('ModLogType enum maps every value to the spec string', () {
+      expect(ModLogType.all.value, 'All');
+      expect(ModLogType.modRemovePost.value, 'ModRemovePost');
+      expect(ModLogType.modLockPost.value, 'ModLockPost');
+      expect(ModLogType.modFeaturePost.value, 'ModFeaturePost');
+      expect(ModLogType.modRemoveComment.value, 'ModRemoveComment');
+      expect(ModLogType.modRemoveCommunity.value, 'ModRemoveCommunity');
+      expect(ModLogType.modBanFromCommunity.value, 'ModBanFromCommunity');
+      expect(ModLogType.modAddCommunity.value, 'ModAddCommunity');
+      expect(ModLogType.modTransferCommunity.value, 'ModTransferCommunity');
+      expect(ModLogType.modAdd.value, 'ModAdd');
+      expect(ModLogType.modBan.value, 'ModBan');
+      expect(ModLogType.modHideCommunity.value, 'ModHideCommunity');
+      expect(ModLogType.adminPurgePerson.value, 'AdminPurgePerson');
+      expect(ModLogType.adminPurgeCommunity.value, 'AdminPurgeCommunity');
+      expect(ModLogType.adminPurgePost.value, 'AdminPurgePost');
+      expect(ModLogType.adminPurgeComment.value, 'AdminPurgeComment');
+    });
+
+    test('SaveUserSettings serializes display_name', () {
+      const query = SaveUserSettings(displayName: 'Spaced Name', auth: 'token');
+      expect(query.toJson()['display_name'], 'Spaced Name');
+    });
   });
 }

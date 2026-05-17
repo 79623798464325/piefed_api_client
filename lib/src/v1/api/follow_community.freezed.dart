@@ -37,18 +37,27 @@ mixin _$FollowCommunity {
   /// Create a copy of FollowCommunity
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FollowCommunityCopyWith<FollowCommunity> get copyWith => throw _privateConstructorUsedError;
+  $FollowCommunityCopyWith<FollowCommunity> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FollowCommunityCopyWith<$Res> {
-  factory $FollowCommunityCopyWith(FollowCommunity value, $Res Function(FollowCommunity) then) = _$FollowCommunityCopyWithImpl<$Res, FollowCommunity>;
+  factory $FollowCommunityCopyWith(
+    FollowCommunity value,
+    $Res Function(FollowCommunity) then,
+  ) = _$FollowCommunityCopyWithImpl<$Res, FollowCommunity>;
   @useResult
-  $Res call({@JsonKey(name: 'community_id') int communityId, bool follow, String auth});
+  $Res call({
+    @JsonKey(name: 'community_id') int communityId,
+    bool follow,
+    String auth,
+  });
 }
 
 /// @nodoc
-class _$FollowCommunityCopyWithImpl<$Res, $Val extends FollowCommunity> implements $FollowCommunityCopyWith<$Res> {
+class _$FollowCommunityCopyWithImpl<$Res, $Val extends FollowCommunity>
+    implements $FollowCommunityCopyWith<$Res> {
   _$FollowCommunityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -60,7 +69,11 @@ class _$FollowCommunityCopyWithImpl<$Res, $Val extends FollowCommunity> implemen
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? communityId = null, Object? follow = null, Object? auth = null}) {
+  $Res call({
+    Object? communityId = null,
+    Object? follow = null,
+    Object? auth = null,
+  }) {
     return _then(
       _value.copyWith(
             communityId:
@@ -85,22 +98,39 @@ class _$FollowCommunityCopyWithImpl<$Res, $Val extends FollowCommunity> implemen
 }
 
 /// @nodoc
-abstract class _$$FollowCommunityImplCopyWith<$Res> implements $FollowCommunityCopyWith<$Res> {
-  factory _$$FollowCommunityImplCopyWith(_$FollowCommunityImpl value, $Res Function(_$FollowCommunityImpl) then) = __$$FollowCommunityImplCopyWithImpl<$Res>;
+abstract class _$$FollowCommunityImplCopyWith<$Res>
+    implements $FollowCommunityCopyWith<$Res> {
+  factory _$$FollowCommunityImplCopyWith(
+    _$FollowCommunityImpl value,
+    $Res Function(_$FollowCommunityImpl) then,
+  ) = __$$FollowCommunityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'community_id') int communityId, bool follow, String auth});
+  $Res call({
+    @JsonKey(name: 'community_id') int communityId,
+    bool follow,
+    String auth,
+  });
 }
 
 /// @nodoc
-class __$$FollowCommunityImplCopyWithImpl<$Res> extends _$FollowCommunityCopyWithImpl<$Res, _$FollowCommunityImpl> implements _$$FollowCommunityImplCopyWith<$Res> {
-  __$$FollowCommunityImplCopyWithImpl(_$FollowCommunityImpl _value, $Res Function(_$FollowCommunityImpl) _then) : super(_value, _then);
+class __$$FollowCommunityImplCopyWithImpl<$Res>
+    extends _$FollowCommunityCopyWithImpl<$Res, _$FollowCommunityImpl>
+    implements _$$FollowCommunityImplCopyWith<$Res> {
+  __$$FollowCommunityImplCopyWithImpl(
+    _$FollowCommunityImpl _value,
+    $Res Function(_$FollowCommunityImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of FollowCommunity
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? communityId = null, Object? follow = null, Object? auth = null}) {
+  $Res call({
+    Object? communityId = null,
+    Object? follow = null,
+    Object? auth = null,
+  }) {
     return _then(
       _$FollowCommunityImpl(
         communityId:
@@ -127,9 +157,14 @@ class __$$FollowCommunityImplCopyWithImpl<$Res> extends _$FollowCommunityCopyWit
 
 @JsonSerializable(includeIfNull: false)
 class _$FollowCommunityImpl extends _FollowCommunity {
-  const _$FollowCommunityImpl({@JsonKey(name: 'community_id') required this.communityId, required this.follow, required this.auth}) : super._();
+  const _$FollowCommunityImpl({
+    @JsonKey(name: 'community_id') required this.communityId,
+    required this.follow,
+    required this.auth,
+  }) : super._();
 
-  factory _$FollowCommunityImpl.fromJson(Map<String, dynamic> json) => _$$FollowCommunityImplFromJson(json);
+  factory _$FollowCommunityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowCommunityImplFromJson(json);
 
   /// The community to follow/unfollow.
   @override
@@ -154,7 +189,8 @@ class _$FollowCommunityImpl extends _FollowCommunity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FollowCommunityImpl &&
-            (identical(other.communityId, communityId) || other.communityId == communityId) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
             (identical(other.follow, follow) || other.follow == follow) &&
             (identical(other.auth, auth) || other.auth == auth));
   }
@@ -168,7 +204,11 @@ class _$FollowCommunityImpl extends _FollowCommunity {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FollowCommunityImplCopyWith<_$FollowCommunityImpl> get copyWith => __$$FollowCommunityImplCopyWithImpl<_$FollowCommunityImpl>(this, _$identity);
+  _$$FollowCommunityImplCopyWith<_$FollowCommunityImpl> get copyWith =>
+      __$$FollowCommunityImplCopyWithImpl<_$FollowCommunityImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -177,10 +217,15 @@ class _$FollowCommunityImpl extends _FollowCommunity {
 }
 
 abstract class _FollowCommunity extends FollowCommunity {
-  const factory _FollowCommunity({@JsonKey(name: 'community_id') required final int communityId, required final bool follow, required final String auth}) = _$FollowCommunityImpl;
+  const factory _FollowCommunity({
+    @JsonKey(name: 'community_id') required final int communityId,
+    required final bool follow,
+    required final String auth,
+  }) = _$FollowCommunityImpl;
   const _FollowCommunity._() : super._();
 
-  factory _FollowCommunity.fromJson(Map<String, dynamic> json) = _$FollowCommunityImpl.fromJson;
+  factory _FollowCommunity.fromJson(Map<String, dynamic> json) =
+      _$FollowCommunityImpl.fromJson;
 
   /// The community to follow/unfollow.
   @override
@@ -199,5 +244,6 @@ abstract class _FollowCommunity extends FollowCommunity {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FollowCommunityImplCopyWith<_$FollowCommunityImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$FollowCommunityImplCopyWith<_$FollowCommunityImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

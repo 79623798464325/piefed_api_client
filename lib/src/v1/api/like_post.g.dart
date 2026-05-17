@@ -7,12 +7,19 @@ part of 'like_post.dart';
 // **************************************************************************
 
 _$LikePostImpl _$$LikePostImplFromJson(Map<String, dynamic> json) =>
-    _$LikePostImpl(postId: (json['post_id'] as num).toInt(), score: (json['score'] as num).toInt(), auth: json['auth'] as String, emoji: json['emoji'] as String?, private: json['private'] as bool?);
+    _$LikePostImpl(
+      postId: (json['post_id'] as num).toInt(),
+      score: (json['score'] as num).toInt(),
+      auth: json['auth'] as String,
+      emoji: json['emoji'] as String?,
+      private: json['private'] as bool?,
+    );
 
-Map<String, dynamic> _$$LikePostImplToJson(_$LikePostImpl instance) => <String, dynamic>{
-  'post_id': instance.postId,
-  'score': instance.score,
-  'auth': instance.auth,
-  if (instance.emoji case final value?) 'emoji': value,
-  if (instance.private case final value?) 'private': value,
-};
+Map<String, dynamic> _$$LikePostImplToJson(_$LikePostImpl instance) =>
+    <String, dynamic>{
+      'post_id': instance.postId,
+      'score': instance.score,
+      'auth': instance.auth,
+      if (instance.emoji case final value?) 'emoji': value,
+      if (instance.private case final value?) 'private': value,
+    };

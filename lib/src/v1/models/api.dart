@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'modlog.dart';
 import 'source.dart';
 import 'views.dart';
 import 'aggregates.dart';
@@ -573,4 +574,89 @@ class ListCommentLikesResponse with _$ListCommentLikesResponse {
   const factory ListCommentLikesResponse({@JsonKey(name: 'comment_likes') required List<CommentLikeView> commentLikes, @JsonKey(name: 'next_page') String? nextPage}) = _ListCommentLikesResponse;
 
   factory ListCommentLikesResponse.fromJson(Map<String, dynamic> json) => _$ListCommentLikesResponseFromJson(json);
+}
+
+@freezed
+class GetPostReportListResponse with _$GetPostReportListResponse {
+  const factory GetPostReportListResponse({@JsonKey(name: 'post_reports') required List<PostReportView> postReports, @JsonKey(name: 'next_page') String? nextPage}) = _GetPostReportListResponse;
+
+  factory GetPostReportListResponse.fromJson(Map<String, dynamic> json) => _$GetPostReportListResponseFromJson(json);
+}
+
+@freezed
+class GetCommentReportListResponse with _$GetCommentReportListResponse {
+  const factory GetCommentReportListResponse({@JsonKey(name: 'comment_reports') required List<CommentReportView> commentReports, @JsonKey(name: 'next_page') String? nextPage}) =
+      _GetCommentReportListResponse;
+
+  factory GetCommentReportListResponse.fromJson(Map<String, dynamic> json) => _$GetCommentReportListResponseFromJson(json);
+}
+
+@freezed
+class GetPrivateMessageReportListResponse with _$GetPrivateMessageReportListResponse {
+  const factory GetPrivateMessageReportListResponse({
+    @JsonKey(name: 'private_message_reports') required List<PrivateMessageReportView> privateMessageReports,
+    @JsonKey(name: 'next_page') String? nextPage,
+  }) = _GetPrivateMessageReportListResponse;
+
+  factory GetPrivateMessageReportListResponse.fromJson(Map<String, dynamic> json) => _$GetPrivateMessageReportListResponseFromJson(json);
+}
+
+@freezed
+class GetConversationReportListResponse with _$GetConversationReportListResponse {
+  const factory GetConversationReportListResponse({@JsonKey(name: 'conversation_reports') required List<ConversationReportView> conversationReports, @JsonKey(name: 'next_page') String? nextPage}) =
+      _GetConversationReportListResponse;
+
+  factory GetConversationReportListResponse.fromJson(Map<String, dynamic> json) => _$GetConversationReportListResponseFromJson(json);
+}
+
+@freezed
+class PrivateMessageReportResponse with _$PrivateMessageReportResponse {
+  const factory PrivateMessageReportResponse({@JsonKey(name: 'private_message_report_view') PrivateMessageReportView? privateMessageReportView}) = _PrivateMessageReportResponse;
+
+  factory PrivateMessageReportResponse.fromJson(Map<String, dynamic> json) => _$PrivateMessageReportResponseFromJson(json);
+}
+
+@freezed
+class GetRegistrationListResponse with _$GetRegistrationListResponse {
+  const factory GetRegistrationListResponse({required List<UserRegistration> registrations}) = _GetRegistrationListResponse;
+
+  factory GetRegistrationListResponse.fromJson(Map<String, dynamic> json) => _$GetRegistrationListResponseFromJson(json);
+}
+
+@freezed
+class FetchCaptchaResponse with _$FetchCaptchaResponse {
+  const factory FetchCaptchaResponse({List<CaptchaFields>? ok}) = _FetchCaptchaResponse;
+
+  factory FetchCaptchaResponse.fromJson(Map<String, dynamic> json) => _$FetchCaptchaResponseFromJson(json);
+}
+
+@freezed
+class UserRegistrationResponse with _$UserRegistrationResponse {
+  const factory UserRegistrationResponse({String? jwt, @JsonKey(name: 'registration_created') bool? registrationCreated, @JsonKey(name: 'verify_email_sent') bool? verifyEmailSent}) =
+      _UserRegistrationResponse;
+
+  factory UserRegistrationResponse.fromJson(Map<String, dynamic> json) => _$UserRegistrationResponseFromJson(json);
+}
+
+@freezed
+class GetModLogResponse with _$GetModLogResponse {
+  const factory GetModLogResponse({
+    @JsonKey(name: 'removed_posts') @Default(<ModRemovePostView>[]) List<ModRemovePostView> removedPosts,
+    @JsonKey(name: 'locked_posts') @Default(<ModLockPostView>[]) List<ModLockPostView> lockedPosts,
+    @JsonKey(name: 'featured_posts') @Default(<ModFeaturePostView>[]) List<ModFeaturePostView> featuredPosts,
+    @JsonKey(name: 'removed_comments') @Default(<ModRemoveCommentView>[]) List<ModRemoveCommentView> removedComments,
+    @JsonKey(name: 'removed_communities') @Default(<ModRemoveCommunityView>[]) List<ModRemoveCommunityView> removedCommunities,
+    @JsonKey(name: 'banned_from_community') @Default(<ModBanFromCommunityView>[]) List<ModBanFromCommunityView> bannedFromCommunity,
+    @Default(<ModBanView>[]) List<ModBanView> banned,
+    @JsonKey(name: 'added_to_community') @Default(<ModAddCommunityView>[]) List<ModAddCommunityView> addedToCommunity,
+    @JsonKey(name: 'transferred_to_community') @Default(<ModTransferCommunityView>[]) List<ModTransferCommunityView> transferredToCommunity,
+    @Default(<ModAddView>[]) List<ModAddView> added,
+    @JsonKey(name: 'admin_purged_persons') @Default(<AdminPurgePersonView>[]) List<AdminPurgePersonView> adminPurgedPersons,
+    @JsonKey(name: 'admin_purged_communities') @Default(<AdminPurgeCommunityView>[]) List<AdminPurgeCommunityView> adminPurgedCommunities,
+    @JsonKey(name: 'admin_purged_posts') @Default(<AdminPurgePostView>[]) List<AdminPurgePostView> adminPurgedPosts,
+    @JsonKey(name: 'admin_purged_comments') @Default(<AdminPurgeCommentView>[]) List<AdminPurgeCommentView> adminPurgedComments,
+    @JsonKey(name: 'hidden_communities') @Default(<ModHideCommunityView>[]) List<ModHideCommunityView> hiddenCommunities,
+  }) = _GetModLogResponse;
+
+  factory GetModLogResponse.fromJson(Map<String, dynamic> json) => _$GetModLogResponseFromJson(json);
 }

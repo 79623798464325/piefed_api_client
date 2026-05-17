@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.13.0
+
+*   **PieFed v1.7.0 Surface Catch-Up** — added 19 endpoints + 58 schemas that landed in the 1.7.0 spec but were not yet implemented. Purely additive; no breaking changes.
+    *   **New Endpoints**:
+        *   **Feeds CRUD**: `CreateFeed` (`POST /feed`), `EditFeed` (`PUT /feed`), `DeleteFeed` (`POST /feed/delete`), `FollowFeed` (`POST /feed/follow`).
+        *   **Moderation reports**: `ListPostReports`, `ResolvePostReport`, `ListCommentReports`, `ResolveCommentReport`, `ListPrivateMessageReports`, `ResolvePrivateMessageReport`, `ReportConversation`, `ListConversationReports`, `ResolveConversationReport`.
+        *   **Modlog**: `GetModLog` (`GET /modlog`) with `ModLogType` enum for the `type_` filter.
+        *   **Admin**: `ListRegistrationApplications`, `ApproveRegistrationApplication`.
+        *   **Registration / Captcha**: `GetCaptcha`, `Register` (both unauthenticated).
+        *   **Moderation actions**: `MarkCommentAsDistinguished`.
+    *   **New Models**:
+        *   28 modlog types in new `models/modlog.dart`: 14 base (`ModBan`, `ModRemovePost`, `ModFeaturePost`, `ModLockPost`, `ModRemoveComment`, `ModRemoveCommunity`, `ModBanFromCommunity`, `ModAddCommunity`, `ModTransferCommunity`, `ModAdd`, `ModHideCommunity`, `AdminPurgePerson`, `AdminPurgeCommunity`, `AdminPurgePost`, `AdminPurgeComment`) + their `*View` wrappers.
+        *   Report views: `PostReportView`, `CommentReportView`, `PrivateMessageReportView`, `ConversationReportView`, `ConversationInfoView`.
+        *   Report sources: `PostReport`, `CommentReport`, `PrivateMessageReport`, `ConversationReport`.
+        *   Registration/captcha: `UserRegistration`, `CaptchaFields`, `UserRegistrationRequest`/`UserRegistrationResponse`, `FetchCaptchaResponse`, `GetRegistrationListResponse`.
+        *   Response wrappers: `GetModLogResponse`, `GetPostReportListResponse`, `GetCommentReportListResponse`, `GetPrivateMessageReportListResponse`, `GetConversationReportListResponse`, `PrivateMessageReportResponse`.
+    *   **Field Additions**:
+        *   `CommentReplyView.distinguished` (bool?).
+        *   `SaveUserSettings.displayName` mapped to `display_name`.
+    *   **Tests**: 36 new tests covering all new endpoints, modlog/report round-trips, response parsing for `GetModLogResponse` (populated + empty), `ListCommentReports`, `FetchCaptchaResponse`, and `Register`; explicit assertion of the `when_` JSON key.
+
 ## 0.12.0
 
 *   **PieFed v1.7.0 Swagger Support**:

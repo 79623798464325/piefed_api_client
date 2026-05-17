@@ -153,6 +153,122 @@ class ReportPrivateMessage with _$ReportPrivateMessage implements PieFedApiQuery
 }
 
 @freezed
+class ListPrivateMessageReports with _$ListPrivateMessageReports implements PieFedApiQuery<GetPrivateMessageReportListResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory ListPrivateMessageReports({
+    @JsonKey(name: 'conversation_id') int? conversationId,
+    @JsonKey(name: 'private_message_id') int? privateMessageId,
+    int? limit,
+    int? page,
+    @JsonKey(name: 'unresolved_only') bool? unresolvedOnly,
+    required String auth,
+  }) = _ListPrivateMessageReports;
+
+  const ListPrivateMessageReports._();
+  factory ListPrivateMessageReports.fromJson(Map<String, dynamic> json) => _$ListPrivateMessageReportsFromJson(json);
+
+  @override
+  String get path => '/private_message/report/list';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetPrivateMessageReportListResponse responseFactory(Map<String, dynamic> json) => GetPrivateMessageReportListResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ResolvePrivateMessageReport with _$ResolvePrivateMessageReport implements PieFedApiQuery<SuccessResponse> {
+  const factory ResolvePrivateMessageReport({@JsonKey(name: 'report_id') required int reportId, required bool resolved, required String auth}) = _ResolvePrivateMessageReport;
+
+  const ResolvePrivateMessageReport._();
+  factory ResolvePrivateMessageReport.fromJson(Map<String, dynamic> json) => _$ResolvePrivateMessageReportFromJson(json);
+
+  @override
+  String get path => '/private_message/report/resolve';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  SuccessResponse responseFactory(Map<String, dynamic> json) => SuccessResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ReportConversation with _$ReportConversation implements PieFedApiQuery<SuccessResponse> {
+  const factory ReportConversation({@JsonKey(name: 'conversation_id') required int conversationId, required String reason, required String auth}) = _ReportConversation;
+
+  const ReportConversation._();
+  factory ReportConversation.fromJson(Map<String, dynamic> json) => _$ReportConversationFromJson(json);
+
+  @override
+  String get path => '/private_message/conversation/report';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  SuccessResponse responseFactory(Map<String, dynamic> json) => SuccessResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ListConversationReports with _$ListConversationReports implements PieFedApiQuery<GetConversationReportListResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory ListConversationReports({
+    @JsonKey(name: 'conversation_id') int? conversationId,
+    int? limit,
+    int? page,
+    @JsonKey(name: 'unresolved_only') bool? unresolvedOnly,
+    @JsonKey(name: 'message_history_limit') int? messageHistoryLimit,
+    required String auth,
+  }) = _ListConversationReports;
+
+  const ListConversationReports._();
+  factory ListConversationReports.fromJson(Map<String, dynamic> json) => _$ListConversationReportsFromJson(json);
+
+  @override
+  String get path => '/private_message/conversation/report/list';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetConversationReportListResponse responseFactory(Map<String, dynamic> json) => GetConversationReportListResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ResolveConversationReport with _$ResolveConversationReport implements PieFedApiQuery<SuccessResponse> {
+  const factory ResolveConversationReport({@JsonKey(name: 'report_id') required int reportId, required bool resolved, required String auth}) = _ResolveConversationReport;
+
+  const ResolveConversationReport._();
+  factory ResolveConversationReport.fromJson(Map<String, dynamic> json) => _$ResolveConversationReportFromJson(json);
+
+  @override
+  String get path => '/private_message/conversation/report/resolve';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  SuccessResponse responseFactory(Map<String, dynamic> json) => SuccessResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
 class GetPrivateMessageConversation with _$GetPrivateMessageConversation implements PieFedApiQuery<GetPrivateMessageConversationResponse> {
   @JsonSerializable(includeIfNull: false)
   const factory GetPrivateMessageConversation({@JsonKey(name: 'person_id') int? personId, @JsonKey(name: 'conversation_id') int? conversationId, int? page, int? limit, required String auth}) =

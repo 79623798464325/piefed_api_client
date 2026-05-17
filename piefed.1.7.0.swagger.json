@@ -560,7 +560,11 @@
               "TopAll",
               "Scaled",
               "Old",
-              "Relevance"
+              "Relevance",
+              "TopPosts",
+              "TopSubscribers",
+              "NewFederated",
+              "OldFederated"
             ]
           },
           "email_unread": {
@@ -1311,6 +1315,7 @@
           }
         },
         "required": [
+          "end",
           "start"
         ]
       },
@@ -2074,6 +2079,1171 @@
           "result"
         ]
       },
+      "ModRemovePost": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "post_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "removed": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "id",
+          "mod_person_id",
+          "post_id",
+          "removed",
+          "when_"
+        ]
+      },
+      "ModRemovePostView": {
+        "type": "object",
+        "properties": {
+          "mod_remove_post": {
+            "$ref": "#/components/schemas/ModRemovePost"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "post": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Post"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Community"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_remove_post"
+        ]
+      },
+      "ModLockPost": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "post_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "locked": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "id",
+          "locked",
+          "mod_person_id",
+          "post_id",
+          "when_"
+        ]
+      },
+      "ModLockPostView": {
+        "type": "object",
+        "properties": {
+          "mod_lock_post": {
+            "$ref": "#/components/schemas/ModLockPost"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "post": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Post"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Community"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_lock_post"
+        ]
+      },
+      "ModFeaturePost": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "post_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "featured": {
+            "type": "boolean"
+          },
+          "is_featured_community": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "featured",
+          "id",
+          "is_featured_community",
+          "mod_person_id",
+          "post_id",
+          "when_"
+        ]
+      },
+      "ModFeaturePostView": {
+        "type": "object",
+        "properties": {
+          "mod_feature_post": {
+            "$ref": "#/components/schemas/ModFeaturePost"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "post": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Post"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Community"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_feature_post"
+        ]
+      },
+      "ModRemoveComment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "comment_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "removed": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "comment_id",
+          "id",
+          "mod_person_id",
+          "removed",
+          "when_"
+        ]
+      },
+      "ModRemoveCommentView": {
+        "type": "object",
+        "properties": {
+          "mod_remove_comment": {
+            "$ref": "#/components/schemas/ModRemoveComment"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Comment"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "commenter": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "post": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Post"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Community"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_remove_comment"
+        ]
+      },
+      "ModRemoveCommunity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "community_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "removed": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "community_id",
+          "id",
+          "mod_person_id",
+          "removed",
+          "when_"
+        ]
+      },
+      "ModRemoveCommunityView": {
+        "type": "object",
+        "properties": {
+          "mod_remove_community": {
+            "$ref": "#/components/schemas/ModRemoveCommunity"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Community"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_remove_community"
+        ]
+      },
+      "ModBanFromCommunity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "other_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "community_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "banned": {
+            "type": "boolean"
+          },
+          "expires": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "banned",
+          "community_id",
+          "id",
+          "mod_person_id",
+          "other_person_id",
+          "when_"
+        ]
+      },
+      "ModBanFromCommunityView": {
+        "type": "object",
+        "properties": {
+          "mod_ban_from_community": {
+            "$ref": "#/components/schemas/ModBanFromCommunity"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Community"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "banned_person": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_ban_from_community"
+        ]
+      },
+      "ModBan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "other_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "banned": {
+            "type": "boolean"
+          },
+          "expires": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "banned",
+          "id",
+          "mod_person_id",
+          "other_person_id",
+          "when_"
+        ]
+      },
+      "ModBanView": {
+        "type": "object",
+        "properties": {
+          "mod_ban": {
+            "$ref": "#/components/schemas/ModBan"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "banned_person": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_ban"
+        ]
+      },
+      "ModAddCommunity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "other_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "community_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "removed": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "community_id",
+          "id",
+          "mod_person_id",
+          "other_person_id",
+          "removed",
+          "when_"
+        ]
+      },
+      "ModAddCommunityView": {
+        "type": "object",
+        "properties": {
+          "mod_add_community": {
+            "$ref": "#/components/schemas/ModAddCommunity"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Community"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "modded_person": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_add_community"
+        ]
+      },
+      "ModTransferCommunity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "other_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "community_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "community_id",
+          "id",
+          "mod_person_id",
+          "other_person_id",
+          "when_"
+        ]
+      },
+      "ModTransferCommunityView": {
+        "type": "object",
+        "properties": {
+          "mod_transfer_community": {
+            "$ref": "#/components/schemas/ModTransferCommunity"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "community": {
+            "$ref": "#/components/schemas/Community"
+          },
+          "modded_person": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "community",
+          "mod_transfer_community"
+        ]
+      },
+      "ModAdd": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "other_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "removed": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "id",
+          "mod_person_id",
+          "other_person_id",
+          "removed",
+          "when_"
+        ]
+      },
+      "ModAddView": {
+        "type": "object",
+        "properties": {
+          "mod_add": {
+            "$ref": "#/components/schemas/ModAdd"
+          },
+          "moderator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "modded_person": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Person"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "mod_add"
+        ]
+      },
+      "AdminPurgePerson": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "admin_person_id": {
+            "type": "integer"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "admin_person_id",
+          "id",
+          "when_"
+        ]
+      },
+      "AdminPurgePersonView": {
+        "type": "object",
+        "properties": {
+          "admin_purge_person": {
+            "$ref": "#/components/schemas/AdminPurgePerson"
+          },
+          "admin": {
+            "$ref": "#/components/schemas/Person"
+          }
+        },
+        "required": [
+          "admin_purge_person"
+        ]
+      },
+      "AdminPurgeCommunity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "admin_person_id": {
+            "type": "integer"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "admin_person_id",
+          "id",
+          "when_"
+        ]
+      },
+      "AdminPurgeCommunityView": {
+        "type": "object",
+        "properties": {
+          "admin_purge_community": {
+            "$ref": "#/components/schemas/AdminPurgeCommunity"
+          },
+          "admin": {
+            "$ref": "#/components/schemas/Person"
+          }
+        },
+        "required": [
+          "admin_purge_community"
+        ]
+      },
+      "AdminPurgePost": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "admin_person_id": {
+            "type": "integer"
+          },
+          "community_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "admin_person_id",
+          "community_id",
+          "id",
+          "when_"
+        ]
+      },
+      "AdminPurgePostView": {
+        "type": "object",
+        "properties": {
+          "admin_purge_post": {
+            "$ref": "#/components/schemas/AdminPurgePost"
+          },
+          "admin": {
+            "$ref": "#/components/schemas/Person"
+          },
+          "community": {
+            "$ref": "#/components/schemas/Community"
+          }
+        },
+        "required": [
+          "admin_purge_post",
+          "community"
+        ]
+      },
+      "AdminPurgeComment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "admin_person_id": {
+            "type": "integer"
+          },
+          "post_id": {
+            "type": "integer"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "admin_person_id",
+          "id",
+          "post_id",
+          "when_"
+        ]
+      },
+      "AdminPurgeCommentView": {
+        "type": "object",
+        "properties": {
+          "admin_purge_comment": {
+            "$ref": "#/components/schemas/AdminPurgeComment"
+          },
+          "admin": {
+            "$ref": "#/components/schemas/Person"
+          },
+          "post": {
+            "$ref": "#/components/schemas/Post"
+          }
+        },
+        "required": [
+          "admin_purge_comment",
+          "post"
+        ]
+      },
+      "ModHideCommunity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "community_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "mod_person_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "when_": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "community_id",
+          "hidden",
+          "id",
+          "mod_person_id",
+          "when_"
+        ]
+      },
+      "ModHideCommunityView": {
+        "type": "object",
+        "properties": {
+          "mod_hide_community": {
+            "$ref": "#/components/schemas/ModHideCommunity"
+          },
+          "admin": {
+            "$ref": "#/components/schemas/Person"
+          },
+          "community": {
+            "$ref": "#/components/schemas/Community"
+          }
+        },
+        "required": [
+          "community",
+          "mod_hide_community"
+        ]
+      },
+      "GetModLogResponse": {
+        "type": "object",
+        "properties": {
+          "removed_posts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModRemovePostView"
+            }
+          },
+          "locked_posts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModLockPostView"
+            }
+          },
+          "featured_posts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModFeaturePostView"
+            }
+          },
+          "removed_comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModRemoveCommentView"
+            }
+          },
+          "removed_communities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModRemoveCommunityView"
+            }
+          },
+          "banned_from_community": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModBanFromCommunityView"
+            }
+          },
+          "banned": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModBanView"
+            }
+          },
+          "added_to_community": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModAddCommunityView"
+            }
+          },
+          "transferred_to_community": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModTransferCommunityView"
+            }
+          },
+          "added": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModAddView"
+            }
+          },
+          "admin_purged_persons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminPurgePersonView"
+            }
+          },
+          "admin_purged_communities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminPurgeCommunityView"
+            }
+          },
+          "admin_purged_posts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminPurgePostView"
+            }
+          },
+          "admin_purged_comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminPurgeCommentView"
+            }
+          },
+          "hidden_communities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ModHideCommunityView"
+            }
+          }
+        },
+        "required": [
+          "added",
+          "added_to_community",
+          "admin_purged_comments",
+          "admin_purged_communities",
+          "admin_purged_persons",
+          "admin_purged_posts",
+          "banned",
+          "banned_from_community",
+          "featured_posts",
+          "hidden_communities",
+          "locked_posts",
+          "removed_comments",
+          "removed_communities",
+          "removed_posts",
+          "transferred_to_community"
+        ]
+      },
       "GetCommunityResponse": {
         "type": "object",
         "properties": {
@@ -2717,6 +3887,161 @@
           "feeds"
         ]
       },
+      "FollowFeedRequest": {
+        "type": "object",
+        "properties": {
+          "feed_id": {
+            "type": "integer"
+          },
+          "follow": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "feed_id",
+          "follow"
+        ]
+      },
+      "CreateFeedRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "URL-safe name/slug for the feed"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "format": "markdown"
+          },
+          "icon_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "url"
+          },
+          "banner_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "url"
+          },
+          "nsfw": {
+            "type": "boolean"
+          },
+          "nsfl": {
+            "type": "boolean"
+          },
+          "public": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether the feed is publicly visible"
+          },
+          "communities": {
+            "type": "string",
+            "description": "Newline-separated list of community ap_ids to include in the feed"
+          },
+          "is_instance_feed": {
+            "type": "boolean",
+            "description": "Whether this is an instance-level feed (admin only)"
+          },
+          "show_child_posts": {
+            "type": "boolean",
+            "description": "Whether to show posts from child feeds"
+          },
+          "parent_feed_id": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "ID of parent feed, if any"
+          }
+        },
+        "required": [
+          "name",
+          "title"
+        ]
+      },
+      "EditFeedRequest": {
+        "type": "object",
+        "properties": {
+          "feed_id": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL-safe name/slug for the feed"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "format": "markdown"
+          },
+          "icon_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "url"
+          },
+          "banner_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "url"
+          },
+          "nsfw": {
+            "type": "boolean"
+          },
+          "nsfl": {
+            "type": "boolean"
+          },
+          "public": {
+            "type": "boolean"
+          },
+          "communities": {
+            "type": "string",
+            "description": "Newline-separated list of community ap_ids; omit to keep existing communities"
+          },
+          "is_instance_feed": {
+            "type": "boolean"
+          },
+          "show_child_posts": {
+            "type": "boolean"
+          },
+          "parent_feed_id": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "feed_id"
+        ]
+      },
+      "DeleteFeedRequest": {
+        "type": "object",
+        "properties": {
+          "feed_id": {
+            "type": "integer"
+          },
+          "deleted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "deleted",
+          "feed_id"
+        ]
+      },
       "TopicView": {
         "type": "object",
         "properties": {
@@ -2951,6 +4276,9 @@
             "type": "boolean"
           },
           "creator_is_moderator": {
+            "type": "boolean"
+          },
+          "distinguished": {
             "type": "boolean"
           },
           "my_vote": {
@@ -3240,6 +4568,14 @@
               "Old",
               "Scaled"
             ]
+          },
+          "display_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 255,
+            "description": "Pass a null value to remove the display name"
           },
           "email_unread": {
             "type": "boolean",
@@ -3606,6 +4942,82 @@
           "person_id"
         ]
       },
+      "UserRegistrationRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "password_verify": {
+            "type": "string"
+          },
+          "show_nsfw": {
+            "type": "boolean"
+          },
+          "email": {
+            "type": "string"
+          },
+          "captcha_uuid": {
+            "type": "string"
+          },
+          "captcha_answer": {
+            "type": "string"
+          },
+          "honeypot": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "password",
+          "password_verify",
+          "username"
+        ]
+      },
+      "UserRegistrationResponse": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string"
+          },
+          "registration_created": {
+            "type": "boolean"
+          },
+          "verify_email_sent": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CaptchaFields": {
+        "type": "object",
+        "properties": {
+          "png": {
+            "type": "string"
+          },
+          "wav": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        }
+      },
+      "FetchCaptchaResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CaptchaFields"
+            }
+          }
+        }
+      },
       "ListCommentsResponse": {
         "type": "object",
         "properties": {
@@ -3790,7 +5202,12 @@
             "type": "string"
           },
           "reason": {
-            "type": "string"
+            "type": "string",
+            "description": "Categories of report selected by the reporter"
+          },
+          "description": {
+            "type": "string",
+            "description": "Any additional information provided by the reporter"
           },
           "resolved": {
             "type": "boolean"
@@ -3904,6 +5321,41 @@
           "comment_report_view"
         ]
       },
+      "GetCommentReportListResponse": {
+        "type": "object",
+        "properties": {
+          "comment_reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CommentReportView"
+            }
+          },
+          "next_page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "comment_reports"
+        ]
+      },
+      "PutCommentReportResolveRequest": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "integer"
+          },
+          "resolved": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "report_id",
+          "resolved"
+        ]
+      },
       "RemoveCommentRequest": {
         "type": "object",
         "properties": {
@@ -3961,6 +5413,21 @@
         "required": [
           "answer",
           "comment_reply_id"
+        ]
+      },
+      "MarkCommentAsDistinguishedRequest": {
+        "type": "object",
+        "properties": {
+          "comment_reply_id": {
+            "type": "integer"
+          },
+          "distinguished": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "comment_reply_id",
+          "distinguished"
         ]
       },
       "LockCommentRequest": {
@@ -4515,6 +5982,41 @@
           "post_report_view"
         ]
       },
+      "GetPostReportListResponse": {
+        "type": "object",
+        "properties": {
+          "post_reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PostReportView"
+            }
+          },
+          "next_page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "post_reports"
+        ]
+      },
+      "PutPostReportResolveRequest": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "integer"
+          },
+          "resolved": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "report_id",
+          "resolved"
+        ]
+      },
       "LockPostRequest": {
         "type": "object",
         "properties": {
@@ -5034,12 +6536,363 @@
             "type": "integer"
           },
           "reason": {
-            "type": "string"
+            "type": "string",
+            "maxLength": 255
           }
         },
         "required": [
           "private_message_id",
           "reason"
+        ]
+      },
+      "PrivateMessageReport": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "creator_id": {
+            "type": "integer",
+            "description": "User id of the reporter"
+          },
+          "private_message_id": {
+            "type": "integer"
+          },
+          "original_pm_text": {
+            "type": "string"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "resolved": {
+            "type": "boolean"
+          },
+          "published": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "creator_id",
+          "id",
+          "original_pm_text",
+          "private_message_id",
+          "published",
+          "reason",
+          "resolved"
+        ]
+      },
+      "PrivateMessageReportView": {
+        "type": "object",
+        "properties": {
+          "private_message_report": {
+            "$ref": "#/components/schemas/PrivateMessageReport"
+          },
+          "private_message": {
+            "$ref": "#/components/schemas/PrivateMessage"
+          },
+          "private_message_creator": {
+            "$ref": "#/components/schemas/Person"
+          },
+          "creator": {
+            "$ref": "#/components/schemas/Person"
+          }
+        }
+      },
+      "PrivateMessageReportResponse": {
+        "type": "object",
+        "properties": {
+          "private_message_report_view": {
+            "$ref": "#/components/schemas/PrivateMessageReportView"
+          }
+        }
+      },
+      "ReportConversationRequest": {
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "type": "integer"
+          },
+          "reason": {
+            "type": "string",
+            "maxLength": 255
+          }
+        },
+        "required": [
+          "conversation_id",
+          "reason"
+        ]
+      },
+      "GetPrivateMessageReportListResponse": {
+        "type": "object",
+        "properties": {
+          "private_message_reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivateMessageReportView"
+            }
+          },
+          "next_page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "private_message_reports"
+        ]
+      },
+      "ConversationReport": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "creator_id": {
+            "type": "integer",
+            "description": "User id of the reporter"
+          },
+          "conversation_id": {
+            "type": "integer"
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Any other additional information provided by the reporter"
+          },
+          "resolved": {
+            "type": "boolean"
+          },
+          "published": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "creator_id",
+          "description",
+          "id",
+          "published",
+          "reason",
+          "resolved"
+        ]
+      },
+      "ConversationInfoView": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Person"
+            }
+          },
+          "creator_id": {
+            "type": "integer"
+          },
+          "published": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          },
+          "updated": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "creator_id",
+          "id",
+          "published",
+          "updated"
+        ]
+      },
+      "ConversationReportView": {
+        "type": "object",
+        "properties": {
+          "conversation_report": {
+            "$ref": "#/components/schemas/ConversationReport"
+          },
+          "conversation_information": {
+            "$ref": "#/components/schemas/ConversationInfoView"
+          },
+          "message_history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrivateMessageView"
+            }
+          },
+          "creator": {
+            "$ref": "#/components/schemas/Person"
+          }
+        },
+        "required": [
+          "conversation_information",
+          "conversation_report",
+          "creator"
+        ]
+      },
+      "GetConversationReportListResponse": {
+        "type": "object",
+        "properties": {
+          "conversation_reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConversationReportView"
+            }
+          },
+          "next_page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "conversation_reports"
+        ]
+      },
+      "PutPrivateMessageReportResolveRequest": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "integer"
+          },
+          "resolved": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "report_id",
+          "resolved"
+        ]
+      },
+      "PutConversationReportResolveRequest": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "integer"
+          },
+          "resolved": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "report_id",
+          "resolved"
+        ]
+      },
+      "UserRegistration": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "applied_at": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          },
+          "country_code": {
+            "type": "string"
+          },
+          "email": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ip_address": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "throwaway_email": {
+            "type": "boolean"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "user_name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "awaiting review"
+            ]
+          },
+          "approved_by": {
+            "$ref": "#/components/schemas/Person"
+          },
+          "approved_at": {
+            "type": "string",
+            "example": "2025-06-07T02:29:07.980084Z",
+            "format": "datetime"
+          },
+          "referrer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "answer",
+          "email",
+          "ip_address",
+          "status",
+          "user_id",
+          "user_name"
+        ]
+      },
+      "GetRegistrationListResponse": {
+        "type": "object",
+        "properties": {
+          "registrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserRegistration"
+            }
+          }
+        },
+        "required": [
+          "registrations"
+        ]
+      },
+      "RegistrationApproveRequest": {
+        "type": "object",
+        "properties": {
+          "approve": {
+            "type": "boolean"
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "approve",
+          "user_id"
         ]
       }
     },
@@ -5062,24 +6915,16 @@
       "description": "This instance"
     },
     {
+      "url": "https://piefed.social",
+      "description": "Flagship instance, stable branch"
+    },
+    {
       "url": "https://crust.piefed.social",
-      "description": "Development instance"
-    },
-    {
-      "url": "https://piefed.social"
-    },
-    {
-      "url": "https://preferred.social"
-    },
-    {
-      "url": "https://feddit.online"
-    },
-    {
-      "url": "https://piefed.world"
+      "description": "Official development instance"
     }
   ],
   "info": {
-    "title": "PieFed 1.6 Alpha API",
+    "title": "PieFed 1.7 Alpha API",
     "contact": {
       "name": "Developer",
       "url": "https://codeberg.org/rimu/pyfedi"
@@ -5328,7 +7173,7 @@
           {
             "in": "query",
             "name": "listing_type",
-            "description": "Only some types are supported for each `type_`.\n\nFor `Comments` and `Communities`, `Popular` will return the same results as `All`.\n\nFor `Users`, only `Local` will differ from `All`.\n\nAll listing types supported for `Posts` and `Url` (simply an alias for `Posts`).",
+            "description": "Only some types are supported for each `type_`.\n\n- `Comments` and `Communities`: `Popular` will return the same results as `All`.\n- `Users`: only `Local` will differ from `All`.\n- `Posts` and `Url`: These types are equivalent.",
             "schema": {
               "type": "string",
               "enum": [
@@ -5353,7 +7198,7 @@
           {
             "in": "query",
             "name": "sort",
-            "description": "Only some sorting options supported for each `type_`.\n\nFor `Comments`, `Scaled` is not supported and `Hot` will be returned instead.\n\nFor `Communities`, all `Top` sorts are equivalent. The `New` and `Old` sorts are supported. And all others are equivalent to `Active`.\n\nFor `Users`, only `New` and `Top` (by number of posts) are supported. Otherwise will be sorted by user id.\n\nAll sorting methods supported for `Posts`. `Url` is simply an alias for `Posts`.",
+            "description": "Only some sorting options supported for each `type_`. `NewFederated` and `OldFederated` are equivalent to `New` and `Old` respectively for each type except for `Communities`.\n\n- `Comments`: `Scaled` is not supported and `Hot` will be returned instead.\n- `Communities`: `Top` sorts that are not present in `/community/list` are equivalent to `Top`.\n- `Users`: only `New`, `Old`, and `Top` (by number of posts, all `Top` sorts are equivalent) are supported. Otherwise will be sorted by user id.\n- `Posts` and `Url`: These types are equivalent. `TopPosts` and `TopSubscribers` are equivalent to `Top`.",
             "schema": {
               "type": "string",
               "enum": [
@@ -5374,7 +7219,11 @@
                 "TopAll",
                 "Scaled",
                 "Old",
-                "Relevance"
+                "Relevance",
+                "TopPosts",
+                "TopSubscribers",
+                "NewFederated",
+                "OldFederated"
               ]
             },
             "required": false
@@ -5564,6 +7413,133 @@
         "summary": "Suggest people and communities while users type."
       }
     },
+    "/api/alpha/modlog": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "mod_person_id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "community_id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "type_",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "All",
+                "ModRemovePost",
+                "ModLockPost",
+                "ModFeaturePost",
+                "ModRemoveComment",
+                "ModRemoveCommunity",
+                "ModBanFromCommunity",
+                "ModAddCommunity",
+                "ModTransferCommunity",
+                "ModAdd",
+                "ModBan",
+                "ModHideCommunity",
+                "AdminPurgePerson",
+                "AdminPurgeCommunity",
+                "AdminPurgePost",
+                "AdminPurgeComment"
+              ]
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "other_person_id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "post_id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "comment_id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetModLogResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get modlog."
+      }
+    },
     "/api/alpha/community": {
       "get": {
         "parameters": [
@@ -5743,8 +7719,13 @@
                 "Hot",
                 "Top",
                 "New",
+                "Old",
                 "Active",
-                "TopAll"
+                "TopAll",
+                "TopPosts",
+                "TopSubscribers",
+                "NewFederated",
+                "OldFederated"
               ]
             },
             "required": false
@@ -6407,6 +8388,98 @@
           "Feed"
         ],
         "summary": "Get a feed"
+      },
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedView"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFeedRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Feed"
+        ],
+        "summary": "Create a new feed."
+      },
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedView"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditFeedRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Feed"
+        ],
+        "summary": "Edit feed."
       }
     },
     "/api/alpha/feed/list": {
@@ -6462,6 +8535,92 @@
           "Feed"
         ],
         "summary": "Get list of feeds"
+      }
+    },
+    "/api/alpha/feed/follow": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedView"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FollowFeedRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Feed"
+        ],
+        "summary": "Follow / subscribe / leave / unsubscribe to a feed."
+      }
+    },
+    "/api/alpha/feed/delete": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedView"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteFeedRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Feed"
+        ],
+        "summary": "Delete a feed."
       }
     },
     "/api/alpha/topic/list": {
@@ -6596,7 +8755,11 @@
                 "TopAll",
                 "Scaled",
                 "Old",
-                "Relevance"
+                "Relevance",
+                "TopPosts",
+                "TopSubscribers",
+                "NewFederated",
+                "OldFederated"
               ]
             },
             "required": false
@@ -7565,6 +9728,79 @@
         "summary": "Unban a user"
       }
     },
+    "/api/alpha/api/alpha/user/register": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserRegistrationResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegistrationRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "User"
+        ],
+        "summary": "Register a new user"
+      }
+    },
+    "/api/alpha/api/alpha/user/get_captcha": {
+      "get": {
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FetchCaptchaResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User"
+        ],
+        "summary": "Fetch a Captcha"
+      }
+    },
     "/api/alpha/comment/list": {
       "get": {
         "parameters": [
@@ -7599,6 +9835,23 @@
                 "New",
                 "Old",
                 "Controversial"
+              ]
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "type_",
+            "schema": {
+              "type": "string",
+              "default": "All",
+              "enum": [
+                "All",
+                "Local",
+                "Subscribed",
+                "Popular",
+                "Moderating",
+                "ModeratorView"
               ]
             },
             "required": false
@@ -8050,6 +10303,129 @@
         "summary": "Report a comment."
       }
     },
+    "/api/alpha/comment/report/list": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "comment_id",
+            "description": "Get the reports for a single comment",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "community_id",
+            "description": "Limit reports to within a single community",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "unresolved_only",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCommentReportListResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Get list of comment reports."
+      }
+    },
+    "/api/alpha/comment/report/resolve": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCommentReportResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutCommentReportResolveRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Resolve or unresolve a comment report"
+      }
+    },
     "/api/alpha/comment/remove": {
       "post": {
         "responses": {
@@ -8177,6 +10553,49 @@
           "Comment"
         ],
         "summary": "Mark a comment as the preferred answer to a question."
+      }
+    },
+    "/api/alpha/comment/distinguish": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCommentResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarkCommentAsDistinguishedRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Distinguish your comment as a moderator comment"
       }
     },
     "/api/alpha/comment/lock": {
@@ -8366,6 +10785,20 @@
           },
           {
             "in": "query",
+            "name": "nsfw",
+            "schema": {
+              "type": "string",
+              "default": "Include",
+              "enum": [
+                "Exclude",
+                "Only",
+                "Include"
+              ]
+            },
+            "required": false
+          },
+          {
+            "in": "query",
             "name": "person_id",
             "schema": {
               "type": "integer"
@@ -8535,6 +10968,20 @@
             "schema": {
               "type": "boolean",
               "default": false
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "nsfw",
+            "schema": {
+              "type": "string",
+              "default": "Include",
+              "enum": [
+                "Exclude",
+                "Only",
+                "Include"
+              ]
             },
             "required": false
           },
@@ -9113,6 +11560,129 @@
           "Post"
         ],
         "summary": "Report a post."
+      }
+    },
+    "/api/alpha/post/report/list": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "community_id",
+            "description": "Limit reports to within a single community",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "post_id",
+            "description": "Get the reports for a single post",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "unresolved_only",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPostReportListResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Post"
+        ],
+        "summary": "Get list of comment reports."
+      }
+    },
+    "/api/alpha/post/report/resolve": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostReportResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutPostReportResolveRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Post"
+        ],
+        "summary": "Resolve or unresolve a report"
       }
     },
     "/api/alpha/post/lock": {
@@ -10056,7 +12626,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PrivateMessageResponse"
+                  "$ref": "#/components/schemas/PrivateMessageReportResponse"
                 }
               }
             }
@@ -10076,6 +12646,393 @@
           "Private Message"
         ],
         "summary": "Report a private message."
+      }
+    },
+    "/api/alpha/private_message/conversation/report": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportConversationRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Private Message"
+        ],
+        "summary": "Report a conversation"
+      }
+    },
+    "/api/alpha/private_message/report/list": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "conversation_id",
+            "description": "Restrict reports to within a single conversation",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "private_message_id",
+            "description": "Restrict reports to a single message",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "unresolved_only",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPrivateMessageReportListResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Private Message"
+        ],
+        "summary": "Get list of individual private message reports"
+      }
+    },
+    "/api/alpha/private_message/conversation/report/list": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "conversation_id",
+            "description": "Restrict reports to a single conversation",
+            "schema": {
+              "type": "integer"
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "unresolved_only",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "message_history_limit",
+            "description": "Number of most recent messages in the conversation to include in the response",
+            "schema": {
+              "type": "integer",
+              "default": 5
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetConversationReportListResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Private Message"
+        ],
+        "summary": "Get list of reported conversations and conversations containing a reported private message"
+      }
+    },
+    "/api/alpha/private_message/report/resolve": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrivateMessageReportResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutPrivateMessageReportResolveRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Private Message"
+        ],
+        "summary": "Resolve or unresolve a private message report"
+      }
+    },
+    "/api/alpha/private_message/conversation/report/resolve": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutConversationReportResolveRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Private Message"
+        ],
+        "summary": "Resolve or unresolve a reported conversation"
+      }
+    },
+    "/api/alpha/admin/registration_application/list": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "default": 30
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "pending_only",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            },
+            "required": false
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "type": "string",
+              "default": "New",
+              "enum": [
+                "Old",
+                "New"
+              ]
+            },
+            "required": false
+          }
+        ],
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRegistrationListResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Get the list of applications ready for admin review"
+      }
+    },
+    "/api/alpha/admin/registration_application/approve": {
+      "put": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationApproveRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Approve or deny a registration"
       }
     }
   },
@@ -10118,6 +13075,10 @@
     },
     {
       "name": "Private Message",
+      "description": ""
+    },
+    {
+      "name": "Admin",
       "description": ""
     }
   ],

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:piefed_api_client/v1.dart';
 import 'package:test/test.dart';
 
@@ -81,7 +83,7 @@ void main() {
     });
 
     test('PrivateMessage serialization', () {
-      final pm = PrivateMessage(id: 1, userId: 1, recipientId: 2, content: 'Secret', deleted: false, read: false, published: DateTime.now().toUtc());
+      final pm = PrivateMessage(id: 1, creatorId: 1, recipientId: 2, content: 'Secret', deleted: false, read: false, published: DateTime.now().toUtc());
       final json = pm.toJson();
       expect(json['content'], 'Secret');
       expect(PrivateMessage.fromJson(json), pm);
@@ -99,6 +101,94 @@ void main() {
       final json = language.toJson();
       expect(json['name'], 'English');
       expect(LanguageView.fromJson(json), language);
+    });
+
+    test('PostReport serialization', () {
+      final r = PostReport(id: 1, creatorId: 5, postId: 9, originalPostBody: 'body', reason: 'spam', resolved: false, published: DateTime.now().toUtc());
+      final json = r.toJson();
+      expect(json['post_id'], 9);
+      expect(json['original_post_body'], 'body');
+      expect(PostReport.fromJson(json), r);
+    });
+
+    test('CommentReport serialization with description', () {
+      final r = CommentReport(id: 1, creatorId: 5, commentId: 9, originalCommentText: 'text', reason: 'spam', description: 'extra info', resolved: false, published: DateTime.now().toUtc());
+      final json = r.toJson();
+      expect(json['description'], 'extra info');
+      expect(CommentReport.fromJson(json), r);
+    });
+
+    test('PrivateMessageReport serialization (nullable reason)', () {
+      final r = PrivateMessageReport(id: 1, creatorId: 5, privateMessageId: 9, originalPmText: 'text', reason: null, resolved: false, published: DateTime.now().toUtc());
+      final json = r.toJson();
+      expect(json.containsKey('reason'), isTrue);
+      expect(json['reason'], isNull);
+      expect(PrivateMessageReport.fromJson(json), r);
+    });
+
+    test('ConversationReport serialization', () {
+      final r = ConversationReport(id: 1, creatorId: 5, conversationId: 7, reason: 'harass', description: null, resolved: false, published: DateTime.now().toUtc());
+      final json = r.toJson();
+      expect(json['conversation_id'], 7);
+      expect(ConversationReport.fromJson(json), r);
+    });
+
+    test('UserRegistration serialization', () {
+      final reg = UserRegistration(
+        answer: 'because',
+        appliedAt: DateTime.now().toUtc(),
+        countryCode: 'CA',
+        email: 'a@b.c',
+        ipAddress: '1.2.3.4',
+        userId: 42,
+        userName: 'newuser',
+        status: 'awaiting review',
+      );
+      final json = reg.toJson();
+      expect(json['user_id'], 42);
+      expect(json['user_name'], 'newuser');
+      expect(json['country_code'], 'CA');
+      expect(UserRegistration.fromJson(json), reg);
+    });
+
+    test('CaptchaFields serialization', () {
+      const c = CaptchaFields(png: 'base64png', wav: 'base64wav', uuid: 'u');
+      final json = c.toJson();
+      expect(json['png'], 'base64png');
+      expect(CaptchaFields.fromJson(json), c);
+    });
+
+    test('ModBan round-trip preserves when_', () {
+      final ban = ModBan(id: 1, modPersonId: 2, otherPersonId: 3, reason: 'spam', banned: true, expires: DateTime.utc(2030, 1, 1), when: DateTime.utc(2026, 5, 17));
+      final json = ban.toJson();
+      expect(json.containsKey('when_'), isTrue, reason: 'JSON key must be when_ not when');
+      expect(json.containsKey('when'), isFalse);
+      expect(ModBan.fromJson(json), ban);
+    });
+
+    test('ModBanView round-trip', () {
+      final view = ModBanView(
+        modBan: ModBan(id: 1, modPersonId: 2, otherPersonId: 3, banned: true, when: DateTime.utc(2026, 5, 17)),
+        moderator: Person(id: 2, name: 'mod', actorId: 'https://example.com/u/mod', local: true, banned: false, bot: false, deleted: false, instanceId: 1),
+      );
+      final wire = jsonDecode(jsonEncode(view)) as Map<String, dynamic>;
+      expect(wire['mod_ban'], isA<Map<String, dynamic>>());
+      expect(wire['mod_ban']['when_'], '2026-05-17T00:00:00.000Z');
+      expect(ModBanView.fromJson(wire), view);
+    });
+
+    test('ModFeaturePost round-trip preserves is_featured_community', () {
+      final mfp = ModFeaturePost(id: 1, modPersonId: 2, postId: 9, featured: true, isFeaturedCommunity: true, when: DateTime.utc(2026, 5, 17));
+      final json = mfp.toJson();
+      expect(json['is_featured_community'], true);
+      expect(ModFeaturePost.fromJson(json), mfp);
+    });
+
+    test('AdminPurgePerson round-trip', () {
+      final p = AdminPurgePerson(id: 1, adminPersonId: 7, reason: 'TOS', when: DateTime.utc(2026, 5, 17));
+      final json = p.toJson();
+      expect(json['admin_person_id'], 7);
+      expect(AdminPurgePerson.fromJson(json), p);
     });
 
     test('LocalUser serialization', () {

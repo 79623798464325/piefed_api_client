@@ -15,7 +15,9 @@ final _privateConstructorUsedError = UnsupportedError(
   'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
 );
 
-GetFederatedInstances _$GetFederatedInstancesFromJson(Map<String, dynamic> json) {
+GetFederatedInstances _$GetFederatedInstancesFromJson(
+  Map<String, dynamic> json,
+) {
   return _GetFederatedInstances.fromJson(json);
 }
 
@@ -27,11 +29,18 @@ mixin _$GetFederatedInstances {
 
 /// @nodoc
 abstract class $GetFederatedInstancesCopyWith<$Res> {
-  factory $GetFederatedInstancesCopyWith(GetFederatedInstances value, $Res Function(GetFederatedInstances) then) = _$GetFederatedInstancesCopyWithImpl<$Res, GetFederatedInstances>;
+  factory $GetFederatedInstancesCopyWith(
+    GetFederatedInstances value,
+    $Res Function(GetFederatedInstances) then,
+  ) = _$GetFederatedInstancesCopyWithImpl<$Res, GetFederatedInstances>;
 }
 
 /// @nodoc
-class _$GetFederatedInstancesCopyWithImpl<$Res, $Val extends GetFederatedInstances> implements $GetFederatedInstancesCopyWith<$Res> {
+class _$GetFederatedInstancesCopyWithImpl<
+  $Res,
+  $Val extends GetFederatedInstances
+>
+    implements $GetFederatedInstancesCopyWith<$Res> {
   _$GetFederatedInstancesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -45,12 +54,21 @@ class _$GetFederatedInstancesCopyWithImpl<$Res, $Val extends GetFederatedInstanc
 
 /// @nodoc
 abstract class _$$GetFederatedInstancesImplCopyWith<$Res> {
-  factory _$$GetFederatedInstancesImplCopyWith(_$GetFederatedInstancesImpl value, $Res Function(_$GetFederatedInstancesImpl) then) = __$$GetFederatedInstancesImplCopyWithImpl<$Res>;
+  factory _$$GetFederatedInstancesImplCopyWith(
+    _$GetFederatedInstancesImpl value,
+    $Res Function(_$GetFederatedInstancesImpl) then,
+  ) = __$$GetFederatedInstancesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetFederatedInstancesImplCopyWithImpl<$Res> extends _$GetFederatedInstancesCopyWithImpl<$Res, _$GetFederatedInstancesImpl> implements _$$GetFederatedInstancesImplCopyWith<$Res> {
-  __$$GetFederatedInstancesImplCopyWithImpl(_$GetFederatedInstancesImpl _value, $Res Function(_$GetFederatedInstancesImpl) _then) : super(_value, _then);
+class __$$GetFederatedInstancesImplCopyWithImpl<$Res>
+    extends
+        _$GetFederatedInstancesCopyWithImpl<$Res, _$GetFederatedInstancesImpl>
+    implements _$$GetFederatedInstancesImplCopyWith<$Res> {
+  __$$GetFederatedInstancesImplCopyWithImpl(
+    _$GetFederatedInstancesImpl _value,
+    $Res Function(_$GetFederatedInstancesImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of GetFederatedInstances
   /// with the given fields replaced by the non-null parameter values.
@@ -61,7 +79,8 @@ class __$$GetFederatedInstancesImplCopyWithImpl<$Res> extends _$GetFederatedInst
 class _$GetFederatedInstancesImpl extends _GetFederatedInstances {
   const _$GetFederatedInstancesImpl() : super._();
 
-  factory _$GetFederatedInstancesImpl.fromJson(Map<String, dynamic> json) => _$$GetFederatedInstancesImplFromJson(json);
+  factory _$GetFederatedInstancesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetFederatedInstancesImplFromJson(json);
 
   @override
   String toString() {
@@ -70,7 +89,9 @@ class _$GetFederatedInstancesImpl extends _GetFederatedInstances {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetFederatedInstancesImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFederatedInstancesImpl);
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -87,5 +108,6 @@ abstract class _GetFederatedInstances extends GetFederatedInstances {
   const factory _GetFederatedInstances() = _$GetFederatedInstancesImpl;
   const _GetFederatedInstances._() : super._();
 
-  factory _GetFederatedInstances.fromJson(Map<String, dynamic> json) = _$GetFederatedInstancesImpl.fromJson;
+  factory _GetFederatedInstances.fromJson(Map<String, dynamic> json) =
+      _$GetFederatedInstancesImpl.fromJson;
 }

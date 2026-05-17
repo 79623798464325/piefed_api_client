@@ -1,7 +1,9 @@
 // TODO: Export endpoints here
+export 'admin.dart';
 export 'comment.dart';
 export 'community.dart';
 export 'domain.dart';
+export 'feed.dart';
 export 'follow_community.dart';
 export 'instance.dart';
 export 'like_comment.dart';
@@ -9,6 +11,7 @@ export 'like_post.dart';
 export 'list_comments.dart';
 export 'list_communities.dart';
 export 'list_posts.dart';
+export 'modlog.dart';
 export 'post.dart';
 export 'private_message.dart';
 export 'resolve_object.dart';
@@ -18,4 +21,3 @@ export 'search.dart';
 export 'site.dart';
 export 'upload.dart';
 export 'user.dart';
-export 'feed.dart';

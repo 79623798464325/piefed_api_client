@@ -34,18 +34,27 @@ mixin _$PersonAggregates {
   /// Create a copy of PersonAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PersonAggregatesCopyWith<PersonAggregates> get copyWith => throw _privateConstructorUsedError;
+  $PersonAggregatesCopyWith<PersonAggregates> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PersonAggregatesCopyWith<$Res> {
-  factory $PersonAggregatesCopyWith(PersonAggregates value, $Res Function(PersonAggregates) then) = _$PersonAggregatesCopyWithImpl<$Res, PersonAggregates>;
+  factory $PersonAggregatesCopyWith(
+    PersonAggregates value,
+    $Res Function(PersonAggregates) then,
+  ) = _$PersonAggregatesCopyWithImpl<$Res, PersonAggregates>;
   @useResult
-  $Res call({@JsonKey(name: 'person_id') int personId, @JsonKey(name: 'post_count') int postCount, @JsonKey(name: 'comment_count') int commentCount});
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    @JsonKey(name: 'post_count') int postCount,
+    @JsonKey(name: 'comment_count') int commentCount,
+  });
 }
 
 /// @nodoc
-class _$PersonAggregatesCopyWithImpl<$Res, $Val extends PersonAggregates> implements $PersonAggregatesCopyWith<$Res> {
+class _$PersonAggregatesCopyWithImpl<$Res, $Val extends PersonAggregates>
+    implements $PersonAggregatesCopyWith<$Res> {
   _$PersonAggregatesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -57,7 +66,11 @@ class _$PersonAggregatesCopyWithImpl<$Res, $Val extends PersonAggregates> implem
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? personId = null, Object? postCount = null, Object? commentCount = null}) {
+  $Res call({
+    Object? personId = null,
+    Object? postCount = null,
+    Object? commentCount = null,
+  }) {
     return _then(
       _value.copyWith(
             personId:
@@ -82,22 +95,39 @@ class _$PersonAggregatesCopyWithImpl<$Res, $Val extends PersonAggregates> implem
 }
 
 /// @nodoc
-abstract class _$$PersonAggregatesImplCopyWith<$Res> implements $PersonAggregatesCopyWith<$Res> {
-  factory _$$PersonAggregatesImplCopyWith(_$PersonAggregatesImpl value, $Res Function(_$PersonAggregatesImpl) then) = __$$PersonAggregatesImplCopyWithImpl<$Res>;
+abstract class _$$PersonAggregatesImplCopyWith<$Res>
+    implements $PersonAggregatesCopyWith<$Res> {
+  factory _$$PersonAggregatesImplCopyWith(
+    _$PersonAggregatesImpl value,
+    $Res Function(_$PersonAggregatesImpl) then,
+  ) = __$$PersonAggregatesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'person_id') int personId, @JsonKey(name: 'post_count') int postCount, @JsonKey(name: 'comment_count') int commentCount});
+  $Res call({
+    @JsonKey(name: 'person_id') int personId,
+    @JsonKey(name: 'post_count') int postCount,
+    @JsonKey(name: 'comment_count') int commentCount,
+  });
 }
 
 /// @nodoc
-class __$$PersonAggregatesImplCopyWithImpl<$Res> extends _$PersonAggregatesCopyWithImpl<$Res, _$PersonAggregatesImpl> implements _$$PersonAggregatesImplCopyWith<$Res> {
-  __$$PersonAggregatesImplCopyWithImpl(_$PersonAggregatesImpl _value, $Res Function(_$PersonAggregatesImpl) _then) : super(_value, _then);
+class __$$PersonAggregatesImplCopyWithImpl<$Res>
+    extends _$PersonAggregatesCopyWithImpl<$Res, _$PersonAggregatesImpl>
+    implements _$$PersonAggregatesImplCopyWith<$Res> {
+  __$$PersonAggregatesImplCopyWithImpl(
+    _$PersonAggregatesImpl _value,
+    $Res Function(_$PersonAggregatesImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PersonAggregates
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? personId = null, Object? postCount = null, Object? commentCount = null}) {
+  $Res call({
+    Object? personId = null,
+    Object? postCount = null,
+    Object? commentCount = null,
+  }) {
     return _then(
       _$PersonAggregatesImpl(
         personId:
@@ -123,9 +153,14 @@ class __$$PersonAggregatesImplCopyWithImpl<$Res> extends _$PersonAggregatesCopyW
 /// @nodoc
 @JsonSerializable()
 class _$PersonAggregatesImpl implements _PersonAggregates {
-  const _$PersonAggregatesImpl({@JsonKey(name: 'person_id') required this.personId, @JsonKey(name: 'post_count') this.postCount = 0, @JsonKey(name: 'comment_count') this.commentCount = 0});
+  const _$PersonAggregatesImpl({
+    @JsonKey(name: 'person_id') required this.personId,
+    @JsonKey(name: 'post_count') this.postCount = 0,
+    @JsonKey(name: 'comment_count') this.commentCount = 0,
+  });
 
-  factory _$PersonAggregatesImpl.fromJson(Map<String, dynamic> json) => _$$PersonAggregatesImplFromJson(json);
+  factory _$PersonAggregatesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PersonAggregatesImplFromJson(json);
 
   @override
   @JsonKey(name: 'person_id')
@@ -147,21 +182,29 @@ class _$PersonAggregatesImpl implements _PersonAggregates {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PersonAggregatesImpl &&
-            (identical(other.personId, personId) || other.personId == personId) &&
-            (identical(other.postCount, postCount) || other.postCount == postCount) &&
-            (identical(other.commentCount, commentCount) || other.commentCount == commentCount));
+            (identical(other.personId, personId) ||
+                other.personId == personId) &&
+            (identical(other.postCount, postCount) ||
+                other.postCount == postCount) &&
+            (identical(other.commentCount, commentCount) ||
+                other.commentCount == commentCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, personId, postCount, commentCount);
+  int get hashCode =>
+      Object.hash(runtimeType, personId, postCount, commentCount);
 
   /// Create a copy of PersonAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PersonAggregatesImplCopyWith<_$PersonAggregatesImpl> get copyWith => __$$PersonAggregatesImplCopyWithImpl<_$PersonAggregatesImpl>(this, _$identity);
+  _$$PersonAggregatesImplCopyWith<_$PersonAggregatesImpl> get copyWith =>
+      __$$PersonAggregatesImplCopyWithImpl<_$PersonAggregatesImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -170,10 +213,14 @@ class _$PersonAggregatesImpl implements _PersonAggregates {
 }
 
 abstract class _PersonAggregates implements PersonAggregates {
-  const factory _PersonAggregates({@JsonKey(name: 'person_id') required final int personId, @JsonKey(name: 'post_count') final int postCount, @JsonKey(name: 'comment_count') final int commentCount}) =
-      _$PersonAggregatesImpl;
+  const factory _PersonAggregates({
+    @JsonKey(name: 'person_id') required final int personId,
+    @JsonKey(name: 'post_count') final int postCount,
+    @JsonKey(name: 'comment_count') final int commentCount,
+  }) = _$PersonAggregatesImpl;
 
-  factory _PersonAggregates.fromJson(Map<String, dynamic> json) = _$PersonAggregatesImpl.fromJson;
+  factory _PersonAggregates.fromJson(Map<String, dynamic> json) =
+      _$PersonAggregatesImpl.fromJson;
 
   @override
   @JsonKey(name: 'person_id')
@@ -189,7 +236,8 @@ abstract class _PersonAggregates implements PersonAggregates {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PersonAggregatesImplCopyWith<_$PersonAggregatesImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PersonAggregatesImplCopyWith<_$PersonAggregatesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 CommunityAggregates _$CommunityAggregatesFromJson(Map<String, dynamic> json) {
@@ -223,12 +271,16 @@ mixin _$CommunityAggregates {
   /// Create a copy of CommunityAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CommunityAggregatesCopyWith<CommunityAggregates> get copyWith => throw _privateConstructorUsedError;
+  $CommunityAggregatesCopyWith<CommunityAggregates> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommunityAggregatesCopyWith<$Res> {
-  factory $CommunityAggregatesCopyWith(CommunityAggregates value, $Res Function(CommunityAggregates) then) = _$CommunityAggregatesCopyWithImpl<$Res, CommunityAggregates>;
+  factory $CommunityAggregatesCopyWith(
+    CommunityAggregates value,
+    $Res Function(CommunityAggregates) then,
+  ) = _$CommunityAggregatesCopyWithImpl<$Res, CommunityAggregates>;
   @useResult
   $Res call({
     @JsonKey(name: 'id') int id,
@@ -244,7 +296,8 @@ abstract class $CommunityAggregatesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CommunityAggregatesCopyWithImpl<$Res, $Val extends CommunityAggregates> implements $CommunityAggregatesCopyWith<$Res> {
+class _$CommunityAggregatesCopyWithImpl<$Res, $Val extends CommunityAggregates>
+    implements $CommunityAggregatesCopyWith<$Res> {
   _$CommunityAggregatesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -321,8 +374,12 @@ class _$CommunityAggregatesCopyWithImpl<$Res, $Val extends CommunityAggregates> 
 }
 
 /// @nodoc
-abstract class _$$CommunityAggregatesImplCopyWith<$Res> implements $CommunityAggregatesCopyWith<$Res> {
-  factory _$$CommunityAggregatesImplCopyWith(_$CommunityAggregatesImpl value, $Res Function(_$CommunityAggregatesImpl) then) = __$$CommunityAggregatesImplCopyWithImpl<$Res>;
+abstract class _$$CommunityAggregatesImplCopyWith<$Res>
+    implements $CommunityAggregatesCopyWith<$Res> {
+  factory _$$CommunityAggregatesImplCopyWith(
+    _$CommunityAggregatesImpl value,
+    $Res Function(_$CommunityAggregatesImpl) then,
+  ) = __$$CommunityAggregatesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -339,8 +396,13 @@ abstract class _$$CommunityAggregatesImplCopyWith<$Res> implements $CommunityAgg
 }
 
 /// @nodoc
-class __$$CommunityAggregatesImplCopyWithImpl<$Res> extends _$CommunityAggregatesCopyWithImpl<$Res, _$CommunityAggregatesImpl> implements _$$CommunityAggregatesImplCopyWith<$Res> {
-  __$$CommunityAggregatesImplCopyWithImpl(_$CommunityAggregatesImpl _value, $Res Function(_$CommunityAggregatesImpl) _then) : super(_value, _then);
+class __$$CommunityAggregatesImplCopyWithImpl<$Res>
+    extends _$CommunityAggregatesCopyWithImpl<$Res, _$CommunityAggregatesImpl>
+    implements _$$CommunityAggregatesImplCopyWith<$Res> {
+  __$$CommunityAggregatesImplCopyWithImpl(
+    _$CommunityAggregatesImpl _value,
+    $Res Function(_$CommunityAggregatesImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CommunityAggregates
   /// with the given fields replaced by the non-null parameter values.
@@ -424,7 +486,8 @@ class _$CommunityAggregatesImpl implements _CommunityAggregates {
     @JsonKey(name: 'active_6monthly') this.active6monthly = 0,
   });
 
-  factory _$CommunityAggregatesImpl.fromJson(Map<String, dynamic> json) => _$$CommunityAggregatesImplFromJson(json);
+  factory _$CommunityAggregatesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommunityAggregatesImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -465,26 +528,52 @@ class _$CommunityAggregatesImpl implements _CommunityAggregates {
         (other.runtimeType == runtimeType &&
             other is _$CommunityAggregatesImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.postCount, postCount) || other.postCount == postCount) &&
-            (identical(other.postReplyCount, postReplyCount) || other.postReplyCount == postReplyCount) &&
-            (identical(other.subscriptionsCount, subscriptionsCount) || other.subscriptionsCount == subscriptionsCount) &&
-            (identical(other.totalSubscriptionsCount, totalSubscriptionsCount) || other.totalSubscriptionsCount == totalSubscriptionsCount) &&
-            (identical(other.activeDaily, activeDaily) || other.activeDaily == activeDaily) &&
-            (identical(other.activeWeekly, activeWeekly) || other.activeWeekly == activeWeekly) &&
-            (identical(other.activeMonthly, activeMonthly) || other.activeMonthly == activeMonthly) &&
-            (identical(other.active6monthly, active6monthly) || other.active6monthly == active6monthly));
+            (identical(other.postCount, postCount) ||
+                other.postCount == postCount) &&
+            (identical(other.postReplyCount, postReplyCount) ||
+                other.postReplyCount == postReplyCount) &&
+            (identical(other.subscriptionsCount, subscriptionsCount) ||
+                other.subscriptionsCount == subscriptionsCount) &&
+            (identical(
+                  other.totalSubscriptionsCount,
+                  totalSubscriptionsCount,
+                ) ||
+                other.totalSubscriptionsCount == totalSubscriptionsCount) &&
+            (identical(other.activeDaily, activeDaily) ||
+                other.activeDaily == activeDaily) &&
+            (identical(other.activeWeekly, activeWeekly) ||
+                other.activeWeekly == activeWeekly) &&
+            (identical(other.activeMonthly, activeMonthly) ||
+                other.activeMonthly == activeMonthly) &&
+            (identical(other.active6monthly, active6monthly) ||
+                other.active6monthly == active6monthly));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, postCount, postReplyCount, subscriptionsCount, totalSubscriptionsCount, activeDaily, activeWeekly, activeMonthly, active6monthly);
+  int get hashCode => Object.hash(
+    runtimeType,
+    id,
+    postCount,
+    postReplyCount,
+    subscriptionsCount,
+    totalSubscriptionsCount,
+    activeDaily,
+    activeWeekly,
+    activeMonthly,
+    active6monthly,
+  );
 
   /// Create a copy of CommunityAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CommunityAggregatesImplCopyWith<_$CommunityAggregatesImpl> get copyWith => __$$CommunityAggregatesImplCopyWithImpl<_$CommunityAggregatesImpl>(this, _$identity);
+  _$$CommunityAggregatesImplCopyWith<_$CommunityAggregatesImpl> get copyWith =>
+      __$$CommunityAggregatesImplCopyWithImpl<_$CommunityAggregatesImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -498,14 +587,16 @@ abstract class _CommunityAggregates implements CommunityAggregates {
     @JsonKey(name: 'post_count') final int postCount,
     @JsonKey(name: 'post_reply_count') final int postReplyCount,
     @JsonKey(name: 'subscriptions_count') final int subscriptionsCount,
-    @JsonKey(name: 'total_subscriptions_count') final int? totalSubscriptionsCount,
+    @JsonKey(name: 'total_subscriptions_count')
+    final int? totalSubscriptionsCount,
     @JsonKey(name: 'active_daily') final int activeDaily,
     @JsonKey(name: 'active_weekly') final int activeWeekly,
     @JsonKey(name: 'active_monthly') final int activeMonthly,
     @JsonKey(name: 'active_6monthly') final int active6monthly,
   }) = _$CommunityAggregatesImpl;
 
-  factory _CommunityAggregates.fromJson(Map<String, dynamic> json) = _$CommunityAggregatesImpl.fromJson;
+  factory _CommunityAggregates.fromJson(Map<String, dynamic> json) =
+      _$CommunityAggregatesImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -539,7 +630,8 @@ abstract class _CommunityAggregates implements CommunityAggregates {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CommunityAggregatesImplCopyWith<_$CommunityAggregatesImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$CommunityAggregatesImplCopyWith<_$CommunityAggregatesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 PostAggregates _$PostAggregatesFromJson(Map<String, dynamic> json) {
@@ -565,12 +657,16 @@ mixin _$PostAggregates {
   /// Create a copy of PostAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PostAggregatesCopyWith<PostAggregates> get copyWith => throw _privateConstructorUsedError;
+  $PostAggregatesCopyWith<PostAggregates> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PostAggregatesCopyWith<$Res> {
-  factory $PostAggregatesCopyWith(PostAggregates value, $Res Function(PostAggregates) then) = _$PostAggregatesCopyWithImpl<$Res, PostAggregates>;
+  factory $PostAggregatesCopyWith(
+    PostAggregates value,
+    $Res Function(PostAggregates) then,
+  ) = _$PostAggregatesCopyWithImpl<$Res, PostAggregates>;
   @useResult
   $Res call({
     @JsonKey(name: 'post_id') int postId,
@@ -579,12 +675,14 @@ abstract class $PostAggregatesCopyWith<$Res> {
     int upvotes,
     int downvotes,
     @JsonKey(name: 'newest_comment_time') DateTime? newestCommentTime,
-    @JsonKey(name: 'newest_comment_time_necro') DateTime? newestCommentTimeNecro,
+    @JsonKey(name: 'newest_comment_time_necro')
+    DateTime? newestCommentTimeNecro,
   });
 }
 
 /// @nodoc
-class _$PostAggregatesCopyWithImpl<$Res, $Val extends PostAggregates> implements $PostAggregatesCopyWith<$Res> {
+class _$PostAggregatesCopyWithImpl<$Res, $Val extends PostAggregates>
+    implements $PostAggregatesCopyWith<$Res> {
   _$PostAggregatesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -649,8 +747,12 @@ class _$PostAggregatesCopyWithImpl<$Res, $Val extends PostAggregates> implements
 }
 
 /// @nodoc
-abstract class _$$PostAggregatesImplCopyWith<$Res> implements $PostAggregatesCopyWith<$Res> {
-  factory _$$PostAggregatesImplCopyWith(_$PostAggregatesImpl value, $Res Function(_$PostAggregatesImpl) then) = __$$PostAggregatesImplCopyWithImpl<$Res>;
+abstract class _$$PostAggregatesImplCopyWith<$Res>
+    implements $PostAggregatesCopyWith<$Res> {
+  factory _$$PostAggregatesImplCopyWith(
+    _$PostAggregatesImpl value,
+    $Res Function(_$PostAggregatesImpl) then,
+  ) = __$$PostAggregatesImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
@@ -660,13 +762,19 @@ abstract class _$$PostAggregatesImplCopyWith<$Res> implements $PostAggregatesCop
     int upvotes,
     int downvotes,
     @JsonKey(name: 'newest_comment_time') DateTime? newestCommentTime,
-    @JsonKey(name: 'newest_comment_time_necro') DateTime? newestCommentTimeNecro,
+    @JsonKey(name: 'newest_comment_time_necro')
+    DateTime? newestCommentTimeNecro,
   });
 }
 
 /// @nodoc
-class __$$PostAggregatesImplCopyWithImpl<$Res> extends _$PostAggregatesCopyWithImpl<$Res, _$PostAggregatesImpl> implements _$$PostAggregatesImplCopyWith<$Res> {
-  __$$PostAggregatesImplCopyWithImpl(_$PostAggregatesImpl _value, $Res Function(_$PostAggregatesImpl) _then) : super(_value, _then);
+class __$$PostAggregatesImplCopyWithImpl<$Res>
+    extends _$PostAggregatesCopyWithImpl<$Res, _$PostAggregatesImpl>
+    implements _$$PostAggregatesImplCopyWith<$Res> {
+  __$$PostAggregatesImplCopyWithImpl(
+    _$PostAggregatesImpl _value,
+    $Res Function(_$PostAggregatesImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PostAggregates
   /// with the given fields replaced by the non-null parameter values.
@@ -736,7 +844,8 @@ class _$PostAggregatesImpl implements _PostAggregates {
     @JsonKey(name: 'newest_comment_time_necro') this.newestCommentTimeNecro,
   });
 
-  factory _$PostAggregatesImpl.fromJson(Map<String, dynamic> json) => _$$PostAggregatesImplFromJson(json);
+  factory _$PostAggregatesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostAggregatesImplFromJson(json);
 
   @override
   @JsonKey(name: 'post_id')
@@ -771,24 +880,41 @@ class _$PostAggregatesImpl implements _PostAggregates {
         (other.runtimeType == runtimeType &&
             other is _$PostAggregatesImpl &&
             (identical(other.postId, postId) || other.postId == postId) &&
-            (identical(other.comments, comments) || other.comments == comments) &&
+            (identical(other.comments, comments) ||
+                other.comments == comments) &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.upvotes, upvotes) || other.upvotes == upvotes) &&
-            (identical(other.downvotes, downvotes) || other.downvotes == downvotes) &&
-            (identical(other.newestCommentTime, newestCommentTime) || other.newestCommentTime == newestCommentTime) &&
-            (identical(other.newestCommentTimeNecro, newestCommentTimeNecro) || other.newestCommentTimeNecro == newestCommentTimeNecro));
+            (identical(other.downvotes, downvotes) ||
+                other.downvotes == downvotes) &&
+            (identical(other.newestCommentTime, newestCommentTime) ||
+                other.newestCommentTime == newestCommentTime) &&
+            (identical(other.newestCommentTimeNecro, newestCommentTimeNecro) ||
+                other.newestCommentTimeNecro == newestCommentTimeNecro));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, postId, comments, score, upvotes, downvotes, newestCommentTime, newestCommentTimeNecro);
+  int get hashCode => Object.hash(
+    runtimeType,
+    postId,
+    comments,
+    score,
+    upvotes,
+    downvotes,
+    newestCommentTime,
+    newestCommentTimeNecro,
+  );
 
   /// Create a copy of PostAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PostAggregatesImplCopyWith<_$PostAggregatesImpl> get copyWith => __$$PostAggregatesImplCopyWithImpl<_$PostAggregatesImpl>(this, _$identity);
+  _$$PostAggregatesImplCopyWith<_$PostAggregatesImpl> get copyWith =>
+      __$$PostAggregatesImplCopyWithImpl<_$PostAggregatesImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -804,10 +930,12 @@ abstract class _PostAggregates implements PostAggregates {
     final int upvotes,
     final int downvotes,
     @JsonKey(name: 'newest_comment_time') final DateTime? newestCommentTime,
-    @JsonKey(name: 'newest_comment_time_necro') final DateTime? newestCommentTimeNecro,
+    @JsonKey(name: 'newest_comment_time_necro')
+    final DateTime? newestCommentTimeNecro,
   }) = _$PostAggregatesImpl;
 
-  factory _PostAggregates.fromJson(Map<String, dynamic> json) = _$PostAggregatesImpl.fromJson;
+  factory _PostAggregates.fromJson(Map<String, dynamic> json) =
+      _$PostAggregatesImpl.fromJson;
 
   @override
   @JsonKey(name: 'post_id')
@@ -831,7 +959,8 @@ abstract class _PostAggregates implements PostAggregates {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PostAggregatesImplCopyWith<_$PostAggregatesImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$PostAggregatesImplCopyWith<_$PostAggregatesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 CommentAggregates _$CommentAggregatesFromJson(Map<String, dynamic> json) {
@@ -854,18 +983,29 @@ mixin _$CommentAggregates {
   /// Create a copy of CommentAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CommentAggregatesCopyWith<CommentAggregates> get copyWith => throw _privateConstructorUsedError;
+  $CommentAggregatesCopyWith<CommentAggregates> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommentAggregatesCopyWith<$Res> {
-  factory $CommentAggregatesCopyWith(CommentAggregates value, $Res Function(CommentAggregates) then) = _$CommentAggregatesCopyWithImpl<$Res, CommentAggregates>;
+  factory $CommentAggregatesCopyWith(
+    CommentAggregates value,
+    $Res Function(CommentAggregates) then,
+  ) = _$CommentAggregatesCopyWithImpl<$Res, CommentAggregates>;
   @useResult
-  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, int upvotes, int downvotes, @JsonKey(name: 'child_count') int childCount});
+  $Res call({
+    @JsonKey(name: 'comment_id') int commentId,
+    int score,
+    int upvotes,
+    int downvotes,
+    @JsonKey(name: 'child_count') int childCount,
+  });
 }
 
 /// @nodoc
-class _$CommentAggregatesCopyWithImpl<$Res, $Val extends CommentAggregates> implements $CommentAggregatesCopyWith<$Res> {
+class _$CommentAggregatesCopyWithImpl<$Res, $Val extends CommentAggregates>
+    implements $CommentAggregatesCopyWith<$Res> {
   _$CommentAggregatesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -877,7 +1017,13 @@ class _$CommentAggregatesCopyWithImpl<$Res, $Val extends CommentAggregates> impl
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? commentId = null, Object? score = null, Object? upvotes = null, Object? downvotes = null, Object? childCount = null}) {
+  $Res call({
+    Object? commentId = null,
+    Object? score = null,
+    Object? upvotes = null,
+    Object? downvotes = null,
+    Object? childCount = null,
+  }) {
     return _then(
       _value.copyWith(
             commentId:
@@ -912,22 +1058,43 @@ class _$CommentAggregatesCopyWithImpl<$Res, $Val extends CommentAggregates> impl
 }
 
 /// @nodoc
-abstract class _$$CommentAggregatesImplCopyWith<$Res> implements $CommentAggregatesCopyWith<$Res> {
-  factory _$$CommentAggregatesImplCopyWith(_$CommentAggregatesImpl value, $Res Function(_$CommentAggregatesImpl) then) = __$$CommentAggregatesImplCopyWithImpl<$Res>;
+abstract class _$$CommentAggregatesImplCopyWith<$Res>
+    implements $CommentAggregatesCopyWith<$Res> {
+  factory _$$CommentAggregatesImplCopyWith(
+    _$CommentAggregatesImpl value,
+    $Res Function(_$CommentAggregatesImpl) then,
+  ) = __$$CommentAggregatesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, int upvotes, int downvotes, @JsonKey(name: 'child_count') int childCount});
+  $Res call({
+    @JsonKey(name: 'comment_id') int commentId,
+    int score,
+    int upvotes,
+    int downvotes,
+    @JsonKey(name: 'child_count') int childCount,
+  });
 }
 
 /// @nodoc
-class __$$CommentAggregatesImplCopyWithImpl<$Res> extends _$CommentAggregatesCopyWithImpl<$Res, _$CommentAggregatesImpl> implements _$$CommentAggregatesImplCopyWith<$Res> {
-  __$$CommentAggregatesImplCopyWithImpl(_$CommentAggregatesImpl _value, $Res Function(_$CommentAggregatesImpl) _then) : super(_value, _then);
+class __$$CommentAggregatesImplCopyWithImpl<$Res>
+    extends _$CommentAggregatesCopyWithImpl<$Res, _$CommentAggregatesImpl>
+    implements _$$CommentAggregatesImplCopyWith<$Res> {
+  __$$CommentAggregatesImplCopyWithImpl(
+    _$CommentAggregatesImpl _value,
+    $Res Function(_$CommentAggregatesImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of CommentAggregates
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? commentId = null, Object? score = null, Object? upvotes = null, Object? downvotes = null, Object? childCount = null}) {
+  $Res call({
+    Object? commentId = null,
+    Object? score = null,
+    Object? upvotes = null,
+    Object? downvotes = null,
+    Object? childCount = null,
+  }) {
     return _then(
       _$CommentAggregatesImpl(
         commentId:
@@ -963,9 +1130,16 @@ class __$$CommentAggregatesImplCopyWithImpl<$Res> extends _$CommentAggregatesCop
 /// @nodoc
 @JsonSerializable()
 class _$CommentAggregatesImpl implements _CommentAggregates {
-  const _$CommentAggregatesImpl({@JsonKey(name: 'comment_id') required this.commentId, this.score = 0, this.upvotes = 0, this.downvotes = 0, @JsonKey(name: 'child_count') this.childCount = 0});
+  const _$CommentAggregatesImpl({
+    @JsonKey(name: 'comment_id') required this.commentId,
+    this.score = 0,
+    this.upvotes = 0,
+    this.downvotes = 0,
+    @JsonKey(name: 'child_count') this.childCount = 0,
+  });
 
-  factory _$CommentAggregatesImpl.fromJson(Map<String, dynamic> json) => _$$CommentAggregatesImplFromJson(json);
+  factory _$CommentAggregatesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommentAggregatesImplFromJson(json);
 
   @override
   @JsonKey(name: 'comment_id')
@@ -993,23 +1167,37 @@ class _$CommentAggregatesImpl implements _CommentAggregates {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CommentAggregatesImpl &&
-            (identical(other.commentId, commentId) || other.commentId == commentId) &&
+            (identical(other.commentId, commentId) ||
+                other.commentId == commentId) &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.upvotes, upvotes) || other.upvotes == upvotes) &&
-            (identical(other.downvotes, downvotes) || other.downvotes == downvotes) &&
-            (identical(other.childCount, childCount) || other.childCount == childCount));
+            (identical(other.downvotes, downvotes) ||
+                other.downvotes == downvotes) &&
+            (identical(other.childCount, childCount) ||
+                other.childCount == childCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, commentId, score, upvotes, downvotes, childCount);
+  int get hashCode => Object.hash(
+    runtimeType,
+    commentId,
+    score,
+    upvotes,
+    downvotes,
+    childCount,
+  );
 
   /// Create a copy of CommentAggregates
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CommentAggregatesImplCopyWith<_$CommentAggregatesImpl> get copyWith => __$$CommentAggregatesImplCopyWithImpl<_$CommentAggregatesImpl>(this, _$identity);
+  _$$CommentAggregatesImplCopyWith<_$CommentAggregatesImpl> get copyWith =>
+      __$$CommentAggregatesImplCopyWithImpl<_$CommentAggregatesImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -1026,7 +1214,8 @@ abstract class _CommentAggregates implements CommentAggregates {
     @JsonKey(name: 'child_count') final int childCount,
   }) = _$CommentAggregatesImpl;
 
-  factory _CommentAggregates.fromJson(Map<String, dynamic> json) = _$CommentAggregatesImpl.fromJson;
+  factory _CommentAggregates.fromJson(Map<String, dynamic> json) =
+      _$CommentAggregatesImpl.fromJson;
 
   @override
   @JsonKey(name: 'comment_id')
@@ -1045,10 +1234,13 @@ abstract class _CommentAggregates implements CommentAggregates {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CommentAggregatesImplCopyWith<_$CommentAggregatesImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$CommentAggregatesImplCopyWith<_$CommentAggregatesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-UserNotificationsCounts _$UserNotificationsCountsFromJson(Map<String, dynamic> json) {
+UserNotificationsCounts _$UserNotificationsCountsFromJson(
+  Map<String, dynamic> json,
+) {
   return _UserNotificationsCounts.fromJson(json);
 }
 
@@ -1064,18 +1256,26 @@ mixin _$UserNotificationsCounts {
   /// Create a copy of UserNotificationsCounts
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserNotificationsCountsCopyWith<UserNotificationsCounts> get copyWith => throw _privateConstructorUsedError;
+  $UserNotificationsCountsCopyWith<UserNotificationsCounts> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserNotificationsCountsCopyWith<$Res> {
-  factory $UserNotificationsCountsCopyWith(UserNotificationsCounts value, $Res Function(UserNotificationsCounts) then) = _$UserNotificationsCountsCopyWithImpl<$Res, UserNotificationsCounts>;
+  factory $UserNotificationsCountsCopyWith(
+    UserNotificationsCounts value,
+    $Res Function(UserNotificationsCounts) then,
+  ) = _$UserNotificationsCountsCopyWithImpl<$Res, UserNotificationsCounts>;
   @useResult
   $Res call({int unread, int read, int total});
 }
 
 /// @nodoc
-class _$UserNotificationsCountsCopyWithImpl<$Res, $Val extends UserNotificationsCounts> implements $UserNotificationsCountsCopyWith<$Res> {
+class _$UserNotificationsCountsCopyWithImpl<
+  $Res,
+  $Val extends UserNotificationsCounts
+>
+    implements $UserNotificationsCountsCopyWith<$Res> {
   _$UserNotificationsCountsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1087,7 +1287,11 @@ class _$UserNotificationsCountsCopyWithImpl<$Res, $Val extends UserNotifications
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? unread = null, Object? read = null, Object? total = null}) {
+  $Res call({
+    Object? unread = null,
+    Object? read = null,
+    Object? total = null,
+  }) {
     return _then(
       _value.copyWith(
             unread:
@@ -1112,22 +1316,39 @@ class _$UserNotificationsCountsCopyWithImpl<$Res, $Val extends UserNotifications
 }
 
 /// @nodoc
-abstract class _$$UserNotificationsCountsImplCopyWith<$Res> implements $UserNotificationsCountsCopyWith<$Res> {
-  factory _$$UserNotificationsCountsImplCopyWith(_$UserNotificationsCountsImpl value, $Res Function(_$UserNotificationsCountsImpl) then) = __$$UserNotificationsCountsImplCopyWithImpl<$Res>;
+abstract class _$$UserNotificationsCountsImplCopyWith<$Res>
+    implements $UserNotificationsCountsCopyWith<$Res> {
+  factory _$$UserNotificationsCountsImplCopyWith(
+    _$UserNotificationsCountsImpl value,
+    $Res Function(_$UserNotificationsCountsImpl) then,
+  ) = __$$UserNotificationsCountsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int unread, int read, int total});
 }
 
 /// @nodoc
-class __$$UserNotificationsCountsImplCopyWithImpl<$Res> extends _$UserNotificationsCountsCopyWithImpl<$Res, _$UserNotificationsCountsImpl> implements _$$UserNotificationsCountsImplCopyWith<$Res> {
-  __$$UserNotificationsCountsImplCopyWithImpl(_$UserNotificationsCountsImpl _value, $Res Function(_$UserNotificationsCountsImpl) _then) : super(_value, _then);
+class __$$UserNotificationsCountsImplCopyWithImpl<$Res>
+    extends
+        _$UserNotificationsCountsCopyWithImpl<
+          $Res,
+          _$UserNotificationsCountsImpl
+        >
+    implements _$$UserNotificationsCountsImplCopyWith<$Res> {
+  __$$UserNotificationsCountsImplCopyWithImpl(
+    _$UserNotificationsCountsImpl _value,
+    $Res Function(_$UserNotificationsCountsImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of UserNotificationsCounts
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? unread = null, Object? read = null, Object? total = null}) {
+  $Res call({
+    Object? unread = null,
+    Object? read = null,
+    Object? total = null,
+  }) {
     return _then(
       _$UserNotificationsCountsImpl(
         unread:
@@ -1153,9 +1374,14 @@ class __$$UserNotificationsCountsImplCopyWithImpl<$Res> extends _$UserNotificati
 /// @nodoc
 @JsonSerializable()
 class _$UserNotificationsCountsImpl implements _UserNotificationsCounts {
-  const _$UserNotificationsCountsImpl({this.unread = 0, this.read = 0, this.total = 0});
+  const _$UserNotificationsCountsImpl({
+    this.unread = 0,
+    this.read = 0,
+    this.total = 0,
+  });
 
-  factory _$UserNotificationsCountsImpl.fromJson(Map<String, dynamic> json) => _$$UserNotificationsCountsImplFromJson(json);
+  factory _$UserNotificationsCountsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserNotificationsCountsImplFromJson(json);
 
   @override
   @JsonKey()
@@ -1191,7 +1417,10 @@ class _$UserNotificationsCountsImpl implements _UserNotificationsCounts {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserNotificationsCountsImplCopyWith<_$UserNotificationsCountsImpl> get copyWith => __$$UserNotificationsCountsImplCopyWithImpl<_$UserNotificationsCountsImpl>(this, _$identity);
+  _$$UserNotificationsCountsImplCopyWith<_$UserNotificationsCountsImpl>
+  get copyWith => __$$UserNotificationsCountsImplCopyWithImpl<
+    _$UserNotificationsCountsImpl
+  >(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1200,9 +1429,14 @@ class _$UserNotificationsCountsImpl implements _UserNotificationsCounts {
 }
 
 abstract class _UserNotificationsCounts implements UserNotificationsCounts {
-  const factory _UserNotificationsCounts({final int unread, final int read, final int total}) = _$UserNotificationsCountsImpl;
+  const factory _UserNotificationsCounts({
+    final int unread,
+    final int read,
+    final int total,
+  }) = _$UserNotificationsCountsImpl;
 
-  factory _UserNotificationsCounts.fromJson(Map<String, dynamic> json) = _$UserNotificationsCountsImpl.fromJson;
+  factory _UserNotificationsCounts.fromJson(Map<String, dynamic> json) =
+      _$UserNotificationsCountsImpl.fromJson;
 
   @override
   int get unread;
@@ -1215,5 +1449,6 @@ abstract class _UserNotificationsCounts implements UserNotificationsCounts {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserNotificationsCountsImplCopyWith<_$UserNotificationsCountsImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$UserNotificationsCountsImplCopyWith<_$UserNotificationsCountsImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }

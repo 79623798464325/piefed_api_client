@@ -375,6 +375,54 @@ class LockPost with _$LockPost implements PieFedApiQuery<GetPostResponse> {
 }
 
 @freezed
+class ListPostReports with _$ListPostReports implements PieFedApiQuery<GetPostReportListResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory ListPostReports({
+    @JsonKey(name: 'community_id') int? communityId,
+    int? limit,
+    int? page,
+    @JsonKey(name: 'post_id') int? postId,
+    @JsonKey(name: 'unresolved_only') bool? unresolvedOnly,
+    required String auth,
+  }) = _ListPostReports;
+
+  const ListPostReports._();
+  factory ListPostReports.fromJson(Map<String, dynamic> json) => _$ListPostReportsFromJson(json);
+
+  @override
+  String get path => '/post/report/list';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetPostReportListResponse responseFactory(Map<String, dynamic> json) => GetPostReportListResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ResolvePostReport with _$ResolvePostReport implements PieFedApiQuery<SuccessResponse> {
+  const factory ResolvePostReport({@JsonKey(name: 'report_id') required int reportId, required bool resolved, required String auth}) = _ResolvePostReport;
+
+  const ResolvePostReport._();
+  factory ResolvePostReport.fromJson(Map<String, dynamic> json) => _$ResolvePostReportFromJson(json);
+
+  @override
+  String get path => '/post/report/resolve';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  SuccessResponse responseFactory(Map<String, dynamic> json) => SuccessResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
 class SubscribePost with _$SubscribePost implements PieFedApiQuery<GetPostResponse> {
   const factory SubscribePost({@JsonKey(name: 'post_id') required int postId, required bool subscribe, required String auth}) = _SubscribePost;
 

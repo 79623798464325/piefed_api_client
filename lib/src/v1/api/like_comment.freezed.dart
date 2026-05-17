@@ -43,18 +43,29 @@ mixin _$LikeComment {
   /// Create a copy of LikeComment
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LikeCommentCopyWith<LikeComment> get copyWith => throw _privateConstructorUsedError;
+  $LikeCommentCopyWith<LikeComment> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LikeCommentCopyWith<$Res> {
-  factory $LikeCommentCopyWith(LikeComment value, $Res Function(LikeComment) then) = _$LikeCommentCopyWithImpl<$Res, LikeComment>;
+  factory $LikeCommentCopyWith(
+    LikeComment value,
+    $Res Function(LikeComment) then,
+  ) = _$LikeCommentCopyWithImpl<$Res, LikeComment>;
   @useResult
-  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, String auth, String? emoji, bool? private});
+  $Res call({
+    @JsonKey(name: 'comment_id') int commentId,
+    int score,
+    String auth,
+    String? emoji,
+    bool? private,
+  });
 }
 
 /// @nodoc
-class _$LikeCommentCopyWithImpl<$Res, $Val extends LikeComment> implements $LikeCommentCopyWith<$Res> {
+class _$LikeCommentCopyWithImpl<$Res, $Val extends LikeComment>
+    implements $LikeCommentCopyWith<$Res> {
   _$LikeCommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -66,7 +77,13 @@ class _$LikeCommentCopyWithImpl<$Res, $Val extends LikeComment> implements $Like
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? commentId = null, Object? score = null, Object? auth = null, Object? emoji = freezed, Object? private = freezed}) {
+  $Res call({
+    Object? commentId = null,
+    Object? score = null,
+    Object? auth = null,
+    Object? emoji = freezed,
+    Object? private = freezed,
+  }) {
     return _then(
       _value.copyWith(
             commentId:
@@ -101,22 +118,43 @@ class _$LikeCommentCopyWithImpl<$Res, $Val extends LikeComment> implements $Like
 }
 
 /// @nodoc
-abstract class _$$LikeCommentImplCopyWith<$Res> implements $LikeCommentCopyWith<$Res> {
-  factory _$$LikeCommentImplCopyWith(_$LikeCommentImpl value, $Res Function(_$LikeCommentImpl) then) = __$$LikeCommentImplCopyWithImpl<$Res>;
+abstract class _$$LikeCommentImplCopyWith<$Res>
+    implements $LikeCommentCopyWith<$Res> {
+  factory _$$LikeCommentImplCopyWith(
+    _$LikeCommentImpl value,
+    $Res Function(_$LikeCommentImpl) then,
+  ) = __$$LikeCommentImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'comment_id') int commentId, int score, String auth, String? emoji, bool? private});
+  $Res call({
+    @JsonKey(name: 'comment_id') int commentId,
+    int score,
+    String auth,
+    String? emoji,
+    bool? private,
+  });
 }
 
 /// @nodoc
-class __$$LikeCommentImplCopyWithImpl<$Res> extends _$LikeCommentCopyWithImpl<$Res, _$LikeCommentImpl> implements _$$LikeCommentImplCopyWith<$Res> {
-  __$$LikeCommentImplCopyWithImpl(_$LikeCommentImpl _value, $Res Function(_$LikeCommentImpl) _then) : super(_value, _then);
+class __$$LikeCommentImplCopyWithImpl<$Res>
+    extends _$LikeCommentCopyWithImpl<$Res, _$LikeCommentImpl>
+    implements _$$LikeCommentImplCopyWith<$Res> {
+  __$$LikeCommentImplCopyWithImpl(
+    _$LikeCommentImpl _value,
+    $Res Function(_$LikeCommentImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of LikeComment
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? commentId = null, Object? score = null, Object? auth = null, Object? emoji = freezed, Object? private = freezed}) {
+  $Res call({
+    Object? commentId = null,
+    Object? score = null,
+    Object? auth = null,
+    Object? emoji = freezed,
+    Object? private = freezed,
+  }) {
     return _then(
       _$LikeCommentImpl(
         commentId:
@@ -153,9 +191,16 @@ class __$$LikeCommentImplCopyWithImpl<$Res> extends _$LikeCommentCopyWithImpl<$R
 
 @JsonSerializable(includeIfNull: false)
 class _$LikeCommentImpl extends _LikeComment {
-  const _$LikeCommentImpl({@JsonKey(name: 'comment_id') required this.commentId, required this.score, required this.auth, this.emoji, this.private}) : super._();
+  const _$LikeCommentImpl({
+    @JsonKey(name: 'comment_id') required this.commentId,
+    required this.score,
+    required this.auth,
+    this.emoji,
+    this.private,
+  }) : super._();
 
-  factory _$LikeCommentImpl.fromJson(Map<String, dynamic> json) => _$$LikeCommentImplFromJson(json);
+  factory _$LikeCommentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LikeCommentImplFromJson(json);
 
   /// The comment to vote on.
   @override
@@ -188,7 +233,8 @@ class _$LikeCommentImpl extends _LikeComment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LikeCommentImpl &&
-            (identical(other.commentId, commentId) || other.commentId == commentId) &&
+            (identical(other.commentId, commentId) ||
+                other.commentId == commentId) &&
             (identical(other.score, score) || other.score == score) &&
             (identical(other.auth, auth) || other.auth == auth) &&
             (identical(other.emoji, emoji) || other.emoji == emoji) &&
@@ -197,14 +243,16 @@ class _$LikeCommentImpl extends _LikeComment {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, commentId, score, auth, emoji, private);
+  int get hashCode =>
+      Object.hash(runtimeType, commentId, score, auth, emoji, private);
 
   /// Create a copy of LikeComment
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LikeCommentImplCopyWith<_$LikeCommentImpl> get copyWith => __$$LikeCommentImplCopyWithImpl<_$LikeCommentImpl>(this, _$identity);
+  _$$LikeCommentImplCopyWith<_$LikeCommentImpl> get copyWith =>
+      __$$LikeCommentImplCopyWithImpl<_$LikeCommentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -213,11 +261,17 @@ class _$LikeCommentImpl extends _LikeComment {
 }
 
 abstract class _LikeComment extends LikeComment {
-  const factory _LikeComment({@JsonKey(name: 'comment_id') required final int commentId, required final int score, required final String auth, final String? emoji, final bool? private}) =
-      _$LikeCommentImpl;
+  const factory _LikeComment({
+    @JsonKey(name: 'comment_id') required final int commentId,
+    required final int score,
+    required final String auth,
+    final String? emoji,
+    final bool? private,
+  }) = _$LikeCommentImpl;
   const _LikeComment._() : super._();
 
-  factory _LikeComment.fromJson(Map<String, dynamic> json) = _$LikeCommentImpl.fromJson;
+  factory _LikeComment.fromJson(Map<String, dynamic> json) =
+      _$LikeCommentImpl.fromJson;
 
   /// The comment to vote on.
   @override
@@ -244,5 +298,6 @@ abstract class _LikeComment extends LikeComment {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LikeCommentImplCopyWith<_$LikeCommentImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$LikeCommentImplCopyWith<_$LikeCommentImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

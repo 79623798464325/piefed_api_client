@@ -272,7 +272,7 @@ class Comment with _$Comment {
 class PrivateMessage with _$PrivateMessage {
   const factory PrivateMessage({
     required int id,
-    @JsonKey(name: 'user_id') required int userId,
+    @JsonKey(name: 'creator_id') required int creatorId,
     @JsonKey(name: 'recipient_id') required int recipientId,
     required String content,
     required bool deleted,
@@ -295,6 +295,96 @@ class CommentReply with _$CommentReply {
   }) = _CommentReply;
 
   factory CommentReply.fromJson(Map<String, dynamic> json) => _$CommentReplyFromJson(json);
+}
+
+@freezed
+class PostReport with _$PostReport {
+  const factory PostReport({
+    required int id,
+    @JsonKey(name: 'creator_id') required int creatorId,
+    @JsonKey(name: 'post_id') required int postId,
+    @JsonKey(name: 'original_post_name') String? originalPostName,
+    @JsonKey(name: 'original_post_body') required String originalPostBody,
+    required String reason,
+    required bool resolved,
+    required DateTime published,
+  }) = _PostReport;
+
+  factory PostReport.fromJson(Map<String, dynamic> json) => _$PostReportFromJson(json);
+}
+
+@freezed
+class CommentReport with _$CommentReport {
+  const factory CommentReport({
+    required int id,
+    @JsonKey(name: 'creator_id') required int creatorId,
+    @JsonKey(name: 'comment_id') required int commentId,
+    @JsonKey(name: 'original_comment_text') String? originalCommentText,
+    String? reason,
+    String? description,
+    required bool resolved,
+    required DateTime published,
+    DateTime? updated,
+  }) = _CommentReport;
+
+  factory CommentReport.fromJson(Map<String, dynamic> json) => _$CommentReportFromJson(json);
+}
+
+@freezed
+class PrivateMessageReport with _$PrivateMessageReport {
+  const factory PrivateMessageReport({
+    required int id,
+    @JsonKey(name: 'creator_id') required int creatorId,
+    @JsonKey(name: 'private_message_id') required int privateMessageId,
+    @JsonKey(name: 'original_pm_text') required String originalPmText,
+    required String? reason,
+    required bool resolved,
+    required DateTime published,
+  }) = _PrivateMessageReport;
+
+  factory PrivateMessageReport.fromJson(Map<String, dynamic> json) => _$PrivateMessageReportFromJson(json);
+}
+
+@freezed
+class ConversationReport with _$ConversationReport {
+  const factory ConversationReport({
+    required int id,
+    @JsonKey(name: 'creator_id') required int creatorId,
+    @JsonKey(name: 'conversation_id') required int conversationId,
+    required String? reason,
+    required String? description,
+    required bool resolved,
+    required DateTime published,
+  }) = _ConversationReport;
+
+  factory ConversationReport.fromJson(Map<String, dynamic> json) => _$ConversationReportFromJson(json);
+}
+
+@freezed
+class UserRegistration with _$UserRegistration {
+  const factory UserRegistration({
+    required String? answer,
+    @JsonKey(name: 'applied_at') DateTime? appliedAt,
+    @JsonKey(name: 'country_code') String? countryCode,
+    required String? email,
+    @JsonKey(name: 'ip_address') required String? ipAddress,
+    @JsonKey(name: 'throwaway_email') bool? throwawayEmail,
+    @JsonKey(name: 'user_id') required int userId,
+    @JsonKey(name: 'user_name') required String userName,
+    required String status,
+    @JsonKey(name: 'approved_by') Person? approvedBy,
+    @JsonKey(name: 'approved_at') DateTime? approvedAt,
+    String? referrer,
+  }) = _UserRegistration;
+
+  factory UserRegistration.fromJson(Map<String, dynamic> json) => _$UserRegistrationFromJson(json);
+}
+
+@freezed
+class CaptchaFields with _$CaptchaFields {
+  const factory CaptchaFields({String? png, String? wav, String? uuid}) = _CaptchaFields;
+
+  factory CaptchaFields.fromJson(Map<String, dynamic> json) => _$CaptchaFieldsFromJson(json);
 }
 
 @freezed

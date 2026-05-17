@@ -41,7 +41,7 @@ class Search with _$Search implements PieFedApiQuery<SearchResponse> {
 
 @freezed
 class SuggestCompletion with _$SuggestCompletion implements PieFedApiQuery<GetSuggestCompletionResponse> {
-  const factory SuggestCompletion({required String q}) = _SuggestCompletion;
+  const factory SuggestCompletion({required String q, String? auth}) = _SuggestCompletion;
 
   const SuggestCompletion._();
   factory SuggestCompletion.fromJson(Map<String, dynamic> json) => _$SuggestCompletionFromJson(json);
