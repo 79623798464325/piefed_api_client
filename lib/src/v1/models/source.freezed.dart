@@ -8554,6 +8554,8 @@ mixin _$LocalUser {
   bool get showReadPosts => throw _privateConstructorUsedError;
   @JsonKey(name: 'show_scores')
   bool get showScores => throw _privateConstructorUsedError;
+  @JsonKey(name: 'manually_approves_followers')
+  bool get manuallyApprovesFollowers => throw _privateConstructorUsedError;
 
   /// Serializes this LocalUser to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -8596,6 +8598,8 @@ abstract class $LocalUserCopyWith<$Res> {
     @JsonKey(name: 'show_nsfw') bool showNsfw,
     @JsonKey(name: 'show_read_posts') bool showReadPosts,
     @JsonKey(name: 'show_scores') bool showScores,
+    @JsonKey(name: 'manually_approves_followers')
+    bool manuallyApprovesFollowers,
   });
 }
 
@@ -8638,6 +8642,7 @@ class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser>
     Object? showNsfw = null,
     Object? showReadPosts = null,
     Object? showScores = null,
+    Object? manuallyApprovesFollowers = null,
   }) {
     return _then(
       _value.copyWith(
@@ -8761,6 +8766,11 @@ class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser>
                     ? _value.showScores
                     : showScores // ignore: cast_nullable_to_non_nullable
                         as bool,
+            manuallyApprovesFollowers:
+                null == manuallyApprovesFollowers
+                    ? _value.manuallyApprovesFollowers
+                    : manuallyApprovesFollowers // ignore: cast_nullable_to_non_nullable
+                        as bool,
           )
           as $Val,
     );
@@ -8802,6 +8812,8 @@ abstract class _$$LocalUserImplCopyWith<$Res>
     @JsonKey(name: 'show_nsfw') bool showNsfw,
     @JsonKey(name: 'show_read_posts') bool showReadPosts,
     @JsonKey(name: 'show_scores') bool showScores,
+    @JsonKey(name: 'manually_approves_followers')
+    bool manuallyApprovesFollowers,
   });
 }
 
@@ -8843,6 +8855,7 @@ class __$$LocalUserImplCopyWithImpl<$Res>
     Object? showNsfw = null,
     Object? showReadPosts = null,
     Object? showScores = null,
+    Object? manuallyApprovesFollowers = null,
   }) {
     return _then(
       _$LocalUserImpl(
@@ -8966,6 +8979,11 @@ class __$$LocalUserImplCopyWithImpl<$Res>
                 ? _value.showScores
                 : showScores // ignore: cast_nullable_to_non_nullable
                     as bool,
+        manuallyApprovesFollowers:
+            null == manuallyApprovesFollowers
+                ? _value.manuallyApprovesFollowers
+                : manuallyApprovesFollowers // ignore: cast_nullable_to_non_nullable
+                    as bool,
       ),
     );
   }
@@ -9003,6 +9021,8 @@ class _$LocalUserImpl implements _LocalUser {
     @JsonKey(name: 'show_nsfw') required this.showNsfw,
     @JsonKey(name: 'show_read_posts') required this.showReadPosts,
     @JsonKey(name: 'show_scores') required this.showScores,
+    @JsonKey(name: 'manually_approves_followers')
+    required this.manuallyApprovesFollowers,
   }) : _communityKeywordFilter = communityKeywordFilter;
 
   factory _$LocalUserImpl.fromJson(Map<String, dynamic> json) =>
@@ -9086,10 +9106,13 @@ class _$LocalUserImpl implements _LocalUser {
   @override
   @JsonKey(name: 'show_scores')
   final bool showScores;
+  @override
+  @JsonKey(name: 'manually_approves_followers')
+  final bool manuallyApprovesFollowers;
 
   @override
   String toString() {
-    return 'LocalUser(acceptPrivateMessages: $acceptPrivateMessages, botVisibility: $botVisibility, aiVisibility: $aiVisibility, communityKeywordFilter: $communityKeywordFilter, defaultCommentSortType: $defaultCommentSortType, defaultListingType: $defaultListingType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, searchable: $searchable, showBotAccounts: $showBotAccounts, showNsfl: $showNsfl, showNsfw: $showNsfw, showReadPosts: $showReadPosts, showScores: $showScores)';
+    return 'LocalUser(acceptPrivateMessages: $acceptPrivateMessages, botVisibility: $botVisibility, aiVisibility: $aiVisibility, communityKeywordFilter: $communityKeywordFilter, defaultCommentSortType: $defaultCommentSortType, defaultListingType: $defaultListingType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, searchable: $searchable, showBotAccounts: $showBotAccounts, showNsfl: $showNsfl, showNsfw: $showNsfw, showReadPosts: $showReadPosts, showScores: $showScores, manuallyApprovesFollowers: $manuallyApprovesFollowers)';
   }
 
   @override
@@ -9146,7 +9169,12 @@ class _$LocalUserImpl implements _LocalUser {
             (identical(other.showReadPosts, showReadPosts) ||
                 other.showReadPosts == showReadPosts) &&
             (identical(other.showScores, showScores) ||
-                other.showScores == showScores));
+                other.showScores == showScores) &&
+            (identical(
+                  other.manuallyApprovesFollowers,
+                  manuallyApprovesFollowers,
+                ) ||
+                other.manuallyApprovesFollowers == manuallyApprovesFollowers));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -9177,6 +9205,7 @@ class _$LocalUserImpl implements _LocalUser {
     showNsfw,
     showReadPosts,
     showScores,
+    manuallyApprovesFollowers,
   ]);
 
   /// Create a copy of LocalUser
@@ -9225,6 +9254,8 @@ abstract class _LocalUser implements LocalUser {
     @JsonKey(name: 'show_nsfw') required final bool showNsfw,
     @JsonKey(name: 'show_read_posts') required final bool showReadPosts,
     @JsonKey(name: 'show_scores') required final bool showScores,
+    @JsonKey(name: 'manually_approves_followers')
+    required final bool manuallyApprovesFollowers,
   }) = _$LocalUserImpl;
 
   factory _LocalUser.fromJson(Map<String, dynamic> json) =
@@ -9299,6 +9330,9 @@ abstract class _LocalUser implements LocalUser {
   @override
   @JsonKey(name: 'show_scores')
   bool get showScores;
+  @override
+  @JsonKey(name: 'manually_approves_followers')
+  bool get manuallyApprovesFollowers;
 
   /// Create a copy of LocalUser
   /// with the given fields replaced by the non-null parameter values.

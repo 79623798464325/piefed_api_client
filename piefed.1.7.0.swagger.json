@@ -642,6 +642,9 @@
           },
           "show_scores": {
             "type": "boolean"
+          },
+          "manually_approves_followers": {
+            "type": "boolean"
           }
         },
         "required": [
@@ -4190,6 +4193,17 @@
           "jwt"
         ]
       },
+      "LogoutResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "success"
+        ]
+      },
       "UserUnreadCountsResponse": {
         "type": "object",
         "properties": {
@@ -4858,6 +4872,44 @@
         "properties": {
           "person_view": {
             "$ref": "#/components/schemas/PersonView"
+          }
+        }
+      },
+      "UserFollowRequest": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "user_id"
+        ]
+      },
+      "UserFollowResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "string"
+          }
+        }
+      },
+      "UserUnfollowRequest": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "user_id"
+        ]
+      },
+      "UserUnfollowResponse": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "string"
           }
         }
       },
@@ -8924,6 +8976,36 @@
         "summary": "Log into PieFed"
       }
     },
+    "/api/alpha/user/logout": {
+      "post": {
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogoutResponse"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User"
+        ],
+        "summary": "Logout / Revoke JWT token"
+      }
+    },
     "/api/alpha/user/unread_count": {
       "get": {
         "responses": {
@@ -9597,6 +9679,92 @@
           "User"
         ],
         "summary": "Set your flair for a community"
+      }
+    },
+    "/api/alpha/user/follow": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserFollowResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserFollowRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "User"
+        ],
+        "summary": "Follow a user"
+      }
+    },
+    "/api/alpha/user/unfollow": {
+      "post": {
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/UNPROCESSABLE_CONTENT"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserUnfollowResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUnfollowRequest"
+              }
+            }
+          }
+        },
+        "tags": [
+          "User"
+        ],
+        "summary": "Unfollow a user"
       }
     },
     "/api/alpha/user/note": {

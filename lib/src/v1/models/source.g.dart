@@ -709,6 +709,7 @@ _$LocalUserImpl _$$LocalUserImplFromJson(Map<String, dynamic> json) =>
       showNsfw: json['show_nsfw'] as bool,
       showReadPosts: json['show_read_posts'] as bool,
       showScores: json['show_scores'] as bool,
+      manuallyApprovesFollowers: json['manually_approves_followers'] as bool,
     );
 
 Map<String, dynamic> _$$LocalUserImplToJson(_$LocalUserImpl instance) =>
@@ -737,4 +738,5 @@ Map<String, dynamic> _$$LocalUserImplToJson(_$LocalUserImpl instance) =>
       'show_nsfw': instance.showNsfw,
       'show_read_posts': instance.showReadPosts,
       'show_scores': instance.showScores,
+      'manually_approves_followers': instance.manuallyApprovesFollowers,
     };

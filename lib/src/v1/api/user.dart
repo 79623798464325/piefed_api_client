@@ -505,3 +505,63 @@ class SubscribeUser with _$SubscribeUser implements PieFedApiQuery<UserSubscribe
   @override
   bool get isMultipart => false;
 }
+
+@freezed
+class Logout with _$Logout implements PieFedApiQuery<LogoutResponse> {
+  const factory Logout({required String auth}) = _Logout;
+
+  const Logout._();
+  factory Logout.fromJson(Map<String, dynamic> json) => _$LogoutFromJson(json);
+
+  @override
+  String get path => '/user/logout';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  LogoutResponse responseFactory(Map<String, dynamic> json) => LogoutResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class FollowUser with _$FollowUser implements PieFedApiQuery<UserFollowResponse> {
+  const factory FollowUser({@JsonKey(name: 'user_id') required int userId, required String auth}) = _FollowUser;
+
+  const FollowUser._();
+  factory FollowUser.fromJson(Map<String, dynamic> json) => _$FollowUserFromJson(json);
+
+  @override
+  String get path => '/user/follow';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserFollowResponse responseFactory(Map<String, dynamic> json) => UserFollowResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class UnfollowUser with _$UnfollowUser implements PieFedApiQuery<UserUnfollowResponse> {
+  const factory UnfollowUser({@JsonKey(name: 'user_id') required int userId, required String auth}) = _UnfollowUser;
+
+  const UnfollowUser._();
+  factory UnfollowUser.fromJson(Map<String, dynamic> json) => _$UnfollowUserFromJson(json);
+
+  @override
+  String get path => '/user/unfollow';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  UserUnfollowResponse responseFactory(Map<String, dynamic> json) => UserUnfollowResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}

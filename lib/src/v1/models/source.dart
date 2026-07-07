@@ -414,6 +414,7 @@ class LocalUser with _$LocalUser {
     @JsonKey(name: 'show_nsfw') required bool showNsfw,
     @JsonKey(name: 'show_read_posts') required bool showReadPosts,
     @JsonKey(name: 'show_scores') required bool showScores,
+    @JsonKey(name: 'manually_approves_followers') required bool manuallyApprovesFollowers,
   }) = _LocalUser;
 
   factory LocalUser.fromJson(Map<String, dynamic> json) => _$LocalUserFromJson(json);

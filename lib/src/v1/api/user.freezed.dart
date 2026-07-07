@@ -5470,3 +5470,510 @@ abstract class _SubscribeUser extends SubscribeUser {
   _$$SubscribeUserImplCopyWith<_$SubscribeUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+Logout _$LogoutFromJson(Map<String, dynamic> json) {
+  return _Logout.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Logout {
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this Logout to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of Logout
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LogoutCopyWith<Logout> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LogoutCopyWith<$Res> {
+  factory $LogoutCopyWith(Logout value, $Res Function(Logout) then) =
+      _$LogoutCopyWithImpl<$Res, Logout>;
+  @useResult
+  $Res call({String auth});
+}
+
+/// @nodoc
+class _$LogoutCopyWithImpl<$Res, $Val extends Logout>
+    implements $LogoutCopyWith<$Res> {
+  _$LogoutCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of Logout
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$LogoutImplCopyWith<$Res> implements $LogoutCopyWith<$Res> {
+  factory _$$LogoutImplCopyWith(
+    _$LogoutImpl value,
+    $Res Function(_$LogoutImpl) then,
+  ) = __$$LogoutImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String auth});
+}
+
+/// @nodoc
+class __$$LogoutImplCopyWithImpl<$Res>
+    extends _$LogoutCopyWithImpl<$Res, _$LogoutImpl>
+    implements _$$LogoutImplCopyWith<$Res> {
+  __$$LogoutImplCopyWithImpl(
+    _$LogoutImpl _value,
+    $Res Function(_$LogoutImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of Logout
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? auth = null}) {
+    return _then(
+      _$LogoutImpl(
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LogoutImpl extends _Logout {
+  const _$LogoutImpl({required this.auth}) : super._();
+
+  factory _$LogoutImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LogoutImplFromJson(json);
+
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'Logout(auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutImpl &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, auth);
+
+  /// Create a copy of Logout
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutImplCopyWith<_$LogoutImpl> get copyWith =>
+      __$$LogoutImplCopyWithImpl<_$LogoutImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LogoutImplToJson(this);
+  }
+}
+
+abstract class _Logout extends Logout {
+  const factory _Logout({required final String auth}) = _$LogoutImpl;
+  const _Logout._() : super._();
+
+  factory _Logout.fromJson(Map<String, dynamic> json) = _$LogoutImpl.fromJson;
+
+  @override
+  String get auth;
+
+  /// Create a copy of Logout
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LogoutImplCopyWith<_$LogoutImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+FollowUser _$FollowUserFromJson(Map<String, dynamic> json) {
+  return _FollowUser.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FollowUser {
+  @JsonKey(name: 'user_id')
+  int get userId => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this FollowUser to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of FollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $FollowUserCopyWith<FollowUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FollowUserCopyWith<$Res> {
+  factory $FollowUserCopyWith(
+    FollowUser value,
+    $Res Function(FollowUser) then,
+  ) = _$FollowUserCopyWithImpl<$Res, FollowUser>;
+  @useResult
+  $Res call({@JsonKey(name: 'user_id') int userId, String auth});
+}
+
+/// @nodoc
+class _$FollowUserCopyWithImpl<$Res, $Val extends FollowUser>
+    implements $FollowUserCopyWith<$Res> {
+  _$FollowUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of FollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? userId = null, Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            userId:
+                null == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$FollowUserImplCopyWith<$Res>
+    implements $FollowUserCopyWith<$Res> {
+  factory _$$FollowUserImplCopyWith(
+    _$FollowUserImpl value,
+    $Res Function(_$FollowUserImpl) then,
+  ) = __$$FollowUserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'user_id') int userId, String auth});
+}
+
+/// @nodoc
+class __$$FollowUserImplCopyWithImpl<$Res>
+    extends _$FollowUserCopyWithImpl<$Res, _$FollowUserImpl>
+    implements _$$FollowUserImplCopyWith<$Res> {
+  __$$FollowUserImplCopyWithImpl(
+    _$FollowUserImpl _value,
+    $Res Function(_$FollowUserImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of FollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? userId = null, Object? auth = null}) {
+    return _then(
+      _$FollowUserImpl(
+        userId:
+            null == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FollowUserImpl extends _FollowUser {
+  const _$FollowUserImpl({
+    @JsonKey(name: 'user_id') required this.userId,
+    required this.auth,
+  }) : super._();
+
+  factory _$FollowUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FollowUserImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'user_id')
+  final int userId;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'FollowUser(userId: $userId, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FollowUserImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, userId, auth);
+
+  /// Create a copy of FollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FollowUserImplCopyWith<_$FollowUserImpl> get copyWith =>
+      __$$FollowUserImplCopyWithImpl<_$FollowUserImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FollowUserImplToJson(this);
+  }
+}
+
+abstract class _FollowUser extends FollowUser {
+  const factory _FollowUser({
+    @JsonKey(name: 'user_id') required final int userId,
+    required final String auth,
+  }) = _$FollowUserImpl;
+  const _FollowUser._() : super._();
+
+  factory _FollowUser.fromJson(Map<String, dynamic> json) =
+      _$FollowUserImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'user_id')
+  int get userId;
+  @override
+  String get auth;
+
+  /// Create a copy of FollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FollowUserImplCopyWith<_$FollowUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UnfollowUser _$UnfollowUserFromJson(Map<String, dynamic> json) {
+  return _UnfollowUser.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UnfollowUser {
+  @JsonKey(name: 'user_id')
+  int get userId => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this UnfollowUser to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UnfollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UnfollowUserCopyWith<UnfollowUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UnfollowUserCopyWith<$Res> {
+  factory $UnfollowUserCopyWith(
+    UnfollowUser value,
+    $Res Function(UnfollowUser) then,
+  ) = _$UnfollowUserCopyWithImpl<$Res, UnfollowUser>;
+  @useResult
+  $Res call({@JsonKey(name: 'user_id') int userId, String auth});
+}
+
+/// @nodoc
+class _$UnfollowUserCopyWithImpl<$Res, $Val extends UnfollowUser>
+    implements $UnfollowUserCopyWith<$Res> {
+  _$UnfollowUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UnfollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? userId = null, Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            userId:
+                null == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UnfollowUserImplCopyWith<$Res>
+    implements $UnfollowUserCopyWith<$Res> {
+  factory _$$UnfollowUserImplCopyWith(
+    _$UnfollowUserImpl value,
+    $Res Function(_$UnfollowUserImpl) then,
+  ) = __$$UnfollowUserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'user_id') int userId, String auth});
+}
+
+/// @nodoc
+class __$$UnfollowUserImplCopyWithImpl<$Res>
+    extends _$UnfollowUserCopyWithImpl<$Res, _$UnfollowUserImpl>
+    implements _$$UnfollowUserImplCopyWith<$Res> {
+  __$$UnfollowUserImplCopyWithImpl(
+    _$UnfollowUserImpl _value,
+    $Res Function(_$UnfollowUserImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UnfollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? userId = null, Object? auth = null}) {
+    return _then(
+      _$UnfollowUserImpl(
+        userId:
+            null == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UnfollowUserImpl extends _UnfollowUser {
+  const _$UnfollowUserImpl({
+    @JsonKey(name: 'user_id') required this.userId,
+    required this.auth,
+  }) : super._();
+
+  factory _$UnfollowUserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnfollowUserImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'user_id')
+  final int userId;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'UnfollowUser(userId: $userId, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnfollowUserImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, userId, auth);
+
+  /// Create a copy of UnfollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnfollowUserImplCopyWith<_$UnfollowUserImpl> get copyWith =>
+      __$$UnfollowUserImplCopyWithImpl<_$UnfollowUserImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnfollowUserImplToJson(this);
+  }
+}
+
+abstract class _UnfollowUser extends UnfollowUser {
+  const factory _UnfollowUser({
+    @JsonKey(name: 'user_id') required final int userId,
+    required final String auth,
+  }) = _$UnfollowUserImpl;
+  const _UnfollowUser._() : super._();
+
+  factory _UnfollowUser.fromJson(Map<String, dynamic> json) =
+      _$UnfollowUserImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'user_id')
+  int get userId;
+  @override
+  String get auth;
+
+  /// Create a copy of UnfollowUser
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UnfollowUserImplCopyWith<_$UnfollowUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

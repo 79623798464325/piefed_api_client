@@ -215,6 +215,7 @@ void main() {
         showNsfw: true,
         showReadPosts: true,
         showScores: true,
+        manuallyApprovesFollowers: false,
       );
       final json = localUser.toJson();
       expect(json['accept_private_messages'], 'All');

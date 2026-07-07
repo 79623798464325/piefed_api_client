@@ -373,3 +373,27 @@ Map<String, dynamic> _$$SubscribeUserImplToJson(_$SubscribeUserImpl instance) =>
       'subscribe': instance.subscribe,
       'auth': instance.auth,
     };
+
+_$LogoutImpl _$$LogoutImplFromJson(Map<String, dynamic> json) =>
+    _$LogoutImpl(auth: json['auth'] as String);
+
+Map<String, dynamic> _$$LogoutImplToJson(_$LogoutImpl instance) =>
+    <String, dynamic>{'auth': instance.auth};
+
+_$FollowUserImpl _$$FollowUserImplFromJson(Map<String, dynamic> json) =>
+    _$FollowUserImpl(
+      userId: (json['user_id'] as num).toInt(),
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$FollowUserImplToJson(_$FollowUserImpl instance) =>
+    <String, dynamic>{'user_id': instance.userId, 'auth': instance.auth};
+
+_$UnfollowUserImpl _$$UnfollowUserImplFromJson(Map<String, dynamic> json) =>
+    _$UnfollowUserImpl(
+      userId: (json['user_id'] as num).toInt(),
+      auth: json['auth'] as String,
+    );
+
+Map<String, dynamic> _$$UnfollowUserImplToJson(_$UnfollowUserImpl instance) =>
+    <String, dynamic>{'user_id': instance.userId, 'auth': instance.auth};

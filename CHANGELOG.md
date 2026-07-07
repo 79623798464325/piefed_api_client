@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.14.0
+
+*   **PieFed v1.7.0 Additional Surface Catch-Up**:
+    *   **New Endpoints**: Added `Logout` (`/api/alpha/user/logout`), `FollowUser` (`/api/alpha/user/follow`), and `UnfollowUser` (`/api/alpha/user/unfollow`).
+    *   **New Models**: Added `LogoutResponse`, `UserFollowResponse`, and `UserUnfollowResponse`.
+    *   **Field Additions**: Added `manuallyApprovesFollowers` to the `LocalUser` model.
+
 ## 0.13.0
 
 *   **PieFed v1.7.0 Surface Catch-Up** — added 19 endpoints + 58 schemas that landed in the 1.7.0 spec but were not yet implemented. Purely additive; no breaking changes.

@@ -16659,3 +16659,478 @@ abstract class _GetModLogResponse implements GetModLogResponse {
   _$$GetModLogResponseImplCopyWith<_$GetModLogResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+LogoutResponse _$LogoutResponseFromJson(Map<String, dynamic> json) {
+  return _LogoutResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LogoutResponse {
+  bool get success => throw _privateConstructorUsedError;
+
+  /// Serializes this LogoutResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LogoutResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LogoutResponseCopyWith<LogoutResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LogoutResponseCopyWith<$Res> {
+  factory $LogoutResponseCopyWith(
+    LogoutResponse value,
+    $Res Function(LogoutResponse) then,
+  ) = _$LogoutResponseCopyWithImpl<$Res, LogoutResponse>;
+  @useResult
+  $Res call({bool success});
+}
+
+/// @nodoc
+class _$LogoutResponseCopyWithImpl<$Res, $Val extends LogoutResponse>
+    implements $LogoutResponseCopyWith<$Res> {
+  _$LogoutResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LogoutResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? success = null}) {
+    return _then(
+      _value.copyWith(
+            success:
+                null == success
+                    ? _value.success
+                    : success // ignore: cast_nullable_to_non_nullable
+                        as bool,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$LogoutResponseImplCopyWith<$Res>
+    implements $LogoutResponseCopyWith<$Res> {
+  factory _$$LogoutResponseImplCopyWith(
+    _$LogoutResponseImpl value,
+    $Res Function(_$LogoutResponseImpl) then,
+  ) = __$$LogoutResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool success});
+}
+
+/// @nodoc
+class __$$LogoutResponseImplCopyWithImpl<$Res>
+    extends _$LogoutResponseCopyWithImpl<$Res, _$LogoutResponseImpl>
+    implements _$$LogoutResponseImplCopyWith<$Res> {
+  __$$LogoutResponseImplCopyWithImpl(
+    _$LogoutResponseImpl _value,
+    $Res Function(_$LogoutResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of LogoutResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? success = null}) {
+    return _then(
+      _$LogoutResponseImpl(
+        success:
+            null == success
+                ? _value.success
+                : success // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LogoutResponseImpl implements _LogoutResponse {
+  const _$LogoutResponseImpl({required this.success});
+
+  factory _$LogoutResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LogoutResponseImplFromJson(json);
+
+  @override
+  final bool success;
+
+  @override
+  String toString() {
+    return 'LogoutResponse(success: $success)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LogoutResponseImpl &&
+            (identical(other.success, success) || other.success == success));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, success);
+
+  /// Create a copy of LogoutResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LogoutResponseImplCopyWith<_$LogoutResponseImpl> get copyWith =>
+      __$$LogoutResponseImplCopyWithImpl<_$LogoutResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LogoutResponseImplToJson(this);
+  }
+}
+
+abstract class _LogoutResponse implements LogoutResponse {
+  const factory _LogoutResponse({required final bool success}) =
+      _$LogoutResponseImpl;
+
+  factory _LogoutResponse.fromJson(Map<String, dynamic> json) =
+      _$LogoutResponseImpl.fromJson;
+
+  @override
+  bool get success;
+
+  /// Create a copy of LogoutResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LogoutResponseImplCopyWith<_$LogoutResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UserFollowResponse _$UserFollowResponseFromJson(Map<String, dynamic> json) {
+  return _UserFollowResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserFollowResponse {
+  String? get ok => throw _privateConstructorUsedError;
+
+  /// Serializes this UserFollowResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UserFollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserFollowResponseCopyWith<UserFollowResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserFollowResponseCopyWith<$Res> {
+  factory $UserFollowResponseCopyWith(
+    UserFollowResponse value,
+    $Res Function(UserFollowResponse) then,
+  ) = _$UserFollowResponseCopyWithImpl<$Res, UserFollowResponse>;
+  @useResult
+  $Res call({String? ok});
+}
+
+/// @nodoc
+class _$UserFollowResponseCopyWithImpl<$Res, $Val extends UserFollowResponse>
+    implements $UserFollowResponseCopyWith<$Res> {
+  _$UserFollowResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserFollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? ok = freezed}) {
+    return _then(
+      _value.copyWith(
+            ok:
+                freezed == ok
+                    ? _value.ok
+                    : ok // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UserFollowResponseImplCopyWith<$Res>
+    implements $UserFollowResponseCopyWith<$Res> {
+  factory _$$UserFollowResponseImplCopyWith(
+    _$UserFollowResponseImpl value,
+    $Res Function(_$UserFollowResponseImpl) then,
+  ) = __$$UserFollowResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? ok});
+}
+
+/// @nodoc
+class __$$UserFollowResponseImplCopyWithImpl<$Res>
+    extends _$UserFollowResponseCopyWithImpl<$Res, _$UserFollowResponseImpl>
+    implements _$$UserFollowResponseImplCopyWith<$Res> {
+  __$$UserFollowResponseImplCopyWithImpl(
+    _$UserFollowResponseImpl _value,
+    $Res Function(_$UserFollowResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UserFollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? ok = freezed}) {
+    return _then(
+      _$UserFollowResponseImpl(
+        ok:
+            freezed == ok
+                ? _value.ok
+                : ok // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserFollowResponseImpl implements _UserFollowResponse {
+  const _$UserFollowResponseImpl({this.ok});
+
+  factory _$UserFollowResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserFollowResponseImplFromJson(json);
+
+  @override
+  final String? ok;
+
+  @override
+  String toString() {
+    return 'UserFollowResponse(ok: $ok)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserFollowResponseImpl &&
+            (identical(other.ok, ok) || other.ok == ok));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, ok);
+
+  /// Create a copy of UserFollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserFollowResponseImplCopyWith<_$UserFollowResponseImpl> get copyWith =>
+      __$$UserFollowResponseImplCopyWithImpl<_$UserFollowResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserFollowResponseImplToJson(this);
+  }
+}
+
+abstract class _UserFollowResponse implements UserFollowResponse {
+  const factory _UserFollowResponse({final String? ok}) =
+      _$UserFollowResponseImpl;
+
+  factory _UserFollowResponse.fromJson(Map<String, dynamic> json) =
+      _$UserFollowResponseImpl.fromJson;
+
+  @override
+  String? get ok;
+
+  /// Create a copy of UserFollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserFollowResponseImplCopyWith<_$UserFollowResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+UserUnfollowResponse _$UserUnfollowResponseFromJson(Map<String, dynamic> json) {
+  return _UserUnfollowResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UserUnfollowResponse {
+  String? get ok => throw _privateConstructorUsedError;
+
+  /// Serializes this UserUnfollowResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of UserUnfollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserUnfollowResponseCopyWith<UserUnfollowResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserUnfollowResponseCopyWith<$Res> {
+  factory $UserUnfollowResponseCopyWith(
+    UserUnfollowResponse value,
+    $Res Function(UserUnfollowResponse) then,
+  ) = _$UserUnfollowResponseCopyWithImpl<$Res, UserUnfollowResponse>;
+  @useResult
+  $Res call({String? ok});
+}
+
+/// @nodoc
+class _$UserUnfollowResponseCopyWithImpl<
+  $Res,
+  $Val extends UserUnfollowResponse
+>
+    implements $UserUnfollowResponseCopyWith<$Res> {
+  _$UserUnfollowResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserUnfollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? ok = freezed}) {
+    return _then(
+      _value.copyWith(
+            ok:
+                freezed == ok
+                    ? _value.ok
+                    : ok // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$UserUnfollowResponseImplCopyWith<$Res>
+    implements $UserUnfollowResponseCopyWith<$Res> {
+  factory _$$UserUnfollowResponseImplCopyWith(
+    _$UserUnfollowResponseImpl value,
+    $Res Function(_$UserUnfollowResponseImpl) then,
+  ) = __$$UserUnfollowResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? ok});
+}
+
+/// @nodoc
+class __$$UserUnfollowResponseImplCopyWithImpl<$Res>
+    extends _$UserUnfollowResponseCopyWithImpl<$Res, _$UserUnfollowResponseImpl>
+    implements _$$UserUnfollowResponseImplCopyWith<$Res> {
+  __$$UserUnfollowResponseImplCopyWithImpl(
+    _$UserUnfollowResponseImpl _value,
+    $Res Function(_$UserUnfollowResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of UserUnfollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? ok = freezed}) {
+    return _then(
+      _$UserUnfollowResponseImpl(
+        ok:
+            freezed == ok
+                ? _value.ok
+                : ok // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserUnfollowResponseImpl implements _UserUnfollowResponse {
+  const _$UserUnfollowResponseImpl({this.ok});
+
+  factory _$UserUnfollowResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserUnfollowResponseImplFromJson(json);
+
+  @override
+  final String? ok;
+
+  @override
+  String toString() {
+    return 'UserUnfollowResponse(ok: $ok)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserUnfollowResponseImpl &&
+            (identical(other.ok, ok) || other.ok == ok));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, ok);
+
+  /// Create a copy of UserUnfollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserUnfollowResponseImplCopyWith<_$UserUnfollowResponseImpl>
+  get copyWith =>
+      __$$UserUnfollowResponseImplCopyWithImpl<_$UserUnfollowResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserUnfollowResponseImplToJson(this);
+  }
+}
+
+abstract class _UserUnfollowResponse implements UserUnfollowResponse {
+  const factory _UserUnfollowResponse({final String? ok}) =
+      _$UserUnfollowResponseImpl;
+
+  factory _UserUnfollowResponse.fromJson(Map<String, dynamic> json) =
+      _$UserUnfollowResponseImpl.fromJson;
+
+  @override
+  String? get ok;
+
+  /// Create a copy of UserUnfollowResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserUnfollowResponseImplCopyWith<_$UserUnfollowResponseImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}

@@ -660,3 +660,24 @@ class GetModLogResponse with _$GetModLogResponse {
 
   factory GetModLogResponse.fromJson(Map<String, dynamic> json) => _$GetModLogResponseFromJson(json);
 }
+
+@freezed
+class LogoutResponse with _$LogoutResponse {
+  const factory LogoutResponse({required bool success}) = _LogoutResponse;
+
+  factory LogoutResponse.fromJson(Map<String, dynamic> json) => _$LogoutResponseFromJson(json);
+}
+
+@freezed
+class UserFollowResponse with _$UserFollowResponse {
+  const factory UserFollowResponse({String? ok}) = _UserFollowResponse;
+
+  factory UserFollowResponse.fromJson(Map<String, dynamic> json) => _$UserFollowResponseFromJson(json);
+}
+
+@freezed
+class UserUnfollowResponse with _$UserUnfollowResponse {
+  const factory UserUnfollowResponse({String? ok}) = _UserUnfollowResponse;
+
+  factory UserUnfollowResponse.fromJson(Map<String, dynamic> json) => _$UserUnfollowResponseFromJson(json);
+}

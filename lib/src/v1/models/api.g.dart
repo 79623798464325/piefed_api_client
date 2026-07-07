@@ -1267,3 +1267,26 @@ Map<String, dynamic> _$$GetModLogResponseImplToJson(
   'admin_purged_comments': instance.adminPurgedComments,
   'hidden_communities': instance.hiddenCommunities,
 };
+
+_$LogoutResponseImpl _$$LogoutResponseImplFromJson(Map<String, dynamic> json) =>
+    _$LogoutResponseImpl(success: json['success'] as bool);
+
+Map<String, dynamic> _$$LogoutResponseImplToJson(
+  _$LogoutResponseImpl instance,
+) => <String, dynamic>{'success': instance.success};
+
+_$UserFollowResponseImpl _$$UserFollowResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserFollowResponseImpl(ok: json['ok'] as String?);
+
+Map<String, dynamic> _$$UserFollowResponseImplToJson(
+  _$UserFollowResponseImpl instance,
+) => <String, dynamic>{'ok': instance.ok};
+
+_$UserUnfollowResponseImpl _$$UserUnfollowResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$UserUnfollowResponseImpl(ok: json['ok'] as String?);
+
+Map<String, dynamic> _$$UserUnfollowResponseImplToJson(
+  _$UserUnfollowResponseImpl instance,
+) => <String, dynamic>{'ok': instance.ok};
