@@ -167,14 +167,17 @@ Map<String, dynamic> _$$RemovePostImplToJson(_$RemovePostImpl instance) =>
 _$PollVoteImpl _$$PollVoteImplFromJson(Map<String, dynamic> json) =>
     _$PollVoteImpl(
       postId: (json['post_id'] as num).toInt(),
-      pollOptionId: (json['poll_option_id'] as num).toInt(),
+      choiceIds:
+          (json['choice_id'] as List<dynamic>)
+              .map((e) => (e as num).toInt())
+              .toList(),
       auth: json['auth'] as String,
     );
 
 Map<String, dynamic> _$$PollVoteImplToJson(_$PollVoteImpl instance) =>
     <String, dynamic>{
       'post_id': instance.postId,
-      'poll_option_id': instance.pollOptionId,
+      'choice_id': instance.choiceIds,
       'auth': instance.auth,
     };
 

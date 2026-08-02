@@ -2233,8 +2233,8 @@ PollVote _$PollVoteFromJson(Map<String, dynamic> json) {
 mixin _$PollVote {
   @JsonKey(name: 'post_id')
   int get postId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'poll_option_id')
-  int get pollOptionId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'choice_id')
+  List<int> get choiceIds => throw _privateConstructorUsedError;
   String get auth => throw _privateConstructorUsedError;
 
   /// Serializes this PollVote to a JSON map.
@@ -2254,7 +2254,7 @@ abstract class $PollVoteCopyWith<$Res> {
   @useResult
   $Res call({
     @JsonKey(name: 'post_id') int postId,
-    @JsonKey(name: 'poll_option_id') int pollOptionId,
+    @JsonKey(name: 'choice_id') List<int> choiceIds,
     String auth,
   });
 }
@@ -2275,7 +2275,7 @@ class _$PollVoteCopyWithImpl<$Res, $Val extends PollVote>
   @override
   $Res call({
     Object? postId = null,
-    Object? pollOptionId = null,
+    Object? choiceIds = null,
     Object? auth = null,
   }) {
     return _then(
@@ -2285,11 +2285,11 @@ class _$PollVoteCopyWithImpl<$Res, $Val extends PollVote>
                     ? _value.postId
                     : postId // ignore: cast_nullable_to_non_nullable
                         as int,
-            pollOptionId:
-                null == pollOptionId
-                    ? _value.pollOptionId
-                    : pollOptionId // ignore: cast_nullable_to_non_nullable
-                        as int,
+            choiceIds:
+                null == choiceIds
+                    ? _value.choiceIds
+                    : choiceIds // ignore: cast_nullable_to_non_nullable
+                        as List<int>,
             auth:
                 null == auth
                     ? _value.auth
@@ -2312,7 +2312,7 @@ abstract class _$$PollVoteImplCopyWith<$Res>
   @useResult
   $Res call({
     @JsonKey(name: 'post_id') int postId,
-    @JsonKey(name: 'poll_option_id') int pollOptionId,
+    @JsonKey(name: 'choice_id') List<int> choiceIds,
     String auth,
   });
 }
@@ -2332,7 +2332,7 @@ class __$$PollVoteImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? postId = null,
-    Object? pollOptionId = null,
+    Object? choiceIds = null,
     Object? auth = null,
   }) {
     return _then(
@@ -2342,11 +2342,11 @@ class __$$PollVoteImplCopyWithImpl<$Res>
                 ? _value.postId
                 : postId // ignore: cast_nullable_to_non_nullable
                     as int,
-        pollOptionId:
-            null == pollOptionId
-                ? _value.pollOptionId
-                : pollOptionId // ignore: cast_nullable_to_non_nullable
-                    as int,
+        choiceIds:
+            null == choiceIds
+                ? _value._choiceIds
+                : choiceIds // ignore: cast_nullable_to_non_nullable
+                    as List<int>,
         auth:
             null == auth
                 ? _value.auth
@@ -2362,9 +2362,10 @@ class __$$PollVoteImplCopyWithImpl<$Res>
 class _$PollVoteImpl extends _PollVote {
   const _$PollVoteImpl({
     @JsonKey(name: 'post_id') required this.postId,
-    @JsonKey(name: 'poll_option_id') required this.pollOptionId,
+    @JsonKey(name: 'choice_id') required final List<int> choiceIds,
     required this.auth,
-  }) : super._();
+  }) : _choiceIds = choiceIds,
+       super._();
 
   factory _$PollVoteImpl.fromJson(Map<String, dynamic> json) =>
       _$$PollVoteImplFromJson(json);
@@ -2372,15 +2373,21 @@ class _$PollVoteImpl extends _PollVote {
   @override
   @JsonKey(name: 'post_id')
   final int postId;
+  final List<int> _choiceIds;
   @override
-  @JsonKey(name: 'poll_option_id')
-  final int pollOptionId;
+  @JsonKey(name: 'choice_id')
+  List<int> get choiceIds {
+    if (_choiceIds is EqualUnmodifiableListView) return _choiceIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_choiceIds);
+  }
+
   @override
   final String auth;
 
   @override
   String toString() {
-    return 'PollVote(postId: $postId, pollOptionId: $pollOptionId, auth: $auth)';
+    return 'PollVote(postId: $postId, choiceIds: $choiceIds, auth: $auth)';
   }
 
   @override
@@ -2389,14 +2396,21 @@ class _$PollVoteImpl extends _PollVote {
         (other.runtimeType == runtimeType &&
             other is _$PollVoteImpl &&
             (identical(other.postId, postId) || other.postId == postId) &&
-            (identical(other.pollOptionId, pollOptionId) ||
-                other.pollOptionId == pollOptionId) &&
+            const DeepCollectionEquality().equals(
+              other._choiceIds,
+              _choiceIds,
+            ) &&
             (identical(other.auth, auth) || other.auth == auth));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, postId, pollOptionId, auth);
+  int get hashCode => Object.hash(
+    runtimeType,
+    postId,
+    const DeepCollectionEquality().hash(_choiceIds),
+    auth,
+  );
 
   /// Create a copy of PollVote
   /// with the given fields replaced by the non-null parameter values.
@@ -2415,7 +2429,7 @@ class _$PollVoteImpl extends _PollVote {
 abstract class _PollVote extends PollVote {
   const factory _PollVote({
     @JsonKey(name: 'post_id') required final int postId,
-    @JsonKey(name: 'poll_option_id') required final int pollOptionId,
+    @JsonKey(name: 'choice_id') required final List<int> choiceIds,
     required final String auth,
   }) = _$PollVoteImpl;
   const _PollVote._() : super._();
@@ -2427,8 +2441,8 @@ abstract class _PollVote extends PollVote {
   @JsonKey(name: 'post_id')
   int get postId;
   @override
-  @JsonKey(name: 'poll_option_id')
-  int get pollOptionId;
+  @JsonKey(name: 'choice_id')
+  List<int> get choiceIds;
   @override
   String get auth;
 

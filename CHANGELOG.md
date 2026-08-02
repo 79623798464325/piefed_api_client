@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.15.0
+
+*   **BREAKING — `PollVote` now matches the PieFed schema**: the request field is
+    `choice_id`, a list of ints, not a scalar `poll_option_id`. The constructor
+    parameter `pollOptionId` (`int`) is replaced by `choiceIds` (`List<int>`).
+    PieFed's `PollVoteRequest` has always declared
+    `choice_id = fields.List(fields.Integer(), required=True)`, so the previous
+    signature produced a request the server rejected. Single-vote polls take a
+    one-element list.
+
+    ```dart
+    // before
+    PollVote(postId: 50, pollOptionId: 2, auth: token);
+    // after
+    PollVote(postId: 50, choiceIds: [2], auth: token);
+    ```
+
 ## 0.14.0
 
 *   **PieFed v1.7.0 Additional Surface Catch-Up**:

@@ -511,12 +511,12 @@ void main() {
     });
 
     test('PollVote', () {
-      const query = PollVote(postId: 50, pollOptionId: 2, auth: 'token');
+      const query = PollVote(postId: 50, choiceIds: [2], auth: 'token');
       expect(query.path, '/post/poll_vote');
       expect(query.httpMethod, HttpMethod.post);
       final json = query.toJson();
       expect(json['post_id'], 50);
-      expect(json['poll_option_id'], 2);
+      expect(json['choice_id'], [2]);
     });
 
     test('GetSiteMetadata', () {
@@ -943,6 +943,18 @@ void main() {
     test('SaveUserSettings serializes display_name', () {
       const query = SaveUserSettings(displayName: 'Spaced Name', auth: 'token');
       expect(query.toJson()['display_name'], 'Spaced Name');
+    });
+
+    test('PollVote serializes choice_id as a list', () {
+      const query =
+          PollVote(postId: 42, choiceIds: [7], auth: 'token');
+      expect(query.path, '/post/poll_vote');
+      final json = query.toJson();
+      expect(json['post_id'], 42);
+      // PieFed's schema requires the field to be named `choice_id` and to be
+      // a list of ints (length 1 in single-vote mode).
+      expect(json.containsKey('poll_option_id'), isFalse);
+      expect(json['choice_id'], [7]);
     });
   });
 }

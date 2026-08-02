@@ -221,7 +221,7 @@ class RemovePost with _$RemovePost implements PieFedApiQuery<GetPostResponse> {
 
 @freezed
 class PollVote with _$PollVote implements PieFedApiQuery<GetPostResponse> {
-  const factory PollVote({@JsonKey(name: 'post_id') required int postId, @JsonKey(name: 'poll_option_id') required int pollOptionId, required String auth}) = _PollVote;
+  const factory PollVote({@JsonKey(name: 'post_id') required int postId, @JsonKey(name: 'choice_id') required List<int> choiceIds, required String auth}) = _PollVote;
 
   const PollVote._();
   factory PollVote.fromJson(Map<String, dynamic> json) => _$PollVoteFromJson(json);
