@@ -946,8 +946,7 @@ void main() {
     });
 
     test('PollVote serializes choice_id as a list', () {
-      const query =
-          PollVote(postId: 42, choiceIds: [7], auth: 'token');
+      const query = PollVote(postId: 42, choiceIds: [7], auth: 'token');
       expect(query.path, '/post/poll_vote');
       final json = query.toJson();
       expect(json['post_id'], 42);
