@@ -37,6 +37,56 @@ Map<String, dynamic> _$$GetPostResponseImplToJson(
   'cross_posts': instance.crossPosts,
 };
 
+_$GetScheduledPostResponseImpl _$$GetScheduledPostResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetScheduledPostResponseImpl(
+  scheduledPostView: ScheduledPostView.fromJson(
+    json['scheduled_post_view'] as Map<String, dynamic>,
+  ),
+  communityView:
+      json['community_view'] == null
+          ? null
+          : CommunityView.fromJson(
+            json['community_view'] as Map<String, dynamic>,
+          ),
+  moderators:
+      (json['moderators'] as List<dynamic>?)
+          ?.map(
+            (e) => CommunityModeratorView.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
+  crossPosts:
+      (json['cross_posts'] as List<dynamic>?)
+          ?.map((e) => PostView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+);
+
+Map<String, dynamic> _$$GetScheduledPostResponseImplToJson(
+  _$GetScheduledPostResponseImpl instance,
+) => <String, dynamic>{
+  'scheduled_post_view': instance.scheduledPostView,
+  'community_view': instance.communityView,
+  'moderators': instance.moderators,
+  'cross_posts': instance.crossPosts,
+};
+
+_$ScheduledPostListResponseImpl _$$ScheduledPostListResponseImplFromJson(
+  Map<String, dynamic> json,
+) => _$ScheduledPostListResponseImpl(
+  scheduledPosts:
+      (json['scheduled_posts'] as List<dynamic>)
+          .map((e) => ScheduledPostView.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  nextPage: json['next_page'] as String?,
+);
+
+Map<String, dynamic> _$$ScheduledPostListResponseImplToJson(
+  _$ScheduledPostListResponseImpl instance,
+) => <String, dynamic>{
+  'scheduled_posts': instance.scheduledPosts,
+  'next_page': instance.nextPage,
+};
+
 _$SuccessResponseImpl _$$SuccessResponseImplFromJson(
   Map<String, dynamic> json,
 ) => _$SuccessResponseImpl(success: json['success'] as bool);
@@ -728,6 +778,8 @@ _$PostSetFlairResponseImpl _$$PostSetFlairResponseImplFromJson(
           ?.map((e) => CommunityFlair.fromJson(e as Map<String, dynamic>))
           .toList(),
   canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
+  blurred: json['blurred'] as bool?,
+  filtered: json['filtered'] as bool?,
   community:
       json['community'] == null
           ? null
@@ -763,6 +815,8 @@ Map<String, dynamic> _$$PostSetFlairResponseImplToJson(
   'my_vote': instance.myVote,
   'flair_list': instance.flairList,
   'can_auth_user_moderate': instance.canAuthUserModerate,
+  'blurred': instance.blurred,
+  'filtered': instance.filtered,
   'community': instance.community,
   'creator': instance.creator,
   'post': instance.post,

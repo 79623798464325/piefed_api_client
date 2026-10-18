@@ -89,9 +89,36 @@ class PostView with _$PostView {
     bool? hidden,
     @JsonKey(name: 'unread_comments') int? unreadComments,
     @JsonKey(name: 'alt_text') String? altText,
+    // Should the post be blurred per the community/user settings?
+    bool? blurred,
+    // Would this post be otherwise blocked by a user filter?
+    bool? filtered,
   }) = _PostView;
 
   factory PostView.fromJson(Map<String, dynamic> json) => _$PostViewFromJson(json);
+}
+
+@freezed
+class ScheduledPostView with _$ScheduledPostView {
+  const factory ScheduledPostView({
+    @JsonKey(name: 'scheduled_post') required ScheduledPost scheduledPost,
+    required Person creator,
+    required Community community,
+    required PostAggregates counts,
+    @JsonKey(fromJson: _subscribedFromJson) required SubscribedType subscribed,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false) required bool creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+  }) = _ScheduledPostView;
+
+  factory ScheduledPostView.fromJson(Map<String, dynamic> json) => _$ScheduledPostViewFromJson(json);
 }
 
 @freezed
@@ -246,6 +273,17 @@ class PostReportView with _$PostReportView {
     @JsonKey(name: 'creator_blocked') required bool creatorBlocked,
     @JsonKey(fromJson: _subscribedFromJson) required SubscribedType subscribed,
     required bool saved,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    bool? hidden,
+    bool? read,
+    @JsonKey(name: 'unread_comments') int? unreadComments,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'my_vote') int? myVote,
   }) = _PostReportView;
 
   factory PostReportView.fromJson(Map<String, dynamic> json) => _$PostReportViewFromJson(json);

@@ -3903,6 +3903,8 @@ mixin _$SaveUserSettings {
   String? get displayName => throw _privateConstructorUsedError;
   @JsonKey(name: 'bot_visibility')
   String? get botVisibility => throw _privateConstructorUsedError;
+  @JsonKey(name: 'reposter_visibility')
+  String? get reposterVisibility => throw _privateConstructorUsedError; // Show, Blur, Hide, Transparent
   @JsonKey(name: 'community_keyword_filter')
   List<String>? get communityKeywordFilter =>
       throw _privateConstructorUsedError;
@@ -3968,6 +3970,7 @@ abstract class $SaveUserSettingsCopyWith<$Res> {
     bool? bot,
     @JsonKey(name: 'display_name') String? displayName,
     @JsonKey(name: 'bot_visibility') String? botVisibility,
+    @JsonKey(name: 'reposter_visibility') String? reposterVisibility,
     @JsonKey(name: 'community_keyword_filter')
     List<String>? communityKeywordFilter,
     String? cover,
@@ -4015,6 +4018,7 @@ class _$SaveUserSettingsCopyWithImpl<$Res, $Val extends SaveUserSettings>
     Object? bot = freezed,
     Object? displayName = freezed,
     Object? botVisibility = freezed,
+    Object? reposterVisibility = freezed,
     Object? communityKeywordFilter = freezed,
     Object? cover = freezed,
     Object? defaultCommentSortType = freezed,
@@ -4069,6 +4073,11 @@ class _$SaveUserSettingsCopyWithImpl<$Res, $Val extends SaveUserSettings>
                 freezed == botVisibility
                     ? _value.botVisibility
                     : botVisibility // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            reposterVisibility:
+                freezed == reposterVisibility
+                    ? _value.reposterVisibility
+                    : reposterVisibility // ignore: cast_nullable_to_non_nullable
                         as String?,
             communityKeywordFilter:
                 freezed == communityKeywordFilter
@@ -4202,6 +4211,7 @@ abstract class _$$SaveUserSettingsImplCopyWith<$Res>
     bool? bot,
     @JsonKey(name: 'display_name') String? displayName,
     @JsonKey(name: 'bot_visibility') String? botVisibility,
+    @JsonKey(name: 'reposter_visibility') String? reposterVisibility,
     @JsonKey(name: 'community_keyword_filter')
     List<String>? communityKeywordFilter,
     String? cover,
@@ -4248,6 +4258,7 @@ class __$$SaveUserSettingsImplCopyWithImpl<$Res>
     Object? bot = freezed,
     Object? displayName = freezed,
     Object? botVisibility = freezed,
+    Object? reposterVisibility = freezed,
     Object? communityKeywordFilter = freezed,
     Object? cover = freezed,
     Object? defaultCommentSortType = freezed,
@@ -4302,6 +4313,11 @@ class __$$SaveUserSettingsImplCopyWithImpl<$Res>
             freezed == botVisibility
                 ? _value.botVisibility
                 : botVisibility // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        reposterVisibility:
+            freezed == reposterVisibility
+                ? _value.reposterVisibility
+                : reposterVisibility // ignore: cast_nullable_to_non_nullable
                     as String?,
         communityKeywordFilter:
             freezed == communityKeywordFilter
@@ -4428,6 +4444,7 @@ class _$SaveUserSettingsImpl extends _SaveUserSettings {
     this.bot,
     @JsonKey(name: 'display_name') this.displayName,
     @JsonKey(name: 'bot_visibility') this.botVisibility,
+    @JsonKey(name: 'reposter_visibility') this.reposterVisibility,
     @JsonKey(name: 'community_keyword_filter')
     final List<String>? communityKeywordFilter,
     this.cover,
@@ -4473,7 +4490,12 @@ class _$SaveUserSettingsImpl extends _SaveUserSettings {
   @override
   @JsonKey(name: 'bot_visibility')
   final String? botVisibility;
+  @override
+  @JsonKey(name: 'reposter_visibility')
+  final String? reposterVisibility;
+  // Show, Blur, Hide, Transparent
   final List<String>? _communityKeywordFilter;
+  // Show, Blur, Hide, Transparent
   @override
   @JsonKey(name: 'community_keyword_filter')
   List<String>? get communityKeywordFilter {
@@ -4554,7 +4576,7 @@ class _$SaveUserSettingsImpl extends _SaveUserSettings {
 
   @override
   String toString() {
-    return 'SaveUserSettings(acceptPrivateMessages: $acceptPrivateMessages, avatar: $avatar, bio: $bio, bot: $bot, displayName: $displayName, botVisibility: $botVisibility, communityKeywordFilter: $communityKeywordFilter, cover: $cover, defaultCommentSortType: $defaultCommentSortType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, extraFields: $extraFields, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, genaiVisibility: $genaiVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, showNsfw: $showNsfw, showNsfl: $showNsfl, showReadPosts: $showReadPosts, searchable: $searchable, auth: $auth)';
+    return 'SaveUserSettings(acceptPrivateMessages: $acceptPrivateMessages, avatar: $avatar, bio: $bio, bot: $bot, displayName: $displayName, botVisibility: $botVisibility, reposterVisibility: $reposterVisibility, communityKeywordFilter: $communityKeywordFilter, cover: $cover, defaultCommentSortType: $defaultCommentSortType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, extraFields: $extraFields, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, genaiVisibility: $genaiVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, showNsfw: $showNsfw, showNsfl: $showNsfl, showReadPosts: $showReadPosts, searchable: $searchable, auth: $auth)';
   }
 
   @override
@@ -4571,6 +4593,8 @@ class _$SaveUserSettingsImpl extends _SaveUserSettings {
                 other.displayName == displayName) &&
             (identical(other.botVisibility, botVisibility) ||
                 other.botVisibility == botVisibility) &&
+            (identical(other.reposterVisibility, reposterVisibility) ||
+                other.reposterVisibility == reposterVisibility) &&
             const DeepCollectionEquality().equals(
               other._communityKeywordFilter,
               _communityKeywordFilter,
@@ -4629,6 +4653,7 @@ class _$SaveUserSettingsImpl extends _SaveUserSettings {
     bot,
     displayName,
     botVisibility,
+    reposterVisibility,
     const DeepCollectionEquality().hash(_communityKeywordFilter),
     cover,
     defaultCommentSortType,
@@ -4679,6 +4704,7 @@ abstract class _SaveUserSettings extends SaveUserSettings {
     final bool? bot,
     @JsonKey(name: 'display_name') final String? displayName,
     @JsonKey(name: 'bot_visibility') final String? botVisibility,
+    @JsonKey(name: 'reposter_visibility') final String? reposterVisibility,
     @JsonKey(name: 'community_keyword_filter')
     final List<String>? communityKeywordFilter,
     final String? cover,
@@ -4725,6 +4751,9 @@ abstract class _SaveUserSettings extends SaveUserSettings {
   @override
   @JsonKey(name: 'bot_visibility')
   String? get botVisibility;
+  @override
+  @JsonKey(name: 'reposter_visibility')
+  String? get reposterVisibility; // Show, Blur, Hide, Transparent
   @override
   @JsonKey(name: 'community_keyword_filter')
   List<String>? get communityKeywordFilter;

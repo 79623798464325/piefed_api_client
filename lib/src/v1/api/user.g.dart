@@ -265,6 +265,7 @@ _$SaveUserSettingsImpl _$$SaveUserSettingsImplFromJson(
   bot: json['bot'] as bool?,
   displayName: json['display_name'] as String?,
   botVisibility: json['bot_visibility'] as String?,
+  reposterVisibility: json['reposter_visibility'] as String?,
   communityKeywordFilter:
       (json['community_keyword_filter'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -304,6 +305,7 @@ Map<String, dynamic> _$$SaveUserSettingsImplToJson(
   'bot': instance.bot,
   'display_name': instance.displayName,
   'bot_visibility': instance.botVisibility,
+  'reposter_visibility': instance.reposterVisibility,
   'community_keyword_filter': instance.communityKeywordFilter,
   'cover': instance.cover,
   'default_comment_sort_type': instance.defaultCommentSortType,

@@ -339,3 +339,155 @@ Map<String, dynamic> _$$SubscribePostImplToJson(_$SubscribePostImpl instance) =>
       'subscribe': instance.subscribe,
       'auth': instance.auth,
     };
+
+_$GetScheduledPostImpl _$$GetScheduledPostImplFromJson(
+  Map<String, dynamic> json,
+) => _$GetScheduledPostImpl(
+  id: (json['id'] as num).toInt(),
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$GetScheduledPostImplToJson(
+  _$GetScheduledPostImpl instance,
+) => <String, dynamic>{'id': instance.id, 'auth': instance.auth};
+
+_$ListScheduledPostsImpl _$$ListScheduledPostsImplFromJson(
+  Map<String, dynamic> json,
+) => _$ListScheduledPostsImpl(
+  q: json['q'] as String?,
+  sort: json['sort'] as String?,
+  communityName: json['community_name'] as String?,
+  communityId: (json['community_id'] as num?)?.toInt(),
+  includeDeleted: json['include_deleted'] as bool?,
+  limit: (json['limit'] as num?)?.toInt(),
+  page: (json['page'] as num?)?.toInt(),
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$ListScheduledPostsImplToJson(
+  _$ListScheduledPostsImpl instance,
+) => <String, dynamic>{
+  if (instance.q case final value?) 'q': value,
+  if (instance.sort case final value?) 'sort': value,
+  if (instance.communityName case final value?) 'community_name': value,
+  if (instance.communityId case final value?) 'community_id': value,
+  if (instance.includeDeleted case final value?) 'include_deleted': value,
+  if (instance.limit case final value?) 'limit': value,
+  if (instance.page case final value?) 'page': value,
+  'auth': instance.auth,
+};
+
+_$CreateScheduledPostImpl _$$CreateScheduledPostImplFromJson(
+  Map<String, dynamic> json,
+) => _$CreateScheduledPostImpl(
+  title: json['title'] as String,
+  communityId: (json['community_id'] as num).toInt(),
+  scheduledFor: DateTime.parse(json['scheduled_for'] as String),
+  repeat: $enumDecodeNullable(_$ScheduledPostRepeatEnumMap, json['repeat']),
+  body: json['body'] as String?,
+  url: json['url'] as String?,
+  altText: json['alt_text'] as String?,
+  nsfw: json['nsfw'] as bool?,
+  aiGenerated: json['ai_generated'] as bool?,
+  languageId: (json['language_id'] as num?)?.toInt(),
+  poll:
+      json['poll'] == null
+          ? null
+          : PostPoll.fromJson(json['poll'] as Map<String, dynamic>),
+  event:
+      json['event'] == null
+          ? null
+          : PostEvent.fromJson(json['event'] as Map<String, dynamic>),
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$CreateScheduledPostImplToJson(
+  _$CreateScheduledPostImpl instance,
+) => <String, dynamic>{
+  'title': instance.title,
+  'community_id': instance.communityId,
+  'scheduled_for': _utcDateTimeToJson(instance.scheduledFor),
+  if (_$ScheduledPostRepeatEnumMap[instance.repeat] case final value?)
+    'repeat': value,
+  if (instance.body case final value?) 'body': value,
+  if (instance.url case final value?) 'url': value,
+  if (instance.altText case final value?) 'alt_text': value,
+  if (instance.nsfw case final value?) 'nsfw': value,
+  if (instance.aiGenerated case final value?) 'ai_generated': value,
+  if (instance.languageId case final value?) 'language_id': value,
+  if (instance.poll case final value?) 'poll': value,
+  if (instance.event case final value?) 'event': value,
+  'auth': instance.auth,
+};
+
+const _$ScheduledPostRepeatEnumMap = {
+  ScheduledPostRepeat.none: 'None',
+  ScheduledPostRepeat.daily: 'Daily',
+  ScheduledPostRepeat.weekly: 'Weekly',
+  ScheduledPostRepeat.monthly: 'Monthly',
+};
+
+_$EditScheduledPostImpl _$$EditScheduledPostImplFromJson(
+  Map<String, dynamic> json,
+) => _$EditScheduledPostImpl(
+  postId: (json['post_id'] as num).toInt(),
+  scheduledFor:
+      json['scheduled_for'] == null
+          ? null
+          : DateTime.parse(json['scheduled_for'] as String),
+  repeat: $enumDecodeNullable(_$ScheduledPostRepeatEnumMap, json['repeat']),
+  title: json['title'] as String?,
+  body: json['body'] as String?,
+  url: json['url'] as String?,
+  altText: json['alt_text'] as String?,
+  nsfw: json['nsfw'] as bool?,
+  languageId: (json['language_id'] as num?)?.toInt(),
+  poll:
+      json['poll'] == null
+          ? null
+          : PostPoll.fromJson(json['poll'] as Map<String, dynamic>),
+  event:
+      json['event'] == null
+          ? null
+          : PostEvent.fromJson(json['event'] as Map<String, dynamic>),
+  tags: json['tags'] as String?,
+  flair: json['flair'] as String?,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$EditScheduledPostImplToJson(
+  _$EditScheduledPostImpl instance,
+) => <String, dynamic>{
+  'post_id': instance.postId,
+  if (_nullableUtcDateTimeToJson(instance.scheduledFor) case final value?)
+    'scheduled_for': value,
+  if (_$ScheduledPostRepeatEnumMap[instance.repeat] case final value?)
+    'repeat': value,
+  if (instance.title case final value?) 'title': value,
+  if (instance.body case final value?) 'body': value,
+  if (instance.url case final value?) 'url': value,
+  if (instance.altText case final value?) 'alt_text': value,
+  if (instance.nsfw case final value?) 'nsfw': value,
+  if (instance.languageId case final value?) 'language_id': value,
+  if (instance.poll case final value?) 'poll': value,
+  if (instance.event case final value?) 'event': value,
+  if (instance.tags case final value?) 'tags': value,
+  if (instance.flair case final value?) 'flair': value,
+  'auth': instance.auth,
+};
+
+_$DeleteScheduledPostImpl _$$DeleteScheduledPostImplFromJson(
+  Map<String, dynamic> json,
+) => _$DeleteScheduledPostImpl(
+  postId: (json['post_id'] as num).toInt(),
+  deleted: json['deleted'] as bool,
+  auth: json['auth'] as String,
+);
+
+Map<String, dynamic> _$$DeleteScheduledPostImplToJson(
+  _$DeleteScheduledPostImpl instance,
+) => <String, dynamic>{
+  'post_id': instance.postId,
+  'deleted': instance.deleted,
+  'auth': instance.auth,
+};

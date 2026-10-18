@@ -171,6 +171,8 @@ _$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
           .toList(),
   tags: json['tags'] as String?,
   flair: json['flair'] as String?,
+  gallery:
+      (json['gallery'] as List<dynamic>?)?.map((e) => e as String).toList(),
 );
 
 Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
@@ -204,6 +206,7 @@ Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
       'cross_posts': instance.crossPosts,
       'tags': instance.tags,
       'flair': instance.flair,
+      'gallery': instance.gallery,
     };
 
 const _$PostTypeEnumMap = {
@@ -213,6 +216,113 @@ const _$PostTypeEnumMap = {
   PostType.video: 'Video',
   PostType.poll: 'Poll',
   PostType.event: 'Event',
+  PostType.gallery: 'Gallery',
+};
+
+_$ScheduledPostImpl _$$ScheduledPostImplFromJson(Map<String, dynamic> json) =>
+    _$ScheduledPostImpl(
+      id: (json['id'] as num).toInt(),
+      title: json['title'] as String,
+      apId: json['ap_id'] as String?,
+      local: json['local'] as bool,
+      nsfw: json['nsfw'] as bool,
+      deleted: json['deleted'] as bool,
+      removed: json['removed'] as bool,
+      userId: (json['user_id'] as num).toInt(),
+      communityId: (json['community_id'] as num).toInt(),
+      languageId: (json['language_id'] as num?)?.toInt(),
+      body: json['body'] as String?,
+      url: json['url'] as String?,
+      smallThumbnailUrl: json['small_thumbnail_url'] as String?,
+      thumbnailUrl: json['thumbnail_url'] as String?,
+      altText: json['alt_text'] as String?,
+      imageDetails:
+          json['image_details'] == null
+              ? null
+              : WidthHeight.fromJson(
+                json['image_details'] as Map<String, dynamic>,
+              ),
+      created: DateTime.parse(json['created'] as String),
+      updated:
+          json['updated'] == null
+              ? null
+              : DateTime.parse(json['updated'] as String),
+      nextScheduledFor: DateTime.parse(json['next_scheduled_for'] as String),
+      repeat:
+          $enumDecodeNullable(
+            _$ScheduledPostRepeatEnumMap,
+            json['repeat'],
+            unknownValue: ScheduledPostRepeat.none,
+          ) ??
+          ScheduledPostRepeat.none,
+      aiGenerated: json['ai_generated'] as bool? ?? false,
+      sticky: json['sticky'] as bool?,
+      instanceSticky: json['instance_sticky'] as bool?,
+      locked: json['locked'] as bool?,
+      postType: $enumDecodeNullable(_$PostTypeEnumMap, json['post_type']),
+      poll:
+          json['poll'] == null
+              ? null
+              : PostPoll.fromJson(json['poll'] as Map<String, dynamic>),
+      event:
+          json['event'] == null
+              ? null
+              : PostEvent.fromJson(json['event'] as Map<String, dynamic>),
+      emojiReactions:
+          (json['emoji_reactions'] as List<dynamic>?)
+              ?.map((e) => Reactions.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      crossPosts:
+          (json['cross_posts'] as List<dynamic>?)
+              ?.map((e) => MiniCrossPosts.fromJson(e as Map<String, dynamic>))
+              .toList(),
+      tags: json['tags'] as String?,
+      flair: json['flair'] as String?,
+      gallery:
+          (json['gallery'] as List<dynamic>?)?.map((e) => e as String).toList(),
+    );
+
+Map<String, dynamic> _$$ScheduledPostImplToJson(_$ScheduledPostImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'ap_id': instance.apId,
+      'local': instance.local,
+      'nsfw': instance.nsfw,
+      'deleted': instance.deleted,
+      'removed': instance.removed,
+      'user_id': instance.userId,
+      'community_id': instance.communityId,
+      'language_id': instance.languageId,
+      'body': instance.body,
+      'url': instance.url,
+      'small_thumbnail_url': instance.smallThumbnailUrl,
+      'thumbnail_url': instance.thumbnailUrl,
+      'alt_text': instance.altText,
+      'image_details': instance.imageDetails,
+      'created': instance.created.toIso8601String(),
+      'updated': instance.updated?.toIso8601String(),
+      'next_scheduled_for': instance.nextScheduledFor.toIso8601String(),
+      'repeat': _$ScheduledPostRepeatEnumMap[instance.repeat]!,
+      'ai_generated': instance.aiGenerated,
+      'sticky': instance.sticky,
+      'instance_sticky': instance.instanceSticky,
+      'locked': instance.locked,
+      'post_type': _$PostTypeEnumMap[instance.postType],
+      'poll': instance.poll,
+      'event': instance.event,
+      'emoji_reactions': instance.emojiReactions,
+      'cross_posts': instance.crossPosts,
+      'tags': instance.tags,
+      'flair': instance.flair,
+      'gallery': instance.gallery,
+    };
+
+const _$ScheduledPostRepeatEnumMap = {
+  ScheduledPostRepeat.none: 'None',
+  ScheduledPostRepeat.daily: 'Daily',
+  ScheduledPostRepeat.weekly: 'Weekly',
+  ScheduledPostRepeat.monthly: 'Monthly',
 };
 
 _$PostPollImpl _$$PostPollImplFromJson(Map<String, dynamic> json) =>
@@ -530,6 +640,7 @@ _$PostReportImpl _$$PostReportImplFromJson(Map<String, dynamic> json) =>
       originalPostName: json['original_post_name'] as String?,
       originalPostBody: json['original_post_body'] as String,
       reason: json['reason'] as String,
+      description: json['description'] as String?,
       resolved: json['resolved'] as bool,
       published: DateTime.parse(json['published'] as String),
     );
@@ -542,6 +653,7 @@ Map<String, dynamic> _$$PostReportImplToJson(_$PostReportImpl instance) =>
       'original_post_name': instance.originalPostName,
       'original_post_body': instance.originalPostBody,
       'reason': instance.reason,
+      'description': instance.description,
       'resolved': instance.resolved,
       'published': instance.published.toIso8601String(),
     };
@@ -709,7 +821,10 @@ _$LocalUserImpl _$$LocalUserImplFromJson(Map<String, dynamic> json) =>
       showNsfw: json['show_nsfw'] as bool,
       showReadPosts: json['show_read_posts'] as bool,
       showScores: json['show_scores'] as bool,
-      manuallyApprovesFollowers: json['manually_approves_followers'] as bool,
+      manuallyApprovesFollowers: json['manually_approves_followers'] as bool?,
+      postsSubjectToAdminApproval:
+          json['posts_subject_to_admin_approval'] as bool?,
+      showReposterAccounts: json['show_reposter_accounts'] as bool?,
     );
 
 Map<String, dynamic> _$$LocalUserImplToJson(_$LocalUserImpl instance) =>
@@ -739,4 +854,6 @@ Map<String, dynamic> _$$LocalUserImplToJson(_$LocalUserImpl instance) =>
       'show_read_posts': instance.showReadPosts,
       'show_scores': instance.showScores,
       'manually_approves_followers': instance.manuallyApprovesFollowers,
+      'posts_subject_to_admin_approval': instance.postsSubjectToAdminApproval,
+      'show_reposter_accounts': instance.showReposterAccounts,
     };

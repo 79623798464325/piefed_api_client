@@ -956,5 +956,76 @@ void main() {
       expect(json.containsKey('poll_option_id'), isFalse);
       expect(json['choice_id'], [7]);
     });
+
+    test('GetScheduledPost', () {
+      const query = GetScheduledPost(id: 5, auth: 'token');
+      expect(query.path, '/post/scheduled');
+      expect(query.httpMethod, HttpMethod.get);
+      expect(query.toJson()['id'], 5);
+    });
+
+    test('ListScheduledPosts', () {
+      const query = ListScheduledPosts(sort: 'Old', communityId: 3, includeDeleted: true, limit: 10, auth: 'token');
+      expect(query.path, '/post/scheduled/list');
+      expect(query.httpMethod, HttpMethod.get);
+      final json = query.toJson();
+      expect(json['sort'], 'Old');
+      expect(json['community_id'], 3);
+      expect(json['include_deleted'], true);
+      expect(json['limit'], 10);
+      expect(json.containsKey('q'), isFalse);
+    });
+
+    test('CreateScheduledPost serializes scheduled_for as UTC and repeat', () {
+      final scheduledFor = DateTime(2026, 11, 1, 9, 30);
+      final query = CreateScheduledPost(title: 'Weekly thread', communityId: 7, scheduledFor: scheduledFor, repeat: ScheduledPostRepeat.weekly, auth: 'token');
+      expect(query.path, '/post/scheduled');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['title'], 'Weekly thread');
+      expect(json['community_id'], 7);
+      // A local DateTime is converted to UTC before sending.
+      expect(json['scheduled_for'], scheduledFor.toUtc().toIso8601String());
+      expect(json['scheduled_for'], endsWith('Z'));
+      expect(json['repeat'], 'Weekly');
+      expect(json.containsKey('body'), isFalse);
+    });
+
+    test('EditScheduledPost omits unset fields', () {
+      const query = EditScheduledPost(postId: 9, title: 'New title', repeat: ScheduledPostRepeat.none, auth: 'token');
+      expect(query.path, '/post/scheduled');
+      expect(query.httpMethod, HttpMethod.put);
+      final json = query.toJson();
+      expect(json['post_id'], 9);
+      expect(json['title'], 'New title');
+      expect(json['repeat'], 'None');
+      expect(json.containsKey('url'), isFalse);
+      expect(json.containsKey('scheduled_for'), isFalse);
+      expect(json.containsKey('clearUrl'), isFalse);
+    });
+
+    test('EditScheduledPost clear flags send explicit nulls', () {
+      const query = EditScheduledPost(postId: 9, clearUrl: true, clearAltText: true, clearTags: true, clearFlair: true, auth: 'token');
+      final json = query.toJson();
+      for (final key in ['url', 'alt_text', 'tags', 'flair']) {
+        expect(json.containsKey(key), isTrue, reason: key);
+        expect(json[key], isNull, reason: key);
+      }
+      expect(json.keys.where((k) => k.startsWith('clear')), isEmpty);
+    });
+
+    test('DeleteScheduledPost', () {
+      const query = DeleteScheduledPost(postId: 9, deleted: true, auth: 'token');
+      expect(query.path, '/post/scheduled/delete');
+      expect(query.httpMethod, HttpMethod.post);
+      final json = query.toJson();
+      expect(json['post_id'], 9);
+      expect(json['deleted'], true);
+    });
+
+    test('SaveUserSettings serializes reposter_visibility', () {
+      const query = SaveUserSettings(reposterVisibility: 'Blur', auth: 'token');
+      expect(query.toJson()['reposter_visibility'], 'Blur');
+    });
   });
 }

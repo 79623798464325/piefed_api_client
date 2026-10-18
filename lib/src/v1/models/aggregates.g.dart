@@ -12,6 +12,8 @@ _$PersonAggregatesImpl _$$PersonAggregatesImplFromJson(
   personId: (json['person_id'] as num).toInt(),
   postCount: (json['post_count'] as num?)?.toInt() ?? 0,
   commentCount: (json['comment_count'] as num?)?.toInt() ?? 0,
+  followerCount: (json['follower_count'] as num?)?.toInt() ?? 0,
+  followingCount: (json['following_count'] as num?)?.toInt() ?? 0,
 );
 
 Map<String, dynamic> _$$PersonAggregatesImplToJson(
@@ -20,6 +22,8 @@ Map<String, dynamic> _$$PersonAggregatesImplToJson(
   'person_id': instance.personId,
   'post_count': instance.postCount,
   'comment_count': instance.commentCount,
+  'follower_count': instance.followerCount,
+  'following_count': instance.followingCount,
 };
 
 _$CommunityAggregatesImpl _$$CommunityAggregatesImplFromJson(

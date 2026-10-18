@@ -9,6 +9,10 @@ class PersonAggregates with _$PersonAggregates {
     @JsonKey(name: 'person_id') required int personId,
     @JsonKey(name: 'post_count') @Default(0) int postCount,
     @JsonKey(name: 'comment_count') @Default(0) int commentCount,
+    // Total followers for local accounts, only local followers for remote accounts.
+    @JsonKey(name: 'follower_count') @Default(0) int followerCount,
+    // Only non-zero for local accounts.
+    @JsonKey(name: 'following_count') @Default(0) int followingCount,
   }) = _PersonAggregates;
 
   factory PersonAggregates.fromJson(Map<String, dynamic> json) => _$PersonAggregatesFromJson(json);

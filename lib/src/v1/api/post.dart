@@ -441,3 +441,163 @@ class SubscribePost with _$SubscribePost implements PieFedApiQuery<GetPostRespon
   @override
   bool get isMultipart => false;
 }
+
+String _utcDateTimeToJson(DateTime value) => value.toUtc().toIso8601String();
+
+String? _nullableUtcDateTimeToJson(DateTime? value) => value?.toUtc().toIso8601String();
+
+@freezed
+class GetScheduledPost with _$GetScheduledPost implements PieFedApiQuery<GetScheduledPostResponse> {
+  const factory GetScheduledPost({required int id, required String auth}) = _GetScheduledPost;
+
+  const GetScheduledPost._();
+  factory GetScheduledPost.fromJson(Map<String, dynamic> json) => _$GetScheduledPostFromJson(json);
+
+  @override
+  String get path => '/post/scheduled';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  GetScheduledPostResponse responseFactory(Map<String, dynamic> json) => GetScheduledPostResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class ListScheduledPosts with _$ListScheduledPosts implements PieFedApiQuery<ScheduledPostListResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory ListScheduledPosts({
+    String? q,
+    String? sort, // New, Old, Relevance
+    @JsonKey(name: 'community_name') String? communityName,
+    @JsonKey(name: 'community_id') int? communityId,
+    @JsonKey(name: 'include_deleted') bool? includeDeleted,
+    int? limit,
+    int? page,
+    required String auth,
+  }) = _ListScheduledPosts;
+
+  const ListScheduledPosts._();
+  factory ListScheduledPosts.fromJson(Map<String, dynamic> json) => _$ListScheduledPostsFromJson(json);
+
+  @override
+  String get path => '/post/scheduled/list';
+  @override
+  HttpMethod get httpMethod => HttpMethod.get;
+  @override
+  ScheduledPostListResponse responseFactory(Map<String, dynamic> json) => ScheduledPostListResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class CreateScheduledPost with _$CreateScheduledPost implements PieFedApiQuery<GetScheduledPostResponse> {
+  @JsonSerializable(includeIfNull: false)
+  const factory CreateScheduledPost({
+    required String title,
+    @JsonKey(name: 'community_id') required int communityId,
+    @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson) required DateTime scheduledFor,
+    ScheduledPostRepeat? repeat,
+    String? body,
+    String? url,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? nsfw,
+    @JsonKey(name: 'ai_generated') bool? aiGenerated,
+    @JsonKey(name: 'language_id') int? languageId,
+    PostPoll? poll,
+    PostEvent? event,
+    required String auth,
+  }) = _CreateScheduledPost;
+
+  const CreateScheduledPost._();
+  factory CreateScheduledPost.fromJson(Map<String, dynamic> json) => _$CreateScheduledPostFromJson(json);
+
+  @override
+  String get path => '/post/scheduled';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetScheduledPostResponse responseFactory(Map<String, dynamic> json) => GetScheduledPostResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@Freezed(toJson: false)
+class EditScheduledPost with _$EditScheduledPost implements PieFedApiQuery<GetScheduledPostResponse> {
+  // Null fields are omitted, so they are left unchanged. Use the clear* flags to
+  // send an explicit null, which removes the existing value on the server.
+  @JsonSerializable(includeIfNull: false)
+  const factory EditScheduledPost({
+    @JsonKey(name: 'post_id') required int postId,
+    @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson) DateTime? scheduledFor,
+    ScheduledPostRepeat? repeat,
+    String? title,
+    String? body,
+    String? url,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? nsfw,
+    @JsonKey(name: 'language_id') int? languageId,
+    PostPoll? poll,
+    PostEvent? event,
+    String? tags, // Comma separated, no hash character
+    String? flair, // Comma separated
+    @JsonKey(includeToJson: false, includeFromJson: false) @Default(false) bool clearUrl,
+    @JsonKey(includeToJson: false, includeFromJson: false) @Default(false) bool clearAltText,
+    @JsonKey(includeToJson: false, includeFromJson: false) @Default(false) bool clearTags,
+    @JsonKey(includeToJson: false, includeFromJson: false) @Default(false) bool clearFlair,
+    required String auth,
+  }) = _EditScheduledPost;
+
+  const EditScheduledPost._();
+  factory EditScheduledPost.fromJson(Map<String, dynamic> json) => _$EditScheduledPostFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => {
+    ..._$$EditScheduledPostImplToJson(this as _$EditScheduledPostImpl),
+    if (clearUrl) 'url': null,
+    if (clearAltText) 'alt_text': null,
+    if (clearTags) 'tags': null,
+    if (clearFlair) 'flair': null,
+  };
+
+  @override
+  String get path => '/post/scheduled';
+  @override
+  HttpMethod get httpMethod => HttpMethod.put;
+  @override
+  GetScheduledPostResponse responseFactory(Map<String, dynamic> json) => GetScheduledPostResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}
+
+@freezed
+class DeleteScheduledPost with _$DeleteScheduledPost implements PieFedApiQuery<GetScheduledPostResponse> {
+  const factory DeleteScheduledPost({@JsonKey(name: 'post_id') required int postId, required bool deleted, required String auth}) = _DeleteScheduledPost;
+
+  const DeleteScheduledPost._();
+  factory DeleteScheduledPost.fromJson(Map<String, dynamic> json) => _$DeleteScheduledPostFromJson(json);
+
+  @override
+  String get path => '/post/scheduled/delete';
+  @override
+  HttpMethod get httpMethod => HttpMethod.post;
+  @override
+  GetScheduledPostResponse responseFactory(Map<String, dynamic> json) => GetScheduledPostResponse.fromJson(json);
+
+  @override
+  List<MultipartFile>? get multipartFiles => null;
+  @override
+  bool get isMultipart => false;
+}

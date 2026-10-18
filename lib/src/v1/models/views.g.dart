@@ -126,6 +126,8 @@ _$PostViewImpl _$$PostViewImplFromJson(Map<String, dynamic> json) =>
       hidden: json['hidden'] as bool?,
       unreadComments: (json['unread_comments'] as num?)?.toInt(),
       altText: json['alt_text'] as String?,
+      blurred: json['blurred'] as bool?,
+      filtered: json['filtered'] as bool?,
     );
 
 Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
@@ -149,7 +151,55 @@ Map<String, dynamic> _$$PostViewImplToJson(_$PostViewImpl instance) =>
       'hidden': instance.hidden,
       'unread_comments': instance.unreadComments,
       'alt_text': instance.altText,
+      'blurred': instance.blurred,
+      'filtered': instance.filtered,
     };
+
+_$ScheduledPostViewImpl _$$ScheduledPostViewImplFromJson(
+  Map<String, dynamic> json,
+) => _$ScheduledPostViewImpl(
+  scheduledPost: ScheduledPost.fromJson(
+    json['scheduled_post'] as Map<String, dynamic>,
+  ),
+  creator: Person.fromJson(json['creator'] as Map<String, dynamic>),
+  community: Community.fromJson(json['community'] as Map<String, dynamic>),
+  counts: PostAggregates.fromJson(json['counts'] as Map<String, dynamic>),
+  subscribed: _subscribedFromJson(json['subscribed']),
+  creatorBannedFromCommunity:
+      json['creator_banned_from_community'] as bool? ?? false,
+  creatorIsAdmin: json['creator_is_admin'] as bool?,
+  creatorIsModerator: json['creator_is_moderator'] as bool?,
+  bannedFromCommunity: json['banned_from_community'] as bool?,
+  activityAlert: json['activity_alert'] as bool?,
+  altText: json['alt_text'] as String?,
+  blurred: json['blurred'] as bool?,
+  filtered: json['filtered'] as bool?,
+  flairList:
+      (json['flair_list'] as List<dynamic>?)
+          ?.map((e) => CommunityFlair.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
+);
+
+Map<String, dynamic> _$$ScheduledPostViewImplToJson(
+  _$ScheduledPostViewImpl instance,
+) => <String, dynamic>{
+  'scheduled_post': instance.scheduledPost,
+  'creator': instance.creator,
+  'community': instance.community,
+  'counts': instance.counts,
+  'subscribed': _$SubscribedTypeEnumMap[instance.subscribed]!,
+  'creator_banned_from_community': instance.creatorBannedFromCommunity,
+  'creator_is_admin': instance.creatorIsAdmin,
+  'creator_is_moderator': instance.creatorIsModerator,
+  'banned_from_community': instance.bannedFromCommunity,
+  'activity_alert': instance.activityAlert,
+  'alt_text': instance.altText,
+  'blurred': instance.blurred,
+  'filtered': instance.filtered,
+  'flair_list': instance.flairList,
+  'can_auth_user_moderate': instance.canAuthUserModerate,
+};
 
 _$PrivateMessageViewImpl _$$PrivateMessageViewImplFromJson(
   Map<String, dynamic> json,
@@ -445,6 +495,20 @@ _$PostReportViewImpl _$$PostReportViewImplFromJson(
   creatorBlocked: json['creator_blocked'] as bool,
   subscribed: _subscribedFromJson(json['subscribed']),
   saved: json['saved'] as bool,
+  bannedFromCommunity: json['banned_from_community'] as bool?,
+  hidden: json['hidden'] as bool?,
+  read: json['read'] as bool?,
+  unreadComments: (json['unread_comments'] as num?)?.toInt(),
+  activityAlert: json['activity_alert'] as bool?,
+  altText: json['alt_text'] as String?,
+  blurred: json['blurred'] as bool?,
+  filtered: json['filtered'] as bool?,
+  canAuthUserModerate: json['can_auth_user_moderate'] as bool?,
+  flairList:
+      (json['flair_list'] as List<dynamic>?)
+          ?.map((e) => CommunityFlair.fromJson(e as Map<String, dynamic>))
+          .toList(),
+  myVote: (json['my_vote'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$$PostReportViewImplToJson(
@@ -462,6 +526,17 @@ Map<String, dynamic> _$$PostReportViewImplToJson(
   'creator_blocked': instance.creatorBlocked,
   'subscribed': _$SubscribedTypeEnumMap[instance.subscribed]!,
   'saved': instance.saved,
+  'banned_from_community': instance.bannedFromCommunity,
+  'hidden': instance.hidden,
+  'read': instance.read,
+  'unread_comments': instance.unreadComments,
+  'activity_alert': instance.activityAlert,
+  'alt_text': instance.altText,
+  'blurred': instance.blurred,
+  'filtered': instance.filtered,
+  'can_auth_user_moderate': instance.canAuthUserModerate,
+  'flair_list': instance.flairList,
+  'my_vote': instance.myVote,
 };
 
 _$CommentReportViewImpl _$$CommentReportViewImplFromJson(

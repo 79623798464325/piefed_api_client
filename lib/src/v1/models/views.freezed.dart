@@ -1261,7 +1261,10 @@ mixin _$PostView {
   @JsonKey(name: 'unread_comments')
   int? get unreadComments => throw _privateConstructorUsedError;
   @JsonKey(name: 'alt_text')
-  String? get altText => throw _privateConstructorUsedError;
+  String? get altText => throw _privateConstructorUsedError; // Should the post be blurred per the community/user settings?
+  bool? get blurred =>
+      throw _privateConstructorUsedError; // Would this post be otherwise blocked by a user filter?
+  bool? get filtered => throw _privateConstructorUsedError;
 
   /// Serializes this PostView to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1299,6 +1302,8 @@ abstract class $PostViewCopyWith<$Res> {
     bool? hidden,
     @JsonKey(name: 'unread_comments') int? unreadComments,
     @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
   });
 
   $PostCopyWith<$Res> get post;
@@ -1341,6 +1346,8 @@ class _$PostViewCopyWithImpl<$Res, $Val extends PostView>
     Object? hidden = freezed,
     Object? unreadComments = freezed,
     Object? altText = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -1439,6 +1446,16 @@ class _$PostViewCopyWithImpl<$Res, $Val extends PostView>
                     ? _value.altText
                     : altText // ignore: cast_nullable_to_non_nullable
                         as String?,
+            blurred:
+                freezed == blurred
+                    ? _value.blurred
+                    : blurred // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            filtered:
+                freezed == filtered
+                    ? _value.filtered
+                    : filtered // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -1515,6 +1532,8 @@ abstract class _$$PostViewImplCopyWith<$Res>
     bool? hidden,
     @JsonKey(name: 'unread_comments') int? unreadComments,
     @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
   });
 
   @override
@@ -1560,6 +1579,8 @@ class __$$PostViewImplCopyWithImpl<$Res>
     Object? hidden = freezed,
     Object? unreadComments = freezed,
     Object? altText = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
   }) {
     return _then(
       _$PostViewImpl(
@@ -1658,6 +1679,16 @@ class __$$PostViewImplCopyWithImpl<$Res>
                 ? _value.altText
                 : altText // ignore: cast_nullable_to_non_nullable
                     as String?,
+        blurred:
+            freezed == blurred
+                ? _value.blurred
+                : blurred // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        filtered:
+            freezed == filtered
+                ? _value.filtered
+                : filtered // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -1688,6 +1719,8 @@ class _$PostViewImpl implements _PostView {
     this.hidden,
     @JsonKey(name: 'unread_comments') this.unreadComments,
     @JsonKey(name: 'alt_text') this.altText,
+    this.blurred,
+    this.filtered,
   }) : _flairList = flairList;
 
   factory _$PostViewImpl.fromJson(Map<String, dynamic> json) =>
@@ -1751,10 +1784,16 @@ class _$PostViewImpl implements _PostView {
   @override
   @JsonKey(name: 'alt_text')
   final String? altText;
+  // Should the post be blurred per the community/user settings?
+  @override
+  final bool? blurred;
+  // Would this post be otherwise blocked by a user filter?
+  @override
+  final bool? filtered;
 
   @override
   String toString() {
-    return 'PostView(post: $post, creator: $creator, community: $community, creatorBannedFromCommunity: $creatorBannedFromCommunity, counts: $counts, subscribed: $subscribed, saved: $saved, read: $read, creatorBlocked: $creatorBlocked, myVote: $myVote, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate, activityAlert: $activityAlert, bannedFromCommunity: $bannedFromCommunity, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, hidden: $hidden, unreadComments: $unreadComments, altText: $altText)';
+    return 'PostView(post: $post, creator: $creator, community: $community, creatorBannedFromCommunity: $creatorBannedFromCommunity, counts: $counts, subscribed: $subscribed, saved: $saved, read: $read, creatorBlocked: $creatorBlocked, myVote: $myVote, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate, activityAlert: $activityAlert, bannedFromCommunity: $bannedFromCommunity, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, hidden: $hidden, unreadComments: $unreadComments, altText: $altText, blurred: $blurred, filtered: $filtered)';
   }
 
   @override
@@ -1797,7 +1836,10 @@ class _$PostViewImpl implements _PostView {
             (identical(other.hidden, hidden) || other.hidden == hidden) &&
             (identical(other.unreadComments, unreadComments) ||
                 other.unreadComments == unreadComments) &&
-            (identical(other.altText, altText) || other.altText == altText));
+            (identical(other.altText, altText) || other.altText == altText) &&
+            (identical(other.blurred, blurred) || other.blurred == blurred) &&
+            (identical(other.filtered, filtered) ||
+                other.filtered == filtered));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1823,6 +1865,8 @@ class _$PostViewImpl implements _PostView {
     hidden,
     unreadComments,
     altText,
+    blurred,
+    filtered,
   ]);
 
   /// Create a copy of PostView
@@ -1863,6 +1907,8 @@ abstract class _PostView implements PostView {
     final bool? hidden,
     @JsonKey(name: 'unread_comments') final int? unreadComments,
     @JsonKey(name: 'alt_text') final String? altText,
+    final bool? blurred,
+    final bool? filtered,
   }) = _$PostViewImpl;
 
   factory _PostView.fromJson(Map<String, dynamic> json) =
@@ -1917,13 +1963,624 @@ abstract class _PostView implements PostView {
   int? get unreadComments;
   @override
   @JsonKey(name: 'alt_text')
-  String? get altText;
+  String? get altText; // Should the post be blurred per the community/user settings?
+  @override
+  bool? get blurred; // Would this post be otherwise blocked by a user filter?
+  @override
+  bool? get filtered;
 
   /// Create a copy of PostView
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PostViewImplCopyWith<_$PostViewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ScheduledPostView _$ScheduledPostViewFromJson(Map<String, dynamic> json) {
+  return _ScheduledPostView.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ScheduledPostView {
+  @JsonKey(name: 'scheduled_post')
+  ScheduledPost get scheduledPost => throw _privateConstructorUsedError;
+  Person get creator => throw _privateConstructorUsedError;
+  Community get community => throw _privateConstructorUsedError;
+  PostAggregates get counts => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _subscribedFromJson)
+  SubscribedType get subscribed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
+  bool get creatorBannedFromCommunity => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_is_admin')
+  bool? get creatorIsAdmin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'creator_is_moderator')
+  bool? get creatorIsModerator => throw _privateConstructorUsedError;
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity => throw _privateConstructorUsedError;
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert => throw _privateConstructorUsedError;
+  @JsonKey(name: 'alt_text')
+  String? get altText => throw _privateConstructorUsedError;
+  bool? get blurred => throw _privateConstructorUsedError;
+  bool? get filtered => throw _privateConstructorUsedError;
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList => throw _privateConstructorUsedError;
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate => throw _privateConstructorUsedError;
+
+  /// Serializes this ScheduledPostView to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ScheduledPostViewCopyWith<ScheduledPostView> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ScheduledPostViewCopyWith<$Res> {
+  factory $ScheduledPostViewCopyWith(
+    ScheduledPostView value,
+    $Res Function(ScheduledPostView) then,
+  ) = _$ScheduledPostViewCopyWithImpl<$Res, ScheduledPostView>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'scheduled_post') ScheduledPost scheduledPost,
+    Person creator,
+    Community community,
+    PostAggregates counts,
+    @JsonKey(fromJson: _subscribedFromJson) SubscribedType subscribed,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
+    bool creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+  });
+
+  $ScheduledPostCopyWith<$Res> get scheduledPost;
+  $PersonCopyWith<$Res> get creator;
+  $CommunityCopyWith<$Res> get community;
+  $PostAggregatesCopyWith<$Res> get counts;
+}
+
+/// @nodoc
+class _$ScheduledPostViewCopyWithImpl<$Res, $Val extends ScheduledPostView>
+    implements $ScheduledPostViewCopyWith<$Res> {
+  _$ScheduledPostViewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scheduledPost = null,
+    Object? creator = null,
+    Object? community = null,
+    Object? counts = null,
+    Object? subscribed = null,
+    Object? creatorBannedFromCommunity = null,
+    Object? creatorIsAdmin = freezed,
+    Object? creatorIsModerator = freezed,
+    Object? bannedFromCommunity = freezed,
+    Object? activityAlert = freezed,
+    Object? altText = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
+    Object? flairList = freezed,
+    Object? canAuthUserModerate = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            scheduledPost:
+                null == scheduledPost
+                    ? _value.scheduledPost
+                    : scheduledPost // ignore: cast_nullable_to_non_nullable
+                        as ScheduledPost,
+            creator:
+                null == creator
+                    ? _value.creator
+                    : creator // ignore: cast_nullable_to_non_nullable
+                        as Person,
+            community:
+                null == community
+                    ? _value.community
+                    : community // ignore: cast_nullable_to_non_nullable
+                        as Community,
+            counts:
+                null == counts
+                    ? _value.counts
+                    : counts // ignore: cast_nullable_to_non_nullable
+                        as PostAggregates,
+            subscribed:
+                null == subscribed
+                    ? _value.subscribed
+                    : subscribed // ignore: cast_nullable_to_non_nullable
+                        as SubscribedType,
+            creatorBannedFromCommunity:
+                null == creatorBannedFromCommunity
+                    ? _value.creatorBannedFromCommunity
+                    : creatorBannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            creatorIsAdmin:
+                freezed == creatorIsAdmin
+                    ? _value.creatorIsAdmin
+                    : creatorIsAdmin // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            creatorIsModerator:
+                freezed == creatorIsModerator
+                    ? _value.creatorIsModerator
+                    : creatorIsModerator // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            bannedFromCommunity:
+                freezed == bannedFromCommunity
+                    ? _value.bannedFromCommunity
+                    : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            activityAlert:
+                freezed == activityAlert
+                    ? _value.activityAlert
+                    : activityAlert // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            altText:
+                freezed == altText
+                    ? _value.altText
+                    : altText // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            blurred:
+                freezed == blurred
+                    ? _value.blurred
+                    : blurred // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            filtered:
+                freezed == filtered
+                    ? _value.filtered
+                    : filtered // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            flairList:
+                freezed == flairList
+                    ? _value.flairList
+                    : flairList // ignore: cast_nullable_to_non_nullable
+                        as List<CommunityFlair>?,
+            canAuthUserModerate:
+                freezed == canAuthUserModerate
+                    ? _value.canAuthUserModerate
+                    : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ScheduledPostCopyWith<$Res> get scheduledPost {
+    return $ScheduledPostCopyWith<$Res>(_value.scheduledPost, (value) {
+      return _then(_value.copyWith(scheduledPost: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PersonCopyWith<$Res> get creator {
+    return $PersonCopyWith<$Res>(_value.creator, (value) {
+      return _then(_value.copyWith(creator: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CommunityCopyWith<$Res> get community {
+    return $CommunityCopyWith<$Res>(_value.community, (value) {
+      return _then(_value.copyWith(community: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostAggregatesCopyWith<$Res> get counts {
+    return $PostAggregatesCopyWith<$Res>(_value.counts, (value) {
+      return _then(_value.copyWith(counts: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ScheduledPostViewImplCopyWith<$Res>
+    implements $ScheduledPostViewCopyWith<$Res> {
+  factory _$$ScheduledPostViewImplCopyWith(
+    _$ScheduledPostViewImpl value,
+    $Res Function(_$ScheduledPostViewImpl) then,
+  ) = __$$ScheduledPostViewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'scheduled_post') ScheduledPost scheduledPost,
+    Person creator,
+    Community community,
+    PostAggregates counts,
+    @JsonKey(fromJson: _subscribedFromJson) SubscribedType subscribed,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
+    bool creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+  });
+
+  @override
+  $ScheduledPostCopyWith<$Res> get scheduledPost;
+  @override
+  $PersonCopyWith<$Res> get creator;
+  @override
+  $CommunityCopyWith<$Res> get community;
+  @override
+  $PostAggregatesCopyWith<$Res> get counts;
+}
+
+/// @nodoc
+class __$$ScheduledPostViewImplCopyWithImpl<$Res>
+    extends _$ScheduledPostViewCopyWithImpl<$Res, _$ScheduledPostViewImpl>
+    implements _$$ScheduledPostViewImplCopyWith<$Res> {
+  __$$ScheduledPostViewImplCopyWithImpl(
+    _$ScheduledPostViewImpl _value,
+    $Res Function(_$ScheduledPostViewImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scheduledPost = null,
+    Object? creator = null,
+    Object? community = null,
+    Object? counts = null,
+    Object? subscribed = null,
+    Object? creatorBannedFromCommunity = null,
+    Object? creatorIsAdmin = freezed,
+    Object? creatorIsModerator = freezed,
+    Object? bannedFromCommunity = freezed,
+    Object? activityAlert = freezed,
+    Object? altText = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
+    Object? flairList = freezed,
+    Object? canAuthUserModerate = freezed,
+  }) {
+    return _then(
+      _$ScheduledPostViewImpl(
+        scheduledPost:
+            null == scheduledPost
+                ? _value.scheduledPost
+                : scheduledPost // ignore: cast_nullable_to_non_nullable
+                    as ScheduledPost,
+        creator:
+            null == creator
+                ? _value.creator
+                : creator // ignore: cast_nullable_to_non_nullable
+                    as Person,
+        community:
+            null == community
+                ? _value.community
+                : community // ignore: cast_nullable_to_non_nullable
+                    as Community,
+        counts:
+            null == counts
+                ? _value.counts
+                : counts // ignore: cast_nullable_to_non_nullable
+                    as PostAggregates,
+        subscribed:
+            null == subscribed
+                ? _value.subscribed
+                : subscribed // ignore: cast_nullable_to_non_nullable
+                    as SubscribedType,
+        creatorBannedFromCommunity:
+            null == creatorBannedFromCommunity
+                ? _value.creatorBannedFromCommunity
+                : creatorBannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        creatorIsAdmin:
+            freezed == creatorIsAdmin
+                ? _value.creatorIsAdmin
+                : creatorIsAdmin // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        creatorIsModerator:
+            freezed == creatorIsModerator
+                ? _value.creatorIsModerator
+                : creatorIsModerator // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        bannedFromCommunity:
+            freezed == bannedFromCommunity
+                ? _value.bannedFromCommunity
+                : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        activityAlert:
+            freezed == activityAlert
+                ? _value.activityAlert
+                : activityAlert // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        altText:
+            freezed == altText
+                ? _value.altText
+                : altText // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        blurred:
+            freezed == blurred
+                ? _value.blurred
+                : blurred // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        filtered:
+            freezed == filtered
+                ? _value.filtered
+                : filtered // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        flairList:
+            freezed == flairList
+                ? _value._flairList
+                : flairList // ignore: cast_nullable_to_non_nullable
+                    as List<CommunityFlair>?,
+        canAuthUserModerate:
+            freezed == canAuthUserModerate
+                ? _value.canAuthUserModerate
+                : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ScheduledPostViewImpl implements _ScheduledPostView {
+  const _$ScheduledPostViewImpl({
+    @JsonKey(name: 'scheduled_post') required this.scheduledPost,
+    required this.creator,
+    required this.community,
+    required this.counts,
+    @JsonKey(fromJson: _subscribedFromJson) required this.subscribed,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
+    required this.creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') this.creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') this.creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') this.bannedFromCommunity,
+    @JsonKey(name: 'activity_alert') this.activityAlert,
+    @JsonKey(name: 'alt_text') this.altText,
+    this.blurred,
+    this.filtered,
+    @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') this.canAuthUserModerate,
+  }) : _flairList = flairList;
+
+  factory _$ScheduledPostViewImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScheduledPostViewImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'scheduled_post')
+  final ScheduledPost scheduledPost;
+  @override
+  final Person creator;
+  @override
+  final Community community;
+  @override
+  final PostAggregates counts;
+  @override
+  @JsonKey(fromJson: _subscribedFromJson)
+  final SubscribedType subscribed;
+  @override
+  @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
+  final bool creatorBannedFromCommunity;
+  @override
+  @JsonKey(name: 'creator_is_admin')
+  final bool? creatorIsAdmin;
+  @override
+  @JsonKey(name: 'creator_is_moderator')
+  final bool? creatorIsModerator;
+  @override
+  @JsonKey(name: 'banned_from_community')
+  final bool? bannedFromCommunity;
+  @override
+  @JsonKey(name: 'activity_alert')
+  final bool? activityAlert;
+  @override
+  @JsonKey(name: 'alt_text')
+  final String? altText;
+  @override
+  final bool? blurred;
+  @override
+  final bool? filtered;
+  final List<CommunityFlair>? _flairList;
+  @override
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList {
+    final value = _flairList;
+    if (value == null) return null;
+    if (_flairList is EqualUnmodifiableListView) return _flairList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  final bool? canAuthUserModerate;
+
+  @override
+  String toString() {
+    return 'ScheduledPostView(scheduledPost: $scheduledPost, creator: $creator, community: $community, counts: $counts, subscribed: $subscribed, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, bannedFromCommunity: $bannedFromCommunity, activityAlert: $activityAlert, altText: $altText, blurred: $blurred, filtered: $filtered, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduledPostViewImpl &&
+            (identical(other.scheduledPost, scheduledPost) ||
+                other.scheduledPost == scheduledPost) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.community, community) ||
+                other.community == community) &&
+            (identical(other.counts, counts) || other.counts == counts) &&
+            (identical(other.subscribed, subscribed) ||
+                other.subscribed == subscribed) &&
+            (identical(
+                  other.creatorBannedFromCommunity,
+                  creatorBannedFromCommunity,
+                ) ||
+                other.creatorBannedFromCommunity ==
+                    creatorBannedFromCommunity) &&
+            (identical(other.creatorIsAdmin, creatorIsAdmin) ||
+                other.creatorIsAdmin == creatorIsAdmin) &&
+            (identical(other.creatorIsModerator, creatorIsModerator) ||
+                other.creatorIsModerator == creatorIsModerator) &&
+            (identical(other.bannedFromCommunity, bannedFromCommunity) ||
+                other.bannedFromCommunity == bannedFromCommunity) &&
+            (identical(other.activityAlert, activityAlert) ||
+                other.activityAlert == activityAlert) &&
+            (identical(other.altText, altText) || other.altText == altText) &&
+            (identical(other.blurred, blurred) || other.blurred == blurred) &&
+            (identical(other.filtered, filtered) ||
+                other.filtered == filtered) &&
+            const DeepCollectionEquality().equals(
+              other._flairList,
+              _flairList,
+            ) &&
+            (identical(other.canAuthUserModerate, canAuthUserModerate) ||
+                other.canAuthUserModerate == canAuthUserModerate));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    scheduledPost,
+    creator,
+    community,
+    counts,
+    subscribed,
+    creatorBannedFromCommunity,
+    creatorIsAdmin,
+    creatorIsModerator,
+    bannedFromCommunity,
+    activityAlert,
+    altText,
+    blurred,
+    filtered,
+    const DeepCollectionEquality().hash(_flairList),
+    canAuthUserModerate,
+  );
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduledPostViewImplCopyWith<_$ScheduledPostViewImpl> get copyWith =>
+      __$$ScheduledPostViewImplCopyWithImpl<_$ScheduledPostViewImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ScheduledPostViewImplToJson(this);
+  }
+}
+
+abstract class _ScheduledPostView implements ScheduledPostView {
+  const factory _ScheduledPostView({
+    @JsonKey(name: 'scheduled_post') required final ScheduledPost scheduledPost,
+    required final Person creator,
+    required final Community community,
+    required final PostAggregates counts,
+    @JsonKey(fromJson: _subscribedFromJson)
+    required final SubscribedType subscribed,
+    @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
+    required final bool creatorBannedFromCommunity,
+    @JsonKey(name: 'creator_is_admin') final bool? creatorIsAdmin,
+    @JsonKey(name: 'creator_is_moderator') final bool? creatorIsModerator,
+    @JsonKey(name: 'banned_from_community') final bool? bannedFromCommunity,
+    @JsonKey(name: 'activity_alert') final bool? activityAlert,
+    @JsonKey(name: 'alt_text') final String? altText,
+    final bool? blurred,
+    final bool? filtered,
+    @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
+    @JsonKey(name: 'can_auth_user_moderate') final bool? canAuthUserModerate,
+  }) = _$ScheduledPostViewImpl;
+
+  factory _ScheduledPostView.fromJson(Map<String, dynamic> json) =
+      _$ScheduledPostViewImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'scheduled_post')
+  ScheduledPost get scheduledPost;
+  @override
+  Person get creator;
+  @override
+  Community get community;
+  @override
+  PostAggregates get counts;
+  @override
+  @JsonKey(fromJson: _subscribedFromJson)
+  SubscribedType get subscribed;
+  @override
+  @JsonKey(name: 'creator_banned_from_community', defaultValue: false)
+  bool get creatorBannedFromCommunity;
+  @override
+  @JsonKey(name: 'creator_is_admin')
+  bool? get creatorIsAdmin;
+  @override
+  @JsonKey(name: 'creator_is_moderator')
+  bool? get creatorIsModerator;
+  @override
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity;
+  @override
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert;
+  @override
+  @JsonKey(name: 'alt_text')
+  String? get altText;
+  @override
+  bool? get blurred;
+  @override
+  bool? get filtered;
+  @override
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList;
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate;
+
+  /// Create a copy of ScheduledPostView
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ScheduledPostViewImplCopyWith<_$ScheduledPostViewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -5748,6 +6405,24 @@ mixin _$PostReportView {
   @JsonKey(fromJson: _subscribedFromJson)
   SubscribedType get subscribed => throw _privateConstructorUsedError;
   bool get saved => throw _privateConstructorUsedError;
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity => throw _privateConstructorUsedError;
+  bool? get hidden => throw _privateConstructorUsedError;
+  bool? get read => throw _privateConstructorUsedError;
+  @JsonKey(name: 'unread_comments')
+  int? get unreadComments => throw _privateConstructorUsedError;
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert => throw _privateConstructorUsedError;
+  @JsonKey(name: 'alt_text')
+  String? get altText => throw _privateConstructorUsedError;
+  bool? get blurred => throw _privateConstructorUsedError;
+  bool? get filtered => throw _privateConstructorUsedError;
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList => throw _privateConstructorUsedError;
+  @JsonKey(name: 'my_vote')
+  int? get myVote => throw _privateConstructorUsedError;
 
   /// Serializes this PostReportView to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -5780,6 +6455,17 @@ abstract class $PostReportViewCopyWith<$Res> {
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
     @JsonKey(fromJson: _subscribedFromJson) SubscribedType subscribed,
     bool saved,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    bool? hidden,
+    bool? read,
+    @JsonKey(name: 'unread_comments') int? unreadComments,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'my_vote') int? myVote,
   });
 
   $PostReportCopyWith<$Res> get postReport;
@@ -5817,6 +6503,17 @@ class _$PostReportViewCopyWithImpl<$Res, $Val extends PostReportView>
     Object? creatorBlocked = null,
     Object? subscribed = null,
     Object? saved = null,
+    Object? bannedFromCommunity = freezed,
+    Object? hidden = freezed,
+    Object? read = freezed,
+    Object? unreadComments = freezed,
+    Object? activityAlert = freezed,
+    Object? altText = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
+    Object? canAuthUserModerate = freezed,
+    Object? flairList = freezed,
+    Object? myVote = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -5880,6 +6577,61 @@ class _$PostReportViewCopyWithImpl<$Res, $Val extends PostReportView>
                     ? _value.saved
                     : saved // ignore: cast_nullable_to_non_nullable
                         as bool,
+            bannedFromCommunity:
+                freezed == bannedFromCommunity
+                    ? _value.bannedFromCommunity
+                    : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            hidden:
+                freezed == hidden
+                    ? _value.hidden
+                    : hidden // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            read:
+                freezed == read
+                    ? _value.read
+                    : read // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            unreadComments:
+                freezed == unreadComments
+                    ? _value.unreadComments
+                    : unreadComments // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            activityAlert:
+                freezed == activityAlert
+                    ? _value.activityAlert
+                    : activityAlert // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            altText:
+                freezed == altText
+                    ? _value.altText
+                    : altText // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            blurred:
+                freezed == blurred
+                    ? _value.blurred
+                    : blurred // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            filtered:
+                freezed == filtered
+                    ? _value.filtered
+                    : filtered // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            canAuthUserModerate:
+                freezed == canAuthUserModerate
+                    ? _value.canAuthUserModerate
+                    : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            flairList:
+                freezed == flairList
+                    ? _value.flairList
+                    : flairList // ignore: cast_nullable_to_non_nullable
+                        as List<CommunityFlair>?,
+            myVote:
+                freezed == myVote
+                    ? _value.myVote
+                    : myVote // ignore: cast_nullable_to_non_nullable
+                        as int?,
           )
           as $Val,
     );
@@ -5969,6 +6721,17 @@ abstract class _$$PostReportViewImplCopyWith<$Res>
     @JsonKey(name: 'creator_blocked') bool creatorBlocked,
     @JsonKey(fromJson: _subscribedFromJson) SubscribedType subscribed,
     bool saved,
+    @JsonKey(name: 'banned_from_community') bool? bannedFromCommunity,
+    bool? hidden,
+    bool? read,
+    @JsonKey(name: 'unread_comments') int? unreadComments,
+    @JsonKey(name: 'activity_alert') bool? activityAlert,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? blurred,
+    bool? filtered,
+    @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
+    @JsonKey(name: 'my_vote') int? myVote,
   });
 
   @override
@@ -6011,6 +6774,17 @@ class __$$PostReportViewImplCopyWithImpl<$Res>
     Object? creatorBlocked = null,
     Object? subscribed = null,
     Object? saved = null,
+    Object? bannedFromCommunity = freezed,
+    Object? hidden = freezed,
+    Object? read = freezed,
+    Object? unreadComments = freezed,
+    Object? activityAlert = freezed,
+    Object? altText = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
+    Object? canAuthUserModerate = freezed,
+    Object? flairList = freezed,
+    Object? myVote = freezed,
   }) {
     return _then(
       _$PostReportViewImpl(
@@ -6074,6 +6848,61 @@ class __$$PostReportViewImplCopyWithImpl<$Res>
                 ? _value.saved
                 : saved // ignore: cast_nullable_to_non_nullable
                     as bool,
+        bannedFromCommunity:
+            freezed == bannedFromCommunity
+                ? _value.bannedFromCommunity
+                : bannedFromCommunity // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        hidden:
+            freezed == hidden
+                ? _value.hidden
+                : hidden // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        read:
+            freezed == read
+                ? _value.read
+                : read // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        unreadComments:
+            freezed == unreadComments
+                ? _value.unreadComments
+                : unreadComments // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        activityAlert:
+            freezed == activityAlert
+                ? _value.activityAlert
+                : activityAlert // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        altText:
+            freezed == altText
+                ? _value.altText
+                : altText // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        blurred:
+            freezed == blurred
+                ? _value.blurred
+                : blurred // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        filtered:
+            freezed == filtered
+                ? _value.filtered
+                : filtered // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        canAuthUserModerate:
+            freezed == canAuthUserModerate
+                ? _value.canAuthUserModerate
+                : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        flairList:
+            freezed == flairList
+                ? _value._flairList
+                : flairList // ignore: cast_nullable_to_non_nullable
+                    as List<CommunityFlair>?,
+        myVote:
+            freezed == myVote
+                ? _value.myVote
+                : myVote // ignore: cast_nullable_to_non_nullable
+                    as int?,
       ),
     );
   }
@@ -6096,7 +6925,18 @@ class _$PostReportViewImpl implements _PostReportView {
     @JsonKey(name: 'creator_blocked') required this.creatorBlocked,
     @JsonKey(fromJson: _subscribedFromJson) required this.subscribed,
     required this.saved,
-  });
+    @JsonKey(name: 'banned_from_community') this.bannedFromCommunity,
+    this.hidden,
+    this.read,
+    @JsonKey(name: 'unread_comments') this.unreadComments,
+    @JsonKey(name: 'activity_alert') this.activityAlert,
+    @JsonKey(name: 'alt_text') this.altText,
+    this.blurred,
+    this.filtered,
+    @JsonKey(name: 'can_auth_user_moderate') this.canAuthUserModerate,
+    @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
+    @JsonKey(name: 'my_vote') this.myVote,
+  }) : _flairList = flairList;
 
   factory _$PostReportViewImpl.fromJson(Map<String, dynamic> json) =>
       _$$PostReportViewImplFromJson(json);
@@ -6132,10 +6972,47 @@ class _$PostReportViewImpl implements _PostReportView {
   final SubscribedType subscribed;
   @override
   final bool saved;
+  @override
+  @JsonKey(name: 'banned_from_community')
+  final bool? bannedFromCommunity;
+  @override
+  final bool? hidden;
+  @override
+  final bool? read;
+  @override
+  @JsonKey(name: 'unread_comments')
+  final int? unreadComments;
+  @override
+  @JsonKey(name: 'activity_alert')
+  final bool? activityAlert;
+  @override
+  @JsonKey(name: 'alt_text')
+  final String? altText;
+  @override
+  final bool? blurred;
+  @override
+  final bool? filtered;
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  final bool? canAuthUserModerate;
+  final List<CommunityFlair>? _flairList;
+  @override
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList {
+    final value = _flairList;
+    if (value == null) return null;
+    if (_flairList is EqualUnmodifiableListView) return _flairList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'my_vote')
+  final int? myVote;
 
   @override
   String toString() {
-    return 'PostReportView(postReport: $postReport, post: $post, community: $community, creator: $creator, postCreator: $postCreator, counts: $counts, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorIsModerator: $creatorIsModerator, creatorIsAdmin: $creatorIsAdmin, creatorBlocked: $creatorBlocked, subscribed: $subscribed, saved: $saved)';
+    return 'PostReportView(postReport: $postReport, post: $post, community: $community, creator: $creator, postCreator: $postCreator, counts: $counts, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorIsModerator: $creatorIsModerator, creatorIsAdmin: $creatorIsAdmin, creatorBlocked: $creatorBlocked, subscribed: $subscribed, saved: $saved, bannedFromCommunity: $bannedFromCommunity, hidden: $hidden, read: $read, unreadComments: $unreadComments, activityAlert: $activityAlert, altText: $altText, blurred: $blurred, filtered: $filtered, canAuthUserModerate: $canAuthUserModerate, flairList: $flairList, myVote: $myVote)';
   }
 
   @override
@@ -6166,12 +7043,31 @@ class _$PostReportViewImpl implements _PostReportView {
                 other.creatorBlocked == creatorBlocked) &&
             (identical(other.subscribed, subscribed) ||
                 other.subscribed == subscribed) &&
-            (identical(other.saved, saved) || other.saved == saved));
+            (identical(other.saved, saved) || other.saved == saved) &&
+            (identical(other.bannedFromCommunity, bannedFromCommunity) ||
+                other.bannedFromCommunity == bannedFromCommunity) &&
+            (identical(other.hidden, hidden) || other.hidden == hidden) &&
+            (identical(other.read, read) || other.read == read) &&
+            (identical(other.unreadComments, unreadComments) ||
+                other.unreadComments == unreadComments) &&
+            (identical(other.activityAlert, activityAlert) ||
+                other.activityAlert == activityAlert) &&
+            (identical(other.altText, altText) || other.altText == altText) &&
+            (identical(other.blurred, blurred) || other.blurred == blurred) &&
+            (identical(other.filtered, filtered) ||
+                other.filtered == filtered) &&
+            (identical(other.canAuthUserModerate, canAuthUserModerate) ||
+                other.canAuthUserModerate == canAuthUserModerate) &&
+            const DeepCollectionEquality().equals(
+              other._flairList,
+              _flairList,
+            ) &&
+            (identical(other.myVote, myVote) || other.myVote == myVote));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     runtimeType,
     postReport,
     post,
@@ -6185,7 +7081,18 @@ class _$PostReportViewImpl implements _PostReportView {
     creatorBlocked,
     subscribed,
     saved,
-  );
+    bannedFromCommunity,
+    hidden,
+    read,
+    unreadComments,
+    activityAlert,
+    altText,
+    blurred,
+    filtered,
+    canAuthUserModerate,
+    const DeepCollectionEquality().hash(_flairList),
+    myVote,
+  ]);
 
   /// Create a copy of PostReportView
   /// with the given fields replaced by the non-null parameter values.
@@ -6221,6 +7128,17 @@ abstract class _PostReportView implements PostReportView {
     @JsonKey(fromJson: _subscribedFromJson)
     required final SubscribedType subscribed,
     required final bool saved,
+    @JsonKey(name: 'banned_from_community') final bool? bannedFromCommunity,
+    final bool? hidden,
+    final bool? read,
+    @JsonKey(name: 'unread_comments') final int? unreadComments,
+    @JsonKey(name: 'activity_alert') final bool? activityAlert,
+    @JsonKey(name: 'alt_text') final String? altText,
+    final bool? blurred,
+    final bool? filtered,
+    @JsonKey(name: 'can_auth_user_moderate') final bool? canAuthUserModerate,
+    @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
+    @JsonKey(name: 'my_vote') final int? myVote,
   }) = _$PostReportViewImpl;
 
   factory _PostReportView.fromJson(Map<String, dynamic> json) =
@@ -6257,6 +7175,35 @@ abstract class _PostReportView implements PostReportView {
   SubscribedType get subscribed;
   @override
   bool get saved;
+  @override
+  @JsonKey(name: 'banned_from_community')
+  bool? get bannedFromCommunity;
+  @override
+  bool? get hidden;
+  @override
+  bool? get read;
+  @override
+  @JsonKey(name: 'unread_comments')
+  int? get unreadComments;
+  @override
+  @JsonKey(name: 'activity_alert')
+  bool? get activityAlert;
+  @override
+  @JsonKey(name: 'alt_text')
+  String? get altText;
+  @override
+  bool? get blurred;
+  @override
+  bool? get filtered;
+  @override
+  @JsonKey(name: 'can_auth_user_moderate')
+  bool? get canAuthUserModerate;
+  @override
+  @JsonKey(name: 'flair_list')
+  List<CommunityFlair>? get flairList;
+  @override
+  @JsonKey(name: 'my_vote')
+  int? get myVote;
 
   /// Create a copy of PostReportView
   /// with the given fields replaced by the non-null parameter values.

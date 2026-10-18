@@ -26,7 +26,11 @@ mixin _$PersonAggregates {
   @JsonKey(name: 'post_count')
   int get postCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'comment_count')
-  int get commentCount => throw _privateConstructorUsedError;
+  int get commentCount => throw _privateConstructorUsedError; // Total followers for local accounts, only local followers for remote accounts.
+  @JsonKey(name: 'follower_count')
+  int get followerCount => throw _privateConstructorUsedError; // Only non-zero for local accounts.
+  @JsonKey(name: 'following_count')
+  int get followingCount => throw _privateConstructorUsedError;
 
   /// Serializes this PersonAggregates to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,6 +53,8 @@ abstract class $PersonAggregatesCopyWith<$Res> {
     @JsonKey(name: 'person_id') int personId,
     @JsonKey(name: 'post_count') int postCount,
     @JsonKey(name: 'comment_count') int commentCount,
+    @JsonKey(name: 'follower_count') int followerCount,
+    @JsonKey(name: 'following_count') int followingCount,
   });
 }
 
@@ -70,6 +76,8 @@ class _$PersonAggregatesCopyWithImpl<$Res, $Val extends PersonAggregates>
     Object? personId = null,
     Object? postCount = null,
     Object? commentCount = null,
+    Object? followerCount = null,
+    Object? followingCount = null,
   }) {
     return _then(
       _value.copyWith(
@@ -87,6 +95,16 @@ class _$PersonAggregatesCopyWithImpl<$Res, $Val extends PersonAggregates>
                 null == commentCount
                     ? _value.commentCount
                     : commentCount // ignore: cast_nullable_to_non_nullable
+                        as int,
+            followerCount:
+                null == followerCount
+                    ? _value.followerCount
+                    : followerCount // ignore: cast_nullable_to_non_nullable
+                        as int,
+            followingCount:
+                null == followingCount
+                    ? _value.followingCount
+                    : followingCount // ignore: cast_nullable_to_non_nullable
                         as int,
           )
           as $Val,
@@ -107,6 +125,8 @@ abstract class _$$PersonAggregatesImplCopyWith<$Res>
     @JsonKey(name: 'person_id') int personId,
     @JsonKey(name: 'post_count') int postCount,
     @JsonKey(name: 'comment_count') int commentCount,
+    @JsonKey(name: 'follower_count') int followerCount,
+    @JsonKey(name: 'following_count') int followingCount,
   });
 }
 
@@ -127,6 +147,8 @@ class __$$PersonAggregatesImplCopyWithImpl<$Res>
     Object? personId = null,
     Object? postCount = null,
     Object? commentCount = null,
+    Object? followerCount = null,
+    Object? followingCount = null,
   }) {
     return _then(
       _$PersonAggregatesImpl(
@@ -145,6 +167,16 @@ class __$$PersonAggregatesImplCopyWithImpl<$Res>
                 ? _value.commentCount
                 : commentCount // ignore: cast_nullable_to_non_nullable
                     as int,
+        followerCount:
+            null == followerCount
+                ? _value.followerCount
+                : followerCount // ignore: cast_nullable_to_non_nullable
+                    as int,
+        followingCount:
+            null == followingCount
+                ? _value.followingCount
+                : followingCount // ignore: cast_nullable_to_non_nullable
+                    as int,
       ),
     );
   }
@@ -157,6 +189,8 @@ class _$PersonAggregatesImpl implements _PersonAggregates {
     @JsonKey(name: 'person_id') required this.personId,
     @JsonKey(name: 'post_count') this.postCount = 0,
     @JsonKey(name: 'comment_count') this.commentCount = 0,
+    @JsonKey(name: 'follower_count') this.followerCount = 0,
+    @JsonKey(name: 'following_count') this.followingCount = 0,
   });
 
   factory _$PersonAggregatesImpl.fromJson(Map<String, dynamic> json) =>
@@ -171,10 +205,18 @@ class _$PersonAggregatesImpl implements _PersonAggregates {
   @override
   @JsonKey(name: 'comment_count')
   final int commentCount;
+  // Total followers for local accounts, only local followers for remote accounts.
+  @override
+  @JsonKey(name: 'follower_count')
+  final int followerCount;
+  // Only non-zero for local accounts.
+  @override
+  @JsonKey(name: 'following_count')
+  final int followingCount;
 
   @override
   String toString() {
-    return 'PersonAggregates(personId: $personId, postCount: $postCount, commentCount: $commentCount)';
+    return 'PersonAggregates(personId: $personId, postCount: $postCount, commentCount: $commentCount, followerCount: $followerCount, followingCount: $followingCount)';
   }
 
   @override
@@ -187,13 +229,23 @@ class _$PersonAggregatesImpl implements _PersonAggregates {
             (identical(other.postCount, postCount) ||
                 other.postCount == postCount) &&
             (identical(other.commentCount, commentCount) ||
-                other.commentCount == commentCount));
+                other.commentCount == commentCount) &&
+            (identical(other.followerCount, followerCount) ||
+                other.followerCount == followerCount) &&
+            (identical(other.followingCount, followingCount) ||
+                other.followingCount == followingCount));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, personId, postCount, commentCount);
+  int get hashCode => Object.hash(
+    runtimeType,
+    personId,
+    postCount,
+    commentCount,
+    followerCount,
+    followingCount,
+  );
 
   /// Create a copy of PersonAggregates
   /// with the given fields replaced by the non-null parameter values.
@@ -217,6 +269,8 @@ abstract class _PersonAggregates implements PersonAggregates {
     @JsonKey(name: 'person_id') required final int personId,
     @JsonKey(name: 'post_count') final int postCount,
     @JsonKey(name: 'comment_count') final int commentCount,
+    @JsonKey(name: 'follower_count') final int followerCount,
+    @JsonKey(name: 'following_count') final int followingCount,
   }) = _$PersonAggregatesImpl;
 
   factory _PersonAggregates.fromJson(Map<String, dynamic> json) =
@@ -230,7 +284,13 @@ abstract class _PersonAggregates implements PersonAggregates {
   int get postCount;
   @override
   @JsonKey(name: 'comment_count')
-  int get commentCount;
+  int get commentCount; // Total followers for local accounts, only local followers for remote accounts.
+  @override
+  @JsonKey(name: 'follower_count')
+  int get followerCount; // Only non-zero for local accounts.
+  @override
+  @JsonKey(name: 'following_count')
+  int get followingCount;
 
   /// Create a copy of PersonAggregates
   /// with the given fields replaced by the non-null parameter values.

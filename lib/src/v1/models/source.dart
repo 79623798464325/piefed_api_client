@@ -97,9 +97,50 @@ class Post with _$Post {
     @JsonKey(name: 'cross_posts') List<MiniCrossPosts>? crossPosts,
     String? tags,
     String? flair,
+    List<String>? gallery,
   }) = _Post;
 
   factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
+}
+
+@freezed
+class ScheduledPost with _$ScheduledPost {
+  const factory ScheduledPost({
+    required int id,
+    required String title,
+    @JsonKey(name: 'ap_id') String? apId,
+    required bool local,
+    required bool nsfw,
+    required bool deleted,
+    required bool removed,
+    @JsonKey(name: 'user_id') required int userId,
+    @JsonKey(name: 'community_id') required int communityId,
+    @JsonKey(name: 'language_id') int? languageId,
+    String? body,
+    String? url,
+    @JsonKey(name: 'small_thumbnail_url') String? smallThumbnailUrl,
+    @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
+    @JsonKey(name: 'alt_text') String? altText,
+    @JsonKey(name: 'image_details') WidthHeight? imageDetails,
+    required DateTime created,
+    DateTime? updated,
+    @JsonKey(name: 'next_scheduled_for') required DateTime nextScheduledFor,
+    @JsonKey(unknownEnumValue: ScheduledPostRepeat.none) @Default(ScheduledPostRepeat.none) ScheduledPostRepeat repeat,
+    @JsonKey(name: 'ai_generated', defaultValue: false) required bool aiGenerated,
+    bool? sticky,
+    @JsonKey(name: 'instance_sticky') bool? instanceSticky,
+    bool? locked,
+    @JsonKey(name: 'post_type') PostType? postType,
+    PostPoll? poll,
+    PostEvent? event,
+    @JsonKey(name: 'emoji_reactions') List<Reactions>? emojiReactions,
+    @JsonKey(name: 'cross_posts') List<MiniCrossPosts>? crossPosts,
+    String? tags,
+    String? flair,
+    List<String>? gallery,
+  }) = _ScheduledPost;
+
+  factory ScheduledPost.fromJson(Map<String, dynamic> json) => _$ScheduledPostFromJson(json);
 }
 
 enum PostType {
@@ -115,6 +156,19 @@ enum PostType {
   poll,
   @JsonValue('Event')
   event,
+  @JsonValue('Gallery')
+  gallery,
+}
+
+enum ScheduledPostRepeat {
+  @JsonValue('None')
+  none,
+  @JsonValue('Daily')
+  daily,
+  @JsonValue('Weekly')
+  weekly,
+  @JsonValue('Monthly')
+  monthly,
 }
 
 enum SubscribedType {
@@ -306,6 +360,7 @@ class PostReport with _$PostReport {
     @JsonKey(name: 'original_post_name') String? originalPostName,
     @JsonKey(name: 'original_post_body') required String originalPostBody,
     required String reason,
+    String? description,
     required bool resolved,
     required DateTime published,
   }) = _PostReport;
@@ -414,7 +469,10 @@ class LocalUser with _$LocalUser {
     @JsonKey(name: 'show_nsfw') required bool showNsfw,
     @JsonKey(name: 'show_read_posts') required bool showReadPosts,
     @JsonKey(name: 'show_scores') required bool showScores,
-    @JsonKey(name: 'manually_approves_followers') required bool manuallyApprovesFollowers,
+    @JsonKey(name: 'manually_approves_followers') bool? manuallyApprovesFollowers,
+    @JsonKey(name: 'posts_subject_to_admin_approval') bool? postsSubjectToAdminApproval,
+    // True for any reposter_visibility other than Hide. Null on servers older than 1.8.0.
+    @JsonKey(name: 'show_reposter_accounts') bool? showReposterAccounts,
   }) = _LocalUser;
 
   factory LocalUser.fromJson(Map<String, dynamic> json) => _$LocalUserFromJson(json);

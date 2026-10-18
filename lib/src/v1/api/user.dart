@@ -395,6 +395,7 @@ class SaveUserSettings with _$SaveUserSettings implements PieFedApiQuery<UserSav
     bool? bot,
     @JsonKey(name: 'display_name') String? displayName,
     @JsonKey(name: 'bot_visibility') String? botVisibility,
+    @JsonKey(name: 'reposter_visibility') String? reposterVisibility, // Show, Blur, Hide, Transparent
     @JsonKey(name: 'community_keyword_filter') List<String>? communityKeywordFilter,
     String? cover,
     @JsonKey(name: 'default_comment_sort_type') String? defaultCommentSortType,

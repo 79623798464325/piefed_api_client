@@ -21,6 +21,26 @@ class GetPostResponse with _$GetPostResponse {
 }
 
 @freezed
+class GetScheduledPostResponse with _$GetScheduledPostResponse {
+  const factory GetScheduledPostResponse({
+    @JsonKey(name: 'scheduled_post_view') required ScheduledPostView scheduledPostView,
+    @JsonKey(name: 'community_view') CommunityView? communityView,
+    List<CommunityModeratorView>? moderators,
+    @JsonKey(name: 'cross_posts') List<PostView>? crossPosts,
+  }) = _GetScheduledPostResponse;
+
+  factory GetScheduledPostResponse.fromJson(Map<String, dynamic> json) => _$GetScheduledPostResponseFromJson(json);
+}
+
+@freezed
+class ScheduledPostListResponse with _$ScheduledPostListResponse {
+  const factory ScheduledPostListResponse({@JsonKey(name: 'scheduled_posts') required List<ScheduledPostView> scheduledPosts, @JsonKey(name: 'next_page') String? nextPage}) =
+      _ScheduledPostListResponse;
+
+  factory ScheduledPostListResponse.fromJson(Map<String, dynamic> json) => _$ScheduledPostListResponseFromJson(json);
+}
+
+@freezed
 class SuccessResponse with _$SuccessResponse {
   const factory SuccessResponse({required bool success}) = _SuccessResponse;
 
@@ -440,6 +460,8 @@ class PostSetFlairResponse with _$PostSetFlairResponse {
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    bool? blurred,
+    bool? filtered,
     Community? community,
     Person? creator,
     Post? post,

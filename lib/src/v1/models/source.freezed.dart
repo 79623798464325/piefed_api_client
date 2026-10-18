@@ -1503,6 +1503,7 @@ mixin _$Post {
   List<MiniCrossPosts>? get crossPosts => throw _privateConstructorUsedError;
   String? get tags => throw _privateConstructorUsedError;
   String? get flair => throw _privateConstructorUsedError;
+  List<String>? get gallery => throw _privateConstructorUsedError;
 
   /// Serializes this Post to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1548,6 +1549,7 @@ abstract class $PostCopyWith<$Res> {
     @JsonKey(name: 'cross_posts') List<MiniCrossPosts>? crossPosts,
     String? tags,
     String? flair,
+    List<String>? gallery,
   });
 
   $WidthHeightCopyWith<$Res>? get imageDetails;
@@ -1599,6 +1601,7 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
     Object? crossPosts = freezed,
     Object? tags = freezed,
     Object? flair = freezed,
+    Object? gallery = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -1747,6 +1750,11 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
                     ? _value.flair
                     : flair // ignore: cast_nullable_to_non_nullable
                         as String?,
+            gallery:
+                freezed == gallery
+                    ? _value.gallery
+                    : gallery // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
           )
           as $Val,
     );
@@ -1833,6 +1841,7 @@ abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
     @JsonKey(name: 'cross_posts') List<MiniCrossPosts>? crossPosts,
     String? tags,
     String? flair,
+    List<String>? gallery,
   });
 
   @override
@@ -1884,6 +1893,7 @@ class __$$PostImplCopyWithImpl<$Res>
     Object? crossPosts = freezed,
     Object? tags = freezed,
     Object? flair = freezed,
+    Object? gallery = freezed,
   }) {
     return _then(
       _$PostImpl(
@@ -2032,6 +2042,11 @@ class __$$PostImplCopyWithImpl<$Res>
                 ? _value.flair
                 : flair // ignore: cast_nullable_to_non_nullable
                     as String?,
+        gallery:
+            freezed == gallery
+                ? _value._gallery
+                : gallery // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
       ),
     );
   }
@@ -2071,8 +2086,10 @@ class _$PostImpl implements _Post {
     @JsonKey(name: 'cross_posts') final List<MiniCrossPosts>? crossPosts,
     this.tags,
     this.flair,
+    final List<String>? gallery,
   }) : _emojiReactions = emojiReactions,
-       _crossPosts = crossPosts;
+       _crossPosts = crossPosts,
+       _gallery = gallery;
 
   factory _$PostImpl.fromJson(Map<String, dynamic> json) =>
       _$$PostImplFromJson(json);
@@ -2165,10 +2182,19 @@ class _$PostImpl implements _Post {
   final String? tags;
   @override
   final String? flair;
+  final List<String>? _gallery;
+  @override
+  List<String>? get gallery {
+    final value = _gallery;
+    if (value == null) return null;
+    if (_gallery is EqualUnmodifiableListView) return _gallery;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'Post(id: $id, title: $title, apId: $apId, local: $local, nsfw: $nsfw, deleted: $deleted, removed: $removed, userId: $userId, communityId: $communityId, languageId: $languageId, body: $body, url: $url, smallThumbnailUrl: $smallThumbnailUrl, thumbnailUrl: $thumbnailUrl, altText: $altText, imageDetails: $imageDetails, published: $published, updated: $updated, aiGenerated: $aiGenerated, sticky: $sticky, instanceSticky: $instanceSticky, locked: $locked, postType: $postType, poll: $poll, event: $event, emojiReactions: $emojiReactions, crossPosts: $crossPosts, tags: $tags, flair: $flair)';
+    return 'Post(id: $id, title: $title, apId: $apId, local: $local, nsfw: $nsfw, deleted: $deleted, removed: $removed, userId: $userId, communityId: $communityId, languageId: $languageId, body: $body, url: $url, smallThumbnailUrl: $smallThumbnailUrl, thumbnailUrl: $thumbnailUrl, altText: $altText, imageDetails: $imageDetails, published: $published, updated: $updated, aiGenerated: $aiGenerated, sticky: $sticky, instanceSticky: $instanceSticky, locked: $locked, postType: $postType, poll: $poll, event: $event, emojiReactions: $emojiReactions, crossPosts: $crossPosts, tags: $tags, flair: $flair, gallery: $gallery)';
   }
 
   @override
@@ -2219,7 +2245,8 @@ class _$PostImpl implements _Post {
               _crossPosts,
             ) &&
             (identical(other.tags, tags) || other.tags == tags) &&
-            (identical(other.flair, flair) || other.flair == flair));
+            (identical(other.flair, flair) || other.flair == flair) &&
+            const DeepCollectionEquality().equals(other._gallery, _gallery));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2255,6 +2282,7 @@ class _$PostImpl implements _Post {
     const DeepCollectionEquality().hash(_crossPosts),
     tags,
     flair,
+    const DeepCollectionEquality().hash(_gallery),
   ]);
 
   /// Create a copy of Post
@@ -2303,6 +2331,7 @@ abstract class _Post implements Post {
     @JsonKey(name: 'cross_posts') final List<MiniCrossPosts>? crossPosts,
     final String? tags,
     final String? flair,
+    final List<String>? gallery,
   }) = _$PostImpl;
 
   factory _Post.fromJson(Map<String, dynamic> json) = _$PostImpl.fromJson;
@@ -2379,12 +2408,1040 @@ abstract class _Post implements Post {
   String? get tags;
   @override
   String? get flair;
+  @override
+  List<String>? get gallery;
 
   /// Create a copy of Post
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PostImplCopyWith<_$PostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ScheduledPost _$ScheduledPostFromJson(Map<String, dynamic> json) {
+  return _ScheduledPost.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ScheduledPost {
+  int get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ap_id')
+  String? get apId => throw _privateConstructorUsedError;
+  bool get local => throw _privateConstructorUsedError;
+  bool get nsfw => throw _privateConstructorUsedError;
+  bool get deleted => throw _privateConstructorUsedError;
+  bool get removed => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  int get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'community_id')
+  int get communityId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'language_id')
+  int? get languageId => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+  @JsonKey(name: 'small_thumbnail_url')
+  String? get smallThumbnailUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'thumbnail_url')
+  String? get thumbnailUrl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'alt_text')
+  String? get altText => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image_details')
+  WidthHeight? get imageDetails => throw _privateConstructorUsedError;
+  DateTime get created => throw _privateConstructorUsedError;
+  DateTime? get updated => throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_scheduled_for')
+  DateTime get nextScheduledFor => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: ScheduledPostRepeat.none)
+  ScheduledPostRepeat get repeat => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ai_generated', defaultValue: false)
+  bool get aiGenerated => throw _privateConstructorUsedError;
+  bool? get sticky => throw _privateConstructorUsedError;
+  @JsonKey(name: 'instance_sticky')
+  bool? get instanceSticky => throw _privateConstructorUsedError;
+  bool? get locked => throw _privateConstructorUsedError;
+  @JsonKey(name: 'post_type')
+  PostType? get postType => throw _privateConstructorUsedError;
+  PostPoll? get poll => throw _privateConstructorUsedError;
+  PostEvent? get event => throw _privateConstructorUsedError;
+  @JsonKey(name: 'emoji_reactions')
+  List<Reactions>? get emojiReactions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'cross_posts')
+  List<MiniCrossPosts>? get crossPosts => throw _privateConstructorUsedError;
+  String? get tags => throw _privateConstructorUsedError;
+  String? get flair => throw _privateConstructorUsedError;
+  List<String>? get gallery => throw _privateConstructorUsedError;
+
+  /// Serializes this ScheduledPost to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ScheduledPostCopyWith<ScheduledPost> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ScheduledPostCopyWith<$Res> {
+  factory $ScheduledPostCopyWith(
+    ScheduledPost value,
+    $Res Function(ScheduledPost) then,
+  ) = _$ScheduledPostCopyWithImpl<$Res, ScheduledPost>;
+  @useResult
+  $Res call({
+    int id,
+    String title,
+    @JsonKey(name: 'ap_id') String? apId,
+    bool local,
+    bool nsfw,
+    bool deleted,
+    bool removed,
+    @JsonKey(name: 'user_id') int userId,
+    @JsonKey(name: 'community_id') int communityId,
+    @JsonKey(name: 'language_id') int? languageId,
+    String? body,
+    String? url,
+    @JsonKey(name: 'small_thumbnail_url') String? smallThumbnailUrl,
+    @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
+    @JsonKey(name: 'alt_text') String? altText,
+    @JsonKey(name: 'image_details') WidthHeight? imageDetails,
+    DateTime created,
+    DateTime? updated,
+    @JsonKey(name: 'next_scheduled_for') DateTime nextScheduledFor,
+    @JsonKey(unknownEnumValue: ScheduledPostRepeat.none)
+    ScheduledPostRepeat repeat,
+    @JsonKey(name: 'ai_generated', defaultValue: false) bool aiGenerated,
+    bool? sticky,
+    @JsonKey(name: 'instance_sticky') bool? instanceSticky,
+    bool? locked,
+    @JsonKey(name: 'post_type') PostType? postType,
+    PostPoll? poll,
+    PostEvent? event,
+    @JsonKey(name: 'emoji_reactions') List<Reactions>? emojiReactions,
+    @JsonKey(name: 'cross_posts') List<MiniCrossPosts>? crossPosts,
+    String? tags,
+    String? flair,
+    List<String>? gallery,
+  });
+
+  $WidthHeightCopyWith<$Res>? get imageDetails;
+  $PostPollCopyWith<$Res>? get poll;
+  $PostEventCopyWith<$Res>? get event;
+}
+
+/// @nodoc
+class _$ScheduledPostCopyWithImpl<$Res, $Val extends ScheduledPost>
+    implements $ScheduledPostCopyWith<$Res> {
+  _$ScheduledPostCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? apId = freezed,
+    Object? local = null,
+    Object? nsfw = null,
+    Object? deleted = null,
+    Object? removed = null,
+    Object? userId = null,
+    Object? communityId = null,
+    Object? languageId = freezed,
+    Object? body = freezed,
+    Object? url = freezed,
+    Object? smallThumbnailUrl = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? altText = freezed,
+    Object? imageDetails = freezed,
+    Object? created = null,
+    Object? updated = freezed,
+    Object? nextScheduledFor = null,
+    Object? repeat = null,
+    Object? aiGenerated = null,
+    Object? sticky = freezed,
+    Object? instanceSticky = freezed,
+    Object? locked = freezed,
+    Object? postType = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
+    Object? emojiReactions = freezed,
+    Object? crossPosts = freezed,
+    Object? tags = freezed,
+    Object? flair = freezed,
+    Object? gallery = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            title:
+                null == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String,
+            apId:
+                freezed == apId
+                    ? _value.apId
+                    : apId // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            local:
+                null == local
+                    ? _value.local
+                    : local // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            nsfw:
+                null == nsfw
+                    ? _value.nsfw
+                    : nsfw // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            deleted:
+                null == deleted
+                    ? _value.deleted
+                    : deleted // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            removed:
+                null == removed
+                    ? _value.removed
+                    : removed // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            userId:
+                null == userId
+                    ? _value.userId
+                    : userId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            communityId:
+                null == communityId
+                    ? _value.communityId
+                    : communityId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            languageId:
+                freezed == languageId
+                    ? _value.languageId
+                    : languageId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            body:
+                freezed == body
+                    ? _value.body
+                    : body // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            url:
+                freezed == url
+                    ? _value.url
+                    : url // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            smallThumbnailUrl:
+                freezed == smallThumbnailUrl
+                    ? _value.smallThumbnailUrl
+                    : smallThumbnailUrl // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            thumbnailUrl:
+                freezed == thumbnailUrl
+                    ? _value.thumbnailUrl
+                    : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            altText:
+                freezed == altText
+                    ? _value.altText
+                    : altText // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            imageDetails:
+                freezed == imageDetails
+                    ? _value.imageDetails
+                    : imageDetails // ignore: cast_nullable_to_non_nullable
+                        as WidthHeight?,
+            created:
+                null == created
+                    ? _value.created
+                    : created // ignore: cast_nullable_to_non_nullable
+                        as DateTime,
+            updated:
+                freezed == updated
+                    ? _value.updated
+                    : updated // ignore: cast_nullable_to_non_nullable
+                        as DateTime?,
+            nextScheduledFor:
+                null == nextScheduledFor
+                    ? _value.nextScheduledFor
+                    : nextScheduledFor // ignore: cast_nullable_to_non_nullable
+                        as DateTime,
+            repeat:
+                null == repeat
+                    ? _value.repeat
+                    : repeat // ignore: cast_nullable_to_non_nullable
+                        as ScheduledPostRepeat,
+            aiGenerated:
+                null == aiGenerated
+                    ? _value.aiGenerated
+                    : aiGenerated // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            sticky:
+                freezed == sticky
+                    ? _value.sticky
+                    : sticky // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            instanceSticky:
+                freezed == instanceSticky
+                    ? _value.instanceSticky
+                    : instanceSticky // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            locked:
+                freezed == locked
+                    ? _value.locked
+                    : locked // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            postType:
+                freezed == postType
+                    ? _value.postType
+                    : postType // ignore: cast_nullable_to_non_nullable
+                        as PostType?,
+            poll:
+                freezed == poll
+                    ? _value.poll
+                    : poll // ignore: cast_nullable_to_non_nullable
+                        as PostPoll?,
+            event:
+                freezed == event
+                    ? _value.event
+                    : event // ignore: cast_nullable_to_non_nullable
+                        as PostEvent?,
+            emojiReactions:
+                freezed == emojiReactions
+                    ? _value.emojiReactions
+                    : emojiReactions // ignore: cast_nullable_to_non_nullable
+                        as List<Reactions>?,
+            crossPosts:
+                freezed == crossPosts
+                    ? _value.crossPosts
+                    : crossPosts // ignore: cast_nullable_to_non_nullable
+                        as List<MiniCrossPosts>?,
+            tags:
+                freezed == tags
+                    ? _value.tags
+                    : tags // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            flair:
+                freezed == flair
+                    ? _value.flair
+                    : flair // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            gallery:
+                freezed == gallery
+                    ? _value.gallery
+                    : gallery // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $WidthHeightCopyWith<$Res>? get imageDetails {
+    if (_value.imageDetails == null) {
+      return null;
+    }
+
+    return $WidthHeightCopyWith<$Res>(_value.imageDetails!, (value) {
+      return _then(_value.copyWith(imageDetails: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostPollCopyWith<$Res>? get poll {
+    if (_value.poll == null) {
+      return null;
+    }
+
+    return $PostPollCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
+    });
+  }
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostEventCopyWith<$Res>? get event {
+    if (_value.event == null) {
+      return null;
+    }
+
+    return $PostEventCopyWith<$Res>(_value.event!, (value) {
+      return _then(_value.copyWith(event: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ScheduledPostImplCopyWith<$Res>
+    implements $ScheduledPostCopyWith<$Res> {
+  factory _$$ScheduledPostImplCopyWith(
+    _$ScheduledPostImpl value,
+    $Res Function(_$ScheduledPostImpl) then,
+  ) = __$$ScheduledPostImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int id,
+    String title,
+    @JsonKey(name: 'ap_id') String? apId,
+    bool local,
+    bool nsfw,
+    bool deleted,
+    bool removed,
+    @JsonKey(name: 'user_id') int userId,
+    @JsonKey(name: 'community_id') int communityId,
+    @JsonKey(name: 'language_id') int? languageId,
+    String? body,
+    String? url,
+    @JsonKey(name: 'small_thumbnail_url') String? smallThumbnailUrl,
+    @JsonKey(name: 'thumbnail_url') String? thumbnailUrl,
+    @JsonKey(name: 'alt_text') String? altText,
+    @JsonKey(name: 'image_details') WidthHeight? imageDetails,
+    DateTime created,
+    DateTime? updated,
+    @JsonKey(name: 'next_scheduled_for') DateTime nextScheduledFor,
+    @JsonKey(unknownEnumValue: ScheduledPostRepeat.none)
+    ScheduledPostRepeat repeat,
+    @JsonKey(name: 'ai_generated', defaultValue: false) bool aiGenerated,
+    bool? sticky,
+    @JsonKey(name: 'instance_sticky') bool? instanceSticky,
+    bool? locked,
+    @JsonKey(name: 'post_type') PostType? postType,
+    PostPoll? poll,
+    PostEvent? event,
+    @JsonKey(name: 'emoji_reactions') List<Reactions>? emojiReactions,
+    @JsonKey(name: 'cross_posts') List<MiniCrossPosts>? crossPosts,
+    String? tags,
+    String? flair,
+    List<String>? gallery,
+  });
+
+  @override
+  $WidthHeightCopyWith<$Res>? get imageDetails;
+  @override
+  $PostPollCopyWith<$Res>? get poll;
+  @override
+  $PostEventCopyWith<$Res>? get event;
+}
+
+/// @nodoc
+class __$$ScheduledPostImplCopyWithImpl<$Res>
+    extends _$ScheduledPostCopyWithImpl<$Res, _$ScheduledPostImpl>
+    implements _$$ScheduledPostImplCopyWith<$Res> {
+  __$$ScheduledPostImplCopyWithImpl(
+    _$ScheduledPostImpl _value,
+    $Res Function(_$ScheduledPostImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? apId = freezed,
+    Object? local = null,
+    Object? nsfw = null,
+    Object? deleted = null,
+    Object? removed = null,
+    Object? userId = null,
+    Object? communityId = null,
+    Object? languageId = freezed,
+    Object? body = freezed,
+    Object? url = freezed,
+    Object? smallThumbnailUrl = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? altText = freezed,
+    Object? imageDetails = freezed,
+    Object? created = null,
+    Object? updated = freezed,
+    Object? nextScheduledFor = null,
+    Object? repeat = null,
+    Object? aiGenerated = null,
+    Object? sticky = freezed,
+    Object? instanceSticky = freezed,
+    Object? locked = freezed,
+    Object? postType = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
+    Object? emojiReactions = freezed,
+    Object? crossPosts = freezed,
+    Object? tags = freezed,
+    Object? flair = freezed,
+    Object? gallery = freezed,
+  }) {
+    return _then(
+      _$ScheduledPostImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        title:
+            null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String,
+        apId:
+            freezed == apId
+                ? _value.apId
+                : apId // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        local:
+            null == local
+                ? _value.local
+                : local // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        nsfw:
+            null == nsfw
+                ? _value.nsfw
+                : nsfw // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        deleted:
+            null == deleted
+                ? _value.deleted
+                : deleted // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        removed:
+            null == removed
+                ? _value.removed
+                : removed // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        userId:
+            null == userId
+                ? _value.userId
+                : userId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        communityId:
+            null == communityId
+                ? _value.communityId
+                : communityId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        languageId:
+            freezed == languageId
+                ? _value.languageId
+                : languageId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        body:
+            freezed == body
+                ? _value.body
+                : body // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        url:
+            freezed == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        smallThumbnailUrl:
+            freezed == smallThumbnailUrl
+                ? _value.smallThumbnailUrl
+                : smallThumbnailUrl // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        thumbnailUrl:
+            freezed == thumbnailUrl
+                ? _value.thumbnailUrl
+                : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        altText:
+            freezed == altText
+                ? _value.altText
+                : altText // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        imageDetails:
+            freezed == imageDetails
+                ? _value.imageDetails
+                : imageDetails // ignore: cast_nullable_to_non_nullable
+                    as WidthHeight?,
+        created:
+            null == created
+                ? _value.created
+                : created // ignore: cast_nullable_to_non_nullable
+                    as DateTime,
+        updated:
+            freezed == updated
+                ? _value.updated
+                : updated // ignore: cast_nullable_to_non_nullable
+                    as DateTime?,
+        nextScheduledFor:
+            null == nextScheduledFor
+                ? _value.nextScheduledFor
+                : nextScheduledFor // ignore: cast_nullable_to_non_nullable
+                    as DateTime,
+        repeat:
+            null == repeat
+                ? _value.repeat
+                : repeat // ignore: cast_nullable_to_non_nullable
+                    as ScheduledPostRepeat,
+        aiGenerated:
+            null == aiGenerated
+                ? _value.aiGenerated
+                : aiGenerated // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        sticky:
+            freezed == sticky
+                ? _value.sticky
+                : sticky // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        instanceSticky:
+            freezed == instanceSticky
+                ? _value.instanceSticky
+                : instanceSticky // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        locked:
+            freezed == locked
+                ? _value.locked
+                : locked // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        postType:
+            freezed == postType
+                ? _value.postType
+                : postType // ignore: cast_nullable_to_non_nullable
+                    as PostType?,
+        poll:
+            freezed == poll
+                ? _value.poll
+                : poll // ignore: cast_nullable_to_non_nullable
+                    as PostPoll?,
+        event:
+            freezed == event
+                ? _value.event
+                : event // ignore: cast_nullable_to_non_nullable
+                    as PostEvent?,
+        emojiReactions:
+            freezed == emojiReactions
+                ? _value._emojiReactions
+                : emojiReactions // ignore: cast_nullable_to_non_nullable
+                    as List<Reactions>?,
+        crossPosts:
+            freezed == crossPosts
+                ? _value._crossPosts
+                : crossPosts // ignore: cast_nullable_to_non_nullable
+                    as List<MiniCrossPosts>?,
+        tags:
+            freezed == tags
+                ? _value.tags
+                : tags // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        flair:
+            freezed == flair
+                ? _value.flair
+                : flair // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        gallery:
+            freezed == gallery
+                ? _value._gallery
+                : gallery // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ScheduledPostImpl implements _ScheduledPost {
+  const _$ScheduledPostImpl({
+    required this.id,
+    required this.title,
+    @JsonKey(name: 'ap_id') this.apId,
+    required this.local,
+    required this.nsfw,
+    required this.deleted,
+    required this.removed,
+    @JsonKey(name: 'user_id') required this.userId,
+    @JsonKey(name: 'community_id') required this.communityId,
+    @JsonKey(name: 'language_id') this.languageId,
+    this.body,
+    this.url,
+    @JsonKey(name: 'small_thumbnail_url') this.smallThumbnailUrl,
+    @JsonKey(name: 'thumbnail_url') this.thumbnailUrl,
+    @JsonKey(name: 'alt_text') this.altText,
+    @JsonKey(name: 'image_details') this.imageDetails,
+    required this.created,
+    this.updated,
+    @JsonKey(name: 'next_scheduled_for') required this.nextScheduledFor,
+    @JsonKey(unknownEnumValue: ScheduledPostRepeat.none)
+    this.repeat = ScheduledPostRepeat.none,
+    @JsonKey(name: 'ai_generated', defaultValue: false)
+    required this.aiGenerated,
+    this.sticky,
+    @JsonKey(name: 'instance_sticky') this.instanceSticky,
+    this.locked,
+    @JsonKey(name: 'post_type') this.postType,
+    this.poll,
+    this.event,
+    @JsonKey(name: 'emoji_reactions') final List<Reactions>? emojiReactions,
+    @JsonKey(name: 'cross_posts') final List<MiniCrossPosts>? crossPosts,
+    this.tags,
+    this.flair,
+    final List<String>? gallery,
+  }) : _emojiReactions = emojiReactions,
+       _crossPosts = crossPosts,
+       _gallery = gallery;
+
+  factory _$ScheduledPostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScheduledPostImplFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String title;
+  @override
+  @JsonKey(name: 'ap_id')
+  final String? apId;
+  @override
+  final bool local;
+  @override
+  final bool nsfw;
+  @override
+  final bool deleted;
+  @override
+  final bool removed;
+  @override
+  @JsonKey(name: 'user_id')
+  final int userId;
+  @override
+  @JsonKey(name: 'community_id')
+  final int communityId;
+  @override
+  @JsonKey(name: 'language_id')
+  final int? languageId;
+  @override
+  final String? body;
+  @override
+  final String? url;
+  @override
+  @JsonKey(name: 'small_thumbnail_url')
+  final String? smallThumbnailUrl;
+  @override
+  @JsonKey(name: 'thumbnail_url')
+  final String? thumbnailUrl;
+  @override
+  @JsonKey(name: 'alt_text')
+  final String? altText;
+  @override
+  @JsonKey(name: 'image_details')
+  final WidthHeight? imageDetails;
+  @override
+  final DateTime created;
+  @override
+  final DateTime? updated;
+  @override
+  @JsonKey(name: 'next_scheduled_for')
+  final DateTime nextScheduledFor;
+  @override
+  @JsonKey(unknownEnumValue: ScheduledPostRepeat.none)
+  final ScheduledPostRepeat repeat;
+  @override
+  @JsonKey(name: 'ai_generated', defaultValue: false)
+  final bool aiGenerated;
+  @override
+  final bool? sticky;
+  @override
+  @JsonKey(name: 'instance_sticky')
+  final bool? instanceSticky;
+  @override
+  final bool? locked;
+  @override
+  @JsonKey(name: 'post_type')
+  final PostType? postType;
+  @override
+  final PostPoll? poll;
+  @override
+  final PostEvent? event;
+  final List<Reactions>? _emojiReactions;
+  @override
+  @JsonKey(name: 'emoji_reactions')
+  List<Reactions>? get emojiReactions {
+    final value = _emojiReactions;
+    if (value == null) return null;
+    if (_emojiReactions is EqualUnmodifiableListView) return _emojiReactions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<MiniCrossPosts>? _crossPosts;
+  @override
+  @JsonKey(name: 'cross_posts')
+  List<MiniCrossPosts>? get crossPosts {
+    final value = _crossPosts;
+    if (value == null) return null;
+    if (_crossPosts is EqualUnmodifiableListView) return _crossPosts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? tags;
+  @override
+  final String? flair;
+  final List<String>? _gallery;
+  @override
+  List<String>? get gallery {
+    final value = _gallery;
+    if (value == null) return null;
+    if (_gallery is EqualUnmodifiableListView) return _gallery;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ScheduledPost(id: $id, title: $title, apId: $apId, local: $local, nsfw: $nsfw, deleted: $deleted, removed: $removed, userId: $userId, communityId: $communityId, languageId: $languageId, body: $body, url: $url, smallThumbnailUrl: $smallThumbnailUrl, thumbnailUrl: $thumbnailUrl, altText: $altText, imageDetails: $imageDetails, created: $created, updated: $updated, nextScheduledFor: $nextScheduledFor, repeat: $repeat, aiGenerated: $aiGenerated, sticky: $sticky, instanceSticky: $instanceSticky, locked: $locked, postType: $postType, poll: $poll, event: $event, emojiReactions: $emojiReactions, crossPosts: $crossPosts, tags: $tags, flair: $flair, gallery: $gallery)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduledPostImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.apId, apId) || other.apId == apId) &&
+            (identical(other.local, local) || other.local == local) &&
+            (identical(other.nsfw, nsfw) || other.nsfw == nsfw) &&
+            (identical(other.deleted, deleted) || other.deleted == deleted) &&
+            (identical(other.removed, removed) || other.removed == removed) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.smallThumbnailUrl, smallThumbnailUrl) ||
+                other.smallThumbnailUrl == smallThumbnailUrl) &&
+            (identical(other.thumbnailUrl, thumbnailUrl) ||
+                other.thumbnailUrl == thumbnailUrl) &&
+            (identical(other.altText, altText) || other.altText == altText) &&
+            (identical(other.imageDetails, imageDetails) ||
+                other.imageDetails == imageDetails) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.updated, updated) || other.updated == updated) &&
+            (identical(other.nextScheduledFor, nextScheduledFor) ||
+                other.nextScheduledFor == nextScheduledFor) &&
+            (identical(other.repeat, repeat) || other.repeat == repeat) &&
+            (identical(other.aiGenerated, aiGenerated) ||
+                other.aiGenerated == aiGenerated) &&
+            (identical(other.sticky, sticky) || other.sticky == sticky) &&
+            (identical(other.instanceSticky, instanceSticky) ||
+                other.instanceSticky == instanceSticky) &&
+            (identical(other.locked, locked) || other.locked == locked) &&
+            (identical(other.postType, postType) ||
+                other.postType == postType) &&
+            (identical(other.poll, poll) || other.poll == poll) &&
+            (identical(other.event, event) || other.event == event) &&
+            const DeepCollectionEquality().equals(
+              other._emojiReactions,
+              _emojiReactions,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._crossPosts,
+              _crossPosts,
+            ) &&
+            (identical(other.tags, tags) || other.tags == tags) &&
+            (identical(other.flair, flair) || other.flair == flair) &&
+            const DeepCollectionEquality().equals(other._gallery, _gallery));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+    runtimeType,
+    id,
+    title,
+    apId,
+    local,
+    nsfw,
+    deleted,
+    removed,
+    userId,
+    communityId,
+    languageId,
+    body,
+    url,
+    smallThumbnailUrl,
+    thumbnailUrl,
+    altText,
+    imageDetails,
+    created,
+    updated,
+    nextScheduledFor,
+    repeat,
+    aiGenerated,
+    sticky,
+    instanceSticky,
+    locked,
+    postType,
+    poll,
+    event,
+    const DeepCollectionEquality().hash(_emojiReactions),
+    const DeepCollectionEquality().hash(_crossPosts),
+    tags,
+    flair,
+    const DeepCollectionEquality().hash(_gallery),
+  ]);
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduledPostImplCopyWith<_$ScheduledPostImpl> get copyWith =>
+      __$$ScheduledPostImplCopyWithImpl<_$ScheduledPostImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ScheduledPostImplToJson(this);
+  }
+}
+
+abstract class _ScheduledPost implements ScheduledPost {
+  const factory _ScheduledPost({
+    required final int id,
+    required final String title,
+    @JsonKey(name: 'ap_id') final String? apId,
+    required final bool local,
+    required final bool nsfw,
+    required final bool deleted,
+    required final bool removed,
+    @JsonKey(name: 'user_id') required final int userId,
+    @JsonKey(name: 'community_id') required final int communityId,
+    @JsonKey(name: 'language_id') final int? languageId,
+    final String? body,
+    final String? url,
+    @JsonKey(name: 'small_thumbnail_url') final String? smallThumbnailUrl,
+    @JsonKey(name: 'thumbnail_url') final String? thumbnailUrl,
+    @JsonKey(name: 'alt_text') final String? altText,
+    @JsonKey(name: 'image_details') final WidthHeight? imageDetails,
+    required final DateTime created,
+    final DateTime? updated,
+    @JsonKey(name: 'next_scheduled_for')
+    required final DateTime nextScheduledFor,
+    @JsonKey(unknownEnumValue: ScheduledPostRepeat.none)
+    final ScheduledPostRepeat repeat,
+    @JsonKey(name: 'ai_generated', defaultValue: false)
+    required final bool aiGenerated,
+    final bool? sticky,
+    @JsonKey(name: 'instance_sticky') final bool? instanceSticky,
+    final bool? locked,
+    @JsonKey(name: 'post_type') final PostType? postType,
+    final PostPoll? poll,
+    final PostEvent? event,
+    @JsonKey(name: 'emoji_reactions') final List<Reactions>? emojiReactions,
+    @JsonKey(name: 'cross_posts') final List<MiniCrossPosts>? crossPosts,
+    final String? tags,
+    final String? flair,
+    final List<String>? gallery,
+  }) = _$ScheduledPostImpl;
+
+  factory _ScheduledPost.fromJson(Map<String, dynamic> json) =
+      _$ScheduledPostImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get title;
+  @override
+  @JsonKey(name: 'ap_id')
+  String? get apId;
+  @override
+  bool get local;
+  @override
+  bool get nsfw;
+  @override
+  bool get deleted;
+  @override
+  bool get removed;
+  @override
+  @JsonKey(name: 'user_id')
+  int get userId;
+  @override
+  @JsonKey(name: 'community_id')
+  int get communityId;
+  @override
+  @JsonKey(name: 'language_id')
+  int? get languageId;
+  @override
+  String? get body;
+  @override
+  String? get url;
+  @override
+  @JsonKey(name: 'small_thumbnail_url')
+  String? get smallThumbnailUrl;
+  @override
+  @JsonKey(name: 'thumbnail_url')
+  String? get thumbnailUrl;
+  @override
+  @JsonKey(name: 'alt_text')
+  String? get altText;
+  @override
+  @JsonKey(name: 'image_details')
+  WidthHeight? get imageDetails;
+  @override
+  DateTime get created;
+  @override
+  DateTime? get updated;
+  @override
+  @JsonKey(name: 'next_scheduled_for')
+  DateTime get nextScheduledFor;
+  @override
+  @JsonKey(unknownEnumValue: ScheduledPostRepeat.none)
+  ScheduledPostRepeat get repeat;
+  @override
+  @JsonKey(name: 'ai_generated', defaultValue: false)
+  bool get aiGenerated;
+  @override
+  bool? get sticky;
+  @override
+  @JsonKey(name: 'instance_sticky')
+  bool? get instanceSticky;
+  @override
+  bool? get locked;
+  @override
+  @JsonKey(name: 'post_type')
+  PostType? get postType;
+  @override
+  PostPoll? get poll;
+  @override
+  PostEvent? get event;
+  @override
+  @JsonKey(name: 'emoji_reactions')
+  List<Reactions>? get emojiReactions;
+  @override
+  @JsonKey(name: 'cross_posts')
+  List<MiniCrossPosts>? get crossPosts;
+  @override
+  String? get tags;
+  @override
+  String? get flair;
+  @override
+  List<String>? get gallery;
+
+  /// Create a copy of ScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ScheduledPostImplCopyWith<_$ScheduledPostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -6486,6 +7543,7 @@ mixin _$PostReport {
   @JsonKey(name: 'original_post_body')
   String get originalPostBody => throw _privateConstructorUsedError;
   String get reason => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   bool get resolved => throw _privateConstructorUsedError;
   DateTime get published => throw _privateConstructorUsedError;
 
@@ -6513,6 +7571,7 @@ abstract class $PostReportCopyWith<$Res> {
     @JsonKey(name: 'original_post_name') String? originalPostName,
     @JsonKey(name: 'original_post_body') String originalPostBody,
     String reason,
+    String? description,
     bool resolved,
     DateTime published,
   });
@@ -6539,6 +7598,7 @@ class _$PostReportCopyWithImpl<$Res, $Val extends PostReport>
     Object? originalPostName = freezed,
     Object? originalPostBody = null,
     Object? reason = null,
+    Object? description = freezed,
     Object? resolved = null,
     Object? published = null,
   }) {
@@ -6574,6 +7634,11 @@ class _$PostReportCopyWithImpl<$Res, $Val extends PostReport>
                     ? _value.reason
                     : reason // ignore: cast_nullable_to_non_nullable
                         as String,
+            description:
+                freezed == description
+                    ? _value.description
+                    : description // ignore: cast_nullable_to_non_nullable
+                        as String?,
             resolved:
                 null == resolved
                     ? _value.resolved
@@ -6606,6 +7671,7 @@ abstract class _$$PostReportImplCopyWith<$Res>
     @JsonKey(name: 'original_post_name') String? originalPostName,
     @JsonKey(name: 'original_post_body') String originalPostBody,
     String reason,
+    String? description,
     bool resolved,
     DateTime published,
   });
@@ -6631,6 +7697,7 @@ class __$$PostReportImplCopyWithImpl<$Res>
     Object? originalPostName = freezed,
     Object? originalPostBody = null,
     Object? reason = null,
+    Object? description = freezed,
     Object? resolved = null,
     Object? published = null,
   }) {
@@ -6666,6 +7733,11 @@ class __$$PostReportImplCopyWithImpl<$Res>
                 ? _value.reason
                 : reason // ignore: cast_nullable_to_non_nullable
                     as String,
+        description:
+            freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                    as String?,
         resolved:
             null == resolved
                 ? _value.resolved
@@ -6691,6 +7763,7 @@ class _$PostReportImpl implements _PostReport {
     @JsonKey(name: 'original_post_name') this.originalPostName,
     @JsonKey(name: 'original_post_body') required this.originalPostBody,
     required this.reason,
+    this.description,
     required this.resolved,
     required this.published,
   });
@@ -6715,13 +7788,15 @@ class _$PostReportImpl implements _PostReport {
   @override
   final String reason;
   @override
+  final String? description;
+  @override
   final bool resolved;
   @override
   final DateTime published;
 
   @override
   String toString() {
-    return 'PostReport(id: $id, creatorId: $creatorId, postId: $postId, originalPostName: $originalPostName, originalPostBody: $originalPostBody, reason: $reason, resolved: $resolved, published: $published)';
+    return 'PostReport(id: $id, creatorId: $creatorId, postId: $postId, originalPostName: $originalPostName, originalPostBody: $originalPostBody, reason: $reason, description: $description, resolved: $resolved, published: $published)';
   }
 
   @override
@@ -6738,6 +7813,8 @@ class _$PostReportImpl implements _PostReport {
             (identical(other.originalPostBody, originalPostBody) ||
                 other.originalPostBody == originalPostBody) &&
             (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.resolved, resolved) ||
                 other.resolved == resolved) &&
             (identical(other.published, published) ||
@@ -6754,6 +7831,7 @@ class _$PostReportImpl implements _PostReport {
     originalPostName,
     originalPostBody,
     reason,
+    description,
     resolved,
     published,
   );
@@ -6780,6 +7858,7 @@ abstract class _PostReport implements PostReport {
     @JsonKey(name: 'original_post_name') final String? originalPostName,
     @JsonKey(name: 'original_post_body') required final String originalPostBody,
     required final String reason,
+    final String? description,
     required final bool resolved,
     required final DateTime published,
   }) = _$PostReportImpl;
@@ -6803,6 +7882,8 @@ abstract class _PostReport implements PostReport {
   String get originalPostBody;
   @override
   String get reason;
+  @override
+  String? get description;
   @override
   bool get resolved;
   @override
@@ -8555,7 +9636,11 @@ mixin _$LocalUser {
   @JsonKey(name: 'show_scores')
   bool get showScores => throw _privateConstructorUsedError;
   @JsonKey(name: 'manually_approves_followers')
-  bool get manuallyApprovesFollowers => throw _privateConstructorUsedError;
+  bool? get manuallyApprovesFollowers => throw _privateConstructorUsedError;
+  @JsonKey(name: 'posts_subject_to_admin_approval')
+  bool? get postsSubjectToAdminApproval => throw _privateConstructorUsedError; // True for any reposter_visibility other than Hide. Null on servers older than 1.8.0.
+  @JsonKey(name: 'show_reposter_accounts')
+  bool? get showReposterAccounts => throw _privateConstructorUsedError;
 
   /// Serializes this LocalUser to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -8599,7 +9684,10 @@ abstract class $LocalUserCopyWith<$Res> {
     @JsonKey(name: 'show_read_posts') bool showReadPosts,
     @JsonKey(name: 'show_scores') bool showScores,
     @JsonKey(name: 'manually_approves_followers')
-    bool manuallyApprovesFollowers,
+    bool? manuallyApprovesFollowers,
+    @JsonKey(name: 'posts_subject_to_admin_approval')
+    bool? postsSubjectToAdminApproval,
+    @JsonKey(name: 'show_reposter_accounts') bool? showReposterAccounts,
   });
 }
 
@@ -8642,7 +9730,9 @@ class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser>
     Object? showNsfw = null,
     Object? showReadPosts = null,
     Object? showScores = null,
-    Object? manuallyApprovesFollowers = null,
+    Object? manuallyApprovesFollowers = freezed,
+    Object? postsSubjectToAdminApproval = freezed,
+    Object? showReposterAccounts = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -8767,10 +9857,20 @@ class _$LocalUserCopyWithImpl<$Res, $Val extends LocalUser>
                     : showScores // ignore: cast_nullable_to_non_nullable
                         as bool,
             manuallyApprovesFollowers:
-                null == manuallyApprovesFollowers
+                freezed == manuallyApprovesFollowers
                     ? _value.manuallyApprovesFollowers
                     : manuallyApprovesFollowers // ignore: cast_nullable_to_non_nullable
-                        as bool,
+                        as bool?,
+            postsSubjectToAdminApproval:
+                freezed == postsSubjectToAdminApproval
+                    ? _value.postsSubjectToAdminApproval
+                    : postsSubjectToAdminApproval // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            showReposterAccounts:
+                freezed == showReposterAccounts
+                    ? _value.showReposterAccounts
+                    : showReposterAccounts // ignore: cast_nullable_to_non_nullable
+                        as bool?,
           )
           as $Val,
     );
@@ -8813,7 +9913,10 @@ abstract class _$$LocalUserImplCopyWith<$Res>
     @JsonKey(name: 'show_read_posts') bool showReadPosts,
     @JsonKey(name: 'show_scores') bool showScores,
     @JsonKey(name: 'manually_approves_followers')
-    bool manuallyApprovesFollowers,
+    bool? manuallyApprovesFollowers,
+    @JsonKey(name: 'posts_subject_to_admin_approval')
+    bool? postsSubjectToAdminApproval,
+    @JsonKey(name: 'show_reposter_accounts') bool? showReposterAccounts,
   });
 }
 
@@ -8855,7 +9958,9 @@ class __$$LocalUserImplCopyWithImpl<$Res>
     Object? showNsfw = null,
     Object? showReadPosts = null,
     Object? showScores = null,
-    Object? manuallyApprovesFollowers = null,
+    Object? manuallyApprovesFollowers = freezed,
+    Object? postsSubjectToAdminApproval = freezed,
+    Object? showReposterAccounts = freezed,
   }) {
     return _then(
       _$LocalUserImpl(
@@ -8980,10 +10085,20 @@ class __$$LocalUserImplCopyWithImpl<$Res>
                 : showScores // ignore: cast_nullable_to_non_nullable
                     as bool,
         manuallyApprovesFollowers:
-            null == manuallyApprovesFollowers
+            freezed == manuallyApprovesFollowers
                 ? _value.manuallyApprovesFollowers
                 : manuallyApprovesFollowers // ignore: cast_nullable_to_non_nullable
-                    as bool,
+                    as bool?,
+        postsSubjectToAdminApproval:
+            freezed == postsSubjectToAdminApproval
+                ? _value.postsSubjectToAdminApproval
+                : postsSubjectToAdminApproval // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        showReposterAccounts:
+            freezed == showReposterAccounts
+                ? _value.showReposterAccounts
+                : showReposterAccounts // ignore: cast_nullable_to_non_nullable
+                    as bool?,
       ),
     );
   }
@@ -9022,7 +10137,10 @@ class _$LocalUserImpl implements _LocalUser {
     @JsonKey(name: 'show_read_posts') required this.showReadPosts,
     @JsonKey(name: 'show_scores') required this.showScores,
     @JsonKey(name: 'manually_approves_followers')
-    required this.manuallyApprovesFollowers,
+    this.manuallyApprovesFollowers,
+    @JsonKey(name: 'posts_subject_to_admin_approval')
+    this.postsSubjectToAdminApproval,
+    @JsonKey(name: 'show_reposter_accounts') this.showReposterAccounts,
   }) : _communityKeywordFilter = communityKeywordFilter;
 
   factory _$LocalUserImpl.fromJson(Map<String, dynamic> json) =>
@@ -9108,11 +10226,18 @@ class _$LocalUserImpl implements _LocalUser {
   final bool showScores;
   @override
   @JsonKey(name: 'manually_approves_followers')
-  final bool manuallyApprovesFollowers;
+  final bool? manuallyApprovesFollowers;
+  @override
+  @JsonKey(name: 'posts_subject_to_admin_approval')
+  final bool? postsSubjectToAdminApproval;
+  // True for any reposter_visibility other than Hide. Null on servers older than 1.8.0.
+  @override
+  @JsonKey(name: 'show_reposter_accounts')
+  final bool? showReposterAccounts;
 
   @override
   String toString() {
-    return 'LocalUser(acceptPrivateMessages: $acceptPrivateMessages, botVisibility: $botVisibility, aiVisibility: $aiVisibility, communityKeywordFilter: $communityKeywordFilter, defaultCommentSortType: $defaultCommentSortType, defaultListingType: $defaultListingType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, searchable: $searchable, showBotAccounts: $showBotAccounts, showNsfl: $showNsfl, showNsfw: $showNsfw, showReadPosts: $showReadPosts, showScores: $showScores, manuallyApprovesFollowers: $manuallyApprovesFollowers)';
+    return 'LocalUser(acceptPrivateMessages: $acceptPrivateMessages, botVisibility: $botVisibility, aiVisibility: $aiVisibility, communityKeywordFilter: $communityKeywordFilter, defaultCommentSortType: $defaultCommentSortType, defaultListingType: $defaultListingType, defaultSortType: $defaultSortType, emailUnread: $emailUnread, federateVotes: $federateVotes, feedAutoFollow: $feedAutoFollow, feedAutoLeave: $feedAutoLeave, hideLowQuality: $hideLowQuality, indexable: $indexable, newsletter: $newsletter, nsflVisibility: $nsflVisibility, nsfwVisibility: $nsfwVisibility, replyCollapseThreshold: $replyCollapseThreshold, replyHideThreshold: $replyHideThreshold, searchable: $searchable, showBotAccounts: $showBotAccounts, showNsfl: $showNsfl, showNsfw: $showNsfw, showReadPosts: $showReadPosts, showScores: $showScores, manuallyApprovesFollowers: $manuallyApprovesFollowers, postsSubjectToAdminApproval: $postsSubjectToAdminApproval, showReposterAccounts: $showReposterAccounts)';
   }
 
   @override
@@ -9174,7 +10299,15 @@ class _$LocalUserImpl implements _LocalUser {
                   other.manuallyApprovesFollowers,
                   manuallyApprovesFollowers,
                 ) ||
-                other.manuallyApprovesFollowers == manuallyApprovesFollowers));
+                other.manuallyApprovesFollowers == manuallyApprovesFollowers) &&
+            (identical(
+                  other.postsSubjectToAdminApproval,
+                  postsSubjectToAdminApproval,
+                ) ||
+                other.postsSubjectToAdminApproval ==
+                    postsSubjectToAdminApproval) &&
+            (identical(other.showReposterAccounts, showReposterAccounts) ||
+                other.showReposterAccounts == showReposterAccounts));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -9206,6 +10339,8 @@ class _$LocalUserImpl implements _LocalUser {
     showReadPosts,
     showScores,
     manuallyApprovesFollowers,
+    postsSubjectToAdminApproval,
+    showReposterAccounts,
   ]);
 
   /// Create a copy of LocalUser
@@ -9255,7 +10390,10 @@ abstract class _LocalUser implements LocalUser {
     @JsonKey(name: 'show_read_posts') required final bool showReadPosts,
     @JsonKey(name: 'show_scores') required final bool showScores,
     @JsonKey(name: 'manually_approves_followers')
-    required final bool manuallyApprovesFollowers,
+    final bool? manuallyApprovesFollowers,
+    @JsonKey(name: 'posts_subject_to_admin_approval')
+    final bool? postsSubjectToAdminApproval,
+    @JsonKey(name: 'show_reposter_accounts') final bool? showReposterAccounts,
   }) = _$LocalUserImpl;
 
   factory _LocalUser.fromJson(Map<String, dynamic> json) =
@@ -9332,7 +10470,13 @@ abstract class _LocalUser implements LocalUser {
   bool get showScores;
   @override
   @JsonKey(name: 'manually_approves_followers')
-  bool get manuallyApprovesFollowers;
+  bool? get manuallyApprovesFollowers;
+  @override
+  @JsonKey(name: 'posts_subject_to_admin_approval')
+  bool? get postsSubjectToAdminApproval; // True for any reposter_visibility other than Hide. Null on servers older than 1.8.0.
+  @override
+  @JsonKey(name: 'show_reposter_accounts')
+  bool? get showReposterAccounts;
 
   /// Create a copy of LocalUser
   /// with the given fields replaced by the non-null parameter values.

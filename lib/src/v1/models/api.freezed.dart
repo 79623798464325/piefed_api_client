@@ -321,6 +321,536 @@ abstract class _GetPostResponse implements GetPostResponse {
       throw _privateConstructorUsedError;
 }
 
+GetScheduledPostResponse _$GetScheduledPostResponseFromJson(
+  Map<String, dynamic> json,
+) {
+  return _GetScheduledPostResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetScheduledPostResponse {
+  @JsonKey(name: 'scheduled_post_view')
+  ScheduledPostView get scheduledPostView => throw _privateConstructorUsedError;
+  @JsonKey(name: 'community_view')
+  CommunityView? get communityView => throw _privateConstructorUsedError;
+  List<CommunityModeratorView>? get moderators =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'cross_posts')
+  List<PostView>? get crossPosts => throw _privateConstructorUsedError;
+
+  /// Serializes this GetScheduledPostResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetScheduledPostResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetScheduledPostResponseCopyWith<GetScheduledPostResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetScheduledPostResponseCopyWith<$Res> {
+  factory $GetScheduledPostResponseCopyWith(
+    GetScheduledPostResponse value,
+    $Res Function(GetScheduledPostResponse) then,
+  ) = _$GetScheduledPostResponseCopyWithImpl<$Res, GetScheduledPostResponse>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'scheduled_post_view') ScheduledPostView scheduledPostView,
+    @JsonKey(name: 'community_view') CommunityView? communityView,
+    List<CommunityModeratorView>? moderators,
+    @JsonKey(name: 'cross_posts') List<PostView>? crossPosts,
+  });
+
+  $ScheduledPostViewCopyWith<$Res> get scheduledPostView;
+  $CommunityViewCopyWith<$Res>? get communityView;
+}
+
+/// @nodoc
+class _$GetScheduledPostResponseCopyWithImpl<
+  $Res,
+  $Val extends GetScheduledPostResponse
+>
+    implements $GetScheduledPostResponseCopyWith<$Res> {
+  _$GetScheduledPostResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetScheduledPostResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scheduledPostView = null,
+    Object? communityView = freezed,
+    Object? moderators = freezed,
+    Object? crossPosts = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            scheduledPostView:
+                null == scheduledPostView
+                    ? _value.scheduledPostView
+                    : scheduledPostView // ignore: cast_nullable_to_non_nullable
+                        as ScheduledPostView,
+            communityView:
+                freezed == communityView
+                    ? _value.communityView
+                    : communityView // ignore: cast_nullable_to_non_nullable
+                        as CommunityView?,
+            moderators:
+                freezed == moderators
+                    ? _value.moderators
+                    : moderators // ignore: cast_nullable_to_non_nullable
+                        as List<CommunityModeratorView>?,
+            crossPosts:
+                freezed == crossPosts
+                    ? _value.crossPosts
+                    : crossPosts // ignore: cast_nullable_to_non_nullable
+                        as List<PostView>?,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of GetScheduledPostResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ScheduledPostViewCopyWith<$Res> get scheduledPostView {
+    return $ScheduledPostViewCopyWith<$Res>(_value.scheduledPostView, (value) {
+      return _then(_value.copyWith(scheduledPostView: value) as $Val);
+    });
+  }
+
+  /// Create a copy of GetScheduledPostResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CommunityViewCopyWith<$Res>? get communityView {
+    if (_value.communityView == null) {
+      return null;
+    }
+
+    return $CommunityViewCopyWith<$Res>(_value.communityView!, (value) {
+      return _then(_value.copyWith(communityView: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$GetScheduledPostResponseImplCopyWith<$Res>
+    implements $GetScheduledPostResponseCopyWith<$Res> {
+  factory _$$GetScheduledPostResponseImplCopyWith(
+    _$GetScheduledPostResponseImpl value,
+    $Res Function(_$GetScheduledPostResponseImpl) then,
+  ) = __$$GetScheduledPostResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'scheduled_post_view') ScheduledPostView scheduledPostView,
+    @JsonKey(name: 'community_view') CommunityView? communityView,
+    List<CommunityModeratorView>? moderators,
+    @JsonKey(name: 'cross_posts') List<PostView>? crossPosts,
+  });
+
+  @override
+  $ScheduledPostViewCopyWith<$Res> get scheduledPostView;
+  @override
+  $CommunityViewCopyWith<$Res>? get communityView;
+}
+
+/// @nodoc
+class __$$GetScheduledPostResponseImplCopyWithImpl<$Res>
+    extends
+        _$GetScheduledPostResponseCopyWithImpl<
+          $Res,
+          _$GetScheduledPostResponseImpl
+        >
+    implements _$$GetScheduledPostResponseImplCopyWith<$Res> {
+  __$$GetScheduledPostResponseImplCopyWithImpl(
+    _$GetScheduledPostResponseImpl _value,
+    $Res Function(_$GetScheduledPostResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetScheduledPostResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? scheduledPostView = null,
+    Object? communityView = freezed,
+    Object? moderators = freezed,
+    Object? crossPosts = freezed,
+  }) {
+    return _then(
+      _$GetScheduledPostResponseImpl(
+        scheduledPostView:
+            null == scheduledPostView
+                ? _value.scheduledPostView
+                : scheduledPostView // ignore: cast_nullable_to_non_nullable
+                    as ScheduledPostView,
+        communityView:
+            freezed == communityView
+                ? _value.communityView
+                : communityView // ignore: cast_nullable_to_non_nullable
+                    as CommunityView?,
+        moderators:
+            freezed == moderators
+                ? _value._moderators
+                : moderators // ignore: cast_nullable_to_non_nullable
+                    as List<CommunityModeratorView>?,
+        crossPosts:
+            freezed == crossPosts
+                ? _value._crossPosts
+                : crossPosts // ignore: cast_nullable_to_non_nullable
+                    as List<PostView>?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetScheduledPostResponseImpl implements _GetScheduledPostResponse {
+  const _$GetScheduledPostResponseImpl({
+    @JsonKey(name: 'scheduled_post_view') required this.scheduledPostView,
+    @JsonKey(name: 'community_view') this.communityView,
+    final List<CommunityModeratorView>? moderators,
+    @JsonKey(name: 'cross_posts') final List<PostView>? crossPosts,
+  }) : _moderators = moderators,
+       _crossPosts = crossPosts;
+
+  factory _$GetScheduledPostResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetScheduledPostResponseImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'scheduled_post_view')
+  final ScheduledPostView scheduledPostView;
+  @override
+  @JsonKey(name: 'community_view')
+  final CommunityView? communityView;
+  final List<CommunityModeratorView>? _moderators;
+  @override
+  List<CommunityModeratorView>? get moderators {
+    final value = _moderators;
+    if (value == null) return null;
+    if (_moderators is EqualUnmodifiableListView) return _moderators;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<PostView>? _crossPosts;
+  @override
+  @JsonKey(name: 'cross_posts')
+  List<PostView>? get crossPosts {
+    final value = _crossPosts;
+    if (value == null) return null;
+    if (_crossPosts is EqualUnmodifiableListView) return _crossPosts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'GetScheduledPostResponse(scheduledPostView: $scheduledPostView, communityView: $communityView, moderators: $moderators, crossPosts: $crossPosts)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetScheduledPostResponseImpl &&
+            (identical(other.scheduledPostView, scheduledPostView) ||
+                other.scheduledPostView == scheduledPostView) &&
+            (identical(other.communityView, communityView) ||
+                other.communityView == communityView) &&
+            const DeepCollectionEquality().equals(
+              other._moderators,
+              _moderators,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._crossPosts,
+              _crossPosts,
+            ));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    scheduledPostView,
+    communityView,
+    const DeepCollectionEquality().hash(_moderators),
+    const DeepCollectionEquality().hash(_crossPosts),
+  );
+
+  /// Create a copy of GetScheduledPostResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetScheduledPostResponseImplCopyWith<_$GetScheduledPostResponseImpl>
+  get copyWith => __$$GetScheduledPostResponseImplCopyWithImpl<
+    _$GetScheduledPostResponseImpl
+  >(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetScheduledPostResponseImplToJson(this);
+  }
+}
+
+abstract class _GetScheduledPostResponse implements GetScheduledPostResponse {
+  const factory _GetScheduledPostResponse({
+    @JsonKey(name: 'scheduled_post_view')
+    required final ScheduledPostView scheduledPostView,
+    @JsonKey(name: 'community_view') final CommunityView? communityView,
+    final List<CommunityModeratorView>? moderators,
+    @JsonKey(name: 'cross_posts') final List<PostView>? crossPosts,
+  }) = _$GetScheduledPostResponseImpl;
+
+  factory _GetScheduledPostResponse.fromJson(Map<String, dynamic> json) =
+      _$GetScheduledPostResponseImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'scheduled_post_view')
+  ScheduledPostView get scheduledPostView;
+  @override
+  @JsonKey(name: 'community_view')
+  CommunityView? get communityView;
+  @override
+  List<CommunityModeratorView>? get moderators;
+  @override
+  @JsonKey(name: 'cross_posts')
+  List<PostView>? get crossPosts;
+
+  /// Create a copy of GetScheduledPostResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetScheduledPostResponseImplCopyWith<_$GetScheduledPostResponseImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
+ScheduledPostListResponse _$ScheduledPostListResponseFromJson(
+  Map<String, dynamic> json,
+) {
+  return _ScheduledPostListResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ScheduledPostListResponse {
+  @JsonKey(name: 'scheduled_posts')
+  List<ScheduledPostView> get scheduledPosts =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'next_page')
+  String? get nextPage => throw _privateConstructorUsedError;
+
+  /// Serializes this ScheduledPostListResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ScheduledPostListResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ScheduledPostListResponseCopyWith<ScheduledPostListResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ScheduledPostListResponseCopyWith<$Res> {
+  factory $ScheduledPostListResponseCopyWith(
+    ScheduledPostListResponse value,
+    $Res Function(ScheduledPostListResponse) then,
+  ) = _$ScheduledPostListResponseCopyWithImpl<$Res, ScheduledPostListResponse>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'scheduled_posts') List<ScheduledPostView> scheduledPosts,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+}
+
+/// @nodoc
+class _$ScheduledPostListResponseCopyWithImpl<
+  $Res,
+  $Val extends ScheduledPostListResponse
+>
+    implements $ScheduledPostListResponseCopyWith<$Res> {
+  _$ScheduledPostListResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ScheduledPostListResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? scheduledPosts = null, Object? nextPage = freezed}) {
+    return _then(
+      _value.copyWith(
+            scheduledPosts:
+                null == scheduledPosts
+                    ? _value.scheduledPosts
+                    : scheduledPosts // ignore: cast_nullable_to_non_nullable
+                        as List<ScheduledPostView>,
+            nextPage:
+                freezed == nextPage
+                    ? _value.nextPage
+                    : nextPage // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$ScheduledPostListResponseImplCopyWith<$Res>
+    implements $ScheduledPostListResponseCopyWith<$Res> {
+  factory _$$ScheduledPostListResponseImplCopyWith(
+    _$ScheduledPostListResponseImpl value,
+    $Res Function(_$ScheduledPostListResponseImpl) then,
+  ) = __$$ScheduledPostListResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'scheduled_posts') List<ScheduledPostView> scheduledPosts,
+    @JsonKey(name: 'next_page') String? nextPage,
+  });
+}
+
+/// @nodoc
+class __$$ScheduledPostListResponseImplCopyWithImpl<$Res>
+    extends
+        _$ScheduledPostListResponseCopyWithImpl<
+          $Res,
+          _$ScheduledPostListResponseImpl
+        >
+    implements _$$ScheduledPostListResponseImplCopyWith<$Res> {
+  __$$ScheduledPostListResponseImplCopyWithImpl(
+    _$ScheduledPostListResponseImpl _value,
+    $Res Function(_$ScheduledPostListResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ScheduledPostListResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? scheduledPosts = null, Object? nextPage = freezed}) {
+    return _then(
+      _$ScheduledPostListResponseImpl(
+        scheduledPosts:
+            null == scheduledPosts
+                ? _value._scheduledPosts
+                : scheduledPosts // ignore: cast_nullable_to_non_nullable
+                    as List<ScheduledPostView>,
+        nextPage:
+            freezed == nextPage
+                ? _value.nextPage
+                : nextPage // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ScheduledPostListResponseImpl implements _ScheduledPostListResponse {
+  const _$ScheduledPostListResponseImpl({
+    @JsonKey(name: 'scheduled_posts')
+    required final List<ScheduledPostView> scheduledPosts,
+    @JsonKey(name: 'next_page') this.nextPage,
+  }) : _scheduledPosts = scheduledPosts;
+
+  factory _$ScheduledPostListResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ScheduledPostListResponseImplFromJson(json);
+
+  final List<ScheduledPostView> _scheduledPosts;
+  @override
+  @JsonKey(name: 'scheduled_posts')
+  List<ScheduledPostView> get scheduledPosts {
+    if (_scheduledPosts is EqualUnmodifiableListView) return _scheduledPosts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_scheduledPosts);
+  }
+
+  @override
+  @JsonKey(name: 'next_page')
+  final String? nextPage;
+
+  @override
+  String toString() {
+    return 'ScheduledPostListResponse(scheduledPosts: $scheduledPosts, nextPage: $nextPage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ScheduledPostListResponseImpl &&
+            const DeepCollectionEquality().equals(
+              other._scheduledPosts,
+              _scheduledPosts,
+            ) &&
+            (identical(other.nextPage, nextPage) ||
+                other.nextPage == nextPage));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    const DeepCollectionEquality().hash(_scheduledPosts),
+    nextPage,
+  );
+
+  /// Create a copy of ScheduledPostListResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ScheduledPostListResponseImplCopyWith<_$ScheduledPostListResponseImpl>
+  get copyWith => __$$ScheduledPostListResponseImplCopyWithImpl<
+    _$ScheduledPostListResponseImpl
+  >(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ScheduledPostListResponseImplToJson(this);
+  }
+}
+
+abstract class _ScheduledPostListResponse implements ScheduledPostListResponse {
+  const factory _ScheduledPostListResponse({
+    @JsonKey(name: 'scheduled_posts')
+    required final List<ScheduledPostView> scheduledPosts,
+    @JsonKey(name: 'next_page') final String? nextPage,
+  }) = _$ScheduledPostListResponseImpl;
+
+  factory _ScheduledPostListResponse.fromJson(Map<String, dynamic> json) =
+      _$ScheduledPostListResponseImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'scheduled_posts')
+  List<ScheduledPostView> get scheduledPosts;
+  @override
+  @JsonKey(name: 'next_page')
+  String? get nextPage;
+
+  /// Create a copy of ScheduledPostListResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ScheduledPostListResponseImplCopyWith<_$ScheduledPostListResponseImpl>
+  get copyWith => throw _privateConstructorUsedError;
+}
+
 SuccessResponse _$SuccessResponseFromJson(Map<String, dynamic> json) {
   return _SuccessResponse.fromJson(json);
 }
@@ -10172,6 +10702,8 @@ mixin _$PostSetFlairResponse {
   List<CommunityFlair>? get flairList => throw _privateConstructorUsedError;
   @JsonKey(name: 'can_auth_user_moderate')
   bool? get canAuthUserModerate => throw _privateConstructorUsedError;
+  bool? get blurred => throw _privateConstructorUsedError;
+  bool? get filtered => throw _privateConstructorUsedError;
   Community? get community => throw _privateConstructorUsedError;
   Person? get creator => throw _privateConstructorUsedError;
   Post? get post => throw _privateConstructorUsedError;
@@ -10210,6 +10742,8 @@ abstract class $PostSetFlairResponseCopyWith<$Res> {
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    bool? blurred,
+    bool? filtered,
     Community? community,
     Person? creator,
     Post? post,
@@ -10254,6 +10788,8 @@ class _$PostSetFlairResponseCopyWithImpl<
     Object? myVote = freezed,
     Object? flairList = freezed,
     Object? canAuthUserModerate = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
     Object? community = freezed,
     Object? creator = freezed,
     Object? post = freezed,
@@ -10330,6 +10866,16 @@ class _$PostSetFlairResponseCopyWithImpl<
                 freezed == canAuthUserModerate
                     ? _value.canAuthUserModerate
                     : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            blurred:
+                freezed == blurred
+                    ? _value.blurred
+                    : blurred // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            filtered:
+                freezed == filtered
+                    ? _value.filtered
+                    : filtered // ignore: cast_nullable_to_non_nullable
                         as bool?,
             community:
                 freezed == community
@@ -10438,6 +10984,8 @@ abstract class _$$PostSetFlairResponseImplCopyWith<$Res>
     @JsonKey(name: 'my_vote') int? myVote,
     @JsonKey(name: 'flair_list') List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') bool? canAuthUserModerate,
+    bool? blurred,
+    bool? filtered,
     Community? community,
     Person? creator,
     Post? post,
@@ -10482,6 +11030,8 @@ class __$$PostSetFlairResponseImplCopyWithImpl<$Res>
     Object? myVote = freezed,
     Object? flairList = freezed,
     Object? canAuthUserModerate = freezed,
+    Object? blurred = freezed,
+    Object? filtered = freezed,
     Object? community = freezed,
     Object? creator = freezed,
     Object? post = freezed,
@@ -10559,6 +11109,16 @@ class __$$PostSetFlairResponseImplCopyWithImpl<$Res>
                 ? _value.canAuthUserModerate
                 : canAuthUserModerate // ignore: cast_nullable_to_non_nullable
                     as bool?,
+        blurred:
+            freezed == blurred
+                ? _value.blurred
+                : blurred // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        filtered:
+            freezed == filtered
+                ? _value.filtered
+                : filtered // ignore: cast_nullable_to_non_nullable
+                    as bool?,
         community:
             freezed == community
                 ? _value.community
@@ -10603,6 +11163,8 @@ class _$PostSetFlairResponseImpl implements _PostSetFlairResponse {
     @JsonKey(name: 'my_vote') this.myVote,
     @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') this.canAuthUserModerate,
+    this.blurred,
+    this.filtered,
     this.community,
     this.creator,
     this.post,
@@ -10659,6 +11221,10 @@ class _$PostSetFlairResponseImpl implements _PostSetFlairResponse {
   @JsonKey(name: 'can_auth_user_moderate')
   final bool? canAuthUserModerate;
   @override
+  final bool? blurred;
+  @override
+  final bool? filtered;
+  @override
   final Community? community;
   @override
   final Person? creator;
@@ -10669,7 +11235,7 @@ class _$PostSetFlairResponseImpl implements _PostSetFlairResponse {
 
   @override
   String toString() {
-    return 'PostSetFlairResponse(bannedFromCommunity: $bannedFromCommunity, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, hidden: $hidden, read: $read, saved: $saved, subscribed: $subscribed, unreadComments: $unreadComments, activityAlert: $activityAlert, altText: $altText, myVote: $myVote, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate, community: $community, creator: $creator, post: $post, counts: $counts)';
+    return 'PostSetFlairResponse(bannedFromCommunity: $bannedFromCommunity, creatorBannedFromCommunity: $creatorBannedFromCommunity, creatorIsAdmin: $creatorIsAdmin, creatorIsModerator: $creatorIsModerator, hidden: $hidden, read: $read, saved: $saved, subscribed: $subscribed, unreadComments: $unreadComments, activityAlert: $activityAlert, altText: $altText, myVote: $myVote, flairList: $flairList, canAuthUserModerate: $canAuthUserModerate, blurred: $blurred, filtered: $filtered, community: $community, creator: $creator, post: $post, counts: $counts)';
   }
 
   @override
@@ -10706,6 +11272,9 @@ class _$PostSetFlairResponseImpl implements _PostSetFlairResponse {
             ) &&
             (identical(other.canAuthUserModerate, canAuthUserModerate) ||
                 other.canAuthUserModerate == canAuthUserModerate) &&
+            (identical(other.blurred, blurred) || other.blurred == blurred) &&
+            (identical(other.filtered, filtered) ||
+                other.filtered == filtered) &&
             (identical(other.community, community) ||
                 other.community == community) &&
             (identical(other.creator, creator) || other.creator == creator) &&
@@ -10715,7 +11284,7 @@ class _$PostSetFlairResponseImpl implements _PostSetFlairResponse {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
+  int get hashCode => Object.hashAll([
     runtimeType,
     bannedFromCommunity,
     creatorBannedFromCommunity,
@@ -10731,11 +11300,13 @@ class _$PostSetFlairResponseImpl implements _PostSetFlairResponse {
     myVote,
     const DeepCollectionEquality().hash(_flairList),
     canAuthUserModerate,
+    blurred,
+    filtered,
     community,
     creator,
     post,
     counts,
-  );
+  ]);
 
   /// Create a copy of PostSetFlairResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -10774,6 +11345,8 @@ abstract class _PostSetFlairResponse implements PostSetFlairResponse {
     @JsonKey(name: 'my_vote') final int? myVote,
     @JsonKey(name: 'flair_list') final List<CommunityFlair>? flairList,
     @JsonKey(name: 'can_auth_user_moderate') final bool? canAuthUserModerate,
+    final bool? blurred,
+    final bool? filtered,
     final Community? community,
     final Person? creator,
     final Post? post,
@@ -10821,6 +11394,10 @@ abstract class _PostSetFlairResponse implements PostSetFlairResponse {
   @override
   @JsonKey(name: 'can_auth_user_moderate')
   bool? get canAuthUserModerate;
+  @override
+  bool? get blurred;
+  @override
+  bool? get filtered;
   @override
   Community? get community;
   @override

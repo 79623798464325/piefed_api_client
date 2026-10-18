@@ -4720,3 +4720,1878 @@ abstract class _SubscribePost extends SubscribePost {
   _$$SubscribePostImplCopyWith<_$SubscribePostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+GetScheduledPost _$GetScheduledPostFromJson(Map<String, dynamic> json) {
+  return _GetScheduledPost.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GetScheduledPost {
+  int get id => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this GetScheduledPost to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of GetScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $GetScheduledPostCopyWith<GetScheduledPost> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetScheduledPostCopyWith<$Res> {
+  factory $GetScheduledPostCopyWith(
+    GetScheduledPost value,
+    $Res Function(GetScheduledPost) then,
+  ) = _$GetScheduledPostCopyWithImpl<$Res, GetScheduledPost>;
+  @useResult
+  $Res call({int id, String auth});
+}
+
+/// @nodoc
+class _$GetScheduledPostCopyWithImpl<$Res, $Val extends GetScheduledPost>
+    implements $GetScheduledPostCopyWith<$Res> {
+  _$GetScheduledPostCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of GetScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? id = null, Object? auth = null}) {
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$GetScheduledPostImplCopyWith<$Res>
+    implements $GetScheduledPostCopyWith<$Res> {
+  factory _$$GetScheduledPostImplCopyWith(
+    _$GetScheduledPostImpl value,
+    $Res Function(_$GetScheduledPostImpl) then,
+  ) = __$$GetScheduledPostImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int id, String auth});
+}
+
+/// @nodoc
+class __$$GetScheduledPostImplCopyWithImpl<$Res>
+    extends _$GetScheduledPostCopyWithImpl<$Res, _$GetScheduledPostImpl>
+    implements _$$GetScheduledPostImplCopyWith<$Res> {
+  __$$GetScheduledPostImplCopyWithImpl(
+    _$GetScheduledPostImpl _value,
+    $Res Function(_$GetScheduledPostImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of GetScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? id = null, Object? auth = null}) {
+    return _then(
+      _$GetScheduledPostImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetScheduledPostImpl extends _GetScheduledPost {
+  const _$GetScheduledPostImpl({required this.id, required this.auth})
+    : super._();
+
+  factory _$GetScheduledPostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetScheduledPostImplFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'GetScheduledPost(id: $id, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetScheduledPostImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, auth);
+
+  /// Create a copy of GetScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetScheduledPostImplCopyWith<_$GetScheduledPostImpl> get copyWith =>
+      __$$GetScheduledPostImplCopyWithImpl<_$GetScheduledPostImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetScheduledPostImplToJson(this);
+  }
+}
+
+abstract class _GetScheduledPost extends GetScheduledPost {
+  const factory _GetScheduledPost({
+    required final int id,
+    required final String auth,
+  }) = _$GetScheduledPostImpl;
+  const _GetScheduledPost._() : super._();
+
+  factory _GetScheduledPost.fromJson(Map<String, dynamic> json) =
+      _$GetScheduledPostImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get auth;
+
+  /// Create a copy of GetScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetScheduledPostImplCopyWith<_$GetScheduledPostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ListScheduledPosts _$ListScheduledPostsFromJson(Map<String, dynamic> json) {
+  return _ListScheduledPosts.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ListScheduledPosts {
+  String? get q => throw _privateConstructorUsedError;
+  String? get sort => throw _privateConstructorUsedError; // New, Old, Relevance
+  @JsonKey(name: 'community_name')
+  String? get communityName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'community_id')
+  int? get communityId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'include_deleted')
+  bool? get includeDeleted => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  int? get page => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this ListScheduledPosts to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ListScheduledPosts
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ListScheduledPostsCopyWith<ListScheduledPosts> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListScheduledPostsCopyWith<$Res> {
+  factory $ListScheduledPostsCopyWith(
+    ListScheduledPosts value,
+    $Res Function(ListScheduledPosts) then,
+  ) = _$ListScheduledPostsCopyWithImpl<$Res, ListScheduledPosts>;
+  @useResult
+  $Res call({
+    String? q,
+    String? sort,
+    @JsonKey(name: 'community_name') String? communityName,
+    @JsonKey(name: 'community_id') int? communityId,
+    @JsonKey(name: 'include_deleted') bool? includeDeleted,
+    int? limit,
+    int? page,
+    String auth,
+  });
+}
+
+/// @nodoc
+class _$ListScheduledPostsCopyWithImpl<$Res, $Val extends ListScheduledPosts>
+    implements $ListScheduledPostsCopyWith<$Res> {
+  _$ListScheduledPostsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ListScheduledPosts
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? q = freezed,
+    Object? sort = freezed,
+    Object? communityName = freezed,
+    Object? communityId = freezed,
+    Object? includeDeleted = freezed,
+    Object? limit = freezed,
+    Object? page = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            q:
+                freezed == q
+                    ? _value.q
+                    : q // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            sort:
+                freezed == sort
+                    ? _value.sort
+                    : sort // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            communityName:
+                freezed == communityName
+                    ? _value.communityName
+                    : communityName // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            communityId:
+                freezed == communityId
+                    ? _value.communityId
+                    : communityId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            includeDeleted:
+                freezed == includeDeleted
+                    ? _value.includeDeleted
+                    : includeDeleted // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            limit:
+                freezed == limit
+                    ? _value.limit
+                    : limit // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            page:
+                freezed == page
+                    ? _value.page
+                    : page // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$ListScheduledPostsImplCopyWith<$Res>
+    implements $ListScheduledPostsCopyWith<$Res> {
+  factory _$$ListScheduledPostsImplCopyWith(
+    _$ListScheduledPostsImpl value,
+    $Res Function(_$ListScheduledPostsImpl) then,
+  ) = __$$ListScheduledPostsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    String? q,
+    String? sort,
+    @JsonKey(name: 'community_name') String? communityName,
+    @JsonKey(name: 'community_id') int? communityId,
+    @JsonKey(name: 'include_deleted') bool? includeDeleted,
+    int? limit,
+    int? page,
+    String auth,
+  });
+}
+
+/// @nodoc
+class __$$ListScheduledPostsImplCopyWithImpl<$Res>
+    extends _$ListScheduledPostsCopyWithImpl<$Res, _$ListScheduledPostsImpl>
+    implements _$$ListScheduledPostsImplCopyWith<$Res> {
+  __$$ListScheduledPostsImplCopyWithImpl(
+    _$ListScheduledPostsImpl _value,
+    $Res Function(_$ListScheduledPostsImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ListScheduledPosts
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? q = freezed,
+    Object? sort = freezed,
+    Object? communityName = freezed,
+    Object? communityId = freezed,
+    Object? includeDeleted = freezed,
+    Object? limit = freezed,
+    Object? page = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$ListScheduledPostsImpl(
+        q:
+            freezed == q
+                ? _value.q
+                : q // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        sort:
+            freezed == sort
+                ? _value.sort
+                : sort // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        communityName:
+            freezed == communityName
+                ? _value.communityName
+                : communityName // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        communityId:
+            freezed == communityId
+                ? _value.communityId
+                : communityId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        includeDeleted:
+            freezed == includeDeleted
+                ? _value.includeDeleted
+                : includeDeleted // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        limit:
+            freezed == limit
+                ? _value.limit
+                : limit // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        page:
+            freezed == page
+                ? _value.page
+                : page // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _$ListScheduledPostsImpl extends _ListScheduledPosts {
+  const _$ListScheduledPostsImpl({
+    this.q,
+    this.sort,
+    @JsonKey(name: 'community_name') this.communityName,
+    @JsonKey(name: 'community_id') this.communityId,
+    @JsonKey(name: 'include_deleted') this.includeDeleted,
+    this.limit,
+    this.page,
+    required this.auth,
+  }) : super._();
+
+  factory _$ListScheduledPostsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ListScheduledPostsImplFromJson(json);
+
+  @override
+  final String? q;
+  @override
+  final String? sort;
+  // New, Old, Relevance
+  @override
+  @JsonKey(name: 'community_name')
+  final String? communityName;
+  @override
+  @JsonKey(name: 'community_id')
+  final int? communityId;
+  @override
+  @JsonKey(name: 'include_deleted')
+  final bool? includeDeleted;
+  @override
+  final int? limit;
+  @override
+  final int? page;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'ListScheduledPosts(q: $q, sort: $sort, communityName: $communityName, communityId: $communityId, includeDeleted: $includeDeleted, limit: $limit, page: $page, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ListScheduledPostsImpl &&
+            (identical(other.q, q) || other.q == q) &&
+            (identical(other.sort, sort) || other.sort == sort) &&
+            (identical(other.communityName, communityName) ||
+                other.communityName == communityName) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.includeDeleted, includeDeleted) ||
+                other.includeDeleted == includeDeleted) &&
+            (identical(other.limit, limit) || other.limit == limit) &&
+            (identical(other.page, page) || other.page == page) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    q,
+    sort,
+    communityName,
+    communityId,
+    includeDeleted,
+    limit,
+    page,
+    auth,
+  );
+
+  /// Create a copy of ListScheduledPosts
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ListScheduledPostsImplCopyWith<_$ListScheduledPostsImpl> get copyWith =>
+      __$$ListScheduledPostsImplCopyWithImpl<_$ListScheduledPostsImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ListScheduledPostsImplToJson(this);
+  }
+}
+
+abstract class _ListScheduledPosts extends ListScheduledPosts {
+  const factory _ListScheduledPosts({
+    final String? q,
+    final String? sort,
+    @JsonKey(name: 'community_name') final String? communityName,
+    @JsonKey(name: 'community_id') final int? communityId,
+    @JsonKey(name: 'include_deleted') final bool? includeDeleted,
+    final int? limit,
+    final int? page,
+    required final String auth,
+  }) = _$ListScheduledPostsImpl;
+  const _ListScheduledPosts._() : super._();
+
+  factory _ListScheduledPosts.fromJson(Map<String, dynamic> json) =
+      _$ListScheduledPostsImpl.fromJson;
+
+  @override
+  String? get q;
+  @override
+  String? get sort; // New, Old, Relevance
+  @override
+  @JsonKey(name: 'community_name')
+  String? get communityName;
+  @override
+  @JsonKey(name: 'community_id')
+  int? get communityId;
+  @override
+  @JsonKey(name: 'include_deleted')
+  bool? get includeDeleted;
+  @override
+  int? get limit;
+  @override
+  int? get page;
+  @override
+  String get auth;
+
+  /// Create a copy of ListScheduledPosts
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ListScheduledPostsImplCopyWith<_$ListScheduledPostsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CreateScheduledPost _$CreateScheduledPostFromJson(Map<String, dynamic> json) {
+  return _CreateScheduledPost.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CreateScheduledPost {
+  String get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'community_id')
+  int get communityId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson)
+  DateTime get scheduledFor => throw _privateConstructorUsedError;
+  ScheduledPostRepeat? get repeat => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+  @JsonKey(name: 'alt_text')
+  String? get altText => throw _privateConstructorUsedError;
+  bool? get nsfw => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ai_generated')
+  bool? get aiGenerated => throw _privateConstructorUsedError;
+  @JsonKey(name: 'language_id')
+  int? get languageId => throw _privateConstructorUsedError;
+  PostPoll? get poll => throw _privateConstructorUsedError;
+  PostEvent? get event => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this CreateScheduledPost to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of CreateScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $CreateScheduledPostCopyWith<CreateScheduledPost> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CreateScheduledPostCopyWith<$Res> {
+  factory $CreateScheduledPostCopyWith(
+    CreateScheduledPost value,
+    $Res Function(CreateScheduledPost) then,
+  ) = _$CreateScheduledPostCopyWithImpl<$Res, CreateScheduledPost>;
+  @useResult
+  $Res call({
+    String title,
+    @JsonKey(name: 'community_id') int communityId,
+    @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson)
+    DateTime scheduledFor,
+    ScheduledPostRepeat? repeat,
+    String? body,
+    String? url,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? nsfw,
+    @JsonKey(name: 'ai_generated') bool? aiGenerated,
+    @JsonKey(name: 'language_id') int? languageId,
+    PostPoll? poll,
+    PostEvent? event,
+    String auth,
+  });
+
+  $PostPollCopyWith<$Res>? get poll;
+  $PostEventCopyWith<$Res>? get event;
+}
+
+/// @nodoc
+class _$CreateScheduledPostCopyWithImpl<$Res, $Val extends CreateScheduledPost>
+    implements $CreateScheduledPostCopyWith<$Res> {
+  _$CreateScheduledPostCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of CreateScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? communityId = null,
+    Object? scheduledFor = null,
+    Object? repeat = freezed,
+    Object? body = freezed,
+    Object? url = freezed,
+    Object? altText = freezed,
+    Object? nsfw = freezed,
+    Object? aiGenerated = freezed,
+    Object? languageId = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            title:
+                null == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String,
+            communityId:
+                null == communityId
+                    ? _value.communityId
+                    : communityId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            scheduledFor:
+                null == scheduledFor
+                    ? _value.scheduledFor
+                    : scheduledFor // ignore: cast_nullable_to_non_nullable
+                        as DateTime,
+            repeat:
+                freezed == repeat
+                    ? _value.repeat
+                    : repeat // ignore: cast_nullable_to_non_nullable
+                        as ScheduledPostRepeat?,
+            body:
+                freezed == body
+                    ? _value.body
+                    : body // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            url:
+                freezed == url
+                    ? _value.url
+                    : url // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            altText:
+                freezed == altText
+                    ? _value.altText
+                    : altText // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nsfw:
+                freezed == nsfw
+                    ? _value.nsfw
+                    : nsfw // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            aiGenerated:
+                freezed == aiGenerated
+                    ? _value.aiGenerated
+                    : aiGenerated // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            languageId:
+                freezed == languageId
+                    ? _value.languageId
+                    : languageId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            poll:
+                freezed == poll
+                    ? _value.poll
+                    : poll // ignore: cast_nullable_to_non_nullable
+                        as PostPoll?,
+            event:
+                freezed == event
+                    ? _value.event
+                    : event // ignore: cast_nullable_to_non_nullable
+                        as PostEvent?,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of CreateScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostPollCopyWith<$Res>? get poll {
+    if (_value.poll == null) {
+      return null;
+    }
+
+    return $PostPollCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
+    });
+  }
+
+  /// Create a copy of CreateScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostEventCopyWith<$Res>? get event {
+    if (_value.event == null) {
+      return null;
+    }
+
+    return $PostEventCopyWith<$Res>(_value.event!, (value) {
+      return _then(_value.copyWith(event: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$CreateScheduledPostImplCopyWith<$Res>
+    implements $CreateScheduledPostCopyWith<$Res> {
+  factory _$$CreateScheduledPostImplCopyWith(
+    _$CreateScheduledPostImpl value,
+    $Res Function(_$CreateScheduledPostImpl) then,
+  ) = __$$CreateScheduledPostImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    String title,
+    @JsonKey(name: 'community_id') int communityId,
+    @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson)
+    DateTime scheduledFor,
+    ScheduledPostRepeat? repeat,
+    String? body,
+    String? url,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? nsfw,
+    @JsonKey(name: 'ai_generated') bool? aiGenerated,
+    @JsonKey(name: 'language_id') int? languageId,
+    PostPoll? poll,
+    PostEvent? event,
+    String auth,
+  });
+
+  @override
+  $PostPollCopyWith<$Res>? get poll;
+  @override
+  $PostEventCopyWith<$Res>? get event;
+}
+
+/// @nodoc
+class __$$CreateScheduledPostImplCopyWithImpl<$Res>
+    extends _$CreateScheduledPostCopyWithImpl<$Res, _$CreateScheduledPostImpl>
+    implements _$$CreateScheduledPostImplCopyWith<$Res> {
+  __$$CreateScheduledPostImplCopyWithImpl(
+    _$CreateScheduledPostImpl _value,
+    $Res Function(_$CreateScheduledPostImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of CreateScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? communityId = null,
+    Object? scheduledFor = null,
+    Object? repeat = freezed,
+    Object? body = freezed,
+    Object? url = freezed,
+    Object? altText = freezed,
+    Object? nsfw = freezed,
+    Object? aiGenerated = freezed,
+    Object? languageId = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$CreateScheduledPostImpl(
+        title:
+            null == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String,
+        communityId:
+            null == communityId
+                ? _value.communityId
+                : communityId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        scheduledFor:
+            null == scheduledFor
+                ? _value.scheduledFor
+                : scheduledFor // ignore: cast_nullable_to_non_nullable
+                    as DateTime,
+        repeat:
+            freezed == repeat
+                ? _value.repeat
+                : repeat // ignore: cast_nullable_to_non_nullable
+                    as ScheduledPostRepeat?,
+        body:
+            freezed == body
+                ? _value.body
+                : body // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        url:
+            freezed == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        altText:
+            freezed == altText
+                ? _value.altText
+                : altText // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nsfw:
+            freezed == nsfw
+                ? _value.nsfw
+                : nsfw // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        aiGenerated:
+            freezed == aiGenerated
+                ? _value.aiGenerated
+                : aiGenerated // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        languageId:
+            freezed == languageId
+                ? _value.languageId
+                : languageId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        poll:
+            freezed == poll
+                ? _value.poll
+                : poll // ignore: cast_nullable_to_non_nullable
+                    as PostPoll?,
+        event:
+            freezed == event
+                ? _value.event
+                : event // ignore: cast_nullable_to_non_nullable
+                    as PostEvent?,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _$CreateScheduledPostImpl extends _CreateScheduledPost {
+  const _$CreateScheduledPostImpl({
+    required this.title,
+    @JsonKey(name: 'community_id') required this.communityId,
+    @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson)
+    required this.scheduledFor,
+    this.repeat,
+    this.body,
+    this.url,
+    @JsonKey(name: 'alt_text') this.altText,
+    this.nsfw,
+    @JsonKey(name: 'ai_generated') this.aiGenerated,
+    @JsonKey(name: 'language_id') this.languageId,
+    this.poll,
+    this.event,
+    required this.auth,
+  }) : super._();
+
+  factory _$CreateScheduledPostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CreateScheduledPostImplFromJson(json);
+
+  @override
+  final String title;
+  @override
+  @JsonKey(name: 'community_id')
+  final int communityId;
+  @override
+  @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson)
+  final DateTime scheduledFor;
+  @override
+  final ScheduledPostRepeat? repeat;
+  @override
+  final String? body;
+  @override
+  final String? url;
+  @override
+  @JsonKey(name: 'alt_text')
+  final String? altText;
+  @override
+  final bool? nsfw;
+  @override
+  @JsonKey(name: 'ai_generated')
+  final bool? aiGenerated;
+  @override
+  @JsonKey(name: 'language_id')
+  final int? languageId;
+  @override
+  final PostPoll? poll;
+  @override
+  final PostEvent? event;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'CreateScheduledPost(title: $title, communityId: $communityId, scheduledFor: $scheduledFor, repeat: $repeat, body: $body, url: $url, altText: $altText, nsfw: $nsfw, aiGenerated: $aiGenerated, languageId: $languageId, poll: $poll, event: $event, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateScheduledPostImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.communityId, communityId) ||
+                other.communityId == communityId) &&
+            (identical(other.scheduledFor, scheduledFor) ||
+                other.scheduledFor == scheduledFor) &&
+            (identical(other.repeat, repeat) || other.repeat == repeat) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.altText, altText) || other.altText == altText) &&
+            (identical(other.nsfw, nsfw) || other.nsfw == nsfw) &&
+            (identical(other.aiGenerated, aiGenerated) ||
+                other.aiGenerated == aiGenerated) &&
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
+            (identical(other.poll, poll) || other.poll == poll) &&
+            (identical(other.event, event) || other.event == event) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    title,
+    communityId,
+    scheduledFor,
+    repeat,
+    body,
+    url,
+    altText,
+    nsfw,
+    aiGenerated,
+    languageId,
+    poll,
+    event,
+    auth,
+  );
+
+  /// Create a copy of CreateScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateScheduledPostImplCopyWith<_$CreateScheduledPostImpl> get copyWith =>
+      __$$CreateScheduledPostImplCopyWithImpl<_$CreateScheduledPostImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CreateScheduledPostImplToJson(this);
+  }
+}
+
+abstract class _CreateScheduledPost extends CreateScheduledPost {
+  const factory _CreateScheduledPost({
+    required final String title,
+    @JsonKey(name: 'community_id') required final int communityId,
+    @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson)
+    required final DateTime scheduledFor,
+    final ScheduledPostRepeat? repeat,
+    final String? body,
+    final String? url,
+    @JsonKey(name: 'alt_text') final String? altText,
+    final bool? nsfw,
+    @JsonKey(name: 'ai_generated') final bool? aiGenerated,
+    @JsonKey(name: 'language_id') final int? languageId,
+    final PostPoll? poll,
+    final PostEvent? event,
+    required final String auth,
+  }) = _$CreateScheduledPostImpl;
+  const _CreateScheduledPost._() : super._();
+
+  factory _CreateScheduledPost.fromJson(Map<String, dynamic> json) =
+      _$CreateScheduledPostImpl.fromJson;
+
+  @override
+  String get title;
+  @override
+  @JsonKey(name: 'community_id')
+  int get communityId;
+  @override
+  @JsonKey(name: 'scheduled_for', toJson: _utcDateTimeToJson)
+  DateTime get scheduledFor;
+  @override
+  ScheduledPostRepeat? get repeat;
+  @override
+  String? get body;
+  @override
+  String? get url;
+  @override
+  @JsonKey(name: 'alt_text')
+  String? get altText;
+  @override
+  bool? get nsfw;
+  @override
+  @JsonKey(name: 'ai_generated')
+  bool? get aiGenerated;
+  @override
+  @JsonKey(name: 'language_id')
+  int? get languageId;
+  @override
+  PostPoll? get poll;
+  @override
+  PostEvent? get event;
+  @override
+  String get auth;
+
+  /// Create a copy of CreateScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreateScheduledPostImplCopyWith<_$CreateScheduledPostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+EditScheduledPost _$EditScheduledPostFromJson(Map<String, dynamic> json) {
+  return _EditScheduledPost.fromJson(json);
+}
+
+/// @nodoc
+mixin _$EditScheduledPost {
+  @JsonKey(name: 'post_id')
+  int get postId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson)
+  DateTime? get scheduledFor => throw _privateConstructorUsedError;
+  ScheduledPostRepeat? get repeat => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
+  @JsonKey(name: 'alt_text')
+  String? get altText => throw _privateConstructorUsedError;
+  bool? get nsfw => throw _privateConstructorUsedError;
+  @JsonKey(name: 'language_id')
+  int? get languageId => throw _privateConstructorUsedError;
+  PostPoll? get poll => throw _privateConstructorUsedError;
+  PostEvent? get event => throw _privateConstructorUsedError;
+  String? get tags =>
+      throw _privateConstructorUsedError; // Comma separated, no hash character
+  String? get flair => throw _privateConstructorUsedError; // Comma separated
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearUrl => throw _privateConstructorUsedError;
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearAltText => throw _privateConstructorUsedError;
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearTags => throw _privateConstructorUsedError;
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearFlair => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Create a copy of EditScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $EditScheduledPostCopyWith<EditScheduledPost> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EditScheduledPostCopyWith<$Res> {
+  factory $EditScheduledPostCopyWith(
+    EditScheduledPost value,
+    $Res Function(EditScheduledPost) then,
+  ) = _$EditScheduledPostCopyWithImpl<$Res, EditScheduledPost>;
+  @useResult
+  $Res call({
+    @JsonKey(name: 'post_id') int postId,
+    @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson)
+    DateTime? scheduledFor,
+    ScheduledPostRepeat? repeat,
+    String? title,
+    String? body,
+    String? url,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? nsfw,
+    @JsonKey(name: 'language_id') int? languageId,
+    PostPoll? poll,
+    PostEvent? event,
+    String? tags,
+    String? flair,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearUrl,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearAltText,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearTags,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearFlair,
+    String auth,
+  });
+
+  $PostPollCopyWith<$Res>? get poll;
+  $PostEventCopyWith<$Res>? get event;
+}
+
+/// @nodoc
+class _$EditScheduledPostCopyWithImpl<$Res, $Val extends EditScheduledPost>
+    implements $EditScheduledPostCopyWith<$Res> {
+  _$EditScheduledPostCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of EditScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? postId = null,
+    Object? scheduledFor = freezed,
+    Object? repeat = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
+    Object? url = freezed,
+    Object? altText = freezed,
+    Object? nsfw = freezed,
+    Object? languageId = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
+    Object? tags = freezed,
+    Object? flair = freezed,
+    Object? clearUrl = null,
+    Object? clearAltText = null,
+    Object? clearTags = null,
+    Object? clearFlair = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            postId:
+                null == postId
+                    ? _value.postId
+                    : postId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            scheduledFor:
+                freezed == scheduledFor
+                    ? _value.scheduledFor
+                    : scheduledFor // ignore: cast_nullable_to_non_nullable
+                        as DateTime?,
+            repeat:
+                freezed == repeat
+                    ? _value.repeat
+                    : repeat // ignore: cast_nullable_to_non_nullable
+                        as ScheduledPostRepeat?,
+            title:
+                freezed == title
+                    ? _value.title
+                    : title // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            body:
+                freezed == body
+                    ? _value.body
+                    : body // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            url:
+                freezed == url
+                    ? _value.url
+                    : url // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            altText:
+                freezed == altText
+                    ? _value.altText
+                    : altText // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            nsfw:
+                freezed == nsfw
+                    ? _value.nsfw
+                    : nsfw // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            languageId:
+                freezed == languageId
+                    ? _value.languageId
+                    : languageId // ignore: cast_nullable_to_non_nullable
+                        as int?,
+            poll:
+                freezed == poll
+                    ? _value.poll
+                    : poll // ignore: cast_nullable_to_non_nullable
+                        as PostPoll?,
+            event:
+                freezed == event
+                    ? _value.event
+                    : event // ignore: cast_nullable_to_non_nullable
+                        as PostEvent?,
+            tags:
+                freezed == tags
+                    ? _value.tags
+                    : tags // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            flair:
+                freezed == flair
+                    ? _value.flair
+                    : flair // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            clearUrl:
+                null == clearUrl
+                    ? _value.clearUrl
+                    : clearUrl // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            clearAltText:
+                null == clearAltText
+                    ? _value.clearAltText
+                    : clearAltText // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            clearTags:
+                null == clearTags
+                    ? _value.clearTags
+                    : clearTags // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            clearFlair:
+                null == clearFlair
+                    ? _value.clearFlair
+                    : clearFlair // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+
+  /// Create a copy of EditScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostPollCopyWith<$Res>? get poll {
+    if (_value.poll == null) {
+      return null;
+    }
+
+    return $PostPollCopyWith<$Res>(_value.poll!, (value) {
+      return _then(_value.copyWith(poll: value) as $Val);
+    });
+  }
+
+  /// Create a copy of EditScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PostEventCopyWith<$Res>? get event {
+    if (_value.event == null) {
+      return null;
+    }
+
+    return $PostEventCopyWith<$Res>(_value.event!, (value) {
+      return _then(_value.copyWith(event: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$EditScheduledPostImplCopyWith<$Res>
+    implements $EditScheduledPostCopyWith<$Res> {
+  factory _$$EditScheduledPostImplCopyWith(
+    _$EditScheduledPostImpl value,
+    $Res Function(_$EditScheduledPostImpl) then,
+  ) = __$$EditScheduledPostImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: 'post_id') int postId,
+    @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson)
+    DateTime? scheduledFor,
+    ScheduledPostRepeat? repeat,
+    String? title,
+    String? body,
+    String? url,
+    @JsonKey(name: 'alt_text') String? altText,
+    bool? nsfw,
+    @JsonKey(name: 'language_id') int? languageId,
+    PostPoll? poll,
+    PostEvent? event,
+    String? tags,
+    String? flair,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearUrl,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearAltText,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearTags,
+    @JsonKey(includeToJson: false, includeFromJson: false) bool clearFlair,
+    String auth,
+  });
+
+  @override
+  $PostPollCopyWith<$Res>? get poll;
+  @override
+  $PostEventCopyWith<$Res>? get event;
+}
+
+/// @nodoc
+class __$$EditScheduledPostImplCopyWithImpl<$Res>
+    extends _$EditScheduledPostCopyWithImpl<$Res, _$EditScheduledPostImpl>
+    implements _$$EditScheduledPostImplCopyWith<$Res> {
+  __$$EditScheduledPostImplCopyWithImpl(
+    _$EditScheduledPostImpl _value,
+    $Res Function(_$EditScheduledPostImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of EditScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? postId = null,
+    Object? scheduledFor = freezed,
+    Object? repeat = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
+    Object? url = freezed,
+    Object? altText = freezed,
+    Object? nsfw = freezed,
+    Object? languageId = freezed,
+    Object? poll = freezed,
+    Object? event = freezed,
+    Object? tags = freezed,
+    Object? flair = freezed,
+    Object? clearUrl = null,
+    Object? clearAltText = null,
+    Object? clearTags = null,
+    Object? clearFlair = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$EditScheduledPostImpl(
+        postId:
+            null == postId
+                ? _value.postId
+                : postId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        scheduledFor:
+            freezed == scheduledFor
+                ? _value.scheduledFor
+                : scheduledFor // ignore: cast_nullable_to_non_nullable
+                    as DateTime?,
+        repeat:
+            freezed == repeat
+                ? _value.repeat
+                : repeat // ignore: cast_nullable_to_non_nullable
+                    as ScheduledPostRepeat?,
+        title:
+            freezed == title
+                ? _value.title
+                : title // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        body:
+            freezed == body
+                ? _value.body
+                : body // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        url:
+            freezed == url
+                ? _value.url
+                : url // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        altText:
+            freezed == altText
+                ? _value.altText
+                : altText // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        nsfw:
+            freezed == nsfw
+                ? _value.nsfw
+                : nsfw // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        languageId:
+            freezed == languageId
+                ? _value.languageId
+                : languageId // ignore: cast_nullable_to_non_nullable
+                    as int?,
+        poll:
+            freezed == poll
+                ? _value.poll
+                : poll // ignore: cast_nullable_to_non_nullable
+                    as PostPoll?,
+        event:
+            freezed == event
+                ? _value.event
+                : event // ignore: cast_nullable_to_non_nullable
+                    as PostEvent?,
+        tags:
+            freezed == tags
+                ? _value.tags
+                : tags // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        flair:
+            freezed == flair
+                ? _value.flair
+                : flair // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        clearUrl:
+            null == clearUrl
+                ? _value.clearUrl
+                : clearUrl // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        clearAltText:
+            null == clearAltText
+                ? _value.clearAltText
+                : clearAltText // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        clearTags:
+            null == clearTags
+                ? _value.clearTags
+                : clearTags // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        clearFlair:
+            null == clearFlair
+                ? _value.clearFlair
+                : clearFlair // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _$EditScheduledPostImpl extends _EditScheduledPost {
+  const _$EditScheduledPostImpl({
+    @JsonKey(name: 'post_id') required this.postId,
+    @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson)
+    this.scheduledFor,
+    this.repeat,
+    this.title,
+    this.body,
+    this.url,
+    @JsonKey(name: 'alt_text') this.altText,
+    this.nsfw,
+    @JsonKey(name: 'language_id') this.languageId,
+    this.poll,
+    this.event,
+    this.tags,
+    this.flair,
+    @JsonKey(includeToJson: false, includeFromJson: false)
+    this.clearUrl = false,
+    @JsonKey(includeToJson: false, includeFromJson: false)
+    this.clearAltText = false,
+    @JsonKey(includeToJson: false, includeFromJson: false)
+    this.clearTags = false,
+    @JsonKey(includeToJson: false, includeFromJson: false)
+    this.clearFlair = false,
+    required this.auth,
+  }) : super._();
+
+  factory _$EditScheduledPostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EditScheduledPostImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'post_id')
+  final int postId;
+  @override
+  @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson)
+  final DateTime? scheduledFor;
+  @override
+  final ScheduledPostRepeat? repeat;
+  @override
+  final String? title;
+  @override
+  final String? body;
+  @override
+  final String? url;
+  @override
+  @JsonKey(name: 'alt_text')
+  final String? altText;
+  @override
+  final bool? nsfw;
+  @override
+  @JsonKey(name: 'language_id')
+  final int? languageId;
+  @override
+  final PostPoll? poll;
+  @override
+  final PostEvent? event;
+  @override
+  final String? tags;
+  // Comma separated, no hash character
+  @override
+  final String? flair;
+  // Comma separated
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  final bool clearUrl;
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  final bool clearAltText;
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  final bool clearTags;
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  final bool clearFlair;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'EditScheduledPost(postId: $postId, scheduledFor: $scheduledFor, repeat: $repeat, title: $title, body: $body, url: $url, altText: $altText, nsfw: $nsfw, languageId: $languageId, poll: $poll, event: $event, tags: $tags, flair: $flair, clearUrl: $clearUrl, clearAltText: $clearAltText, clearTags: $clearTags, clearFlair: $clearFlair, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EditScheduledPostImpl &&
+            (identical(other.postId, postId) || other.postId == postId) &&
+            (identical(other.scheduledFor, scheduledFor) ||
+                other.scheduledFor == scheduledFor) &&
+            (identical(other.repeat, repeat) || other.repeat == repeat) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.body, body) || other.body == body) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.altText, altText) || other.altText == altText) &&
+            (identical(other.nsfw, nsfw) || other.nsfw == nsfw) &&
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
+            (identical(other.poll, poll) || other.poll == poll) &&
+            (identical(other.event, event) || other.event == event) &&
+            (identical(other.tags, tags) || other.tags == tags) &&
+            (identical(other.flair, flair) || other.flair == flair) &&
+            (identical(other.clearUrl, clearUrl) ||
+                other.clearUrl == clearUrl) &&
+            (identical(other.clearAltText, clearAltText) ||
+                other.clearAltText == clearAltText) &&
+            (identical(other.clearTags, clearTags) ||
+                other.clearTags == clearTags) &&
+            (identical(other.clearFlair, clearFlair) ||
+                other.clearFlair == clearFlair) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    postId,
+    scheduledFor,
+    repeat,
+    title,
+    body,
+    url,
+    altText,
+    nsfw,
+    languageId,
+    poll,
+    event,
+    tags,
+    flair,
+    clearUrl,
+    clearAltText,
+    clearTags,
+    clearFlair,
+    auth,
+  );
+
+  /// Create a copy of EditScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EditScheduledPostImplCopyWith<_$EditScheduledPostImpl> get copyWith =>
+      __$$EditScheduledPostImplCopyWithImpl<_$EditScheduledPostImpl>(
+        this,
+        _$identity,
+      );
+}
+
+abstract class _EditScheduledPost extends EditScheduledPost {
+  const factory _EditScheduledPost({
+    @JsonKey(name: 'post_id') required final int postId,
+    @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson)
+    final DateTime? scheduledFor,
+    final ScheduledPostRepeat? repeat,
+    final String? title,
+    final String? body,
+    final String? url,
+    @JsonKey(name: 'alt_text') final String? altText,
+    final bool? nsfw,
+    @JsonKey(name: 'language_id') final int? languageId,
+    final PostPoll? poll,
+    final PostEvent? event,
+    final String? tags,
+    final String? flair,
+    @JsonKey(includeToJson: false, includeFromJson: false) final bool clearUrl,
+    @JsonKey(includeToJson: false, includeFromJson: false)
+    final bool clearAltText,
+    @JsonKey(includeToJson: false, includeFromJson: false) final bool clearTags,
+    @JsonKey(includeToJson: false, includeFromJson: false)
+    final bool clearFlair,
+    required final String auth,
+  }) = _$EditScheduledPostImpl;
+  const _EditScheduledPost._() : super._();
+
+  factory _EditScheduledPost.fromJson(Map<String, dynamic> json) =
+      _$EditScheduledPostImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'post_id')
+  int get postId;
+  @override
+  @JsonKey(name: 'scheduled_for', toJson: _nullableUtcDateTimeToJson)
+  DateTime? get scheduledFor;
+  @override
+  ScheduledPostRepeat? get repeat;
+  @override
+  String? get title;
+  @override
+  String? get body;
+  @override
+  String? get url;
+  @override
+  @JsonKey(name: 'alt_text')
+  String? get altText;
+  @override
+  bool? get nsfw;
+  @override
+  @JsonKey(name: 'language_id')
+  int? get languageId;
+  @override
+  PostPoll? get poll;
+  @override
+  PostEvent? get event;
+  @override
+  String? get tags; // Comma separated, no hash character
+  @override
+  String? get flair; // Comma separated
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearUrl;
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearAltText;
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearTags;
+  @override
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  bool get clearFlair;
+  @override
+  String get auth;
+
+  /// Create a copy of EditScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EditScheduledPostImplCopyWith<_$EditScheduledPostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DeleteScheduledPost _$DeleteScheduledPostFromJson(Map<String, dynamic> json) {
+  return _DeleteScheduledPost.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DeleteScheduledPost {
+  @JsonKey(name: 'post_id')
+  int get postId => throw _privateConstructorUsedError;
+  bool get deleted => throw _privateConstructorUsedError;
+  String get auth => throw _privateConstructorUsedError;
+
+  /// Serializes this DeleteScheduledPost to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of DeleteScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $DeleteScheduledPostCopyWith<DeleteScheduledPost> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteScheduledPostCopyWith<$Res> {
+  factory $DeleteScheduledPostCopyWith(
+    DeleteScheduledPost value,
+    $Res Function(DeleteScheduledPost) then,
+  ) = _$DeleteScheduledPostCopyWithImpl<$Res, DeleteScheduledPost>;
+  @useResult
+  $Res call({@JsonKey(name: 'post_id') int postId, bool deleted, String auth});
+}
+
+/// @nodoc
+class _$DeleteScheduledPostCopyWithImpl<$Res, $Val extends DeleteScheduledPost>
+    implements $DeleteScheduledPostCopyWith<$Res> {
+  _$DeleteScheduledPostCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of DeleteScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? postId = null,
+    Object? deleted = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            postId:
+                null == postId
+                    ? _value.postId
+                    : postId // ignore: cast_nullable_to_non_nullable
+                        as int,
+            deleted:
+                null == deleted
+                    ? _value.deleted
+                    : deleted // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            auth:
+                null == auth
+                    ? _value.auth
+                    : auth // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
+}
+
+/// @nodoc
+abstract class _$$DeleteScheduledPostImplCopyWith<$Res>
+    implements $DeleteScheduledPostCopyWith<$Res> {
+  factory _$$DeleteScheduledPostImplCopyWith(
+    _$DeleteScheduledPostImpl value,
+    $Res Function(_$DeleteScheduledPostImpl) then,
+  ) = __$$DeleteScheduledPostImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'post_id') int postId, bool deleted, String auth});
+}
+
+/// @nodoc
+class __$$DeleteScheduledPostImplCopyWithImpl<$Res>
+    extends _$DeleteScheduledPostCopyWithImpl<$Res, _$DeleteScheduledPostImpl>
+    implements _$$DeleteScheduledPostImplCopyWith<$Res> {
+  __$$DeleteScheduledPostImplCopyWithImpl(
+    _$DeleteScheduledPostImpl _value,
+    $Res Function(_$DeleteScheduledPostImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of DeleteScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? postId = null,
+    Object? deleted = null,
+    Object? auth = null,
+  }) {
+    return _then(
+      _$DeleteScheduledPostImpl(
+        postId:
+            null == postId
+                ? _value.postId
+                : postId // ignore: cast_nullable_to_non_nullable
+                    as int,
+        deleted:
+            null == deleted
+                ? _value.deleted
+                : deleted // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        auth:
+            null == auth
+                ? _value.auth
+                : auth // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DeleteScheduledPostImpl extends _DeleteScheduledPost {
+  const _$DeleteScheduledPostImpl({
+    @JsonKey(name: 'post_id') required this.postId,
+    required this.deleted,
+    required this.auth,
+  }) : super._();
+
+  factory _$DeleteScheduledPostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DeleteScheduledPostImplFromJson(json);
+
+  @override
+  @JsonKey(name: 'post_id')
+  final int postId;
+  @override
+  final bool deleted;
+  @override
+  final String auth;
+
+  @override
+  String toString() {
+    return 'DeleteScheduledPost(postId: $postId, deleted: $deleted, auth: $auth)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteScheduledPostImpl &&
+            (identical(other.postId, postId) || other.postId == postId) &&
+            (identical(other.deleted, deleted) || other.deleted == deleted) &&
+            (identical(other.auth, auth) || other.auth == auth));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, postId, deleted, auth);
+
+  /// Create a copy of DeleteScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteScheduledPostImplCopyWith<_$DeleteScheduledPostImpl> get copyWith =>
+      __$$DeleteScheduledPostImplCopyWithImpl<_$DeleteScheduledPostImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DeleteScheduledPostImplToJson(this);
+  }
+}
+
+abstract class _DeleteScheduledPost extends DeleteScheduledPost {
+  const factory _DeleteScheduledPost({
+    @JsonKey(name: 'post_id') required final int postId,
+    required final bool deleted,
+    required final String auth,
+  }) = _$DeleteScheduledPostImpl;
+  const _DeleteScheduledPost._() : super._();
+
+  factory _DeleteScheduledPost.fromJson(Map<String, dynamic> json) =
+      _$DeleteScheduledPostImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'post_id')
+  int get postId;
+  @override
+  bool get deleted;
+  @override
+  String get auth;
+
+  /// Create a copy of DeleteScheduledPost
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteScheduledPostImplCopyWith<_$DeleteScheduledPostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.16.0
+
+*   **PieFed v1.8.0 support**:
+    *   **New Endpoints — scheduled posts**: `GetScheduledPost` (`GET /post/scheduled`), `ListScheduledPosts` (`GET /post/scheduled/list`), `CreateScheduledPost` (`POST /post/scheduled`), `EditScheduledPost` (`PUT /post/scheduled`), `DeleteScheduledPost` (`POST /post/scheduled/delete`). `scheduled_for` is always sent as a UTC ISO-8601 timestamp. `EditScheduledPost` omits unset fields; pass `clearUrl`, `clearAltText`, `clearTags` or `clearFlair` to remove an existing value.
+    *   **New Models**: `ScheduledPost`, `ScheduledPostView`, `GetScheduledPostResponse`, `ScheduledPostListResponse`, and the `ScheduledPostRepeat` enum (`None`, `Daily`, `Weekly`, `Monthly`; unknown or missing values decode as `None`).
+    *   **Field Additions**:
+        *   `PostType.gallery` and `Post.gallery` (list of image URLs).
+        *   `blurred` and `filtered` on `PostView` and `PostSetFlairResponse`.
+        *   `PostReport.description`; `PostReportView` gains `bannedFromCommunity`, `hidden`, `read`, `unreadComments`, `activityAlert`, `altText`, `blurred`, `filtered`, `canAuthUserModerate`, `flairList`, and `myVote`.
+        *   `PersonAggregates.followerCount` and `followingCount` (default `0` on older servers).
+        *   `LocalUser.postsSubjectToAdminApproval` and `showReposterAccounts` (both `null` on servers older than 1.8.0).
+        *   `SaveUserSettings.reposterVisibility` (`Show`, `Blur`, `Hide`, `Transparent`).
+*   **BREAKING — `LocalUser.manuallyApprovesFollowers` is now `bool?`**: the 1.8.0 spec allows `null`, which previously failed to parse.
+*   **BREAKING — `PostType` gains a `gallery` value**: exhaustive `switch` statements over `PostType` need a new case.
+
 ## 0.15.0
 
 *   **BREAKING — `PollVote` now matches the PieFed schema**: the request field is
